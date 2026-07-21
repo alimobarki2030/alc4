@@ -706,6 +706,54 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .quiz-wrap.show{display:block;animation:qfade .3s ease}
 @keyframes qfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
+/* ── IRREGULAR VERBS ── */
+.iv-card-home{background:linear-gradient(135deg,#6366F1,#4338CA);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #C7D2FE;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.iv-card-home:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(67,56,202,.35)}
+.iv-card-home .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.iv-card-home .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
+.iv-card-home .pc-txt p{color:rgba(255,255,255,.9);font-size:.8rem;margin-top:2px;font-family:'Cairo',sans-serif}
+#ivscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.iv-intro{background:#EEF2FF;border:1.5px dashed #A5B4FC;border-radius:10px;padding:10px 13px;margin-bottom:14px;
+  font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;color:#3730A3;text-align:center}
+.iv-fam{background:var(--card);border:2px solid var(--bdr);border-radius:14px;padding:13px 14px;margin-bottom:12px}
+.iv-fam-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px}
+.iv-fam-pat{font-family:'Inter',sans-serif;font-weight:800;font-size:.9rem;color:#fff;background:#6366F1;
+  padding:3px 11px;border-radius:8px;direction:ltr}
+.iv-fam-hint{font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin:2px 0 10px}
+.iv-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 11px;border-radius:9px;
+  background:#F8FAFC;border:1px solid var(--bdr);margin-bottom:6px;direction:ltr}
+.iv-base{font-family:'Inter',sans-serif;font-weight:700;color:var(--navy);font-size:.95rem;direction:ltr}
+.iv-arrow{color:#6366F1;font-weight:800;font-size:1.05rem}
+.iv-past{font-family:'Inter',sans-serif;font-weight:800;color:#4338CA;font-size:.95rem;direction:ltr}
+.iv-spk{background:#6366F1;border:none;border-radius:6px;width:26px;height:26px;color:#fff;cursor:pointer;font-size:.7rem;flex:none}
+.iv-spk:hover{background:#4338CA}
+.iv-mean{font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);margin-left:auto;direction:rtl}
+.iv-note{width:100%;font-family:'Cairo',sans-serif;font-size:.72rem;color:#B45309;background:#FEF3C7;border-radius:6px;padding:3px 8px;margin-top:4px}
+/* Drill */
+.iv-drill-top{text-align:center;font-family:'Cairo',sans-serif;font-size:.82rem;color:var(--muted);margin-bottom:10px}
+.iv-drill-top b{color:#4338CA;font-family:'Inter',sans-serif}
+.iv-dcard{background:var(--card);border:2px solid #C7D2FE;border-radius:18px;padding:26px 18px;text-align:center;box-shadow:0 4px 16px rgba(67,56,202,.08)}
+.iv-base-big{font-family:'Inter',sans-serif;font-weight:900;font-size:2rem;color:var(--navy);direction:ltr;display:flex;align-items:center;justify-content:center;gap:10px}
+.iv-mean-big{font-family:'Cairo',sans-serif;font-size:1rem;color:var(--muted);margin-top:4px}
+.iv-arrow-big{font-family:'Cairo',sans-serif;font-size:.8rem;color:#6366F1;font-weight:700;margin:14px 0 4px}
+.iv-past-big{font-family:'Inter',sans-serif;font-weight:900;font-size:2rem;color:#4338CA;direction:ltr;display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#EEF2FF;border-radius:12px;padding:10px;animation:qfade .3s ease}
+.iv-spk2{background:#6366F1;border:none;border-radius:8px;width:34px;height:34px;color:#fff;cursor:pointer;font-size:.85rem}
+.iv-spk2:hover{background:#4338CA}
+.iv-reveal-btn{margin-top:18px;background:var(--navy);color:#fff;border:none;border-radius:12px;padding:13px 28px;
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:.95rem;cursor:pointer;transition:.15s}
+.iv-reveal-btn:hover{filter:brightness(1.15)}
+.iv-judge{display:flex;gap:10px;justify-content:center;margin-top:18px}
+.iv-btn{padding:12px 22px;border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.9rem;cursor:pointer;transition:.15s}
+.iv-btn.known{background:var(--g);color:#fff}.iv-btn.known:hover{background:var(--gd)}
+.iv-btn.hard{background:#FEE2E2;color:#B91C1C}.iv-btn.hard:hover{background:#FECACA}
+.iv-done{text-align:center;background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:26px 18px}
+.iv-done .em{font-size:3rem}
+.iv-done .t{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin:8px 0 14px}
+.iv-done .iv-btn{margin:4px}
+
 </style>
 </head>
 <body>
@@ -795,6 +843,13 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <div class="pc-txt">
       <h3>yesterday · last · ago</h3>
       <p>كلمات الزمن الماضي — على خطّ زمني</p>
+    </div>
+  </div>
+  <div class="iv-card-home" onclick="open_iv()">
+    <div class="ac-ic">🔄</div>
+    <div class="pc-txt">
+      <h3>الأفعال الشاذة</h3>
+      <p>مجمّعة بالعائلات — احفظ النمط لا الكلمات</p>
     </div>
   </div>
 
@@ -988,6 +1043,21 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <div class="sp-count" id="sp-count">0 / 0</div>
   </div>
   <div id="spell-body"></div>
+</div>
+
+<!-- IRREGULAR VERBS SCREEN -->
+<div id="ivscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#6366F1,#4338CA)">
+    <h2>الأفعال الشاذة 🔄</h2>
+    <p>ليست عشوائية — بل عائلات لها أنماط</p>
+  </div>
+  <div class="prep-toggle">
+    <button class="on" id="iv-t-learn" onclick="sw_iv('learn')">📖 تعلّم بالعائلات</button>
+    <button id="iv-t-drill" onclick="sw_iv('drill')">🎴 تدرّب (بطاقات)</button>
+  </div>
+  <div id="iv-learn-body"></div>
+  <div id="iv-drill-body" style="display:none"></div>
 </div>
 
 <!-- MODAL -->
@@ -1237,7 +1307,7 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen'];
+const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});}
 
 // Quizzes stay hidden until the learner clicks "اختبر نفسك"
@@ -2542,6 +2612,110 @@ function spell_check(){
   }
 }
 function spell_next(){spellIdx++;render_spell();}
+
+// ═══════════════════════════════════════
+// IRREGULAR VERBS (grouped by family)
+// ═══════════════════════════════════════
+const IV_FAMILIES=[
+  {pat:'no change',hook:'لا يتغيّر — نفس الشكل في الماضي',verbs:[
+    {b:'put',p:'put',m:'وضع'},{b:'read',p:'read',m:'قرأ',note:'يُكتب read لكن يُنطق «رِد» في الماضي'}]},
+  {pat:'i / o → a',hook:'حرف العلّة يتحوّل إلى a',verbs:[
+    {b:'begin',p:'began',m:'بدأ'},{b:'drink',p:'drank',m:'شرب'},{b:'swim',p:'swam',m:'سبح'},{b:'sit',p:'sat',m:'جلس'},{b:'come',p:'came',m:'أتى / جاء'}]},
+  {pat:'…o-e',hook:'الماضي بصوت o',verbs:[
+    {b:'speak',p:'spoke',m:'تكلّم'},{b:'drive',p:'drove',m:'قاد'},{b:'write',p:'wrote',m:'كتب'},{b:'choose',p:'chose',m:'اختار'}]},
+  {pat:'…ought',hook:'الماضي ينتهي بـ ought',verbs:[
+    {b:'bring',p:'brought',m:'أحضر'},{b:'buy',p:'bought',m:'اشترى'}]},
+  {pat:'…ew',hook:'الماضي ينتهي بـ ew',verbs:[
+    {b:'fly',p:'flew',m:'طار'},{b:'know',p:'knew',m:'عرف'}]},
+  {pat:'…oo',hook:'الماضي فيه صوت oo',verbs:[
+    {b:'stand',p:'stood',m:'وقف'},{b:'take',p:'took',m:'أخذ'}]},
+  {pat:'…t / …d',hook:'الماضي ينتهي بـ t أو d',verbs:[
+    {b:'leave',p:'left',m:'غادر'},{b:'sleep',p:'slept',m:'نام'},{b:'hear',p:'heard',m:'سمع'},{b:'say',p:'said',m:'قال'},{b:'have',p:'had',m:'يملك / لديه'},{b:'do',p:'did',m:'فعل'}]},
+  {pat:'unique',hook:'شاذّة تماماً — احفظها وحدها',verbs:[
+    {b:'go',p:'went',m:'ذهب'},{b:'see',p:'saw',m:'رأى'},{b:'eat',p:'ate',m:'أكل'},{b:'get up',p:'got up',m:'استيقظ / نهض'}]}
+];
+const IV_ALL=IV_FAMILIES.reduce((a,f)=>a.concat(f.verbs),[]);
+let ivDeck=[],ivCur=null,ivHardSeen=new Set();
+
+function open_iv(){
+  show_screen('ivscreen');
+  document.getElementById('ivscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  sw_iv('learn');
+}
+function sw_iv(m){
+  const learn=m==='learn';
+  document.getElementById('iv-t-learn').classList.toggle('on',learn);
+  document.getElementById('iv-t-drill').classList.toggle('on',!learn);
+  document.getElementById('iv-learn-body').style.display=learn?'block':'none';
+  document.getElementById('iv-drill-body').style.display=learn?'none':'block';
+  if(learn)build_iv_learn();else start_iv_drill();
+}
+function build_iv_learn(){
+  let html='<div class="iv-intro">💡 الأفعال الشاذة عائلات — احفظ نمط العائلة لا كل كلمة وحدها</div>';
+  IV_FAMILIES.forEach(f=>{
+    html+=`<div class="iv-fam"><div class="iv-fam-h"><span class="iv-fam-pat">${f.pat}</span></div>
+      <div class="iv-fam-hint">${f.hook}</div>`;
+    f.verbs.forEach(v=>{
+      const bs=v.b.replace(/'/g,"\\'"),ps=v.p.replace(/'/g,"\\'");
+      html+=`<div class="iv-row">
+        <span class="iv-base">${v.b}</span><span class="iv-arrow">→</span><span class="iv-past">${v.p}</span>
+        <button class="iv-spk" onclick="say('${ps}')" aria-label="استمع">🔊</button>
+        <span class="iv-mean">${v.m}</span>
+        ${v.note?`<span class="iv-note">💡 ${v.note}</span>`:''}
+      </div>`;
+    });
+    html+='</div>';
+  });
+  document.getElementById('iv-learn-body').innerHTML=html;
+}
+function start_iv_drill(){
+  ivDeck=[...IV_ALL].sort(()=>Math.random()-.5);
+  ivHardSeen=new Set();
+  iv_next();
+}
+function iv_next(){
+  const body=document.getElementById('iv-drill-body');
+  if(ivDeck.length===0){
+    const hard=IV_ALL.filter(v=>ivHardSeen.has(v.b));
+    body.innerHTML=`<div class="iv-done"><div class="em">🎉</div>
+      <div class="t">أحسنت! راجعت كل الأفعال</div>
+      ${hard.length?`<button class="iv-btn hard" onclick="iv_review_hard()">راجع الصعبة فقط (${hard.length})</button>`:''}
+      <button class="iv-btn known" onclick="start_iv_drill()">🔁 من جديد</button></div>`;
+    return;
+  }
+  ivCur=ivDeck[0];
+  const bs=ivCur.b.replace(/'/g,"\\'"),ps=ivCur.p.replace(/'/g,"\\'");
+  body.innerHTML=`<div class="iv-drill-top">متبقّي: <b>${ivDeck.length}</b></div>
+  <div class="iv-dcard">
+    <div class="iv-base-big">${ivCur.b}<button class="iv-spk2" onclick="say('${bs}')" aria-label="استمع">🔊</button></div>
+    <div class="iv-mean-big">${ivCur.m}</div>
+    <div id="iv-ans" style="display:none">
+      <div class="iv-arrow-big">↓ الماضي</div>
+      <div class="iv-past-big">${ivCur.p}<button class="iv-spk2" onclick="say('${ps}')" aria-label="استمع">🔊</button></div>
+    </div>
+    <div id="iv-controls"><button class="iv-reveal-btn" onclick="iv_reveal()">🤔 ما الماضي؟ اضغط للكشف</button></div>
+    <div id="iv-judge" class="iv-judge" style="display:none">
+      <button class="iv-btn known" onclick="iv_mark(true)">عرفتها ✅</button>
+      <button class="iv-btn hard" onclick="iv_mark(false)">صعبة ❌</button>
+    </div>
+  </div>`;
+}
+function iv_reveal(){
+  document.getElementById('iv-ans').style.display='';
+  document.getElementById('iv-controls').style.display='none';
+  document.getElementById('iv-judge').style.display='flex';
+  say(ivCur.p);
+}
+function iv_mark(known){
+  const cur=ivDeck.shift();
+  if(known){XP+=2;document.getElementById('xp').textContent=XP;save_progress();}
+  else{ivDeck.push(cur);ivHardSeen.add(cur.b);}
+  iv_next();
+}
+function iv_review_hard(){
+  ivDeck=IV_ALL.filter(v=>ivHardSeen.has(v.b)).sort(()=>Math.random()-.5);
+  iv_next();
+}
 
 // ═══════════════════════════════════════
 // PROGRESS PERSISTENCE (localStorage)

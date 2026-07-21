@@ -330,6 +330,107 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .site-footer{background:var(--navy);padding:16px;text-align:center;margin-top:40px}
 .site-footer p{color:rgba(255,255,255,.6);font-family:'Cairo',sans-serif;font-size:.8rem}
 .site-footer span{color:var(--y);font-weight:700}
+
+/* ── LEARN REDESIGN ── */
+.learn-tabs{display:flex;gap:0;background:#F0F4FF;border-radius:12px;padding:4px;margin-bottom:18px;border:2px solid var(--bdr)}
+.ltab{flex:1;padding:9px 6px;border:none;border-radius:8px;font-family:'Cairo',sans-serif;
+  font-size:.8rem;font-weight:700;cursor:pointer;background:transparent;color:var(--muted);
+  transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:3px}
+.ltab .li{font-size:1.2rem}
+.ltab.on{background:var(--navy);color:#fff;box-shadow:0 2px 8px rgba(26,39,68,.2)}
+.lsec{display:none}.lsec.on{display:block}
+
+/* Vocab cards grid */
+.vcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:8px}
+.vcard{background:var(--card);border:2px solid var(--bdr);border-radius:14px;padding:14px 10px;
+  text-align:center;cursor:pointer;transition:all .2s;position:relative}
+.vcard:hover{border-color:var(--b);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.vcard .ve{font-size:2rem;display:block;margin-bottom:6px}
+.vcard .vw{font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy)}
+.vcard .va{font-size:.75rem;color:var(--muted);margin-top:3px}
+.vcard .vs{position:absolute;top:7px;left:7px;background:var(--b);border:none;border-radius:6px;
+  width:24px;height:24px;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vcard .vs:hover{background:var(--bd)}
+
+/* Grammar cards */
+.gcard{background:var(--card);border-radius:14px;border:2px solid var(--bdr);
+  margin-bottom:12px;overflow:hidden}
+.gcard-head{display:flex;align-items:center;gap:10px;padding:14px 16px;
+  cursor:pointer;user-select:none;transition:background .2s}
+.gcard-head:hover{background:#F8F9FF}
+.gcard-head.open{background:#F0F4FF;border-bottom:2px solid var(--bdr)}
+.gcard-num{width:32px;height:32px;border-radius:50%;background:var(--navy);
+  color:#fff;font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gcard-title{font-size:.92rem;font-weight:700;color:var(--navy);flex:1}
+.gcard-ar{font-size:.75rem;color:var(--muted);font-family:'Cairo',sans-serif}
+.gcard-arrow{color:var(--muted);transition:transform .3s;font-size:.9rem}
+.gcard-head.open .gcard-arrow{transform:rotate(180deg)}
+.gcard-body{display:none;padding:16px}
+.gcard-body.open{display:block}
+
+/* One-line rule */
+.rule-box{background:linear-gradient(135deg,#EFF6FF,#F0FDF4);border-radius:10px;
+  padding:12px 14px;margin-bottom:12px;border-right:4px solid var(--b)}
+.rule-box .rb-label{font-size:.68rem;font-weight:700;color:var(--b);letter-spacing:1px;
+  text-transform:uppercase;margin-bottom:4px;font-family:'Cairo',sans-serif}
+.rule-box .rb-text{font-size:.85rem;font-weight:600;color:var(--navy);font-family:'Cairo',sans-serif}
+
+/* Formula strip */
+.fstrip{display:flex;align-items:center;gap:5px;flex-wrap:wrap;
+  direction:ltr;padding:10px;background:#1A2744;border-radius:10px;margin-bottom:10px}
+.fchip{padding:5px 12px;border-radius:7px;font-family:'Inter',sans-serif;
+  font-size:.8rem;font-weight:700;white-space:nowrap}
+.fchip.s{background:#3B82F6;color:#fff}
+.fchip.v{background:#10B981;color:#fff}
+.fchip.n{background:#EF4444;color:#fff}
+.fchip.k{background:#F59E0B;color:#1A2744}
+.fchip.p{background:rgba(255,255,255,.15);color:rgba(255,255,255,.7)}
+.farr{color:rgba(255,255,255,.4);font-size:1rem}
+
+/* Example row */
+.ex-row{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:8px 12px;border-radius:8px;margin-bottom:6px;direction:ltr}
+.ex-row.ok{background:#F0FDF4;border:1.5px solid #86EFAC}
+.ex-row.no{background:#FEF2F2;border:1.5px solid #FCA5A5}
+.ex-row .ex-text{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--navy);flex:1;text-align:left}
+.ex-row .ex-ar{font-family:'Cairo',sans-serif;font-size:.72rem;color:#666;direction:rtl;text-align:right}
+.ex-row .ex-spk{background:var(--b);border:none;border-radius:6px;width:26px;height:26px;
+  font-size:.7rem;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.ex-row.no .ex-text{text-decoration:line-through;color:#999}
+
+/* Compare mini table */
+.ctab{width:100%;border-collapse:collapse;font-size:.8rem;margin-bottom:10px;border-radius:8px;overflow:hidden}
+.ctab th{padding:6px 10px;color:#fff;font-family:'Cairo',sans-serif;font-size:.73rem}
+.ctab th.c1{background:#2563EB}.ctab th.c2{background:#7C3AED}.ctab th.c3{background:#6B7280}
+.ctab td{padding:6px 10px;border-bottom:1px solid var(--bdr);background:#fff;
+  font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.78rem}
+.ctab td.ar{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;color:#888;font-size:.72rem}
+.ctab tr:last-child td{border-bottom:none}
+
+/* Sounds table */
+.stab{width:100%;border-collapse:collapse;font-size:.8rem;border-radius:8px;overflow:hidden;margin-bottom:8px}
+.stab th{padding:7px 10px;color:#fff;font-family:'Cairo',sans-serif;font-size:.75rem}
+.stab td{padding:7px 10px;border-bottom:1px solid var(--bdr);background:#fff;font-family:'Inter',sans-serif}
+.stab tr:last-child td{border-bottom:none}
+.sound-tip{background:#FFFBEB;border:2px solid #FCD34D;border-radius:8px;
+  padding:9px 12px;font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;margin-top:6px}
+
+/* Ranks table */
+.rktab{width:100%;border-collapse:collapse;font-size:.78rem;border-radius:8px;overflow:hidden;margin-bottom:8px}
+.rktab th{background:var(--navy);color:#fff;padding:7px 10px;font-family:'Cairo',sans-serif;font-size:.72rem}
+.rktab td{padding:6px 10px;border-bottom:1px solid var(--bdr);background:#fff}
+.rktab tr:last-child td{border-bottom:none}
+.gld{color:#B45309;font-weight:700}.slv{color:#6B7280;font-weight:700}
+.rank-tip{background:#FEF3C7;border:2px solid #F59E0B;border-radius:8px;
+  padding:9px 12px;font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;margin-top:6px}
+
+/* Time grid */
+.tgrd{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.titem2{background:#1A2744;border-radius:8px;padding:8px 10px;text-align:center}
+.tmil2{color:var(--y);font-family:'Inter',sans-serif;font-weight:700;font-size:.88rem}
+.tciv2{color:rgba(255,255,255,.6);font-size:.7rem;margin-top:2px}
+
 </style>
 </head>
 <body>
@@ -962,108 +1063,439 @@ function sw_tab(t){
 // ═══════════════════════════════════════
 // BUILD LEARN
 // ═══════════════════════════════════════
+
+// ═══════════════════════════════════════
+// BUILD LEARN — REDESIGNED
+// ═══════════════════════════════════════
+const VOCAB = {
+l1:[
+  {e:'ball',a:'كرة',em:'⚽'},{e:'baseball',a:'البيسبول',em:'⚾'},
+  {e:'basketball',a:'كرة السلة',em:'🏀'},{e:'football',a:'كرة القدم الأمريكية',em:'🏈'},
+  {e:'soccer',a:'كرة القدم',em:'⚽'},{e:'tennis',a:'التنس',em:'🎾'},
+  {e:'team',a:'فريق',em:'🤝'},{e:'game',a:'مباراة / لعبة',em:'🎮'},
+  {e:'restaurant',a:'مطعم',em:'🍽️'},{e:'show',a:'برنامج / عرض',em:'📺'},
+  {e:'downtown',a:'وسط المدينة',em:'🌆'},{e:'city',a:'مدينة',em:'🏙️'},
+  {e:'break',a:'استراحة',em:'☕'},{e:'again',a:'مرة أخرى',em:'🔁'},
+  {e:'clean up',a:'ينظّف / يرتّب',em:'🧹'},{e:'visit',a:'يزور',em:'🗺️'},
+],
+l2:[
+  {e:'Second Lieutenant (2d Lt)',a:'ملازم ثانٍ — O-1',em:'🟡'},
+  {e:'First Lieutenant (1st Lt)',a:'ملازم أول — O-2',em:'⬜'},
+  {e:'Captain (Capt)',a:'نقيب — O-3',em:'🔲'},
+  {e:'Major (Maj)',a:'رائد — O-4',em:'🍃'},
+  {e:'Lieutenant Colonel (Lt Col)',a:'مقدّم — O-5',em:'🍂'},
+  {e:'Colonel (Col)',a:'عقيد — O-6',em:'🦅'},
+  {e:'General (Gen)',a:'لواء — O-7',em:'⭐'},
+  {e:'base',a:'قاعدة عسكرية',em:'🏕️'},{e:'post',a:'موقع الجيش',em:'🪖'},
+  {e:'naval base',a:'قاعدة بحرية',em:'⚓'},{e:'uniform',a:'الزي العسكري',em:'👔'},
+  {e:'name tag',a:'بطاقة الاسم',em:'🪪'},{e:'rank',a:'الرتبة',em:'🎖️'},
+  {e:'stripe',a:'شريط الرتبة',em:'〰️'},{e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},
+  {e:'ID card',a:'بطاقة الهوية',em:'🪪'},{e:'cap',a:'قبعة عسكرية',em:'🧢'},
+  {e:'cigarette / pack',a:'سيجارة / علبة',em:'🚬'},{e:'break',a:'استراحة',em:'☕'},
+],
+l3:[
+  {e:'dress',a:'فستان',em:'👗'},{e:'skirt',a:'تنورة',em:'👗'},
+  {e:'blouse',a:'بلوزة',em:'👚'},{e:'stockings',a:'جوارب طويلة',em:'🧦'},
+  {e:'sweater',a:'بلوزة صوف',em:'🧥'},{e:'scarf',a:'وشاح',em:'🧣'},
+  {e:'hat',a:'قبعة عريضة',em:'👒'},{e:'boots',a:'جزمة طويلة',em:'🥾'},
+  {e:'gloves',a:'قفازات',em:'🧤'},{e:'shoes',a:'حذاء',em:'👟'},
+  {e:'pants / slacks',a:'بنطلون',em:'👖'},{e:'shirt',a:'قميص',em:'👔'},
+  {e:'T-shirt',a:'تيشيرت',em:'👕'},{e:'socks',a:'جوارب قصيرة',em:'🧦'},
+  {e:'tie / necktie',a:'ربطة عنق',em:'👔'},{e:'belt',a:'حزام',em:'🔗'},
+  {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'jacket / coat',a:'جاكيت / معطف',em:'🧥'},
+  {e:'suit',a:'بدلة = jacket + slacks',em:'🤵'},{e:'gloves',a:'قفازات',em:'🧤'},
+],
+l4:[
+  {e:'spring',a:'الربيع — مارس أبريل مايو',em:'🌸'},
+  {e:'summer',a:'الصيف — يونيو يوليو أغسطس',em:'☀️'},
+  {e:'fall / autumn',a:'الخريف — سبتمبر أكتوبر نوفمبر',em:'🍂'},
+  {e:'winter',a:'الشتاء — ديسمبر يناير فبراير',em:'❄️'},
+  {e:'warm',a:'دافئ',em:'🌡️'},{e:'hot',a:'حار',em:'🔥'},
+  {e:'cool',a:'بارد نسبياً',em:'🌬️'},{e:'cold',a:'بارد جداً',em:'🥶'},
+  {e:'clerk',a:'موظف متجر',em:'🛒'},{e:'store',a:'متجر',em:'🏪'},
+  {e:'headphones',a:'سماعات أذن',em:'🎧'},{e:'radio',a:'راديو',em:'📻'},
+  {e:'music',a:'موسيقى',em:'🎵'},{e:'season',a:'فصل',em:'📅'},
+  {e:'this / these',a:'هذا / هؤلاء (قريب)',em:'👆'},
+  {e:'that / those',a:'ذلك / أولئك (بعيد)',em:'👉'},
+  {e:'How much?',a:'كم ثمنه؟',em:'💰'},{e:'sell → sold',a:'يبيع → باع',em:'🏷️'},
+]
+};
+
+const GRAMMAR = {
+l1:[
+  {
+    title:'Simple Past', ar:'الماضي البسيط',
+    rule:'أضف -ed للفعل + كلمة ماضية (yesterday / last week / ago)',
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'verb + ed',c:'v'},{t:'+',c:'p'},{t:'yesterday / last...',c:'k'}],
+    compare:[
+      {c1:'He visits every year.',c2:'He visited last year.',ar:'every year ↔ last year'},
+      {c1:'She cooks every day.',c2:'She cooked yesterday.',ar:'every day ↔ yesterday'},
+    ],
+    examples:[
+      {s:'Jane played baseball yesterday.',ar:'أمس → played ✓',ok:true},
+      {s:'Jane plays baseball yesterday.',ar:'لا تستخدم plays مع yesterday ✗',ok:false},
+    ]
+  },
+  {
+    title:"Negative: didn't", ar:'النفي في الماضي',
+    rule:"didn't + فعل مجرد — لا تضع -ed بعد didn't أبداً",
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:"didn't",c:'n'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
+    compare:[
+      {c1:'Tom cleaned his room.',c2:"Tom didn't clean his room.",ar:'إثبات ↔ نفي'},
+    ],
+    examples:[
+      {s:"Tom didn't clean his room last Saturday.",ar:"✓ didn't + clean (بدون -ed)",ok:true},
+      {s:"Tom didn't cleaned his room.",ar:"✗ خطأ — لا تضع -ed بعد didn't",ok:false},
+    ]
+  },
+  {
+    title:'Questions: Did?', ar:'سؤال الماضي',
+    rule:'Did + subject + base verb? — واحذف -d أو -ed من الفعل',
+    formula:[{t:'Did',c:'k'},{t:'+',c:'p'},{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'base verb',c:'v'},{t:'?',c:'p'}],
+    compare:[
+      {c1:'She liked Chicago.',c2:'Did she like Chicago?',ar:'liked → like (احذف -d)'},
+    ],
+    examples:[
+      {s:'Did you watch the game? → Yes, I did. / No, I didn\'t.',ar:"✓ إجابة قصيرة صحيحة",ok:true},
+      {s:'Did you watched the game?',ar:"✗ لا تضع -ed بعد Did",ok:false},
+    ]
+  },
+  {
+    title:'Time Expressions', ar:'تعبيرات الزمن الماضي',
+    rule:'هذه الكلمات تدل على الماضي — استخدم معها الفعل الماضي دائماً',
+    formula:[],
+    compare:[],
+    examples:[
+      {s:'yesterday / yesterday morning / yesterday evening',ar:'أمس',ok:true},
+      {s:'last night / last week / last month / last year',ar:'الليلة الماضية / الأسبوع / الشهر / العام الماضي',ok:true},
+      {s:'two days ago / a week ago / a year ago',ar:'منذ... (فترة مضت)',ok:true},
+    ]
+  }
+],
+l2:[
+  {
+    title:'Military Ranks', ar:'الرتب العسكرية',
+    rule:'الرتب من الأدنى للأعلى — كل رتبة أعلى من السابقة',
+    formula:[],compare:[],examples:[],isRanks:true
+  },
+  {
+    title:'Military Time', ar:'التوقيت العسكري 24 ساعة',
+    rule:'من 1pm إلى 11pm: أضف 12 على الساعة للحصول على التوقيت العسكري',
+    formula:[{t:'1pm - 11pm',c:'k'},{t:'+',c:'p'},{t:'12',c:'v'},{t:'=',c:'p'},{t:'Military Time',c:'s'}],
+    compare:[
+      {c1:'7:30 am',c2:'0730',ar:'الصباح = نفس الرقم'},
+      {c1:'3:00 pm',c2:'1500',ar:'3+12=15 → 1500'},
+      {c1:'8:50 pm',c2:'2050',ar:'8+12=20 → 2050'},
+      {c1:'10:30 pm',c2:'2230',ar:'10+12=22 → 2230'},
+    ],
+    examples:[
+      {s:"It's 8:50 p.m. → It's 2050.",ar:"✓ 8+12=20 ثم أضف الدقائق 50",ok:true},
+      {s:"It's 8:50 p.m. → It's 0850.",ar:"✗ 0850 = الصباح وليس المساء",ok:false},
+    ]
+  },
+  {
+    title:'Irregular Verbs', ar:'الأفعال الشاذة',
+    rule:'هذه الأفعال لا تأخذ -ed في الماضي — يجب حفظها',
+    formula:[{t:'Present',c:'s'},{t:'→',c:'p'},{t:'Past (شاذ)',c:'n'},{t:'لا يصح',c:'k'},{t:'verb + ed',c:'v'}],
+    compare:[
+      {c1:'speak',c2:'spoke',ar:'تكلّم'},{c1:'fly',c2:'flew',ar:'طار'},
+      {c1:'leave',c2:'left',ar:'غادر'},{c1:'bring',c2:'brought',ar:'أحضر'},
+      {c1:'go',c2:'went',ar:'ذهب'},{c1:'eat',c2:'ate',ar:'أكل'},
+      {c1:'drive',c2:'drove',ar:'قاد'},{c1:'buy',c2:'bought',ar:'اشترى'},
+    ],
+    examples:[
+      {s:'Sgt. Jones flew to LA last week.',ar:"✓ fly → flew (شاذ)",ok:true},
+      {s:'Sgt. Jones flied to LA last week.',ar:"✗ لا يصح flied",ok:false},
+    ]
+  }
+],
+l3:[
+  {
+    title:'Can / Can\'t', ar:'القدرة على فعل شيء',
+    rule:'can + فعل مجرد — نفس الشكل لجميع الضمائر، لا تضع s أو -ing',
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:"can / can't",c:'k'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
+    compare:[
+      {c1:'Jim can run 10 miles.',c2:"Kelly can't run 10 miles.",ar:'can ↔ can\'t'},
+    ],
+    examples:[
+      {s:'Pvt Jones can speak four languages.',ar:"✓ can + speak (بدون s)",ok:true},
+      {s:'Pvt Jones can speaks four languages.',ar:"✗ لا تضع s بعد can",ok:false},
+    ]
+  },
+  {
+    title:'Must', ar:'يجب — واجب',
+    rule:'must + فعل مجرد — يعني الشيء إلزامي ولا مفر منه',
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'must',c:'k'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
+    compare:[],
+    examples:[
+      {s:'Students must listen to the teacher.',ar:"✓ يجب الاستماع — إلزامي",ok:true},
+      {s:'Soldiers must wear uniforms.',ar:"✓ يجب لبس الزي العسكري",ok:true},
+    ]
+  },
+  {
+    title:'Must not / Mustn\'t', ar:'ممنوع — نهي تام',
+    rule:'must not = ممنوع تماماً — مثل Do not في اللوحات التحذيرية',
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'must not',c:'n'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
+    compare:[
+      {c1:'Do not smoke here.',c2:'You must not smoke here.',ar:'Do not = must not (نفس المعنى)'},
+    ],
+    examples:[
+      {s:'I must not write with a pen = I cannot write with a pen.',ar:"✓ must not = cannot",ok:true},
+      {s:'I must not to write.',ar:"✗ لا تضع to بعد must not",ok:false},
+    ]
+  },
+  {
+    title:'May', ar:'يُسمح — طلب إذن رسمي',
+    rule:'May I...? = طلب إذن رسمي | Can I...? = طلب إذن غير رسمي',
+    formula:[{t:'May',c:'k'},{t:'+',c:'p'},{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'base verb',c:'v'},{t:'?',c:'p'}],
+    compare:[
+      {c1:'May I go? (رسمي)',c2:'Can I go? (غير رسمي)',ar:'may = formal | can = informal'},
+    ],
+    examples:[
+      {s:'May I go to the library? → Yes, you may.',ar:"✓ إجابة صحيحة",ok:true},
+      {s:'May I go? → Yes, you must.',ar:"✗ must ≠ إذن، must = واجب",ok:false},
+    ]
+  },
+  {
+    title:'-ed Sounds', ar:'أصوات لاحقة الماضي',
+    rule:'ثلاثة أصوات مختلفة عند نطق -ed — المفتاح هو الحرف قبل الأخير',
+    formula:[],compare:[],examples:[],isSounds:true
+  }
+],
+l4:[
+  {
+    title:'Seasons', ar:'الفصول الأربعة',
+    rule:'Fall = Autumn — نفس الفصل باسمين مختلفين',
+    formula:[],
+    compare:[
+      {c1:'Winter: Dec, Jan, Feb',c2:"It's cold.",ar:'الشتاء ❄️'},
+      {c1:'Spring: Mar, Apr, May',c2:"It's warm.",ar:'الربيع 🌸'},
+      {c1:'Summer: Jun, Jul, Aug',c2:"It's hot.",ar:'الصيف ☀️'},
+      {c1:'Fall/Autumn: Sep, Oct, Nov',c2:"It's cool.",ar:'الخريف 🍂'},
+    ],
+    examples:[
+      {s:'Autumn and fall are the same.',ar:"✓ اسمان لنفس الفصل",ok:true},
+    ]
+  },
+  {
+    title:'Days Sequence', ar:'ترتيب الأيام',
+    rule:'the day after tomorrow = بعد يومين | the day before yesterday = قبل يومين',
+    formula:[],
+    compare:[
+      {c1:'Tomorrow',c2:'Tuesday (if today=Mon)',ar:'اليوم التالي'},
+      {c1:'The day after tomorrow',c2:'Wednesday (if today=Mon)',ar:'بعد يومين'},
+      {c1:'Yesterday',c2:'Sunday (if today=Mon)',ar:'الأمس'},
+      {c1:'The day before yesterday',c2:'Saturday (if today=Mon)',ar:'قبل يومين'},
+    ],
+    examples:[]
+  },
+  {
+    title:'This / That / These / Those', ar:'أسماء الإشارة',
+    rule:'قريب = this/these | بعيد = that/those',
+    formula:[{t:'Near',c:'k'},{t:'this',c:'v'},{t:'(مفرد)',c:'p'},{t:'these',c:'v'},{t:'(جمع)',c:'p'}],
+    compare:[
+      {c1:'this (قريب مفرد)',c2:'these (قريب جمع)',ar:'near'},
+      {c1:'that (بعيد مفرد)',c2:'those (بعيد جمع)',ar:'far'},
+    ],
+    examples:[
+      {s:'I like this car. (قريب)',ar:"✓ this = near",ok:true},
+      {s:'Those cars are big. (بعيد جمع)',ar:"✓ those = far + plural",ok:true},
+    ]
+  },
+  {
+    title:'How much...?', ar:'كم الثمن؟',
+    rule:'How much is/does = سؤال عن السعر',
+    formula:[{t:'How much',c:'k'},{t:'+',c:'p'},{t:'is / does',c:'v'},{t:'+',c:'p'},{t:'item',c:'s'},{t:'cost?',c:'p'}],
+    compare:[
+      {c1:'How much is the shirt?',c2:"It's $29.",ar:'is = للمفرد'},
+      {c1:'How much did it cost?',c2:"It was $13,000.",ar:'did = للماضي'},
+    ],
+    examples:[
+      {s:'How much does the pen cost? → It costs $3.',ar:"✓ does + cost",ok:true},
+    ]
+  },
+  {
+    title:'-ed Sounds Review', ar:'مراجعة أصوات الماضي',
+    rule:'مراجعة: /t/ مهموس | /d/ مجهور | /əd/ بعد t أو d',
+    formula:[],compare:[],examples:[],isSounds:true
+  }
+]
+};
+
 function build_learn(lk){
   const el=document.getElementById('ph-learn');
   el.innerHTML='';
-  const g=GR[lk];
 
-  g.sections.forEach(sec=>{
-    const box=document.createElement('div');box.className='gbox';
+  // Tabs
+  el.innerHTML=`
+  <div class="learn-tabs">
+    <button class="ltab on" id="lt-v" onclick="sw_learn_tab('v','${lk}')">
+      <span class="li">📚</span><span>مفردات</span>
+    </button>
+    <button class="ltab" id="lt-g" onclick="sw_learn_tab('g','${lk}')">
+      <span class="li">📖</span><span>قواعد</span>
+    </button>
+  </div>
+  <div class="lsec on" id="ls-v"></div>
+  <div class="lsec" id="ls-g"></div>`;
 
-    // Title
-    box.innerHTML=`<div class="gbox-title"><h3>${sec.title}</h3><span class="gtag ${sec.tags}">${sec.tags==='gr'?'Grammar':sec.tags==='voc'?'Vocabulary':sec.tags==='pr'?'Pronunciation':'Military'}</span></div>`;
-
-    // Special: Ranks table
-    if(sec.isRanks){
-      box.innerHTML+=`<table class="rtbl"><thead><tr><th>الرتبة</th><th>الاختصار</th><th>الدرجة</th><th>اللون</th></tr></thead>
-      <tbody>
-        <tr><td>Second Lieutenant</td><td>2d Lt</td><td>O-1</td><td class="gold">Gold ذهبي</td></tr>
-        <tr><td>First Lieutenant</td><td>1st Lt</td><td>O-2</td><td class="silver">Silver فضي</td></tr>
-        <tr><td>Captain</td><td>Capt</td><td>O-3</td><td class="silver">Silver فضي</td></tr>
-        <tr><td>Major</td><td>Maj</td><td>O-4</td><td class="gold">Gold ذهبي</td></tr>
-        <tr><td>Lieutenant Colonel</td><td>Lt Col</td><td>O-5</td><td class="silver">Silver فضي</td></tr>
-        <tr><td>Colonel</td><td>Col</td><td>O-6</td><td class="silver">Silver فضي</td></tr>
-        <tr><td>General</td><td>Gen</td><td>O-7</td><td class="silver">Silver فضي</td></tr>
-      </tbody></table>
-      <div style="background:#FEF3C7;border:2px solid #F59E0B;border-radius:8px;padding:10px;font-size:.8rem;font-family:'Cairo',sans-serif;color:#92400E">
-        💡 مثال: Carol is a new <strong>Major (O-4)</strong>. Last year she was a <strong>Captain (O-3)</strong> — النقيب أقل من الرائد مباشرة.
-      </div>`;
-      el.appendChild(box);return;
-    }
-
-    // Special: Sounds table
-    if(sec.isSounds){
-      box.innerHTML+=`<table class="stbl">
-        <thead><tr><th style="background:#2563EB">الصوت</th><th style="background:#2563EB">القاعدة</th><th style="background:#2563EB">أمثلة</th></tr></thead>
-        <tbody>
-          <tr><td><strong>/t/</strong></td><td>بعد الأصوات المهموسة (k, p, s, ch, sh, f, x)</td><td>smok<strong>ed</strong>, walk<strong>ed</strong>, watch<strong>ed</strong></td></tr>
-          <tr><td><strong>/d/</strong></td><td>بعد الأصوات المجهورة والحروف المتحركة</td><td>studi<strong>ed</strong>, play<strong>ed</strong>, shav<strong>ed</strong></td></tr>
-          <tr><td><strong>/əd/</strong></td><td>بعد أصوات t أو d</td><td>want<strong>ed</strong>, repeat<strong>ed</strong>, indent<strong>ed</strong></td></tr>
-        </tbody></table>
-        <div style="background:#F0FDF4;border:2px solid #86EFAC;border-radius:8px;padding:10px;font-size:.78rem;font-family:'Cairo',sans-serif;color:#166534;margin-top:8px">
-          💡 طريقة سهلة: إذا الفعل ينتهي بـ t أو d → صوت /əd/ | إذا مهموس → /t/ | إذا مجهور → /d/
-        </div>`;
-      el.appendChild(box);return;
-    }
-
-    // Formula
-    if(sec.formula&&sec.formula.length>0){
-      let fh='<div class="formula">';
-      sec.formula.forEach(f=>{
-        if(f.c==='arr')fh+=`<span class="farrow">${f.t}</span>`;
-        else fh+=`<span class="fbox ${f.c}">${f.t}</span>`;
-      });
-      fh+='</div>';
-      box.innerHTML+=fh;
-    }
-
-    // Compare table
-    if(sec.compare&&sec.compare.length>0){
-      const isPast=sec.compare[0]&&sec.compare[0].pr&&sec.compare[0].pa;
-      if(isPast){
-        const h1=lk==='l2'&&sec.title.includes('Military')?'Civilian':'Present / Base';
-        const h2=lk==='l2'&&sec.title.includes('Irregular')?'Past (شاذة)':lk==='l2'&&sec.title.includes('Military')?'Military':'Past';
-        let th=`<table class="ctbl"><thead><tr>
-          <th class="present">${h1}</th>
-          <th class="past">${h2}</th>
-          <th class="present" style="background:#6B7280">معنى</th>
-        </tr></thead><tbody>`;
-        sec.compare.forEach(r=>{
-          th+=`<tr>
-            <td>${r.pr} <button class="spk" style="float:left" onclick="say('${r.pr.replace(/'/g,"\\'")}')">🔊</button></td>
-            <td>${r.pa} <button class="spk" style="float:left" onclick="say('${r.pa.replace(/'/g,"\\'")}')">🔊</button></td>
-            <td class="ar">${r.ar}</td>
-          </tr>`;
-        });
-        th+='</tbody></table>';
-        box.innerHTML+=th;
-      }
-    }
-
-    // Rules (correct/wrong examples)
-    if(sec.rules&&sec.rules.length>0){
-      sec.rules.forEach(r=>{
-        box.innerHTML+=`<div class="exrow ${r.ok?'ok':'no'}">
-          <span>${r.ok?'✅':'❌'} ${r.s}</span>
-          <button class="spk dark" onclick="say('${r.s.replace(/'/g,"\\'")}')">🔊</button>
-        </div>
-        <div style="font-size:.72rem;color:#666;font-family:'Cairo',sans-serif;padding:2px 10px 6px;direction:rtl">${r.ar}</div>`;
-      });
-    }
-
-    // Time words
-    if(sec.timewords&&sec.timewords.length>0){
-      box.innerHTML+=`<div style="background:#F0F7FF;border-radius:8px;padding:10px;margin-top:8px">
-        <div style="font-size:.75rem;font-weight:700;color:var(--navy);margin-bottom:6px;font-family:'Cairo',sans-serif">🕐 كلمات تدل على الماضي:</div>
-        <div style="display:flex;flex-wrap:wrap;gap:5px;direction:ltr">
-          ${sec.timewords.map(w=>`<span style="background:#fff;border:2px solid var(--b);border-radius:6px;padding:3px 8px;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;color:var(--navy)">${w}</span>`).join('')}
-        </div>
-      </div>`;
-    }
-
-    el.appendChild(box);
-  });
+  build_vocab_sec(lk);
+  build_grammar_sec(lk);
 }
+
+function sw_learn_tab(t,lk){
+  document.querySelectorAll('.ltab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.lsec').forEach(x=>x.classList.remove('on'));
+  document.getElementById('lt-'+t).classList.add('on');
+  document.getElementById('ls-'+t).classList.add('on');
+}
+
+function build_vocab_sec(lk){
+  const el=document.getElementById('ls-v');
+  const words=VOCAB[lk];
+  let html=`<div style="font-size:.75rem;color:var(--muted);font-family:'Cairo',sans-serif;margin-bottom:12px;text-align:center">
+    اضغط زر 🔊 لسماع النطق</div>
+  <div class="vcards">`;
+  words.forEach(v=>{
+    const safe=v.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
+    html+=`<div class="vcard">
+      <button class="vs" onclick="say('${safe}')">🔊</button>
+      <span class="ve">${v.em}</span>
+      <div class="vw">${v.e}</div>
+      <div class="va">${v.a}</div>
+    </div>`;
+  });
+  html+='</div>';
+  el.innerHTML=html;
+}
+
+function build_grammar_sec(lk){
+  const el=document.getElementById('ls-g');
+  const rules=GRAMMAR[lk];
+  let html='';
+  rules.forEach((g,i)=>{
+    html+=`<div class="gcard">
+      <div class="gcard-head" id="gh${lk}${i}" onclick="toggle_gcard('${lk}',${i})">
+        <div class="gcard-num">${i+1}</div>
+        <div style="flex:1">
+          <div class="gcard-title">${g.title}</div>
+          <div class="gcard-ar">${g.ar}</div>
+        </div>
+        <span class="gcard-arrow">▼</span>
+      </div>
+      <div class="gcard-body" id="gb${lk}${i}">
+        ${build_gcard_body(g)}
+      </div>
+    </div>`;
+  });
+  el.innerHTML=html;
+}
+
+function toggle_gcard(lk,i){
+  const head=document.getElementById('gh'+lk+i);
+  const body=document.getElementById('gb'+lk+i);
+  head.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+function build_gcard_body(g){
+  let html='';
+
+  // One-line rule
+  html+=`<div class="rule-box">
+    <div class="rb-label">القاعدة</div>
+    <div class="rb-text">💡 ${g.rule}</div>
+  </div>`;
+
+  // Special: Ranks
+  if(g.isRanks){
+    html+=`<table class="rktab"><thead><tr><th>الرتبة</th><th>الاختصار</th><th>الدرجة</th><th>اللون</th></tr></thead><tbody>
+      <tr><td>Second Lieutenant</td><td>2d Lt</td><td>O-1</td><td class="gld">Gold ذهبي</td></tr>
+      <tr><td>First Lieutenant</td><td>1st Lt</td><td>O-2</td><td class="slv">Silver فضي</td></tr>
+      <tr><td>Captain</td><td>Capt</td><td>O-3</td><td class="slv">Silver فضي</td></tr>
+      <tr><td>Major</td><td>Maj</td><td>O-4</td><td class="gld">Gold ذهبي</td></tr>
+      <tr><td>Lieutenant Colonel</td><td>Lt Col</td><td>O-5</td><td class="slv">Silver فضي</td></tr>
+      <tr><td>Colonel</td><td>Col</td><td>O-6</td><td class="slv">Silver فضي</td></tr>
+      <tr><td>General</td><td>Gen</td><td>O-7</td><td class="slv">Silver فضي</td></tr>
+    </tbody></table>
+    <div class="rank-tip">💡 مثال: Carol is a new <strong>Major (O-4)</strong>. Last year she was a <strong>Captain (O-3)</strong> — النقيب أقل من الرائد مباشرة.</div>`;
+    return html;
+  }
+
+  // Special: Sounds
+  if(g.isSounds){
+    html+=`<table class="stab"><thead><tr>
+      <th style="background:#2563EB">الصوت</th>
+      <th style="background:#2563EB">متى؟</th>
+      <th style="background:#2563EB">أمثلة</th>
+    </tr></thead><tbody>
+      <tr><td><strong>/t/</strong></td><td>بعد الأصوات المهموسة (k,p,s,ch,sh)</td><td>smok<u>ed</u> walk<u>ed</u> watch<u>ed</u></td></tr>
+      <tr><td><strong>/d/</strong></td><td>بعد الأصوات المجهورة والحركات</td><td>studi<u>ed</u> play<u>ed</u> shav<u>ed</u></td></tr>
+      <tr><td><strong>/əd/</strong></td><td>بعد حرف t أو d</td><td>want<u>ed</u> repeat<u>ed</u> indent<u>ed</u></td></tr>
+    </tbody></table>
+    <div class="sound-tip">💡 الطريقة السهلة: هل الفعل ينتهي بـ t أو d؟ → صوت /əd/ | مهموس → /t/ | مجهور → /d/</div>`;
+    return html;
+  }
+
+  // Formula strip
+  if(g.formula&&g.formula.length>0){
+    html+='<div class="fstrip">';
+    g.formula.forEach(f=>{
+      if(f.c==='p')html+=`<span class="farr">${f.t}</span>`;
+      else html+=`<span class="fchip ${f.c}">${f.t}</span>`;
+    });
+    html+='</div>';
+  }
+
+  // Compare table
+  if(g.compare&&g.compare.length>0){
+    const isTime=g.title.includes('Military Time');
+    const h1=isTime?'Civilian':'Present / Base';
+    const h2=isTime?'Military':'Past';
+    html+=`<table class="ctab"><thead><tr>
+      <th class="c1">${h1}</th><th class="c2">${h2}</th><th class="c3">معنى</th>
+    </tr></thead><tbody>`;
+    g.compare.forEach(r=>{
+      const safe1=r.c1.replace(/'/g,"\\'");
+      const safe2=r.c2.replace(/'/g,"\\'");
+      html+=`<tr>
+        <td>${r.c1} <button class="ex-spk" style="background:var(--b);border:none;border-radius:5px;width:22px;height:22px;font-size:.65rem;cursor:pointer;float:left" onclick="say('${safe1}')">🔊</button></td>
+        <td>${r.c2} <button class="ex-spk" style="background:#7C3AED;border:none;border-radius:5px;width:22px;height:22px;font-size:.65rem;cursor:pointer;float:left" onclick="say('${safe2}')">🔊</button></td>
+        <td class="ar">${r.ar}</td>
+      </tr>`;
+    });
+    html+='</tbody></table>';
+  }
+
+  // Time grid special
+  if(g.title.includes('Military Time')){
+    html+=`<div class="tgrd">
+      <div class="titem2"><div class="tmil2">0730</div><div class="tciv2">7:30 AM</div></div>
+      <div class="titem2"><div class="tmil2">1500</div><div class="tciv2">3:00 PM</div></div>
+      <div class="titem2"><div class="tmil2">2050</div><div class="tciv2">8:50 PM</div></div>
+      <div class="titem2"><div class="tmil2">2230</div><div class="tciv2">10:30 PM</div></div>
+      <div class="titem2"><div class="tmil2">1200</div><div class="tciv2">Noon</div></div>
+      <div class="titem2"><div class="tmil2">2400</div><div class="tciv2">Midnight</div></div>
+    </div>`;
+  }
+
+  // Examples
+  if(g.examples&&g.examples.length>0){
+    html+='<div style="margin-top:8px">';
+    g.examples.forEach(ex=>{
+      const safe=ex.s.replace(/'/g,"\\'");
+      html+=`<div class="ex-row ${ex.ok?'ok':'no'}">
+        <span class="ex-text">${ex.ok?'✅':'❌'} ${ex.s}</span>
+        <span class="ex-ar">${ex.ar}</span>
+        ${ex.ok?`<button class="ex-spk" onclick="say('${safe}')">🔊</button>`:''}
+      </div>`;
+    });
+    html+='</div>';
+  }
+
+  return html;
+}
+
 
 // ═══════════════════════════════════════
 // BUILD QUIZ (MCQ)

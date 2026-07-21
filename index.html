@@ -880,8 +880,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
       <div class="ring ring-at" id="ring-at" onclick="sel_prep('at')"><span>at</span></div>
     </div>
   </div>
-  <div class="zoom-cap">🔎 من الواسع إلى الضيق:
-    <span class="zc in">in</span> أبها ⟵ <span class="zc on">on</span> شارع الفن ⟵ <span class="zc at">at</span> الكوفي</div>
+  <div class="zoom-cap" id="zoom-cap"></div>
   <div id="prep-detail"></div>
 
   <button class="quiz-toggle" id="prep-toggle" onclick="reveal_quiz('prep')">🎯 فهمت الفكرة؟ اختبر نفسك ←</button>
@@ -2123,14 +2122,22 @@ function open_prep(){
   prepMode='place';
   document.getElementById('pt-place').classList.add('on');
   document.getElementById('pt-time').classList.remove('on');
+  render_zoom();
   sel_prep('in');
   build_prep_quiz();reset_quiz('prep');
+}
+
+function render_zoom(){
+  const place='🔎 من الواسع إلى الضيق: <span class="zc in">in</span> أبها ⟵ <span class="zc on">on</span> شارع الفن ⟵ <span class="zc at">at</span> الكوفي';
+  const time='🔎 من الأطول إلى الأدقّ: <span class="zc in">in</span> يوليو ⟵ <span class="zc on">on</span> الاثنين ⟵ <span class="zc at">at</span> الساعة السابعة';
+  document.getElementById('zoom-cap').innerHTML=(prepMode==='place')?place:time;
 }
 
 function sw_prep(m){
   prepMode=m;
   document.getElementById('pt-place').classList.toggle('on',m==='place');
   document.getElementById('pt-time').classList.toggle('on',m==='time');
+  render_zoom();
   sel_prep(prepSel);
 }
 

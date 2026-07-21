@@ -585,7 +585,12 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .sp-prog{background:var(--card);border-radius:10px;padding:10px 14px;margin-bottom:14px;border:2px solid var(--bdr);display:flex;align-items:center;gap:10px}
 .sp-bar{flex:1;background:var(--bdr);border-radius:5px;height:7px}
 .sp-fill{background:#EC4899;height:7px;border-radius:5px;transition:width .3s;width:0%}
-.sp-count{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:700;color:var(--muted);direction:ltr}
+.sp-count{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:700;color:var(--muted);direction:ltr;flex:none}
+.sp-restart{background:#FCE7F3;color:#BE185D;border:none;border-radius:8px;padding:6px 10px;
+  font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;transition:.15s;flex:none;white-space:nowrap}
+.sp-restart:hover{background:#FBCFE8}
+.sp-lesson{text-align:center;font-family:'Cairo',sans-serif;font-weight:800;font-size:.85rem;
+  color:#BE185D;background:#FCE7F3;border-radius:10px;padding:7px 12px;margin-bottom:10px}
 .sp-card{background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.05)}
 .sp-listen{background:#EC4899;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:.15s}
 .sp-listen:hover{background:#BE185D}
@@ -845,6 +850,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <p>استمع للكلمة واكتبها — يبني الإملاء والاستماع</p>
   </div>
   <div class="sp-prog">
+    <button class="sp-restart" onclick="start_spell()" title="ابدأ من الأول">🔁 من البداية</button>
     <div class="sp-bar"><div class="sp-fill" id="sp-fill"></div></div>
     <div class="sp-count" id="sp-count">0 / 0</div>
   </div>
@@ -2243,16 +2249,21 @@ function wh_answer(i,o){
 // ═══════════════════════════════════════
 // SPELLING — write from listening
 // ═══════════════════════════════════════
-const SPELL=[
-  {e:'ball',a:'كرة',em:'🏀'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'لعبة',em:'🎮'},
-  {e:'city',a:'مدينة',em:'🏙️'},{e:'show',a:'عرض / برنامج',em:'📺'},{e:'base',a:'قاعدة',em:'🏕️'},
-  {e:'rank',a:'رتبة',em:'🎖️'},{e:'cap',a:'قبعة',em:'🧢'},{e:'break',a:'استراحة',em:'☕'},
-  {e:'dress',a:'فستان',em:'👗'},{e:'shirt',a:'قميص',em:'👔'},{e:'shoes',a:'حذاء',em:'👟'},
-  {e:'socks',a:'جوارب',em:'🧦'},{e:'belt',a:'حزام',em:'🔗'},{e:'hat',a:'قبعة عريضة',em:'👒'},
-  {e:'coat',a:'معطف',em:'🧥'},{e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'},
-  {e:'spring',a:'الربيع',em:'🌸'},{e:'summer',a:'الصيف',em:'☀️'},{e:'winter',a:'الشتاء',em:'❄️'},
-  {e:'music',a:'موسيقى',em:'🎵'},{e:'radio',a:'راديو',em:'📻'},{e:'store',a:'متجر',em:'🏪'},
-  {e:'warm',a:'دافئ',em:'🌡️'},{e:'cold',a:'بارد',em:'🥶'}
+const SPELL_LESSONS=[
+  {t:'📘 Lesson 1 — الرياضة والألعاب',w:[
+    {e:'ball',a:'كرة',em:'🏀'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'لعبة',em:'🎮'},
+    {e:'city',a:'مدينة',em:'🏙️'},{e:'show',a:'عرض / برنامج',em:'📺'},{e:'visit',a:'يزور',em:'🗺️'}]},
+  {t:'📗 Lesson 2 — الحياة العسكرية',w:[
+    {e:'base',a:'قاعدة',em:'🏕️'},{e:'rank',a:'رتبة',em:'🎖️'},{e:'cap',a:'قبعة',em:'🧢'},
+    {e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},{e:'break',a:'استراحة',em:'☕'}]},
+  {t:'📙 Lesson 3 — الملابس',w:[
+    {e:'dress',a:'فستان',em:'👗'},{e:'shirt',a:'قميص',em:'👔'},{e:'shoes',a:'حذاء',em:'👟'},
+    {e:'socks',a:'جوارب',em:'🧦'},{e:'belt',a:'حزام',em:'🔗'},{e:'coat',a:'معطف',em:'🧥'},
+    {e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'}]},
+  {t:'📕 Lesson 4 — الفصول والألوان',w:[
+    {e:'spring',a:'الربيع',em:'🌸'},{e:'summer',a:'الصيف',em:'☀️'},{e:'winter',a:'الشتاء',em:'❄️'},
+    {e:'music',a:'موسيقى',em:'🎵'},{e:'radio',a:'راديو',em:'📻'},{e:'store',a:'متجر',em:'🏪'},
+    {e:'warm',a:'دافئ',em:'🌡️'},{e:'cold',a:'بارد',em:'🥶'}]}
 ];
 let spellWords=[],spellIdx=0,spellTries=0,spellHint=0,spellScore=0;
 
@@ -2261,7 +2272,12 @@ function open_spell(){
   const s=document.getElementById('spscreen');
   s.style.display='block';
   s.scrollIntoView({behavior:'smooth',block:'start'});
-  spellWords=[...SPELL].sort(()=>Math.random()-.5);
+  start_spell();
+}
+
+function start_spell(){
+  spellWords=[];
+  SPELL_LESSONS.forEach(L=>L.w.forEach(x=>spellWords.push({e:x.e,a:x.a,em:x.em,lt:L.t})));
   spellIdx=0;spellScore=0;
   render_spell();
 }
@@ -2274,9 +2290,9 @@ function render_spell(){
     document.getElementById('sp-count').textContent=`${total} / ${total}`;
     body.innerHTML=`<div class="sp-card sp-done">
       <div class="sp-emoji">🎉</div>
-      <div class="sp-donetxt">أحسنت! أكملت جميع الكلمات</div>
+      <div class="sp-donetxt">أحسنت! أكملت جميع كلمات الدروس الأربعة</div>
       <div class="sp-score">نتيجتك: ${spellScore} / ${total}</div>
-      <button class="sp-btn check" onclick="open_spell()">🔁 إعادة</button>
+      <button class="sp-btn check" onclick="start_spell()">🔁 ابدأ من الأول</button>
     </div>`;
     return;
   }
@@ -2285,7 +2301,8 @@ function render_spell(){
   document.getElementById('sp-fill').style.width=Math.round(spellIdx/total*100)+'%';
   document.getElementById('sp-count').textContent=`${spellIdx+1} / ${total}`;
   const safe=w.e.replace(/'/g,"\\'");
-  body.innerHTML=`<div class="sp-card">
+  body.innerHTML=`<div class="sp-lesson">${w.lt}</div>
+  <div class="sp-card">
     <button class="sp-listen" onclick="say('${safe}')">🔊 اسمع الكلمة</button>
     <div class="sp-emoji">${w.em}</div>
     <div class="sp-ar">${w.a}</div>

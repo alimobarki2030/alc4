@@ -48,6 +48,10 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .gpbar{background:rgba(255,255,255,.2);border-radius:8px;height:8px;margin-bottom:6px}
 .gpfill{background:var(--g);height:8px;border-radius:8px;transition:width .6s;width:0%}
 .gptxt{color:rgba(255,255,255,.6);font-size:.75rem}
+.reset-btn{margin-top:12px;background:rgba(255,255,255,.12);color:#fff;
+  border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:5px 14px;
+  font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;transition:.15s}
+.reset-btn:hover{background:rgba(255,255,255,.22)}
 .lbl{font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:2px;
   text-transform:uppercase;margin-bottom:10px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
@@ -241,6 +245,12 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .dd-word:hover{background:var(--b);color:#fff}
 .dd-word.used{opacity:.3;pointer-events:none;background:#f5f5f5;border-color:#ccc;color:#999}
 .dd-check{margin-top:10px;text-align:right}
+.dd-reveal{background:#F0FDF4;border:1.5px solid #BCE3C8;border-radius:8px;padding:8px 12px;margin:8px 0;animation:ddpop .25s ease}
+@keyframes ddpop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.dd-tr{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.84rem;font-weight:700;color:#15803D}
+.dd-note{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.75rem;color:#166534;margin-top:3px}
+.dd-retry{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.78rem;font-weight:700;
+  color:var(--no-txt);background:var(--no-bg);border-radius:8px;padding:7px 11px;margin:8px 0}
 
 /* MATCHING */
 .match-container{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
@@ -399,6 +409,25 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   font-size:.7rem;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .ex-row.no .ex-text{text-decoration:line-through;color:#999}
 
+/* Example cards v2 — beginner-friendly (correct vs. common-mistake) */
+.ex2{border-radius:10px;padding:11px 13px;margin-bottom:8px}
+.ex2.ok{background:#F0FDF4;border:1.5px solid #BCE3C8}
+.ex2.no{background:#FDF3E6;border:1.5px solid #F0D3A6}
+.ex2-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.ex2-tag{font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700}
+.ex2-tag.ok{color:#15803D}.ex2-tag.no{color:#B45309}
+.ex2-spk{background:#fff;border:1.5px solid #BCE3C8;border-radius:8px;width:30px;height:30px;
+  color:#15803D;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
+.ex2-spk:hover{background:#15803D;color:#fff}
+.ex2-en{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.92rem;font-weight:700;color:var(--navy)}
+.ex2-fix{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.92rem;font-weight:700;color:var(--navy)}
+.ex2-fix .ex2-bad{color:#B45309;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#E0A04C;opacity:.85}
+.ex2-fix .ex2-arr{color:#B45309;font-weight:800;margin:0 6px}
+.ex2-fix .ex2-rt{color:#15803D;font-weight:800;background:#EAF7EE;padding:1px 6px;border-radius:6px}
+.ex2-tr{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.82rem;color:#555;margin-top:5px}
+.ex2-tr.no{color:#B45309;font-weight:600}
+.ex2-note{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.74rem;color:#15803D;margin-top:3px}
+
 /* Compare mini table */
 .ctab{width:100%;border-collapse:collapse;font-size:.8rem;margin-bottom:10px;border-radius:8px;overflow:hidden}
 .ctab th{padding:6px 10px;color:#fff;font-family:'Cairo',sans-serif;font-size:.73rem}
@@ -431,6 +460,160 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .tmil2{color:var(--y);font-family:'Inter',sans-serif;font-weight:700;font-size:.88rem}
 .tciv2{color:rgba(255,255,255,.6);font-size:.7rem;margin-top:2px}
 
+/* ── PREPOSITIONS in / on / at ── */
+.prep-card{background:linear-gradient(135deg,#0EA5E9,#2563EB);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #7DD3FC;margin-bottom:16px;
+  display:flex;align-items:center;gap:16px}
+.prep-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.35)}
+.prep-card .pc-rings{flex:none;width:52px;height:52px;position:relative}
+.prep-card .pc-rings i{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+.prep-card .pc-rings i:nth-child(1){width:52px;height:52px;background:rgba(255,255,255,.25)}
+.prep-card .pc-rings i:nth-child(2){width:34px;height:34px;background:rgba(255,255,255,.45)}
+.prep-card .pc-rings i:nth-child(3){width:16px;height:16px;background:#fff}
+.prep-card .pc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:900}
+.prep-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.8rem;margin-top:2px}
+
+#pscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.prep-hero{background:linear-gradient(135deg,#0EA5E9,#2563EB);border-radius:16px;padding:20px;text-align:center;margin-bottom:16px}
+.prep-hero h2{color:#fff;font-size:1.25rem;font-weight:900}
+.prep-hero p{color:rgba(255,255,255,.85);font-size:.82rem;margin-top:4px;font-family:'Cairo',sans-serif}
+.prep-toggle{display:flex;gap:6px;background:var(--card);border:2px solid var(--bdr);border-radius:12px;padding:5px;margin-bottom:14px}
+.prep-toggle button{flex:1;padding:10px;border:none;border-radius:8px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;background:transparent;color:var(--muted);transition:.2s}
+.prep-toggle button.on{background:var(--navy);color:#fff}
+.prep-hint{text-align:center;font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);margin-bottom:6px}
+.target-wrap{display:flex;justify-content:center;margin:6px 0 16px}
+.target{position:relative;width:280px;height:280px}
+.ring{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);
+  cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;font-weight:800;
+  display:flex;justify-content:center}
+.ring span{pointer-events:none}
+.ring-in{width:280px;height:280px;background:#DBEAFE;border:3px solid #60A5FA;color:#1D4ED8;
+  font-size:1.15rem;z-index:1;align-items:flex-start}
+.ring-in span{margin-top:12px}
+.ring-on{width:188px;height:188px;background:#DCFCE7;border:3px solid #4ADE80;color:#15803D;
+  font-size:1.05rem;z-index:2;align-items:flex-start}
+.ring-on span{margin-top:10px}
+.ring-at{width:96px;height:96px;background:#FFEDD5;border:3px solid #FB923C;color:#C2410C;
+  font-size:1rem;z-index:3;align-items:center}
+.ring.active{box-shadow:0 0 0 4px rgba(0,0,0,.07),0 10px 22px rgba(0,0,0,.18)}
+.prep-detail{border:2px solid var(--bdr);border-radius:14px;padding:16px;margin-bottom:16px;background:var(--card)}
+.prep-detail h3{font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;display:flex;align-items:center;gap:10px}
+.prep-detail .pd-tag{font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px}
+.prep-detail .pd-rule{font-family:'Cairo',sans-serif;font-size:.9rem;color:var(--txt);margin:8px 0 12px;line-height:1.7}
+.prep-ex{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#F8FAFC;border:1px solid var(--bdr);border-radius:9px;padding:8px 12px;margin-bottom:6px}
+.prep-ex .pe-en{font-family:'Inter',sans-serif;direction:ltr;font-weight:700;color:var(--navy);font-size:.92rem}
+.prep-ex .pe-ar{font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);margin-top:1px}
+.prep-ex button{background:var(--b);border:none;border-radius:7px;width:30px;height:30px;color:#fff;cursor:pointer;flex-shrink:0;font-size:.75rem}
+.prep-ex button:hover{background:var(--bd)}
+/* Prepositions mini practice */
+.pq-title{font-family:'Cairo',sans-serif;font-weight:800;color:var(--navy);font-size:.95rem;margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.pq-item{background:var(--card);border:2px solid var(--bdr);border-radius:12px;padding:13px;margin-bottom:10px}
+.pq-sent{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.92rem;font-weight:600;color:var(--navy);margin-bottom:10px}
+.pq-opts{display:flex;gap:8px}
+.pq-opt{flex:1;padding:10px;border:2px solid var(--bdr);border-radius:9px;background:#fff;
+  font-family:'Inter',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);cursor:pointer;transition:.15s}
+.pq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
+.pq-opt.ok{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
+.pq-opt.no{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
+.pq-fb{margin-top:9px;border-radius:8px;padding:8px 11px;font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:600;display:none}
+.pq-fb.show{display:block}
+.pq-fb.ok{background:var(--ok-bg);color:var(--ok-txt)}
+.pq-fb.no{background:var(--no-bg);color:var(--no-txt)}
+
+/* ── ARTICLES a / an / the ── */
+.art-card{background:linear-gradient(135deg,#7C3AED,#4F46E5);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #C4B5FD;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.art-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,58,237,.35)}
+.art-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.art-card .pc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:900}
+.art-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.8rem;margin-top:2px}
+
+#ascreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.art-meta{display:flex;align-items:stretch;gap:8px;margin-bottom:16px}
+.am-card{flex:1;border-radius:14px;padding:14px 10px;text-align:center;border:2px solid}
+.am-any{background:#EEF2FF;border-color:#A5B4FC}
+.am-the{background:#FFF7ED;border-color:#FDBA74}
+.am-ic{font-size:2rem}
+.am-t{font-family:'Cairo',sans-serif;font-size:.72rem;color:var(--muted);margin-top:4px}
+.am-w{font-family:'Inter',sans-serif;font-weight:900;font-size:1.3rem;margin-top:3px}
+.am-any .am-w{color:#4338CA}.am-the .am-w{color:#C2410C}
+.am-ex{font-family:'Inter',sans-serif;direction:ltr;font-size:.72rem;color:var(--txt);margin-top:4px}
+.am-vs{align-self:center;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;color:var(--muted)}
+.art-chips{display:flex;gap:8px;margin-bottom:4px}
+.art-chip{flex:1;padding:14px;border:2px solid var(--bdr);border-radius:12px;background:#fff;
+  font-family:'Inter',sans-serif;font-weight:900;font-size:1.3rem;color:var(--navy);cursor:pointer;transition:.15s}
+.art-chip:hover{border-color:var(--b)}
+.art-chip.active{box-shadow:0 0 0 4px rgba(0,0,0,.06),0 8px 18px rgba(0,0,0,.15)}
+.pd-sub{font-family:'Cairo',sans-serif;font-weight:800;font-size:.78rem;margin:10px 0 4px}
+.vowel-lbl{font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);text-align:center;margin:2px 0}
+.vowel-strip{display:flex;gap:7px;justify-content:center;margin:4px 0 10px}
+.vowel-chip{width:40px;height:40px;border-radius:11px;background:#EDE9FE;border:2px solid #A78BFA;
+  color:#6D28D9;font-family:'Inter',sans-serif;font-weight:900;font-size:1.15rem;
+  display:flex;align-items:center;justify-content:center}
+.art-note{background:#FEF3C7;border:1.5px solid #FCD34D;border-radius:9px;padding:9px 12px;
+  font-family:'Cairo',sans-serif;font-size:.8rem;color:#92400E;margin:4px 0 6px;line-height:1.8}
+.art-note b{color:#78350F;font-family:'Inter',sans-serif;font-weight:800}
+
+/* ── WH QUESTIONS ── */
+.wh-card{background:linear-gradient(135deg,#0D9488,#0F766E);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #5EEAD4;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.wh-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(13,148,136,.35)}
+.wh-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.wh-card .pc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:900}
+.wh-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.78rem;margin-top:2px;font-family:'Inter',sans-serif;direction:ltr}
+#wscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.wh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}
+.wh-chip{border:2px solid var(--bdr);border-radius:12px;background:#fff;padding:10px 6px;text-align:center;cursor:pointer;transition:.15s}
+.wh-chip:hover{border-color:#0D9488;transform:translateY(-2px)}
+.wh-chip.active{border-color:#0D9488;box-shadow:0 0 0 3px rgba(13,148,136,.18)}
+.wh-chip .wc-ic{font-size:1.35rem}
+.wh-chip .wc-en{font-family:'Inter',sans-serif;font-weight:800;font-size:.9rem;color:var(--navy);margin-top:2px}
+.wh-chip .wc-ar{font-family:'Cairo',sans-serif;font-size:.7rem;color:var(--muted)}
+@media(max-width:480px){.wh-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ── SPELLING (write from listening) ── */
+.spell-card{background:linear-gradient(135deg,#EC4899,#BE185D);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #F9A8D4;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.spell-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(190,24,93,.35)}
+.spell-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.spell-card .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
+.spell-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.8rem;margin-top:2px}
+#spscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.sp-prog{background:var(--card);border-radius:10px;padding:10px 14px;margin-bottom:14px;border:2px solid var(--bdr);display:flex;align-items:center;gap:10px}
+.sp-bar{flex:1;background:var(--bdr);border-radius:5px;height:7px}
+.sp-fill{background:#EC4899;height:7px;border-radius:5px;transition:width .3s;width:0%}
+.sp-count{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:700;color:var(--muted);direction:ltr}
+.sp-card{background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.sp-listen{background:#EC4899;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:.15s}
+.sp-listen:hover{background:#BE185D}
+.sp-emoji{font-size:3rem;margin:14px 0 6px}
+.sp-ar{font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;color:var(--navy)}
+.sp-hintline{font-family:'Inter',sans-serif;direction:ltr;letter-spacing:6px;font-size:1.3rem;font-weight:800;color:#DB2777;margin:12px 0 2px;min-height:1.5em}
+.sp-input{width:100%;max-width:280px;border:2px solid var(--bdr);border-radius:10px;padding:12px;
+  font-family:'Inter',sans-serif;direction:ltr;text-align:center;font-size:1.1rem;font-weight:700;
+  color:var(--navy);outline:none;margin:8px auto 0;display:block;transition:.15s}
+.sp-input:focus{border-color:#EC4899;box-shadow:0 0 0 3px rgba(236,72,153,.15)}
+.sp-input.ok{border-color:var(--g);background:var(--ok-bg)}
+.sp-input.no{border-color:var(--r);animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.sp-fb{display:none;margin-top:10px;font-family:'Cairo',sans-serif;font-size:.85rem;font-weight:700;border-radius:8px;padding:8px 12px}
+.sp-fb.show{display:block}
+.sp-fb.ok{background:var(--ok-bg);color:var(--ok-txt)}
+.sp-fb.no{background:var(--no-bg);color:var(--no-txt)}
+.sp-answer{font-family:'Inter',sans-serif;direction:ltr;font-size:1.05rem}
+.sp-btns{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sp-btn{padding:11px 22px;border:none;border-radius:10px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:.15s}
+.sp-btn.check{background:var(--g);color:#fff}.sp-btn.check:hover{background:var(--gd)}
+.sp-btn.hint{background:#FEF3C7;color:#92400E}.sp-btn.hint:hover{background:#FDE68A}
+.sp-btn.next{background:var(--b);color:#fff}.sp-btn.next:hover{background:var(--bd)}
+.sp-skip{margin-top:12px;background:none;border:none;color:var(--muted);font-family:'Cairo',sans-serif;font-size:.78rem;cursor:pointer;text-decoration:underline}
+.sp-done{text-align:center}
+.sp-donetxt{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin:8px 0}
+.sp-score{font-family:'Cairo',sans-serif;color:var(--muted);margin-bottom:14px}
+
 </style>
 </head>
 <body>
@@ -460,6 +643,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <p>تعلّم القواعد · تدرّب · اختبر نفسك · الاختبار النهائي</p>
     <div class="gpbar"><div class="gpfill" id="gpfill"></div></div>
     <div class="gptxt" id="gptxt">0 من 4 دروس مكتملة</div>
+    <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
   </div>
   <div class="lbl">الدروس</div>
   <div class="grid2">
@@ -492,6 +676,39 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
       <div class="lpbar"><div class="lpfill" id="lp-l4"></div></div>
     </div>
   </div>
+  <div class="lbl">شرح تفاعلي</div>
+  <div class="prep-card" onclick="open_prep()">
+    <div class="pc-rings"><i></i><i></i><i></i></div>
+    <div class="pc-txt">
+      <h3>in · on · at</h3>
+      <p>حروف الجر — المكان والزمن, مبسّطة برسم الهدف 🎯</p>
+    </div>
+  </div>
+  <div class="art-card" onclick="open_art()">
+    <div class="ac-ic">✨</div>
+    <div class="pc-txt">
+      <h3>a · an · the</h3>
+      <p>أدوات التعريف والتنكير — المعلوم والمجهول</p>
+    </div>
+  </div>
+  <div class="wh-card" onclick="open_wh()">
+    <div class="ac-ic">❓</div>
+    <div class="pc-txt">
+      <h3>WH — أدوات السؤال</h3>
+      <p>what · where · when · who · why · how</p>
+    </div>
+  </div>
+
+  <div class="lbl">الكتابة</div>
+  <div class="spell-card" onclick="open_spell()">
+    <div class="ac-ic">✍️</div>
+    <div class="pc-txt">
+      <h3>اكتب من السماع</h3>
+      <p>اسمع الكلمة واكتبها بنفسك — إملاء واستماع</p>
+    </div>
+  </div>
+
+  <div class="lbl">الاختبار</div>
   <div class="final-card" onclick="open_final()">
     <div style="font-size:2.2rem;margin-bottom:8px">🏆</div>
     <h3>الاختبار النهائي الشامل</h3>
@@ -545,6 +762,95 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   </div>
 </div>
 
+<!-- PREPOSITIONS SCREEN -->
+<div id="pscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero">
+    <h2>in · on · at 🎯</h2>
+    <p>كل ما اتّسعت الدائرة زاد العموم — والعكس يزيد التحديد</p>
+  </div>
+  <div class="prep-toggle">
+    <button class="on" id="pt-place" onclick="sw_prep('place')">📍 المكان</button>
+    <button id="pt-time" onclick="sw_prep('time')">🕐 الزمن</button>
+  </div>
+  <div class="prep-hint">اضغط على أي دائرة في الهدف 👇</div>
+  <div class="target-wrap">
+    <div class="target">
+      <div class="ring ring-in" id="ring-in" onclick="sel_prep('in')"><span>in</span></div>
+      <div class="ring ring-on" id="ring-on" onclick="sel_prep('on')"><span>on</span></div>
+      <div class="ring ring-at" id="ring-at" onclick="sel_prep('at')"><span>at</span></div>
+    </div>
+  </div>
+  <div id="prep-detail"></div>
+
+  <div class="pq-title">🎯 اختبر نفسك — اختر الصحيح</div>
+  <div id="prep-quiz"></div>
+</div>
+
+<!-- ARTICLES SCREEN -->
+<div id="ascreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#4F46E5)">
+    <h2>a · an · the ✨</h2>
+    <p>متى «أيّ واحد» ومتى «المحدّد المعروف»؟</p>
+  </div>
+
+  <div class="art-meta">
+    <div class="am-card am-any">
+      <div class="am-ic">👥</div>
+      <div class="am-t">أيّ واحد — جديد/مجهول</div>
+      <div class="am-w">a / an</div>
+      <div class="am-ex">a car = أيّ سيارة</div>
+    </div>
+    <div class="am-vs">مقابل</div>
+    <div class="am-card am-the">
+      <div class="am-ic">🔦</div>
+      <div class="am-t">محدّد — معروف للطرفين</div>
+      <div class="am-w">the</div>
+      <div class="am-ex">the car = السيارة المعروفة</div>
+    </div>
+  </div>
+
+  <div class="prep-hint">اضغط على أيّ أداة 👇</div>
+  <div class="art-chips">
+    <button class="art-chip" id="art-a" onclick="sel_art('a')">a</button>
+    <button class="art-chip" id="art-an" onclick="sel_art('an')">an</button>
+    <button class="art-chip" id="art-the" onclick="sel_art('the')">the</button>
+  </div>
+  <div id="art-detail"></div>
+
+  <div class="pq-title">✨ اختبر نفسك — اختر الأداة</div>
+  <div id="art-quiz"></div>
+</div>
+
+<!-- WH QUESTIONS SCREEN -->
+<div id="wscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#0D9488,#0F766E)">
+    <h2>أدوات السؤال — WH ❓</h2>
+    <p>كل كلمة تسأل عن شيء مختلف — اضغط لتتعلّم</p>
+  </div>
+  <div class="prep-hint">اضغط على أيّ أداة 👇</div>
+  <div class="wh-grid" id="wh-grid"></div>
+  <div id="wh-detail"></div>
+  <div class="pq-title">❓ اختبر نفسك — اختر أداة السؤال</div>
+  <div id="wh-quiz"></div>
+</div>
+
+<!-- SPELLING SCREEN -->
+<div id="spscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
+    <h2>اكتب من السماع ✍️</h2>
+    <p>استمع للكلمة واكتبها — يبني الإملاء والاستماع</p>
+  </div>
+  <div class="sp-prog">
+    <div class="sp-bar"><div class="sp-fill" id="sp-fill"></div></div>
+    <div class="sp-count" id="sp-count">0 / 0</div>
+  </div>
+  <div id="spell-body"></div>
+</div>
+
 <!-- MODAL -->
 <div class="modal" id="modal">
   <div class="mcrd">
@@ -559,6 +865,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     </div>
     <div class="mbtns">
       <button class="mbtn sec" onclick="retry()">↺ أعد الاختبار</button>
+      <button class="mbtn primary" id="m-next" style="display:none" onclick="next_lesson()">الدرس التالي ←</button>
       <button class="mbtn primary" onclick="close_modal()">متابعة →</button>
     </div>
   </div>
@@ -597,7 +904,7 @@ l1:[
 l2:[
   {q:"Carol is a new major. Last year she was a _______.",o:["sergeant","second lieutenant","first lieutenant","captain"],a:3,en:"Major=O-4. One rank below = Captain O-3",ar:"الرائد O-4، أقل منه مباشرة = النقيب O-3"},
   {q:"The stripes on a sergeant's uniform are the _______.",o:["name tag","rank","names","ID card"],a:1,en:"Stripes = rank insignia",ar:"الشرائط تدل على الرتبة"},
-  {q:"John is in the Army. He lives on a _______.",o:["naval base","military rank","post","base"],a:3,en:"Army soldiers live on a base",ar:"جنود الجيش في قاعدة — لكن Army = post أيضاً صح"},
+  {q:"John is in the Army. He lives on a _______.",o:["naval base","military rank","post","base"],a:2,en:"Army → post (a soldier lives on an Army post)",ar:"الجيش → post (الجنديّ يعيش في Army post)"},
   {q:"Tim can't smoke. He doesn't have a _______.",o:["radio","report","cigarette","book"],a:2,en:"You smoke a cigarette",ar:"تدخّن سيجارة"},
   {q:"I didn't know that airman's name. She didn't have her _______ on.",o:["cap","name tag","uniform","rank"],a:1,en:"Name tag has your name on it",ar:"بطاقة الاسم تحمل اسمك"},
   {q:"Airmen always _______ officers.",o:["salute","report","bring","begin"],a:0,en:"Military rule: salute officers",ar:"التحية العسكرية للضباط"},
@@ -677,52 +984,52 @@ const FINAL = [
 // DRAG-DROP data per lesson
 const DD = {
 l1:[
-  {sent:"Jane _____ baseball yesterday.",blank:"played",words:["played","plays","playing","liked"],ar:"أمس = ماضٍ"},
-  {sent:"Paul didn't _____ New York last year.",blank:"visit",words:["visit","visited","visits","visiting"],ar:"didn't + فعل مجرد"},
-  {sent:"Tom _____ in a restaurant downtown.",blank:"cooks",words:["cooks","cooked","cooking","cook"],ar:"حقيقة ثابتة = مضارع"},
-  {sent:"Did you eat at a restaurant _____ Sunday?",blank:"on",words:["on","in","at","for"],ar:"on = مع أيام الأسبوع"},
-  {sent:"Class starts at 0730 and _____ at 1435.",blank:"ends",words:["ends","ended","ending","end"],ar:"حقيقة ثابتة = مضارع"},
-  {sent:"Sam asked: Did you watch the game? Tom: Yes, I _____.",blank:"did",words:["did","do","watched","watch"],ar:"إجابة قصيرة لـ Did"},
-  {sent:"Bob visited Chicago last year and wants to go _____ this year.",blank:"again",words:["again","back","more","also"],ar:"again = مرة أخرى"},
-  {sent:"There are eleven players on a football _____.",blank:"team",words:["team","game","sport","play"],ar:"11 لاعب = فريق"},
-  {sent:"_____ you clean up your room?",blank:"Did",words:["Did","Were","Are","Have"],ar:"Did = سؤال الماضي"},
-  {sent:"Houston is a big _____ in Texas.",blank:"city",words:["city","town","game","sport"],ar:"هيوستن مدينة كبيرة"},
+  {sent:"Jane _____ baseball yesterday.",blank:"played",words:["played","plays","playing","liked"],tr:"لعبت جين البيسبول أمس.",ar:"أمس = ماضٍ → played"},
+  {sent:"Paul didn't _____ New York last year.",blank:"visit",words:["visit","visited","visits","visiting"],tr:"لم يزُر بول نيويورك العام الماضي.",ar:"didn't + الفعل الأصلي"},
+  {sent:"Tom _____ in a restaurant downtown.",blank:"cooks",words:["cooks","cooked","cooking","cook"],tr:"يطبخ توم في مطعم بوسط المدينة.",ar:"حقيقة ثابتة = مضارع"},
+  {sent:"Did you eat at a restaurant _____ Sunday?",blank:"on",words:["on","in","at","for"],tr:"هل أكلت في مطعم يوم الأحد؟",ar:"on = مع أيام الأسبوع"},
+  {sent:"Class starts at 0730 and _____ at 1435.",blank:"ends",words:["ends","ended","ending","end"],tr:"يبدأ الدرس 0730 وينتهي 1435.",ar:"حقيقة ثابتة = مضارع"},
+  {sent:"Sam asked: Did you watch the game? Tom: Yes, I _____.",blank:"did",words:["did","do","watched","watch"],tr:"سأل سام: هل شاهدت المباراة؟ توم: نعم، فعلت.",ar:"إجابة قصيرة لـ Did"},
+  {sent:"Bob visited Chicago last year and wants to go _____ this year.",blank:"again",words:["again","back","more","also"],tr:"زار بوب شيكاغو العام الماضي ويريد الذهاب مرة أخرى هذا العام.",ar:"again = مرة أخرى"},
+  {sent:"There are eleven players on a football _____.",blank:"team",words:["team","game","sport","play"],tr:"يوجد أحد عشر لاعباً في فريق كرة القدم.",ar:"11 لاعب = فريق"},
+  {sent:"_____ you clean up your room?",blank:"Did",words:["Did","Were","Are","Have"],tr:"هل نظّفت غرفتك؟",ar:"Did = سؤال الماضي"},
+  {sent:"Houston is a big _____ in Texas.",blank:"city",words:["city","town","game","sport"],tr:"هيوستن مدينة كبيرة في تكساس.",ar:"مدينة كبيرة"},
 ],
 l2:[
-  {sent:"A soldier works on an Army _____.",blank:"post",words:["post","base","place","camp"],ar:"الجيش = Army post"},
-  {sent:"A sailor works on a _____ base.",blank:"naval",words:["naval","army","air force","military"],ar:"البحرية = naval base"},
-  {sent:"An airman works on an Air Force _____.",blank:"base",words:["base","post","place","camp"],ar:"سلاح الجو = base"},
-  {sent:"Airmen always _____ officers.",blank:"salute",words:["salute","report","bring","begin"],ar:"يُحيّون الضباط دائماً"},
-  {sent:"She didn't have her name _____ on.",blank:"tag",words:["tag","card","plate","board"],ar:"name tag = بطاقة الاسم"},
-  {sent:"I _____ to the teacher yesterday.",blank:"spoke",words:["spoke","speak","speaking","spoken"],ar:"speak → spoke شاذة"},
-  {sent:"Sgt. Jones _____ to LA last week.",blank:"flew",words:["flew","flied","flown","fly"],ar:"fly → flew شاذة"},
-  {sent:"I _____ class early yesterday.",blank:"left",words:["left","leaved","gone","went"],ar:"leave → left شاذة"},
-  {sent:"It's 8:50 p.m. In military time it's _____.",blank:"2050",words:["2050","0850","2010","0810"],ar:"8:50 مساءً = 2050"},
-  {sent:"Please _____ your books to class tomorrow.",blank:"bring",words:["bring","take","carry","put"],ar:"bring = أحضر"},
+  {sent:"A soldier works on an Army _____.",blank:"post",words:["post","base","place","camp"],tr:"يعمل الجنديّ في موقع (post) تابع للجيش.",ar:"الجيش → post"},
+  {sent:"A sailor works on a _____ base.",blank:"naval",words:["naval","army","air force","military"],tr:"يعمل البحّار في قاعدة بحرية.",ar:"البحرية → naval base"},
+  {sent:"An airman works on an Air Force _____.",blank:"base",words:["base","post","place","camp"],tr:"يعمل جنديّ سلاح الجو في قاعدة جوية.",ar:"سلاح الجو → base"},
+  {sent:"Airmen always _____ officers.",blank:"salute",words:["salute","report","bring","begin"],tr:"يُحيّي جنود سلاح الجو الضباط دائماً.",ar:"salute = يُحيّي عسكرياً"},
+  {sent:"She didn't have her name _____ on.",blank:"tag",words:["tag","card","plate","board"],tr:"لم تكن ترتدي بطاقة اسمها.",ar:"name tag = بطاقة الاسم"},
+  {sent:"I _____ to the teacher yesterday.",blank:"spoke",words:["spoke","speak","speaking","spoken"],tr:"تحدّثت إلى المعلّم أمس.",ar:"speak → spoke (شاذ)"},
+  {sent:"Sgt. Jones _____ to LA last week.",blank:"flew",words:["flew","flied","flown","fly"],tr:"سافر الرقيب جونز جواً إلى لوس أنجلوس الأسبوع الماضي.",ar:"fly → flew (شاذ)"},
+  {sent:"I _____ class early yesterday.",blank:"left",words:["left","leaved","gone","went"],tr:"غادرت الصف مبكراً أمس.",ar:"leave → left (شاذ)"},
+  {sent:"It's 8:50 p.m. In military time it's _____.",blank:"2050",words:["2050","0850","2010","0810"],tr:"الساعة 8:50 مساءً — بالتوقيت العسكري 2050.",ar:"مساءً: 8+12=20"},
+  {sent:"Please _____ your books to class tomorrow.",blank:"bring",words:["bring","take","carry","put"],tr:"أحضر كتبك إلى الصف غداً.",ar:"bring = أحضر"},
 ],
 l3:[
-  {sent:"I wore my new pants yesterday. Pants = _____.",blank:"slacks",words:["slacks","socks","ties","blouses"],ar:"pants = slacks"},
-  {sent:"May I go to the library? Yes, you _____.",blank:"may",words:["may","can","must","will"],ar:"May I? → Yes, you may."},
-  {sent:"I must _____ tonight.",blank:"study",words:["study","to study","studies","studying"],ar:"must + فعل مجرد"},
-  {sent:"Soldiers must wear _____ to class.",blank:"uniforms",words:["uniforms","suits","clothes","belts"],ar:"القاعدة العسكرية"},
-  {sent:"Do not smoke = You must _____ smoke.",blank:"not",words:["not","never","don't","no"],ar:"Do not = must not"},
-  {sent:"A suit is slacks and a _____.",blank:"jacket",words:["jacket","hat","shoe","dress"],ar:"بدلة = جاكيت + بنطلون"},
-  {sent:"smoked has the past tense sound _____.",blank:"/t/",words:["/t/","/d/","/əd/","/ed/"],ar:"k مهموسة → /t/"},
-  {sent:"studied has the past tense sound _____.",blank:"/d/",words:["/d/","/t/","/əd/","/ed/"],ar:"حرف علة → /d/"},
-  {sent:"repeated has the past tense sound _____.",blank:"/əd/",words:["/əd/","/t/","/d/","/ed/"],ar:"تنتهي بـ t → /əd/"},
-  {sent:"I can't swim very _____.",blank:"well",words:["well","good","great","fine"],ar:"can't + well = لا أستطيع بشكل جيد"},
+  {sent:"I wore my new pants yesterday. Pants = _____.",blank:"slacks",words:["slacks","socks","ties","blouses"],tr:"ارتديت بنطلوني الجديد أمس. pants = slacks.",ar:"pants = slacks"},
+  {sent:"May I go to the library? Yes, you _____.",blank:"may",words:["may","can","must","will"],tr:"هل تسمح لي بالذهاب إلى المكتبة؟ نعم، يمكنك.",ar:"May I? → Yes, you may."},
+  {sent:"I must _____ tonight.",blank:"study",words:["study","to study","studies","studying"],tr:"يجب أن أدرس الليلة.",ar:"must + الفعل الأصلي"},
+  {sent:"Soldiers must wear _____ to class.",blank:"uniforms",words:["uniforms","suits","clothes","belts"],tr:"يجب على الجنود لبس الزي العسكري إلى الصف.",ar:"must + الفعل الأصلي"},
+  {sent:"Do not smoke = You must _____ smoke.",blank:"not",words:["not","never","don't","no"],tr:"ممنوع التدخين = يجب ألّا تدخّن.",ar:"Do not = must not"},
+  {sent:"A suit is slacks and a _____.",blank:"jacket",words:["jacket","hat","shoe","dress"],tr:"البدلة = بنطلون + جاكيت.",ar:"suit = jacket + slacks"},
+  {sent:"smoked has the past tense sound _____.",blank:"/t/",words:["/t/","/d/","/əd/","/ed/"],tr:"كلمة smoked تُنطق لاحقتها /t/.",ar:"k مهموسة → /t/"},
+  {sent:"studied has the past tense sound _____.",blank:"/d/",words:["/d/","/t/","/əd/","/ed/"],tr:"كلمة studied تُنطق لاحقتها /d/.",ar:"حرف علة → /d/"},
+  {sent:"repeated has the past tense sound _____.",blank:"/əd/",words:["/əd/","/t/","/d/","/ed/"],tr:"كلمة repeated تُنطق لاحقتها /əd/.",ar:"تنتهي بـ t → /əd/"},
+  {sent:"I can't swim very _____.",blank:"well",words:["well","good","great","fine"],tr:"لا أستطيع السباحة جيداً.",ar:"can't + well"},
 ],
 l4:[
-  {sent:"Autumn and fall are the _____ season.",blank:"same",words:["same","different","cool","warm"],ar:"نفس الفصل اسمان"},
-  {sent:"December, January, February are _____ months.",blank:"winter",words:["winter","spring","fall","summer"],ar:"الشتاء = ديسمبر يناير فبراير"},
-  {sent:"March, April, May are _____ months.",blank:"spring",words:["spring","summer","fall","winter"],ar:"الربيع = مارس أبريل مايو"},
-  {sent:"June, July, August are _____ months.",blank:"summer",words:["summer","spring","fall","winter"],ar:"الصيف = يونيو يوليو أغسطس"},
-  {sent:"September, October, November are _____ months.",blank:"fall",words:["fall","spring","summer","winter"],ar:"الخريف = سبتمبر أكتوبر نوفمبر"},
-  {sent:"Today is Monday. The day after tomorrow is _____.",blank:"Wednesday",words:["Wednesday","Tuesday","Thursday","Friday"],ar:"الاثنين + يومين = الأربعاء"},
-  {sent:"I like to listen to _____ on the radio.",blank:"music",words:["music","headphones","dance","spring"],ar:"تستمع للموسيقى"},
-  {sent:"Catherine listens to CDs on her _____.",blank:"headphones",words:["headphones","radio","television","telephone"],ar:"سماعات = للـ CDs"},
-  {sent:"It's very warm. I want to take _____ my sweater.",blank:"off",words:["off","on","out","up"],ar:"take off = يخلع"},
-  {sent:"shaved has the past tense sound _____.",blank:"/d/",words:["/d/","/t/","/əd/","/ed/"],ar:"v مجهورة → /d/"},
+  {sent:"Autumn and fall are the _____ season.",blank:"same",words:["same","different","cool","warm"],tr:"Autumn و fall هما نفس الفصل (الخريف).",ar:"نفس الفصل، اسمان"},
+  {sent:"December, January, February are _____ months.",blank:"winter",words:["winter","spring","fall","summer"],tr:"ديسمبر ويناير وفبراير أشهر الشتاء.",ar:"الشتاء ❄️"},
+  {sent:"March, April, May are _____ months.",blank:"spring",words:["spring","summer","fall","winter"],tr:"مارس وأبريل ومايو أشهر الربيع.",ar:"الربيع 🌸"},
+  {sent:"June, July, August are _____ months.",blank:"summer",words:["summer","spring","fall","winter"],tr:"يونيو ويوليو وأغسطس أشهر الصيف.",ar:"الصيف ☀️"},
+  {sent:"September, October, November are _____ months.",blank:"fall",words:["fall","spring","summer","winter"],tr:"سبتمبر وأكتوبر ونوفمبر أشهر الخريف.",ar:"الخريف 🍂"},
+  {sent:"Today is Monday. The day after tomorrow is _____.",blank:"Wednesday",words:["Wednesday","Tuesday","Thursday","Friday"],tr:"اليوم الاثنين. بعد الغد هو الأربعاء.",ar:"بعد الغد = +يومين"},
+  {sent:"I like to listen to _____ on the radio.",blank:"music",words:["music","headphones","dance","spring"],tr:"أحبّ الاستماع إلى الموسيقى على الراديو.",ar:"listen to music"},
+  {sent:"Catherine listens to CDs on her _____.",blank:"headphones",words:["headphones","radio","television","telephone"],tr:"تستمع كاثرين للأقراص على سماعاتها.",ar:"سماعات = للـ CDs"},
+  {sent:"It's very warm. I want to take _____ my sweater.",blank:"off",words:["off","on","out","up"],tr:"الجو دافئ جداً. أريد خلع سترتي.",ar:"take off = يخلع"},
+  {sent:"shaved has the past tense sound _____.",blank:"/d/",words:["/d/","/t/","/əd/","/ed/"],tr:"كلمة shaved تُنطق لاحقتها /d/.",ar:"v مجهورة → /d/"},
 ]
 };
 
@@ -770,226 +1077,6 @@ l4:[
 ]
 };
 
-// GRAMMAR content per lesson
-const GR = {
-l1:{
-  title:'Lesson 1 — القواعد',
-  sections:[
-    {
-      title:'Simple Past — الماضي البسيط',tags:'gr',
-      formula:[
-        {t:'Subject',c:''},
-        {t:'→',c:'arr'},
-        {t:'verb + -ed',c:'verb'},
-        {t:'time word',c:'key'}
-      ],
-      compare:[
-        {pr:'Paul visits New York every year.',pa:'Paul visited New York last year.',ar:'every year ↔ last year'},
-        {pr:'She cooks every day.',pa:'She cooked yesterday.',ar:'every day ↔ yesterday'},
-        {pr:'Tom lives in Chicago.',pa:'Tom lived in Chicago last year.',ar:'lives (الآن) ↔ lived (سابقاً)'},
-      ],
-      rules:[
-        {ok:true,s:'Jane played baseball yesterday.',ar:'✓ أمس = ماضٍ → played'},
-        {ok:false,s:'Jane plays baseball yesterday.',ar:'✗ لا تستخدم المضارع مع yesterday'},
-      ],
-      timewords:['yesterday','yesterday morning','last night','last week','last month','last year','two days ago','a week ago']
-    },
-    {
-      title:'Negative Past — did not / didn\'t',tags:'gr',
-      formula:[
-        {t:'Subject',c:''},
-        {t:'+',c:'arr'},
-        {t:'did not / didn\'t',c:'neg'},
-        {t:'+',c:'arr'},
-        {t:'base verb',c:'verb'}
-      ],
-      compare:[],
-      rules:[
-        {ok:true,s:"Paul didn't visit New York.",ar:"✓ didn't + base verb (no -ed)"},
-        {ok:false,s:"Paul didn't visited New York.",ar:"✗ لا تضع -ed بعد didn't"},
-        {ok:true,s:"Tom didn't clean his room last Saturday.",ar:"✓ صحيح"},
-      ],
-      timewords:[]
-    },
-    {
-      title:'Yes/No Questions — Did?',tags:'gr',
-      formula:[
-        {t:'Did',c:'key'},
-        {t:'+',c:'arr'},
-        {t:'Subject',c:''},
-        {t:'+',c:'arr'},
-        {t:'base verb',c:'verb'},
-        {t:'?',c:''}
-      ],
-      compare:[
-        {pr:'I liked Chicago.',pa:'Did you like Chicago?',ar:'liked → like (احذف -d)'},
-        {pr:'She played soccer.',pa:'Did she play soccer?',ar:'played → play'},
-      ],
-      rules:[
-        {ok:true,s:"Did you watch the game? → Yes, I did. / No, I didn't.",ar:"✓ إجابة قصيرة صحيحة"},
-        {ok:false,s:"Did you watched the game?",ar:"✗ لا تضع -ed بعد Did"},
-      ],
-      timewords:[]
-    }
-  ]
-},
-l2:{
-  title:'Lesson 2 — القواعد',
-  sections:[
-    {
-      title:'Military Ranks — الرتب من الأدنى للأعلى',tags:'mil',
-      formula:[],compare:[],rules:[],timewords:[],isRanks:true
-    },
-    {
-      title:'Military Time — التوقيت العسكري',tags:'mil',
-      formula:[],compare:[
-        {pr:'7:30 a.m.',pa:'0730',ar:'صباحاً = نفس الرقم'},
-        {pr:'3:00 p.m.',pa:'1500',ar:'مساءً = +12'},
-        {pr:'8:50 p.m.',pa:'2050',ar:'8+12=20 → 2050'},
-        {pr:'10:30 p.m.',pa:'2230',ar:'10+12=22 → 2230'},
-      ],
-      rules:[
-        {ok:true,s:"It's 8:50 p.m. → It's 2050.",ar:"✓ 8+12=20 ثم أضف الدقائق"},
-        {ok:false,s:"It's 8:50 p.m. → It's 0850.",ar:"✗ 0850 = الصباح وليس المساء"},
-      ],
-      timewords:[]
-    },
-    {
-      title:'Irregular Past Verbs — أفعال شاذة',tags:'gr',
-      formula:[],compare:[
-        {pr:'speak',pa:'spoke',ar:'تكلّم'},
-        {pr:'fly',pa:'flew',ar:'طار'},
-        {pr:'leave',pa:'left',ar:'غادر'},
-        {pr:'bring',pa:'brought',ar:'أحضر'},
-        {pr:'buy',pa:'bought',ar:'اشترى'},
-        {pr:'go',pa:'went',ar:'ذهب'},
-        {pr:'eat',pa:'ate',ar:'أكل'},
-        {pr:'drive',pa:'drove',ar:'قاد السيارة'},
-      ],
-      rules:[
-        {ok:true,s:"Sgt. Jones flew to LA last week.",ar:"✓ fly → flew"},
-        {ok:false,s:"Sgt. Jones flied to LA last week.",ar:"✗ لا يصح flied"},
-        {ok:true,s:"I left class early yesterday.",ar:"✓ leave → left"},
-      ],
-      timewords:[]
-    }
-  ]
-},
-l3:{
-  title:'Lesson 3 — القواعد',
-  sections:[
-    {
-      title:'Can — القدرة على فعل شيء',tags:'gr',
-      formula:[
-        {t:'Subject',c:''},
-        {t:'+',c:'arr'},
-        {t:'can / can\'t',c:'key'},
-        {t:'+',c:'arr'},
-        {t:'base verb',c:'verb'}
-      ],
-      compare:[
-        {pr:'Jim can run 10 miles.',pa:'Kelly can\'t run 10 miles.',ar:'can ↔ can\'t'},
-        {pr:'Can Joe swim?',pa:'Yes, he can. / No, he can\'t.',ar:'سؤال وجواب'},
-      ],
-      rules:[
-        {ok:true,s:"Pvt Jones can speak four languages.",ar:"✓ can + base verb"},
-        {ok:false,s:"Pvt Jones can speaks four languages.",ar:"✗ لا تضع s بعد can"},
-      ],
-      timewords:[]
-    },
-    {
-      title:'Must / Must not — واجب وممنوع',tags:'gr',
-      formula:[
-        {t:'Subject',c:''},
-        {t:'+',c:'arr'},
-        {t:'must / must not',c:'neg'},
-        {t:'+',c:'arr'},
-        {t:'base verb',c:'verb'}
-      ],
-      compare:[
-        {pr:'Students must listen in class.',pa:'Students must not smoke in class.',ar:'must = يجب | must not = ممنوع'},
-        {pr:'Do not smoke = must not smoke',pa:'You must not smoke.',ar:'Do not = must not (نفس المعنى)'},
-      ],
-      rules:[
-        {ok:true,s:"I must study tonight.",ar:"✓ must + base verb"},
-        {ok:false,s:"I must to study tonight.",ar:"✗ لا تضع to بعد must"},
-      ],
-      timewords:[]
-    },
-    {
-      title:'-ed Sounds — أصوات لاحقة الماضي',tags:'pr',
-      formula:[],compare:[],
-      rules:[],timewords:[],isSounds:true
-    },
-    {
-      title:'May — طلب الإذن (رسمي)',tags:'gr',
-      formula:[
-        {t:'May',c:'key'},
-        {t:'+',c:'arr'},
-        {t:'Subject',c:''},
-        {t:'+',c:'arr'},
-        {t:'base verb',c:'verb'},
-        {t:'?',c:''}
-      ],
-      compare:[
-        {pr:'May I go to the library?',pa:'Yes, you may. / No, you may not.',ar:'رسمي'},
-        {pr:'Can I eat it? (informal)',pa:'May I eat it? (formal)',ar:'can = غير رسمي | may = رسمي'},
-      ],
-      rules:[
-        {ok:true,s:"May I go to the library? → Yes, you may.",ar:"✓ إجابة صحيحة"},
-        {ok:false,s:"May I go? → Yes, you must.",ar:"✗ must ≠ إذن، must = واجب"},
-      ],
-      timewords:[]
-    }
-  ]
-},
-l4:{
-  title:'Lesson 4 — القواعد',
-  sections:[
-    {
-      title:'The Four Seasons — الفصول الأربعة',tags:'voc',
-      formula:[],compare:[
-        {pr:'Winter: Dec, Jan, Feb',pa:"It's cold.",ar:'الشتاء'},
-        {pr:'Spring: Mar, Apr, May',pa:"It's warm.",ar:'الربيع'},
-        {pr:'Summer: Jun, Jul, Aug',pa:"It's hot.",ar:'الصيف'},
-        {pr:'Fall/Autumn: Sep, Oct, Nov',pa:"It's cool.",ar:'الخريف — Fall = Autumn نفس الكلمة!'},
-      ],
-      rules:[
-        {ok:true,s:"Autumn and fall are the same.",ar:"✓ اسمان لنفس الفصل"},
-        {ok:false,s:"Autumn and fall are different seasons.",ar:"✗ هما نفس الفصل"},
-      ],
-      timewords:[]
-    },
-    {
-      title:'Days Sequence — ترتيب الأيام',tags:'voc',
-      formula:[],compare:[
-        {pr:'Today = Monday',pa:'Tomorrow = Tuesday',ar:'اليوم التالي'},
-        {pr:'Today = Monday',pa:'The day after tomorrow = Wednesday',ar:'بعد يومين'},
-        {pr:'Today = Monday',pa:'Yesterday = Sunday',ar:'الأمس'},
-        {pr:'Today = Monday',pa:'The day before yesterday = Saturday',ar:'قبل يومين'},
-      ],
-      rules:[],timewords:[]
-    },
-    {
-      title:'This / That / These / Those — أسماء الإشارة',tags:'gr',
-      formula:[],compare:[
-        {pr:'this (قريب مفرد)',pa:'these (قريب جمع)',ar:'near'},
-        {pr:'that (بعيد مفرد)',pa:'those (بعيد جمع)',ar:'far'},
-      ],
-      rules:[
-        {ok:true,s:"Look over here. I like this car.",ar:"✓ this = قريب"},
-        {ok:true,s:"Look over there. Those cars are big.",ar:"✓ those = بعيد جمع"},
-      ],
-      timewords:[]
-    },
-    {
-      title:'Past Tense Sounds Review — مراجعة',tags:'pr',
-      formula:[],compare:[],
-      rules:[],timewords:[],isSounds:true
-    }
-  ]
-}
-};
 
 // ═══════════════════════════════════════
 // STATE
@@ -1017,6 +1104,10 @@ function open_lesson(lk){
   const sub={l1:'الرياضة والألعاب',l2:'الحياة العسكرية',l3:'الملابس والقدرات',l4:'الفصول والألوان'};
   document.getElementById('home').style.display='none';
   document.getElementById('fscreen').style.display='none';
+  document.getElementById('pscreen').style.display='none';
+  document.getElementById('ascreen').style.display='none';
+  document.getElementById('wscreen').style.display='none';
+  document.getElementById('spscreen').style.display='none';
   const ls=document.getElementById('lscreen');
   ls.style.display='block';
   ls.scrollIntoView({behavior:'smooth',block:'start'});
@@ -1036,13 +1127,17 @@ function open_final(){
   CL='final';FANS={};
   document.getElementById('home').style.display='none';
   document.getElementById('lscreen').style.display='none';
+  document.getElementById('pscreen').style.display='none';
+  document.getElementById('ascreen').style.display='none';
+  document.getElementById('wscreen').style.display='none';
+  document.getElementById('spscreen').style.display='none';
   document.getElementById('fscreen').style.display='block';
   document.getElementById('fscreen').scrollIntoView({behavior:'smooth',block:'start'});
   build_final();
 }
 
 function go_home(){
-  ['home','lscreen','fscreen'].forEach(id=>{
+  ['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen'].forEach(id=>{
     document.getElementById(id).style.display=id==='home'?'block':'none';
   });
   window.scrollTo({top:0,behavior:'smooth'});
@@ -1103,7 +1198,7 @@ l3:[
   {e:'T-shirt',a:'تيشيرت',em:'👕'},{e:'socks',a:'جوارب قصيرة',em:'🧦'},
   {e:'tie / necktie',a:'ربطة عنق',em:'👔'},{e:'belt',a:'حزام',em:'🔗'},
   {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'jacket / coat',a:'جاكيت / معطف',em:'🧥'},
-  {e:'suit',a:'بدلة = jacket + slacks',em:'🤵'},{e:'gloves',a:'قفازات',em:'🧤'},
+  {e:'suit',a:'بدلة = jacket + slacks',em:'🤵'},{e:'shorts',a:'شورت قصير',em:'🩳'},
 ],
 l4:[
   {e:'spring',a:'الربيع — مارس أبريل مايو',em:'🌸'},
@@ -1132,8 +1227,8 @@ l1:[
       {c1:'She cooks every day.',c2:'She cooked yesterday.',ar:'every day ↔ yesterday'},
     ],
     examples:[
-      {s:'Jane played baseball yesterday.',ar:'أمس → played ✓',ok:true},
-      {s:'Jane plays baseball yesterday.',ar:'لا تستخدم plays مع yesterday ✗',ok:false},
+      {s:'Jane played baseball yesterday.',tr:'لعبت جين البيسبول أمس.',ar:'yesterday = ماضٍ → played',ok:true},
+      {s:'Jane plays baseball yesterday.',wrong:'plays',right:'played',tr:'مع yesterday لا تستخدم المضارع — الفعل لازم ماضٍ.',ok:false},
     ]
   },
   {
@@ -1144,8 +1239,8 @@ l1:[
       {c1:'Tom cleaned his room.',c2:"Tom didn't clean his room.",ar:'إثبات ↔ نفي'},
     ],
     examples:[
-      {s:"Tom didn't clean his room last Saturday.",ar:"✓ didn't + clean (بدون -ed)",ok:true},
-      {s:"Tom didn't cleaned his room.",ar:"✗ خطأ — لا تضع -ed بعد didn't",ok:false},
+      {s:"Tom didn't clean his room last Saturday.",tr:'لم ينظّف توم غرفته السبت الماضي.',ar:"didn't + clean (بدون -ed)",ok:true},
+      {s:"Tom didn't cleaned his room.",wrong:'cleaned',right:'clean',tr:'النفي أخذ الماضي، فلا تكرّره بـ -ed.',ok:false},
     ]
   },
   {
@@ -1156,8 +1251,8 @@ l1:[
       {c1:'She liked Chicago.',c2:'Did she like Chicago?',ar:'liked → like (احذف -d)'},
     ],
     examples:[
-      {s:'Did you watch the game? → Yes, I did. / No, I didn\'t.',ar:"✓ إجابة قصيرة صحيحة",ok:true},
-      {s:'Did you watched the game?',ar:"✗ لا تضع -ed بعد Did",ok:false},
+      {s:'Did you watch the game?',tr:'هل شاهدت المباراة؟ — Yes, I did. / No, I didn\'t.',ar:"Did + الفعل الأصلي",ok:true},
+      {s:'Did you watched the game?',wrong:'watched',right:'watch',tr:'بعد Did يرجع الفعل أصلياً بدون -ed.',ok:false},
     ]
   },
   {
@@ -1189,8 +1284,8 @@ l2:[
       {c1:'10:30 pm',c2:'2230',ar:'10+12=22 → 2230'},
     ],
     examples:[
-      {s:"It's 8:50 p.m. → It's 2050.",ar:"✓ 8+12=20 ثم أضف الدقائق 50",ok:true},
-      {s:"It's 8:50 p.m. → It's 0850.",ar:"✗ 0850 = الصباح وليس المساء",ok:false},
+      {s:"It's 8:50 p.m. = 2050.",tr:'الثامنة والنصف مساءً: 8+12=20 ثم الدقائق → 2050.',ar:"مساءً: أضف 12 للساعة",ok:true},
+      {s:"It's 8:50 p.m. = 0850.",wrong:'0850',right:'2050',tr:'0850 يعني صباحاً — المساء يبدأ من 12 فما فوق.',ok:false},
     ]
   },
   {
@@ -1204,8 +1299,8 @@ l2:[
       {c1:'drive',c2:'drove',ar:'قاد'},{c1:'buy',c2:'bought',ar:'اشترى'},
     ],
     examples:[
-      {s:'Sgt. Jones flew to LA last week.',ar:"✓ fly → flew (شاذ)",ok:true},
-      {s:'Sgt. Jones flied to LA last week.',ar:"✗ لا يصح flied",ok:false},
+      {s:'Sgt. Jones flew to LA last week.',tr:'سافر الرقيب جونز جواً إلى لوس أنجلوس الأسبوع الماضي.',ar:"fly فعل شاذ → flew",ok:true},
+      {s:'Sgt. Jones flied to LA last week.',wrong:'flied',right:'flew',tr:'fly شاذ، لا يأخذ -ed. ماضيه flew.',ok:false},
     ]
   }
 ],
@@ -1218,8 +1313,8 @@ l3:[
       {c1:'Jim can run 10 miles.',c2:"Kelly can't run 10 miles.",ar:'can ↔ can\'t'},
     ],
     examples:[
-      {s:'Pvt Jones can speak four languages.',ar:"✓ can + speak (بدون s)",ok:true},
-      {s:'Pvt Jones can speaks four languages.',ar:"✗ لا تضع s بعد can",ok:false},
+      {s:'Pvt Jones can speak four languages.',tr:'يستطيع الجندي جونز التحدث بأربع لغات.',ar:"can + الفعل الأصلي (بدون s)",ok:true},
+      {s:'Pvt Jones can speaks four languages.',wrong:'speaks',right:'speak',tr:'بعد can لا نضيف s للفعل.',ok:false},
     ]
   },
   {
@@ -1228,8 +1323,8 @@ l3:[
     formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'must',c:'k'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
     compare:[],
     examples:[
-      {s:'Students must listen to the teacher.',ar:"✓ يجب الاستماع — إلزامي",ok:true},
-      {s:'Soldiers must wear uniforms.',ar:"✓ يجب لبس الزي العسكري",ok:true},
+      {s:'Students must listen to the teacher.',tr:'يجب على الطلاب الاستماع للمعلّم.',ar:"must + الفعل الأصلي — إلزامي",ok:true},
+      {s:'Soldiers must wear uniforms.',tr:'يجب على الجنود لبس الزي العسكري.',ar:"must + الفعل الأصلي",ok:true},
     ]
   },
   {
@@ -1240,8 +1335,8 @@ l3:[
       {c1:'Do not smoke here.',c2:'You must not smoke here.',ar:'Do not = must not (نفس المعنى)'},
     ],
     examples:[
-      {s:'I must not write with a pen = I cannot write with a pen.',ar:"✓ must not = cannot",ok:true},
-      {s:'I must not to write.',ar:"✗ لا تضع to بعد must not",ok:false},
+      {s:'I must not write with a pen = I cannot write with a pen.',tr:'ممنوع أن أكتب بقلم = لا أستطيع الكتابة بقلم.',ar:"must not = cannot (ممنوع)",ok:true},
+      {s:'I must not to write.',wrong:'to write',right:'write',tr:'بعد must not لا نضع to — الفعل مباشرة.',ok:false},
     ]
   },
   {
@@ -1252,8 +1347,8 @@ l3:[
       {c1:'May I go? (رسمي)',c2:'Can I go? (غير رسمي)',ar:'may = formal | can = informal'},
     ],
     examples:[
-      {s:'May I go to the library? → Yes, you may.',ar:"✓ إجابة صحيحة",ok:true},
-      {s:'May I go? → Yes, you must.',ar:"✗ must ≠ إذن، must = واجب",ok:false},
+      {s:'May I go to the library? → Yes, you may.',tr:'هل تسمح لي بالذهاب إلى المكتبة؟ — نعم، يمكنك.',ar:"طلب إذن رسمي",ok:true},
+      {s:'May I go? Yes, you must.',wrong:'must',right:'may',tr:'الإذن يُجاب بـ may وليس must (must = واجب).',ok:false},
     ]
   },
   {
@@ -1274,7 +1369,7 @@ l4:[
       {c1:'Fall/Autumn: Sep, Oct, Nov',c2:"It's cool.",ar:'الخريف 🍂'},
     ],
     examples:[
-      {s:'Autumn and fall are the same.',ar:"✓ اسمان لنفس الفصل",ok:true},
+      {s:'Autumn and fall are the same.',tr:'Autumn و fall اسمان لنفس الفصل (الخريف).',ar:"نفس الفصل، كلمتان",ok:true},
     ]
   },
   {
@@ -1298,8 +1393,8 @@ l4:[
       {c1:'that (بعيد مفرد)',c2:'those (بعيد جمع)',ar:'far'},
     ],
     examples:[
-      {s:'I like this car. (قريب)',ar:"✓ this = near",ok:true},
-      {s:'Those cars are big. (بعيد جمع)',ar:"✓ those = far + plural",ok:true},
+      {s:'I like this car.',tr:'تعجبني هذه السيارة. (قريب + مفرد)',ar:"this = قريب مفرد",ok:true},
+      {s:'Those cars are big.',tr:'تلك السيارات كبيرة. (بعيد + جمع)',ar:"those = بعيد جمع",ok:true},
     ]
   },
   {
@@ -1311,7 +1406,7 @@ l4:[
       {c1:'How much did it cost?',c2:"It was $13,000.",ar:'did = للماضي'},
     ],
     examples:[
-      {s:'How much does the pen cost? → It costs $3.',ar:"✓ does + cost",ok:true},
+      {s:'How much does the pen cost? → It costs $3.',tr:'كم يكلّف القلم؟ — يكلّف 3 دولارات.',ar:"How much + does + cost",ok:true},
     ]
   },
   {
@@ -1479,16 +1574,32 @@ function build_gcard_body(g){
     </div>`;
   }
 
-  // Examples
+  // Examples — correct example vs. common mistake (beginner-friendly)
   if(g.examples&&g.examples.length>0){
     html+='<div style="margin-top:8px">';
     g.examples.forEach(ex=>{
-      const safe=ex.s.replace(/'/g,"\\'");
-      html+=`<div class="ex-row ${ex.ok?'ok':'no'}">
-        <span class="ex-text">${ex.ok?'✅':'❌'} ${ex.s}</span>
-        <span class="ex-ar">${ex.ar}</span>
-        ${ex.ok?`<button class="ex-spk" onclick="say('${safe}')">🔊</button>`:''}
-      </div>`;
+      if(ex.ok){
+        const safe=ex.s.replace(/'/g,"\\'");
+        html+=`<div class="ex2 ok">
+          <div class="ex2-top">
+            <span class="ex2-tag ok">✅ مثال صحيح</span>
+            <button class="ex2-spk" onclick="say('${safe}')" aria-label="استمع">🔊</button>
+          </div>
+          <div class="ex2-en">${ex.s}</div>
+          ${ex.tr?`<div class="ex2-tr">${ex.tr}</div>`:''}
+          ${ex.ar?`<div class="ex2-note">${ex.ar}</div>`:''}
+        </div>`;
+      }else{
+        let fix=ex.s;
+        if(ex.wrong&&ex.right){
+          fix=ex.s.replace(ex.wrong,`<span class="ex2-bad">${ex.wrong}</span><span class="ex2-arr">←</span><span class="ex2-rt">${ex.right}</span>`);
+        }
+        html+=`<div class="ex2 no">
+          <div class="ex2-top"><span class="ex2-tag no">⚠️ الخطأ الشائع</span></div>
+          <div class="ex2-fix">${fix}</div>
+          ${(ex.tr||ex.ar)?`<div class="ex2-tr no">${ex.tr||ex.ar}</div>`:''}
+        </div>`;
+      }
     });
     html+='</div>';
   }
@@ -1545,7 +1656,7 @@ function build_quiz(elId,qs,prefix){
 function build_dd(lk){
   const el=document.getElementById('ph-drag');
   el.innerHTML=`<div style="background:#FFF7ED;border:2px solid #FED7AA;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.8rem;font-family:'Cairo',sans-serif;color:#92400E">
-    💡 اضغط على الكلمة الصحيحة من الأسفل، ثم اضغط على الفراغ لتملأه
+    💡 اختر الكلمة الصحيحة لملء الفراغ — عند الإجابة الصحيحة تظهر الترجمة للتعلّم
   </div>`;
 
   const items=DD[lk];
@@ -1557,18 +1668,16 @@ function build_dd(lk){
     const top=document.createElement('div');top.className='dd-top';
     top.appendChild(document.createTextNode(parts[0]));
     const blank=document.createElement('span');blank.className='dd-blank';blank.id=`ddb${idx}`;
-    blank.textContent='?';
-    blank.onclick=()=>fill_blank(idx,item.blank,item.words);
+    blank.textContent='؟';
+    blank.onclick=()=>fill_blank(idx,item);
     top.appendChild(blank);
     if(parts[1])top.appendChild(document.createTextNode(parts[1]));
 
     div.appendChild(top);
 
-    // Arabic hint
-    const hint=document.createElement('div');
-    hint.style.cssText='font-size:.72rem;color:#888;font-family:Cairo,sans-serif;margin-bottom:8px;direction:rtl';
-    hint.textContent='💡 '+item.ar;
-    div.appendChild(hint);
+    // Reveal container — translation appears here ONLY after a correct answer
+    const rev=document.createElement('div');rev.id=`ddrev${idx}`;
+    div.appendChild(rev);
 
     // Word bank
     const bank=document.createElement('div');bank.className='dd-words';bank.id=`ddw${idx}`;
@@ -1576,7 +1685,7 @@ function build_dd(lk){
     shuffled.forEach(w=>{
       const btn=document.createElement('button');btn.className='dd-word';btn.id=`ddwb${idx}_${w}`;
       btn.textContent=w;
-      btn.onclick=()=>select_word(idx,w,item.blank,item.words);
+      btn.onclick=()=>select_word(idx,w,item);
       bank.appendChild(btn);
     });
     div.appendChild(bank);
@@ -1586,55 +1695,51 @@ function build_dd(lk){
 
 let ddActive={idx:null,word:null};
 
-function select_word(idx,word,correct,words){
+function select_word(idx,word,item){
   // Deselect previous
   if(ddActive.idx!==null){
     const prev=document.getElementById(`ddwb${ddActive.idx}_${ddActive.word}`);
-    if(prev)prev.style.background='';
+    if(prev){prev.style.background='';prev.style.color='';}
   }
   ddActive={idx,word};
   const btn=document.getElementById(`ddwb${idx}_${word}`);
   if(btn){btn.style.background='var(--b)';btn.style.color='#fff';}
 
   // Auto-fill blank
-  fill_blank(idx,correct,words);
+  fill_blank(idx,item);
 }
 
-function fill_blank(idx,correct,words){
+function fill_blank(idx,item){
   if(!ddActive.word||ddActive.idx!==idx)return;
   const word=ddActive.word;
+  const correct=item.blank;
   const blank=document.getElementById(`ddb${idx}`);
   const card=document.getElementById(`dd${idx}`);
-
-  blank.textContent=word;
-  blank.classList.add('filled');
-
+  const rev=document.getElementById(`ddrev${idx}`);
   const isOk=word.toLowerCase()===correct.toLowerCase();
-  blank.classList.remove('correct','wrong');
-  blank.classList.add(isOk?'correct':'wrong');
-  card.classList.remove('dd-ok','dd-no');
-  card.classList.add(isOk?'dd-ok':'dd-no');
 
-  // Mark word used
-  words.forEach(w=>{
-    const wb=document.getElementById(`ddwb${idx}_${w}`);
-    if(wb){wb.classList.toggle('used',w.toLowerCase()===word.toLowerCase());}
-  });
-
-  if(isOk){XP+=2;document.getElementById('xp').textContent=XP;}
-
-  // Show correct answer if wrong
-  if(!isOk){
-    const hint=document.createElement('div');
-    hint.style.cssText='font-size:.75rem;color:var(--no-txt);font-family:Cairo,sans-serif;margin-top:6px;background:var(--no-bg);padding:6px 10px;border-radius:6px';
-    hint.textContent=`✗ الجواب الصحيح: "${correct}"`;
-    const existing=document.getElementById(`ddhint${idx}`);
-    if(existing)existing.remove();
-    hint.id=`ddhint${idx}`;
-    document.getElementById(`dd${idx}`).appendChild(hint);
+  if(isOk){
+    // Correct → lock it and reveal the translation for learning
+    blank.textContent=word;
+    blank.className='dd-blank filled correct';
+    card.className='dd-sentence dd-ok';
+    item.words.forEach(w=>{
+      const wb=document.getElementById(`ddwb${idx}_${w}`);
+      if(wb)wb.classList.add('used');
+    });
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+    rev.innerHTML=`<div class="dd-reveal">
+      <div class="dd-tr">📖 ${item.tr||''}</div>
+      ${item.ar?`<div class="dd-note">💡 ${item.ar}</div>`:''}
+    </div>`;
   }else{
-    const existing=document.getElementById(`ddhint${idx}`);
-    if(existing)existing.remove();
+    // Wrong → let the student try again, do NOT reveal the answer
+    blank.textContent='؟';
+    blank.className='dd-blank';
+    card.className='dd-sentence';
+    const wb=document.getElementById(`ddwb${idx}_${word}`);
+    if(wb){wb.style.background='';wb.style.color='';}
+    rev.innerHTML=`<div class="dd-retry">❌ ليست صحيحة — جرّب كلمة أخرى</div>`;
   }
   ddActive={idx:null,word:null};
 }
@@ -1655,7 +1760,8 @@ function ans(pfx,qi,oi,correct,en,ar){
   document.getElementById(`${pfx}fe${qi}`).textContent=ok?`Correct! ${en}`:`Answer: ${['A','B','C','D'][correct]}. ${en}`;
   document.getElementById(`${pfx}fa${qi}`).textContent=ar;
   fb.className='fb show '+(ok?'ok':'no');
-  if(ok){XP+=pfx==='te'||pfx==='fi'?5:3;STK++;document.getElementById('xp').textContent=XP;document.getElementById('streak').textContent=STK;}
+  if(ok){XP+=pfx==='te'||pfx==='fi'?5:3;STK++;document.getElementById('xp').textContent=XP;document.getElementById('streak').textContent=STK;save_progress();}
+  else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}
   say(pfx==='fi'?FINAL[qi].o[correct]:(pfx==='te'?EE[CL][qi].o[correct]:PR[CL][qi].o[correct]));
 
   // Update progress bar
@@ -1753,15 +1859,28 @@ function show_result(correct,total,mode){
   if(pct>=70)document.getElementById('s2').classList.add('lit');
   if(pct>=90)document.getElementById('s3').classList.add('lit');
   document.getElementById('modal').classList.add('show');
+  const nb=document.getElementById('m-next');
+  if(nb){
+    const order=['l1','l2','l3','l4'];const i=order.indexOf(CL);
+    nb.style.display=(mode==='te'&&i>=0&&i<order.length-1)?'inline-block':'none';
+  }
   if(mode==='te'&&pct>=70){
     document.getElementById('hc-'+CL).classList.add('done');
     document.getElementById('lp-'+CL).style.width=pct+'%';
     upd_global();
+    save_progress();
   }
   if(pct>=90)confetti();
 }
 
 function close_modal(){document.getElementById('modal').classList.remove('show');}
+
+function next_lesson(){
+  const order=['l1','l2','l3','l4'];const i=order.indexOf(CL);
+  close_modal();
+  if(i>=0&&i<order.length-1)open_lesson(order[i+1]);
+  else go_home();
+}
 
 function retry(){
   close_modal();
@@ -1789,6 +1908,492 @@ function confetti(){
   }
   setTimeout(()=>con.innerHTML='',4000);
 }
+
+// ═══════════════════════════════════════
+// PREPOSITIONS  in / on / at
+// ═══════════════════════════════════════
+const PREP = {
+  place:{
+    in:{rule:'داخل مكان كبير أو محيط مُغلق — دول، مدن، غرف، سيارات.',ex:[
+      {e:'in Saudi Arabia',a:'في السعودية'},{e:'in Riyadh',a:'في الرياض'},
+      {e:'in a room',a:'في غرفة'},{e:'in a car',a:'داخل سيارة'}]},
+    on:{rule:'على سطح شيء، أو على شارع، أو في طابق.',ex:[
+      {e:'on the table',a:'على الطاولة'},{e:'on the wall',a:'على الجدار'},
+      {e:'on King Street',a:'في شارع كينج'},{e:'on the second floor',a:'في الطابق الثاني'}]},
+    at:{rule:'نقطة محدّدة أو عنوان دقيق.',ex:[
+      {e:'at the door',a:'عند الباب'},{e:'at the bus stop',a:'عند موقف الحافلة'},
+      {e:'at home',a:'في البيت'},{e:'at school',a:'في المدرسة'}]}
+  },
+  time:{
+    in:{rule:'فترات طويلة — شهور، سنوات، فصول، وأجزاء اليوم.',ex:[
+      {e:'in 2024',a:'في 2024'},{e:'in July',a:'في يوليو'},
+      {e:'in the morning',a:'في الصباح'},{e:'in summer',a:'في الصيف'}]},
+    on:{rule:'الأيام والتواريخ.',ex:[
+      {e:'on Monday',a:'يوم الاثنين'},{e:'on July 5',a:'في 5 يوليو'},
+      {e:'on my birthday',a:'في عيد ميلادي'},{e:'on the weekend',a:'في نهاية الأسبوع'}]},
+    at:{rule:'لحظة محدّدة من الوقت — ولاحظ الاستثناء: at night.',ex:[
+      {e:'at 7:00',a:'الساعة 7:00'},{e:'at noon',a:'عند الظهر'},
+      {e:'at night',a:'في الليل (استثناء)'},{e:'at midnight',a:'منتصف الليل'}]}
+  }
+};
+const PREP_COLORS={in:{bg:'#DBEAFE',bd:'#60A5FA',tx:'#1D4ED8'},on:{bg:'#DCFCE7',bd:'#4ADE80',tx:'#15803D'},at:{bg:'#FFEDD5',bd:'#FB923C',tx:'#C2410C'}};
+const PREP_QUIZ=[
+  {q:'I live ___ Riyadh.',a:'in',tr:'أعيش في الرياض. — مدينة ← in'},
+  {q:'The book is ___ the table.',a:'on',tr:'الكتاب على الطاولة. — سطح ← on'},
+  {q:'Class starts ___ 7:30.',a:'at',tr:'يبدأ الدرس الساعة 7:30. — وقت محدّد ← at'},
+  {q:'My birthday is ___ July.',a:'in',tr:'عيد ميلادي في يوليو. — شهر ← in'},
+  {q:'See you ___ Monday.',a:'on',tr:'أراك يوم الاثنين. — يوم ← on'},
+  {q:'I wake up ___ 6 a.m.',a:'at',tr:'أستيقظ الساعة 6 صباحاً. — وقت محدّد ← at'},
+  {q:'We meet ___ the bus stop.',a:'at',tr:'نلتقي عند موقف الحافلة. — نقطة محدّدة ← at'},
+  {q:'It is cold ___ winter.',a:'in',tr:'الجو بارد في الشتاء. — فصل ← in'}
+];
+let prepMode='place',prepSel='in';
+
+function open_prep(){
+  document.getElementById('home').style.display='none';
+  document.getElementById('lscreen').style.display='none';
+  document.getElementById('fscreen').style.display='none';
+  document.getElementById('ascreen').style.display='none';
+  document.getElementById('wscreen').style.display='none';
+  document.getElementById('spscreen').style.display='none';
+  const ps=document.getElementById('pscreen');
+  ps.style.display='block';
+  ps.scrollIntoView({behavior:'smooth',block:'start'});
+  prepMode='place';
+  document.getElementById('pt-place').classList.add('on');
+  document.getElementById('pt-time').classList.remove('on');
+  sel_prep('in');
+  build_prep_quiz();
+}
+
+function sw_prep(m){
+  prepMode=m;
+  document.getElementById('pt-place').classList.toggle('on',m==='place');
+  document.getElementById('pt-time').classList.toggle('on',m==='time');
+  sel_prep(prepSel);
+}
+
+function sel_prep(p){
+  prepSel=p;
+  ['in','on','at'].forEach(x=>document.getElementById('ring-'+x).classList.toggle('active',x===p));
+  const d=PREP[prepMode][p],c=PREP_COLORS[p];
+  let html=`<div class="prep-detail" style="border-color:${c.bd}">
+    <h3 style="color:${c.tx}">${p}
+      <span class="pd-tag" style="background:${c.bg};color:${c.tx}">${prepMode==='place'?'📍 مكان':'🕐 زمن'}</span>
+    </h3>
+    <div class="pd-rule">${d.rule}</div>`;
+  d.ex.forEach(x=>{
+    const safe=x.e.replace(/'/g,"\\'");
+    html+=`<div class="prep-ex">
+      <div><div class="pe-en">${x.e}</div><div class="pe-ar">${x.a}</div></div>
+      <button onclick="say('${safe}')" aria-label="استمع">🔊</button>
+    </div>`;
+  });
+  html+='</div>';
+  document.getElementById('prep-detail').innerHTML=html;
+}
+
+function build_prep_quiz(){
+  let html='';
+  PREP_QUIZ.forEach((q,i)=>{
+    html+=`<div class="pq-item">
+      <div class="pq-sent">${i+1}. ${q.q}</div>
+      <div class="pq-opts">
+        ${['in','on','at'].map(o=>`<button class="pq-opt" id="pqo${i}_${o}" onclick="prep_answer(${i},'${o}')">${o}</button>`).join('')}
+      </div>
+      <div class="pq-fb" id="pqfb${i}"></div>
+    </div>`;
+  });
+  document.getElementById('prep-quiz').innerHTML=html;
+}
+
+function prep_answer(i,o){
+  const q=PREP_QUIZ[i];
+  const fb=document.getElementById('pqfb'+i);
+  const btn=document.getElementById('pqo'+i+'_'+o);
+  if(o===q.a){
+    ['in','on','at'].forEach(x=>{const b=document.getElementById('pqo'+i+'_'+x);if(b)b.disabled=true;});
+    btn.classList.add('ok');
+    fb.textContent='✅ '+q.tr;
+    fb.className='pq-fb show ok';
+    say(q.q.replace('___',o));
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+  }else{
+    btn.classList.add('no');
+    fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
+    fb.className='pq-fb show no';
+    setTimeout(()=>{btn.classList.remove('no');},700);
+  }
+}
+
+// ═══════════════════════════════════════
+// ARTICLES  a / an / the
+// ═══════════════════════════════════════
+const ART = {
+  a:{c:{bg:'#DBEAFE',bd:'#60A5FA',tx:'#1D4ED8'},tag:'🆕 مجهول',
+     rule:'نستخدمها مع اسم مفرد جديد/مجهول يبدأ <b>نطقه</b> بصوت ساكن (consonant).',
+     note:'⚠️ العبرة بالنطق لا بالحرف: كلمة <b>university</b> تبدأ بحرف u لكن تُنطق «يو» = صوت ساكن → نقول <b>a</b> university.',
+     ex:[
+      {e:'a car',a:'سيارة (أيّ واحدة)'},{e:'a book',a:'كتاب'},
+      {e:'a dog',a:'كلب'},{e:'a university',a:'جامعة (تُنطق «يو»)'}]},
+  an:{c:{bg:'#EDE9FE',bd:'#A78BFA',tx:'#6D28D9'},tag:'🆕 مجهول',
+     rule:'نستخدمها مع اسم مفرد جديد/مجهول يبدأ <b>نطقه</b> بأحد الأصوات المتحرّكة الخمسة.',
+     vowels:true,
+     note:'⚠️ العبرة بالنطق لا بالحرف: كلمة <b>hour</b> تبدأ بحرف h لكنه صامت، فالنطق يبدأ بصوت متحرّك → نقول <b>an</b> hour.',
+     ex:[
+      {e:'an apple',a:'تفّاحة'},{e:'an egg',a:'بيضة'},
+      {e:'an hour',a:'ساعة (الـ h صامتة)'},{e:'an umbrella',a:'مظلّة'}]},
+  the:{c:{bg:'#FFEDD5',bd:'#FB923C',tx:'#C2410C'},tag:'✅ معلوم',
+     rule:'شيء محدّد يعرفه الطرفان، أو شيء فريد في الكون.',
+     ex:[
+      {e:'the sun',a:'الشمس (فريدة)'},{e:'the door',a:'الباب (المعروف)'},
+      {e:'the USA',a:'الولايات المتحدة'},{e:'the teacher',a:'المعلّم (المعيَّن)'}]}
+};
+const ART_QUIZ=[
+  {q:'I have ___ apple.',a:'an',tr:'معي تفّاحة. — تبدأ بصوت متحرّك ← an'},
+  {q:'She is ___ teacher.',a:'a',tr:'هي معلّمة. — صوت ساكن ← a'},
+  {q:'___ sun is very hot.',a:'the',tr:'الشمس حارّة جداً. — فريدة ← the'},
+  {q:'He lives in ___ old house.',a:'an',tr:'يعيش في بيت قديم. — old بصوت متحرّك ← an'},
+  {q:'Please close ___ door.',a:'the',tr:'أغلق الباب. — الباب المعروف ← the'},
+  {q:'Wait ___ hour, please.',a:'an',tr:'انتظر ساعة. — الـ h صامتة ← an'},
+  {q:'I want ___ university degree.',a:'a',tr:'أريد شهادة جامعية. — «يو» صوت ساكن ← a'},
+  {q:'Look at ___ moon tonight.',a:'the',tr:'انظر إلى القمر. — فريد ← the'}
+];
+let artSel='a';
+
+function open_art(){
+  document.getElementById('home').style.display='none';
+  document.getElementById('lscreen').style.display='none';
+  document.getElementById('fscreen').style.display='none';
+  document.getElementById('pscreen').style.display='none';
+  document.getElementById('wscreen').style.display='none';
+  document.getElementById('spscreen').style.display='none';
+  const a=document.getElementById('ascreen');
+  a.style.display='block';
+  a.scrollIntoView({behavior:'smooth',block:'start'});
+  sel_art('a');
+  build_art_quiz();
+}
+
+function sel_art(p){
+  artSel=p;
+  ['a','an','the'].forEach(x=>document.getElementById('art-'+x).classList.toggle('active',x===p));
+  const d=ART[p],c=d.c;
+  let html=`<div class="prep-detail" style="border-color:${c.bd}">
+    <h3 style="color:${c.tx}">${p}
+      <span class="pd-tag" style="background:${c.bg};color:${c.tx}">${d.tag}</span>
+    </h3>
+    <div class="pd-sub" style="color:${c.tx}">متى نستخدمها؟</div>
+    <div class="pd-rule">${d.rule}</div>`;
+  if(d.vowels){
+    html+=`<div class="vowel-lbl">الأصوات المتحرّكة الخمسة</div>
+    <div class="vowel-strip">${['a','e','i','o','u'].map(v=>`<div class="vowel-chip">${v}</div>`).join('')}</div>`;
+  }
+  if(d.note){html+=`<div class="art-note">${d.note}</div>`;}
+  html+=`<div class="pd-sub" style="color:${c.tx}">أمثلة</div>`;
+  d.ex.forEach(x=>{
+    const safe=x.e.replace(/'/g,"\\'");
+    html+=`<div class="prep-ex">
+      <div><div class="pe-en">${x.e}</div><div class="pe-ar">${x.a}</div></div>
+      <button onclick="say('${safe}')" aria-label="استمع">🔊</button>
+    </div>`;
+  });
+  html+='</div>';
+  document.getElementById('art-detail').innerHTML=html;
+}
+
+function build_art_quiz(){
+  let html='';
+  ART_QUIZ.forEach((q,i)=>{
+    html+=`<div class="pq-item">
+      <div class="pq-sent">${i+1}. ${q.q}</div>
+      <div class="pq-opts">
+        ${['a','an','the'].map(o=>`<button class="pq-opt" id="aqo${i}_${o}" onclick="art_answer(${i},'${o}')">${o}</button>`).join('')}
+      </div>
+      <div class="pq-fb" id="aqfb${i}"></div>
+    </div>`;
+  });
+  document.getElementById('art-quiz').innerHTML=html;
+}
+
+function art_answer(i,o){
+  const q=ART_QUIZ[i];
+  const fb=document.getElementById('aqfb'+i);
+  const btn=document.getElementById('aqo'+i+'_'+o);
+  if(o===q.a){
+    ['a','an','the'].forEach(x=>{const b=document.getElementById('aqo'+i+'_'+x);if(b)b.disabled=true;});
+    btn.classList.add('ok');
+    fb.textContent='✅ '+q.tr;
+    fb.className='pq-fb show ok';
+    say(q.q.replace('___',o));
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+  }else{
+    btn.classList.add('no');
+    fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
+    fb.className='pq-fb show no';
+    setTimeout(()=>{btn.classList.remove('no');},700);
+  }
+}
+
+// ═══════════════════════════════════════
+// WH QUESTIONS
+// ═══════════════════════════════════════
+const WH = {
+  what:{ic:'❓',ar:'ماذا / ما',asks:'الأشياء والأفعال',ex:[
+    {e:'What is this?',a:'ما هذا؟'},{e:'What do you do?',a:'ماذا تعمل؟'},{e:'What time is it?',a:'كم الساعة؟'}]},
+  where:{ic:'📍',ar:'أين',asks:'المكان',ex:[
+    {e:'Where do you live?',a:'أين تسكن؟'},{e:'Where is the base?',a:'أين القاعدة؟'}]},
+  when:{ic:'🕐',ar:'متى',asks:'الزمن / الوقت',ex:[
+    {e:'When is the class?',a:'متى الحصة؟'},{e:'When did you arrive?',a:'متى وصلت؟'}]},
+  who:{ic:'👤',ar:'مَن',asks:'الأشخاص',ex:[
+    {e:'Who is she?',a:'من هي؟'},{e:'Who is your teacher?',a:'من معلّمك؟'}]},
+  why:{ic:'💡',ar:'لماذا',asks:'السبب',ex:[
+    {e:'Why are you late?',a:'لماذا تأخّرت؟'},{e:'Why did he leave?',a:'لماذا غادر؟'}]},
+  which:{ic:'🔀',ar:'أيّ',asks:'الاختيار بين أشياء محدّدة',ex:[
+    {e:'Which color do you like?',a:'أيّ لون تحب؟'},{e:'Which one is yours?',a:'أيّهما لك؟'}]},
+  whose:{ic:'🔑',ar:'لِمَن',asks:'المِلكية',ex:[
+    {e:'Whose book is this?',a:'لمن هذا الكتاب؟'},{e:'Whose car is it?',a:'لمن السيارة؟'}]},
+  how:{ic:'🛠️',ar:'كيف',asks:'الطريقة أو الحال',ex:[
+    {e:'How are you?',a:'كيف حالك؟'},{e:'How do you go to work?',a:'كيف تذهب للعمل؟'},{e:'How much is it?',a:'كم ثمنه؟'}]}
+};
+const WH_ORDER=['what','where','when','who','why','which','whose','how'];
+const WH_QUIZ=[
+  {q:'___ is this? — It is a pen.',a:'What',o:['What','Who','Where'],tr:'ما هذا؟ — إنه قلم. (شيء ← What)'},
+  {q:'___ do you live? — In Riyadh.',a:'Where',o:['When','Where','Why'],tr:'أين تسكن؟ — في الرياض. (مكان ← Where)'},
+  {q:'___ is the class? — At 7:30.',a:'When',o:['When','How','Who'],tr:'متى الحصة؟ — الساعة 7:30. (زمن ← When)'},
+  {q:'___ is she? — She is my sister.',a:'Who',o:['What','Who','Which'],tr:'من هي؟ — إنها أختي. (شخص ← Who)'},
+  {q:'___ are you late? — Because of traffic.',a:'Why',o:['Why','When','How'],tr:'لماذا تأخّرت؟ — بسبب الزحام. (سبب ← Why)'},
+  {q:'___ book is this? — It is mine.',a:'Whose',o:['Who','Whose','Which'],tr:'لمن هذا الكتاب؟ — إنه لي. (مِلكية ← Whose)'},
+  {q:'___ do you go to work? — By car.',a:'How',o:['How','Where','What'],tr:'كيف تذهب للعمل؟ — بالسيارة. (طريقة ← How)'},
+  {q:'___ color do you want? — The blue one.',a:'Which',o:['Which','What','Whose'],tr:'أيّ لون تريد؟ — الأزرق. (اختيار محدّد ← Which)'}
+];
+let whSel='what';
+
+function open_wh(){
+  ['home','lscreen','fscreen','pscreen','ascreen','spscreen'].forEach(id=>document.getElementById(id).style.display='none');
+  const w=document.getElementById('wscreen');
+  w.style.display='block';
+  w.scrollIntoView({behavior:'smooth',block:'start'});
+  build_wh_grid();
+  sel_wh('what');
+  build_wh_quiz();
+}
+
+function build_wh_grid(){
+  document.getElementById('wh-grid').innerHTML=WH_ORDER.map(k=>{
+    const d=WH[k],cap=k.charAt(0).toUpperCase()+k.slice(1);
+    return `<button class="wh-chip" id="wh-${k}" onclick="sel_wh('${k}')">
+      <div class="wc-ic">${d.ic}</div><div class="wc-en">${cap}</div><div class="wc-ar">${d.ar}</div></button>`;
+  }).join('');
+}
+
+function sel_wh(k){
+  whSel=k;
+  WH_ORDER.forEach(x=>document.getElementById('wh-'+x).classList.toggle('active',x===k));
+  const d=WH[k],cap=k.charAt(0).toUpperCase()+k.slice(1);
+  let html=`<div class="prep-detail" style="border-color:#5EEAD4">
+    <h3 style="color:#0F766E">${d.ic} ${cap}
+      <span class="pd-tag" style="background:#CCFBF1;color:#0F766E">${d.ar}</span>
+    </h3>
+    <div class="pd-rule">يسأل عن: <b>${d.asks}</b></div>`;
+  d.ex.forEach(x=>{
+    const safe=x.e.replace(/'/g,"\\'");
+    html+=`<div class="prep-ex">
+      <div><div class="pe-en">${x.e}</div><div class="pe-ar">${x.a}</div></div>
+      <button onclick="say('${safe}')" aria-label="استمع">🔊</button>
+    </div>`;
+  });
+  html+='</div>';
+  document.getElementById('wh-detail').innerHTML=html;
+}
+
+function build_wh_quiz(){
+  let html='';
+  WH_QUIZ.forEach((q,i)=>{
+    html+=`<div class="pq-item">
+      <div class="pq-sent">${i+1}. ${q.q}</div>
+      <div class="pq-opts">
+        ${q.o.map(o=>`<button class="pq-opt" id="wqo${i}_${o}" onclick="wh_answer(${i},'${o}')">${o}</button>`).join('')}
+      </div>
+      <div class="pq-fb" id="wqfb${i}"></div>
+    </div>`;
+  });
+  document.getElementById('wh-quiz').innerHTML=html;
+}
+
+function wh_answer(i,o){
+  const q=WH_QUIZ[i];
+  const fb=document.getElementById('wqfb'+i);
+  const btn=document.getElementById('wqo'+i+'_'+o);
+  if(o===q.a){
+    q.o.forEach(x=>{const b=document.getElementById('wqo'+i+'_'+x);if(b)b.disabled=true;});
+    btn.classList.add('ok');
+    fb.textContent='✅ '+q.tr;
+    fb.className='pq-fb show ok';
+    say(q.q.split('—')[0].replace('___',o));
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+  }else{
+    btn.classList.add('no');
+    fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
+    fb.className='pq-fb show no';
+    setTimeout(()=>{btn.classList.remove('no');},700);
+  }
+}
+
+// ═══════════════════════════════════════
+// SPELLING — write from listening
+// ═══════════════════════════════════════
+const SPELL=[
+  {e:'ball',a:'كرة',em:'🏀'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'لعبة',em:'🎮'},
+  {e:'city',a:'مدينة',em:'🏙️'},{e:'show',a:'عرض / برنامج',em:'📺'},{e:'base',a:'قاعدة',em:'🏕️'},
+  {e:'rank',a:'رتبة',em:'🎖️'},{e:'cap',a:'قبعة',em:'🧢'},{e:'break',a:'استراحة',em:'☕'},
+  {e:'dress',a:'فستان',em:'👗'},{e:'shirt',a:'قميص',em:'👔'},{e:'shoes',a:'حذاء',em:'👟'},
+  {e:'socks',a:'جوارب',em:'🧦'},{e:'belt',a:'حزام',em:'🔗'},{e:'hat',a:'قبعة عريضة',em:'👒'},
+  {e:'coat',a:'معطف',em:'🧥'},{e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'},
+  {e:'spring',a:'الربيع',em:'🌸'},{e:'summer',a:'الصيف',em:'☀️'},{e:'winter',a:'الشتاء',em:'❄️'},
+  {e:'music',a:'موسيقى',em:'🎵'},{e:'radio',a:'راديو',em:'📻'},{e:'store',a:'متجر',em:'🏪'},
+  {e:'warm',a:'دافئ',em:'🌡️'},{e:'cold',a:'بارد',em:'🥶'}
+];
+let spellWords=[],spellIdx=0,spellTries=0,spellHint=0,spellScore=0;
+
+function open_spell(){
+  ['home','lscreen','fscreen','pscreen','ascreen','wscreen'].forEach(id=>document.getElementById(id).style.display='none');
+  const s=document.getElementById('spscreen');
+  s.style.display='block';
+  s.scrollIntoView({behavior:'smooth',block:'start'});
+  spellWords=[...SPELL].sort(()=>Math.random()-.5);
+  spellIdx=0;spellScore=0;
+  render_spell();
+}
+
+function render_spell(){
+  const body=document.getElementById('spell-body');
+  const total=spellWords.length;
+  if(spellIdx>=total){
+    document.getElementById('sp-fill').style.width='100%';
+    document.getElementById('sp-count').textContent=`${total} / ${total}`;
+    body.innerHTML=`<div class="sp-card sp-done">
+      <div class="sp-emoji">🎉</div>
+      <div class="sp-donetxt">أحسنت! أكملت جميع الكلمات</div>
+      <div class="sp-score">نتيجتك: ${spellScore} / ${total}</div>
+      <button class="sp-btn check" onclick="open_spell()">🔁 إعادة</button>
+    </div>`;
+    return;
+  }
+  spellTries=0;spellHint=0;
+  const w=spellWords[spellIdx];
+  document.getElementById('sp-fill').style.width=Math.round(spellIdx/total*100)+'%';
+  document.getElementById('sp-count').textContent=`${spellIdx+1} / ${total}`;
+  const safe=w.e.replace(/'/g,"\\'");
+  body.innerHTML=`<div class="sp-card">
+    <button class="sp-listen" onclick="say('${safe}')">🔊 اسمع الكلمة</button>
+    <div class="sp-emoji">${w.em}</div>
+    <div class="sp-ar">${w.a}</div>
+    <div class="sp-hintline" id="sp-hintline"></div>
+    <input class="sp-input" id="sp-input" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="اكتب الكلمة..." onkeydown="if(event.key==='Enter')spell_enter()">
+    <div class="sp-fb" id="sp-fb"></div>
+    <div class="sp-btns">
+      <button class="sp-btn hint" id="sp-hintbtn" onclick="spell_hint()">💡 تلميح</button>
+      <button class="sp-btn check" id="sp-checkbtn" onclick="spell_check()">تحقّق ✓</button>
+      <button class="sp-btn next" id="sp-nextbtn" onclick="spell_next()" style="display:none">التالي ←</button>
+    </div>
+    <button class="sp-skip" onclick="spell_next()">تخطّي هذه الكلمة ←</button>
+  </div>`;
+  render_hint();
+  const inp=document.getElementById('sp-input');if(inp)inp.focus();
+  say(w.e);
+}
+
+function render_hint(){
+  const w=spellWords[spellIdx].e;
+  let s='';
+  for(let i=0;i<w.length;i++){s+=(i<spellHint?w[i]:'_')+' ';}
+  const el=document.getElementById('sp-hintline');if(el)el.textContent=s.trim();
+}
+
+function spell_hint(){
+  const w=spellWords[spellIdx].e;
+  if(spellHint<w.length-1)spellHint++;
+  render_hint();
+}
+
+function spell_enter(){
+  const nb=document.getElementById('sp-nextbtn');
+  if(nb&&nb.style.display!=='none')spell_next();
+  else spell_check();
+}
+
+function spell_check(){
+  const inp=document.getElementById('sp-input');
+  const w=spellWords[spellIdx].e;
+  const val=(inp.value||'').trim().toLowerCase().replace(/\s+/g,' ');
+  const fb=document.getElementById('sp-fb');
+  if(!val)return;
+  if(val===w.toLowerCase()){
+    inp.disabled=true;inp.classList.remove('no');inp.classList.add('ok');
+    fb.textContent='✅ ممتاز! إملاء صحيح';fb.className='sp-fb show ok';
+    document.getElementById('sp-hintbtn').style.display='none';
+    document.getElementById('sp-checkbtn').style.display='none';
+    document.getElementById('sp-nextbtn').style.display='';
+    say(w);
+    spellScore++;XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+  }else{
+    spellTries++;
+    inp.classList.remove('no');void inp.offsetWidth;inp.classList.add('no');
+    if(spellTries>=3){
+      inp.disabled=true;
+      fb.innerHTML=`❌ الكلمة الصحيحة: <b class="sp-answer">${w}</b>`;fb.className='sp-fb show no';
+      document.getElementById('sp-hintbtn').style.display='none';
+      document.getElementById('sp-checkbtn').style.display='none';
+      document.getElementById('sp-nextbtn').style.display='';
+    }else{
+      fb.textContent=`❌ ليست صحيحة — حاول مرة أخرى (${spellTries}/3)`;fb.className='sp-fb show no';
+    }
+  }
+}
+
+function spell_next(){spellIdx++;render_spell();}
+
+// ═══════════════════════════════════════
+// PROGRESS PERSISTENCE (localStorage)
+// ═══════════════════════════════════════
+const PKEY='alc_book4_progress';
+function save_progress(){
+  try{
+    const data={xp:XP,streak:STK,lessons:{}};
+    ['l1','l2','l3','l4'].forEach(lk=>{
+      const card=document.getElementById('hc-'+lk);
+      const bar=document.getElementById('lp-'+lk);
+      if(card&&card.classList.contains('done')){
+        data.lessons[lk]={done:true,pct:parseInt(bar&&bar.style.width)||100};
+      }
+    });
+    localStorage.setItem(PKEY,JSON.stringify(data));
+  }catch(e){}
+}
+function load_progress(){
+  let data=null;
+  try{data=JSON.parse(localStorage.getItem(PKEY));}catch(e){}
+  if(!data)return;
+  XP=data.xp||0;STK=data.streak||0;
+  document.getElementById('xp').textContent=XP;
+  document.getElementById('streak').textContent=STK;
+  if(data.lessons){
+    Object.keys(data.lessons).forEach(lk=>{
+      const L=data.lessons[lk];
+      const card=document.getElementById('hc-'+lk);
+      const bar=document.getElementById('lp-'+lk);
+      if(L&&L.done&&card){card.classList.add('done');if(bar)bar.style.width=(L.pct||100)+'%';}
+    });
+  }
+  upd_global();
+}
+function reset_progress(){
+  if(!confirm('هل تريد مسح كل تقدّمك والبدء من جديد؟'))return;
+  try{localStorage.removeItem(PKEY);}catch(e){}
+  location.reload();
+}
+load_progress();
 </script>
 
 <!-- FOOTER -->

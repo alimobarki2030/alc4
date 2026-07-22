@@ -1,0 +1,3170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1396QQS2S5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1396QQS2S5');
+</script>
+<meta name="description" content="تعلّم، تدرّب، واختبر نفسك على Book 4 بالكامل — مع اختبار نهائي شامل">
+<meta property="og:title" content="Book 4 ALC — مركز التدريب الإنجليزي">
+<meta property="og:description" content="تعلّم، تدرّب، واختبر نفسك على Book 4 بالكامل — مع اختبار نهائي شامل">
+<meta property="og:type" content="website">
+<meta name="author" content="Ali Mobarki">
+<meta property="og:url" content="https://alc4.alimobarki.com/">
+<meta property="og:image" content="https://alc4.alimobarki.com/alc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://alc4.alimobarki.com/alc.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book 4 ALC — مركز التدريب الإنجليزي</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap');
+:root{
+  --g:#58CC02;--gd:#46A302;--b:#1CB0F6;--bd:#0A96DC;
+  --r:#FF4B4B;--o:#FF9600;--y:#FFC800;--p:#CE82FF;--pur:#7C3AED;
+  --navy:#1A2744;--navy2:#243560;--bg:#F0F4FF;
+  --card:#FFFFFF;--txt:#3C3C3C;--muted:#AFAFAF;--bdr:#E5E5E5;
+  --ok-bg:#D7FFB8;--ok-txt:#2D8A00;--no-bg:#FFDFE0;--no-txt:#CC0000;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;font-size:17px}
+
+/* NAV */
+.nav{background:var(--navy);height:56px;display:flex;align-items:center;
+  justify-content:space-between;padding:0 16px;position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.nav-logo{font-family:'Cairo',sans-serif;font-weight:900;font-size:1.1rem;color:#fff}
+.nav-logo span{color:var(--g)}
+.nav-pills{display:flex;gap:10px;align-items:center}
+.xp-pill{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.1);
+  border:2px solid var(--y);border-radius:20px;padding:4px 12px;
+  color:var(--y);font-weight:700;font-size:.85rem}
+.streak{color:var(--o);font-weight:700;font-size:.95rem}
+
+/* HOME */
+#home{max-width:700px;margin:0 auto;padding:20px 14px 60px}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  border-radius:20px;padding:28px 24px;text-align:center;margin-bottom:24px}
+.hero h1{color:#fff;font-size:1.6rem;font-weight:900;margin-bottom:6px}
+.hero p{color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:18px}
+.gpbar{background:rgba(255,255,255,.2);border-radius:8px;height:8px;margin-bottom:6px}
+.gpfill{background:var(--g);height:8px;border-radius:8px;transition:width .6s;width:0%}
+.gptxt{color:rgba(255,255,255,.6);font-size:.75rem}
+.reset-btn{margin-top:12px;background:rgba(255,75,75,.18);color:#FFAAAA;
+  border:1px solid rgba(255,75,75,.35);border-radius:8px;padding:6px 16px;
+  font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:.15s}
+.reset-btn:hover{background:rgba(255,75,75,.32);color:#fff}
+.lbl{font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.lcard{background:var(--card);border-radius:16px;padding:18px 14px;
+  border:2px solid var(--bdr);cursor:pointer;transition:all .2s;position:relative}
+.lcard:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1);border-color:var(--b)}
+.lcard.done{border-color:var(--g)}
+.lcard.done::after{content:'✓';position:absolute;top:10px;left:10px;
+  background:var(--g);color:#fff;width:22px;height:22px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}
+.lcard-icon{font-size:2rem;display:block;margin-bottom:8px}
+.lcard-num{font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.lcard-name{font-size:1rem;font-weight:700;color:var(--txt);margin:3px 0}
+.lcard-sub{font-size:.82rem;color:var(--muted)}
+.lpbar{background:var(--bdr);border-radius:4px;height:4px;margin-top:10px}
+.lpfill{background:var(--g);height:4px;border-radius:4px;transition:width .4s;width:0%}
+.lcard-score{font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;margin-top:5px}
+.test-top{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);
+  border:2px solid var(--bdr);border-radius:10px;padding:9px 13px;margin-bottom:10px}
+.test-best{font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:700;color:var(--muted)}
+.test-best.done{color:var(--g)}
+.test-restart{background:var(--o);color:#fff;border:none;border-radius:8px;padding:7px 12px;
+  font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:.15s}
+.test-restart:hover{filter:brightness(.93)}
+
+/* FINAL TEST CARD */
+.final-card{background:linear-gradient(135deg,#7C3AED,#5B21B6);border-radius:16px;
+  padding:20px;cursor:pointer;transition:all .2s;text-align:center;
+  border:3px solid #A78BFA;margin-top:4px}
+.final-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,58,237,.4)}
+.final-card h3{color:#fff;font-size:1.1rem;font-weight:900;margin-bottom:4px}
+.final-card p{color:rgba(255,255,255,.8);font-size:.82rem}
+.final-card .fc-badge{display:inline-block;background:var(--y);color:var(--navy);
+  border-radius:12px;padding:3px 12px;font-size:.75rem;font-weight:700;margin-top:8px}
+
+/* STREAK COMEBACK BANNER */
+.streak-comeback{background:linear-gradient(135deg,#FF9600,#EF6C00);border-radius:14px;
+  padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:14px;
+  animation:slideIn .4s ease}
+@keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.streak-comeback .sc-ico{font-size:2rem;flex-shrink:0}
+.streak-comeback .sc-txt h3{color:#fff;font-size:.95rem;font-weight:900;margin-bottom:2px}
+.streak-comeback .sc-txt p{color:rgba(255,255,255,.88);font-size:.82rem}
+.streak-comeback .sc-close{background:rgba(255,255,255,.2);border:none;border-radius:50%;
+  width:28px;height:28px;color:#fff;font-size:1rem;cursor:pointer;margin-right:auto;flex-shrink:0;font-weight:700}
+
+/* LESSON SCREEN */
+#lscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.back{display:inline-flex;align-items:center;gap:8px;background:none;
+  border:2px solid var(--bdr);border-radius:10px;padding:7px 14px;
+  font-family:'Cairo',sans-serif;font-size:.85rem;font-weight:600;
+  color:var(--txt);cursor:pointer;margin-bottom:16px;transition:all .2s}
+.back:hover{border-color:var(--b);color:var(--b)}
+.lhdr{background:var(--card);border-radius:14px;padding:16px;
+  margin-bottom:16px;border:2px solid var(--bdr);display:flex;align-items:center;gap:14px}
+.lhdr-icon{font-size:2.6rem}
+.lhdr h2{font-size:1.1rem;font-weight:900;color:var(--navy)}
+.lhdr p{color:var(--muted);font-size:.82rem;margin-top:3px}
+
+/* TABS */
+.tabs{display:flex;gap:5px;background:var(--card);border-radius:12px;
+  padding:5px;border:2px solid var(--bdr);margin-bottom:16px;flex-wrap:wrap}
+.tab{flex:1;min-width:70px;padding:9px 4px;border:none;border-radius:8px;
+  font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;
+  background:transparent;color:var(--muted);transition:all .2s;
+  display:flex;flex-direction:column;align-items:center;gap:2px}
+.tab .ti{font-size:1rem}
+.tab.active{background:var(--navy);color:#fff}
+.tab.tdone{color:var(--g)}
+.phase{display:none}
+.phase.active{display:block}
+
+/* GRAMMAR VISUAL */
+.sec-hdr{display:flex;align-items:center;gap:8px;margin-bottom:12px;margin-top:20px}
+.sec-hdr h3{font-size:.95rem;font-weight:700;color:var(--navy)}
+.badge{background:var(--b);color:#fff;font-size:.62rem;padding:2px 7px;border-radius:8px;font-weight:700}
+
+/* Grammar visual box */
+.gbox{background:var(--card);border:2px solid var(--bdr);border-radius:14px;padding:16px;margin-bottom:14px;overflow:hidden}
+.gbox-title{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.gbox-title h3{font-size:.9rem;font-weight:700;color:var(--navy)}
+.gtag{font-size:.6rem;padding:2px 7px;border-radius:7px;font-weight:700;color:#fff}
+.gtag.gr{background:#7C3AED}
+.gtag.voc{background:var(--b)}
+.gtag.pr{background:var(--o)}
+.gtag.mil{background:#DC2626}
+
+/* FORMULA BOX */
+.formula{display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  background:#F8F0FF;border-radius:10px;padding:12px;margin-bottom:12px;direction:ltr}
+.fbox{background:#fff;border:2px solid #D8B4FE;border-radius:8px;
+  padding:6px 12px;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:700;color:var(--navy)}
+.fbox.verb{border-color:#60A5FA;background:#EFF6FF}
+.fbox.neg{border-color:#FCA5A5;background:#FEF2F2}
+.fbox.key{border-color:var(--g);background:#F0FDF4;color:#166534}
+.farrow{color:#888;font-size:1rem;font-weight:700}
+
+/* COMPARE TABLE */
+.ctbl{width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:12px;border-radius:10px;overflow:hidden}
+.ctbl th{padding:8px 10px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.78rem;color:#fff}
+.ctbl th.present{background:#2563EB}
+.ctbl th.past{background:#7C3AED}
+.ctbl th.neg{background:#DC2626}
+.ctbl td{padding:7px 10px;border-bottom:1px solid var(--bdr);background:#fff;
+  font-family:'Inter',sans-serif;direction:ltr;text-align:left}
+.ctbl tr:last-child td{border-bottom:none}
+.ctbl td.ar{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;color:#666;font-size:.75rem}
+
+/* EXAMPLE */
+.exrow{background:#F0F7FF;border-right:3px solid var(--b);border-radius:0 8px 8px 0;
+  padding:8px 12px;margin-bottom:6px;font-size:.82rem;font-family:'Inter',sans-serif;
+  color:var(--navy);display:flex;align-items:center;justify-content:space-between;
+  gap:8px;direction:ltr;text-align:left}
+.exrow.ok{background:#F0FDF4;border-color:var(--g)}
+.exrow.no{background:#FEF2F2;border-color:var(--r);text-decoration:line-through;color:#999}
+.spk{background:var(--b);border:none;border-radius:7px;width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  font-size:.9rem;transition:all .2s;flex-shrink:0}
+.spk:hover{background:var(--bd)}
+.spk.dark{background:var(--navy)}
+
+/* SOUND TABLE */
+.stbl{width:100%;border-collapse:collapse;font-size:.8rem;border-radius:10px;overflow:hidden;margin-bottom:12px}
+.stbl th{padding:7px 10px;color:#fff;font-family:'Cairo',sans-serif;font-weight:700}
+.stbl td{padding:6px 10px;border-bottom:1px solid var(--bdr);background:#fff;
+  font-family:'Inter',sans-serif}
+.stbl tr:last-child td{border-bottom:none}
+
+/* RANKS TABLE */
+.rtbl{border-collapse:collapse;width:100%;border-radius:10px;overflow:hidden;font-size:.78rem;margin-bottom:12px}
+.rtbl th{background:var(--navy);color:#fff;padding:7px 10px;text-align:right;font-family:'Cairo',sans-serif;font-size:.75rem}
+.rtbl td{padding:6px 10px;border-bottom:1px solid var(--bdr);background:#fff}
+.rtbl tr:last-child td{border-bottom:none}
+.gold{color:#B45309;font-weight:700} .silver{color:#6B7280;font-weight:700}
+
+/* TIME WIDGET */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.titem{background:rgba(255,255,255,.1);border-radius:7px;padding:6px 8px}
+.tmil{color:var(--y);font-family:'Inter',sans-serif;font-weight:700;font-size:.82rem}
+.tciv{color:rgba(255,255,255,.65);font-size:.7rem}
+
+/* VOCAB */
+.vlist{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.vitem{background:var(--card);border:2px solid var(--bdr);border-radius:11px;
+  padding:11px 13px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.vleft{display:flex;align-items:center;gap:10px}
+.vemoji{font-size:1.5rem}
+.ven{font-size:.9rem;font-weight:700;color:var(--navy);font-family:'Inter',sans-serif}
+.var{font-size:.88rem;color:var(--muted);margin-top:2px}
+.vspk{background:var(--b);border:none;border-radius:8px;width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;flex-shrink:0}
+.vspk:hover{background:var(--bd)}
+
+/* QUIZ */
+.qprog{background:var(--card);border-radius:10px;padding:10px 14px;
+  margin-bottom:14px;border:2px solid var(--bdr);display:flex;align-items:center;gap:10px}
+.qpbar{flex:1;background:var(--bdr);border-radius:5px;height:7px}
+.qpfill{background:var(--g);height:7px;border-radius:5px;transition:width .3s;width:0%}
+.qptxt{font-size:.75rem;font-weight:700;color:var(--muted);white-space:nowrap}
+.qcrd{background:var(--card);border-radius:14px;padding:16px;
+  margin-bottom:10px;border:2px solid var(--bdr);transition:border-color .3s}
+.qcrd.qok{border-color:var(--g);background:var(--ok-bg)}
+.qcrd.qno{border-color:var(--r);background:var(--no-bg)}
+.qhdr{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:12px}
+.qtxt{font-size:.92rem;font-weight:700;color:var(--navy);flex:1;
+  font-family:'Inter',sans-serif;direction:ltr;text-align:left;line-height:1.6}
+.qspk{background:var(--b);border:none;border-radius:7px;width:30px;height:30px;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.75rem;flex-shrink:0}
+.opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;align-items:center;gap:9px;padding:11px 13px;
+  background:#fff;border:2px solid var(--bdr);border-radius:9px;
+  font-family:'Inter',sans-serif;font-size:.95rem;color:var(--txt);
+  cursor:pointer;transition:all .15s;text-align:left;direction:ltr;width:100%}
+.opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
+.oltr{width:24px;height:24px;border-radius:6px;background:var(--bdr);
+  display:flex;align-items:center;justify-content:center;font-weight:700;
+  font-size:.72rem;color:var(--muted);flex-shrink:0;transition:all .15s}
+.opt:hover:not(:disabled) .oltr{background:var(--b);color:#fff}
+.opt.ok{border-color:var(--g);background:var(--ok-bg)}
+.opt.ok .oltr{background:var(--g);color:#fff}
+.opt.no{border-color:var(--r);background:var(--no-bg);opacity:.7}
+.opt.no .oltr{background:var(--r);color:#fff}
+.opt:disabled{cursor:default}
+.fb{display:none;align-items:flex-start;gap:7px;margin-top:7px;
+  padding:8px 11px;border-radius:8px;font-size:.88rem;font-weight:600}
+.fb.show{display:flex}
+.fb.ok{background:var(--ok-bg);color:var(--ok-txt)}
+.fb.no{background:var(--no-bg);color:var(--no-txt)}
+.fb-en{font-family:'Inter',sans-serif;direction:ltr;font-size:.76rem}
+.fb-ar{font-family:'Cairo',sans-serif;font-size:.73rem;opacity:.85;margin-top:2px}
+
+/* WORD ORDER */
+.wo-card{background:var(--card);border:2px solid var(--bdr);border-radius:14px;
+  padding:14px;margin-bottom:12px;transition:border-color .3s}
+.wo-card.wo-ok{border-color:var(--g);background:var(--ok-bg)}
+.wo-card.wo-no{border-color:var(--r);background:var(--no-bg)}
+.wo-prompt{font-family:'Cairo',sans-serif;font-size:.88rem;color:var(--muted);margin-bottom:10px}
+.wo-answer{min-height:44px;border:2px dashed var(--b);border-radius:10px;
+  padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;
+  background:rgba(28,176,246,.03);transition:border-color .3s;align-items:center}
+.wo-answer.has-words{border-style:solid;background:rgba(28,176,246,.06)}
+.wo-answer.wo-correct{border-color:var(--g);background:var(--ok-bg)}
+.wo-answer.wo-wrong{border-color:var(--r);background:var(--no-bg);animation:shake .3s ease}
+@keyframes shake{0%,100%{transform:none}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.wo-chip{background:var(--navy);color:#fff;border:none;border-radius:8px;
+  padding:7px 13px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;
+  cursor:pointer;transition:all .15s;user-select:none}
+.wo-chip:hover{background:var(--navy2);transform:scale(1.04)}
+.wo-chip.placed{background:var(--b);color:#fff}
+.wo-chip.placed:hover{background:var(--bd)}
+.wo-bank{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.wo-bank-chip{background:#fff;border:2px solid var(--navy);border-radius:8px;
+  padding:7px 13px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;
+  color:var(--navy);cursor:pointer;transition:all .15s;user-select:none}
+.wo-bank-chip:hover{background:var(--navy);color:#fff}
+.wo-bank-chip.used{opacity:.25;pointer-events:none}
+.wo-check{background:var(--g);color:#fff;border:none;border-radius:9px;
+  padding:9px 20px;font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;
+  cursor:pointer;transition:.15s}
+.wo-check:hover{background:var(--gd)}
+.wo-clear{background:#fff;border:2px solid var(--bdr);border-radius:9px;
+  padding:9px 14px;font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;
+  color:var(--muted);cursor:pointer;margin-right:8px;transition:.15s}
+.wo-clear:hover{border-color:var(--r);color:var(--r)}
+.wo-reveal{background:#F0FDF4;border:1.5px solid #BCE3C8;border-radius:9px;
+  padding:10px 13px;margin-top:8px;animation:ddpop .25s ease}
+.wo-tr{font-family:'Cairo',sans-serif;font-weight:700;color:#15803D;font-size:.9rem}
+.wo-note{font-family:'Cairo',sans-serif;font-size:.78rem;color:#166534;margin-top:3px}
+.wo-wrong-reveal{background:var(--no-bg);border:1.5px solid #FFBDBD;border-radius:9px;
+  padding:10px 13px;margin-top:8px}
+.wo-hint-btn{background:#FFF7ED;border:2px solid var(--o);border-radius:9px;
+  padding:9px 14px;font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;
+  color:var(--o);cursor:pointer;transition:.15s;display:flex;align-items:center;gap:5px}
+.wo-hint-btn:hover:not(:disabled){background:#FED7AA}
+.wo-hint-btn:disabled{opacity:.35;cursor:not-allowed;border-color:#ccc;color:#999;background:#f5f5f5}
+.wo-wrong-ans{font-family:'Inter',sans-serif;direction:ltr;font-weight:700;color:#CC0000;font-size:.88rem}
+.wo-wrong-ar{font-family:'Cairo',sans-serif;font-size:.78rem;color:#CC0000;margin-top:3px}
+.dd-check{margin-top:10px;text-align:right}
+.dd-reveal{background:#F0FDF4;border:1.5px solid #BCE3C8;border-radius:8px;padding:8px 12px;margin:8px 0;animation:ddpop .25s ease}
+@keyframes ddpop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.dd-tr{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.84rem;font-weight:700;color:#15803D}
+.dd-note{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.75rem;color:#166534;margin-top:3px}
+.dd-retry{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.78rem;font-weight:700;
+  color:var(--no-txt);background:var(--no-bg);border-radius:8px;padding:7px 11px;margin:8px 0}
+
+/* MATCHING */
+.match-container{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.match-left,.match-right{display:flex;flex-direction:column;gap:7px}
+.match-item{background:#fff;border:2px solid var(--bdr);border-radius:9px;
+  padding:9px 12px;font-family:'Inter',sans-serif;font-size:.8rem;cursor:pointer;
+  transition:all .2s;direction:ltr;text-align:left;min-height:40px;display:flex;align-items:center}
+.match-item:hover{border-color:var(--b)}
+.match-item.selected{border-color:var(--b);background:#EFF6FF}
+.match-item.matched-ok{border-color:var(--g);background:var(--ok-bg);pointer-events:none}
+.match-item.matched-no{border-color:var(--r);background:var(--no-bg)}
+
+/* FILL IN BLANK */
+.fib-item{background:var(--card);border:2px solid var(--bdr);border-radius:12px;
+  padding:14px;margin-bottom:10px}
+.fib-sentence{font-family:'Inter',sans-serif;direction:ltr;text-align:left;
+  font-size:.88rem;color:var(--navy);font-weight:600;margin-bottom:10px;line-height:1.8}
+.fib-input{border:2px solid var(--b);border-radius:7px;padding:5px 10px;
+  font-family:'Inter',sans-serif;font-size:.85rem;width:120px;outline:none;
+  transition:border-color .2s;text-align:center}
+.fib-input:focus{border-color:var(--bd);box-shadow:0 0 0 3px rgba(28,176,246,.15)}
+.fib-input.ok{border-color:var(--g);background:var(--ok-bg)}
+.fib-input.no{border-color:var(--r);background:var(--no-bg)}
+.fib-check{margin-top:8px}
+.fib-hint{font-size:.72rem;color:var(--muted);margin-top:5px;font-family:'Cairo',sans-serif}
+
+/* SUBMIT / BUTTONS */
+.submit-row{text-align:center;margin-top:20px;padding-top:18px;border-top:2px solid var(--bdr)}
+.sbtn{padding:13px 36px;background:var(--g);color:#fff;border:none;border-radius:12px;
+  font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:all .2s}
+.sbtn:hover{background:var(--gd);transform:translateY(-2px)}
+.cbtn{padding:8px 18px;background:var(--b);color:#fff;border:none;border-radius:8px;
+  font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;transition:all .2s}
+.cbtn:hover{background:var(--bd)}
+
+/* MODAL */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);
+  z-index:300;align-items:center;justify-content:center;padding:16px}
+.modal.show{display:flex}
+.mcrd{background:#fff;border-radius:22px;padding:32px 24px;text-align:center;
+  max-width:380px;width:100%;animation:pop .4s cubic-bezier(.175,.885,.32,1.275)}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.memo{font-size:3rem;display:block;margin-bottom:8px}
+.mscore{font-size:3rem;font-weight:900;color:var(--navy);line-height:1}
+.mgrade{font-size:1rem;font-weight:700;margin:6px 0}
+.msub{color:var(--muted);font-size:.82rem;margin-bottom:18px}
+.stars{display:flex;justify-content:center;gap:8px;margin-bottom:18px;font-size:1.8rem}
+.star{filter:grayscale(1);transition:filter .3s}
+.star.lit{filter:none}
+.mbtns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.mbtn{padding:11px 20px;border-radius:10px;font-family:'Cairo',sans-serif;
+  font-size:.88rem;font-weight:700;cursor:pointer;transition:all .2s;border:none}
+.mbtn.primary{background:var(--g);color:#fff}
+.mbtn.primary:hover{background:var(--gd)}
+.mbtn.sec{background:transparent;border:2px solid var(--bdr);color:var(--txt)}
+.mbtn.sec:hover{border-color:var(--navy)}
+
+/* CONFETTI */
+.conf{position:fixed;inset:0;pointer-events:none;z-index:400;overflow:hidden}
+.cp{position:absolute;width:9px;height:9px;animation:fall 2s ease-in forwards}
+@keyframes fall{0%{transform:translateY(-10px) rotate(0);opacity:1}
+  100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+
+@media(max-width:480px){
+  .grid2{grid-template-columns:1fr}
+  .hero h1{font-size:1.3rem}
+  .match-container{grid-template-columns:1fr;gap:5px}
+}
+
+/* SPLASH */
+#splash{position:fixed;inset:0;background:var(--navy);z-index:9999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:20px;animation:splashOut 0.5s ease 2.5s forwards}
+@keyframes splashOut{0%{opacity:1;pointer-events:all}100%{opacity:0;pointer-events:none;display:none}}
+.splash-emoji{font-size:4rem;margin-bottom:16px;animation:bounce 0.8s ease infinite alternate}
+@keyframes bounce{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+.splash-title{font-family:'Cairo',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;margin-bottom:6px}
+.splash-title span{color:var(--g)}
+.splash-sub{color:rgba(255,255,255,.6);font-size:.9rem;font-family:'Cairo',sans-serif;margin-bottom:24px}
+.splash-by{color:var(--y);font-size:.85rem;font-family:'Cairo',sans-serif;font-weight:700;
+  border:2px solid rgba(255,196,0,.3);border-radius:20px;padding:6px 18px}
+.splash-bar{width:200px;height:4px;background:rgba(255,255,255,.15);border-radius:4px;margin-top:20px;overflow:hidden}
+.splash-fill{height:4px;background:var(--g);border-radius:4px;animation:load 2.5s ease forwards}
+@keyframes load{from{width:0%}to{width:100%}}
+
+/* FOOTER */
+.site-footer{background:var(--navy);padding:16px;text-align:center;margin-top:40px}
+.site-footer p{color:rgba(255,255,255,.6);font-family:'Cairo',sans-serif;font-size:.8rem}
+.site-footer span{color:var(--y);font-weight:700}
+
+/* ── LEARN REDESIGN ── */
+.learn-tabs{display:flex;gap:0;background:#F0F4FF;border-radius:12px;padding:4px;margin-bottom:18px;border:2px solid var(--bdr)}
+.ltab{flex:1;padding:9px 6px;border:none;border-radius:8px;font-family:'Cairo',sans-serif;
+  font-size:.8rem;font-weight:700;cursor:pointer;background:transparent;color:var(--muted);
+  transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:3px}
+.ltab .li{font-size:1.2rem}
+.ltab.on{background:var(--navy);color:#fff;box-shadow:0 2px 8px rgba(26,39,68,.2)}
+.lsec{display:none}.lsec.on{display:block}
+
+/* Vocab cards grid */
+.vcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:8px}
+.vcard{background:var(--card);border:2px solid var(--bdr);border-radius:14px;padding:14px 10px;
+  text-align:center;cursor:pointer;transition:all .2s;position:relative}
+.vcard:hover{border-color:var(--b);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.vcard .ve{font-size:2rem;display:block;margin-bottom:6px}
+.vcard .vw{font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy)}
+.vcard .va{font-size:.75rem;color:var(--muted);margin-top:3px}
+.vcard .vs{position:absolute;top:7px;left:7px;background:var(--b);border:none;border-radius:6px;
+  width:24px;height:24px;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vcard .vs:hover{background:var(--bd)}
+.past-sec{background:#F5F3FF;border:2px solid #DDD6FE;border-radius:14px;padding:14px;margin-top:16px}
+.past-h{font-family:'Cairo',sans-serif;font-weight:900;color:#5B21B6;font-size:1rem;text-align:center;margin-bottom:3px}
+.past-note{font-family:'Cairo',sans-serif;font-size:.72rem;color:var(--muted);text-align:center;margin-bottom:11px}
+.past-row{background:#fff;border-radius:10px;padding:9px 12px;margin-bottom:8px}
+.past-row:last-child{margin-bottom:0}
+.pr-forms{display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif;font-weight:800;font-size:1rem}
+.pr-base{color:var(--navy);display:inline-flex;align-items:center;gap:3px}
+.pr-past{color:#C2410C;display:inline-flex;align-items:center;gap:3px}
+.pr-arrow{color:var(--muted)}
+.pr-spk{background:none;border:none;cursor:pointer;font-size:.82rem;padding:0}
+.pr-ar{text-align:center;font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin-top:5px}
+
+/* Grammar cards */
+.gcard{background:var(--card);border-radius:14px;border:2px solid var(--bdr);
+  margin-bottom:12px;overflow:hidden}
+.gcard-head{display:flex;align-items:center;gap:10px;padding:14px 16px;
+  cursor:pointer;user-select:none;transition:background .2s}
+.gcard-head:hover{background:#F8F9FF}
+.gcard-head.open{background:#F0F4FF;border-bottom:2px solid var(--bdr)}
+.gcard-num{width:32px;height:32px;border-radius:50%;background:var(--navy);
+  color:#fff;font-family:'Oswald',sans-serif;font-size:.9rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gcard-title{font-size:.92rem;font-weight:700;color:var(--navy);flex:1}
+.gcard-ar{font-size:.75rem;color:var(--muted);font-family:'Cairo',sans-serif}
+.gcard-arrow{color:var(--muted);transition:transform .3s;font-size:.9rem}
+.gcard-head.open .gcard-arrow{transform:rotate(180deg)}
+.gcard-body{display:none;padding:16px}
+.gcard-body.open{display:block}
+
+/* One-line rule */
+.rule-box{background:linear-gradient(135deg,#EFF6FF,#F0FDF4);border-radius:10px;
+  padding:12px 14px;margin-bottom:12px;border-right:4px solid var(--b)}
+.rule-box .rb-label{font-size:.68rem;font-weight:700;color:var(--b);letter-spacing:1px;
+  text-transform:uppercase;margin-bottom:4px;font-family:'Cairo',sans-serif}
+.rule-box .rb-text{font-size:.85rem;font-weight:600;color:var(--navy);font-family:'Cairo',sans-serif}
+
+/* Formula strip */
+.fstrip{display:flex;align-items:center;gap:5px;flex-wrap:wrap;
+  direction:ltr;padding:10px;background:#1A2744;border-radius:10px;margin-bottom:10px}
+.fchip{padding:5px 12px;border-radius:7px;font-family:'Inter',sans-serif;
+  font-size:.8rem;font-weight:700;white-space:nowrap}
+.fchip.s{background:#3B82F6;color:#fff}
+.fchip.v{background:#10B981;color:#fff}
+.fchip.n{background:#EF4444;color:#fff}
+.fchip.k{background:#F59E0B;color:#1A2744}
+.fchip.p{background:rgba(255,255,255,.15);color:rgba(255,255,255,.7)}
+.farr{color:rgba(255,255,255,.4);font-size:1rem}
+
+/* Example row */
+.ex-row{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:8px 12px;border-radius:8px;margin-bottom:6px;direction:ltr}
+.ex-row.ok{background:#F0FDF4;border:1.5px solid #86EFAC}
+.ex-row.no{background:#FEF2F2;border:1.5px solid #FCA5A5}
+.ex-row .ex-text{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--navy);flex:1;text-align:left}
+.ex-row .ex-ar{font-family:'Cairo',sans-serif;font-size:.72rem;color:#666;direction:rtl;text-align:right}
+.ex-row .ex-spk{background:var(--b);border:none;border-radius:6px;width:26px;height:26px;
+  font-size:.7rem;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.ex-row.no .ex-text{text-decoration:line-through;color:#999}
+
+/* Example cards v2 — beginner-friendly (correct vs. common-mistake) */
+.ex2{border-radius:10px;padding:11px 13px;margin-bottom:8px}
+.ex2.ok{background:#F0FDF4;border:1.5px solid #BCE3C8}
+.ex2.no{background:#FDF3E6;border:1.5px solid #F0D3A6}
+.ex2-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.ex2-tag{font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700}
+.ex2-tag.ok{color:#15803D}.ex2-tag.no{color:#B45309}
+.ex2-spk{background:#fff;border:1.5px solid #BCE3C8;border-radius:8px;width:30px;height:30px;
+  color:#15803D;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
+.ex2-spk:hover{background:#15803D;color:#fff}
+.ex2-en{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.92rem;font-weight:700;color:var(--navy)}
+.ex2-fix{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.92rem;font-weight:700;color:var(--navy)}
+.ex2-fix .ex2-bad{color:#B45309;text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#E0A04C;opacity:.85}
+.ex2-fix .ex2-arr{color:#B45309;font-weight:800;margin:0 6px}
+.ex2-fix .ex2-rt{color:#15803D;font-weight:800;background:#EAF7EE;padding:1px 6px;border-radius:6px}
+.ex2-tr{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.82rem;color:#555;margin-top:5px}
+.ex2-tr.no{color:#B45309;font-weight:600}
+.ex2-note{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;font-size:.74rem;color:#15803D;margin-top:3px}
+
+/* Compare mini table */
+.ctab{width:100%;border-collapse:collapse;font-size:.8rem;margin-bottom:10px;border-radius:8px;overflow:hidden}
+.ctab th{padding:6px 10px;color:#fff;font-family:'Cairo',sans-serif;font-size:.73rem}
+.ctab th.c1{background:#2563EB}.ctab th.c2{background:#7C3AED}.ctab th.c3{background:#6B7280}
+.ctab td{padding:6px 10px;border-bottom:1px solid var(--bdr);background:#fff;
+  font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.78rem}
+.ctab td.ar{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;color:#888;font-size:.72rem}
+.ctab tr:last-child td{border-bottom:none}
+
+/* Sounds table */
+.stab{width:100%;border-collapse:collapse;font-size:.8rem;border-radius:8px;overflow:hidden;margin-bottom:8px}
+.stab th{padding:7px 10px;color:#fff;font-family:'Cairo',sans-serif;font-size:.75rem}
+.stab td{padding:7px 10px;border-bottom:1px solid var(--bdr);background:#fff;font-family:'Inter',sans-serif}
+.stab tr:last-child td{border-bottom:none}
+.sound-tip{background:#FFFBEB;border:2px solid #FCD34D;border-radius:8px;
+  padding:9px 12px;font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;margin-top:6px}
+
+/* Ranks table */
+.rktab{width:100%;border-collapse:collapse;font-size:.78rem;border-radius:8px;overflow:hidden;margin-bottom:8px}
+.rktab th{background:var(--navy);color:#fff;padding:7px 10px;font-family:'Cairo',sans-serif;font-size:.72rem}
+.rktab td{padding:6px 10px;border-bottom:1px solid var(--bdr);background:#fff}
+.rktab tr:last-child td{border-bottom:none}
+.gld{color:#B45309;font-weight:700}.slv{color:#6B7280;font-weight:700}
+.rank-tip{background:#FEF3C7;border:2px solid #F59E0B;border-radius:8px;
+  padding:9px 12px;font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;margin-top:6px}
+
+/* Time grid */
+.tgrd{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.titem2{background:#1A2744;border-radius:8px;padding:8px 10px;text-align:center}
+.tmil2{color:var(--y);font-family:'Inter',sans-serif;font-weight:700;font-size:.88rem}
+.tciv2{color:rgba(255,255,255,.6);font-size:.7rem;margin-top:2px}
+
+/* ── PREPOSITIONS in / on / at ── */
+.prep-card{background:linear-gradient(135deg,#0EA5E9,#2563EB);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #7DD3FC;margin-bottom:16px;
+  display:flex;align-items:center;gap:16px}
+.prep-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,99,235,.35)}
+.prep-card .pc-rings{flex:none;width:52px;height:52px;position:relative}
+.prep-card .pc-rings i{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+.prep-card .pc-rings i:nth-child(1){width:52px;height:52px;background:rgba(255,255,255,.25)}
+.prep-card .pc-rings i:nth-child(2){width:34px;height:34px;background:rgba(255,255,255,.45)}
+.prep-card .pc-rings i:nth-child(3){width:16px;height:16px;background:#fff}
+.prep-card .pc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:900}
+.prep-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.8rem;margin-top:2px}
+
+#pscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.prep-hero{background:linear-gradient(135deg,#0EA5E9,#2563EB);border-radius:16px;padding:20px;text-align:center;margin-bottom:16px}
+.prep-hero h2{color:#fff;font-size:1.25rem;font-weight:900}
+.prep-hero p{color:rgba(255,255,255,.85);font-size:.82rem;margin-top:4px;font-family:'Cairo',sans-serif}
+.prep-toggle{display:flex;gap:6px;background:var(--card);border:2px solid var(--bdr);border-radius:12px;padding:5px;margin-bottom:14px}
+.prep-toggle button{flex:1;padding:10px;border:none;border-radius:8px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;background:transparent;color:var(--muted);transition:.2s}
+.prep-toggle button.on{background:var(--navy);color:#fff}
+.prep-hint{display:block;text-align:center;font-family:'Cairo',sans-serif;font-size:.92rem;font-weight:800;color:var(--navy);background:#EEF2FF;border:2px dashed #C7D2FE;border-radius:12px;padding:11px 14px;margin:0 auto 12px;max-width:440px;animation:tapPulse 1.8s ease-in-out infinite}
+.target-wrap{display:flex;justify-content:center;margin:6px 0 16px}
+.target{position:relative;width:280px;height:280px}
+.ring{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);
+  cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;font-weight:800;
+  display:flex;justify-content:center}
+.ring span{pointer-events:none}
+.ring-in{width:280px;height:280px;background:#DBEAFE;border:3px solid #60A5FA;color:#1D4ED8;
+  font-size:1.15rem;z-index:1;align-items:flex-start}
+.ring-in span{margin-top:12px}
+.ring-on{width:188px;height:188px;background:#DCFCE7;border:3px solid #4ADE80;color:#15803D;
+  font-size:1.05rem;z-index:2;align-items:flex-start}
+.ring-on span{margin-top:10px}
+.ring-at{width:96px;height:96px;background:#FFEDD5;border:3px solid #FB923C;color:#C2410C;
+  font-size:1rem;z-index:3;align-items:center}
+.ring.active{box-shadow:0 0 0 4px rgba(0,0,0,.07),0 10px 22px rgba(0,0,0,.18)}
+.prep-detail{border:2px solid var(--bdr);border-radius:14px;padding:16px;margin-bottom:16px;background:var(--card)}
+.prep-detail h3{font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;display:flex;align-items:center;gap:10px}
+.prep-detail .pd-tag{font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px}
+.prep-detail .pd-rule{font-family:'Cairo',sans-serif;font-size:.9rem;color:var(--txt);margin:8px 0 12px;line-height:1.7}
+.prep-ex{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#F8FAFC;border:1px solid var(--bdr);border-radius:9px;padding:8px 12px;margin-bottom:6px}
+.prep-ex .pe-en{font-family:'Inter',sans-serif;direction:ltr;font-weight:700;color:var(--navy);font-size:.92rem}
+.prep-ex .pe-ar{font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);margin-top:1px}
+.prep-ex button{background:var(--b);border:none;border-radius:7px;width:30px;height:30px;color:#fff;cursor:pointer;flex-shrink:0;font-size:.75rem}
+.prep-ex button:hover{background:var(--bd)}
+/* Prepositions mini practice */
+.pq-title{font-family:'Cairo',sans-serif;font-weight:800;color:var(--navy);font-size:.95rem;margin:20px 0 10px;display:flex;align-items:center;gap:8px}
+.pq-item{background:var(--card);border:2px solid var(--bdr);border-radius:12px;padding:13px;margin-bottom:10px}
+.pq-sent{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.92rem;font-weight:600;color:var(--navy);margin-bottom:10px}
+.pq-opts{display:flex;gap:8px}
+.pq-opt{flex:1;padding:10px;border:2px solid var(--bdr);border-radius:9px;background:#fff;
+  font-family:'Inter',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);cursor:pointer;transition:.15s}
+.pq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
+.pq-opt.ok{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
+.pq-opt.no{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
+.pq-fb{margin-top:9px;border-radius:8px;padding:8px 11px;font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:600;display:none}
+.pq-fb.show{display:block}
+.pq-fb.ok{background:var(--ok-bg);color:var(--ok-txt)}
+.pq-fb.no{background:var(--no-bg);color:var(--no-txt)}
+
+/* ── ARTICLES a / an / the ── */
+.art-card{background:linear-gradient(135deg,#7C3AED,#4F46E5);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #C4B5FD;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.art-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,58,237,.35)}
+.art-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.art-card .pc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:900}
+.art-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.8rem;margin-top:2px}
+
+#ascreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.art-meta{display:flex;align-items:stretch;gap:8px;margin-bottom:16px}
+.am-card{flex:1;border-radius:14px;padding:14px 10px;text-align:center;border:2px solid}
+.am-any{background:#EEF2FF;border-color:#A5B4FC}
+.am-the{background:#FFF7ED;border-color:#FDBA74}
+.am-ic{font-size:2rem}
+.am-t{font-family:'Cairo',sans-serif;font-size:.72rem;color:var(--muted);margin-top:4px}
+.am-w{font-family:'Inter',sans-serif;font-weight:900;font-size:1.3rem;margin-top:3px}
+.am-any .am-w{color:#4338CA}.am-the .am-w{color:#C2410C}
+.am-ex{font-family:'Inter',sans-serif;direction:ltr;font-size:.72rem;color:var(--txt);margin-top:4px}
+.am-vs{align-self:center;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;color:var(--muted)}
+.art-chips{display:flex;gap:8px;margin-bottom:4px}
+.art-chip{flex:1;padding:14px;border:2px solid var(--bdr);border-radius:12px;background:#fff;
+  font-family:'Inter',sans-serif;font-weight:900;font-size:1.3rem;color:var(--navy);cursor:pointer;transition:.15s}
+.art-chip:hover{border-color:var(--b)}
+.art-chip.active{box-shadow:0 0 0 4px rgba(0,0,0,.06),0 8px 18px rgba(0,0,0,.15)}
+.pd-sub{font-family:'Cairo',sans-serif;font-weight:800;font-size:.78rem;margin:10px 0 4px}
+.vowel-lbl{font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);text-align:center;margin:2px 0}
+.vowel-strip{display:flex;gap:7px;justify-content:center;margin:4px 0 10px}
+.vowel-chip{width:40px;height:40px;border-radius:11px;background:#EDE9FE;border:2px solid #A78BFA;
+  color:#6D28D9;font-family:'Inter',sans-serif;font-weight:900;font-size:1.15rem;
+  display:flex;align-items:center;justify-content:center}
+.art-note{background:#FEF3C7;border:1.5px solid #FCD34D;border-radius:9px;padding:9px 12px;
+  font-family:'Cairo',sans-serif;font-size:.8rem;color:#92400E;margin:4px 0 6px;line-height:1.8}
+.art-note b{color:#78350F;font-family:'Inter',sans-serif;font-weight:800}
+
+/* ── WH QUESTIONS ── */
+.wh-card{background:linear-gradient(135deg,#0D9488,#0F766E);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #5EEAD4;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.wh-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(13,148,136,.35)}
+.wh-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.wh-card .pc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:900}
+.wh-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.78rem;margin-top:2px;font-family:'Inter',sans-serif;direction:ltr}
+#wscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.wh-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}
+.wh-chip{border:2px solid var(--bdr);border-radius:12px;background:#fff;padding:10px 6px;text-align:center;cursor:pointer;transition:.15s}
+.wh-chip:hover{border-color:#0D9488;transform:translateY(-2px)}
+.wh-chip.active{border-color:#0D9488;box-shadow:0 0 0 3px rgba(13,148,136,.18)}
+.wh-chip .wc-ic{font-size:1.35rem}
+.wh-chip .wc-en{font-family:'Inter',sans-serif;font-weight:800;font-size:.9rem;color:var(--navy);margin-top:2px}
+.wh-chip .wc-ar{font-family:'Cairo',sans-serif;font-size:.7rem;color:var(--muted)}
+@media(max-width:480px){.wh-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ── SPELLING (write from listening) ── */
+.spell-card{background:linear-gradient(135deg,#EC4899,#BE185D);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #F9A8D4;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.spell-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(190,24,93,.35)}
+.spell-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.spell-card .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
+.spell-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.8rem;margin-top:2px}
+#spscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.sp-prog{background:var(--card);border-radius:10px;padding:10px 14px;margin-bottom:14px;border:2px solid var(--bdr);display:flex;align-items:center;gap:10px}
+.sp-bar{flex:1;background:var(--bdr);border-radius:5px;height:7px}
+.sp-fill{background:#EC4899;height:7px;border-radius:5px;transition:width .3s;width:0%}
+.sp-count{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:700;color:var(--muted);direction:ltr;flex:none}
+.sp-restart{background:#FCE7F3;color:#BE185D;border:none;border-radius:8px;padding:6px 10px;
+  font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;transition:.15s;flex:none;white-space:nowrap}
+.sp-restart:hover{background:#FBCFE8}
+.sp-lesson{text-align:center;font-family:'Cairo',sans-serif;font-weight:800;font-size:.85rem;
+  color:#BE185D;background:#FCE7F3;border-radius:10px;padding:7px 12px;margin-bottom:10px}
+.sp-card{background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.sp-listen{background:#EC4899;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:.15s}
+.sp-listen:hover{background:#BE185D}
+.sp-emoji{font-size:3rem;margin:14px 0 6px}
+.sp-ar{font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:700;color:var(--navy)}
+.sp-hintline{font-family:'Inter',sans-serif;direction:ltr;letter-spacing:6px;font-size:1.3rem;font-weight:800;color:#DB2777;margin:12px 0 2px;min-height:1.5em}
+.sp-input{width:100%;max-width:280px;border:2px solid var(--bdr);border-radius:10px;padding:12px;
+  font-family:'Inter',sans-serif;direction:ltr;text-align:center;font-size:1.1rem;font-weight:700;
+  color:var(--navy);outline:none;margin:8px auto 0;display:block;transition:.15s}
+.sp-input:focus{border-color:#EC4899;box-shadow:0 0 0 3px rgba(236,72,153,.15)}
+.sp-input.ok{border-color:var(--g);background:var(--ok-bg)}
+.sp-input.no{border-color:var(--r);animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.sp-fb{display:none;margin-top:10px;font-family:'Cairo',sans-serif;font-size:.85rem;font-weight:700;border-radius:8px;padding:8px 12px}
+.sp-fb.show{display:block}
+.sp-fb.ok{background:var(--ok-bg);color:var(--ok-txt)}
+.sp-fb.no{background:var(--no-bg);color:var(--no-txt)}
+.sp-answer{font-family:'Inter',sans-serif;direction:ltr;font-size:1.05rem}
+.sp-btns{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.sp-btn{padding:11px 22px;border:none;border-radius:10px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:.15s}
+.sp-btn.check{background:var(--g);color:#fff}.sp-btn.check:hover{background:var(--gd)}
+.sp-btn.hint{background:#FEF3C7;color:#92400E}.sp-btn.hint:hover{background:#FDE68A}
+.sp-btn.next{background:var(--b);color:#fff}.sp-btn.next:hover{background:var(--bd)}
+.sp-skip{margin-top:12px;background:none;border:none;color:var(--muted);font-family:'Cairo',sans-serif;font-size:.78rem;cursor:pointer;text-decoration:underline}
+.sp-done{text-align:center}
+.sp-donetxt{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin:8px 0}
+.sp-score{font-family:'Cairo',sans-serif;color:var(--muted);margin-bottom:14px}
+
+/* ── PAST-TIME SIGNALS (yesterday / last / ago) ── */
+.time-card{background:linear-gradient(135deg,#F59E0B,#B45309);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #FCD34D;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.time-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(180,83,9,.35)}
+.time-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.time-card .pc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:900}
+.time-card .pc-txt p{color:rgba(255,255,255,.9);font-size:.8rem;margin-top:2px;font-family:'Cairo',sans-serif}
+#tmscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.tl{position:relative;display:flex;justify-content:space-between;gap:2px;margin:10px 2px 20px;padding-top:4px}
+.tl-line{position:absolute;top:13px;left:8px;right:8px;height:4px;
+  background:linear-gradient(270deg,#F59E0B,#F59E0B 22%,#CBD5E1);border-radius:4px}
+.tl-pt{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;flex:1;z-index:1}
+.tl-dot{width:18px;height:18px;border-radius:50%;background:#CBD5E1;border:3px solid #fff;box-shadow:0 0 0 2px #CBD5E1}
+.tl-dot.now{background:#F59E0B;box-shadow:0 0 0 2px #F59E0B}
+.tl-lbl{font-family:'Cairo',sans-serif;font-size:.66rem;font-weight:700;color:var(--navy);text-align:center;line-height:1.3}
+.tl-lbl .en{display:block;font-family:'Inter',sans-serif;direction:ltr;font-size:.58rem;color:var(--muted);margin-top:1px}
+.tm-chips{display:flex;gap:8px;margin-bottom:4px}
+.tm-chip{flex:1;padding:13px 6px;border:2px solid var(--bdr);border-radius:12px;background:#fff;
+  font-family:'Inter',sans-serif;font-weight:800;font-size:1rem;color:var(--navy);cursor:pointer;transition:.15s;direction:ltr}
+.tm-chip:hover{border-color:#F59E0B}
+.tm-chip.active{border-color:#F59E0B;box-shadow:0 0 0 3px rgba(245,158,11,.18)}
+.pq-opts.col{flex-direction:column}
+.tl-pt{cursor:pointer}
+.tl-dot{transition:.2s}
+.tl-dot.on{transform:scale(1.4);background:#F59E0B;box-shadow:0 0 0 3px #FCD34D}
+.tl-cap{text-align:center;font-family:'Cairo',sans-serif;font-size:.68rem;color:var(--muted);margin:-10px 0 14px}
+/* 4-question concept blocks */
+.cblock{border-radius:12px;padding:12px 14px;margin-bottom:10px;border:1.5px solid}
+.cblock-h{font-family:'Cairo',sans-serif;font-weight:800;font-size:.85rem;margin-bottom:7px;display:flex;align-items:center;gap:7px;color:var(--navy)}
+.cblock-n{width:22px;height:22px;border-radius:50%;color:#fff;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cblock-txt{font-family:'Cairo',sans-serif;font-size:.92rem;color:var(--txt);line-height:1.75}
+.b-mean{background:#EFF6FF;border-color:#BFDBFE}
+.b-when{background:#F0FDF4;border-color:#BBF7D0}
+.b-order{background:#F5F3FF;border-color:#DDD6FE}
+.b-bad{background:#FFF7ED;border-color:#FED7AA}
+.order-formula{display:flex;align-items:center;gap:7px;flex-wrap:wrap;direction:ltr;margin-bottom:9px}
+.oc{padding:6px 13px;border-radius:9px;font-weight:800;font-size:.9rem}
+.oc.key{background:#7C3AED;color:#fff;font-family:'Inter',sans-serif}
+.oc.dur{background:#EDE9FE;color:#6D28D9;font-family:'Cairo',sans-serif}
+.oc-plus{color:#9CA3AF;font-weight:800;font-size:1.1rem}
+.oc-solo{font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);font-weight:700}
+.order-ex{display:flex;align-items:center;gap:8px;direction:ltr}
+.order-ex .en{font-family:'Inter',sans-serif;font-weight:800;color:var(--navy);font-size:.98rem}
+.badgood{display:flex;flex-direction:column;gap:7px}
+.bg-x,.bg-ok{font-family:'Cairo',sans-serif;font-size:.9rem;font-weight:800;display:flex;align-items:center;gap:7px}
+.bg-x{color:#DC2626}.bg-ok{color:#16A34A}
+.badgood .en{font-family:'Inter',sans-serif;direction:ltr;font-weight:800}
+.badgood .strike{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:#F87171}
+.mini-spk{background:var(--b);border:none;border-radius:6px;width:26px;height:26px;color:#fff;cursor:pointer;font-size:.7rem;flex-shrink:0}
+.mini-spk.ok{background:#16A34A}
+/* Why-triggers + mental link + story */
+.trig-list{display:flex;flex-direction:column;gap:5px;margin:8px 0 4px}
+.trig{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1px solid #BBF7D0;border-radius:8px;padding:5px 11px}
+.trig-en{font-family:'Inter',sans-serif;direction:ltr;font-weight:800;color:var(--navy);font-size:.86rem}
+.trig-ar{font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted)}
+.mind-link{margin-top:9px;background:#FEF9C3;border:1.5px dashed #EAB308;border-radius:9px;padding:9px 11px;
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:.84rem;color:#854D0E;text-align:center;direction:rtl}
+.story-box{background:#FFFBEB;border:2px solid #FDE68A;border-radius:12px;padding:12px 14px;margin-bottom:14px}
+.story-h{font-family:'Cairo',sans-serif;font-weight:800;font-size:.83rem;color:#92400E;margin-bottom:8px}
+.story-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:7px 0;border-bottom:1px dashed #FDE68A}
+.story-line:last-child{border-bottom:none}
+.story-line .en{font-family:'Inter',sans-serif;direction:ltr;font-weight:700;color:var(--navy);font-size:.9rem;flex:1;min-width:55%}
+.story-line .ar{font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;width:100%}
+.story-spk{background:#F59E0B;border:none;border-radius:6px;width:26px;height:26px;color:#fff;cursor:pointer;font-size:.7rem;flex:none}
+.zoom-cap{background:#EFF6FF;border:1.5px dashed #93C5FD;border-radius:10px;padding:9px 12px;margin-bottom:14px;
+  text-align:center;font-family:'Cairo',sans-serif;font-weight:700;font-size:.82rem;color:#1E3A8A}
+.zc{font-family:'Inter',sans-serif;font-weight:800;padding:1px 7px;border-radius:6px;direction:ltr;display:inline-block}
+.zc-seq{font-family:'Inter',sans-serif;font-weight:800;display:inline-block;margin-top:3px}
+.except-box{background:#FFFBEB;border:2px solid #FCD34D;border-radius:14px;padding:14px;margin-top:14px}
+.except-h{font-family:'Cairo',sans-serif;font-weight:900;color:#B45309;font-size:.95rem;text-align:center;margin-bottom:10px}
+.except-row{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;font-weight:800;font-size:.98rem;color:var(--navy);margin-bottom:8px}
+.except-row:last-child{margin-bottom:0}
+.ex-spk{background:none;border:none;cursor:pointer;font-size:.85rem;padding:0}
+.zc.in{background:#DBEAFE;color:#1D4ED8}.zc.on{background:#DCFCE7;color:#15803D}.zc.at{background:#FFEDD5;color:#C2410C}
+/* Reveal quiz only after understanding */
+.quiz-toggle{width:100%;margin:22px 0 6px;padding:15px;border:none;border-radius:12px;background:var(--navy);
+  color:#fff;font-family:'Cairo',sans-serif;font-weight:800;font-size:.98rem;cursor:pointer;transition:.15s;
+  display:flex;align-items:center;justify-content:center;gap:8px}
+.quiz-toggle:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,39,68,.25)}
+.quiz-wrap{display:none}
+.quiz-wrap.show{display:block;animation:qfade .3s ease}
+@keyframes qfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ── IRREGULAR VERBS ── */
+.iv-card-home{background:linear-gradient(135deg,#6366F1,#4338CA);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #C7D2FE;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.iv-card-home:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(67,56,202,.35)}
+.iv-card-home .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.iv-card-home .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
+.iv-card-home .pc-txt p{color:rgba(255,255,255,.9);font-size:.8rem;margin-top:2px;font-family:'Cairo',sans-serif}
+#ivscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.iv-intro{background:#EEF2FF;border:1.5px dashed #A5B4FC;border-radius:10px;padding:10px 13px;margin-bottom:14px;
+  font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;color:#3730A3;text-align:center}
+.iv-fam{background:var(--card);border:2px solid var(--bdr);border-radius:14px;padding:13px 14px;margin-bottom:12px}
+.iv-fam-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px}
+.iv-fam-pat{font-family:'Inter',sans-serif;font-weight:800;font-size:.9rem;color:#fff;background:#6366F1;
+  padding:3px 11px;border-radius:8px;direction:ltr}
+.iv-fam-hint{font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin:2px 0 10px}
+.iv-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 11px;border-radius:9px;
+  background:#F8FAFC;border:1px solid var(--bdr);margin-bottom:6px;direction:ltr}
+.iv-base{font-family:'Inter',sans-serif;font-weight:700;color:var(--navy);font-size:.95rem;direction:ltr}
+.iv-arrow{color:#6366F1;font-weight:800;font-size:1.05rem}
+.iv-past{font-family:'Inter',sans-serif;font-weight:800;color:#4338CA;font-size:.95rem;direction:ltr}
+.iv-spk{background:#6366F1;border:none;border-radius:6px;width:26px;height:26px;color:#fff;cursor:pointer;font-size:.7rem;flex:none}
+.iv-spk:hover{background:#4338CA}
+.iv-mean{font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);margin-left:auto;direction:rtl}
+.iv-note{width:100%;font-family:'Cairo',sans-serif;font-size:.72rem;color:#B45309;background:#FEF3C7;border-radius:6px;padding:3px 8px;margin-top:4px}
+/* Drill */
+.iv-drill-top{text-align:center;font-family:'Cairo',sans-serif;font-size:.82rem;color:var(--muted);margin-bottom:10px}
+.iv-drill-top b{color:#4338CA;font-family:'Inter',sans-serif}
+.iv-dcard{background:var(--card);border:2px solid #C7D2FE;border-radius:18px;padding:26px 18px;text-align:center;box-shadow:0 4px 16px rgba(67,56,202,.08)}
+.iv-base-big{font-family:'Inter',sans-serif;font-weight:900;font-size:2rem;color:var(--navy);direction:ltr;display:flex;align-items:center;justify-content:center;gap:10px}
+.iv-mean-big{font-family:'Cairo',sans-serif;font-size:1rem;color:var(--muted);margin-top:4px}
+.iv-arrow-big{font-family:'Cairo',sans-serif;font-size:.8rem;color:#6366F1;font-weight:700;margin:14px 0 4px}
+.iv-past-big{font-family:'Inter',sans-serif;font-weight:900;font-size:2rem;color:#4338CA;direction:ltr;display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#EEF2FF;border-radius:12px;padding:10px;animation:qfade .3s ease}
+.iv-spk2{background:#6366F1;border:none;border-radius:8px;width:34px;height:34px;color:#fff;cursor:pointer;font-size:.85rem}
+.iv-spk2:hover{background:#4338CA}
+.iv-reveal-btn{margin-top:18px;background:var(--navy);color:#fff;border:none;border-radius:12px;padding:13px 28px;
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:.95rem;cursor:pointer;transition:.15s}
+.iv-reveal-btn:hover{filter:brightness(1.15)}
+.iv-judge{display:flex;gap:10px;justify-content:center;margin-top:18px}
+.iv-btn{padding:12px 22px;border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.9rem;cursor:pointer;transition:.15s}
+.iv-btn.known{background:var(--g);color:#fff}.iv-btn.known:hover{background:var(--gd)}
+.iv-btn.hard{background:#FEE2E2;color:#B91C1C}.iv-btn.hard:hover{background:#FECACA}
+.iv-done{text-align:center;background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:26px 18px}
+.iv-done .em{font-size:3rem}
+.iv-done .t{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin:8px 0 14px}
+.iv-done .iv-btn{margin:4px}
+
+/* ── LISTENING (YouTube) ── */
+.yt-card{background:linear-gradient(135deg,#1F2937,#0B1220);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #FCA5A5;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.yt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,18,32,.4)}
+.yt-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.yt-card .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
+.yt-card .pc-txt p{color:rgba(255,255,255,.9);font-size:.8rem;margin-top:2px;font-family:'Cairo',sans-serif}
+#ytscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.yt-tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
+.yt-tab{flex:none;min-width:112px;padding:10px 14px;border:2px solid var(--bdr);border-radius:12px;background:#fff;cursor:pointer;text-align:center;transition:.15s}
+.yt-tab:hover{border-color:#1F2937}
+.yt-tab.on{border-color:#1F2937;background:#F1F5F9;box-shadow:0 0 0 3px rgba(31,41,55,.14)}
+.yt-tab b{display:block;font-family:'Inter',sans-serif;font-weight:800;color:var(--navy);font-size:.95rem}
+.yt-tab span{display:block;font-family:'Cairo',sans-serif;font-size:.68rem;color:var(--muted);margin-top:2px}
+.yt-embed{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;background:#000;margin-bottom:12px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.lesson-video{margin:18px 0}
+.lv-title{font-family:'Cairo',sans-serif;font-weight:800;font-size:.92rem;color:var(--navy);margin-bottom:10px;text-align:center}
+.tap-hint{background:#F8FAFC;border:2px dashed var(--bdr);border-radius:14px;padding:26px 16px;text-align:center;color:var(--muted);font-family:'Cairo',sans-serif;font-weight:700;font-size:.95rem;margin-top:6px;animation:tapPulse 1.8s ease-in-out infinite}
+@keyframes tapPulse{0%,100%{opacity:.65}50%{opacity:1}}
+.yt-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-note{background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:10px;padding:9px 12px;
+  font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;text-align:center}
+
+</style>
+</head>
+<body>
+
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="splash-emoji">🎓</div>
+  <div class="splash-title">مركز التدريب <span>Book 4</span></div>
+  <div class="splash-sub">American Language Course</div>
+  <div class="splash-by">تصميم علي مبارکي</div>
+  <div class="splash-bar"><div class="splash-fill"></div></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-logo">ALC <span>Book 4</span></div>
+  <div class="nav-pills">
+    <span class="streak">🔥<span id="streak">0</span></span>
+    <span class="xp-pill">⚡<span id="xp">0</span></span>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="home">
+  <div class="hero">
+    <h1>مركز التدريب — Book 4 📚</h1>
+    <p>تعلّم القواعد · تدرّب · اختبر نفسك · الاختبار النهائي</p>
+    <div class="gpbar"><div class="gpfill" id="gpfill"></div></div>
+    <div class="gptxt" id="gptxt">0 من 4 دروس مكتملة</div>
+    <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
+  </div>
+  <!-- WELCOME BANNER (shown only on first visit) -->
+  <div id="welcome-banner" style="display:none;background:linear-gradient(135deg,#0EA5E9,#0369A1);border-radius:16px;padding:18px 20px;margin-bottom:20px;position:relative">
+    <button onclick="dismiss_welcome()" style="position:absolute;top:10px;left:12px;background:rgba(255,255,255,.2);border:none;border-radius:50%;width:28px;height:28px;color:#fff;font-size:1rem;cursor:pointer;font-weight:700;line-height:1">✕</button>
+    <div style="font-size:2rem;margin-bottom:8px">👋</div>
+    <h2 style="color:#fff;font-size:1.15rem;font-weight:900;margin-bottom:6px">مرحباً بك في مركز التدريب</h2>
+    <p style="color:rgba(255,255,255,.9);font-size:.92rem;line-height:1.7;margin-bottom:14px">ابدأ من <strong style="color:#FFC800">الدرس الأول</strong> في الأسفل، وتقدّم بالترتيب — كل درس يبني على السابق. بعد كل درس تجد تمارين وسحب وكلمات للاستماع.</p>
+    <button onclick="dismiss_welcome_start()" style="background:#FFC800;color:#1A2744;border:none;border-radius:10px;padding:10px 22px;font-family:'Cairo',sans-serif;font-weight:900;font-size:.95rem;cursor:pointer">ابدأ الدرس الأول ←</button>
+  </div>
+
+  <div class="lbl">الدروس</div>
+  <div class="grid2">
+    <div class="lcard" id="hc-l1" onclick="open_lesson('l1')">
+      <span class="lcard-icon">🏃</span>
+      <div class="lcard-num">Lesson 1</div>
+      <div class="lcard-name">Sports & Games</div>
+      <div class="lcard-sub">الرياضة والألعاب</div>
+      <div class="lpbar"><div class="lpfill" id="lp-l1"></div></div>
+    </div>
+    <div class="lcard" id="hc-l2" onclick="open_lesson('l2')">
+      <span class="lcard-icon">🎖️</span>
+      <div class="lcard-num">Lesson 2</div>
+      <div class="lcard-name">He's in the Army</div>
+      <div class="lcard-sub">الحياة العسكرية</div>
+      <div class="lpbar"><div class="lpfill" id="lp-l2"></div></div>
+    </div>
+    <div class="lcard" id="hc-l3" onclick="open_lesson('l3')">
+      <span class="lcard-icon">👕</span>
+      <div class="lcard-num">Lesson 3</div>
+      <div class="lcard-name">Where Are My Clothes?</div>
+      <div class="lcard-sub">الملابس والقدرات</div>
+      <div class="lpbar"><div class="lpfill" id="lp-l3"></div></div>
+    </div>
+    <div class="lcard" id="hc-l4" onclick="open_lesson('l4')">
+      <span class="lcard-icon">🌤️</span>
+      <div class="lcard-num">Lesson 4</div>
+      <div class="lcard-name">Pencils in 10 Colors</div>
+      <div class="lcard-sub">الفصول والألوان</div>
+      <div class="lpbar"><div class="lpfill" id="lp-l4"></div></div>
+    </div>
+  </div>
+  <div class="lbl">شرح تفاعلي</div>
+  <div class="prep-card" onclick="open_prep()">
+    <div class="pc-rings"><i></i><i></i><i></i></div>
+    <div class="pc-txt">
+      <h3>in · on · at</h3>
+      <p>حروف الجر — المكان والزمن, مبسّطة برسم الهدف 🎯</p>
+    </div>
+  </div>
+  <div class="art-card" onclick="open_art()">
+    <div class="ac-ic">✨</div>
+    <div class="pc-txt">
+      <h3>a · an · the</h3>
+      <p>أدوات التعريف والتنكير — المعلوم والمجهول</p>
+    </div>
+  </div>
+  <div class="wh-card" onclick="open_wh()">
+    <div class="ac-ic">❓</div>
+    <div class="pc-txt">
+      <h3>WH — أدوات السؤال</h3>
+      <p>what · where · when · who · why · how</p>
+    </div>
+  </div>
+  <div class="time-card" onclick="open_time()">
+    <div class="ac-ic">⏳</div>
+    <div class="pc-txt">
+      <h3>الماضي البسيط · yesterday · last · ago</h3>
+      <p>كلمات الزمن الماضي — على خطّ زمني</p>
+    </div>
+  </div>
+  <div class="iv-card-home" onclick="open_iv()">
+    <div class="ac-ic">🔄</div>
+    <div class="pc-txt">
+      <h3>الأفعال الشاذة</h3>
+      <p>مجمّعة بالعائلات — احفظ النمط لا الكلمات</p>
+    </div>
+  </div>
+
+  <div class="lbl">الاستماع</div>
+  <div class="yt-card" onclick="open_yt()">
+    <div class="ac-ic">🎧</div>
+    <div class="pc-txt">
+      <h3>استماع Book 4</h3>
+      <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B · C</p>
+    </div>
+  </div>
+
+  <div class="lbl">الكتابة</div>
+  <div class="spell-card" onclick="open_spell()">
+    <div class="ac-ic">✍️</div>
+    <div class="pc-txt">
+      <h3>اكتب من السماع</h3>
+      <p>اسمع الكلمة واكتبها بنفسك — إملاء واستماع</p>
+    </div>
+  </div>
+
+  <div class="lbl">الاختبار</div>
+  <div class="final-card" onclick="open_final()">
+    <div style="font-size:2.2rem;margin-bottom:8px">🏆</div>
+    <h3>الاختبار النهائي الشامل</h3>
+    <p>جميع أسئلة التقييم الرسمية من الكتاب — الدروس 1 إلى 4</p>
+    <span class="fc-badge">80 سؤالاً رسمياً</span>
+  </div>
+</div>
+
+<!-- LESSON SCREEN -->
+<div id="lscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="lhdr">
+    <div class="lhdr-icon" id="lh-ico">🏃</div>
+    <div><h2 id="lh-ttl"></h2><p id="lh-sub"></p></div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" id="tab-learn" onclick="sw_tab('learn')">
+      <span class="ti">📚</span><span>تعلّم</span>
+    </button>
+    <button class="tab" id="tab-practice" onclick="sw_tab('practice')">
+      <span class="ti">🎯</span><span>تدرّب</span>
+    </button>
+    <button class="tab" id="tab-drag" onclick="sw_tab('drag')">
+      <span class="ti">🔤</span><span>رتّب الجملة</span>
+    </button>
+    <button class="tab" id="tab-test" onclick="sw_tab('test')">
+      <span class="ti">🏆</span><span>اختبر</span>
+    </button>
+  </div>
+  <div class="phase active" id="ph-learn"></div>
+  <div class="phase" id="ph-practice"></div>
+  <div class="phase" id="ph-drag"></div>
+  <div class="phase" id="ph-test"></div>
+</div>
+
+<!-- FINAL TEST SCREEN -->
+<div id="fscreen" style="display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div style="background:linear-gradient(135deg,#7C3AED,#5B21B6);border-radius:14px;padding:18px;margin-bottom:16px;text-align:center">
+    <div style="font-size:2rem;margin-bottom:6px">🏆</div>
+    <h2 style="color:#fff;font-size:1.1rem;font-weight:900">الاختبار النهائي الشامل</h2>
+    <p style="color:rgba(255,255,255,.75);font-size:.82rem;margin-top:4px">جميع أسئلة التقييم الرسمية من الكتاب</p>
+  </div>
+  <div class="qprog">
+    <div class="qpbar"><div class="qpfill" id="fpfill"></div></div>
+    <div class="qptxt" id="fptxt">0 / 80</div>
+  </div>
+  <div id="final-quiz"></div>
+  <div class="submit-row">
+    <button class="sbtn" onclick="submit_final()">إرسال الاختبار النهائي →</button>
+  </div>
+</div>
+
+<!-- PREPOSITIONS SCREEN -->
+<div id="pscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero">
+    <h2>in · on · at 🎯</h2>
+    <p>كل ما اتّسعت الدائرة زاد العموم — والعكس يزيد التحديد</p>
+  </div>
+  <div class="prep-toggle">
+    <button class="on" id="pt-place" onclick="sw_prep('place')">📍 المكان</button>
+    <button id="pt-time" onclick="sw_prep('time')">🕐 الزمن</button>
+  </div>
+  <div class="prep-hint">👇 اضغط على أيّ لون في الدائرة</div>
+  <div class="target-wrap">
+    <div class="target">
+      <div class="ring ring-in" id="ring-in" onclick="sel_prep('in')"><span>in</span></div>
+      <div class="ring ring-on" id="ring-on" onclick="sel_prep('on')"><span>on</span></div>
+      <div class="ring ring-at" id="ring-at" onclick="sel_prep('at')"><span>at</span></div>
+    </div>
+  </div>
+  <div class="zoom-cap" id="zoom-cap"></div>
+  <div id="prep-detail"></div>
+  <div id="prep-except"></div>
+
+  <div class="lesson-video">
+    <div class="lv-title">🎬 شاهد الشرح كاملاً — in · on · at</div>
+    <div class="yt-embed">
+      <iframe src="https://www.youtube.com/embed/Q8gMUILX6xk?rel=0" title="in on at explanation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+        allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <button class="quiz-toggle" id="prep-toggle" onclick="reveal_quiz('prep')">🎯 فهمت الفكرة؟ اختبر نفسك ←</button>
+  <div id="prep-quiz" class="quiz-wrap"></div>
+</div>
+
+<!-- ARTICLES SCREEN -->
+<div id="ascreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#4F46E5)">
+    <h2>a · an · the ✨</h2>
+    <p>متى «أيّ واحد» ومتى «المحدّد المعروف»؟</p>
+  </div>
+
+  <div class="art-meta">
+    <div class="am-card am-any">
+      <div class="am-ic">👥</div>
+      <div class="am-t">أيّ واحد — جديد/مجهول</div>
+      <div class="am-w">a / an</div>
+      <div class="am-ex">a car = أيّ سيارة</div>
+    </div>
+    <div class="am-vs">مقابل</div>
+    <div class="am-card am-the">
+      <div class="am-ic">🔦</div>
+      <div class="am-t">محدّد — معروف للطرفين</div>
+      <div class="am-w">the</div>
+      <div class="am-ex">the car = السيارة المعروفة</div>
+    </div>
+  </div>
+
+  <div class="prep-hint">👇 اضغط على أيّ أداة (a · an · the)</div>
+  <div class="art-chips">
+    <button class="art-chip" id="art-a" onclick="sel_art('a')">a</button>
+    <button class="art-chip" id="art-an" onclick="sel_art('an')">an</button>
+    <button class="art-chip" id="art-the" onclick="sel_art('the')">the</button>
+  </div>
+  <div id="art-detail"></div>
+
+  <div class="lesson-video">
+    <div class="lv-title">🎬 شاهد الشرح كاملاً — a · an · the</div>
+    <div class="yt-embed">
+      <iframe src="https://www.youtube.com/embed/26qCP6YLfiA?rel=0" title="a an the explanation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+        allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <button class="quiz-toggle" id="art-toggle" onclick="reveal_quiz('art')">✨ فهمت الفكرة؟ اختبر نفسك ←</button>
+  <div id="art-quiz" class="quiz-wrap"></div>
+</div>
+
+<!-- WH QUESTIONS SCREEN -->
+<div id="wscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#0D9488,#0F766E)">
+    <h2>أدوات السؤال — WH ❓</h2>
+    <p>كل كلمة تسأل عن شيء مختلف — اضغط لتتعلّم</p>
+  </div>
+  <div class="prep-hint">👇 اضغط على أيّ أداة سؤال</div>
+  <div class="wh-grid" id="wh-grid"></div>
+  <div id="wh-detail"></div>
+  <button class="quiz-toggle" id="wh-toggle" onclick="reveal_quiz('wh')">❓ فهمت الفكرة؟ اختبر نفسك ←</button>
+  <div id="wh-quiz" class="quiz-wrap"></div>
+</div>
+
+<!-- PAST-TIME SIGNALS SCREEN -->
+<div id="tmscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#F59E0B,#B45309)">
+    <h2>الماضي البسيط · كلمات الزمن ⏳</h2>
+    <p>yesterday · last · ago — والأهمّ: ترتيب الكلمات</p>
+  </div>
+  <div class="tl">
+    <div class="tl-line"></div>
+    <div class="tl-pt"><span class="tl-dot now"></span><span class="tl-lbl">اليوم<span class="en">today</span></span></div>
+    <div class="tl-pt" onclick="sel_time('yesterday')"><span class="tl-dot" id="tld-yesterday"></span><span class="tl-lbl">أمس<span class="en">yesterday</span></span></div>
+    <div class="tl-pt" onclick="sel_time('last')"><span class="tl-dot" id="tld-last"></span><span class="tl-lbl">قبل أسبوع<span class="en">last week</span></span></div>
+    <div class="tl-pt" onclick="sel_time('ago')"><span class="tl-dot" id="tld-ago"></span><span class="tl-lbl">قبل سنوات<span class="en">ago</span></span></div>
+  </div>
+  <div class="tl-cap">⟵ كلّما اتّجهنا يساراً ابتعدنا في الماضي · واليمين هو الآن ⟶</div>
+  <div class="story-box">
+    <div class="story-h">📖 قصة واحدة تربطها كلها — أحداث في حياة شخص:</div>
+    <div class="story-line"><span class="en">Last week I traveled to Riyadh.</span>
+      <button class="story-spk" onclick="say('Last week I traveled to Riyadh')">🔊</button>
+      <span class="ar">الأسبوع الماضي سافرت إلى الرياض.</span></div>
+    <div class="story-line"><span class="en">Two days ago I bought a car.</span>
+      <button class="story-spk" onclick="say('Two days ago I bought a car')">🔊</button>
+      <span class="ar">قبل يومين اشتريت سيارة.</span></div>
+    <div class="story-line"><span class="en">Yesterday I visited my friend.</span>
+      <button class="story-spk" onclick="say('Yesterday I visited my friend')">🔊</button>
+      <span class="ar">أمس زرت صديقي.</span></div>
+  </div>
+  <div class="prep-hint">👇 اضغط على أيّ كلمة أو نقطة على الخطّ</div>
+  <div class="tm-chips">
+    <button class="tm-chip" id="tm-yesterday" onclick="sel_time('yesterday')">yesterday</button>
+    <button class="tm-chip" id="tm-last" onclick="sel_time('last')">last</button>
+    <button class="tm-chip" id="tm-ago" onclick="sel_time('ago')">ago</button>
+  </div>
+  <div id="time-detail"></div>
+
+  <div class="lesson-video">
+    <div class="lv-title">🎬 شاهد الشرح كاملاً — الماضي البسيط</div>
+    <div class="yt-embed">
+      <iframe src="https://www.youtube.com/embed/oSNLR7zep_E?rel=0" title="simple past explanation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+        allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <button class="quiz-toggle" id="time-toggle" onclick="reveal_quiz('time')">⏳ فهمت الفكرة؟ اختبر نفسك ←</button>
+  <div id="time-quiz" class="quiz-wrap"></div>
+</div>
+
+<!-- SPELLING SCREEN -->
+<div id="spscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
+    <h2>اكتب من السماع ✍️</h2>
+    <p>استمع للكلمة واكتبها — يبني الإملاء والاستماع</p>
+  </div>
+  <div class="sp-prog">
+    <button class="sp-restart" onclick="start_spell()" title="ابدأ من الأول">🔁 من البداية</button>
+    <div class="sp-bar"><div class="sp-fill" id="sp-fill"></div></div>
+    <div class="sp-count" id="sp-count">0 / 0</div>
+  </div>
+  <div id="spell-body"></div>
+</div>
+
+<!-- IRREGULAR VERBS SCREEN -->
+<div id="ivscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#6366F1,#4338CA)">
+    <h2>الأفعال الشاذة 🔄</h2>
+    <p>ليست عشوائية — بل عائلات لها أنماط</p>
+  </div>
+  <div class="prep-toggle">
+    <button class="on" id="iv-t-learn" onclick="sw_iv('learn')">📖 تعلّم بالعائلات</button>
+    <button id="iv-t-drill" onclick="sw_iv('drill')">🎴 تدرّب (بطاقات)</button>
+  </div>
+  <div id="iv-learn-body"></div>
+  <div id="iv-drill-body" style="display:none"></div>
+</div>
+
+<!-- LISTENING (YouTube) SCREEN -->
+<div id="ytscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#1F2937,#0B1220)">
+    <h2>استماع Book 4 🎧</h2>
+    <p>اختبارات استماع وقراءة مع الحل — LangVox</p>
+  </div>
+  <div class="yt-tabs" id="yt-tabs"></div>
+  <div class="yt-embed">
+    <iframe id="yt-iframe" src="" title="ALC Book 4 Listening"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+      allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="mcrd">
+    <span class="memo" id="m-emo">🏆</span>
+    <div class="mscore" id="m-score">0%</div>
+    <div class="mgrade" id="m-grade">ممتاز!</div>
+    <div class="msub" id="m-sub"></div>
+    <div class="stars">
+      <span class="star" id="s1">⭐</span>
+      <span class="star" id="s2">⭐</span>
+      <span class="star" id="s3">⭐</span>
+    </div>
+    <div class="mbtns">
+      <button class="mbtn sec" onclick="retry()">↺ أعد الاختبار</button>
+      <button class="mbtn primary" id="m-next" style="display:none" onclick="next_lesson()">الدرس التالي ←</button>
+      <button class="mbtn primary" onclick="close_modal()">متابعة →</button>
+    </div>
+  </div>
+</div>
+<div class="conf" id="conf"></div>
+
+<script>
+// ═══════════════════════════════════════════
+// ALL EVALUATION QUESTIONS — EXACT FROM BOOK
+// ═══════════════════════════════════════════
+const EE = {
+// LESSON 1 — EE-3 to EE-6 (Exercise E & F)
+l1:[
+  {q:"Jane _______ baseball yesterday.",o:["is playing","playing","played","plays"],a:2,en:"yesterday → past tense → played",ar:"أمس = الماضي البسيط"},
+  {q:"Tom _______ in a restaurant downtown.",o:["ends","likes","visits","cooks"],a:3,en:"He works as a cook in a restaurant",ar:"يطبخ في المطعم = وظيفته"},
+  {q:"Tom _______ in Chicago last year.",o:["lives","lived","living","is living"],a:1,en:"last year = past tense → lived",ar:"العام الماضي = ماضٍ"},
+  {q:"Please _______ after you cook.",o:["did","clean up","live","end"],a:1,en:"clean up = tidy/organize",ar:"نظّف / رتّب"},
+  {q:"Class starts at 0730 and _______ at 1435.",o:["plays","lives","ends","works"],a:2,en:"ends = finishes at that time",ar:"ينتهي"},
+  {q:"Sally goes _______ on the bus every day.",o:["city","downtown","yesterday","library"],a:1,en:"downtown = city center",ar:"وسط المدينة"},
+  {q:"Did Bill play _______ yesterday afternoon?",o:["TV","Dallas","football","show"],a:2,en:"You play a sport like football",ar:"تلعب رياضة مثل كرة القدم"},
+  {q:"What time does class _______?",o:["visit","start","clean","again"],a:1,en:"class starts = begins",ar:"الدرس يبدأ"},
+  {q:"Did you eat at a _______ on Sunday?",o:["show","hospital","restaurant","dispensary"],a:2,en:"You eat at a restaurant",ar:"تأكل في مطعم"},
+  {q:"Bob: Do you live in San Antonio? Lou: No, I am _______ here.",o:["visiting","starting","watching","cleaning"],a:0,en:"visiting = here temporarily",ar:"زائر = موجود مؤقتاً"},
+  {q:"Sam: Did you watch the baseball game on TV? Tom: Yes, _______.",o:["I watch","I did","I did watched","I watching"],a:1,en:"Short answer: Yes, I did.",ar:"الإجابة القصيرة"},
+  {q:"Kay: Did Paul play baseball yesterday? May: No, he _______.",o:["not did","I did","did not","no did plays"],a:2,en:"No, he did not. = didn't",ar:"لا، هو لم يفعل"},
+  {q:"Bob visited Chicago last year, and he wants to go _______ this year.",o:["again","long","like","basketball"],a:0,en:"again = one more time",ar:"مرة أخرى"},
+  {q:"_______ you clean up your room?",o:["Did","Where","What","Are"],a:0,en:"Did = question word for simple past",ar:"Did = أداة السؤال في الماضي"},
+  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Houston is a large city",ar:"هيوستن مدينة كبيرة"},
+  {q:"There are eleven players on a football _______.",o:["game","sport","team","play"],a:2,en:"11 players = a team",ar:"11 لاعب = فريق"},
+  {q:"My brother is a doctor. He _______ in a big hospital downtown.",o:["cleans","works","visits","ends"],a:1,en:"works = his job location",ar:"يعمل هناك"},
+  {q:"On Saturday, let's play _______.",o:["basketball","restaurant","town","visit"],a:0,en:"You play basketball",ar:"تلعب كرة السلة"},
+  {q:"Ben: Did you watch the new _______ on TV last night? Tim: No, I went downtown.",o:["ball","show","city","restaurant"],a:1,en:"watch a show on TV",ar:"تشاهد برنامجاً على التلفاز"},
+  {q:"Mr. Gregg is at the office from 7:00 a.m. to 7:00 p.m. He works _______.",o:["all night","all year long","all day long","every day"],a:2,en:"7am to 7pm = all day long",ar:"من الصباح للمساء = طول اليوم"},
+],
+// LESSON 2 — EE-10 to EE-12 (Exercise H)
+l2:[
+  {q:"Carol is a new major. Last year she was a _______.",o:["sergeant","second lieutenant","first lieutenant","captain"],a:3,en:"Major=O-4. One rank below = Captain O-3",ar:"الرائد O-4، أقل منه مباشرة = النقيب O-3"},
+  {q:"The stripes on a sergeant's uniform are the _______.",o:["name tag","rank","names","ID card"],a:1,en:"Stripes = rank insignia",ar:"الشرائط تدل على الرتبة"},
+  {q:"John is in the Army. He lives on a _______.",o:["naval base","military rank","post","base"],a:2,en:"Army → post (a soldier lives on an Army post)",ar:"الجيش → post = ثكنة (معسكر الجيش)"},
+  {q:"Tim can't smoke. He doesn't have a _______.",o:["radio","report","cigarette","book"],a:2,en:"You smoke a cigarette",ar:"تدخّن سيجارة"},
+  {q:"I didn't know that airman's name. She didn't have her _______ on.",o:["cap","name tag","uniform","rank"],a:1,en:"Name tag has your name on it",ar:"بطاقة الاسم تحمل اسمك"},
+  {q:"Airmen always _______ officers.",o:["salute","report","bring","begin"],a:0,en:"Military rule: salute officers",ar:"التحية العسكرية للضباط"},
+  {q:"My brother is a captain. He's _______.",o:["a civilian","in the military","a rank","on time"],a:1,en:"Captain = military rank → in the military",ar:"النقيب رتبة عسكرية → في الجيش"},
+  {q:"Sailors live on _______ base.",o:["an Army","an Air Force","a naval","a post"],a:2,en:"Navy → naval base",ar:"البحرية → قاعدة بحرية"},
+  {q:"Sandra is in the Air Force. She lives on a _______.",o:["base","naval base","military","post"],a:0,en:"Air Force personnel live on a base",ar:"سلاح الجو → قاعدة"},
+  {q:"Mike Russ is an enlisted man. He's a _______.",o:["civilian","second lieutenant","major","sergeant"],a:3,en:"Enlisted man = non-officer rank like sergeant",ar:"المجنّد = رتبة مثل الرقيب"},
+  {q:"My _______ has my picture and my name on it.",o:["uniform","suit","ID card","cap"],a:2,en:"ID card has name and photo",ar:"بطاقة الهوية = صورة + اسم"},
+  {q:"Col Smith _______ a pack of cigarettes every day.",o:["salutes","smokes","lives","reports"],a:1,en:"smokes a pack",ar:"يدخّن علبة"},
+  {q:"Class begins at 7:30 every day. It started at 7:40 this morning. This morning class _______.",o:["started on time","began early","didn't start on time","had 10 students"],a:2,en:"7:40 ≠ 7:30 → did not start on time",ar:"7:40 ≠ 7:30 → لم يبدأ في الوقت"},
+  {q:"Put your _______ on your head.",o:["name tag","stripe","post","cap"],a:3,en:"You put a cap on your head",ar:"تضع القبعة على رأسك"},
+  {q:"I'm tired! Let's take a _______.",o:["rank","break","pack","ID card"],a:1,en:"take a break = rest",ar:"خذ استراحة = ارتح"},
+  {q:"Please _______ your books to class tomorrow.",o:["salute","report","bring","buy"],a:2,en:"bring = carry with you",ar:"أحضر = احمل معك"},
+  {q:"I _______ to the teacher yesterday.",o:["speak","am speaking","to speak","spoke"],a:3,en:"yesterday = past; speak → spoke",ar:"أمس = ماضٍ؛ speak→spoke شاذة"},
+  {q:"It's 8:50 p.m. It's _______.",o:["0850","0810","2010","2050"],a:3,en:"8:50 pm → 8+12=20 → 2050",ar:"8:50 مساءً = 2050"},
+  {q:"I _______ class early yesterday.",o:["leaved","went out","left","gone from"],a:2,en:"leave → left (irregular)",ar:"leave→left فعل شاذ"},
+  {q:"Sgt. Jones _______ to Los Angeles last week.",o:["is flying","flew","flies","fly"],a:1,en:"last week = past; fly → flew",ar:"الأسبوع الماضي → flew"},
+],
+// LESSON 3 — EE-14 to EE-18 (Exercise C & G)
+l3:[
+  {q:"Which has the past tense sound /t/?",o:["saluted","listened","smoked","indented"],a:2,en:"smoked → /smokt/ (k is voiceless → /t/)",ar:"k مهموسة → صوت /t/"},
+  {q:"Which has the past tense sound /əd/?",o:["repeated","spelled","answered","asked"],a:0,en:"repeated → ends in t → /əd/",ar:"تنتهي بـ t → /əd/"},
+  {q:"Which has the past tense sound /d/?",o:["talked","studied","watched","wanted"],a:1,en:"studied → vowel sound → /d/",ar:"حرف علة → /d/"},
+  {q:"What time did you _______ this morning?",o:["woke up","wakes up","wake up","waking up"],a:0,en:"Past answer: woke up",ar:"الجواب في الماضي = woke up"},
+  {q:"Pvt Jones can _______ English, French, Japanese, and German.",o:["speak","speaks","spoke","speaking"],a:0,en:"can + base verb",ar:"can + فعل مجرد"},
+  {q:"I wore my new pants yesterday. (pants = ?)",o:["ties","socks","blouses","slacks"],a:3,en:"pants = slacks",ar:"بنطلون = slacks"},
+  {q:"May I go to the library?",o:["No, he didn't.","Yes, it is.","No, you must.","Yes, you may."],a:3,en:"May I? → Yes, you may.",ar:"May I? → Yes, you may."},
+  {q:"We wear _______.",o:["books","clothes","reports","posts"],a:1,en:"We wear clothes",ar:"نلبس ملابس"},
+  {q:"I must _______ tonight.",o:["to study","study","studies","studying"],a:1,en:"must + base verb (no to)",ar:"must + فعل مجرد"},
+  {q:"These words are in alphabetical order:",o:["colonel, captain, cap, cigarette","pants, paragraph, pastel, pattern","shirt, skirt, shoes, she","coat, contraction, clothes, can"],a:1,en:"pants(pa-n), paragraph(pa-r), pastel(pa-s), pattern(pa-t)",ar:"pa-n → pa-r → pa-s → pa-t = ترتيب صحيح"},
+  {q:"That man is an officer. Pvt Jones _______ salute officers.",o:["may","must not","must","didn't"],a:2,en:"Military rule: must salute officers always",ar:"يجب تحية الضباط دائماً"},
+  {q:"I don't know French. This means:",o:["I can speak French","I must speak French","I can't speak French","I mustn't speak French"],a:2,en:"don't know = can't speak",ar:"لا أعرف = لا أستطيع التحدث"},
+  {q:"I like to sleep late on Saturday, but my children get up early. They are always _______ before I am.",o:["again","great","well","awake"],a:3,en:"awake = not sleeping",ar:"صاحٍ = غير نائم"},
+  {q:"It's cold. Where is my _______?",o:["coat","book","football","cigarette"],a:0,en:"You wear a coat when it's cold",ar:"تلبس المعطف عند البرد"},
+  {q:"My son is not awake. He's _______.",o:["awake","bored","asleep","angry"],a:2,en:"Not awake = asleep",ar:"غير صاحٍ = نائم"},
+  {q:"Yesterday, Mr. Carter _______ a suit to class.",o:["wear","wears","wore","wearing"],a:2,en:"yesterday = past; wear → wore",ar:"أمس = ماضٍ؛ wear→wore شاذة"},
+  {q:"I'm very tired. I am going to _______ in lab this afternoon.",o:["put on","fall asleep","take off","wake up"],a:1,en:"fall asleep = go to sleep",ar:"fall asleep = يغفو"},
+  {q:"I can't swim very _______.",o:["again","well","true","all"],a:1,en:"swim well = with skill",ar:"يسبح بشكل جيد"},
+  {q:"My sister bought two _______ at the store.",o:["hat","dress","belts","scarf"],a:2,en:"two = plural → belts",ar:"اثنان = جمع → belts"},
+  {q:"I must not write with a pen on the quiz. This means:",o:["I can write with a pen on the quiz","I am writing with a pen on the quiz","I cannot write with a pen on the quiz","I write with a pen on the quiz"],a:2,en:"must not = cannot",ar:"يجب ألّا = لا يمكن"},
+],
+// LESSON 4 — EE-21 to EE-22 (Exercise F)
+l4:[
+  {q:"John works at a store. He's a _______.",o:["sailor","soldier","clerk","doctor"],a:2,en:"store worker = clerk",ar:"عامل متجر = clerk"},
+  {q:"Ms. Moss _______ her students with English.",o:["works","reads","costs","helps"],a:3,en:"teacher helps students",ar:"المعلمة تساعد الطلاب"},
+  {q:"Today is Monday. _______ is Wednesday.",o:["Tomorrow","The day before yesterday","The day after tomorrow","Yesterday"],a:2,en:"Monday + 2 days = Wednesday",ar:"الاثنين + يومين = الأربعاء"},
+  {q:"It's December, and it's cold in the United States. It's _______.",o:["summer","fall","winter","spring"],a:2,en:"December = winter",ar:"ديسمبر = الشتاء"},
+  {q:"Autumn and fall are the _______.",o:["different","same","months","days"],a:1,en:"Same season, two names",ar:"نفس الفصل، اسمان"},
+  {q:"Dan: I bought a new shirt yesterday. Sue: _______?",o:["What do you want?","What day is tomorrow?","What color is it?","What must I do?"],a:2,en:"Natural question about new clothing = What color?",ar:"السؤال الطبيعي عن ملابس جديدة = ما لونها؟"},
+  {q:"It's very _______ in here. I want to take off my sweater.",o:["cold","cool","warm","white"],a:2,en:"Take off sweater → too warm inside",ar:"يخلع سترته → الجو دافئ جداً"},
+  {q:"I like to listen to _______ on the radio.",o:["music","headphones","dance","spring"],a:0,en:"listen to music on the radio",ar:"تستمع للموسيقى على الراديو"},
+  {q:"Catherine listens to CDs on her _______.",o:["telephone","television","headphones","radio"],a:2,en:"headphones for CDs",ar:"سماعات = للـ CDs"},
+  {q:"Tom: _______ Bob: I went to the BX.",o:["What did you read?","Where were you last night?","When did you come to DLI?","Who ate my banana?"],a:1,en:"Bob answers where he was → Where were you?",ar:"بوب أجاب عن مكانه → أين كنت؟"},
+  {q:"Which has the past tense sound /d/?",o:["wanted","selected","marked","shaved"],a:3,en:"shaved → /d/ sound",ar:"shaved = صوت /d/"},
+  {q:"Which has the past tense sound /t/?",o:["memorized","reviewed","visited","walked"],a:3,en:"walked → /wɔːkt/ (k voiceless → /t/)",ar:"walked ← k مهموسة → /t/"},
+  {q:"Which has the past tense sound /əd/?",o:["repeated","worked","danced","played"],a:0,en:"repeated → ends in t → /əd/",ar:"repeated تنتهي بـ t → /əd/"},
+]
+};
+
+// All 80 questions combined for final test (l1:20, l2:20, l3:20, l4:13 + 7 extra)
+const FINAL = [
+  ...EE.l1.map((q,i)=>({...q,lbl:'L1-'+(i+1)})),
+  ...EE.l2.map((q,i)=>({...q,lbl:'L2-'+(i+1)})),
+  ...EE.l3.map((q,i)=>({...q,lbl:'L3-'+(i+1)})),
+  ...EE.l4.map((q,i)=>({...q,lbl:'L4-'+(i+1)})),
+  // Additional L3 from EE-17/18
+  {q:"These words are in alphabetical order:",o:["colonel, captain, cap, cigarette","pants, paragraph, pastel, pattern","shirt, skirt, shoes, she","coat, contraction, clothes, can"],a:1,en:"pants(pa-n), paragraph(pa-r), pastel(pa-s), pattern(pa-t)",ar:"ترتيب أبجدي صحيح",lbl:'L3-21'},
+  {q:"Do not smoke cigarettes in this building. This means:",o:["You may smoke in this building","You must not smoke in this building","You sometimes smoke in this building","You can smoke in this building"],a:1,en:"Do not = must not",ar:"لا تفعل = يجب ألّا تفعل",lbl:'L3-22'},
+  {q:"A suit is slacks and a _______.",o:["hat","jacket","shoe","dress"],a:1,en:"suit = jacket + slacks",ar:"البدلة = جاكيت + بنطلون",lbl:'L3-23'},
+  // Additional L4
+  {q:"Pvt Jones can _______ four languages.",o:["speak","speaks","spoke","speaking"],a:0,en:"can + base verb",ar:"can + فعل مجرد",lbl:'L4-14'},
+  {q:"What time did you _______ this morning?",o:["woke up","wakes up","wake up","waking up"],a:0,en:"Answer: woke up (past)",ar:"الجواب في الماضي = woke up",lbl:'L4-15'},
+  {q:"I'm very tired. I am going to _______ in lab this afternoon.",o:["put on","fall asleep","take off","wake up"],a:1,en:"fall asleep = go to sleep",ar:"fall asleep = يغفو",lbl:'L4-16'},
+  {q:"My sister bought two _______ at the store.",o:["hat","dress","belts","scarf"],a:2,en:"two = plural → belts",ar:"اثنان = جمع → belts",lbl:'L4-17'},
+];
+
+// DRAG-DROP data per lesson
+const DD = {
+l1:[
+  {sent:"Jane _____ baseball yesterday.",blank:"played",words:["played","plays","playing","liked"],tr:"لعبت جين البيسبول أمس.",ar:"أمس = ماضٍ → played"},
+  {sent:"Paul didn't _____ New York last year.",blank:"visit",words:["visit","visited","visits","visiting"],tr:"لم يزُر بول نيويورك العام الماضي.",ar:"didn't + الفعل الأصلي"},
+  {sent:"Tom _____ in a restaurant downtown.",blank:"cooks",words:["cooks","cooked","cooking","cook"],tr:"يطبخ توم في مطعم بوسط المدينة.",ar:"حقيقة ثابتة = مضارع"},
+  {sent:"Did you eat at a restaurant _____ Sunday?",blank:"on",words:["on","in","at","for"],tr:"هل أكلت في مطعم يوم الأحد؟",ar:"on = مع أيام الأسبوع"},
+  {sent:"Class starts at 0730 and _____ at 1435.",blank:"ends",words:["ends","ended","ending","end"],tr:"يبدأ الدرس 0730 وينتهي 1435.",ar:"حقيقة ثابتة = مضارع"},
+  {sent:"Sam asked: Did you watch the game? Tom: Yes, I _____.",blank:"did",words:["did","do","watched","watch"],tr:"سأل سام: هل شاهدت المباراة؟ توم: نعم، فعلت.",ar:"إجابة قصيرة لـ Did"},
+  {sent:"Bob visited Chicago last year and wants to go _____ this year.",blank:"again",words:["again","back","more","also"],tr:"زار بوب شيكاغو العام الماضي ويريد الذهاب مرة أخرى هذا العام.",ar:"again = مرة أخرى"},
+  {sent:"There are eleven players on a football _____.",blank:"team",words:["team","game","sport","play"],tr:"يوجد أحد عشر لاعباً في فريق كرة القدم.",ar:"11 لاعب = فريق"},
+  {sent:"_____ you clean up your room?",blank:"Did",words:["Did","Were","Are","Have"],tr:"هل نظّفت غرفتك؟",ar:"Did = سؤال الماضي"},
+  {sent:"Houston is a big _____ in Texas.",blank:"city",words:["city","town","game","sport"],tr:"هيوستن مدينة كبيرة في تكساس.",ar:"مدينة كبيرة"},
+],
+l2:[
+  {sent:"A soldier works on an Army _____.",blank:"post",words:["post","base","place","camp"],tr:"يعمل الجنديّ في ثكنة الجيش (Army post).",ar:"الجيش → post = ثكنة"},
+  {sent:"A sailor works on a _____ base.",blank:"naval",words:["naval","army","air force","military"],tr:"يعمل البحّار في قاعدة بحرية.",ar:"البحرية → naval base"},
+  {sent:"An airman works on an Air Force _____.",blank:"base",words:["base","post","place","camp"],tr:"يعمل جنديّ سلاح الجو في قاعدة جوية.",ar:"سلاح الجو → base"},
+  {sent:"Airmen always _____ officers.",blank:"salute",words:["salute","report","bring","begin"],tr:"يُحيّي جنود سلاح الجو الضباط دائماً.",ar:"salute = يُحيّي عسكرياً"},
+  {sent:"She didn't have her name _____ on.",blank:"tag",words:["tag","card","plate","board"],tr:"لم تكن ترتدي بطاقة اسمها.",ar:"name tag = بطاقة الاسم"},
+  {sent:"I _____ to the teacher yesterday.",blank:"spoke",words:["spoke","speak","speaking","spoken"],tr:"تحدّثت إلى المعلّم أمس.",ar:"speak → spoke (شاذ)"},
+  {sent:"Sgt. Jones _____ to LA last week.",blank:"flew",words:["flew","flied","flown","fly"],tr:"سافر الرقيب جونز جواً إلى لوس أنجلوس الأسبوع الماضي.",ar:"fly → flew (شاذ)"},
+  {sent:"I _____ class early yesterday.",blank:"left",words:["left","leaved","gone","went"],tr:"غادرت الصف مبكراً أمس.",ar:"leave → left (شاذ)"},
+  {sent:"It's 8:50 p.m. In military time it's _____.",blank:"2050",words:["2050","0850","2010","0810"],tr:"الساعة 8:50 مساءً — بالتوقيت العسكري 2050.",ar:"مساءً: 8+12=20"},
+  {sent:"Please _____ your books to class tomorrow.",blank:"bring",words:["bring","take","carry","put"],tr:"أحضر كتبك إلى الصف غداً.",ar:"bring = أحضر"},
+],
+l3:[
+  {sent:"I wore my new pants yesterday. Pants = _____.",blank:"slacks",words:["slacks","socks","ties","blouses"],tr:"ارتديت بنطلوني الجديد أمس. pants = slacks.",ar:"pants = slacks"},
+  {sent:"May I go to the library? Yes, you _____.",blank:"may",words:["may","can","must","will"],tr:"هل تسمح لي بالذهاب إلى المكتبة؟ نعم، يمكنك.",ar:"May I? → Yes, you may."},
+  {sent:"I must _____ tonight.",blank:"study",words:["study","to study","studies","studying"],tr:"يجب أن أدرس الليلة.",ar:"must + الفعل الأصلي"},
+  {sent:"Soldiers must wear _____ to class.",blank:"uniforms",words:["uniforms","suits","clothes","belts"],tr:"يجب على الجنود لبس الزي العسكري إلى الصف.",ar:"must + الفعل الأصلي"},
+  {sent:"Do not smoke = You must _____ smoke.",blank:"not",words:["not","never","don't","no"],tr:"ممنوع التدخين = يجب ألّا تدخّن.",ar:"Do not = must not"},
+  {sent:"A suit is slacks and a _____.",blank:"jacket",words:["jacket","hat","shoe","dress"],tr:"البدلة = بنطلون + جاكيت.",ar:"suit = jacket + slacks"},
+  {sent:"smoked has the past tense sound _____.",blank:"/t/",words:["/t/","/d/","/əd/","/ed/"],tr:"كلمة smoked تُنطق لاحقتها /t/.",ar:"k مهموسة → /t/"},
+  {sent:"studied has the past tense sound _____.",blank:"/d/",words:["/d/","/t/","/əd/","/ed/"],tr:"كلمة studied تُنطق لاحقتها /d/.",ar:"حرف علة → /d/"},
+  {sent:"repeated has the past tense sound _____.",blank:"/əd/",words:["/əd/","/t/","/d/","/ed/"],tr:"كلمة repeated تُنطق لاحقتها /əd/.",ar:"تنتهي بـ t → /əd/"},
+  {sent:"I can't swim very _____.",blank:"well",words:["well","good","great","fine"],tr:"لا أستطيع السباحة جيداً.",ar:"can't + well"},
+],
+l4:[
+  {sent:"Autumn and fall are the _____ season.",blank:"same",words:["same","different","cool","warm"],tr:"Autumn و fall هما نفس الفصل (الخريف).",ar:"نفس الفصل، اسمان"},
+  {sent:"December, January, February are _____ months.",blank:"winter",words:["winter","spring","fall","summer"],tr:"ديسمبر ويناير وفبراير أشهر الشتاء.",ar:"الشتاء ❄️"},
+  {sent:"March, April, May are _____ months.",blank:"spring",words:["spring","summer","fall","winter"],tr:"مارس وأبريل ومايو أشهر الربيع.",ar:"الربيع 🌸"},
+  {sent:"June, July, August are _____ months.",blank:"summer",words:["summer","spring","fall","winter"],tr:"يونيو ويوليو وأغسطس أشهر الصيف.",ar:"الصيف ☀️"},
+  {sent:"September, October, November are _____ months.",blank:"fall",words:["fall","spring","summer","winter"],tr:"سبتمبر وأكتوبر ونوفمبر أشهر الخريف.",ar:"الخريف 🍂"},
+  {sent:"Today is Monday. The day after tomorrow is _____.",blank:"Wednesday",words:["Wednesday","Tuesday","Thursday","Friday"],tr:"اليوم الاثنين. بعد الغد هو الأربعاء.",ar:"بعد الغد = +يومين"},
+  {sent:"I like to listen to _____ on the radio.",blank:"music",words:["music","headphones","dance","spring"],tr:"أحبّ الاستماع إلى الموسيقى على الراديو.",ar:"listen to music"},
+  {sent:"Catherine listens to CDs on her _____.",blank:"headphones",words:["headphones","radio","television","telephone"],tr:"تستمع كاثرين للأقراص على سماعاتها.",ar:"سماعات = للـ CDs"},
+  {sent:"It's very warm. I want to take _____ my sweater.",blank:"off",words:["off","on","out","up"],tr:"الجو دافئ جداً. أريد خلع سترتي.",ar:"take off = يخلع"},
+  {sent:"shaved has the past tense sound _____.",blank:"/d/",words:["/d/","/t/","/əd/","/ed/"],tr:"كلمة shaved تُنطق لاحقتها /d/.",ar:"v مجهورة → /d/"},
+]
+};
+
+// WORD ORDER data per lesson — رتّب الكلمات لتكوين جملة صحيحة
+const WO = {
+l1:[
+  {words:["Jane","played","baseball","yesterday"],ans:"Jane played baseball yesterday.",tr:"لعبت جين البيسبول أمس.",ar:"yesterday = ماضٍ → played"},
+  {words:["Tom","didn't","clean","his","room","last","Saturday"],ans:"Tom didn't clean his room last Saturday.",tr:"لم ينظّف توم غرفته السبت الماضي.",ar:"didn't + الفعل الأصلي بدون -ed"},
+  {words:["Did","you","watch","the","game","?"],ans:"Did you watch the game ?",tr:"هل شاهدت المباراة؟",ar:"Did + الفعل الأصلي في السؤال"},
+  {words:["Bob","visited","Chicago","last","year"],ans:"Bob visited Chicago last year.",tr:"زار بوب شيكاغو العام الماضي.",ar:"last year = ماضٍ → visited"},
+  {words:["There","are","eleven","players","on","a","football","team"],ans:"There are eleven players on a football team.",tr:"يوجد أحد عشر لاعباً في فريق كرة القدم.",ar:"team = الفريق"},
+  {words:["She","didn't","visit","New","York","last","month"],ans:"She didn't visit New York last month.",tr:"لم تزُر نيويورك الشهر الماضي.",ar:"didn't + visit (بدون -ed)"},
+  {words:["Did","Bill","play","football","yesterday","afternoon","?"],ans:"Did Bill play football yesterday afternoon ?",tr:"هل لعب بيل كرة القدم مساء أمس؟",ar:"Did + الفعل المجرد"},
+  {words:["Houston","is","a","big","city","in","Texas"],ans:"Houston is a big city in Texas.",tr:"هيوستن مدينة كبيرة في تكساس.",ar:"مدينة كبيرة"},
+],
+l2:[
+  {words:["A","soldier","works","on","an","Army","post"],ans:"A soldier works on an Army post.",tr:"يعمل الجندي في ثكنة الجيش.",ar:"Army → post"},
+  {words:["Airmen","always","salute","officers"],ans:"Airmen always salute officers.",tr:"يُحيّي جنود سلاح الجو الضباط دائماً.",ar:"salute = يُحيّي عسكرياً"},
+  {words:["I","spoke","to","the","teacher","yesterday"],ans:"I spoke to the teacher yesterday.",tr:"تحدّثت إلى المعلّم أمس.",ar:"speak → spoke (شاذ)"},
+  {words:["Sgt.","Jones","flew","to","LA","last","week"],ans:"Sgt. Jones flew to LA last week.",tr:"سافر الرقيب جونز جواً الأسبوع الماضي.",ar:"fly → flew (شاذ)"},
+  {words:["I","left","class","early","yesterday"],ans:"I left class early yesterday.",tr:"غادرت الصف مبكراً أمس.",ar:"leave → left (شاذ)"},
+  {words:["Please","bring","your","books","to","class"],ans:"Please bring your books to class.",tr:"أحضر كتبك إلى الصف.",ar:"bring = أحضر"},
+  {words:["She","didn't","have","her","name","tag","on"],ans:"She didn't have her name tag on.",tr:"لم تكن ترتدي بطاقة اسمها.",ar:"name tag = بطاقة الاسم"},
+  {words:["It's","8:50","p.m.","In","military","time","it's","2050"],ans:"It's 8:50 p.m. In military time it's 2050.",tr:"الساعة 8:50 مساءً = 2050 بالتوقيت العسكري.",ar:"8+12=20 → 2050"},
+],
+l3:[
+  {words:["Students","must","listen","to","the","teacher"],ans:"Students must listen to the teacher.",tr:"يجب على الطلاب الاستماع للمعلّم.",ar:"must + فعل مجرد"},
+  {words:["You","must","not","smoke","here"],ans:"You must not smoke here.",tr:"ممنوع التدخين هنا.",ar:"must not = ممنوع"},
+  {words:["May","I","go","to","the","library","?"],ans:"May I go to the library ?",tr:"هل تسمح لي بالذهاب إلى المكتبة؟",ar:"May I = طلب إذن رسمي"},
+  {words:["I","can't","swim","very","well"],ans:"I can't swim very well.",tr:"لا أستطيع السباحة جيداً.",ar:"can't + well"},
+  {words:["Soldiers","must","wear","uniforms","to","class"],ans:"Soldiers must wear uniforms to class.",tr:"يجب على الجنود لبس الزي العسكري.",ar:"must + الفعل الأصلي"},
+  {words:["A","suit","is","slacks","and","a","jacket"],ans:"A suit is slacks and a jacket.",tr:"البدلة = بنطلون + جاكيت.",ar:"suit = slacks + jacket"},
+  {words:["Pvt","Jones","can","speak","four","languages"],ans:"Pvt Jones can speak four languages.",tr:"يستطيع الجندي جونز التحدث بأربع لغات.",ar:"can + الفعل الأصلي"},
+  {words:["Do","not","smoke","=","You","must","not","smoke"],ans:"Do not smoke = You must not smoke.",tr:"ممنوع التدخين = يجب ألا تدخّن.",ar:"Do not = must not"},
+],
+l4:[
+  {words:["Autumn","and","fall","are","the","same","season"],ans:"Autumn and fall are the same season.",tr:"Autumn و fall اسمان لنفس الفصل.",ar:"نفس الفصل، كلمتان"},
+  {words:["December","January","and","February","are","winter","months"],ans:"December January and February are winter months.",tr:"ديسمبر ويناير وفبراير أشهر الشتاء.",ar:"الشتاء ❄️"},
+  {words:["Today","is","Monday","The","day","after","tomorrow","is","Wednesday"],ans:"Today is Monday The day after tomorrow is Wednesday.",tr:"اليوم الاثنين، بعد الغد الأربعاء.",ar:"بعد الغد = +يومين"},
+  {words:["I","like","to","listen","to","music","on","the","radio"],ans:"I like to listen to music on the radio.",tr:"أحبّ الاستماع إلى الموسيقى على الراديو.",ar:"listen to music"},
+  {words:["Catherine","listens","to","CDs","on","her","headphones"],ans:"Catherine listens to CDs on her headphones.",tr:"تستمع كاثرين للأقراص على سماعاتها.",ar:"headphones = للـ CDs"},
+  {words:["It's","very","warm","I","want","to","take","off","my","sweater"],ans:"It's very warm I want to take off my sweater.",tr:"الجو دافئ، أريد خلع سترتي.",ar:"take off = يخلع"},
+  {words:["How","much","does","this","pen","cost","?"],ans:"How much does this pen cost ?",tr:"كم يكلّف هذا القلم؟",ar:"How much + does + cost"},
+  {words:["John","works","at","a","store","He's","a","clerk"],ans:"John works at a store He's a clerk.",tr:"يعمل جون في متجر، هو موظف متجر.",ar:"store worker = clerk"},
+]
+};
+const PR = {
+l1:[
+  {q:"Jane _______ baseball yesterday.",o:["is playing","playing","played","plays"],a:2,en:"yesterday → simple past",ar:"أمس = الماضي"},
+  {q:"Tom _______ in Chicago last year.",o:["lives","lived","living","is living"],a:1,en:"last year = past tense",ar:"العام الماضي = ماضٍ"},
+  {q:"Please _______ after you cook.",o:["did","clean up","live","end"],a:1,en:"clean up = tidy",ar:"نظّف / رتّب"},
+  {q:"Did you eat at a _______ on Sunday?",o:["show","hospital","restaurant","dispensary"],a:2,en:"You eat at a restaurant",ar:"تأكل في مطعم"},
+  {q:"Sam: Did you watch the game? Yes, _______.",o:["I watch","I did","I did watched","I watching"],a:1,en:"Short answer: Yes, I did.",ar:"الإجابة القصيرة"},
+  {q:"There are eleven players on a football _______.",o:["game","sport","team","play"],a:2,en:"11 players = a team",ar:"11 لاعب = فريق"},
+  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Large city in Texas",ar:"مدينة كبيرة في تكساس"},
+  {q:"Mr. Gregg works 7am to 7pm. He works _______.",o:["all night","all year long","all day long","every day"],a:2,en:"7am to 7pm = all day long",ar:"من الصباح للمساء"},
+],
+l2:[
+  {q:"Carol is a new major. Last year she was a _______.",o:["sergeant","second lieutenant","first lieutenant","captain"],a:3,en:"Major O-4, below = Captain O-3",ar:"الرائد أقل منه = النقيب"},
+  {q:"Sailors live on _______ base.",o:["an Army","an Air Force","a naval","a post"],a:2,en:"Navy → naval base",ar:"البحرية → قاعدة بحرية"},
+  {q:"Airmen always _______ officers.",o:["salute","report","bring","begin"],a:0,en:"Military rule",ar:"قاعدة عسكرية"},
+  {q:"It's 8:50 p.m. In military time it's _______.",o:["0850","0810","2010","2050"],a:3,en:"8+12=20 → 2050",ar:"8:50 مساءً = 2050"},
+  {q:"I _______ to the teacher yesterday.",o:["speak","am speaking","to speak","spoke"],a:3,en:"speak → spoke (irregular)",ar:"speak→spoke شاذة"},
+  {q:"I _______ class early yesterday.",o:["leaved","went out","left","gone from"],a:2,en:"leave → left (irregular)",ar:"leave→left شاذة"},
+  {q:"Sgt. Jones _______ to Los Angeles last week.",o:["is flying","flew","flies","fly"],a:1,en:"fly → flew (irregular)",ar:"fly→flew شاذة"},
+  {q:"My _______ has my picture and my name on it.",o:["uniform","suit","ID card","cap"],a:2,en:"ID card = name + photo",ar:"بطاقة الهوية = صورة + اسم"},
+],
+l3:[
+  {q:"Which has the past tense sound /t/?",o:["saluted","listened","smoked","indented"],a:2,en:"smoked → /smokt/",ar:"smoked = /t/"},
+  {q:"Which has the past tense sound /əd/?",o:["repeated","spelled","answered","asked"],a:0,en:"repeated → /əd/",ar:"repeated = /əd/"},
+  {q:"Which has the past tense sound /d/?",o:["talked","studied","watched","wanted"],a:1,en:"studied → /d/",ar:"studied = /d/"},
+  {q:"May I go to the library?",o:["No, he didn't.","Yes, it is.","No, you must.","Yes, you may."],a:3,en:"May I? → Yes, you may.",ar:"May I? → Yes, you may."},
+  {q:"I must _______ tonight.",o:["to study","study","studies","studying"],a:1,en:"must + base verb",ar:"must + فعل مجرد"},
+  {q:"A suit is slacks and a _______.",o:["hat","jacket","shoe","dress"],a:1,en:"suit = jacket + slacks",ar:"البدلة = جاكيت + بنطلون"},
+  {q:"Do not smoke = You _______ smoke.",o:["may not","must not","cannot not","don't have"],a:1,en:"Do not = must not",ar:"لا تفعل = must not"},
+  {q:"I can't swim very _______.",o:["again","well","true","all"],a:1,en:"swim well = with skill",ar:"يسبح بشكل جيد"},
+],
+l4:[
+  {q:"Today is Monday. _______ is Wednesday.",o:["Tomorrow","The day before yesterday","The day after tomorrow","Yesterday"],a:2,en:"Monday + 2 = Wednesday",ar:"الاثنين + يومين = الأربعاء"},
+  {q:"Autumn and fall are the _______.",o:["different","same","months","days"],a:1,en:"Same season, two names",ar:"نفس الفصل، اسمان"},
+  {q:"It's December, cold in the US. It's _______.",o:["summer","fall","winter","spring"],a:2,en:"December = winter",ar:"ديسمبر = الشتاء"},
+  {q:"Catherine listens to CDs on her _______.",o:["telephone","television","headphones","radio"],a:2,en:"headphones for CDs",ar:"سماعات = للـ CDs"},
+  {q:"Which has the past tense sound /d/?",o:["wanted","selected","marked","shaved"],a:3,en:"shaved → /d/",ar:"shaved = /d/"},
+  {q:"Which has the past tense sound /t/?",o:["memorized","reviewed","visited","walked"],a:3,en:"walked → /t/",ar:"walked = /t/"},
+  {q:"Which has the past tense sound /əd/?",o:["repeated","worked","danced","played"],a:0,en:"repeated → /əd/",ar:"repeated = /əd/"},
+  {q:"John works at a store. He's a _______.",o:["sailor","soldier","clerk","doctor"],a:2,en:"store worker = clerk",ar:"عامل متجر = clerk"},
+]
+};
+
+
+// ═══════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════
+let CL=null,CT='learn',XP=0,STK=0,TANS={},FANS={},built={};
+let LP={}; // lesson progress: {l1:{pct, done}, ...} — best score per lesson
+let ddSelected=null; // word selected for drag
+
+// ═══════════════════════════════════════
+// SPEECH
+// ═══════════════════════════════════════
+function say(t){
+  if(!window.speechSynthesis)return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(String(t).replace(/\(.*?\)/g,'').trim());
+  u.lang='en-US';u.rate=0.82;speechSynthesis.speak(u);
+}
+
+// ═══════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════
+const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen'];
+function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
+
+// ── Analytics: track which section + time spent ──
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع'};
+let _curScreen=null,_screenStart=0;
+function track_screen(id){
+  if(typeof gtag!=='function')return;
+  const now=Date.now();
+  if(_curScreen&&_screenStart){
+    const secs=Math.round((now-_screenStart)/1000);
+    if(secs>0&&secs<7200)gtag('event','section_time',{section:SCREEN_NAMES[_curScreen]||_curScreen,seconds:secs});
+  }
+  let name=SCREEN_NAMES[id]||id;
+  if(id==='lscreen'&&typeof CL==='string'&&CL)name='درس '+CL.toUpperCase();
+  gtag('event','section_view',{section:name});
+  _curScreen=id;_screenStart=now;
+}
+function _flush_screen_time(){
+  if(typeof gtag!=='function'||!_curScreen||!_screenStart)return;
+  const secs=Math.round((Date.now()-_screenStart)/1000);
+  if(secs>0&&secs<7200)gtag('event','section_time',{section:SCREEN_NAMES[_curScreen]||_curScreen,seconds:secs});
+  _screenStart=Date.now();
+}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')_flush_screen_time();});
+window.addEventListener('pagehide',_flush_screen_time);
+
+// Quizzes stay hidden until the learner clicks "اختبر نفسك"
+function reset_quiz(id){
+  const q=document.getElementById(id+'-quiz');if(q)q.classList.remove('show');
+  const t=document.getElementById(id+'-toggle');if(t)t.style.display='';
+}
+function reveal_quiz(id){
+  const q=document.getElementById(id+'-quiz');if(q)q.classList.add('show');
+  const t=document.getElementById(id+'-toggle');if(t)t.style.display='none';
+  if(q)q.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// Shared 4-question concept card: المعنى / متى / مثال / أشهر خطأ
+function concept_html(accentTx,borderBd,headerInner,d,block2Extra){
+  const exSafe=d.ex.e.replace(/'/g,"\\'"),goodSafe=d.good.replace(/'/g,"\\'");
+  return `<div class="prep-detail" style="border-color:${borderBd};padding-top:8px">
+    <h3 style="color:${accentTx};margin-bottom:6px">${headerInner}</h3>
+    <div class="cblock b-mean"><div class="cblock-h"><span class="cblock-n" style="background:#3B82F6">1</span>💬 المعنى</div>
+      <div class="cblock-txt">${d.meaning}</div></div>
+    <div class="cblock b-when"><div class="cblock-h"><span class="cblock-n" style="background:#16A34A">2</span>🎯 متى ولماذا؟</div>
+      <div class="cblock-txt">${d.when}</div>${block2Extra||''}
+      ${d.triggers?`<div class="trig-list">${d.triggers.map(t=>`<div class="trig"><span class="trig-en">${t.e}</span><span class="trig-ar">${t.a}</span></div>`).join('')}</div>`:''}
+      ${d.link?`<div class="mind-link">💡 ${d.link}</div>`:''}</div>
+    <div class="cblock b-order"><div class="cblock-h"><span class="cblock-n" style="background:#7C3AED">3</span>✍️ مثال</div>
+      <div class="order-ex"><span class="en">${d.ex.e}</span><button class="mini-spk" onclick="say('${exSafe}')" aria-label="استمع">🔊</button></div>
+      <div class="cblock-txt" style="margin-top:5px">${d.ex.a}</div></div>
+    <div class="cblock b-bad"><div class="cblock-h"><span class="cblock-n" style="background:#EA580C">4</span>⚠️ أشهر خطأ للمبتدئين</div>
+      <div class="badgood"><span class="bg-x">❌ <span class="en strike">${d.bad}</span></span>
+      <span class="bg-ok">✅ <span class="en">${d.good}</span> <button class="mini-spk ok" onclick="say('${goodSafe}')" aria-label="استمع">🔊</button></span></div></div>
+  </div>`;
+}
+
+function open_lesson(lk){
+  CL=lk;TANS={};built={};
+  const icon={l1:'🏃',l2:'🎖️',l3:'👕',l4:'🌤️'};
+  const title={l1:'Lesson 1 — Sports & Games',l2:"Lesson 2 — He's in the Army",l3:"Lesson 3 — Where Are My Clothes?",l4:'Lesson 4 — Pencils in 10 Colors'};
+  const sub={l1:'الرياضة والألعاب',l2:'الحياة العسكرية',l3:'الملابس والقدرات',l4:'الفصول والألوان'};
+  show_screen('lscreen');
+  const ls=document.getElementById('lscreen');
+  ls.scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('lh-ico').textContent=icon[lk];
+  document.getElementById('lh-ttl').textContent=title[lk];
+  document.getElementById('lh-sub').textContent=sub[lk];
+  ['learn','practice','drag','test'].forEach(t=>{
+    document.getElementById('tab-'+t).classList.toggle('active',t==='learn');
+    document.getElementById('ph-'+t).classList.toggle('active',t==='learn');
+    document.getElementById('ph-'+t).innerHTML='';
+  });
+  CT='learn';
+  build_learn(lk);
+}
+
+function open_final(){
+  CL='final';FANS={};
+  show_screen('fscreen');
+  document.getElementById('fscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  build_final();
+}
+
+function go_home(){
+  show_screen('home');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function sw_tab(t){
+  CT=t;
+  ['learn','practice','drag','test'].forEach(x=>{
+    document.getElementById('tab-'+x).classList.toggle('active',x===t);
+    document.getElementById('ph-'+x).classList.toggle('active',x===t);
+  });
+  const lk=CL;
+  if(t==='practice'&&!built['pr'+lk]){build_quiz('ph-practice',PR[lk],'pr');built['pr'+lk]=1;}
+  if(t==='drag'&&!built['dd'+lk]){build_dd(lk);built['dd'+lk]=1;}
+  if(t==='test'&&!built['te'+lk]){TANS={};build_quiz('ph-test',EE[lk],'te');built['te'+lk]=1;}
+}
+
+// ═══════════════════════════════════════
+// BUILD LEARN
+// ═══════════════════════════════════════
+
+// ═══════════════════════════════════════
+// BUILD LEARN — REDESIGNED
+// ═══════════════════════════════════════
+const VOCAB = {
+l1:[
+  {e:'ball',a:'كرة',em:'⚽'},{e:'baseball',a:'البيسبول',em:'⚾'},
+  {e:'basketball',a:'كرة السلة',em:'🏀'},{e:'football',a:'كرة القدم الأمريكية',em:'🏈'},
+  {e:'soccer',a:'كرة القدم',em:'⚽'},{e:'tennis',a:'التنس',em:'🎾'},
+  {e:'sports',a:'رياضة',em:'🏅'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'مباراة / لعبة',em:'🎮'},
+  {e:'restaurant',a:'مطعم',em:'🍽️'},{e:'show',a:'برنامج / عرض',em:'📺'},
+  {e:'downtown',a:'وسط المدينة',em:'🌆'},{e:'city',a:'مدينة',em:'🏙️'},
+  {e:'break',a:'استراحة',em:'☕'},{e:'again',a:'مرة أخرى',em:'🔁'},
+  {e:'clean up',a:'ينظّف / يرتّب',em:'🧹'},{e:'visit',a:'يزور',em:'🗺️'},
+],
+l2:[
+  {e:'Second Lieutenant (2d Lt)',a:'ملازم ثانٍ — O-1',em:'🟡'},
+  {e:'First Lieutenant (1st Lt)',a:'ملازم أول — O-2',em:'⬜'},
+  {e:'Captain (Capt)',a:'نقيب — O-3',em:'🔲'},
+  {e:'Major (Maj)',a:'رائد — O-4',em:'🍃'},
+  {e:'Lieutenant Colonel (Lt Col)',a:'مقدّم — O-5',em:'🍂'},
+  {e:'Colonel (Col)',a:'عقيد — O-6',em:'🦅'},
+  {e:'General (Gen)',a:'لواء — O-7',em:'⭐'},
+  {e:'sergeant (Sgt)',a:'رقيب — رتبة أفراد',em:'🎗️'},
+  {e:'base',a:'قاعدة عسكرية',em:'🏕️'},{e:'post',a:'ثكنة (معسكر الجيش)',em:'🪖'},
+  {e:'naval base',a:'قاعدة بحرية',em:'⚓'},{e:'uniform',a:'الزي العسكري',em:'👔'},
+  {e:'name tag',a:'بطاقة الاسم',em:'🪪'},{e:'rank',a:'الرتبة',em:'🎖️'},
+  {e:'insignia',a:'الشارة (رمز الرتبة)',em:'🏅'},{e:'stripe',a:'شريط الرتبة',em:'〰️'},
+  {e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},{e:'ID card',a:'بطاقة الهوية',em:'🪪'},
+  {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'cigarette / pack',a:'سيجارة / علبة',em:'🚬'},
+  {e:'smoke',a:'يُدخّن',em:'💨'},{e:'break',a:'استراحة',em:'☕'},
+],
+l3:[
+  {e:'clothes',a:'ملابس',em:'👕'},
+  {e:'dress',a:'فستان',em:'👗'},{e:'skirt',a:'تنورة',em:'👗'},
+  {e:'blouse',a:'بلوزة',em:'👚'},{e:'stockings',a:'جوارب طويلة',em:'🧦'},
+  {e:'sweater',a:'بلوزة صوف',em:'🧥'},{e:'scarf',a:'وشاح',em:'🧣'},
+  {e:'hat',a:'قبعة عريضة',em:'👒'},{e:'boots',a:'جزمة طويلة',em:'🥾'},
+  {e:'gloves',a:'قفازات',em:'🧤'},{e:'shoes',a:'حذاء',em:'👟'},
+  {e:'pants / slacks',a:'بنطلون',em:'👖'},{e:'shirt',a:'قميص',em:'👔'},
+  {e:'T-shirt',a:'تيشيرت',em:'👕'},{e:'socks',a:'جوارب قصيرة',em:'🧦'},
+  {e:'tie / necktie',a:'ربطة عنق',em:'👔'},{e:'belt',a:'حزام',em:'🔗'},
+  {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'jacket / coat',a:'جاكيت / معطف',em:'🧥'},
+  {e:'suit',a:'بدلة = jacket + slacks',em:'🤵'},{e:'shorts',a:'شورت قصير',em:'🩳'},
+  {e:'wear',a:'يرتدي',past:'wore',pa:'ارتدى',em:'👔'},{e:'put on',a:'يلبس',past:'put on',pa:'لبِس',em:'🧥'},
+  {e:'take off',a:'يخلع',past:'took off',pa:'خلع',em:'🧤'},{e:'wake up',a:'يستيقظ',past:'woke up',pa:'استيقظ',em:'⏰'},
+],
+l4:[
+  {e:'spring',a:'الربيع — مارس أبريل مايو',em:'🌸'},
+  {e:'summer',a:'الصيف — يونيو يوليو أغسطس',em:'☀️'},
+  {e:'fall / autumn',a:'الخريف — سبتمبر أكتوبر نوفمبر',em:'🍂'},
+  {e:'winter',a:'الشتاء — ديسمبر يناير فبراير',em:'❄️'},
+  {e:'warm',a:'دافئ',em:'🌡️'},{e:'hot',a:'حار',em:'🔥'},
+  {e:'cool',a:'بارد نسبياً',em:'🌬️'},{e:'cold',a:'بارد جداً',em:'🥶'},
+  {e:'clerk',a:'موظف متجر',em:'🛒'},{e:'store',a:'متجر',em:'🏪'},
+  {e:'headphones',a:'سماعات أذن',em:'🎧'},{e:'radio',a:'راديو',em:'📻'},
+  {e:'music',a:'موسيقى',em:'🎵'},{e:'season',a:'فصل',em:'📅'},
+  {e:'this / these',a:'هذا / هؤلاء (قريب)',em:'👆'},
+  {e:'that / those',a:'ذلك / أولئك (بعيد)',em:'👉'},
+  {e:'How much?',a:'كم ثمنه؟',em:'💰'},{e:'sell',a:'يبيع',past:'sold',pa:'باع',em:'🏷️'},
+  {e:'colors',a:'الألوان',em:'🎨'},
+  {e:'red',a:'أحمر',em:'🔴'},{e:'blue',a:'أزرق',em:'🔵'},{e:'green',a:'أخضر',em:'🟢'},
+  {e:'yellow',a:'أصفر',em:'🟡'},{e:'orange',a:'برتقالي',em:'🟠'},{e:'purple',a:'بنفسجي',em:'🟣'},
+  {e:'brown',a:'بنّي',em:'🟤'},{e:'black',a:'أسود',em:'⚫'},{e:'white',a:'أبيض',em:'⬜'},
+  {e:'gray',a:'رمادي',em:'🩶'},{e:'pink',a:'وردي',em:'🩷'},
+]
+};
+
+const GRAMMAR = {
+l1:[
+  {
+    title:'Simple Past', ar:'الماضي البسيط',
+    rule:'أضف -ed للفعل + كلمة ماضية (yesterday / last week / ago)',
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'verb + ed',c:'v'},{t:'+',c:'p'},{t:'yesterday / last...',c:'k'}],
+    compare:[
+      {c1:'He visits every year.',c2:'He visited last year.',ar:'every year ↔ last year'},
+      {c1:'She cooks every day.',c2:'She cooked yesterday.',ar:'every day ↔ yesterday'},
+    ],
+    examples:[
+      {s:'Jane played baseball yesterday.',tr:'لعبت جين البيسبول أمس.',ar:'yesterday = ماضٍ → played',ok:true},
+      {s:'Jane plays baseball yesterday.',wrong:'plays',right:'played',tr:'مع yesterday لا تستخدم المضارع — الفعل لازم ماضٍ.',ok:false},
+    ]
+  },
+  {
+    title:"Negative: didn't", ar:'النفي في الماضي',
+    rule:"didn't + فعل مجرد — لا تضع -ed بعد didn't أبداً",
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:"didn't",c:'n'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
+    compare:[
+      {c1:'Tom cleaned his room.',c2:"Tom didn't clean his room.",ar:'إثبات ↔ نفي'},
+    ],
+    examples:[
+      {s:"Tom didn't clean his room last Saturday.",tr:'لم ينظّف توم غرفته السبت الماضي.',ar:"didn't + clean (بدون -ed)",ok:true},
+      {s:"Tom didn't cleaned his room.",wrong:'cleaned',right:'clean',tr:'النفي أخذ الماضي، فلا تكرّره بـ -ed.',ok:false},
+    ]
+  },
+  {
+    title:'Questions: Did?', ar:'سؤال الماضي',
+    rule:'Did + subject + base verb? — واحذف -d أو -ed من الفعل',
+    formula:[{t:'Did',c:'k'},{t:'+',c:'p'},{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'base verb',c:'v'},{t:'?',c:'p'}],
+    compare:[
+      {c1:'She liked Chicago.',c2:'Did she like Chicago?',ar:'liked → like (احذف -d)'},
+    ],
+    examples:[
+      {s:'Did you watch the game?',tr:'هل شاهدت المباراة؟ — Yes, I did. / No, I didn\'t.',ar:"Did + الفعل الأصلي",ok:true},
+      {s:'Did you watched the game?',wrong:'watched',right:'watch',tr:'بعد Did يرجع الفعل أصلياً بدون -ed.',ok:false},
+    ]
+  },
+  {
+    title:'Time Expressions', ar:'تعبيرات الزمن الماضي',
+    rule:'هذه الكلمات تدل على الماضي — استخدم معها الفعل الماضي دائماً',
+    formula:[],
+    compare:[],
+    examples:[
+      {s:'yesterday / yesterday morning / yesterday evening',ar:'أمس',ok:true},
+      {s:'last night / last week / last month / last year',ar:'الليلة الماضية / الأسبوع / الشهر / العام الماضي',ok:true},
+      {s:'two days ago / a week ago / a year ago',ar:'منذ... (فترة مضت)',ok:true},
+    ]
+  }
+],
+l2:[
+  {
+    title:'Military Ranks', ar:'الرتب العسكرية',
+    rule:'الرتب من الأدنى للأعلى — كل رتبة أعلى من السابقة',
+    formula:[],compare:[],examples:[],isRanks:true
+  },
+  {
+    title:'Military Time', ar:'التوقيت العسكري 24 ساعة',
+    rule:'من 1pm إلى 11pm: أضف 12 على الساعة للحصول على التوقيت العسكري',
+    formula:[{t:'1pm - 11pm',c:'k'},{t:'+',c:'p'},{t:'12',c:'v'},{t:'=',c:'p'},{t:'Military Time',c:'s'}],
+    compare:[
+      {c1:'7:30 am',c2:'0730',ar:'الصباح = نفس الرقم'},
+      {c1:'3:00 pm',c2:'1500',ar:'3+12=15 → 1500'},
+      {c1:'8:50 pm',c2:'2050',ar:'8+12=20 → 2050'},
+      {c1:'10:30 pm',c2:'2230',ar:'10+12=22 → 2230'},
+    ],
+    examples:[
+      {s:"It's 8:50 p.m. = 2050.",tr:'الثامنة والنصف مساءً: 8+12=20 ثم الدقائق → 2050.',ar:"مساءً: أضف 12 للساعة",ok:true},
+      {s:"It's 8:50 p.m. = 0850.",wrong:'0850',right:'2050',tr:'0850 يعني صباحاً — المساء يبدأ من 12 فما فوق.',ok:false},
+    ]
+  },
+  {
+    title:'Irregular Verbs', ar:'الأفعال الشاذة',
+    rule:'هذه الأفعال لا تأخذ -ed في الماضي — يجب حفظها',
+    formula:[{t:'Present',c:'s'},{t:'→',c:'p'},{t:'Past (شاذ)',c:'n'},{t:'لا يصح',c:'k'},{t:'verb + ed',c:'v'}],
+    compare:[
+      {c1:'speak',c2:'spoke',ar:'تكلّم'},{c1:'fly',c2:'flew',ar:'طار'},
+      {c1:'leave',c2:'left',ar:'غادر'},{c1:'bring',c2:'brought',ar:'أحضر'},
+      {c1:'go',c2:'went',ar:'ذهب'},{c1:'eat',c2:'ate',ar:'أكل'},
+      {c1:'drive',c2:'drove',ar:'قاد'},{c1:'buy',c2:'bought',ar:'اشترى'},
+    ],
+    examples:[
+      {s:'Sgt. Jones flew to LA last week.',tr:'سافر الرقيب جونز جواً إلى لوس أنجلوس الأسبوع الماضي.',ar:"fly فعل شاذ → flew",ok:true},
+      {s:'Sgt. Jones flied to LA last week.',wrong:'flied',right:'flew',tr:'fly شاذ، لا يأخذ -ed. ماضيه flew.',ok:false},
+    ]
+  }
+],
+l3:[
+  {
+    title:'Can / Can\'t', ar:'القدرة على فعل شيء',
+    rule:'can + فعل مجرد — نفس الشكل لجميع الضمائر، لا تضع s أو -ing',
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:"can / can't",c:'k'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
+    compare:[
+      {c1:'Jim can run 10 miles.',c2:"Kelly can't run 10 miles.",ar:'can ↔ can\'t'},
+    ],
+    examples:[
+      {s:'Pvt Jones can speak four languages.',tr:'يستطيع الجندي جونز التحدث بأربع لغات.',ar:"can + الفعل الأصلي (بدون s)",ok:true},
+      {s:'Pvt Jones can speaks four languages.',wrong:'speaks',right:'speak',tr:'بعد can لا نضيف s للفعل.',ok:false},
+    ]
+  },
+  {
+    title:'Must', ar:'يجب — واجب',
+    rule:'must + فعل مجرد — يعني الشيء إلزامي ولا مفر منه',
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'must',c:'k'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
+    compare:[],
+    examples:[
+      {s:'Students must listen to the teacher.',tr:'يجب على الطلاب الاستماع للمعلّم.',ar:"must + الفعل الأصلي — إلزامي",ok:true},
+      {s:'Soldiers must wear uniforms.',tr:'يجب على الجنود لبس الزي العسكري.',ar:"must + الفعل الأصلي",ok:true},
+    ]
+  },
+  {
+    title:'Must not / Mustn\'t', ar:'ممنوع — نهي تام',
+    rule:'must not = ممنوع تماماً — مثل Do not في اللوحات التحذيرية',
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'must not',c:'n'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
+    compare:[
+      {c1:'Do not smoke here.',c2:'You must not smoke here.',ar:'Do not = must not (نفس المعنى)'},
+    ],
+    examples:[
+      {s:'I must not write with a pen = I cannot write with a pen.',tr:'ممنوع أن أكتب بقلم = لا أستطيع الكتابة بقلم.',ar:"must not = cannot (ممنوع)",ok:true},
+      {s:'I must not to write.',wrong:'to write',right:'write',tr:'بعد must not لا نضع to — الفعل مباشرة.',ok:false},
+    ]
+  },
+  {
+    title:'May', ar:'يُسمح — طلب إذن رسمي',
+    rule:'May I...? = طلب إذن رسمي | Can I...? = طلب إذن غير رسمي',
+    formula:[{t:'May',c:'k'},{t:'+',c:'p'},{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'base verb',c:'v'},{t:'?',c:'p'}],
+    compare:[
+      {c1:'May I go? (رسمي)',c2:'Can I go? (غير رسمي)',ar:'may = formal | can = informal'},
+    ],
+    examples:[
+      {s:'May I go to the library? → Yes, you may.',tr:'هل تسمح لي بالذهاب إلى المكتبة؟ — نعم، يمكنك.',ar:"طلب إذن رسمي",ok:true},
+      {s:'May I go? Yes, you must.',wrong:'must',right:'may',tr:'الإذن يُجاب بـ may وليس must (must = واجب).',ok:false},
+    ]
+  },
+  {
+    title:'-ed Sounds', ar:'أصوات لاحقة الماضي',
+    rule:'ثلاثة أصوات مختلفة عند نطق -ed — المفتاح هو الحرف قبل الأخير',
+    formula:[],compare:[],examples:[],isSounds:true
+  }
+],
+l4:[
+  {
+    title:'Seasons', ar:'الفصول الأربعة',
+    rule:'Fall = Autumn — نفس الفصل باسمين مختلفين',
+    formula:[],
+    compare:[
+      {c1:'Winter: Dec, Jan, Feb',c2:"It's cold.",ar:'الشتاء ❄️'},
+      {c1:'Spring: Mar, Apr, May',c2:"It's warm.",ar:'الربيع 🌸'},
+      {c1:'Summer: Jun, Jul, Aug',c2:"It's hot.",ar:'الصيف ☀️'},
+      {c1:'Fall/Autumn: Sep, Oct, Nov',c2:"It's cool.",ar:'الخريف 🍂'},
+    ],
+    examples:[
+      {s:'Autumn and fall are the same.',tr:'Autumn و fall اسمان لنفس الفصل (الخريف).',ar:"نفس الفصل، كلمتان",ok:true},
+    ]
+  },
+  {
+    title:'Days Sequence', ar:'ترتيب الأيام',
+    rule:'the day after tomorrow = بعد يومين | the day before yesterday = قبل يومين',
+    formula:[],
+    compare:[
+      {c1:'Tomorrow',c2:'Tuesday (if today=Mon)',ar:'اليوم التالي'},
+      {c1:'The day after tomorrow',c2:'Wednesday (if today=Mon)',ar:'بعد يومين'},
+      {c1:'Yesterday',c2:'Sunday (if today=Mon)',ar:'الأمس'},
+      {c1:'The day before yesterday',c2:'Saturday (if today=Mon)',ar:'قبل يومين'},
+    ],
+    examples:[]
+  },
+  {
+    title:'This / That / These / Those', ar:'أسماء الإشارة',
+    rule:'قريب = this/these | بعيد = that/those',
+    formula:[{t:'Near',c:'k'},{t:'this',c:'v'},{t:'(مفرد)',c:'p'},{t:'these',c:'v'},{t:'(جمع)',c:'p'}],
+    compare:[
+      {c1:'this (قريب مفرد)',c2:'these (قريب جمع)',ar:'near'},
+      {c1:'that (بعيد مفرد)',c2:'those (بعيد جمع)',ar:'far'},
+    ],
+    examples:[
+      {s:'I like this car.',tr:'تعجبني هذه السيارة. (قريب + مفرد)',ar:"this = قريب مفرد",ok:true},
+      {s:'Those cars are big.',tr:'تلك السيارات كبيرة. (بعيد + جمع)',ar:"those = بعيد جمع",ok:true},
+    ]
+  },
+  {
+    title:'How much...?', ar:'كم الثمن؟',
+    rule:'How much is/does = سؤال عن السعر',
+    formula:[{t:'How much',c:'k'},{t:'+',c:'p'},{t:'is / does',c:'v'},{t:'+',c:'p'},{t:'item',c:'s'},{t:'cost?',c:'p'}],
+    compare:[
+      {c1:'How much is the shirt?',c2:"It's $29.",ar:'is = للمفرد'},
+      {c1:'How much did it cost?',c2:"It was $13,000.",ar:'did = للماضي'},
+    ],
+    examples:[
+      {s:'How much does the pen cost? → It costs $3.',tr:'كم يكلّف القلم؟ — يكلّف 3 دولارات.',ar:"How much + does + cost",ok:true},
+    ]
+  },
+  {
+    title:'-ed Sounds Review', ar:'مراجعة أصوات الماضي',
+    rule:'مراجعة: /t/ مهموس | /d/ مجهور | /əd/ بعد t أو d',
+    formula:[],compare:[],examples:[],isSounds:true
+  }
+]
+};
+
+function build_learn(lk){
+  const el=document.getElementById('ph-learn');
+  el.innerHTML='';
+
+  // Tabs
+  el.innerHTML=`
+  <div class="learn-tabs">
+    <button class="ltab on" id="lt-v" onclick="sw_learn_tab('v','${lk}')">
+      <span class="li">📚</span><span>مفردات</span>
+    </button>
+    <button class="ltab" id="lt-g" onclick="sw_learn_tab('g','${lk}')">
+      <span class="li">📖</span><span>قواعد</span>
+    </button>
+  </div>
+  <div class="lsec on" id="ls-v"></div>
+  <div class="lsec" id="ls-g"></div>`;
+
+  build_vocab_sec(lk);
+  build_grammar_sec(lk);
+}
+
+function sw_learn_tab(t,lk){
+  document.querySelectorAll('.ltab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.lsec').forEach(x=>x.classList.remove('on'));
+  document.getElementById('lt-'+t).classList.add('on');
+  document.getElementById('ls-'+t).classList.add('on');
+}
+
+function build_vocab_sec(lk){
+  const el=document.getElementById('ls-v');
+  const words=VOCAB[lk];
+  let html=`<div style="font-size:.75rem;color:var(--muted);font-family:'Cairo',sans-serif;margin-bottom:12px;text-align:center">
+    اضغط زر 🔊 لسماع النطق</div>
+  <div class="vcards">`;
+  words.forEach(v=>{
+    const safe=v.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
+    html+=`<div class="vcard">
+      <button class="vs" onclick="say('${safe}')">🔊</button>
+      <span class="ve">${v.em}</span>
+      <div class="vw">${v.e}</div>
+      <div class="va">${v.a}</div>
+    </div>`;
+  });
+  html+='</div>';
+  const pastWords=words.filter(w=>w.past);
+  if(pastWords.length){
+    html+=`<div class="past-sec">
+      <div class="past-h">⏮️ نفس الأفعال في الماضي</div>
+      <div class="past-note">الأصل ← الماضي · اضغط 🔊 لسماع كلٍّ على حدة</div>`;
+    pastWords.forEach(w=>{
+      const baseSafe=w.e.replace(/'/g,"\\'"),pastSafe=w.past.replace(/'/g,"\\'");
+      html+=`<div class="past-row">
+        <div class="pr-forms" dir="ltr">
+          <span class="pr-base">${w.e}<button class="pr-spk" onclick="say('${baseSafe}')">🔊</button></span>
+          <span class="pr-arrow">→</span>
+          <span class="pr-past">${w.past}<button class="pr-spk" onclick="say('${pastSafe}')">🔊</button></span>
+        </div>
+        <div class="pr-ar">الأصل: ${w.a} · الماضي: ${w.pa}</div>
+      </div>`;
+    });
+    html+='</div>';
+  }
+  el.innerHTML=html;
+}
+
+function build_grammar_sec(lk){
+  const el=document.getElementById('ls-g');
+  const rules=GRAMMAR[lk];
+  let html='';
+  rules.forEach((g,i)=>{
+    html+=`<div class="gcard">
+      <div class="gcard-head" id="gh${lk}${i}" onclick="toggle_gcard('${lk}',${i})">
+        <div class="gcard-num">${i+1}</div>
+        <div style="flex:1">
+          <div class="gcard-title">${g.title}</div>
+          <div class="gcard-ar">${g.ar}</div>
+        </div>
+        <span class="gcard-arrow">▼</span>
+      </div>
+      <div class="gcard-body" id="gb${lk}${i}">
+        ${build_gcard_body(g)}
+      </div>
+    </div>`;
+  });
+  el.innerHTML=html;
+}
+
+function toggle_gcard(lk,i){
+  const head=document.getElementById('gh'+lk+i);
+  const body=document.getElementById('gb'+lk+i);
+  head.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+function build_gcard_body(g){
+  let html='';
+
+  // One-line rule
+  html+=`<div class="rule-box">
+    <div class="rb-label">القاعدة</div>
+    <div class="rb-text">💡 ${g.rule}</div>
+  </div>`;
+
+  // Special: Ranks
+  if(g.isRanks){
+    html+=`<table class="rktab"><thead><tr><th>الرتبة</th><th>الاختصار</th><th>الدرجة</th><th>اللون</th></tr></thead><tbody>
+      <tr><td>Second Lieutenant</td><td>2d Lt</td><td>O-1</td><td class="gld">Gold ذهبي</td></tr>
+      <tr><td>First Lieutenant</td><td>1st Lt</td><td>O-2</td><td class="slv">Silver فضي</td></tr>
+      <tr><td>Captain</td><td>Capt</td><td>O-3</td><td class="slv">Silver فضي</td></tr>
+      <tr><td>Major</td><td>Maj</td><td>O-4</td><td class="gld">Gold ذهبي</td></tr>
+      <tr><td>Lieutenant Colonel</td><td>Lt Col</td><td>O-5</td><td class="slv">Silver فضي</td></tr>
+      <tr><td>Colonel</td><td>Col</td><td>O-6</td><td class="slv">Silver فضي</td></tr>
+      <tr><td>General</td><td>Gen</td><td>O-7</td><td class="slv">Silver فضي</td></tr>
+    </tbody></table>
+    <div class="rank-tip">💡 مثال: Carol is a new <strong>Major (O-4)</strong>. Last year she was a <strong>Captain (O-3)</strong> — النقيب أقل من الرائد مباشرة.</div>`;
+    return html;
+  }
+
+  // Special: Sounds
+  if(g.isSounds){
+    html+=`<table class="stab"><thead><tr>
+      <th style="background:#2563EB">الصوت</th>
+      <th style="background:#2563EB">متى؟</th>
+      <th style="background:#2563EB">أمثلة</th>
+    </tr></thead><tbody>
+      <tr><td><strong>/t/</strong></td><td>بعد الأصوات المهموسة (k,p,s,ch,sh)</td><td>smok<u>ed</u> walk<u>ed</u> watch<u>ed</u></td></tr>
+      <tr><td><strong>/d/</strong></td><td>بعد الأصوات المجهورة والحركات</td><td>studi<u>ed</u> play<u>ed</u> shav<u>ed</u></td></tr>
+      <tr><td><strong>/əd/</strong></td><td>بعد حرف t أو d</td><td>want<u>ed</u> repeat<u>ed</u> indent<u>ed</u></td></tr>
+    </tbody></table>
+    <div class="sound-tip">💡 الطريقة السهلة: هل الفعل ينتهي بـ t أو d؟ → صوت /əd/ | مهموس → /t/ | مجهور → /d/</div>`;
+    return html;
+  }
+
+  // Formula strip
+  if(g.formula&&g.formula.length>0){
+    html+='<div class="fstrip">';
+    g.formula.forEach(f=>{
+      if(f.c==='p')html+=`<span class="farr">${f.t}</span>`;
+      else html+=`<span class="fchip ${f.c}">${f.t}</span>`;
+    });
+    html+='</div>';
+  }
+
+  // Compare table
+  if(g.compare&&g.compare.length>0){
+    const isTime=g.title.includes('Military Time');
+    const h1=isTime?'Civilian':'Present / Base';
+    const h2=isTime?'Military':'Past';
+    html+=`<table class="ctab"><thead><tr>
+      <th class="c1">${h1}</th><th class="c2">${h2}</th><th class="c3">معنى</th>
+    </tr></thead><tbody>`;
+    g.compare.forEach(r=>{
+      const safe1=r.c1.replace(/'/g,"\\'");
+      const safe2=r.c2.replace(/'/g,"\\'");
+      html+=`<tr>
+        <td>${r.c1} <button class="ex-spk" style="background:var(--b);border:none;border-radius:5px;width:22px;height:22px;font-size:.65rem;cursor:pointer;float:left" onclick="say('${safe1}')">🔊</button></td>
+        <td>${r.c2} <button class="ex-spk" style="background:#7C3AED;border:none;border-radius:5px;width:22px;height:22px;font-size:.65rem;cursor:pointer;float:left" onclick="say('${safe2}')">🔊</button></td>
+        <td class="ar">${r.ar}</td>
+      </tr>`;
+    });
+    html+='</tbody></table>';
+  }
+
+  // Time grid special
+  if(g.title.includes('Military Time')){
+    html+=`<div class="tgrd">
+      <div class="titem2"><div class="tmil2">0730</div><div class="tciv2">7:30 AM</div></div>
+      <div class="titem2"><div class="tmil2">1500</div><div class="tciv2">3:00 PM</div></div>
+      <div class="titem2"><div class="tmil2">2050</div><div class="tciv2">8:50 PM</div></div>
+      <div class="titem2"><div class="tmil2">2230</div><div class="tciv2">10:30 PM</div></div>
+      <div class="titem2"><div class="tmil2">1200</div><div class="tciv2">Noon</div></div>
+      <div class="titem2"><div class="tmil2">2400</div><div class="tciv2">Midnight</div></div>
+    </div>`;
+  }
+
+  // Examples — correct example vs. common mistake (beginner-friendly)
+  if(g.examples&&g.examples.length>0){
+    html+='<div style="margin-top:8px">';
+    g.examples.forEach(ex=>{
+      if(ex.ok){
+        const safe=ex.s.replace(/'/g,"\\'");
+        html+=`<div class="ex2 ok">
+          <div class="ex2-top">
+            <span class="ex2-tag ok">✅ مثال صحيح</span>
+            <button class="ex2-spk" onclick="say('${safe}')" aria-label="استمع">🔊</button>
+          </div>
+          <div class="ex2-en">${ex.s}</div>
+          ${ex.tr?`<div class="ex2-tr">${ex.tr}</div>`:''}
+          ${ex.ar?`<div class="ex2-note">${ex.ar}</div>`:''}
+        </div>`;
+      }else{
+        let fix=ex.s;
+        if(ex.wrong&&ex.right){
+          fix=ex.s.replace(ex.wrong,`<span class="ex2-bad">${ex.wrong}</span><span class="ex2-arr">←</span><span class="ex2-rt">${ex.right}</span>`);
+        }
+        html+=`<div class="ex2 no">
+          <div class="ex2-top"><span class="ex2-tag no">⚠️ الخطأ الشائع</span></div>
+          <div class="ex2-fix">${fix}</div>
+          ${(ex.tr||ex.ar)?`<div class="ex2-tr no">${ex.tr||ex.ar}</div>`:''}
+        </div>`;
+      }
+    });
+    html+='</div>';
+  }
+
+  return html;
+}
+
+
+// ═══════════════════════════════════════
+// BUILD QUIZ (MCQ)
+// ═══════════════════════════════════════
+function build_quiz(elId,qs,prefix){
+  const el=document.getElementById(elId);
+  el.innerHTML='';
+  const isTest=prefix==='te'||prefix==='fi';
+
+  if(isTest){
+    let top='';
+    if(prefix==='te'){
+      const L=LP[CL];
+      const bestTxt=(L&&typeof L.pct==='number')?`أفضل نتيجة سابقة: ${L.pct}%${L.done?' ✓':''}`:'لم تُنهِ هذا الاختبار بعد';
+      top=`<div class="test-top">
+        <span class="test-best ${(L&&L.done)?'done':''}">${bestTxt}</span>
+        <button class="test-restart" onclick="restart_test()">🔄 ابدأ من جديد</button>
+      </div>`;
+    }
+    el.innerHTML=top+`<div class="qprog"><div class="qpbar"><div class="qpfill" id="${prefix}pf"></div></div>
+      <div class="qptxt" id="${prefix}pt">0 / ${qs.length}</div></div>`;
+  }
+
+  const wrap=document.createElement('div');
+  qs.forEach((q,i)=>{
+    const c=document.createElement('div');c.className='qcrd';c.id=`${prefix}c${i}`;
+    const L=['A','B','C','D'];
+    const lbl=q.lbl?`<span style="font-size:.65rem;color:var(--muted);margin-left:6px">${q.lbl}</span>`:'';
+    c.innerHTML=`<div class="qhdr">
+      <div class="qtxt">${i+1}. ${q.q}${lbl}</div>
+      <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')">🔊</button>
+    </div>
+    <div class="opts" id="${prefix}o${i}">
+      ${q.o.map((opt,oi)=>`<button class="opt" id="${prefix}op${i}${oi}"
+        onclick="ans('${prefix}',${i},${oi},${q.a},'${q.en.replace(/'/g,"\\'")}','${q.ar.replace(/'/g,"\\'")}')">
+        <span class="oltr">${L[oi]}</span>${opt}</button>`).join('')}
+    </div>
+    <div class="fb" id="${prefix}fb${i}">
+      <span style="font-size:.9rem;flex-shrink:0" id="${prefix}fi${i}"></span>
+      <div><div class="fb-en" id="${prefix}fe${i}"></div><div class="fb-ar" id="${prefix}fa${i}"></div></div>
+    </div>`;
+    wrap.appendChild(c);
+  });
+  el.appendChild(wrap);
+
+  if(isTest&&prefix==='te'){
+    const sr=document.createElement('div');sr.className='submit-row';
+    sr.innerHTML=`<button class="sbtn" onclick="submit_test()">إرسال الإجابات →</button>`;
+    el.appendChild(sr);
+  }
+}
+
+// ═══════════════════════════════════════
+// BUILD WORD ORDER
+// ═══════════════════════════════════════
+function build_dd(lk){
+  const el=document.getElementById('ph-drag');
+  el.innerHTML=`<div style="background:#EFF6FF;border:2px solid #BFDBFE;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.88rem;font-family:'Cairo',sans-serif;color:#1E40AF">
+    ✋ رتّب الكلمات لتكوين جملة صحيحة — اضغط الكلمات بالترتيب الصحيح
+  </div>`;
+
+  const items=WO[lk];
+  items.forEach((item,idx)=>{
+    const shuffled=[...item.words].sort(()=>Math.random()-.5);
+    const div=document.createElement('div');
+    div.className='wo-card';div.id=`wo${idx}`;
+    div.innerHTML=`
+      <div class="wo-prompt">🔤 رتّب الكلمات:</div>
+      <div class="wo-answer" id="woa${idx}"></div>
+      <div class="wo-bank" id="wob${idx}">
+        ${shuffled.map((w,wi)=>`<button class="wo-bank-chip" id="woc${idx}_${wi}" onclick="wo_pick(${idx},${wi},'${w.replace(/'/g,"\\'")}',${JSON.stringify(item.words.indexOf(w))})">${w}</button>`).join('')}
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <button class="wo-check" onclick="wo_check(${idx},'${item.ans.replace(/'/g,"\\'")}','${item.tr.replace(/'/g,"\\'")}','${item.ar.replace(/'/g,"\\'")}')">✓ تحقق</button>
+        <button class="wo-hint-btn" id="wohint${idx}" onclick="wo_hint(${idx},'${item.ans.replace(/'/g,"\\'")}')">💡 تلميح <span id="wohintc${idx}">٣</span></button>
+      </div>
+      <div id="wofb${idx}"></div>`;
+    el.appendChild(div);
+  });
+}
+
+// placed = array of {wi, word} in order clicked
+const woState={};
+function wo_pick(idx,wi,word){
+  if(!woState[idx])woState[idx]=[];
+  // if already placed, remove it
+  const existing=woState[idx].findIndex(x=>x.wi===wi);
+  if(existing!==-1){
+    woState[idx].splice(existing,1);
+    document.getElementById(`woc${idx}_${wi}`).classList.remove('used');
+  } else {
+    woState[idx].push({wi,word});
+    document.getElementById(`woc${idx}_${wi}`).classList.add('used');
+  }
+  // render answer zone
+  const ans=document.getElementById(`woa${idx}`);
+  if(woState[idx].length===0){
+    ans.innerHTML='';ans.classList.remove('has-words');
+  } else {
+    ans.classList.add('has-words');
+    ans.innerHTML=woState[idx].map((x,pos)=>
+      `<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`
+    ).join('');
+  }
+}
+function wo_remove(idx,wi){
+  wo_pick(idx,wi,''); // toggle off
+  // re-render by refreshing state
+  const ans=document.getElementById(`woa${idx}`);
+  if(!woState[idx]||woState[idx].length===0){ans.innerHTML='';ans.classList.remove('has-words');return;}
+  ans.innerHTML=woState[idx].map(x=>`<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`).join('');
+}
+function wo_clear(idx,shuffledJson){
+  woState[idx]=[];
+  const ans=document.getElementById(`woa${idx}`);
+  ans.innerHTML='';ans.classList.remove('has-words');
+  // re-enable all chips
+  const shuffled=shuffledJson;
+  document.querySelectorAll(`[id^="woc${idx}_"]`).forEach(b=>b.classList.remove('used'));
+  document.getElementById(`wofb${idx}`).innerHTML='';
+  const card=document.getElementById(`wo${idx}`);
+  card.className='wo-card';
+  ans.className='wo-answer';
+}
+function wo_check(idx,correct,tr,ar){
+  if(!woState[idx]||woState[idx].length===0){
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-wrong-reveal"><div class="wo-wrong-ar">⚠️ رتّب الكلمات أولاً</div></div>`;
+    return;
+  }
+  const student=woState[idx].map(x=>x.word).join(' ');
+  // normalize: remove trailing punctuation for comparison
+  const norm=s=>s.replace(/\s*[.?!]+\s*$/,'').replace(/\s+/g,' ').trim().toLowerCase();
+  const isOk=norm(student)===norm(correct);
+  const card=document.getElementById(`wo${idx}`);
+  const ans=document.getElementById(`woa${idx}`);
+  if(isOk){
+    card.className='wo-card wo-ok';
+    ans.className='wo-answer wo-correct';
+    document.querySelectorAll(`[id^="woc${idx}_"]`).forEach(b=>b.disabled=true);
+    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+    say(correct.replace(/[?!.]/g,''));
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-reveal">
+      <div class="wo-tr">✅ ${tr}</div>
+      ${ar?`<div class="wo-note">💡 ${ar}</div>`:''}
+    </div>`;
+  } else {
+    ans.className='wo-answer wo-wrong';
+    setTimeout(()=>{ans.className='wo-answer has-words';},400);
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-wrong-reveal">
+      <div class="wo-wrong-ar">❌ الترتيب غير صحيح — حاول مرة أخرى</div>
+      <div class="wo-wrong-ans" style="margin-top:6px;font-size:.78rem;color:#999">💡 الجملة لها ${correct.split(' ').length} كلمة</div>
+    </div>`;
+  }
+}
+
+// hint state: how many hints used per card
+const woHints={};
+function wo_hint(idx,correct){
+  if(!woHints[idx])woHints[idx]=0;
+  if(woHints[idx]>=3)return;
+
+  const words=correct.replace(/\s*[.?!]+\s*$/,'').split(' ');
+  const nextPos=woHints[idx];
+  const wordToReveal=words[nextPos];
+
+  // find this word's chip in the bank (first unused match)
+  const chips=document.querySelectorAll(`[id^="woc${idx}_"]`);
+  let foundChip=null;
+  chips.forEach(chip=>{
+    if(!foundChip&&!chip.classList.contains('used')&&chip.textContent.trim()===wordToReveal){
+      foundChip=chip;
+    }
+  });
+
+  if(foundChip){
+    foundChip.style.background='var(--o)';
+    foundChip.style.color='#fff';
+    foundChip.style.borderColor='var(--o)';
+    setTimeout(()=>{ foundChip.click(); },400);
+  }
+
+  woHints[idx]++;
+  const remaining=3-woHints[idx];
+  const hintBtn=document.getElementById(`wohint${idx}`);
+  const countEl=document.getElementById(`wohintc${idx}`);
+  const nums=['٣','٢','١'];
+  if(remaining===0){
+    hintBtn.disabled=true;
+    hintBtn.innerHTML='💡 انتهت التلميحات';
+  } else {
+    if(countEl)countEl.textContent=nums[woHints[idx]]||'١';
+  }
+}
+
+// ═══════════════════════════════════════
+// ANSWER MCQ
+// ═══════════════════════════════════════
+function ans(pfx,qi,oi,correct,en,ar){
+  const opts=document.querySelectorAll(`#${pfx}o${qi} .opt`);
+  opts.forEach(b=>b.disabled=true);
+  const fb=document.getElementById(`${pfx}fb${qi}`);
+  const card=document.getElementById(`${pfx}c${qi}`);
+  const ok=oi===correct;
+  opts[correct].classList.add('ok');
+  if(!ok)opts[oi].classList.add('no');
+  card.classList.add(ok?'qok':'qno');
+  document.getElementById(`${pfx}fi${qi}`).textContent=ok?'✅':'❌';
+  document.getElementById(`${pfx}fe${qi}`).textContent=ok?`Correct! ${en}`:`Answer: ${['A','B','C','D'][correct]}. ${en}`;
+  document.getElementById(`${pfx}fa${qi}`).textContent=ar;
+  fb.className='fb show '+(ok?'ok':'no');
+  if(ok){XP+=pfx==='te'||pfx==='fi'?5:3;STK++;document.getElementById('xp').textContent=XP;document.getElementById('streak').textContent=STK;save_progress();}
+  else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}
+  say(pfx==='fi'?FINAL[qi].o[correct]:(pfx==='te'?EE[CL][qi].o[correct]:PR[CL][qi].o[correct]));
+
+  // Update progress bar
+  const total=pfx==='fi'?FINAL.length:(pfx==='te'?EE[CL].length:PR[CL].length);
+  if(pfx==='te'){
+    TANS[qi]=ok;
+    const done=Object.keys(TANS).length;
+    const pf=document.getElementById('tepf'),pt=document.getElementById('tept');
+    if(pf)pf.style.width=Math.round(done/total*100)+'%';
+    if(pt)pt.textContent=`${done} / ${total}`;
+  }else if(pfx==='fi'){
+    FANS[qi]=ok;
+    const done=Object.keys(FANS).length;
+    document.getElementById('fpfill').style.width=Math.round(done/total*100)+'%';
+    document.getElementById('fptxt').textContent=`${done} / ${total}`;
+  }
+}
+
+// ═══════════════════════════════════════
+// BUILD FINAL TEST
+// ═══════════════════════════════════════
+function build_final(){
+  const el=document.getElementById('final-quiz');
+  el.innerHTML='';
+
+  // Section headers
+  const sections=[
+    {label:'📘 Lesson 1 — Sports & Games (Q1-20)',start:0,end:19,color:'#2563EB'},
+    {label:'📗 Lesson 2 — Military Life (Q21-40)',start:20,end:39,color:'#DC2626'},
+    {label:'📙 Lesson 3 — Clothing & Abilities (Q41-60)',start:40,end:59,color:'#7C3AED'},
+    {label:'📕 Lesson 4 — Seasons & Colors (Q61-80)',start:60,end:FINAL.length-1,color:'#059669'},
+  ];
+
+  const wrap=document.createElement('div');
+  let secIdx=0;
+  FINAL.forEach((q,i)=>{
+    // Section header
+    if(secIdx<sections.length&&i===sections[secIdx].start){
+      const sh=document.createElement('div');
+      sh.style.cssText=`background:${sections[secIdx].color};color:#fff;border-radius:10px;padding:10px 14px;margin-bottom:10px;margin-top:${i>0?'20px':'0'};font-family:'Cairo',sans-serif;font-weight:700;font-size:.88rem`;
+      sh.textContent=sections[secIdx].label;
+      wrap.appendChild(sh);
+      secIdx++;
+    }
+
+    const c=document.createElement('div');c.className='qcrd';c.id=`fic${i}`;
+    const L=['A','B','C','D'];
+    c.innerHTML=`<div class="qhdr">
+      <div class="qtxt">${i+1}. ${q.q}</div>
+      <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')">🔊</button>
+    </div>
+    <div class="opts" id="fio${i}">
+      ${q.o.map((opt,oi)=>`<button class="opt" id="fiop${i}${oi}"
+        onclick="ans('fi',${i},${oi},${q.a},'${q.en.replace(/'/g,"\\'")}','${q.ar.replace(/'/g,"\\'")}')">
+        <span class="oltr">${L[oi]}</span>${opt}</button>`).join('')}
+    </div>
+    <div class="fb" id="fifb${i}">
+      <span style="font-size:.9rem;flex-shrink:0" id="fifi${i}"></span>
+      <div><div class="fb-en" id="fife${i}"></div><div class="fb-ar" id="fifa${i}"></div></div>
+    </div>`;
+    wrap.appendChild(c);
+  });
+  el.appendChild(wrap);
+}
+
+// ═══════════════════════════════════════
+// SUBMIT
+// ═══════════════════════════════════════
+function submit_test(){
+  const total=EE[CL].length;
+  const correct=Object.values(TANS).filter(Boolean).length;
+  show_result(correct,total,'te');
+}
+
+function submit_final(){
+  const total=FINAL.length;
+  const correct=Object.values(FANS).filter(Boolean).length;
+  show_result(correct,total,'fi');
+}
+
+function show_result(correct,total,mode){
+  const pct=Math.round(correct/total*100);
+  document.getElementById('m-score').textContent=pct+'%';
+  document.getElementById('m-sub').textContent=`أجبت بشكل صحيح على ${correct} من ${total} سؤالاً`;
+  let emo,grade,color;
+  if(pct>=90){emo='🏆';grade='ممتاز! أداء رائع!';color='var(--g)';}
+  else if(pct>=70){emo='✅';grade='جيد جداً! استمر!';color='var(--b)';}
+  else if(pct>=50){emo='📚';grade='راجع المادة مرة أخرى';color='var(--o)';}
+  else{emo='💪';grade='تحتاج مزيداً من التدريب';color='var(--r)';}
+  document.getElementById('m-emo').textContent=emo;
+  document.getElementById('m-grade').textContent=grade;
+  document.getElementById('m-grade').style.color=color;
+  ['s1','s2','s3'].forEach(s=>document.getElementById(s).classList.remove('lit'));
+  if(pct>=50)document.getElementById('s1').classList.add('lit');
+  if(pct>=70)document.getElementById('s2').classList.add('lit');
+  if(pct>=90)document.getElementById('s3').classList.add('lit');
+  document.getElementById('modal').classList.add('show');
+  const nb=document.getElementById('m-next');
+  if(nb){
+    const order=['l1','l2','l3','l4'];const i=order.indexOf(CL);
+    nb.style.display=(mode==='te'&&i>=0&&i<order.length-1)?'inline-block':'none';
+  }
+  if(mode==='te'){
+    const prev=(LP[CL]&&LP[CL].pct)||0;
+    const best=Math.max(prev,pct);
+    LP[CL]={pct:best,done:best>=70};
+    apply_lessons();
+    upd_global();
+    save_progress();
+  }
+  if(pct>=90)confetti();
+}
+
+function close_modal(){document.getElementById('modal').classList.remove('show');}
+
+function next_lesson(){
+  const order=['l1','l2','l3','l4'];const i=order.indexOf(CL);
+  close_modal();
+  if(i>=0&&i<order.length-1)open_lesson(order[i+1]);
+  else go_home();
+}
+
+function retry(){
+  close_modal();
+  if(CL==='final'){FANS={};build_final();document.getElementById('fpfill').style.width='0%';document.getElementById('fptxt').textContent=`0 / ${FINAL.length}`;}
+  else{TANS={};delete built['te'+CL];document.getElementById('ph-test').innerHTML='';build_quiz('ph-test',EE[CL],'te');built['te'+CL]=1;}
+}
+
+function restart_test(){
+  TANS={};
+  delete built['te'+CL];
+  document.getElementById('ph-test').innerHTML='';
+  build_quiz('ph-test',EE[CL],'te');
+  built['te'+CL]=1;
+}
+
+function upd_global(){
+  const done=document.querySelectorAll('.lcard.done').length;
+  document.getElementById('gpfill').style.width=(done/4*100)+'%';
+  document.getElementById('gptxt').textContent=`${done} من 4 دروس مكتملة`;
+}
+
+function confetti(){
+  const con=document.getElementById('conf');con.innerHTML='';
+  const cols=['#58CC02','#1CB0F6','#FFC800','#FF9600','#CE82FF','#FF4B4B'];
+  for(let i=0;i<80;i++){
+    const p=document.createElement('div');p.className='cp';
+    p.style.cssText=`left:${Math.random()*100}%;top:-10px;
+      background:${cols[Math.floor(Math.random()*cols.length)]};
+      border-radius:${Math.random()>.5?'50%':'2px'};
+      animation-delay:${Math.random()*1.5}s;
+      animation-duration:${1.5+Math.random()}s;`;
+    con.appendChild(p);
+  }
+  setTimeout(()=>con.innerHTML='',4000);
+}
+
+// ═══════════════════════════════════════
+// PREPOSITIONS  in / on / at
+// ═══════════════════════════════════════
+const PREP = {
+  place:{
+    in:{meaning:'in = داخل مكان محاط أو كبير.',when:'لأنه مكان واسع (مدينة/دولة).',link:'مكان واسع/محاط؟ ⟵ in',ex:{e:'in Abha',a:'في أبها'},bad:'at Abha',good:'in Abha'},
+    on:{meaning:'on = على سطح، أو في شارع.',when:'لأنه سطح أو شارع أو طابق.',link:'على سطح/شارع؟ ⟵ on',ex:{e:'on Al-Fann Street',a:'في شارع الفن'},bad:'in Al-Fann Street',good:'on Al-Fann Street'},
+    at:{meaning:'at = عند نقطة محدّدة.',when:'لأنه نقطة أو مكان دقيق.',link:'نقطة محدّدة؟ ⟵ at',ex:{e:'at the cafe',a:'عند الكوفي (المقهى)'},bad:'in the cafe',good:'at the cafe'}
+  },
+  time:{
+    in:{meaning:'in = خلال فترة طويلة.',when:'لأنها فترة طويلة (شهر/سنة/فصل).',link:'فترة طويلة؟ ⟵ in',ex:{e:'in July',a:'في يوليو'},bad:'at July',good:'in July'},
+    on:{meaning:'on = في يوم أو تاريخ.',when:'لأنه يوم أو تاريخ محدّد.',link:'يوم أو تاريخ؟ ⟵ on',ex:{e:'on Monday',a:'يوم الاثنين'},bad:'in Monday',good:'on Monday'},
+    at:{meaning:'at = عند لحظة محدّدة.',when:'لأنه وقت محدّد بالساعة.',link:'وقت محدّد؟ ⟵ at',ex:{e:'at 7:00',a:'الساعة السابعة'},bad:'in 7:00',good:'at 7:00'}
+  }
+};
+const PREP_COLORS={in:{bg:'#DBEAFE',bd:'#60A5FA',tx:'#1D4ED8'},on:{bg:'#DCFCE7',bd:'#4ADE80',tx:'#15803D'},at:{bg:'#FFEDD5',bd:'#FB923C',tx:'#C2410C'}};
+const PREP_QUIZ=[
+  {q:'I live ___ Riyadh.',a:'in',tr:'أعيش في الرياض. — مدينة ← in'},
+  {q:'The book is ___ the table.',a:'on',tr:'الكتاب على الطاولة. — سطح ← on'},
+  {q:'Class starts ___ 7:30.',a:'at',tr:'يبدأ الدرس الساعة 7:30. — وقت محدّد ← at'},
+  {q:'My birthday is ___ July.',a:'in',tr:'عيد ميلادي في يوليو. — شهر ← in'},
+  {q:'See you ___ Monday.',a:'on',tr:'أراك يوم الاثنين. — يوم ← on'},
+  {q:'I wake up ___ 6 a.m.',a:'at',tr:'أستيقظ الساعة 6 صباحاً. — وقت محدّد ← at'},
+  {q:'We meet ___ the bus stop.',a:'at',tr:'نلتقي عند موقف الحافلة. — نقطة محدّدة ← at'},
+  {q:'It is cold ___ winter.',a:'in',tr:'الجو بارد في الشتاء. — فصل ← in'}
+];
+let prepMode='place',prepSel=null;
+
+function open_prep(){
+  show_screen('pscreen');
+  document.getElementById('pscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  prepMode='place';prepSel=null;
+  document.getElementById('pt-place').classList.add('on');
+  document.getElementById('pt-time').classList.remove('on');
+  render_zoom();
+  ['in','on','at'].forEach(x=>document.getElementById('ring-'+x).classList.remove('active'));
+  document.getElementById('prep-detail').innerHTML='';
+  build_prep_quiz();reset_quiz('prep');
+}
+
+function render_zoom(){
+  const place='🔎 من الواسع إلى الضيق: <span dir="ltr" class="zc-seq"><span class="zc in">in</span> Abha → <span class="zc on">on</span> Al-Fann St → <span class="zc at">at</span> the cafe</span>';
+  const time='🔎 من الأطول إلى الأدقّ: <span dir="ltr" class="zc-seq"><span class="zc in">in</span> July → <span class="zc on">on</span> Monday → <span class="zc at">at</span> 7:00</span>';
+  document.getElementById('zoom-cap').innerHTML=(prepMode==='place')?place:time;
+  document.getElementById('prep-except').innerHTML=(prepMode==='time')?`
+    <div class="except-box">
+      <div class="except-h">⭐ استثناءات تُحفظ كما هي</div>
+      <div class="except-row" dir="ltr"><span class="zc in">in</span> ( the morning / afternoon / evening )
+        <button class="ex-spk" onclick="say('in the evening')">🔊</button></div>
+      <div class="except-row" dir="ltr"><span class="zc at">at</span> ( noon / midnight )
+        <button class="ex-spk" onclick="say('at midnight')">🔊</button></div>
+    </div>`:'';
+}
+
+function sw_prep(m){
+  prepMode=m;
+  document.getElementById('pt-place').classList.toggle('on',m==='place');
+  document.getElementById('pt-time').classList.toggle('on',m==='time');
+  render_zoom();
+  if(prepSel)sel_prep(prepSel);
+}
+
+function sel_prep(p){
+  prepSel=p;
+  ['in','on','at'].forEach(x=>document.getElementById('ring-'+x).classList.toggle('active',x===p));
+  const d=PREP[prepMode][p],c=PREP_COLORS[p];
+  const header=`${p} <span class="pd-tag" style="background:${c.bg};color:${c.tx}">${prepMode==='place'?'📍 مكان':'🕐 زمن'}</span>`;
+  document.getElementById('prep-detail').innerHTML=concept_html(c.tx,c.bd,header,d);
+}
+
+function build_prep_quiz(){
+  let html='';
+  PREP_QUIZ.forEach((q,i)=>{
+    html+=`<div class="pq-item">
+      <div class="pq-sent">${i+1}. ${q.q}</div>
+      <div class="pq-opts">
+        ${['in','on','at'].map(o=>`<button class="pq-opt" id="pqo${i}_${o}" onclick="prep_answer(${i},'${o}')">${o}</button>`).join('')}
+      </div>
+      <div class="pq-fb" id="pqfb${i}"></div>
+    </div>`;
+  });
+  document.getElementById('prep-quiz').innerHTML=html;
+}
+
+function prep_answer(i,o){
+  const q=PREP_QUIZ[i];
+  const fb=document.getElementById('pqfb'+i);
+  const btn=document.getElementById('pqo'+i+'_'+o);
+  if(o===q.a){
+    ['in','on','at'].forEach(x=>{const b=document.getElementById('pqo'+i+'_'+x);if(b)b.disabled=true;});
+    btn.classList.add('ok');
+    fb.textContent='✅ '+q.tr;
+    fb.className='pq-fb show ok';
+    say(q.q.replace('___',o));
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+  }else{
+    btn.classList.add('no');
+    fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
+    fb.className='pq-fb show no';
+    setTimeout(()=>{btn.classList.remove('no');},700);
+  }
+}
+
+// ═══════════════════════════════════════
+// ARTICLES  a / an / the
+// ═══════════════════════════════════════
+const ART = {
+  a:{c:{bg:'#DBEAFE',bd:'#60A5FA',tx:'#1D4ED8'},tag:'🆕 مجهول',
+     meaning:'a = واحد غير محدّد (أيّ واحد).',
+     when:'لأنه مفرد مجهول يبدأ <b>نطقه</b> بصوت ساكن.',link:'مجهول + صوت ساكن؟ ⟵ a',
+     ex:{e:'a car',a:'سيارة (أيّ واحدة)'},bad:'an university',good:'a university'},
+  an:{c:{bg:'#EDE9FE',bd:'#A78BFA',tx:'#6D28D9'},tag:'🆕 مجهول',vowels:true,
+     meaning:'an = واحد غير محدّد (أيّ واحد).',
+     when:'لأنه مفرد مجهول يبدأ <b>نطقه</b> بأحد الأصوات المتحرّكة الخمسة:',link:'مجهول + صوت متحرّك؟ ⟵ an',
+     ex:{e:'an apple',a:'تفّاحة'},bad:'a hour',good:'an hour'},
+  the:{c:{bg:'#FFEDD5',bd:'#FB923C',tx:'#C2410C'},tag:'✅ معلوم',
+     meaning:'the = المحدّد المعروف للطرفين، أو الفريد.',
+     when:'لأنه شيء معيّن نعرفه، أو فريد في الكون.',link:'شيء نعرفه بالذات؟ ⟵ the',
+     ex:{e:'the sun',a:'الشمس (فريدة)'},bad:'a sun',good:'the sun'}
+};
+const ART_QUIZ=[
+  {q:'I have ___ apple.',a:'an',tr:'معي تفّاحة. — تبدأ بصوت متحرّك ← an'},
+  {q:'She is ___ teacher.',a:'a',tr:'هي معلّمة. — صوت ساكن ← a'},
+  {q:'___ sun is very hot.',a:'the',tr:'الشمس حارّة جداً. — فريدة ← the'},
+  {q:'He lives in ___ old house.',a:'an',tr:'يعيش في بيت قديم. — old بصوت متحرّك ← an'},
+  {q:'Please close ___ door.',a:'the',tr:'أغلق الباب. — الباب المعروف ← the'},
+  {q:'Wait ___ hour, please.',a:'an',tr:'انتظر ساعة. — الـ h صامتة ← an'},
+  {q:'I want ___ university degree.',a:'a',tr:'أريد شهادة جامعية. — «يو» صوت ساكن ← a'},
+  {q:'Look at ___ moon tonight.',a:'the',tr:'انظر إلى القمر. — فريد ← the'}
+];
+let artSel=null;
+
+function open_art(){
+  show_screen('ascreen');
+  document.getElementById('ascreen').scrollIntoView({behavior:'smooth',block:'start'});
+  artSel=null;
+  ['a','an','the'].forEach(x=>document.getElementById('art-'+x).classList.remove('active'));
+  document.getElementById('art-detail').innerHTML='';
+  build_art_quiz();reset_quiz('art');
+}
+
+function sel_art(p){
+  artSel=p;
+  ['a','an','the'].forEach(x=>document.getElementById('art-'+x).classList.toggle('active',x===p));
+  const d=ART[p],c=d.c;
+  const header=`${p} <span class="pd-tag" style="background:${c.bg};color:${c.tx}">${d.tag}</span>`;
+  let extra='';
+  if(d.vowels){
+    extra=`<div class="vowel-strip" style="margin-top:8px">${['a','e','i','o','u'].map(v=>`<div class="vowel-chip">${v}</div>`).join('')}</div>`;
+  }
+  document.getElementById('art-detail').innerHTML=concept_html(c.tx,c.bd,header,d,extra);
+}
+
+function build_art_quiz(){
+  let html='';
+  ART_QUIZ.forEach((q,i)=>{
+    html+=`<div class="pq-item">
+      <div class="pq-sent">${i+1}. ${q.q}</div>
+      <div class="pq-opts">
+        ${['a','an','the'].map(o=>`<button class="pq-opt" id="aqo${i}_${o}" onclick="art_answer(${i},'${o}')">${o}</button>`).join('')}
+      </div>
+      <div class="pq-fb" id="aqfb${i}"></div>
+    </div>`;
+  });
+  document.getElementById('art-quiz').innerHTML=html;
+}
+
+function art_answer(i,o){
+  const q=ART_QUIZ[i];
+  const fb=document.getElementById('aqfb'+i);
+  const btn=document.getElementById('aqo'+i+'_'+o);
+  if(o===q.a){
+    ['a','an','the'].forEach(x=>{const b=document.getElementById('aqo'+i+'_'+x);if(b)b.disabled=true;});
+    btn.classList.add('ok');
+    fb.textContent='✅ '+q.tr;
+    fb.className='pq-fb show ok';
+    say(q.q.replace('___',o));
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+  }else{
+    btn.classList.add('no');
+    fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
+    fb.className='pq-fb show no';
+    setTimeout(()=>{btn.classList.remove('no');},700);
+  }
+}
+
+// ═══════════════════════════════════════
+// WH QUESTIONS
+// ═══════════════════════════════════════
+const WH = {
+  what:{ic:'❓',word:'ماذا / ما',meaning:'what = ماذا / ما.',when:'لأنك تسأل عن شيء أو فعل.',link:'تسأل عن شيء؟ ⟵ what',ex:{e:'What is this?',a:'ما هذا؟'},bad:'What this is?',good:'What is this?'},
+  where:{ic:'📍',word:'أين',meaning:'where = أين.',when:'لأنك تسأل عن المكان.',link:'تسأل عن مكان؟ ⟵ where',ex:{e:'Where do you live?',a:'أين تسكن؟'},bad:'Where you live?',good:'Where do you live?'},
+  when:{ic:'🕐',word:'متى',meaning:'when = متى.',when:'لأنك تسأل عن الوقت.',link:'تسأل عن وقت؟ ⟵ when',ex:{e:'When is the class?',a:'متى الحصة؟'},bad:'When the class is?',good:'When is the class?'},
+  who:{ic:'👤',word:'مَن',meaning:'who = مَن.',when:'لأنك تسأل عن شخص.',link:'تسأل عن شخص؟ ⟵ who',ex:{e:'Who is she?',a:'من هي؟'},bad:'Who she is?',good:'Who is she?'},
+  why:{ic:'💡',word:'لماذا',meaning:'why = لماذا.',when:'لأنك تسأل عن السبب.',link:'تسأل عن سبب؟ ⟵ why',ex:{e:'Why are you late?',a:'لماذا تأخّرت؟'},bad:'Why you are late?',good:'Why are you late?'},
+  which:{ic:'🔀',word:'أيّ',meaning:'which = أيّ.',when:'لأنك تختار بين أشياء محدّدة.',link:'تختار بين أشياء؟ ⟵ which',ex:{e:'Which color do you like?',a:'أيّ لون تحب؟'},bad:'Which you like?',good:'Which do you like?'},
+  whose:{ic:'🔑',word:'لِمَن',meaning:'whose = لِمَن.',when:'لأنك تسأل عن المالك.',link:'تسأل عن مالك؟ ⟵ whose',ex:{e:'Whose book is this?',a:'لمن هذا الكتاب؟'},bad:'Who book is this?',good:'Whose book is this?'},
+  how:{ic:'🛠️',word:'كيف',meaning:'how = كيف.',when:'لأنك تسأل عن الطريقة أو الحال.',link:'تسأل عن طريقة؟ ⟵ how',ex:{e:'How do you go to work?',a:'كيف تذهب للعمل؟'},bad:'How you go to work?',good:'How do you go to work?'}
+};
+const WH_ORDER=['what','where','when','who','why','which','whose','how'];
+const WH_QUIZ=[
+  {q:'___ is this? — It is a pen.',a:'What',o:['What','Who','Where'],tr:'ما هذا؟ — إنه قلم. (شيء ← What)'},
+  {q:'___ do you live? — In Riyadh.',a:'Where',o:['When','Where','Why'],tr:'أين تسكن؟ — في الرياض. (مكان ← Where)'},
+  {q:'___ is the class? — At 7:30.',a:'When',o:['When','How','Who'],tr:'متى الحصة؟ — الساعة 7:30. (زمن ← When)'},
+  {q:'___ is she? — She is my sister.',a:'Who',o:['What','Who','Which'],tr:'من هي؟ — إنها أختي. (شخص ← Who)'},
+  {q:'___ are you late? — Because of traffic.',a:'Why',o:['Why','When','How'],tr:'لماذا تأخّرت؟ — بسبب الزحام. (سبب ← Why)'},
+  {q:'___ book is this? — It is mine.',a:'Whose',o:['Who','Whose','Which'],tr:'لمن هذا الكتاب؟ — إنه لي. (مِلكية ← Whose)'},
+  {q:'___ do you go to work? — By car.',a:'How',o:['How','Where','What'],tr:'كيف تذهب للعمل؟ — بالسيارة. (طريقة ← How)'},
+  {q:'___ color do you want? — The blue one.',a:'Which',o:['Which','What','Whose'],tr:'أيّ لون تريد؟ — الأزرق. (اختيار محدّد ← Which)'}
+];
+let whSel=null;
+
+function open_wh(){
+  show_screen('wscreen');
+  document.getElementById('wscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  whSel=null;
+  build_wh_grid();
+  document.getElementById('wh-detail').innerHTML='';
+  build_wh_quiz();reset_quiz('wh');
+}
+function build_wh_grid(){
+  document.getElementById('wh-grid').innerHTML=WH_ORDER.map(k=>{
+    const d=WH[k],cap=k.charAt(0).toUpperCase()+k.slice(1);
+    return `<button class="wh-chip" id="wh-${k}" onclick="sel_wh('${k}')">
+      <div class="wc-ic">${d.ic}</div><div class="wc-en">${cap}</div><div class="wc-ar">${d.word}</div></button>`;
+  }).join('');
+}
+function sel_wh(k){
+  whSel=k;
+  WH_ORDER.forEach(x=>document.getElementById('wh-'+x).classList.toggle('active',x===k));
+  const d=WH[k],cap=k.charAt(0).toUpperCase()+k.slice(1);
+  const header=`${d.ic} ${cap} <span class="pd-tag" style="background:#CCFBF1;color:#0F766E">${d.word}</span>`;
+  document.getElementById('wh-detail').innerHTML=concept_html('#0F766E','#5EEAD4',header,d);
+}
+function build_wh_quiz(){
+  let html='';
+  WH_QUIZ.forEach((q,i)=>{
+    html+=`<div class="pq-item"><div class="pq-sent">${i+1}. ${q.q}</div>
+      <div class="pq-opts">${q.o.map(o=>`<button class="pq-opt" id="wqo${i}_${o}" onclick="wh_answer(${i},'${o}')">${o}</button>`).join('')}</div>
+      <div class="pq-fb" id="wqfb${i}"></div></div>`;
+  });
+  document.getElementById('wh-quiz').innerHTML=html;
+}
+function wh_answer(i,o){
+  const q=WH_QUIZ[i],fb=document.getElementById('wqfb'+i),btn=document.getElementById('wqo'+i+'_'+o);
+  if(o===q.a){
+    q.o.forEach(x=>{const b=document.getElementById('wqo'+i+'_'+x);if(b)b.disabled=true;});
+    btn.classList.add('ok');fb.textContent='✅ '+q.tr;fb.className='pq-fb show ok';
+    say(q.q.split('—')[0].replace('___',o));
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+  }else{
+    btn.classList.add('no');fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';fb.className='pq-fb show no';
+    setTimeout(()=>{btn.classList.remove('no');},700);
+  }
+}
+
+// ═══════════════════════════════════════
+// PAST-TIME SIGNALS  yesterday / last / ago
+// ═══════════════════════════════════════
+const TIME_C={yesterday:{bg:'#DBEAFE',bd:'#60A5FA',tx:'#1D4ED8'},last:{bg:'#EDE9FE',bd:'#A78BFA',tx:'#6D28D9'},ago:{bg:'#FEF3C7',bd:'#FBBF24',tx:'#B45309'}};
+const TIME_D={
+  yesterday:{ic:'📅',ar:'أمس',
+    meaning:'yesterday = أمس.',
+    when:'لأنك تقصد يوم <b>أمس</b> بالذات.',
+    triggers:[{e:'yesterday',a:'أمس'},{e:'yesterday morning',a:'صباح أمس'}],
+    link:'تقصد يوم أمس بالذات؟ ⟵ استخدم yesterday',
+    orderChips:'<span class="oc key">yesterday</span><span class="oc-solo">كلمة مستقلّة تقف وحدها</span>',
+    orderEx:'I saw him yesterday.',
+    bad:'yesterday night',good:'last night'},
+  last:{ic:'⏮️',ar:'الماضي الأخير',
+    meaning:'last = الماضي الأخير.',
+    when:'لأنك ذكرت <b>آخر</b> فترة (أسبوع/شهر/سنة/ليلة).',
+    triggers:[{e:'last week',a:'الأسبوع الماضي'},{e:'last month',a:'الشهر الماضي'},{e:'last night',a:'الليلة الماضية'}],
+    link:'رأيت «آخر أسبوع/شهر...»؟ ⟵ استخدم last',
+    orderChips:'<span class="oc key">last</span><span class="oc-plus">+</span><span class="oc dur">الفترة</span>',
+    orderEx:'last week',
+    bad:'last the week',good:'last week'},
+  ago:{ic:'⏳',ar:'قبل مدّة',
+    meaning:'ago = قبل مدّة.',
+    when:'لأنك ذكرت <b>مدّة</b> زمنية.',
+    triggers:[{e:'two days ago',a:'قبل يومين'},{e:'an hour ago',a:'قبل ساعة'},{e:'ten years ago',a:'قبل عشر سنوات'}],
+    link:'رأيت «مدّة»؟ ⟵ استخدم ago',
+    orderChips:'<span class="oc dur">مدّة</span><span class="oc-plus">+</span><span class="oc key">ago</span>',
+    orderEx:'two days ago',
+    bad:'ago two days',good:'two days ago'}
+};
+const TIME_QUIZ=[
+  {q:'I saw her ___.',o:['yesterday','last yesterday','yesterday ago'],a:'yesterday',tr:'رأيتها أمس. — yesterday تقف وحدها'},
+  {q:'We met ___.',o:['last week','last the week','week ago last'],a:'last week',tr:'التقينا الأسبوع الماضي. — last + فترة، بلا the'},
+  {q:'He left ___.',o:['two days ago','ago two days','last two days'],a:'two days ago',tr:'غادر قبل يومين. — المدّة + ago'},
+  {q:'They arrived ___.',o:['last night','yesterday night','the last night'],a:'last night',tr:'وصلوا الليلة الماضية. — نقول last night لا yesterday night'},
+  {q:'She called ___.',o:['an hour ago','ago an hour','last an hour'],a:'an hour ago',tr:'اتصلت قبل ساعة. — ago في الآخر'},
+  {q:'I finished it ___.',o:['a year ago','last a year','ago a year'],a:'a year ago',tr:'أنهيتها قبل عام. — المدّة + ago'}
+];
+let timeSel=null;
+
+function open_time(){
+  show_screen('tmscreen');
+  document.getElementById('tmscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  timeSel=null;
+  ['yesterday','last','ago'].forEach(x=>{
+    document.getElementById('tm-'+x).classList.remove('active');
+    const dot=document.getElementById('tld-'+x);if(dot)dot.classList.remove('on');
+  });
+  document.getElementById('time-detail').innerHTML='';
+  build_time_quiz();reset_quiz('time');
+}
+function sel_time(k){
+  timeSel=k;
+  ['yesterday','last','ago'].forEach(x=>{
+    document.getElementById('tm-'+x).classList.toggle('active',x===k);
+    const dot=document.getElementById('tld-'+x);if(dot)dot.classList.toggle('on',x===k);
+  });
+  const d=TIME_D[k],c=TIME_C[k];
+  const exSafe=d.orderEx.replace(/'/g,"\\'"),goodSafe=d.good.replace(/'/g,"\\'");
+  const html=`<div class="prep-detail" style="border-color:${c.bd};padding-top:8px">
+    <h3 style="color:${c.tx};margin-bottom:6px">${d.ic} ${k}
+      <span class="pd-tag" style="background:${c.bg};color:${c.tx}">${d.ar}</span></h3>
+
+    <div class="cblock b-mean">
+      <div class="cblock-h"><span class="cblock-n" style="background:#3B82F6">1</span>💬 المعنى</div>
+      <div class="cblock-txt">${d.meaning}</div>
+    </div>
+    <div class="cblock b-when">
+      <div class="cblock-h"><span class="cblock-n" style="background:#16A34A">2</span>🎯 متى ولماذا؟</div>
+      <div class="cblock-txt">${d.when}</div>
+      ${d.triggers?`<div class="trig-list">${d.triggers.map(t=>`<div class="trig"><span class="trig-en">${t.e}</span><span class="trig-ar">${t.a}</span></div>`).join('')}</div>`:''}
+      ${d.link?`<div class="mind-link">💡 ${d.link}</div>`:''}
+    </div>
+    <div class="cblock b-order">
+      <div class="cblock-h"><span class="cblock-n" style="background:#7C3AED">3</span>🔤 كيف أرتّبها في الجملة؟</div>
+      <div class="order-formula">${d.orderChips}</div>
+      <div class="order-ex"><span class="en">${d.orderEx}</span>
+        <button class="mini-spk" onclick="say('${exSafe}')" aria-label="استمع">🔊</button></div>
+    </div>
+    <div class="cblock b-bad">
+      <div class="cblock-h"><span class="cblock-n" style="background:#EA580C">4</span>⚠️ أشهر خطأ للمبتدئين</div>
+      <div class="badgood">
+        <span class="bg-x">❌ <span class="en strike">${d.bad}</span></span>
+        <span class="bg-ok">✅ <span class="en">${d.good}</span>
+          <button class="mini-spk ok" onclick="say('${goodSafe}')" aria-label="استمع">🔊</button></span>
+      </div>
+    </div>
+  </div>`;
+  document.getElementById('time-detail').innerHTML=html;
+}
+function build_time_quiz(){
+  let html='';
+  TIME_QUIZ.forEach((q,i)=>{
+    html+=`<div class="pq-item"><div class="pq-sent">${i+1}. ${q.q}</div>
+      <div class="pq-opts col">${q.o.map(o=>`<button class="pq-opt" id="tqo${i}_${o.replace(/ /g,'_')}" onclick="time_answer(${i},'${o.replace(/ /g,'_')}')">${o}</button>`).join('')}</div>
+      <div class="pq-fb" id="tqfb${i}"></div></div>`;
+  });
+  document.getElementById('time-quiz').innerHTML=html;
+}
+function time_answer(i,o){
+  const q=TIME_QUIZ[i],fb=document.getElementById('tqfb'+i),btn=document.getElementById('tqo'+i+'_'+o);
+  const chosen=o.replace(/_/g,' ');
+  if(chosen===q.a){
+    q.o.forEach(x=>{const b=document.getElementById('tqo'+i+'_'+x.replace(/ /g,'_'));if(b)b.disabled=true;});
+    btn.classList.add('ok');fb.textContent='✅ '+q.tr;fb.className='pq-fb show ok';
+    say(q.q.replace('___',chosen));
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+  }else{
+    btn.classList.add('no');fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';fb.className='pq-fb show no';
+    setTimeout(()=>{btn.classList.remove('no');},700);
+  }
+}
+
+// ═══════════════════════════════════════
+// SPELLING — write from listening (by lesson)
+// ═══════════════════════════════════════
+const SPELL_LESSONS=[
+  {t:'📘 Lesson 1 — الرياضة والألعاب',w:[
+    {e:'ball',a:'كرة',em:'🏀'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'لعبة',em:'🎮'},
+    {e:'city',a:'مدينة',em:'🏙️'},{e:'show',a:'عرض / برنامج',em:'📺'},{e:'visit',a:'يزور',em:'🗺️'}]},
+  {t:'📗 Lesson 2 — الحياة العسكرية',w:[
+    {e:'base',a:'قاعدة',em:'🏕️'},{e:'rank',a:'رتبة',em:'🎖️'},{e:'cap',a:'قبعة',em:'🧢'},
+    {e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},{e:'break',a:'استراحة',em:'☕'}]},
+  {t:'📙 Lesson 3 — الملابس',w:[
+    {e:'dress',a:'فستان',em:'👗'},{e:'shirt',a:'قميص',em:'👔'},{e:'shoes',a:'حذاء',em:'👟'},
+    {e:'socks',a:'جوارب',em:'🧦'},{e:'belt',a:'حزام',em:'🔗'},{e:'coat',a:'معطف',em:'🧥'},
+    {e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'}]},
+  {t:'📕 Lesson 4 — الفصول والطقس',w:[
+    {e:'spring',a:'الربيع',em:'🌸'},{e:'summer',a:'الصيف',em:'☀️'},{e:'winter',a:'الشتاء',em:'❄️'},
+    {e:'music',a:'موسيقى',em:'🎵'},{e:'radio',a:'راديو',em:'📻'},{e:'store',a:'متجر',em:'🏪'},
+    {e:'warm',a:'دافئ',em:'🌡️'},{e:'cold',a:'بارد',em:'🥶'}]},
+  {t:'🎨 Lesson 5 — الألوان',w:[
+    {e:'red',a:'أحمر',em:'🔴'},{e:'blue',a:'أزرق',em:'🔵'},{e:'green',a:'أخضر',em:'🟢'},
+    {e:'black',a:'أسود',em:'⚫'},{e:'white',a:'أبيض',em:'⬜'},{e:'brown',a:'بنّي',em:'🟤'},
+    {e:'pink',a:'وردي',em:'🩷'},{e:'gray',a:'رمادي',em:'🩶'}]}
+];
+let spellWords=[],spellIdx=0,spellTries=0,spellHint=0,spellScore=0;
+
+function open_spell(){
+  show_screen('spscreen');
+  document.getElementById('spscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  start_spell();
+}
+function start_spell(){
+  spellWords=[];
+  SPELL_LESSONS.forEach(L=>L.w.forEach(x=>spellWords.push({e:x.e,a:x.a,em:x.em,lt:L.t})));
+  spellIdx=0;spellScore=0;render_spell();
+}
+function render_spell(){
+  const body=document.getElementById('spell-body'),total=spellWords.length;
+  if(spellIdx>=total){
+    document.getElementById('sp-fill').style.width='100%';
+    document.getElementById('sp-count').textContent=`${total} / ${total}`;
+    body.innerHTML=`<div class="sp-card sp-done"><div class="sp-emoji">🎉</div>
+      <div class="sp-donetxt">أحسنت! أكملت جميع كلمات الدروس الأربعة</div>
+      <div class="sp-score">نتيجتك: ${spellScore} / ${total}</div>
+      <button class="sp-btn check" onclick="start_spell()">🔁 ابدأ من الأول</button></div>`;
+    return;
+  }
+  spellTries=0;spellHint=0;
+  const w=spellWords[spellIdx];
+  document.getElementById('sp-fill').style.width=Math.round(spellIdx/total*100)+'%';
+  document.getElementById('sp-count').textContent=`${spellIdx+1} / ${total}`;
+  const safe=w.e.replace(/'/g,"\\'");
+  body.innerHTML=`<div class="sp-lesson">${w.lt}</div>
+  <div class="sp-card">
+    <button class="sp-listen" onclick="say('${safe}')">🔊 اسمع الكلمة</button>
+    <div class="sp-emoji">${w.em}</div>
+    <div class="sp-ar">${w.a}</div>
+    <div class="sp-hintline" id="sp-hintline"></div>
+    <input class="sp-input" id="sp-input" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="اكتب الكلمة..." onkeydown="if(event.key==='Enter')spell_enter()">
+    <div class="sp-fb" id="sp-fb"></div>
+    <div class="sp-btns">
+      <button class="sp-btn hint" id="sp-hintbtn" onclick="spell_hint()">💡 تلميح</button>
+      <button class="sp-btn check" id="sp-checkbtn" onclick="spell_check()">تحقّق ✓</button>
+      <button class="sp-btn next" id="sp-nextbtn" onclick="spell_next()" style="display:none">التالي ←</button>
+    </div>
+    <button class="sp-skip" onclick="spell_next()">تخطّي هذه الكلمة ←</button>
+  </div>`;
+  render_hint();
+  const inp=document.getElementById('sp-input');if(inp)inp.focus();
+  say(w.e);
+}
+function render_hint(){
+  const w=spellWords[spellIdx].e;let s='';
+  for(let i=0;i<w.length;i++){s+=(i<spellHint?w[i]:'_')+' ';}
+  const el=document.getElementById('sp-hintline');if(el)el.textContent=s.trim();
+}
+function spell_hint(){
+  const w=spellWords[spellIdx].e;
+  if(spellHint<w.length-1)spellHint++;
+  render_hint();
+}
+function spell_enter(){
+  const nb=document.getElementById('sp-nextbtn');
+  if(nb&&nb.style.display!=='none')spell_next();else spell_check();
+}
+function spell_check(){
+  const inp=document.getElementById('sp-input'),w=spellWords[spellIdx].e;
+  const val=(inp.value||'').trim().toLowerCase().replace(/\s+/g,' '),fb=document.getElementById('sp-fb');
+  if(!val)return;
+  if(val===w.toLowerCase()){
+    inp.disabled=true;inp.classList.remove('no');inp.classList.add('ok');
+    fb.textContent='✅ ممتاز! إملاء صحيح';fb.className='sp-fb show ok';
+    document.getElementById('sp-hintbtn').style.display='none';
+    document.getElementById('sp-checkbtn').style.display='none';
+    document.getElementById('sp-nextbtn').style.display='';
+    say(w);spellScore++;XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+  }else{
+    spellTries++;inp.classList.remove('no');void inp.offsetWidth;inp.classList.add('no');
+    if(spellTries>=3){
+      inp.disabled=true;
+      fb.innerHTML=`❌ الكلمة الصحيحة: <b class="sp-answer">${w}</b>`;fb.className='sp-fb show no';
+      document.getElementById('sp-hintbtn').style.display='none';
+      document.getElementById('sp-checkbtn').style.display='none';
+      document.getElementById('sp-nextbtn').style.display='';
+    }else{
+      fb.textContent=`❌ ليست صحيحة — حاول مرة أخرى (${spellTries}/3)`;fb.className='sp-fb show no';
+    }
+  }
+}
+function spell_next(){spellIdx++;render_spell();}
+
+// ═══════════════════════════════════════
+// IRREGULAR VERBS (grouped by family)
+// ═══════════════════════════════════════
+const IV_FAMILIES=[
+  {pat:'no change',hook:'لا يتغيّر — نفس الشكل في الماضي',verbs:[
+    {b:'put',p:'put',m:'وضع'},{b:'read',p:'read',m:'قرأ',note:'يُكتب read لكن يُنطق «رِد» في الماضي'}]},
+  {pat:'i / o → a',hook:'حرف العلّة يتحوّل إلى a',verbs:[
+    {b:'begin',p:'began',m:'بدأ'},{b:'drink',p:'drank',m:'شرب'},{b:'swim',p:'swam',m:'سبح'},{b:'sit',p:'sat',m:'جلس'},{b:'come',p:'came',m:'أتى / جاء'}]},
+  {pat:'…o-e',hook:'الماضي بصوت o',verbs:[
+    {b:'speak',p:'spoke',m:'تكلّم'},{b:'drive',p:'drove',m:'قاد'},{b:'write',p:'wrote',m:'كتب'},{b:'choose',p:'chose',m:'اختار'}]},
+  {pat:'…ought',hook:'الماضي ينتهي بـ ought',verbs:[
+    {b:'bring',p:'brought',m:'أحضر'},{b:'buy',p:'bought',m:'اشترى'}]},
+  {pat:'…ew',hook:'الماضي ينتهي بـ ew',verbs:[
+    {b:'fly',p:'flew',m:'طار'},{b:'know',p:'knew',m:'عرف'}]},
+  {pat:'…oo',hook:'الماضي فيه صوت oo',verbs:[
+    {b:'stand',p:'stood',m:'وقف'},{b:'take',p:'took',m:'أخذ'}]},
+  {pat:'…t / …d',hook:'الماضي ينتهي بـ t أو d',verbs:[
+    {b:'leave',p:'left',m:'غادر'},{b:'sleep',p:'slept',m:'نام'},{b:'hear',p:'heard',m:'سمع'},{b:'say',p:'said',m:'قال'},{b:'have',p:'had',m:'يملك / لديه'},{b:'do',p:'did',m:'فعل'}]},
+  {pat:'unique',hook:'شاذّة تماماً — احفظها وحدها',verbs:[
+    {b:'go',p:'went',m:'ذهب'},{b:'see',p:'saw',m:'رأى'},{b:'eat',p:'ate',m:'أكل'},{b:'get up',p:'got up',m:'استيقظ / نهض'}]}
+];
+const IV_ALL=IV_FAMILIES.reduce((a,f)=>a.concat(f.verbs),[]);
+let ivDeck=[],ivCur=null,ivHardSeen=new Set();
+
+function open_iv(){
+  show_screen('ivscreen');
+  document.getElementById('ivscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  sw_iv('learn');
+}
+function sw_iv(m){
+  const learn=m==='learn';
+  document.getElementById('iv-t-learn').classList.toggle('on',learn);
+  document.getElementById('iv-t-drill').classList.toggle('on',!learn);
+  document.getElementById('iv-learn-body').style.display=learn?'block':'none';
+  document.getElementById('iv-drill-body').style.display=learn?'none':'block';
+  if(learn)build_iv_learn();else start_iv_drill();
+}
+function build_iv_learn(){
+  let html='<div class="iv-intro">💡 الأفعال الشاذة عائلات — احفظ نمط العائلة لا كل كلمة وحدها</div>';
+  IV_FAMILIES.forEach(f=>{
+    html+=`<div class="iv-fam"><div class="iv-fam-h"><span class="iv-fam-pat">${f.pat}</span></div>
+      <div class="iv-fam-hint">${f.hook}</div>`;
+    f.verbs.forEach(v=>{
+      const bs=v.b.replace(/'/g,"\\'"),ps=v.p.replace(/'/g,"\\'");
+      html+=`<div class="iv-row">
+        <span class="iv-base">${v.b}</span><span class="iv-arrow">→</span><span class="iv-past">${v.p}</span>
+        <button class="iv-spk" onclick="say('${ps}')" aria-label="استمع">🔊</button>
+        <span class="iv-mean">${v.m}</span>
+        ${v.note?`<span class="iv-note">💡 ${v.note}</span>`:''}
+      </div>`;
+    });
+    html+='</div>';
+  });
+  document.getElementById('iv-learn-body').innerHTML=html;
+}
+function start_iv_drill(){
+  ivDeck=[...IV_ALL].sort(()=>Math.random()-.5);
+  ivHardSeen=new Set();
+  iv_next();
+}
+function iv_next(){
+  const body=document.getElementById('iv-drill-body');
+  if(ivDeck.length===0){
+    const hard=IV_ALL.filter(v=>ivHardSeen.has(v.b));
+    body.innerHTML=`<div class="iv-done"><div class="em">🎉</div>
+      <div class="t">أحسنت! راجعت كل الأفعال</div>
+      ${hard.length?`<button class="iv-btn hard" onclick="iv_review_hard()">راجع الصعبة فقط (${hard.length})</button>`:''}
+      <button class="iv-btn known" onclick="start_iv_drill()">🔁 من جديد</button></div>`;
+    return;
+  }
+  ivCur=ivDeck[0];
+  const bs=ivCur.b.replace(/'/g,"\\'"),ps=ivCur.p.replace(/'/g,"\\'");
+  body.innerHTML=`<div class="iv-drill-top">متبقّي: <b>${ivDeck.length}</b></div>
+  <div class="iv-dcard">
+    <div class="iv-base-big">${ivCur.b}<button class="iv-spk2" onclick="say('${bs}')" aria-label="استمع">🔊</button></div>
+    <div class="iv-mean-big">${ivCur.m}</div>
+    <div id="iv-ans" style="display:none">
+      <div class="iv-arrow-big">↓ الماضي</div>
+      <div class="iv-past-big">${ivCur.p}<button class="iv-spk2" onclick="say('${ps}')" aria-label="استمع">🔊</button></div>
+    </div>
+    <div id="iv-controls"><button class="iv-reveal-btn" onclick="iv_reveal()">🤔 ما الماضي؟ اضغط للكشف</button></div>
+    <div id="iv-judge" class="iv-judge" style="display:none">
+      <button class="iv-btn known" onclick="iv_mark(true)">عرفتها ✅</button>
+      <button class="iv-btn hard" onclick="iv_mark(false)">صعبة ❌</button>
+    </div>
+  </div>`;
+}
+function iv_reveal(){
+  document.getElementById('iv-ans').style.display='';
+  document.getElementById('iv-controls').style.display='none';
+  document.getElementById('iv-judge').style.display='flex';
+  say(ivCur.p);
+}
+function iv_mark(known){
+  const cur=ivDeck.shift();
+  if(known){XP+=2;document.getElementById('xp').textContent=XP;save_progress();}
+  else{ivDeck.push(cur);ivHardSeen.add(cur.b);}
+  iv_next();
+}
+function iv_review_hard(){
+  ivDeck=IV_ALL.filter(v=>ivHardSeen.has(v.b)).sort(()=>Math.random()-.5);
+  iv_next();
+}
+
+// ═══════════════════════════════════════
+// LISTENING — YouTube videos
+// (لإضافة مقطع: أضف سطراً {id:'YOUTUBE_ID', t:'العنوان', s:'وصف قصير'})
+// ═══════════════════════════════════════
+const YT_VIDEOS=[
+  {id:'0slGq0JJKHs',t:'Quiz A',s:'استماع وقراءة مع الحل'},
+  {id:'elzqhXfnqbQ',t:'Quiz B',s:'استماع وقراءة مع الحل'},
+  {id:'qP6UyAVijUI',t:'Quiz C',s:'استماع وقراءة مع الحل'}
+];
+function open_yt(){
+  show_screen('ytscreen');
+  document.getElementById('ytscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('yt-tabs').innerHTML=YT_VIDEOS.map((v,i)=>
+    `<button class="yt-tab" id="yt-tab-${i}" onclick="sw_yt(${i},true)"><b>${v.t}</b><span>${v.s}</span></button>`).join('');
+  sw_yt(0,false);
+}
+function sw_yt(i,autoplay){
+  YT_VIDEOS.forEach((v,j)=>{const t=document.getElementById('yt-tab-'+j);if(t)t.classList.toggle('on',j===i);});
+  const v=YT_VIDEOS[i];
+  document.getElementById('yt-iframe').src=`https://www.youtube.com/embed/${v.id}?rel=0${autoplay?'&autoplay=1':''}`;
+}
+
+// ═══════════════════════════════════════
+// PROGRESS PERSISTENCE (localStorage)
+// ═══════════════════════════════════════
+const PKEY='alc_book4_progress';
+// Check that the browser actually allows saving (Private Browsing on iOS blocks it)
+let STORAGE_OK=true;
+try{const t='__alc_test__';localStorage.setItem(t,'1');localStorage.removeItem(t);}
+catch(e){STORAGE_OK=false;}
+function show_storage_warning(){
+  if(STORAGE_OK)return;
+  if(document.getElementById('storage-warn'))return;
+  const w=document.createElement('div');
+  w.id='storage-warn';
+  w.style.cssText="background:#FEF3C7;color:#92400E;border:1.5px solid #FCD34D;border-radius:12px;padding:12px 16px;margin:12px;font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;text-align:center;line-height:1.6";
+  w.innerHTML="⚠️ متصفحك يمنع حفظ التقدّم (غالبًا وضع التصفّح الخفي). للحفظ: افتح الموقع في نافذة عادية — وليست خاصة/خفية.";
+  document.body.insertBefore(w,document.body.firstChild);
+}
+function save_progress(){
+  if(!STORAGE_OK)return;
+  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP}));}
+  catch(e){STORAGE_OK=false;show_storage_warning();}
+}
+function apply_lessons(){
+  ['l1','l2','l3','l4'].forEach(lk=>{
+    const L=LP[lk];
+    const card=document.getElementById('hc-'+lk);
+    const bar=document.getElementById('lp-'+lk);
+    if(!card)return;
+    let sc=document.getElementById('ls-'+lk);
+    if(!sc){sc=document.createElement('div');sc.className='lcard-score';sc.id='ls-'+lk;card.appendChild(sc);}
+    if(L&&typeof L.pct==='number'){
+      if(bar)bar.style.width=L.pct+'%';
+      card.classList.toggle('done',!!L.done);
+      sc.textContent=L.done?`أفضل نتيجة ${L.pct}% ✓`:`أفضل نتيجة ${L.pct}%`;
+      sc.style.color=L.done?'var(--g)':'var(--o)';
+    }else{
+      if(bar)bar.style.width='0%';
+      card.classList.remove('done');
+      sc.textContent='';
+    }
+  });
+}
+function load_progress(){
+  let data=null;
+  try{data=JSON.parse(localStorage.getItem(PKEY));}catch(e){}
+  if(!data)return;
+  XP=data.xp||0;STK=data.streak||0;LP=data.lessons||{};
+  document.getElementById('xp').textContent=XP;
+  document.getElementById('streak').textContent=STK;
+  apply_lessons();
+  upd_global();
+}
+if(!STORAGE_OK)show_storage_warning();
+
+// ─── STREAK COMEBACK BANNER ───
+const STREAK_DATE_KEY='alc_last_streak_date';
+function check_streak_comeback(){
+  if(!STORAGE_OK)return;
+  try{
+    const last=localStorage.getItem(STREAK_DATE_KEY);
+    const today=new Date().toDateString();
+    if(last && last!==today && STK===0){
+      // streak was broken — show encouragement
+      const home=document.getElementById('home');
+      const banner=document.createElement('div');
+      banner.className='streak-comeback';
+      banner.innerHTML=`<span class="sc-ico">💪</span>
+        <div class="sc-txt"><h3>عودة مرحباً!</h3>
+        <p>انتهى الـ streak، لكن الأهم أنك رجعت — ابدأ streak جديداً اليوم.</p></div>
+        <button class="sc-close" onclick="this.parentElement.remove()">✕</button>`;
+      home.insertBefore(banner, home.firstChild);
+    }
+    localStorage.setItem(STREAK_DATE_KEY,today);
+  }catch(e){}
+}
+
+function reset_progress(){
+  if(!confirm('⚠️ تحذير: سيُمسح كل تقدّمك (الدرجات والـ XP والـ Streak) ولا يمكن التراجع.\n\nهل أنت متأكد تماماً؟'))return;
+  try{localStorage.removeItem(PKEY);}catch(e){}
+  location.reload();
+}
+
+// ─── WELCOME BANNER ───
+const WKEY='alc_welcomed';
+function show_welcome_if_new(){
+  try{
+    const seen=localStorage.getItem(WKEY);
+    if(!seen){
+      document.getElementById('welcome-banner').style.display='block';
+    }
+  }catch(e){}
+}
+function dismiss_welcome(){
+  document.getElementById('welcome-banner').style.display='none';
+  try{localStorage.setItem(WKEY,'1');}catch(e){}
+}
+function dismiss_welcome_start(){
+  dismiss_welcome();
+  open_lesson('l1');
+}
+show_welcome_if_new();
+load_progress();
+check_streak_comeback();
+track_screen('home');
+</script>
+
+<!-- FOOTER -->
+<div class="site-footer">
+  <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
+  <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
+  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.3</p>
+</div>
+
+</body>
+</html>

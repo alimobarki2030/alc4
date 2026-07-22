@@ -772,6 +772,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .yt-embed{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;background:#000;margin-bottom:12px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
 .lesson-video{margin:18px 0}
 .lv-title{font-family:'Cairo',sans-serif;font-weight:800;font-size:.92rem;color:var(--navy);margin-bottom:10px;text-align:center}
+.tap-hint{background:#F8FAFC;border:2px dashed var(--bdr);border-radius:14px;padding:26px 16px;text-align:center;color:var(--muted);font-family:'Cairo',sans-serif;font-weight:700;font-size:.95rem;margin-top:6px;animation:tapPulse 1.8s ease-in-out infinite}
+@keyframes tapPulse{0%,100%{opacity:.65}50%{opacity:1}}
 .yt-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .yt-note{background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:10px;padding:9px 12px;
   font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;text-align:center}
@@ -2268,16 +2270,17 @@ const PREP_QUIZ=[
   {q:'We meet ___ the bus stop.',a:'at',tr:'نلتقي عند موقف الحافلة. — نقطة محدّدة ← at'},
   {q:'It is cold ___ winter.',a:'in',tr:'الجو بارد في الشتاء. — فصل ← in'}
 ];
-let prepMode='place',prepSel='in';
+let prepMode='place',prepSel=null;
 
 function open_prep(){
   show_screen('pscreen');
   document.getElementById('pscreen').scrollIntoView({behavior:'smooth',block:'start'});
-  prepMode='place';
+  prepMode='place';prepSel=null;
   document.getElementById('pt-place').classList.add('on');
   document.getElementById('pt-time').classList.remove('on');
   render_zoom();
-  sel_prep('in');
+  ['in','on','at'].forEach(x=>document.getElementById('ring-'+x).classList.remove('active'));
+  document.getElementById('prep-detail').innerHTML='<div class="tap-hint">👆 اضغط على دائرة (in · on · at) لتظهر الفكرة</div>';
   build_prep_quiz();reset_quiz('prep');
 }
 
@@ -2292,7 +2295,7 @@ function sw_prep(m){
   document.getElementById('pt-place').classList.toggle('on',m==='place');
   document.getElementById('pt-time').classList.toggle('on',m==='time');
   render_zoom();
-  sel_prep(prepSel);
+  if(prepSel)sel_prep(prepSel);
 }
 
 function sel_prep(p){
@@ -2363,12 +2366,14 @@ const ART_QUIZ=[
   {q:'I want ___ university degree.',a:'a',tr:'أريد شهادة جامعية. — «يو» صوت ساكن ← a'},
   {q:'Look at ___ moon tonight.',a:'the',tr:'انظر إلى القمر. — فريد ← the'}
 ];
-let artSel='a';
+let artSel=null;
 
 function open_art(){
   show_screen('ascreen');
   document.getElementById('ascreen').scrollIntoView({behavior:'smooth',block:'start'});
-  sel_art('a');
+  artSel=null;
+  ['a','an','the'].forEach(x=>document.getElementById('art-'+x).classList.remove('active'));
+  document.getElementById('art-detail').innerHTML='<div class="tap-hint">👆 اضغط على أداة (a · an · the) لتظهر الفكرة</div>';
   build_art_quiz();reset_quiz('art');
 }
 
@@ -2441,12 +2446,15 @@ const WH_QUIZ=[
   {q:'___ do you go to work? — By car.',a:'How',o:['How','Where','What'],tr:'كيف تذهب للعمل؟ — بالسيارة. (طريقة ← How)'},
   {q:'___ color do you want? — The blue one.',a:'Which',o:['Which','What','Whose'],tr:'أيّ لون تريد؟ — الأزرق. (اختيار محدّد ← Which)'}
 ];
-let whSel='what';
+let whSel=null;
 
 function open_wh(){
   show_screen('wscreen');
   document.getElementById('wscreen').scrollIntoView({behavior:'smooth',block:'start'});
-  build_wh_grid();sel_wh('what');build_wh_quiz();reset_quiz('wh');
+  whSel=null;
+  build_wh_grid();
+  document.getElementById('wh-detail').innerHTML='<div class="tap-hint">👆 اضغط على أيّ أداة سؤال لتظهر الفكرة</div>';
+  build_wh_quiz();reset_quiz('wh');
 }
 function build_wh_grid(){
   document.getElementById('wh-grid').innerHTML=WH_ORDER.map(k=>{
@@ -2522,12 +2530,18 @@ const TIME_QUIZ=[
   {q:'She called ___.',o:['an hour ago','ago an hour','last an hour'],a:'an hour ago',tr:'اتصلت قبل ساعة. — ago في الآخر'},
   {q:'I finished it ___.',o:['a year ago','last a year','ago a year'],a:'a year ago',tr:'أنهيتها قبل عام. — المدّة + ago'}
 ];
-let timeSel='yesterday';
+let timeSel=null;
 
 function open_time(){
   show_screen('tmscreen');
   document.getElementById('tmscreen').scrollIntoView({behavior:'smooth',block:'start'});
-  sel_time('yesterday');build_time_quiz();reset_quiz('time');
+  timeSel=null;
+  ['yesterday','last','ago'].forEach(x=>{
+    document.getElementById('tm-'+x).classList.remove('active');
+    const dot=document.getElementById('tld-'+x);if(dot)dot.classList.remove('on');
+  });
+  document.getElementById('time-detail').innerHTML='<div class="tap-hint">👆 اضغط على أيّ كلمة (yesterday · last · ago) أو نقطة على الخطّ لتظهر الفكرة</div>';
+  build_time_quiz();reset_quiz('time');
 }
 function sel_time(k){
   timeSel=k;

@@ -754,6 +754,26 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .iv-done .t{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin:8px 0 14px}
 .iv-done .iv-btn{margin:4px}
 
+/* ── LISTENING (YouTube) ── */
+.yt-card{background:linear-gradient(135deg,#EF4444,#B91C1C);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #FCA5A5;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.yt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(185,28,28,.35)}
+.yt-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.yt-card .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
+.yt-card .pc-txt p{color:rgba(255,255,255,.9);font-size:.8rem;margin-top:2px;font-family:'Cairo',sans-serif}
+#ytscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.yt-tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
+.yt-tab{flex:none;min-width:112px;padding:10px 14px;border:2px solid var(--bdr);border-radius:12px;background:#fff;cursor:pointer;text-align:center;transition:.15s}
+.yt-tab:hover{border-color:#EF4444}
+.yt-tab.on{border-color:#EF4444;background:#FEF2F2;box-shadow:0 0 0 3px rgba(239,68,68,.12)}
+.yt-tab b{display:block;font-family:'Inter',sans-serif;font-weight:800;color:var(--navy);font-size:.95rem}
+.yt-tab span{display:block;font-family:'Cairo',sans-serif;font-size:.68rem;color:var(--muted);margin-top:2px}
+.yt-embed{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;background:#000;margin-bottom:12px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.yt-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-note{background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:10px;padding:9px 12px;
+  font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;text-align:center}
+
 </style>
 </head>
 <body>
@@ -850,6 +870,15 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <div class="pc-txt">
       <h3>الأفعال الشاذة</h3>
       <p>مجمّعة بالعائلات — احفظ النمط لا الكلمات</p>
+    </div>
+  </div>
+
+  <div class="lbl">الاستماع</div>
+  <div class="yt-card" onclick="open_yt()">
+    <div class="ac-ic">🎧</div>
+    <div class="pc-txt">
+      <h3>استماع Book 4</h3>
+      <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B · C</p>
     </div>
   </div>
 
@@ -1058,6 +1087,22 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   </div>
   <div id="iv-learn-body"></div>
   <div id="iv-drill-body" style="display:none"></div>
+</div>
+
+<!-- LISTENING (YouTube) SCREEN -->
+<div id="ytscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#EF4444,#B91C1C)">
+    <h2>استماع Book 4 🎧</h2>
+    <p>اختبارات استماع وقراءة مع الحل — LangVox</p>
+  </div>
+  <div class="yt-tabs" id="yt-tabs"></div>
+  <div class="yt-embed">
+    <iframe id="yt-iframe" src="" title="ALC Book 4 Listening"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen loading="lazy"></iframe>
+  </div>
+  <div class="yt-note">💡 اضغط زر التشغيل ▶ — يحتاج اتصال إنترنت. للشاشة الكاملة استخدم زر التكبير في المشغّل.</div>
 </div>
 
 <!-- MODAL -->
@@ -1307,7 +1352,7 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen'];
+const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});}
 
 // Quizzes stay hidden until the learner clicks "اختبر نفسك"
@@ -2715,6 +2760,28 @@ function iv_mark(known){
 function iv_review_hard(){
   ivDeck=IV_ALL.filter(v=>ivHardSeen.has(v.b)).sort(()=>Math.random()-.5);
   iv_next();
+}
+
+// ═══════════════════════════════════════
+// LISTENING — YouTube videos
+// (لإضافة مقطع: أضف سطراً {id:'YOUTUBE_ID', t:'العنوان', s:'وصف قصير'})
+// ═══════════════════════════════════════
+const YT_VIDEOS=[
+  {id:'0slGq0JJKHs',t:'Quiz A',s:'استماع وقراءة مع الحل'},
+  {id:'elzqhXfnqbQ',t:'Quiz B',s:'استماع وقراءة مع الحل'},
+  {id:'qP6UyAVijUI',t:'Quiz C',s:'استماع وقراءة مع الحل'}
+];
+function open_yt(){
+  show_screen('ytscreen');
+  document.getElementById('ytscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('yt-tabs').innerHTML=YT_VIDEOS.map((v,i)=>
+    `<button class="yt-tab" id="yt-tab-${i}" onclick="sw_yt(${i},true)"><b>${v.t}</b><span>${v.s}</span></button>`).join('');
+  sw_yt(0,false);
+}
+function sw_yt(i,autoplay){
+  YT_VIDEOS.forEach((v,j)=>{const t=document.getElementById('yt-tab-'+j);if(t)t.classList.toggle('on',j===i);});
+  const v=YT_VIDEOS[i];
+  document.getElementById('yt-iframe').src=`https://www.youtube.com/embed/${v.id}?rel=0${autoplay?'&autoplay=1':''}`;
 }
 
 // ═══════════════════════════════════════

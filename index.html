@@ -33,7 +33,7 @@
   --ok-bg:#D7FFB8;--ok-txt:#2D8A00;--no-bg:#FFDFE0;--no-txt:#CC0000;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;font-size:17px}
 
 /* NAV */
 .nav{background:var(--navy);height:56px;display:flex;align-items:center;
@@ -56,10 +56,10 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .gpbar{background:rgba(255,255,255,.2);border-radius:8px;height:8px;margin-bottom:6px}
 .gpfill{background:var(--g);height:8px;border-radius:8px;transition:width .6s;width:0%}
 .gptxt{color:rgba(255,255,255,.6);font-size:.75rem}
-.reset-btn{margin-top:12px;background:rgba(255,255,255,.12);color:#fff;
-  border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:5px 14px;
-  font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;transition:.15s}
-.reset-btn:hover{background:rgba(255,255,255,.22)}
+.reset-btn{margin-top:12px;background:rgba(255,75,75,.18);color:#FFAAAA;
+  border:1px solid rgba(255,75,75,.35);border-radius:8px;padding:6px 16px;
+  font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:.15s}
+.reset-btn:hover{background:rgba(255,75,75,.32);color:#fff}
 .lbl{font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:2px;
   text-transform:uppercase;margin-bottom:10px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
@@ -71,12 +71,12 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   background:var(--g);color:#fff;width:22px;height:22px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}
 .lcard-icon{font-size:2rem;display:block;margin-bottom:8px}
-.lcard-num{font-size:.65rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.lcard-name{font-size:.9rem;font-weight:700;color:var(--txt);margin:3px 0}
-.lcard-sub{font-size:.72rem;color:var(--muted)}
+.lcard-num{font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.lcard-name{font-size:1rem;font-weight:700;color:var(--txt);margin:3px 0}
+.lcard-sub{font-size:.82rem;color:var(--muted)}
 .lpbar{background:var(--bdr);border-radius:4px;height:4px;margin-top:10px}
 .lpfill{background:var(--g);height:4px;border-radius:4px;transition:width .4s;width:0%}
-.lcard-score{font-family:'Cairo',sans-serif;font-size:.66rem;font-weight:700;margin-top:5px}
+.lcard-score{font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;margin-top:5px}
 .test-top{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);
   border:2px solid var(--bdr);border-radius:10px;padding:9px 13px;margin-bottom:10px}
 .test-best{font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:700;color:var(--muted)}
@@ -94,6 +94,17 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .final-card p{color:rgba(255,255,255,.8);font-size:.82rem}
 .final-card .fc-badge{display:inline-block;background:var(--y);color:var(--navy);
   border-radius:12px;padding:3px 12px;font-size:.75rem;font-weight:700;margin-top:8px}
+
+/* STREAK COMEBACK BANNER */
+.streak-comeback{background:linear-gradient(135deg,#FF9600,#EF6C00);border-radius:14px;
+  padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:14px;
+  animation:slideIn .4s ease}
+@keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.streak-comeback .sc-ico{font-size:2rem;flex-shrink:0}
+.streak-comeback .sc-txt h3{color:#fff;font-size:.95rem;font-weight:900;margin-bottom:2px}
+.streak-comeback .sc-txt p{color:rgba(255,255,255,.88);font-size:.82rem}
+.streak-comeback .sc-close{background:rgba(255,255,255,.2);border:none;border-radius:50%;
+  width:28px;height:28px;color:#fff;font-size:1rem;cursor:pointer;margin-right:auto;flex-shrink:0;font-weight:700}
 
 /* LESSON SCREEN */
 #lscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
@@ -164,9 +175,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   gap:8px;direction:ltr;text-align:left}
 .exrow.ok{background:#F0FDF4;border-color:var(--g)}
 .exrow.no{background:#FEF2F2;border-color:var(--r);text-decoration:line-through;color:#999}
-.spk{background:var(--b);border:none;border-radius:7px;width:28px;height:28px;
+.spk{background:var(--b);border:none;border-radius:7px;width:36px;height:36px;
   display:flex;align-items:center;justify-content:center;cursor:pointer;
-  font-size:.75rem;transition:all .2s;flex-shrink:0}
+  font-size:.9rem;transition:all .2s;flex-shrink:0}
 .spk:hover{background:var(--bd)}
 .spk.dark{background:var(--navy)}
 
@@ -197,9 +208,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .vleft{display:flex;align-items:center;gap:10px}
 .vemoji{font-size:1.5rem}
 .ven{font-size:.9rem;font-weight:700;color:var(--navy);font-family:'Inter',sans-serif}
-.var{font-size:.75rem;color:var(--muted);margin-top:2px}
-.vspk{background:var(--b);border:none;border-radius:8px;width:32px;height:32px;
-  display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;flex-shrink:0}
+.var{font-size:.88rem;color:var(--muted);margin-top:2px}
+.vspk{background:var(--b);border:none;border-radius:8px;width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;flex-shrink:0}
 .vspk:hover{background:var(--bd)}
 
 /* QUIZ */
@@ -218,9 +229,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .qspk{background:var(--b);border:none;border-radius:7px;width:30px;height:30px;
   display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.75rem;flex-shrink:0}
 .opts{display:flex;flex-direction:column;gap:6px}
-.opt{display:flex;align-items:center;gap:9px;padding:10px 13px;
+.opt{display:flex;align-items:center;gap:9px;padding:11px 13px;
   background:#fff;border:2px solid var(--bdr);border-radius:9px;
-  font-family:'Inter',sans-serif;font-size:.85rem;color:var(--txt);
+  font-family:'Inter',sans-serif;font-size:.95rem;color:var(--txt);
   cursor:pointer;transition:all .15s;text-align:left;direction:ltr;width:100%}
 .opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
 .oltr{width:24px;height:24px;border-radius:6px;background:var(--bdr);
@@ -233,33 +244,59 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .opt.no .oltr{background:var(--r);color:#fff}
 .opt:disabled{cursor:default}
 .fb{display:none;align-items:flex-start;gap:7px;margin-top:7px;
-  padding:8px 11px;border-radius:8px;font-size:.78rem;font-weight:600}
+  padding:8px 11px;border-radius:8px;font-size:.88rem;font-weight:600}
 .fb.show{display:flex}
 .fb.ok{background:var(--ok-bg);color:var(--ok-txt)}
 .fb.no{background:var(--no-bg);color:var(--no-txt)}
 .fb-en{font-family:'Inter',sans-serif;direction:ltr;font-size:.76rem}
 .fb-ar{font-family:'Cairo',sans-serif;font-size:.73rem;opacity:.85;margin-top:2px}
 
-/* DRAG DROP */
-.dd-sentence{background:var(--card);border:2px solid var(--bdr);border-radius:12px;
-  padding:14px;margin-bottom:10px;transition:border-color .3s}
-.dd-sentence.dd-ok{border-color:var(--g);background:var(--ok-bg)}
-.dd-sentence.dd-no{border-color:var(--r);background:var(--no-bg)}
-.dd-top{font-family:'Inter',sans-serif;direction:ltr;text-align:left;
-  font-size:.88rem;color:var(--navy);font-weight:600;margin-bottom:10px;line-height:1.8}
-.dd-blank{display:inline-block;min-width:100px;height:28px;
-  border-bottom:2px dashed var(--b);margin:0 4px;vertical-align:middle;
-  background:rgba(28,176,246,.05);border-radius:4px;padding:0 6px;
-  font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;text-align:center;line-height:26px;color:var(--b);font-weight:700}
-.dd-blank.filled{border-style:solid;background:rgba(28,176,246,.1)}
-.dd-blank.correct{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
-.dd-blank.wrong{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
-.dd-words{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.dd-word{background:#fff;border:2px solid var(--b);border-radius:8px;
-  padding:5px 12px;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;
-  color:var(--b);cursor:pointer;transition:all .2s;user-select:none}
-.dd-word:hover{background:var(--b);color:#fff}
-.dd-word.used{opacity:.3;pointer-events:none;background:#f5f5f5;border-color:#ccc;color:#999}
+/* WORD ORDER */
+.wo-card{background:var(--card);border:2px solid var(--bdr);border-radius:14px;
+  padding:14px;margin-bottom:12px;transition:border-color .3s}
+.wo-card.wo-ok{border-color:var(--g);background:var(--ok-bg)}
+.wo-card.wo-no{border-color:var(--r);background:var(--no-bg)}
+.wo-prompt{font-family:'Cairo',sans-serif;font-size:.88rem;color:var(--muted);margin-bottom:10px}
+.wo-answer{min-height:44px;border:2px dashed var(--b);border-radius:10px;
+  padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;
+  background:rgba(28,176,246,.03);transition:border-color .3s;align-items:center}
+.wo-answer.has-words{border-style:solid;background:rgba(28,176,246,.06)}
+.wo-answer.wo-correct{border-color:var(--g);background:var(--ok-bg)}
+.wo-answer.wo-wrong{border-color:var(--r);background:var(--no-bg);animation:shake .3s ease}
+@keyframes shake{0%,100%{transform:none}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.wo-chip{background:var(--navy);color:#fff;border:none;border-radius:8px;
+  padding:7px 13px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;
+  cursor:pointer;transition:all .15s;user-select:none}
+.wo-chip:hover{background:var(--navy2);transform:scale(1.04)}
+.wo-chip.placed{background:var(--b);color:#fff}
+.wo-chip.placed:hover{background:var(--bd)}
+.wo-bank{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.wo-bank-chip{background:#fff;border:2px solid var(--navy);border-radius:8px;
+  padding:7px 13px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;
+  color:var(--navy);cursor:pointer;transition:all .15s;user-select:none}
+.wo-bank-chip:hover{background:var(--navy);color:#fff}
+.wo-bank-chip.used{opacity:.25;pointer-events:none}
+.wo-check{background:var(--g);color:#fff;border:none;border-radius:9px;
+  padding:9px 20px;font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;
+  cursor:pointer;transition:.15s}
+.wo-check:hover{background:var(--gd)}
+.wo-clear{background:#fff;border:2px solid var(--bdr);border-radius:9px;
+  padding:9px 14px;font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;
+  color:var(--muted);cursor:pointer;margin-right:8px;transition:.15s}
+.wo-clear:hover{border-color:var(--r);color:var(--r)}
+.wo-reveal{background:#F0FDF4;border:1.5px solid #BCE3C8;border-radius:9px;
+  padding:10px 13px;margin-top:8px;animation:ddpop .25s ease}
+.wo-tr{font-family:'Cairo',sans-serif;font-weight:700;color:#15803D;font-size:.9rem}
+.wo-note{font-family:'Cairo',sans-serif;font-size:.78rem;color:#166534;margin-top:3px}
+.wo-wrong-reveal{background:var(--no-bg);border:1.5px solid #FFBDBD;border-radius:9px;
+  padding:10px 13px;margin-top:8px}
+.wo-hint-btn{background:#FFF7ED;border:2px solid var(--o);border-radius:9px;
+  padding:9px 14px;font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;
+  color:var(--o);cursor:pointer;transition:.15s;display:flex;align-items:center;gap:5px}
+.wo-hint-btn:hover:not(:disabled){background:#FED7AA}
+.wo-hint-btn:disabled{opacity:.35;cursor:not-allowed;border-color:#ccc;color:#999;background:#f5f5f5}
+.wo-wrong-ans{font-family:'Inter',sans-serif;direction:ltr;font-weight:700;color:#CC0000;font-size:.88rem}
+.wo-wrong-ar{font-family:'Cairo',sans-serif;font-size:.78rem;color:#CC0000;margin-top:3px}
 .dd-check{margin-top:10px;text-align:right}
 .dd-reveal{background:#F0FDF4;border:1.5px solid #BCE3C8;border-radius:8px;padding:8px 12px;margin:8px 0;animation:ddpop .25s ease}
 @keyframes ddpop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
@@ -834,6 +871,15 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <div class="gptxt" id="gptxt">0 من 4 دروس مكتملة</div>
     <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
   </div>
+  <!-- WELCOME BANNER (shown only on first visit) -->
+  <div id="welcome-banner" style="display:none;background:linear-gradient(135deg,#0EA5E9,#0369A1);border-radius:16px;padding:18px 20px;margin-bottom:20px;position:relative">
+    <button onclick="dismiss_welcome()" style="position:absolute;top:10px;left:12px;background:rgba(255,255,255,.2);border:none;border-radius:50%;width:28px;height:28px;color:#fff;font-size:1rem;cursor:pointer;font-weight:700;line-height:1">✕</button>
+    <div style="font-size:2rem;margin-bottom:8px">👋</div>
+    <h2 style="color:#fff;font-size:1.15rem;font-weight:900;margin-bottom:6px">مرحباً بك في مركز التدريب</h2>
+    <p style="color:rgba(255,255,255,.9);font-size:.92rem;line-height:1.7;margin-bottom:14px">ابدأ من <strong style="color:#FFC800">الدرس الأول</strong> في الأسفل، وتقدّم بالترتيب — كل درس يبني على السابق. بعد كل درس تجد تماريَن وترتيب جُمل وكلمات للاستماع.</p>
+    <button onclick="dismiss_welcome_start()" style="background:#FFC800;color:#1A2744;border:none;border-radius:10px;padding:10px 22px;font-family:'Cairo',sans-serif;font-weight:900;font-size:.95rem;cursor:pointer">ابدأ الدرس الأول ←</button>
+  </div>
+
   <div class="lbl">الدروس</div>
   <div class="grid2">
     <div class="lcard" id="hc-l1" onclick="open_lesson('l1')">
@@ -944,7 +990,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
       <span class="ti">🎯</span><span>تدرّب</span>
     </button>
     <button class="tab" id="tab-drag" onclick="sw_tab('drag')">
-      <span class="ti">✋</span><span>سحب</span>
+      <span class="ti">🔤</span><span>رتّب الجملة</span>
     </button>
     <button class="tab" id="tab-test" onclick="sw_tab('test')">
       <span class="ti">🏆</span><span>اختبر</span>
@@ -1344,7 +1390,49 @@ l4:[
 ]
 };
 
-// PRACTICE per lesson (mix of types)
+// WORD ORDER data per lesson — رتّب الكلمات لتكوين جملة صحيحة
+const WO = {
+l1:[
+  {words:["Jane","played","baseball","yesterday"],ans:"Jane played baseball yesterday.",tr:"لعبت جين البيسبول أمس.",ar:"yesterday = ماضٍ → played"},
+  {words:["Tom","didn't","clean","his","room","last","Saturday"],ans:"Tom didn't clean his room last Saturday.",tr:"لم ينظّف توم غرفته السبت الماضي.",ar:"didn't + الفعل الأصلي بدون -ed"},
+  {words:["Did","you","watch","the","game","?"],ans:"Did you watch the game ?",tr:"هل شاهدت المباراة؟",ar:"Did + الفعل الأصلي في السؤال"},
+  {words:["Bob","visited","Chicago","last","year"],ans:"Bob visited Chicago last year.",tr:"زار بوب شيكاغو العام الماضي.",ar:"last year = ماضٍ → visited"},
+  {words:["There","are","eleven","players","on","a","football","team"],ans:"There are eleven players on a football team.",tr:"يوجد أحد عشر لاعباً في فريق كرة القدم.",ar:"team = الفريق"},
+  {words:["She","didn't","visit","New","York","last","month"],ans:"She didn't visit New York last month.",tr:"لم تزُر نيويورك الشهر الماضي.",ar:"didn't + visit (بدون -ed)"},
+  {words:["Did","Bill","play","football","yesterday","afternoon","?"],ans:"Did Bill play football yesterday afternoon ?",tr:"هل لعب بيل كرة القدم مساء أمس؟",ar:"Did + الفعل المجرد"},
+  {words:["Houston","is","a","big","city","in","Texas"],ans:"Houston is a big city in Texas.",tr:"هيوستن مدينة كبيرة في تكساس.",ar:"مدينة كبيرة"},
+],
+l2:[
+  {words:["A","soldier","works","on","an","Army","post"],ans:"A soldier works on an Army post.",tr:"يعمل الجندي في ثكنة الجيش.",ar:"Army → post"},
+  {words:["Airmen","always","salute","officers"],ans:"Airmen always salute officers.",tr:"يُحيّي جنود سلاح الجو الضباط دائماً.",ar:"salute = يُحيّي عسكرياً"},
+  {words:["I","spoke","to","the","teacher","yesterday"],ans:"I spoke to the teacher yesterday.",tr:"تحدّثت إلى المعلّم أمس.",ar:"speak → spoke (شاذ)"},
+  {words:["Sgt.","Jones","flew","to","LA","last","week"],ans:"Sgt. Jones flew to LA last week.",tr:"سافر الرقيب جونز جواً الأسبوع الماضي.",ar:"fly → flew (شاذ)"},
+  {words:["I","left","class","early","yesterday"],ans:"I left class early yesterday.",tr:"غادرت الصف مبكراً أمس.",ar:"leave → left (شاذ)"},
+  {words:["Please","bring","your","books","to","class"],ans:"Please bring your books to class.",tr:"أحضر كتبك إلى الصف.",ar:"bring = أحضر"},
+  {words:["She","didn't","have","her","name","tag","on"],ans:"She didn't have her name tag on.",tr:"لم تكن ترتدي بطاقة اسمها.",ar:"name tag = بطاقة الاسم"},
+  {words:["It's","8:50","p.m.","In","military","time","it's","2050"],ans:"It's 8:50 p.m. In military time it's 2050.",tr:"الساعة 8:50 مساءً = 2050 بالتوقيت العسكري.",ar:"8+12=20 → 2050"},
+],
+l3:[
+  {words:["Students","must","listen","to","the","teacher"],ans:"Students must listen to the teacher.",tr:"يجب على الطلاب الاستماع للمعلّم.",ar:"must + فعل مجرد"},
+  {words:["You","must","not","smoke","here"],ans:"You must not smoke here.",tr:"ممنوع التدخين هنا.",ar:"must not = ممنوع"},
+  {words:["May","I","go","to","the","library","?"],ans:"May I go to the library ?",tr:"هل تسمح لي بالذهاب إلى المكتبة؟",ar:"May I = طلب إذن رسمي"},
+  {words:["I","can't","swim","very","well"],ans:"I can't swim very well.",tr:"لا أستطيع السباحة جيداً.",ar:"can't + well"},
+  {words:["Soldiers","must","wear","uniforms","to","class"],ans:"Soldiers must wear uniforms to class.",tr:"يجب على الجنود لبس الزي العسكري.",ar:"must + الفعل الأصلي"},
+  {words:["A","suit","is","slacks","and","a","jacket"],ans:"A suit is slacks and a jacket.",tr:"البدلة = بنطلون + جاكيت.",ar:"suit = slacks + jacket"},
+  {words:["Pvt","Jones","can","speak","four","languages"],ans:"Pvt Jones can speak four languages.",tr:"يستطيع الجندي جونز التحدث بأربع لغات.",ar:"can + الفعل الأصلي"},
+  {words:["Do","not","smoke","=","You","must","not","smoke"],ans:"Do not smoke = You must not smoke.",tr:"ممنوع التدخين = يجب ألا تدخّن.",ar:"Do not = must not"},
+],
+l4:[
+  {words:["Autumn","and","fall","are","the","same","season"],ans:"Autumn and fall are the same season.",tr:"Autumn و fall اسمان لنفس الفصل.",ar:"نفس الفصل، كلمتان"},
+  {words:["December","January","and","February","are","winter","months"],ans:"December January and February are winter months.",tr:"ديسمبر ويناير وفبراير أشهر الشتاء.",ar:"الشتاء ❄️"},
+  {words:["Today","is","Monday","The","day","after","tomorrow","is","Wednesday"],ans:"Today is Monday The day after tomorrow is Wednesday.",tr:"اليوم الاثنين، بعد الغد الأربعاء.",ar:"بعد الغد = +يومين"},
+  {words:["I","like","to","listen","to","music","on","the","radio"],ans:"I like to listen to music on the radio.",tr:"أحبّ الاستماع إلى الموسيقى على الراديو.",ar:"listen to music"},
+  {words:["Catherine","listens","to","CDs","on","her","headphones"],ans:"Catherine listens to CDs on her headphones.",tr:"تستمع كاثرين للأقراص على سماعاتها.",ar:"headphones = للـ CDs"},
+  {words:["It's","very","warm","I","want","to","take","off","my","sweater"],ans:"It's very warm I want to take off my sweater.",tr:"الجو دافئ، أريد خلع سترتي.",ar:"take off = يخلع"},
+  {words:["How","much","does","this","pen","cost","?"],ans:"How much does this pen cost ?",tr:"كم يكلّف هذا القلم؟",ar:"How much + does + cost"},
+  {words:["John","works","at","a","store","He's","a","clerk"],ans:"John works at a store He's a clerk.",tr:"يعمل جون في متجر، هو موظف متجر.",ar:"store worker = clerk"},
+]
+};
 const PR = {
 l1:[
   {q:"Jane _______ baseball yesterday.",o:["is playing","playing","played","plays"],a:2,en:"yesterday → simple past",ar:"أمس = الماضي"},
@@ -1427,7 +1515,6 @@ function track_screen(id){
   gtag('event','section_view',{section:name});
   _curScreen=id;_screenStart=now;
 }
-// Flush the time on the last section when the student leaves/hides the page
 function _flush_screen_time(){
   if(typeof gtag!=='function'||!_curScreen||!_screenStart)return;
   const secs=Math.round((Date.now()-_screenStart)/1000);
@@ -2045,97 +2132,145 @@ function build_quiz(elId,qs,prefix){
 }
 
 // ═══════════════════════════════════════
-// BUILD DRAG-DROP
+// BUILD WORD ORDER
 // ═══════════════════════════════════════
 function build_dd(lk){
   const el=document.getElementById('ph-drag');
-  el.innerHTML=`<div style="background:#FFF7ED;border:2px solid #FED7AA;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.8rem;font-family:'Cairo',sans-serif;color:#92400E">
-    💡 اختر الكلمة الصحيحة لملء الفراغ — عند الإجابة الصحيحة تظهر الترجمة للتعلّم
+  el.innerHTML=`<div style="background:#EFF6FF;border:2px solid #BFDBFE;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.88rem;font-family:'Cairo',sans-serif;color:#1E40AF">
+    ✋ رتّب الكلمات لتكوين جملة صحيحة — اضغط الكلمات بالترتيب الصحيح
   </div>`;
 
-  const items=DD[lk];
+  const items=WO[lk];
   items.forEach((item,idx)=>{
-    const div=document.createElement('div');div.className='dd-sentence';div.id=`dd${idx}`;
-
-    // Build sentence with blank
-    const parts=item.sent.split('_____');
-    const top=document.createElement('div');top.className='dd-top';
-    top.appendChild(document.createTextNode(parts[0]));
-    const blank=document.createElement('span');blank.className='dd-blank';blank.id=`ddb${idx}`;
-    blank.textContent='؟';
-    blank.onclick=()=>fill_blank(idx,item);
-    top.appendChild(blank);
-    if(parts[1])top.appendChild(document.createTextNode(parts[1]));
-
-    div.appendChild(top);
-
-    // Reveal container — translation appears here ONLY after a correct answer
-    const rev=document.createElement('div');rev.id=`ddrev${idx}`;
-    div.appendChild(rev);
-
-    // Word bank
-    const bank=document.createElement('div');bank.className='dd-words';bank.id=`ddw${idx}`;
     const shuffled=[...item.words].sort(()=>Math.random()-.5);
-    shuffled.forEach(w=>{
-      const btn=document.createElement('button');btn.className='dd-word';btn.id=`ddwb${idx}_${w}`;
-      btn.textContent=w;
-      btn.onclick=()=>select_word(idx,w,item);
-      bank.appendChild(btn);
-    });
-    div.appendChild(bank);
+    const div=document.createElement('div');
+    div.className='wo-card';div.id=`wo${idx}`;
+    div.innerHTML=`
+      <div class="wo-prompt">🔤 رتّب الكلمات:</div>
+      <div class="wo-answer" id="woa${idx}"></div>
+      <div class="wo-bank" id="wob${idx}">
+        ${shuffled.map((w,wi)=>`<button class="wo-bank-chip" id="woc${idx}_${wi}" onclick="wo_pick(${idx},${wi},'${w.replace(/'/g,"\\'")}',${JSON.stringify(item.words.indexOf(w))})">${w}</button>`).join('')}
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <button class="wo-check" onclick="wo_check(${idx},'${item.ans.replace(/'/g,"\\'")}','${item.tr.replace(/'/g,"\\'")}','${item.ar.replace(/'/g,"\\'")}')">✓ تحقق</button>
+        <button class="wo-hint-btn" id="wohint${idx}" onclick="wo_hint(${idx},'${item.ans.replace(/'/g,"\\'")}')">💡 تلميح <span id="wohintc${idx}">٣</span></button>
+      </div>
+      <div id="wofb${idx}"></div>`;
     el.appendChild(div);
   });
 }
 
-let ddActive={idx:null,word:null};
-
-function select_word(idx,word,item){
-  // Deselect previous
-  if(ddActive.idx!==null){
-    const prev=document.getElementById(`ddwb${ddActive.idx}_${ddActive.word}`);
-    if(prev){prev.style.background='';prev.style.color='';}
+// placed = array of {wi, word} in order clicked
+const woState={};
+function wo_pick(idx,wi,word){
+  if(!woState[idx])woState[idx]=[];
+  // if already placed, remove it
+  const existing=woState[idx].findIndex(x=>x.wi===wi);
+  if(existing!==-1){
+    woState[idx].splice(existing,1);
+    document.getElementById(`woc${idx}_${wi}`).classList.remove('used');
+  } else {
+    woState[idx].push({wi,word});
+    document.getElementById(`woc${idx}_${wi}`).classList.add('used');
   }
-  ddActive={idx,word};
-  const btn=document.getElementById(`ddwb${idx}_${word}`);
-  if(btn){btn.style.background='var(--b)';btn.style.color='#fff';}
-
-  // Auto-fill blank
-  fill_blank(idx,item);
+  // render answer zone
+  const ans=document.getElementById(`woa${idx}`);
+  if(woState[idx].length===0){
+    ans.innerHTML='';ans.classList.remove('has-words');
+  } else {
+    ans.classList.add('has-words');
+    ans.innerHTML=woState[idx].map((x,pos)=>
+      `<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`
+    ).join('');
+  }
+}
+function wo_remove(idx,wi){
+  wo_pick(idx,wi,''); // toggle off
+  // re-render by refreshing state
+  const ans=document.getElementById(`woa${idx}`);
+  if(!woState[idx]||woState[idx].length===0){ans.innerHTML='';ans.classList.remove('has-words');return;}
+  ans.innerHTML=woState[idx].map(x=>`<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`).join('');
+}
+function wo_clear(idx,shuffledJson){
+  woState[idx]=[];
+  const ans=document.getElementById(`woa${idx}`);
+  ans.innerHTML='';ans.classList.remove('has-words');
+  // re-enable all chips
+  const shuffled=shuffledJson;
+  document.querySelectorAll(`[id^="woc${idx}_"]`).forEach(b=>b.classList.remove('used'));
+  document.getElementById(`wofb${idx}`).innerHTML='';
+  const card=document.getElementById(`wo${idx}`);
+  card.className='wo-card';
+  ans.className='wo-answer';
+}
+function wo_check(idx,correct,tr,ar){
+  if(!woState[idx]||woState[idx].length===0){
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-wrong-reveal"><div class="wo-wrong-ar">⚠️ رتّب الكلمات أولاً</div></div>`;
+    return;
+  }
+  const student=woState[idx].map(x=>x.word).join(' ');
+  // normalize: remove trailing punctuation for comparison
+  const norm=s=>s.replace(/\s*[.?!]+\s*$/,'').replace(/\s+/g,' ').trim().toLowerCase();
+  const isOk=norm(student)===norm(correct);
+  const card=document.getElementById(`wo${idx}`);
+  const ans=document.getElementById(`woa${idx}`);
+  if(isOk){
+    card.className='wo-card wo-ok';
+    ans.className='wo-answer wo-correct';
+    document.querySelectorAll(`[id^="woc${idx}_"]`).forEach(b=>b.disabled=true);
+    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+    say(correct.replace(/[?!.]/g,''));
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-reveal">
+      <div class="wo-tr">✅ ${tr}</div>
+      ${ar?`<div class="wo-note">💡 ${ar}</div>`:''}
+    </div>`;
+  } else {
+    ans.className='wo-answer wo-wrong';
+    setTimeout(()=>{ans.className='wo-answer has-words';},400);
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-wrong-reveal">
+      <div class="wo-wrong-ar">❌ الترتيب غير صحيح — حاول مرة أخرى</div>
+      <div class="wo-wrong-ans" style="margin-top:6px;font-size:.78rem;color:#999">💡 الجملة لها ${correct.split(' ').length} كلمة</div>
+    </div>`;
+  }
 }
 
-function fill_blank(idx,item){
-  if(!ddActive.word||ddActive.idx!==idx)return;
-  const word=ddActive.word;
-  const correct=item.blank;
-  const blank=document.getElementById(`ddb${idx}`);
-  const card=document.getElementById(`dd${idx}`);
-  const rev=document.getElementById(`ddrev${idx}`);
-  const isOk=word.toLowerCase()===correct.toLowerCase();
+// hint state: how many hints used per card
+const woHints={};
+function wo_hint(idx,correct){
+  if(!woHints[idx])woHints[idx]=0;
+  if(woHints[idx]>=3)return;
 
-  if(isOk){
-    // Correct → lock it and reveal the translation for learning
-    blank.textContent=word;
-    blank.className='dd-blank filled correct';
-    card.className='dd-sentence dd-ok';
-    item.words.forEach(w=>{
-      const wb=document.getElementById(`ddwb${idx}_${w}`);
-      if(wb)wb.classList.add('used');
-    });
-    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-    rev.innerHTML=`<div class="dd-reveal">
-      <div class="dd-tr">📖 ${item.tr||''}</div>
-      ${item.ar?`<div class="dd-note">💡 ${item.ar}</div>`:''}
-    </div>`;
-  }else{
-    // Wrong → let the student try again, do NOT reveal the answer
-    blank.textContent='؟';
-    blank.className='dd-blank';
-    card.className='dd-sentence';
-    const wb=document.getElementById(`ddwb${idx}_${word}`);
-    if(wb){wb.style.background='';wb.style.color='';}
-    rev.innerHTML=`<div class="dd-retry">❌ ليست صحيحة — جرّب كلمة أخرى</div>`;
+  const words=correct.replace(/\s*[.?!]+\s*$/,'').split(' ');
+  const nextPos=woHints[idx];
+  const wordToReveal=words[nextPos];
+
+  // find this word's chip in the bank (first unused match)
+  const chips=document.querySelectorAll(`[id^="woc${idx}_"]`);
+  let foundChip=null;
+  chips.forEach(chip=>{
+    if(!foundChip&&!chip.classList.contains('used')&&chip.textContent.trim()===wordToReveal){
+      foundChip=chip;
+    }
+  });
+
+  if(foundChip){
+    foundChip.style.background='var(--o)';
+    foundChip.style.color='#fff';
+    foundChip.style.borderColor='var(--o)';
+    setTimeout(()=>{ foundChip.click(); },400);
   }
-  ddActive={idx:null,word:null};
+
+  woHints[idx]++;
+  const remaining=3-woHints[idx];
+  const hintBtn=document.getElementById(`wohint${idx}`);
+  const countEl=document.getElementById(`wohintc${idx}`);
+  const nums=['٣','٢','١'];
+  if(remaining===0){
+    hintBtn.disabled=true;
+    hintBtn.innerHTML='💡 انتهت التلميحات';
+  } else {
+    if(countEl)countEl.textContent=nums[woHints[idx]]||'١';
+  }
 }
 
 // ═══════════════════════════════════════
@@ -2971,12 +3106,56 @@ function load_progress(){
   upd_global();
 }
 if(!STORAGE_OK)show_storage_warning();
+
+// ─── STREAK COMEBACK BANNER ───
+const STREAK_DATE_KEY='alc_last_streak_date';
+function check_streak_comeback(){
+  if(!STORAGE_OK)return;
+  try{
+    const last=localStorage.getItem(STREAK_DATE_KEY);
+    const today=new Date().toDateString();
+    if(last && last!==today && STK===0){
+      // streak was broken — show encouragement
+      const home=document.getElementById('home');
+      const banner=document.createElement('div');
+      banner.className='streak-comeback';
+      banner.innerHTML=`<span class="sc-ico">💪</span>
+        <div class="sc-txt"><h3>عودة مرحباً!</h3>
+        <p>انتهى الـ streak، لكن الأهم أنك رجعت — ابدأ streak جديداً اليوم.</p></div>
+        <button class="sc-close" onclick="this.parentElement.remove()">✕</button>`;
+      home.insertBefore(banner, home.firstChild);
+    }
+    localStorage.setItem(STREAK_DATE_KEY,today);
+  }catch(e){}
+}
+
 function reset_progress(){
-  if(!confirm('هل تريد مسح كل تقدّمك والبدء من جديد؟'))return;
+  if(!confirm('⚠️ تحذير: سيُمسح كل تقدّمك (الدرجات والـ XP والـ Streak) ولا يمكن التراجع.\n\nهل أنت متأكد تماماً؟'))return;
   try{localStorage.removeItem(PKEY);}catch(e){}
   location.reload();
 }
+
+// ─── WELCOME BANNER ───
+const WKEY='alc_welcomed';
+function show_welcome_if_new(){
+  try{
+    const seen=localStorage.getItem(WKEY);
+    if(!seen){
+      document.getElementById('welcome-banner').style.display='block';
+    }
+  }catch(e){}
+}
+function dismiss_welcome(){
+  document.getElementById('welcome-banner').style.display='none';
+  try{localStorage.setItem(WKEY,'1');}catch(e){}
+}
+function dismiss_welcome_start(){
+  dismiss_welcome();
+  open_lesson('l1');
+}
+show_welcome_if_new();
 load_progress();
+check_streak_comeback();
 track_screen('home');
 </script>
 

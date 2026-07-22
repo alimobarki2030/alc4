@@ -282,6 +282,11 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .wo-note{font-family:'Cairo',sans-serif;font-size:.78rem;color:#166534;margin-top:3px}
 .wo-wrong-reveal{background:var(--no-bg);border:1.5px solid #FFBDBD;border-radius:9px;
   padding:10px 13px;margin-top:8px}
+.wo-hint-btn{background:#FFF7ED;border:2px solid var(--o);border-radius:9px;
+  padding:9px 14px;font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;
+  color:var(--o);cursor:pointer;transition:.15s;display:flex;align-items:center;gap:5px}
+.wo-hint-btn:hover:not(:disabled){background:#FED7AA}
+.wo-hint-btn:disabled{opacity:.35;cursor:not-allowed;border-color:#ccc;color:#999;background:#f5f5f5}
 .wo-wrong-ans{font-family:'Inter',sans-serif;direction:ltr;font-weight:700;color:#CC0000;font-size:.88rem}
 .wo-wrong-ar{font-family:'Cairo',sans-serif;font-size:.78rem;color:#CC0000;margin-top:3px}
 .dd-check{margin-top:10px;text-align:right}
@@ -2114,9 +2119,9 @@ function build_dd(lk){
       <div class="wo-bank" id="wob${idx}">
         ${shuffled.map((w,wi)=>`<button class="wo-bank-chip" id="woc${idx}_${wi}" onclick="wo_pick(${idx},${wi},'${w.replace(/'/g,"\\'")}',${JSON.stringify(item.words.indexOf(w))})">${w}</button>`).join('')}
       </div>
-      <div>
-        <button class="wo-clear" onclick="wo_clear(${idx},${JSON.stringify(shuffled).replace(/'/g,"&apos;")})">↺ مسح</button>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
         <button class="wo-check" onclick="wo_check(${idx},'${item.ans.replace(/'/g,"\\'")}','${item.tr.replace(/'/g,"\\'")}','${item.ar.replace(/'/g,"\\'")}')">✓ تحقق</button>
+        <button class="wo-hint-btn" id="wohint${idx}" onclick="wo_hint(${idx},'${item.ans.replace(/'/g,"\\'")}')">💡 تلميح <span id="wohintc${idx}">٣</span></button>
       </div>
       <div id="wofb${idx}"></div>`;
     el.appendChild(div);
@@ -2194,6 +2199,45 @@ function wo_check(idx,correct,tr,ar){
       <div class="wo-wrong-ar">❌ الترتيب غير صحيح — حاول مرة أخرى</div>
       <div class="wo-wrong-ans" style="margin-top:6px;font-size:.78rem;color:#999">💡 الجملة لها ${correct.split(' ').length} كلمة</div>
     </div>`;
+  }
+}
+
+// hint state: how many hints used per card
+const woHints={};
+function wo_hint(idx,correct){
+  if(!woHints[idx])woHints[idx]=0;
+  if(woHints[idx]>=3)return;
+
+  const words=correct.replace(/\s*[.?!]+\s*$/,'').split(' ');
+  const nextPos=woHints[idx];
+  const wordToReveal=words[nextPos];
+
+  // find this word's chip in the bank (first unused match)
+  const chips=document.querySelectorAll(`[id^="woc${idx}_"]`);
+  let foundChip=null;
+  chips.forEach(chip=>{
+    if(!foundChip&&!chip.classList.contains('used')&&chip.textContent.trim()===wordToReveal){
+      foundChip=chip;
+    }
+  });
+
+  if(foundChip){
+    foundChip.style.background='var(--o)';
+    foundChip.style.color='#fff';
+    foundChip.style.borderColor='var(--o)';
+    setTimeout(()=>{ foundChip.click(); },400);
+  }
+
+  woHints[idx]++;
+  const remaining=3-woHints[idx];
+  const hintBtn=document.getElementById(`wohint${idx}`);
+  const countEl=document.getElementById(`wohintc${idx}`);
+  const nums=['٣','٢','١'];
+  if(remaining===0){
+    hintBtn.disabled=true;
+    hintBtn.innerHTML='💡 انتهت التلميحات';
+  } else {
+    if(countEl)countEl.textContent=nums[woHints[idx]]||'١';
   }
 }
 

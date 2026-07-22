@@ -488,7 +488,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .prep-toggle{display:flex;gap:6px;background:var(--card);border:2px solid var(--bdr);border-radius:12px;padding:5px;margin-bottom:14px}
 .prep-toggle button{flex:1;padding:10px;border:none;border-radius:8px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;background:transparent;color:var(--muted);transition:.2s}
 .prep-toggle button.on{background:var(--navy);color:#fff}
-.prep-hint{text-align:center;font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);margin-bottom:6px}
+.prep-hint{display:block;text-align:center;font-family:'Cairo',sans-serif;font-size:.92rem;font-weight:800;color:var(--navy);background:#EEF2FF;border:2px dashed #C7D2FE;border-radius:12px;padding:11px 14px;margin:0 auto 12px;max-width:440px;animation:tapPulse 1.8s ease-in-out infinite}
 .target-wrap{display:flex;justify-content:center;margin:6px 0 16px}
 .target{position:relative;width:280px;height:280px}
 .ring{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);
@@ -960,7 +960,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <button class="on" id="pt-place" onclick="sw_prep('place')">📍 المكان</button>
     <button id="pt-time" onclick="sw_prep('time')">🕐 الزمن</button>
   </div>
-  <div class="prep-hint">اضغط على أي دائرة في الهدف 👇</div>
+  <div class="prep-hint">👇 اضغط على أيّ لون في الدائرة</div>
   <div class="target-wrap">
     <div class="target">
       <div class="ring ring-in" id="ring-in" onclick="sel_prep('in')"><span>in</span></div>
@@ -1008,7 +1008,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     </div>
   </div>
 
-  <div class="prep-hint">اضغط على أيّ أداة 👇</div>
+  <div class="prep-hint">👇 اضغط على أيّ أداة (a · an · the)</div>
   <div class="art-chips">
     <button class="art-chip" id="art-a" onclick="sel_art('a')">a</button>
     <button class="art-chip" id="art-an" onclick="sel_art('an')">an</button>
@@ -1036,7 +1036,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <h2>أدوات السؤال — WH ❓</h2>
     <p>كل كلمة تسأل عن شيء مختلف — اضغط لتتعلّم</p>
   </div>
-  <div class="prep-hint">اضغط على أيّ أداة 👇</div>
+  <div class="prep-hint">👇 اضغط على أيّ أداة سؤال</div>
   <div class="wh-grid" id="wh-grid"></div>
   <div id="wh-detail"></div>
   <button class="quiz-toggle" id="wh-toggle" onclick="reveal_quiz('wh')">❓ فهمت الفكرة؟ اختبر نفسك ←</button>
@@ -1070,7 +1070,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
       <button class="story-spk" onclick="say('Yesterday I visited my friend')">🔊</button>
       <span class="ar">أمس زرت صديقي.</span></div>
   </div>
-  <div class="prep-hint">اضغط على أيّ كلمة (أو نقطة على الخطّ) 👇</div>
+  <div class="prep-hint">👇 اضغط على أيّ كلمة أو نقطة على الخطّ</div>
   <div class="tm-chips">
     <button class="tm-chip" id="tm-yesterday" onclick="sel_time('yesterday')">yesterday</button>
     <button class="tm-chip" id="tm-last" onclick="sel_time('last')">last</button>
@@ -2280,7 +2280,7 @@ function open_prep(){
   document.getElementById('pt-time').classList.remove('on');
   render_zoom();
   ['in','on','at'].forEach(x=>document.getElementById('ring-'+x).classList.remove('active'));
-  document.getElementById('prep-detail').innerHTML='<div class="tap-hint">👆 اضغط على دائرة (in · on · at) لتظهر الفكرة</div>';
+  document.getElementById('prep-detail').innerHTML='';
   build_prep_quiz();reset_quiz('prep');
 }
 
@@ -2373,7 +2373,7 @@ function open_art(){
   document.getElementById('ascreen').scrollIntoView({behavior:'smooth',block:'start'});
   artSel=null;
   ['a','an','the'].forEach(x=>document.getElementById('art-'+x).classList.remove('active'));
-  document.getElementById('art-detail').innerHTML='<div class="tap-hint">👆 اضغط على أداة (a · an · the) لتظهر الفكرة</div>';
+  document.getElementById('art-detail').innerHTML='';
   build_art_quiz();reset_quiz('art');
 }
 
@@ -2453,7 +2453,7 @@ function open_wh(){
   document.getElementById('wscreen').scrollIntoView({behavior:'smooth',block:'start'});
   whSel=null;
   build_wh_grid();
-  document.getElementById('wh-detail').innerHTML='<div class="tap-hint">👆 اضغط على أيّ أداة سؤال لتظهر الفكرة</div>';
+  document.getElementById('wh-detail').innerHTML='';
   build_wh_quiz();reset_quiz('wh');
 }
 function build_wh_grid(){
@@ -2540,7 +2540,7 @@ function open_time(){
     document.getElementById('tm-'+x).classList.remove('active');
     const dot=document.getElementById('tld-'+x);if(dot)dot.classList.remove('on');
   });
-  document.getElementById('time-detail').innerHTML='<div class="tap-hint">👆 اضغط على أيّ كلمة (yesterday · last · ago) أو نقطة على الخطّ لتظهر الفكرة</div>';
+  document.getElementById('time-detail').innerHTML='';
   build_time_quiz();reset_quiz('time');
 }
 function sel_time(k){

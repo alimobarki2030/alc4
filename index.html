@@ -696,6 +696,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .zoom-cap{background:#EFF6FF;border:1.5px dashed #93C5FD;border-radius:10px;padding:9px 12px;margin-bottom:14px;
   text-align:center;font-family:'Cairo',sans-serif;font-weight:700;font-size:.82rem;color:#1E3A8A}
 .zc{font-family:'Inter',sans-serif;font-weight:800;padding:1px 7px;border-radius:6px;direction:ltr;display:inline-block}
+.zc-seq{font-family:'Inter',sans-serif;font-weight:800;display:inline-block;margin-top:3px}
 .zc.in{background:#DBEAFE;color:#1D4ED8}.zc.on{background:#DCFCE7;color:#15803D}.zc.at{background:#FFEDD5;color:#C2410C}
 /* Reveal quiz only after understanding */
 .quiz-toggle{width:100%;margin:22px 0 6px;padding:15px;border:none;border-radius:12px;background:var(--navy);
@@ -2285,8 +2286,8 @@ function open_prep(){
 }
 
 function render_zoom(){
-  const place='🔎 من الواسع إلى الضيق: <span class="zc in">in</span> أبها ⟵ <span class="zc on">on</span> شارع الفن ⟵ <span class="zc at">at</span> الكوفي';
-  const time='🔎 من الأطول إلى الأدقّ: <span class="zc in">in</span> يوليو ⟵ <span class="zc on">on</span> الاثنين ⟵ <span class="zc at">at</span> الساعة السابعة';
+  const place='🔎 من الواسع إلى الضيق: <span dir="ltr" class="zc-seq"><span class="zc in">in</span> Abha → <span class="zc on">on</span> Al-Fann St → <span class="zc at">at</span> the cafe</span>';
+  const time='🔎 من الأطول إلى الأدقّ: <span dir="ltr" class="zc-seq"><span class="zc in">in</span> July → <span class="zc on">on</span> Monday → <span class="zc at">at</span> 7:00</span>';
   document.getElementById('zoom-cap').innerHTML=(prepMode==='place')?place:time;
 }
 

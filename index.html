@@ -1441,7 +1441,7 @@ l1:[
   {e:'ball',a:'كرة',em:'⚽'},{e:'baseball',a:'البيسبول',em:'⚾'},
   {e:'basketball',a:'كرة السلة',em:'🏀'},{e:'football',a:'كرة القدم الأمريكية',em:'🏈'},
   {e:'soccer',a:'كرة القدم',em:'⚽'},{e:'tennis',a:'التنس',em:'🎾'},
-  {e:'team',a:'فريق',em:'🤝'},{e:'game',a:'مباراة / لعبة',em:'🎮'},
+  {e:'sports',a:'رياضة',em:'🏅'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'مباراة / لعبة',em:'🎮'},
   {e:'restaurant',a:'مطعم',em:'🍽️'},{e:'show',a:'برنامج / عرض',em:'📺'},
   {e:'downtown',a:'وسط المدينة',em:'🌆'},{e:'city',a:'مدينة',em:'🏙️'},
   {e:'break',a:'استراحة',em:'☕'},{e:'again',a:'مرة أخرى',em:'🔁'},
@@ -1455,14 +1455,17 @@ l2:[
   {e:'Lieutenant Colonel (Lt Col)',a:'مقدّم — O-5',em:'🍂'},
   {e:'Colonel (Col)',a:'عقيد — O-6',em:'🦅'},
   {e:'General (Gen)',a:'لواء — O-7',em:'⭐'},
+  {e:'sergeant (Sgt)',a:'رقيب — رتبة أفراد',em:'🎗️'},
   {e:'base',a:'قاعدة عسكرية',em:'🏕️'},{e:'post',a:'ثكنة (معسكر الجيش)',em:'🪖'},
   {e:'naval base',a:'قاعدة بحرية',em:'⚓'},{e:'uniform',a:'الزي العسكري',em:'👔'},
   {e:'name tag',a:'بطاقة الاسم',em:'🪪'},{e:'rank',a:'الرتبة',em:'🎖️'},
-  {e:'stripe',a:'شريط الرتبة',em:'〰️'},{e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},
-  {e:'ID card',a:'بطاقة الهوية',em:'🪪'},{e:'cap',a:'قبعة عسكرية',em:'🧢'},
-  {e:'cigarette / pack',a:'سيجارة / علبة',em:'🚬'},{e:'break',a:'استراحة',em:'☕'},
+  {e:'insignia',a:'الشارة (رمز الرتبة)',em:'🏅'},{e:'stripe',a:'شريط الرتبة',em:'〰️'},
+  {e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},{e:'ID card',a:'بطاقة الهوية',em:'🪪'},
+  {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'cigarette / pack',a:'سيجارة / علبة',em:'🚬'},
+  {e:'smoke',a:'يُدخّن',em:'💨'},{e:'break',a:'استراحة',em:'☕'},
 ],
 l3:[
+  {e:'clothes',a:'ملابس',em:'👕'},
   {e:'dress',a:'فستان',em:'👗'},{e:'skirt',a:'تنورة',em:'👗'},
   {e:'blouse',a:'بلوزة',em:'👚'},{e:'stockings',a:'جوارب طويلة',em:'🧦'},
   {e:'sweater',a:'بلوزة صوف',em:'🧥'},{e:'scarf',a:'وشاح',em:'🧣'},
@@ -1473,6 +1476,8 @@ l3:[
   {e:'tie / necktie',a:'ربطة عنق',em:'👔'},{e:'belt',a:'حزام',em:'🔗'},
   {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'jacket / coat',a:'جاكيت / معطف',em:'🧥'},
   {e:'suit',a:'بدلة = jacket + slacks',em:'🤵'},{e:'shorts',a:'شورت قصير',em:'🩳'},
+  {e:'wear → wore',a:'يرتدي → ارتدى',em:'👔'},{e:'put on → put on',a:'يلبس → لبِس',em:'🧥'},
+  {e:'take off → took off',a:'يخلع → خلع',em:'🧤'},{e:'wake up → woke up',a:'يستيقظ → استيقظ',em:'⏰'},
 ],
 l4:[
   {e:'spring',a:'الربيع — مارس أبريل مايو',em:'🌸'},
@@ -1487,6 +1492,11 @@ l4:[
   {e:'this / these',a:'هذا / هؤلاء (قريب)',em:'👆'},
   {e:'that / those',a:'ذلك / أولئك (بعيد)',em:'👉'},
   {e:'How much?',a:'كم ثمنه؟',em:'💰'},{e:'sell → sold',a:'يبيع → باع',em:'🏷️'},
+  {e:'colors',a:'الألوان',em:'🎨'},
+  {e:'red',a:'أحمر',em:'🔴'},{e:'blue',a:'أزرق',em:'🔵'},{e:'green',a:'أخضر',em:'🟢'},
+  {e:'yellow',a:'أصفر',em:'🟡'},{e:'orange',a:'برتقالي',em:'🟠'},{e:'purple',a:'بنفسجي',em:'🟣'},
+  {e:'brown',a:'بنّي',em:'🟤'},{e:'black',a:'أسود',em:'⚫'},{e:'white',a:'أبيض',em:'⬜'},
+  {e:'gray',a:'رمادي',em:'🩶'},{e:'pink',a:'وردي',em:'🩷'},
 ]
 };
 
@@ -2565,10 +2575,14 @@ const SPELL_LESSONS=[
     {e:'dress',a:'فستان',em:'👗'},{e:'shirt',a:'قميص',em:'👔'},{e:'shoes',a:'حذاء',em:'👟'},
     {e:'socks',a:'جوارب',em:'🧦'},{e:'belt',a:'حزام',em:'🔗'},{e:'coat',a:'معطف',em:'🧥'},
     {e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'}]},
-  {t:'📕 Lesson 4 — الفصول والألوان',w:[
+  {t:'📕 Lesson 4 — الفصول والطقس',w:[
     {e:'spring',a:'الربيع',em:'🌸'},{e:'summer',a:'الصيف',em:'☀️'},{e:'winter',a:'الشتاء',em:'❄️'},
     {e:'music',a:'موسيقى',em:'🎵'},{e:'radio',a:'راديو',em:'📻'},{e:'store',a:'متجر',em:'🏪'},
-    {e:'warm',a:'دافئ',em:'🌡️'},{e:'cold',a:'بارد',em:'🥶'}]}
+    {e:'warm',a:'دافئ',em:'🌡️'},{e:'cold',a:'بارد',em:'🥶'}]},
+  {t:'🎨 Lesson 5 — الألوان',w:[
+    {e:'red',a:'أحمر',em:'🔴'},{e:'blue',a:'أزرق',em:'🔵'},{e:'green',a:'أخضر',em:'🟢'},
+    {e:'black',a:'أسود',em:'⚫'},{e:'white',a:'أبيض',em:'⬜'},{e:'brown',a:'بنّي',em:'🟤'},
+    {e:'pink',a:'وردي',em:'🩷'},{e:'gray',a:'رمادي',em:'🩶'}]}
 ];
 let spellWords=[],spellIdx=0,spellTries=0,spellHint=0,spellScore=0;
 

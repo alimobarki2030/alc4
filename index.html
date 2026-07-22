@@ -369,6 +369,17 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .vcard .vs{position:absolute;top:7px;left:7px;background:var(--b);border:none;border-radius:6px;
   width:24px;height:24px;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .vcard .vs:hover{background:var(--bd)}
+.past-sec{background:#F5F3FF;border:2px solid #DDD6FE;border-radius:14px;padding:14px;margin-top:16px}
+.past-h{font-family:'Cairo',sans-serif;font-weight:900;color:#5B21B6;font-size:1rem;text-align:center;margin-bottom:3px}
+.past-note{font-family:'Cairo',sans-serif;font-size:.72rem;color:var(--muted);text-align:center;margin-bottom:11px}
+.past-row{background:#fff;border-radius:10px;padding:9px 12px;margin-bottom:8px}
+.past-row:last-child{margin-bottom:0}
+.pr-forms{display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif;font-weight:800;font-size:1rem}
+.pr-base{color:var(--navy);display:inline-flex;align-items:center;gap:3px}
+.pr-past{color:#C2410C;display:inline-flex;align-items:center;gap:3px}
+.pr-arrow{color:var(--muted)}
+.pr-spk{background:none;border:none;cursor:pointer;font-size:.82rem;padding:0}
+.pr-ar{text-align:center;font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin-top:5px}
 
 /* Grammar cards */
 .gcard{background:var(--card);border-radius:14px;border:2px solid var(--bdr);
@@ -697,6 +708,14 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   text-align:center;font-family:'Cairo',sans-serif;font-weight:700;font-size:.82rem;color:#1E3A8A}
 .zc{font-family:'Inter',sans-serif;font-weight:800;padding:1px 7px;border-radius:6px;direction:ltr;display:inline-block}
 .zc-seq{font-family:'Inter',sans-serif;font-weight:800;display:inline-block;margin-top:3px}
+.except-box{background:#FFFBEB;border:2px solid #FCD34D;border-radius:14px;padding:14px;margin-top:14px}
+.except-h{font-family:'Cairo',sans-serif;font-weight:900;color:#B45309;font-size:.95rem;text-align:center;margin-bottom:4px}
+.except-note{font-family:'Cairo',sans-serif;font-size:.75rem;color:#92400E;text-align:center;margin-bottom:12px;line-height:1.6}
+.except-row{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy)}
+.except-ar{text-align:center;font-family:'Cairo',sans-serif;font-size:.8rem;color:#78350F;margin:3px 0 12px}
+.except-ar:last-child{margin-bottom:0}
+.ex-spk{background:none;border:none;cursor:pointer;font-size:.85rem;padding:0}
+.ex-warn{display:block;font-size:.72rem;color:#B45309;font-weight:700;margin-top:2px}
 .zc.in{background:#DBEAFE;color:#1D4ED8}.zc.on{background:#DCFCE7;color:#15803D}.zc.at{background:#FFEDD5;color:#C2410C}
 /* Reveal quiz only after understanding */
 .quiz-toggle{width:100%;margin:22px 0 6px;padding:15px;border:none;border-radius:12px;background:var(--navy);
@@ -971,6 +990,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   </div>
   <div class="zoom-cap" id="zoom-cap"></div>
   <div id="prep-detail"></div>
+  <div id="prep-except"></div>
 
   <div class="lesson-video">
     <div class="lv-title">🎬 شاهد الشرح كاملاً — in · on · at</div>
@@ -1509,8 +1529,8 @@ l3:[
   {e:'tie / necktie',a:'ربطة عنق',em:'👔'},{e:'belt',a:'حزام',em:'🔗'},
   {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'jacket / coat',a:'جاكيت / معطف',em:'🧥'},
   {e:'suit',a:'بدلة = jacket + slacks',em:'🤵'},{e:'shorts',a:'شورت قصير',em:'🩳'},
-  {e:'wear → wore',a:'يرتدي → ارتدى',em:'👔'},{e:'put on → put on',a:'يلبس → لبِس',em:'🧥'},
-  {e:'take off → took off',a:'يخلع → خلع',em:'🧤'},{e:'wake up → woke up',a:'يستيقظ → استيقظ',em:'⏰'},
+  {e:'wear',a:'يرتدي',past:'wore',pa:'ارتدى',em:'👔'},{e:'put on',a:'يلبس',past:'put on',pa:'لبِس',em:'🧥'},
+  {e:'take off',a:'يخلع',past:'took off',pa:'خلع',em:'🧤'},{e:'wake up',a:'يستيقظ',past:'woke up',pa:'استيقظ',em:'⏰'},
 ],
 l4:[
   {e:'spring',a:'الربيع — مارس أبريل مايو',em:'🌸'},
@@ -1524,7 +1544,7 @@ l4:[
   {e:'music',a:'موسيقى',em:'🎵'},{e:'season',a:'فصل',em:'📅'},
   {e:'this / these',a:'هذا / هؤلاء (قريب)',em:'👆'},
   {e:'that / those',a:'ذلك / أولئك (بعيد)',em:'👉'},
-  {e:'How much?',a:'كم ثمنه؟',em:'💰'},{e:'sell → sold',a:'يبيع → باع',em:'🏷️'},
+  {e:'How much?',a:'كم ثمنه؟',em:'💰'},{e:'sell',a:'يبيع',past:'sold',pa:'باع',em:'🏷️'},
   {e:'colors',a:'الألوان',em:'🎨'},
   {e:'red',a:'أحمر',em:'🔴'},{e:'blue',a:'أزرق',em:'🔵'},{e:'green',a:'أخضر',em:'🟢'},
   {e:'yellow',a:'أصفر',em:'🟡'},{e:'orange',a:'برتقالي',em:'🟠'},{e:'purple',a:'بنفسجي',em:'🟣'},
@@ -1778,6 +1798,24 @@ function build_vocab_sec(lk){
     </div>`;
   });
   html+='</div>';
+  const pastWords=words.filter(w=>w.past);
+  if(pastWords.length){
+    html+=`<div class="past-sec">
+      <div class="past-h">⏮️ نفس الأفعال في الماضي</div>
+      <div class="past-note">الأصل ← الماضي · اضغط 🔊 لسماع كلٍّ على حدة</div>`;
+    pastWords.forEach(w=>{
+      const baseSafe=w.e.replace(/'/g,"\\'"),pastSafe=w.past.replace(/'/g,"\\'");
+      html+=`<div class="past-row">
+        <div class="pr-forms" dir="ltr">
+          <span class="pr-base">${w.e}<button class="pr-spk" onclick="say('${baseSafe}')">🔊</button></span>
+          <span class="pr-arrow">→</span>
+          <span class="pr-past">${w.past}<button class="pr-spk" onclick="say('${pastSafe}')">🔊</button></span>
+        </div>
+        <div class="pr-ar">الأصل: ${w.a} · الماضي: ${w.pa}</div>
+      </div>`;
+    });
+    html+='</div>';
+  }
   el.innerHTML=html;
 }
 
@@ -2257,7 +2295,7 @@ const PREP = {
   time:{
     in:{meaning:'in = خلال فترة طويلة.',when:'لأنها فترة طويلة (شهر/سنة/فصل).',link:'فترة طويلة؟ ⟵ in',ex:{e:'in July',a:'في يوليو'},bad:'at July',good:'in July'},
     on:{meaning:'on = في يوم أو تاريخ.',when:'لأنه يوم أو تاريخ محدّد.',link:'يوم أو تاريخ؟ ⟵ on',ex:{e:'on Monday',a:'يوم الاثنين'},bad:'in Monday',good:'on Monday'},
-    at:{meaning:'at = عند لحظة محدّدة.',when:'لأنه وقت محدّد بالساعة (ولاحظ: at night).',link:'وقت محدّد؟ ⟵ at',ex:{e:'at 7:00',a:'الساعة السابعة'},bad:'in 7:00',good:'at 7:00'}
+    at:{meaning:'at = عند لحظة محدّدة.',when:'لأنه وقت محدّد بالساعة.',link:'وقت محدّد؟ ⟵ at',ex:{e:'at 7:00',a:'الساعة السابعة'},bad:'in 7:00',good:'at 7:00'}
   }
 };
 const PREP_COLORS={in:{bg:'#DBEAFE',bd:'#60A5FA',tx:'#1D4ED8'},on:{bg:'#DCFCE7',bd:'#4ADE80',tx:'#15803D'},at:{bg:'#FFEDD5',bd:'#FB923C',tx:'#C2410C'}};
@@ -2289,6 +2327,17 @@ function render_zoom(){
   const place='🔎 من الواسع إلى الضيق: <span dir="ltr" class="zc-seq"><span class="zc in">in</span> Abha → <span class="zc on">on</span> Al-Fann St → <span class="zc at">at</span> the cafe</span>';
   const time='🔎 من الأطول إلى الأدقّ: <span dir="ltr" class="zc-seq"><span class="zc in">in</span> July → <span class="zc on">on</span> Monday → <span class="zc at">at</span> 7:00</span>';
   document.getElementById('zoom-cap').innerHTML=(prepMode==='place')?place:time;
+  document.getElementById('prep-except').innerHTML=(prepMode==='time')?`
+    <div class="except-box">
+      <div class="except-h">⭐ عبارات تُحفظ كما هي — لا تنطبق عليها القاعدة</div>
+      <div class="except-note">الإنجليزي فيه عبارات ثابتة قليلة نحفظها كـ«كتلة» جاهزة، لا نطبّق عليها الدائرة.</div>
+      <div class="except-row"><span dir="ltr"><span class="zc in">in</span> the morning / afternoon / evening</span>
+        <button class="ex-spk" onclick="say('in the evening')">🔊</button></div>
+      <div class="except-ar">في الصباح / الظهيرة / المساء</div>
+      <div class="except-row"><span dir="ltr"><span class="zc at">at</span> night · <span class="zc at">at</span> noon</span>
+        <button class="ex-spk" onclick="say('at night')">🔊</button></div>
+      <div class="except-ar">في الليل · عند الظهر <span class="ex-warn">⚠️ الليل فترة طويلة لكنه at — احفظها فقط</span></div>
+    </div>`:'';
 }
 
 function sw_prep(m){

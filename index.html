@@ -2801,8 +2801,23 @@ function sw_yt(i,autoplay){
 // PROGRESS PERSISTENCE (localStorage)
 // ═══════════════════════════════════════
 const PKEY='alc_book4_progress';
+// Check that the browser actually allows saving (Private Browsing on iOS blocks it)
+let STORAGE_OK=true;
+try{const t='__alc_test__';localStorage.setItem(t,'1');localStorage.removeItem(t);}
+catch(e){STORAGE_OK=false;}
+function show_storage_warning(){
+  if(STORAGE_OK)return;
+  if(document.getElementById('storage-warn'))return;
+  const w=document.createElement('div');
+  w.id='storage-warn';
+  w.style.cssText="background:#FEF3C7;color:#92400E;border:1.5px solid #FCD34D;border-radius:12px;padding:12px 16px;margin:12px;font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;text-align:center;line-height:1.6";
+  w.innerHTML="⚠️ متصفحك يمنع حفظ التقدّم (غالبًا وضع التصفّح الخفي). للحفظ: افتح الموقع في نافذة عادية — وليست خاصة/خفية.";
+  document.body.insertBefore(w,document.body.firstChild);
+}
 function save_progress(){
-  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP}));}catch(e){}
+  if(!STORAGE_OK)return;
+  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP}));}
+  catch(e){STORAGE_OK=false;show_storage_warning();}
 }
 function apply_lessons(){
   ['l1','l2','l3','l4'].forEach(lk=>{
@@ -2834,6 +2849,7 @@ function load_progress(){
   apply_lessons();
   upd_global();
 }
+if(!STORAGE_OK)show_storage_warning();
 function reset_progress(){
   if(!confirm('هل تريد مسح كل تقدّمك والبدء من جديد؟'))return;
   try{localStorage.removeItem(PKEY);}catch(e){}
@@ -2846,6 +2862,7 @@ load_progress();
 <div class="site-footer">
   <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
   <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
+  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.2</p>
 </div>
 
 </body>

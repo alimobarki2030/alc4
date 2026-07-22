@@ -709,13 +709,10 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .zc{font-family:'Inter',sans-serif;font-weight:800;padding:1px 7px;border-radius:6px;direction:ltr;display:inline-block}
 .zc-seq{font-family:'Inter',sans-serif;font-weight:800;display:inline-block;margin-top:3px}
 .except-box{background:#FFFBEB;border:2px solid #FCD34D;border-radius:14px;padding:14px;margin-top:14px}
-.except-h{font-family:'Cairo',sans-serif;font-weight:900;color:#B45309;font-size:.95rem;text-align:center;margin-bottom:4px}
-.except-note{font-family:'Cairo',sans-serif;font-size:.75rem;color:#92400E;text-align:center;margin-bottom:12px;line-height:1.6}
-.except-row{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy)}
-.except-ar{text-align:center;font-family:'Cairo',sans-serif;font-size:.8rem;color:#78350F;margin:3px 0 12px}
-.except-ar:last-child{margin-bottom:0}
+.except-h{font-family:'Cairo',sans-serif;font-weight:900;color:#B45309;font-size:.95rem;text-align:center;margin-bottom:10px}
+.except-row{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;font-weight:800;font-size:.98rem;color:var(--navy);margin-bottom:8px}
+.except-row:last-child{margin-bottom:0}
 .ex-spk{background:none;border:none;cursor:pointer;font-size:.85rem;padding:0}
-.ex-warn{display:block;font-size:.72rem;color:#B45309;font-weight:700;margin-top:2px}
 .zc.in{background:#DBEAFE;color:#1D4ED8}.zc.on{background:#DCFCE7;color:#15803D}.zc.at{background:#FFEDD5;color:#C2410C}
 /* Reveal quiz only after understanding */
 .quiz-toggle{width:100%;margin:22px 0 6px;padding:15px;border:none;border-radius:12px;background:var(--navy);
@@ -2329,14 +2326,11 @@ function render_zoom(){
   document.getElementById('zoom-cap').innerHTML=(prepMode==='place')?place:time;
   document.getElementById('prep-except').innerHTML=(prepMode==='time')?`
     <div class="except-box">
-      <div class="except-h">⭐ عبارات تُحفظ كما هي — لا تنطبق عليها القاعدة</div>
-      <div class="except-note">الإنجليزي فيه عبارات ثابتة قليلة نحفظها كـ«كتلة» جاهزة، لا نطبّق عليها الدائرة.</div>
-      <div class="except-row"><span dir="ltr"><span class="zc in">in</span> the morning / afternoon / evening</span>
+      <div class="except-h">⭐ استثناءات تُحفظ كما هي</div>
+      <div class="except-row" dir="ltr"><span class="zc in">in</span> ( the morning / afternoon / evening )
         <button class="ex-spk" onclick="say('in the evening')">🔊</button></div>
-      <div class="except-ar">في الصباح / الظهيرة / المساء</div>
-      <div class="except-row"><span dir="ltr"><span class="zc at">at</span> night · <span class="zc at">at</span> noon</span>
-        <button class="ex-spk" onclick="say('at night')">🔊</button></div>
-      <div class="except-ar">في الليل · عند الظهر <span class="ex-warn">⚠️ الليل فترة طويلة لكنه at — احفظها فقط</span></div>
+      <div class="except-row" dir="ltr"><span class="zc at">at</span> ( noon / midnight )
+        <button class="ex-spk" onclick="say('at midnight')">🔊</button></div>
     </div>`:'';
 }
 

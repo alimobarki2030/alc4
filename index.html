@@ -755,9 +755,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .iv-done .iv-btn{margin:4px}
 
 /* ── LISTENING (YouTube) ── */
-.yt-card{background:linear-gradient(135deg,#EF4444,#B91C1C);border-radius:16px;padding:18px 20px;
+.yt-card{background:linear-gradient(135deg,#1F2937,#0B1220);border-radius:16px;padding:18px 20px;
   cursor:pointer;transition:all .2s;border:3px solid #FCA5A5;margin-bottom:16px;display:flex;align-items:center;gap:16px}
-.yt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(185,28,28,.35)}
+.yt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,18,32,.4)}
 .yt-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
   display:flex;align-items:center;justify-content:center;font-size:1.7rem}
 .yt-card .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
@@ -765,8 +765,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 #ytscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
 .yt-tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
 .yt-tab{flex:none;min-width:112px;padding:10px 14px;border:2px solid var(--bdr);border-radius:12px;background:#fff;cursor:pointer;text-align:center;transition:.15s}
-.yt-tab:hover{border-color:#EF4444}
-.yt-tab.on{border-color:#EF4444;background:#FEF2F2;box-shadow:0 0 0 3px rgba(239,68,68,.12)}
+.yt-tab:hover{border-color:#1F2937}
+.yt-tab.on{border-color:#1F2937;background:#F1F5F9;box-shadow:0 0 0 3px rgba(31,41,55,.14)}
 .yt-tab b{display:block;font-family:'Inter',sans-serif;font-weight:800;color:var(--navy);font-size:.95rem}
 .yt-tab span{display:block;font-family:'Cairo',sans-serif;font-size:.68rem;color:var(--muted);margin-top:2px}
 .yt-embed{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;background:#000;margin-bottom:12px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
@@ -1092,17 +1092,16 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 <!-- LISTENING (YouTube) SCREEN -->
 <div id="ytscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div class="prep-hero" style="background:linear-gradient(135deg,#EF4444,#B91C1C)">
+  <div class="prep-hero" style="background:linear-gradient(135deg,#1F2937,#0B1220)">
     <h2>استماع Book 4 🎧</h2>
     <p>اختبارات استماع وقراءة مع الحل — LangVox</p>
   </div>
   <div class="yt-tabs" id="yt-tabs"></div>
   <div class="yt-embed">
     <iframe id="yt-iframe" src="" title="ALC Book 4 Listening"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen loading="lazy"></iframe>
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+      allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
   </div>
-  <div class="yt-note">💡 اضغط زر التشغيل ▶ — يحتاج اتصال إنترنت. للشاشة الكاملة استخدم زر التكبير في المشغّل.</div>
 </div>
 
 <!-- MODAL -->

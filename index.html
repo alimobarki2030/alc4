@@ -2039,20 +2039,20 @@ function render_drill(lk){
     const opts=[w,...pickDistractors(words,w,x=>x.a,3)].sort(()=>Math.random()-.5);
     body=`<div class="dq">
       <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')">🔊</button></div>
-      <div class="dq-ask">وش معناها بالعربي؟</div>
+      <div class="dq-ask">اختر المعنى الصحيح</div>
       <div class="dq-opts">${opts.map(o=>`<button class="dq-opt" onclick="drill_ans('${lk}',this,${o.a===w.a})">${o.a}</button>`).join('')}</div>
       <div class="dq-fb" id="dq-fb"></div></div>`;
   }else if(it.type==='ar2en'){
     const opts=[w,...pickDistractors(words,w,x=>x.e,3)].sort(()=>Math.random()-.5);
     body=`<div class="dq">
       <div class="dq-word-ar">${coreAr(w.a)}</div>
-      <div class="dq-ask">أيّ كلمة إنجليزية تعنيها؟</div>
+      <div class="dq-ask">اختر الكلمة الإنجليزية</div>
       <div class="dq-opts">${opts.map(o=>{const s=o.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();return `<button class="dq-opt en" dir="ltr" onclick="drill_ans('${lk}',this,${o.e===w.e},'${s}')">${o.e}</button>`;}).join('')}</div>
       <div class="dq-fb" id="dq-fb"></div></div>`;
   }else{ // type
     body=`<div class="dq">
       <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')">🔊</button></div>
-      <div class="dq-ask">✍️ اكتب معناها بالعربي</div>
+      <div class="dq-ask">✍️ اكتب المعنى بالعربية</div>
       <input class="dq-input" id="dq-input" autocomplete="off" placeholder="اكتب هنا..." onkeydown="if(event.key==='Enter')drill_type('${lk}')">
       <div class="dq-fb" id="dq-fb"></div>
       <button class="sp-btn check" style="margin-top:12px" onclick="drill_type('${lk}')">تحقّق ✓</button>
@@ -2095,7 +2095,7 @@ function drill_type(lk){
   }else{
     st.wrong=true;inp.classList.remove('no');void inp.offsetWidth;inp.classList.add('no');
     fb.textContent='❌ حاول مرة أخرى';fb.style.color='var(--r)';
-    inp.focus();inp.select();
+    inp.focus();setTimeout(()=>{inp.classList.remove('no');},600);
   }
 }
 function drill_reveal_type(lk){
@@ -3340,7 +3340,7 @@ track_screen('home');
 <div class="site-footer">
   <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
   <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
-  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v3.1</p>
+  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v3.3</p>
 </div>
 
 </body>

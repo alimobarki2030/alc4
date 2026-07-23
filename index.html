@@ -41,6 +41,7 @@
   --ok-bg:#D7FFB8;--ok-txt:#2D8A00;--no-bg:#FFDFE0;--no-txt:#CC0000;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+button{-webkit-tap-highlight-color:transparent}
 body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;font-size:17px}
 
 /* NAV */
@@ -241,11 +242,11 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   background:#fff;border:2px solid var(--bdr);border-radius:9px;
   font-family:'Inter',sans-serif;font-size:.95rem;color:var(--txt);
   cursor:pointer;transition:all .15s;text-align:left;direction:ltr;width:100%}
-.opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
+@media(hover:hover){.opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}}
 .oltr{width:24px;height:24px;border-radius:6px;background:var(--bdr);
   display:flex;align-items:center;justify-content:center;font-weight:700;
   font-size:.72rem;color:var(--muted);flex-shrink:0;transition:all .15s}
-.opt:hover:not(:disabled) .oltr{background:var(--b);color:#fff}
+@media(hover:hover){.opt:hover:not(:disabled) .oltr{background:var(--b);color:#fff}}
 .opt.ok{border-color:var(--g);background:var(--ok-bg)}
 .opt.ok .oltr{background:var(--g);color:#fff}
 .opt.no{border-color:var(--r);background:var(--no-bg);opacity:.7}
@@ -442,9 +443,10 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .dq-ask{font-family:'Cairo',sans-serif;font-size:.86rem;color:var(--muted);margin:8px 0 14px}
 .dq-opts{display:flex;flex-direction:column;gap:8px}
 .dq-opt{padding:13px;border:2px solid var(--bdr);border-radius:12px;background:#fff;font-family:'Cairo',sans-serif;
-  font-weight:700;font-size:1rem;color:var(--navy);cursor:pointer;transition:.15s}
+  font-weight:700;font-size:1rem;color:var(--navy);cursor:pointer;transition:.15s;outline:none;-webkit-tap-highlight-color:transparent}
 .dq-opt.en{font-family:'Inter',sans-serif;font-weight:800}
-.dq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
+.dq-opt:focus{outline:none}
+@media(hover:hover){.dq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}}
 .dq-opt.ok{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
 .dq-opt.no{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
 .dq-opt:disabled{cursor:default}
@@ -605,7 +607,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .pq-opts{display:flex;gap:8px}
 .pq-opt{flex:1;padding:10px;border:2px solid var(--bdr);border-radius:9px;background:#fff;
   font-family:'Inter',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);cursor:pointer;transition:.15s}
-.pq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
+@media(hover:hover){.pq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}}
 .pq-opt.ok{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
 .pq-opt.no{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
 .pq-fb{margin-top:9px;border-radius:8px;padding:8px 11px;font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:600;display:none}
@@ -2097,11 +2099,18 @@ function drill_type(lk){
   }
 }
 function drill_reveal_type(lk){
-  const st=drill[lk],inp=document.getElementById('dq-input'),fb=document.getElementById('dq-fb'),w=st.items[st.idx].w;
+  const st=drill[lk],dq=document.querySelector('#ph-practice .dq'),inp=document.getElementById('dq-input'),fb=document.getElementById('dq-fb'),w=st.items[st.idx].w;
   if(inp)inp.disabled=true;
-  fb.innerHTML='المعنى: <b>'+coreAr(w.a)+'</b>';fb.style.color='var(--r)';
-  say(w.e.replace(/\(.*?\)/g,'').trim());
-  drill_next(lk);
+  st.wrong=true;
+  const eClean=w.e.replace(/\(.*?\)/g,'').trim();
+  say(eClean);
+  fb.innerHTML='📖 <span dir="ltr">'+eClean+'</span> = <b>'+coreAr(w.a)+'</b> — احفظها 👍';fb.style.color='var(--navy)';
+  if(dq)dq.querySelectorAll('.sp-btn.check, .sp-skip').forEach(b=>b.style.display='none');
+  if(dq&&!document.getElementById('dq-cont')){
+    const nb=document.createElement('button');nb.id='dq-cont';nb.className='sp-btn next';nb.style.marginTop='14px';nb.textContent='التالي ←';
+    nb.onclick=()=>{st.idx++;render_drill(lk);};
+    dq.appendChild(nb);
+  }
 }
 
 function build_grammar_sec(lk){
@@ -3331,7 +3340,7 @@ track_screen('home');
 <div class="site-footer">
   <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
   <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
-  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.9</p>
+  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v3.1</p>
 </div>
 
 </body>

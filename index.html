@@ -31,31 +31,17 @@
 <meta name="twitter:image" content="https://alc4.alimobarki.com/alc.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book 4 ALC — مركز التدريب الإنجليزي</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
 <style>
-/* الخطوط تُحمّل عبر <link> في <head> لأداء أسرع */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap');
 :root{
   --g:#58CC02;--gd:#46A302;--b:#1CB0F6;--bd:#0A96DC;
   --r:#FF4B4B;--o:#FF9600;--y:#FFC800;--p:#CE82FF;--pur:#7C3AED;
   --navy:#1A2744;--navy2:#243560;--bg:#F0F4FF;
-  --card:#FFFFFF;--txt:#3C3C3C;--muted:#6B7280;--bdr:#E5E5E5;
+  --card:#FFFFFF;--txt:#3C3C3C;--muted:#AFAFAF;--bdr:#E5E5E5;
   --ok-bg:#D7FFB8;--ok-txt:#2D8A00;--no-bg:#FFDFE0;--no-txt:#CC0000;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;font-size:17px}
-
-/* إمكانية الوصول: إبراز التركيز للوحة المفاتيح */
-:focus-visible{outline:3px solid var(--bd);outline-offset:2px;border-radius:8px}
-[role=button]:focus-visible,.lcard:focus-visible,.final-card:focus-visible{outline:3px solid var(--bd);outline-offset:3px}
-/* رفع الحدّ الأدنى لحجم أزرار النطق الصغيرة (سهولة اللمس) */
-.vs,.ex-spk,.pr-spk,.mini-spk,.iv-spk,.story-spk{min-width:32px;min-height:32px}
-/* احترام تفضيل تقليل الحركة */
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
-  #splash{animation:none;opacity:0;pointer-events:none;display:none}
-}
 
 /* NAV */
 .nav{background:var(--navy);height:56px;display:flex;align-items:center;
@@ -447,6 +433,27 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .pr-arrow{color:var(--muted)}
 .pr-spk{background:none;border:none;cursor:pointer;font-size:.82rem;padding:0}
 .pr-ar{text-align:center;font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin-top:5px}
+/* Vocab drill */
+.dq{background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:22px 16px;text-align:center}
+.dq-emoji{font-size:3rem;margin-bottom:6px}
+.dq-word{font-family:'Inter',sans-serif;font-weight:800;font-size:1.7rem;color:var(--navy);display:flex;align-items:center;justify-content:center;gap:10px}
+.dq-word-ar{font-family:'Cairo',sans-serif;font-weight:900;font-size:1.7rem;color:var(--navy)}
+.dq-spk{background:var(--b);border:none;border-radius:8px;width:34px;height:34px;color:#fff;cursor:pointer;font-size:.85rem}
+.dq-ask{font-family:'Cairo',sans-serif;font-size:.86rem;color:var(--muted);margin:8px 0 14px}
+.dq-opts{display:flex;flex-direction:column;gap:8px}
+.dq-opt{padding:13px;border:2px solid var(--bdr);border-radius:12px;background:#fff;font-family:'Cairo',sans-serif;
+  font-weight:700;font-size:1rem;color:var(--navy);cursor:pointer;transition:.15s}
+.dq-opt.en{font-family:'Inter',sans-serif;font-weight:800}
+.dq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
+.dq-opt.ok{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
+.dq-opt.no{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
+.dq-opt:disabled{cursor:default}
+.dq-input{width:100%;max-width:280px;border:2px solid var(--bdr);border-radius:12px;padding:12px;margin:0 auto;display:block;
+  font-family:'Cairo',sans-serif;text-align:center;font-size:1.15rem;font-weight:700;color:var(--navy);outline:none;transition:.15s}
+.dq-input:focus{border-color:var(--b);box-shadow:0 0 0 3px rgba(28,176,246,.15)}
+.dq-input.ok{border-color:var(--g);background:var(--ok-bg)}
+.dq-input.no{border-color:var(--r);background:var(--no-bg)}
+.dq-fb{margin-top:12px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.92rem;min-height:1.3em}
 
 /* Grammar cards */
 .gcard{background:var(--card);border-radius:14px;border:2px solid var(--bdr);
@@ -862,38 +869,6 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .yt-note{background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:10px;padding:9px 12px;
   font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;text-align:center}
 
-
-/* ── SETTINGS GEAR + MODAL ── */
-.nav-gear{background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.25);border-radius:50%;
-  width:36px;height:36px;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;
-  justify-content:center;transition:.15s;line-height:1;padding:0}
-.nav-gear:hover{background:rgba(255,255,255,.22)}
-.settings-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 18px}
-.st-item{background:#F0F4FF;border:2px solid var(--bdr);border-radius:12px;padding:12px 10px;text-align:center}
-.st-num{font-family:'Cairo',sans-serif;font-weight:900;font-size:1.4rem;color:var(--navy);line-height:1.1}
-.st-lbl{font-family:'Cairo',sans-serif;font-size:.72rem;color:var(--muted);margin-top:3px}
-#settings-modal .reset-btn{background:#FEE2E2;color:#B91C1C;border:1px solid #FCA5A5;margin-top:2px}
-#settings-modal .reset-btn:hover{background:#FECACA;color:#7F1D1D}
-#settings-modal .msub{margin-bottom:2px}
-
-/* ── SECTION PROGRESS BADGE (on home cards) ── */
-.sec-prog{margin-top:6px;font-family:'Cairo',sans-serif;font-size:.76rem;font-weight:800;
-  color:#FFC800;display:inline-flex;align-items:center;gap:5px}
-.sec-prog.partial{color:rgba(255,255,255,.92)}
-
-/* ── RESUME CARD ── */
-.resume-card{background:linear-gradient(135deg,#243560,#1A2744);border:2px solid var(--y);
-  border-radius:16px;padding:14px 16px;margin-bottom:18px;display:flex;align-items:center;gap:14px}
-.resume-card .rc-ico{font-size:2rem;flex-shrink:0}
-.resume-card .rc-txt{flex:1;min-width:0}
-.resume-card .rc-lbl{font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;color:var(--y);
-  letter-spacing:1px}
-.resume-card .rc-name{font-family:'Cairo',sans-serif;font-size:1rem;font-weight:900;color:#fff;
-  margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.resume-card .rc-btn{background:var(--y);color:var(--navy);border:none;border-radius:10px;
-  padding:10px 16px;font-family:'Cairo',sans-serif;font-weight:900;font-size:.85rem;cursor:pointer;
-  flex-shrink:0;transition:.15s;white-space:nowrap}
-.resume-card .rc-btn:hover{filter:brightness(1.05)}
 </style>
 </head>
 <body>
@@ -911,9 +886,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 <nav class="nav">
   <div class="nav-logo">ALC <span>Book 4</span></div>
   <div class="nav-pills">
-    <span class="streak" title="أيام متتالية من التعلّم">🔥<span id="streak">0</span></span>
+    <span class="streak">🔥<span id="streak">0</span></span>
     <span class="xp-pill">⚡<span id="xp">0</span></span>
-    <button class="nav-gear" onclick="open_settings()" aria-label="الإعدادات" title="الإعدادات">⚙️</button>
   </div>
 </nav>
 
@@ -924,6 +898,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <p>تعلّم القواعد · تدرّب · اختبر نفسك · الاختبار النهائي</p>
     <div class="gpbar"><div class="gpfill" id="gpfill"></div></div>
     <div class="gptxt" id="gptxt">0 من 4 دروس مكتملة</div>
+    <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
   </div>
   <!-- WELCOME BANNER (shown only on first visit) -->
   <div id="welcome-banner" style="display:none;background:linear-gradient(135deg,#0EA5E9,#0369A1);border-radius:16px;padding:18px 20px;margin-bottom:20px;position:relative">
@@ -966,35 +941,35 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     </div>
   </div>
   <div class="lbl">شرح تفاعلي</div>
-  <div class="prep-card" id="sc-prep" onclick="open_prep()">
+  <div class="prep-card" onclick="open_prep()">
     <div class="pc-rings"><i></i><i></i><i></i></div>
     <div class="pc-txt">
       <h3>in · on · at</h3>
       <p>حروف الجر — المكان والزمن, مبسّطة برسم الهدف 🎯</p>
     </div>
   </div>
-  <div class="art-card" id="sc-art" onclick="open_art()">
+  <div class="art-card" onclick="open_art()">
     <div class="ac-ic">✨</div>
     <div class="pc-txt">
       <h3>a · an · the</h3>
       <p>أدوات التعريف والتنكير — المعلوم والمجهول</p>
     </div>
   </div>
-  <div class="wh-card" id="sc-wh" onclick="open_wh()">
+  <div class="wh-card" onclick="open_wh()">
     <div class="ac-ic">❓</div>
     <div class="pc-txt">
       <h3>WH — أدوات السؤال</h3>
       <p>what · where · when · who · why · how</p>
     </div>
   </div>
-  <div class="time-card" id="sc-time" onclick="open_time()">
+  <div class="time-card" onclick="open_time()">
     <div class="ac-ic">⏳</div>
     <div class="pc-txt">
       <h3>الماضي البسيط · yesterday · last · ago</h3>
       <p>كلمات الزمن الماضي — على خطّ زمني</p>
     </div>
   </div>
-  <div class="iv-card-home" id="sc-iv" onclick="open_iv()">
+  <div class="iv-card-home" onclick="open_iv()">
     <div class="ac-ic">🔄</div>
     <div class="pc-txt">
       <h3>الأفعال الشاذة</h3>
@@ -1003,7 +978,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   </div>
 
   <div class="lbl">الاستماع</div>
-  <div class="yt-card" id="sc-yt" onclick="open_yt()">
+  <div class="yt-card" onclick="open_yt()">
     <div class="ac-ic">🎧</div>
     <div class="pc-txt">
       <h3>استماع Book 4</h3>
@@ -1012,7 +987,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   </div>
 
   <div class="lbl">الكتابة</div>
-  <div class="spell-card" id="sc-spell" onclick="open_spell()">
+  <div class="spell-card" onclick="open_spell()">
     <div class="ac-ic">✍️</div>
     <div class="pc-txt">
       <h3>اكتب من السماع</h3>
@@ -1259,20 +1234,6 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <iframe id="yt-iframe" src="" title="ALC Book 4 Listening"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
       allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
-  </div>
-</div>
-
-<!-- SETTINGS MODAL -->
-<div class="modal" id="settings-modal" onclick="if(event.target===this)close_settings()">
-  <div class="mcrd">
-    <span class="memo">⚙️</span>
-    <div class="mgrade" style="color:var(--navy)">الإعدادات</div>
-    <div class="msub">ملخّص تقدّمك والتحكّم في بياناتك</div>
-    <div class="settings-stats" id="settings-stats"></div>
-    <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط كل التقدّم</button>
-    <div class="mbtns" style="margin-top:16px">
-      <button class="mbtn primary" onclick="close_settings()">إغلاق</button>
-    </div>
   </div>
 </div>
 
@@ -1549,7 +1510,6 @@ l4:[
 // STATE
 // ═══════════════════════════════════════
 let CL=null,CT='learn',XP=0,STK=0,TANS={},FANS={},built={};
-let STREAK_LAST=null,RESUME_ID=null,SECP={};
 let LP={}; // lesson progress: {l1:{pct, done}, ...} — best score per lesson
 let ddSelected=null; // word selected for drag
 
@@ -1625,7 +1585,7 @@ function concept_html(accentTx,borderBd,headerInner,d,block2Extra){
 }
 
 function open_lesson(lk){
-  CL=lk;TANS={};built={};set_resume(lk);
+  CL=lk;TANS={};built={};
   const icon={l1:'🏃',l2:'🎖️',l3:'👕',l4:'🌤️'};
   const title={l1:'Lesson 1 — Sports & Games',l2:"Lesson 2 — He's in the Army",l3:"Lesson 3 — Where Are My Clothes?",l4:'Lesson 4 — Pencils in 10 Colors'};
   const sub={l1:'الرياضة والألعاب',l2:'الحياة العسكرية',l3:'الملابس والقدرات',l4:'الفصول والألوان'};
@@ -1645,7 +1605,7 @@ function open_lesson(lk){
 }
 
 function open_final(){
-  CL='final';FANS={};set_resume('final');
+  CL='final';FANS={};
   show_screen('fscreen');
   document.getElementById('fscreen').scrollIntoView({behavior:'smooth',block:'start'});
   build_final();
@@ -1653,7 +1613,6 @@ function open_final(){
 
 function go_home(){
   show_screen('home');
-  render_home_extras();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1664,7 +1623,7 @@ function sw_tab(t){
     document.getElementById('ph-'+x).classList.toggle('active',x===t);
   });
   const lk=CL;
-  if(t==='practice'&&!built['pr'+lk]){build_quiz('ph-practice',PR[lk],'pr');built['pr'+lk]=1;}
+  if(t==='practice'&&!built['pr'+lk]){build_vocab_drill(lk);built['pr'+lk]=1;}
   if(t==='drag'&&!built['dd'+lk]){build_dd(lk);built['dd'+lk]=1;}
   if(t==='test'&&!built['te'+lk]){TANS={};build_quiz('ph-test',EE[lk],'te');built['te'+lk]=1;}
 }
@@ -1718,6 +1677,17 @@ l3:[
   {e:'suit',a:'بدلة = jacket + slacks',em:'🤵'},{e:'shorts',a:'شورت قصير',em:'🩳'},
   {e:'wear',a:'يرتدي',past:'wore',pa:'ارتدى',em:'👔'},{e:'put on',a:'يلبس',past:'put on',pa:'لبِس',em:'🧥'},
   {e:'take off',a:'يخلع',past:'took off',pa:'خلع',em:'🧤'},{e:'wake up',a:'يستيقظ',past:'woke up',pa:'استيقظ',em:'⏰'},
+  {e:'fall asleep',a:'يغفو / يستغرق نوماً',past:'fell asleep',pa:'غفا',em:'😴'},{e:'hang (up)',a:'يعلّق',past:'hung',pa:'علّق',em:'🪝'},
+  {e:'can',a:'يستطيع',em:'💪'},{e:"can't",a:'لا يستطيع',em:'🚫'},
+  {e:'may',a:'يُسمح له / قد',em:'🙋'},{e:'must',a:'يجب',em:'❗'},
+  {e:'must not',a:'يجب ألّا (ممنوع)',em:'⛔'},{e:'well',a:'جيّداً / بمهارة',em:'👍'},
+  {e:'asleep',a:'نائم',em:'😴'},{e:'awake',a:'صاحٍ / مستيقظ',em:'👀'},
+  {e:'sentence',a:'جملة',em:'📝'},{e:'statement',a:'جملة خبرية',em:'💬'},
+  {e:'paragraph',a:'فقرة',em:'📄'},{e:'indent',a:'يُزيح بداية السطر',em:'➡️'},
+  {e:'punctuation',a:'علامات الترقيم',em:'❕'},{e:'punctuate',a:'يضع علامات الترقيم',em:'✍️'},
+  {e:'period',a:'نقطة نهاية ( . )',em:'⏹️'},{e:'comma',a:'فاصلة ( , )',em:'🔹'},
+  {e:'question mark',a:'علامة استفهام ( ? )',em:'❓'},{e:'apostrophe',a:"فاصلة عُليا ( ' )",em:'✒️'},
+  {e:'contraction',a:"اختصار مثل don't",em:'✂️'},
 ],
 l4:[
   {e:'spring',a:'الربيع — مارس أبريل مايو',em:'🌸'},
@@ -2004,6 +1974,94 @@ function build_vocab_sec(lk){
     html+='</div>';
   }
   el.innerHTML=html;
+}
+
+// ═══════════════════════════════════════
+// VOCAB DRILL (تدرّب) — تدريب مفردات متنوّع
+// ═══════════════════════════════════════
+const drill={};
+function normAr(s){return (s||'').replace(/[ً-ْـ]/g,'').replace(/[إأآا]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[()\/\.\-—،؟?]/g,' ').replace(/\s+/g,' ').trim();}
+function coreAr(a){return a.split(/[—\/\(]/)[0].trim();}
+function pickDistractors(pool,correct,keyFn,n){
+  const out=[],seen=new Set([keyFn(correct)]);
+  const shuffled=pool.slice().sort(()=>Math.random()-.5);
+  for(const w of shuffled){const k=keyFn(w);if(!seen.has(k)){seen.add(k);out.push(w);}if(out.length>=n)break;}
+  return out;
+}
+function build_vocab_drill(lk){
+  const words=VOCAB[lk].slice();
+  const deck=words.slice().sort(()=>Math.random()-.5);
+  const items=deck.map((w,idx)=>{
+    const short=coreAr(w.a).split(' ').length<=2;
+    let type;
+    if((idx+1)%3===0&&short)type='type';
+    else type=(idx%2===0)?'en2ar':'ar2en';
+    return {w,type};
+  });
+  drill[lk]={items,idx:0,score:0};
+  render_drill(lk);
+}
+function render_drill(lk){
+  const el=document.getElementById('ph-practice');
+  const st=drill[lk],total=st.items.length;
+  if(st.idx>=total){
+    el.innerHTML=`<div class="sp-card sp-done"><div class="sp-emoji">${st.score>=Math.ceil(total*.7)?'🏆':'📚'}</div>
+      <div class="sp-donetxt">أحسنت! أكملت تدريب المفردات</div>
+      <div class="sp-score">نتيجتك: ${st.score} / ${total}</div>
+      <button class="sp-btn check" onclick="build_vocab_drill('${lk}')">🔁 مرّة ثانية</button></div>`;
+    return;
+  }
+  const it=st.items[st.idx],w=it.w,words=VOCAB[lk];
+  const eSafe=w.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
+  let head=`<div class="qprog"><div class="qpbar"><div class="qpfill" style="width:${Math.round(st.idx/total*100)}%"></div></div>
+    <div class="qptxt">${st.idx+1} / ${total}</div></div>`;
+  let body='';
+  if(it.type==='en2ar'){
+    const opts=[w,...pickDistractors(words,w,x=>x.a,3)].sort(()=>Math.random()-.5);
+    body=`<div class="dq">
+      <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')">🔊</button></div>
+      <div class="dq-ask">وش معناها بالعربي؟</div>
+      <div class="dq-opts">${opts.map(o=>`<button class="dq-opt" onclick="drill_ans('${lk}',this,${o.a===w.a})">${o.a}</button>`).join('')}</div>
+      <div class="dq-fb" id="dq-fb"></div></div>`;
+  }else if(it.type==='ar2en'){
+    const opts=[w,...pickDistractors(words,w,x=>x.e,3)].sort(()=>Math.random()-.5);
+    body=`<div class="dq">
+      <div class="dq-word-ar">${coreAr(w.a)}</div>
+      <div class="dq-ask">أيّ كلمة إنجليزية تعنيها؟</div>
+      <div class="dq-opts">${opts.map(o=>{const s=o.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();return `<button class="dq-opt en" dir="ltr" onclick="drill_ans('${lk}',this,${o.e===w.e},'${s}')">${o.e}</button>`;}).join('')}</div>
+      <div class="dq-fb" id="dq-fb"></div></div>`;
+  }else{ // type
+    body=`<div class="dq">
+      <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')">🔊</button></div>
+      <div class="dq-ask">✍️ اكتب معناها بالعربي</div>
+      <input class="dq-input" id="dq-input" autocomplete="off" placeholder="اكتب هنا..." onkeydown="if(event.key==='Enter')drill_type('${lk}')">
+      <div class="dq-fb" id="dq-fb"></div>
+      <button class="sp-btn check" style="margin-top:12px" onclick="drill_type('${lk}')">تحقّق ✓</button></div>`;
+  }
+  el.innerHTML=head+body;
+  const inp=document.getElementById('dq-input');if(inp)inp.focus();
+}
+function drill_next(lk){setTimeout(()=>{drill[lk].idx++;render_drill(lk);},850);}
+function drill_ans(lk,btn,ok,speak){
+  document.querySelectorAll('.dq-opt').forEach(b=>b.disabled=true);
+  const fb=document.getElementById('dq-fb'),w=drill[lk].items[drill[lk].idx].w;
+  if(ok){btn.classList.add('ok');drill[lk].score++;fb.textContent='✅ صحيح!';fb.style.color='var(--g)';
+    say(speak||w.e.replace(/\(.*?\)/g,'').trim());XP+=2;document.getElementById('xp').textContent=XP;save_progress();}
+  else{btn.classList.add('no');
+    document.querySelectorAll('.dq-opt').forEach(b=>{if((b.textContent===w.a)||(b.textContent===w.e))b.classList.add('ok');});
+    fb.textContent='الصح: '+coreAr(w.a);fb.style.color='var(--r)';}
+  drill_next(lk);
+}
+function drill_type(lk){
+  const inp=document.getElementById('dq-input');if(!inp||inp.disabled)return;
+  const w=drill[lk].items[drill[lk].idx].w,fb=document.getElementById('dq-fb');
+  const ans=normAr(inp.value),key=normAr(coreAr(w.a));
+  const ok=ans.length>1&&(ans===key||key.includes(ans)||ans.includes(key));
+  inp.disabled=true;
+  if(ok){inp.classList.add('ok');drill[lk].score++;fb.textContent='✅ ممتاز!';fb.style.color='var(--g)';
+    say(w.e.replace(/\(.*?\)/g,'').trim());XP+=3;document.getElementById('xp').textContent=XP;save_progress();}
+  else{inp.classList.add('no');fb.innerHTML='المعنى: <b>'+coreAr(w.a)+'</b>';fb.style.color='var(--r)';}
+  drill_next(lk);
 }
 
 function build_grammar_sec(lk){
@@ -2359,8 +2417,8 @@ function ans(pfx,qi,oi,correct,en,ar){
   document.getElementById(`${pfx}fe${qi}`).textContent=ok?`Correct! ${en}`:`Answer: ${['A','B','C','D'][correct]}. ${en}`;
   document.getElementById(`${pfx}fa${qi}`).textContent=ar;
   fb.className='fb show '+(ok?'ok':'no');
-  if(ok){XP+=pfx==='te'||pfx==='fi'?5:3;document.getElementById('xp').textContent=XP;save_progress();}
-  else{save_progress();}
+  if(ok){XP+=pfx==='te'||pfx==='fi'?5:3;STK++;document.getElementById('xp').textContent=XP;document.getElementById('streak').textContent=STK;save_progress();}
+  else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}
   say(pfx==='fi'?FINAL[qi].o[correct]:(pfx==='te'?EE[CL][qi].o[correct]:PR[CL][qi].o[correct]));
 
   // Update progress bar
@@ -2547,7 +2605,7 @@ const PREP_QUIZ=[
 let prepMode='place',prepSel=null;
 
 function open_prep(){
-  set_resume('prep');show_screen('pscreen');
+  show_screen('pscreen');
   document.getElementById('pscreen').scrollIntoView({behavior:'smooth',block:'start'});
   prepMode='place';prepSel=null;
   document.getElementById('pt-place').classList.add('on');
@@ -2612,7 +2670,7 @@ function prep_answer(i,o){
     fb.textContent='✅ '+q.tr;
     fb.className='pq-fb show ok';
     say(q.q.replace('___',o));
-    sec_answer('prep',i);XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
   }else{
     btn.classList.add('no');
     fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
@@ -2651,7 +2709,7 @@ const ART_QUIZ=[
 let artSel=null;
 
 function open_art(){
-  set_resume('art');show_screen('ascreen');
+  show_screen('ascreen');
   document.getElementById('ascreen').scrollIntoView({behavior:'smooth',block:'start'});
   artSel=null;
   ['a','an','the'].forEach(x=>document.getElementById('art-'+x).classList.remove('active'));
@@ -2695,7 +2753,7 @@ function art_answer(i,o){
     fb.textContent='✅ '+q.tr;
     fb.className='pq-fb show ok';
     say(q.q.replace('___',o));
-    sec_answer('art',i);XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
   }else{
     btn.classList.add('no');
     fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
@@ -2731,7 +2789,7 @@ const WH_QUIZ=[
 let whSel=null;
 
 function open_wh(){
-  set_resume('wh');show_screen('wscreen');
+  show_screen('wscreen');
   document.getElementById('wscreen').scrollIntoView({behavior:'smooth',block:'start'});
   whSel=null;
   build_wh_grid();
@@ -2767,7 +2825,7 @@ function wh_answer(i,o){
     q.o.forEach(x=>{const b=document.getElementById('wqo'+i+'_'+x);if(b)b.disabled=true;});
     btn.classList.add('ok');fb.textContent='✅ '+q.tr;fb.className='pq-fb show ok';
     say(q.q.split('—')[0].replace('___',o));
-    sec_answer('wh',i);XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
   }else{
     btn.classList.add('no');fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';fb.className='pq-fb show no';
     setTimeout(()=>{btn.classList.remove('no');},700);
@@ -2815,7 +2873,7 @@ const TIME_QUIZ=[
 let timeSel=null;
 
 function open_time(){
-  set_resume('time');show_screen('tmscreen');
+  show_screen('tmscreen');
   document.getElementById('tmscreen').scrollIntoView({behavior:'smooth',block:'start'});
   timeSel=null;
   ['yesterday','last','ago'].forEach(x=>{
@@ -2880,7 +2938,7 @@ function time_answer(i,o){
     q.o.forEach(x=>{const b=document.getElementById('tqo'+i+'_'+x.replace(/ /g,'_'));if(b)b.disabled=true;});
     btn.classList.add('ok');fb.textContent='✅ '+q.tr;fb.className='pq-fb show ok';
     say(q.q.replace('___',chosen));
-    sec_answer('time',i);XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
   }else{
     btn.classList.add('no');fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';fb.className='pq-fb show no';
     setTimeout(()=>{btn.classList.remove('no');},700);
@@ -2913,7 +2971,7 @@ const SPELL_LESSONS=[
 let spellWords=[],spellIdx=0,spellTries=0,spellHint=0,spellScore=0;
 
 function open_spell(){
-  set_resume('spell');show_screen('spscreen');
+  show_screen('spscreen');
   document.getElementById('spscreen').scrollIntoView({behavior:'smooth',block:'start'});
   start_spell();
 }
@@ -2927,7 +2985,6 @@ function render_spell(){
   if(spellIdx>=total){
     document.getElementById('sp-fill').style.width='100%';
     document.getElementById('sp-count').textContent=`${total} / ${total}`;
-    SECP.spell={done:spellScore,total:total};persist();
     body.innerHTML=`<div class="sp-card sp-done"><div class="sp-emoji">🎉</div>
       <div class="sp-donetxt">أحسنت! أكملت جميع كلمات الدروس الأربعة</div>
       <div class="sp-score">نتيجتك: ${spellScore} / ${total}</div>
@@ -3023,7 +3080,7 @@ const IV_ALL=IV_FAMILIES.reduce((a,f)=>a.concat(f.verbs),[]);
 let ivDeck=[],ivCur=null,ivHardSeen=new Set();
 
 function open_iv(){
-  set_resume('iv');show_screen('ivscreen');
+  show_screen('ivscreen');
   document.getElementById('ivscreen').scrollIntoView({behavior:'smooth',block:'start'});
   sw_iv('learn');
 }
@@ -3093,7 +3150,7 @@ function iv_reveal(){
 }
 function iv_mark(known){
   const cur=ivDeck.shift();
-  if(known){sec_iv(cur.b);XP+=2;document.getElementById('xp').textContent=XP;save_progress();}
+  if(known){XP+=2;document.getElementById('xp').textContent=XP;save_progress();}
   else{ivDeck.push(cur);ivHardSeen.add(cur.b);}
   iv_next();
 }
@@ -3112,7 +3169,7 @@ const YT_VIDEOS=[
   {id:'qP6UyAVijUI',t:'Quiz C',s:'استماع وقراءة مع الحل'}
 ];
 function open_yt(){
-  set_resume('yt');mark_visited('yt');show_screen('ytscreen');
+  show_screen('ytscreen');
   document.getElementById('ytscreen').scrollIntoView({behavior:'smooth',block:'start'});
   document.getElementById('yt-tabs').innerHTML=YT_VIDEOS.map((v,i)=>
     `<button class="yt-tab" id="yt-tab-${i}" onclick="sw_yt(${i},true)"><b>${v.t}</b><span>${v.s}</span></button>`).join('');
@@ -3141,49 +3198,11 @@ function show_storage_warning(){
   w.innerHTML="⚠️ متصفحك يمنع حفظ التقدّم (غالبًا وضع التصفّح الخفي). للحفظ: افتح الموقع في نافذة عادية — وليست خاصة/خفية.";
   document.body.insertBefore(w,document.body.firstChild);
 }
-// ═══════════════════════════════════════
-// KEYS
-// ═══════════════════════════════════════
-const STREAK_DATE_KEY='alc_last_streak_date';
-const SEC_TOTAL={prep:PREP_QUIZ.length,art:ART_QUIZ.length,wh:WH_QUIZ.length,time:TIME_QUIZ.length,iv:IV_ALL.length};
-const RESUME_INFO={
-  l1:{t:'Lesson 1 — Sports & Games',ic:'🏃',f:()=>open_lesson('l1')},
-  l2:{t:"Lesson 2 — He's in the Army",ic:'🎖️',f:()=>open_lesson('l2')},
-  l3:{t:'Lesson 3 — Where Are My Clothes?',ic:'👕',f:()=>open_lesson('l3')},
-  l4:{t:'Lesson 4 — Pencils in 10 Colors',ic:'🌤️',f:()=>open_lesson('l4')},
-  prep:{t:'حروف الجر — in · on · at',ic:'🎯',f:()=>open_prep()},
-  art:{t:'أدوات التعريف — a · an · the',ic:'✨',f:()=>open_art()},
-  wh:{t:'أدوات السؤال — WH',ic:'❓',f:()=>open_wh()},
-  time:{t:'الماضي وكلمات الزمن',ic:'⏳',f:()=>open_time()},
-  iv:{t:'الأفعال الشاذة',ic:'🔄',f:()=>open_iv()},
-  spell:{t:'اكتب من السماع',ic:'✍️',f:()=>open_spell()},
-  yt:{t:'استماع Book 4',ic:'🎧',f:()=>open_yt()},
-  final:{t:'الاختبار النهائي الشامل',ic:'🏆',f:()=>open_final()}
-};
-
-// ═══════════════════════════════════════
-// PERSISTENCE
-// ═══════════════════════════════════════
-function persist(){
+function save_progress(){
   if(!STORAGE_OK)return;
-  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,streakDate:STREAK_LAST,lessons:LP,sections:SECP,resume:RESUME_ID}));}
+  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP}));}
   catch(e){STORAGE_OK=false;show_storage_warning();}
 }
-// السلسلة اليومية: تُحتسب مرة واحدة كل يوم عند أول نشاط حقيقي
-function mark_active_today(){
-  if(!STORAGE_OK)return;
-  const today=new Date().toDateString();
-  if(STREAK_LAST===today)return;              // احتُسب اليوم مسبقاً
-  const yd=new Date();yd.setDate(yd.getDate()-1);
-  const yest=yd.toDateString();
-  STK=(STREAK_LAST===yest)?(STK||0)+1:1;      // متواصلة من أمس؟ زِد. وإلا ابدأ من 1
-  STREAK_LAST=today;
-  const el=document.getElementById('streak');if(el)el.textContent=STK;
-  try{localStorage.setItem(STREAK_DATE_KEY,today);}catch(e){}
-}
-// نشاط تعليمي حقيقي (إجابة/تدريب) → سجّل اليوم ثم احفظ
-function save_progress(){ mark_active_today(); persist(); }
-
 function apply_lessons(){
   ['l1','l2','l3','l4'].forEach(lk=>{
     const L=LP[lk];
@@ -3208,13 +3227,7 @@ function load_progress(){
   let data=null;
   try{data=JSON.parse(localStorage.getItem(PKEY));}catch(e){}
   if(!data)return;
-  XP=data.xp||0;LP=data.lessons||{};SECP=data.sections||{};RESUME_ID=data.resume||null;
-  STK=data.streak||0;
-  STREAK_LAST=data.streakDate||(function(){try{return localStorage.getItem(STREAK_DATE_KEY);}catch(e){return null;}})();
-  // هل السلسلة ما زالت حيّة؟ (آخر نشاط اليوم أو أمس)
-  const today=new Date().toDateString();
-  const yd=new Date();yd.setDate(yd.getDate()-1);const yest=yd.toDateString();
-  if(STREAK_LAST!==today && STREAK_LAST!==yest) STK=0;   // انقطعت
+  XP=data.xp||0;STK=data.streak||0;LP=data.lessons||{};
   document.getElementById('xp').textContent=XP;
   document.getElementById('streak').textContent=STK;
   apply_lessons();
@@ -3222,99 +3235,35 @@ function load_progress(){
 }
 if(!STORAGE_OK)show_storage_warning();
 
-// ═══════════════════════════════════════
-// STREAK COMEBACK BANNER
-// ═══════════════════════════════════════
+// ─── STREAK COMEBACK BANNER ───
+const STREAK_DATE_KEY='alc_last_streak_date';
 function check_streak_comeback(){
-  if(!STORAGE_OK||!STREAK_LAST)return;
-  const today=new Date().toDateString();
-  const yd=new Date();yd.setDate(yd.getDate()-1);const yest=yd.toDateString();
-  if(STREAK_LAST!==today && STREAK_LAST!==yest){        // انقطعت السلسلة
-    if(document.querySelector('.streak-comeback'))return;
-    const home=document.getElementById('home');
-    const banner=document.createElement('div');
-    banner.className='streak-comeback';
-    banner.innerHTML=`<span class="sc-ico">💪</span>
-      <div class="sc-txt"><h3>عودة مرحباً!</h3>
-      <p>انقطعت السلسلة، لكن الأهم أنك رجعت — ابدأ سلسلة جديدة اليوم.</p></div>
-      <button class="sc-close" onclick="this.parentElement.remove()">✕</button>`;
-    home.insertBefore(banner, home.firstChild);
-  }
+  if(!STORAGE_OK)return;
+  try{
+    const last=localStorage.getItem(STREAK_DATE_KEY);
+    const today=new Date().toDateString();
+    if(last && last!==today && STK===0){
+      // streak was broken — show encouragement
+      const home=document.getElementById('home');
+      const banner=document.createElement('div');
+      banner.className='streak-comeback';
+      banner.innerHTML=`<span class="sc-ico">💪</span>
+        <div class="sc-txt"><h3>عودة مرحباً!</h3>
+        <p>انتهى الـ streak، لكن الأهم أنك رجعت — ابدأ streak جديداً اليوم.</p></div>
+        <button class="sc-close" onclick="this.parentElement.remove()">✕</button>`;
+      home.insertBefore(banner, home.firstChild);
+    }
+    localStorage.setItem(STREAK_DATE_KEY,today);
+  }catch(e){}
 }
-
-// ═══════════════════════════════════════
-// SECTION PROGRESS (non-lesson)
-// ═══════════════════════════════════════
-function sec_answer(key,i){ if(!SECP[key]||typeof SECP[key]!=='object')SECP[key]={}; SECP[key][i]=1; persist(); }
-function sec_iv(v){ if(!SECP.iv||typeof SECP.iv!=='object')SECP.iv={}; SECP.iv[v]=1; persist(); }
-function mark_visited(key){ if(SECP[key])return; SECP[key]=true; persist(); }
-function sec_count(key){ const s=SECP[key]; return (s&&typeof s==='object')?Object.keys(s).length:0; }
-function sec_pct(key){
-  if(key==='yt') return SECP.yt?100:0;
-  if(key==='spell'){ const s=SECP.spell; return (s&&s.total)?Math.round(s.done/s.total*100):0; }
-  const t=SEC_TOTAL[key]||0; if(!t)return 0;
-  return Math.min(100, Math.round(sec_count(key)/t*100));
-}
-function render_sections(){
-  ['prep','art','wh','time','iv','spell','yt'].forEach(key=>{
-    const card=document.getElementById('sc-'+key); if(!card)return;
-    const box=card.querySelector('.pc-txt'); if(!box)return;
-    let b=box.querySelector('.sec-prog');
-    const pct=sec_pct(key);
-    if(pct<=0){ if(b)b.remove(); return; }
-    if(!b){ b=document.createElement('div'); b.className='sec-prog'; box.appendChild(b); }
-    if(pct>=100){ b.className='sec-prog'; b.textContent=(key==='yt'?'تمّت المشاهدة ✓':'مكتمل ✓'); }
-    else { b.className='sec-prog partial'; b.textContent='التقدّم '+pct+'%'; }
-  });
-}
-
-// ═══════════════════════════════════════
-// RESUME WHERE YOU LEFT OFF
-// ═══════════════════════════════════════
-function set_resume(id){ RESUME_ID=id; persist(); }
-function resume_go(){ const info=RESUME_INFO[RESUME_ID]; if(info&&info.f)info.f(); }
-function render_resume(){
-  const home=document.getElementById('home'); if(!home)return;
-  let card=document.getElementById('resume-card');
-  const info=RESUME_ID?RESUME_INFO[RESUME_ID]:null;
-  if(!info){ if(card)card.remove(); return; }
-  if(!card){
-    card=document.createElement('div');
-    card.className='resume-card';card.id='resume-card';
-    const anchor=home.querySelector('.lbl');
-    home.insertBefore(card, anchor||home.firstChild);
-  }
-  card.innerHTML=`<span class="rc-ico">${info.ic}</span>
-    <div class="rc-txt"><div class="rc-lbl">أكمل من حيث توقفت</div>
-      <div class="rc-name">${info.t}</div></div>
-    <button class="rc-btn" onclick="resume_go()">متابعة ←</button>`;
-}
-function render_home_extras(){ render_sections(); render_resume(); }
-
-// ═══════════════════════════════════════
-// SETTINGS
-// ═══════════════════════════════════════
-function open_settings(){
-  const done=document.querySelectorAll('.lcard.done').length;
-  const secDone=['prep','art','wh','time','iv','spell','yt'].filter(k=>sec_pct(k)>=100).length;
-  document.getElementById('settings-stats').innerHTML=`
-    <div class="st-item"><div class="st-num">${XP}</div><div class="st-lbl">نقطة XP ⚡</div></div>
-    <div class="st-item"><div class="st-num">${STK}</div><div class="st-lbl">أيام متتالية 🔥</div></div>
-    <div class="st-item"><div class="st-num">${done}/4</div><div class="st-lbl">دروس مكتملة 📚</div></div>
-    <div class="st-item"><div class="st-num">${secDone}/7</div><div class="st-lbl">أقسام مكتملة ✓</div></div>`;
-  document.getElementById('settings-modal').classList.add('show');
-}
-function close_settings(){ document.getElementById('settings-modal').classList.remove('show'); }
 
 function reset_progress(){
-  if(!confirm('⚠️ تحذير: سيُمسح كل تقدّمك (الدرجات والـ XP والأيام المتتالية) ولا يمكن التراجع.\n\nهل أنت متأكد تماماً؟'))return;
-  try{localStorage.removeItem(PKEY);localStorage.removeItem(STREAK_DATE_KEY);}catch(e){}
+  if(!confirm('⚠️ تحذير: سيُمسح كل تقدّمك (الدرجات والـ XP والـ Streak) ولا يمكن التراجع.\n\nهل أنت متأكد تماماً؟'))return;
+  try{localStorage.removeItem(PKEY);}catch(e){}
   location.reload();
 }
 
-// ═══════════════════════════════════════
-// WELCOME BANNER
-// ═══════════════════════════════════════
+// ─── WELCOME BANNER ───
 const WKEY='alc_welcomed';
 function show_welcome_if_new(){
   try{
@@ -3335,7 +3284,6 @@ function dismiss_welcome_start(){
 show_welcome_if_new();
 load_progress();
 check_streak_comeback();
-render_home_extras();
 track_screen('home');
 </script>
 
@@ -3343,30 +3291,8 @@ track_screen('home');
 <div class="site-footer">
   <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
   <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
-  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.6</p>
+  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.7</p>
 </div>
 
-<script>
-/* ── إصلاحات إمكانية الوصول والأمان (تُشغَّل بعد بناء الصفحة) ── */
-(function(){
-  // 1) شبكة أمان لشاشة البداية: أزِلها حتى لو تعطّل أنيميشن CSS
-  try{
-    var sp=document.getElementById("splash");
-    if(sp){setTimeout(function(){sp.style.display="none";sp.style.pointerEvents="none";},2800);}
-  }catch(e){}
-  // 2) اجعل البطاقات القابلة للنقر (div onclick) قابلةً للوصول بلوحة المفاتيح
-  try{
-    document.querySelectorAll("div[onclick]").forEach(function(el){
-      if(!el.hasAttribute("tabindex")){
-        el.setAttribute("role","button");
-        el.setAttribute("tabindex","0");
-        el.addEventListener("keydown",function(e){
-          if(e.key==="Enter"||e.key===" "){e.preventDefault();el.click();}
-        });
-      }
-    });
-  }catch(e){}
-})();
-</script>
 </body>
 </html>

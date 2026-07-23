@@ -1643,7 +1643,7 @@ l1:[
   {e:'sports',a:'رياضة',em:'🏅'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'مباراة / لعبة',em:'🎮'},
   {e:'restaurant',a:'مطعم',em:'🍽️'},{e:'show',a:'عرض / برنامج',em:'📺'},
   {e:'downtown',a:'وسط المدينة',em:'🌆'},{e:'city',a:'مدينة',em:'🏙️'},
-  {e:'break',a:'استراحة',em:'☕'},{e:'again',a:'مرة أخرى',em:'🔁'},
+  {e:'break',a:'استراحة',em:'☕'},{e:'again',a:'مرة أخرى',alt:['إعادة','تكرار','مرة ثانية','مجدداً'],em:'🔁'},
   {e:'clean up',a:'ينظّف / يرتّب',em:'🧹'},{e:'visit',a:'يزور',em:'🗺️'},
 ],
 l2:[
@@ -1982,6 +1982,22 @@ function build_vocab_sec(lk){
 const drill={};
 function normAr(s){return (s||'').replace(/[ً-ْـ]/g,'').replace(/[إأآا]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[()\/\.\-—،؟?]/g,' ').replace(/\s+/g,' ').trim();}
 function coreAr(a){return a.split(/[—\/\(]/)[0].trim();}
+// كل المعاني المقبولة لكلمة (تقسم على / و«أو» + مرادفات alt)
+function acceptedAr(w){
+  const out=[];
+  [w.a,...(w.alt||[])].forEach(x=>String(x).split(/[\/،,]| او | أو /).forEach(p=>{const t=p.replace(/\(.*?\)/g,'').trim();if(t)out.push(t);}));
+  return out;
+}
+// هيكل الحروف الساكنة (يتجاهل حروف العلّة عشان يتسامح مع النقل الحرفي: بيسبول = بيسيبول)
+function arSkel(s){return normAr(s).replace(/^ال/,'').replace(/ ال/g,' ').replace(/[اويهءئؤ]/g,'');}
+function drillTypeOk(input,w){
+  const ans=normAr(input);if(ans.length<2)return false;
+  const alts=acceptedAr(w).map(normAr);
+  for(const k of alts){if(k&&(ans===k||k.includes(ans)||ans.includes(k)))return true;}
+  const aSk=arSkel(input);
+  if(aSk.length>=2){for(const k of acceptedAr(w)){if(arSkel(k)===aSk)return true;}}
+  return false;
+}
 function pickDistractors(pool,correct,keyFn,n){
   const out=[],seen=new Set([keyFn(correct)]);
   const shuffled=pool.slice().sort(()=>Math.random()-.5);
@@ -2064,9 +2080,8 @@ function drill_ans(lk,btn,ok,speak){
 function drill_type(lk){
   const inp=document.getElementById('dq-input');if(!inp||inp.disabled)return;
   const st=drill[lk],w=st.items[st.idx].w,fb=document.getElementById('dq-fb');
-  const ans=normAr(inp.value),key=normAr(coreAr(w.a));
-  if(!ans){return;}
-  const ok=ans.length>1&&(ans===key||key.includes(ans)||ans.includes(key));
+  if(!inp.value.trim()){return;}
+  const ok=drillTypeOk(inp.value,w);
   if(ok){
     inp.disabled=true;inp.classList.remove('no');inp.classList.add('ok');
     if(!st.wrong)st.score++;
@@ -3316,7 +3331,7 @@ track_screen('home');
 <div class="site-footer">
   <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
   <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
-  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.8</p>
+  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.9</p>
 </div>
 
 </body>

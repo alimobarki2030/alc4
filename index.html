@@ -1641,7 +1641,7 @@ l1:[
   {e:'basketball',a:'كرة السلة',em:'🏀'},{e:'football',a:'كرة القدم الأمريكية',em:'🏈'},
   {e:'soccer',a:'كرة القدم',em:'⚽'},{e:'tennis',a:'التنس',em:'🎾'},
   {e:'sports',a:'رياضة',em:'🏅'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'مباراة / لعبة',em:'🎮'},
-  {e:'restaurant',a:'مطعم',em:'🍽️'},{e:'show',a:'برنامج / عرض',em:'📺'},
+  {e:'restaurant',a:'مطعم',em:'🍽️'},{e:'show',a:'عرض / برنامج',em:'📺'},
   {e:'downtown',a:'وسط المدينة',em:'🌆'},{e:'city',a:'مدينة',em:'🏙️'},
   {e:'break',a:'استراحة',em:'☕'},{e:'again',a:'مرة أخرى',em:'🔁'},
   {e:'clean up',a:'ينظّف / يرتّب',em:'🧹'},{e:'visit',a:'يزور',em:'🗺️'},
@@ -2011,6 +2011,7 @@ function render_drill(lk){
       <button class="sp-btn check" onclick="build_vocab_drill('${lk}')">🔁 مرّة ثانية</button></div>`;
     return;
   }
+  st.wrong=false;
   const it=st.items[st.idx],w=it.w,words=VOCAB[lk];
   const eSafe=w.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
   let head=`<div class="qprog"><div class="qpbar"><div class="qpfill" style="width:${Math.round(st.idx/total*100)}%"></div></div>
@@ -2036,31 +2037,55 @@ function render_drill(lk){
       <div class="dq-ask">✍️ اكتب معناها بالعربي</div>
       <input class="dq-input" id="dq-input" autocomplete="off" placeholder="اكتب هنا..." onkeydown="if(event.key==='Enter')drill_type('${lk}')">
       <div class="dq-fb" id="dq-fb"></div>
-      <button class="sp-btn check" style="margin-top:12px" onclick="drill_type('${lk}')">تحقّق ✓</button></div>`;
+      <button class="sp-btn check" style="margin-top:12px" onclick="drill_type('${lk}')">تحقّق ✓</button>
+      <button class="sp-skip" onclick="drill_reveal_type('${lk}')">لا أعرف — أظهر المعنى ←</button></div>`;
   }
   el.innerHTML=head+body;
   const inp=document.getElementById('dq-input');if(inp)inp.focus();
 }
-function drill_next(lk){setTimeout(()=>{drill[lk].idx++;render_drill(lk);},850);}
+function drill_next(lk){setTimeout(()=>{drill[lk].idx++;render_drill(lk);},900);}
 function drill_ans(lk,btn,ok,speak){
-  document.querySelectorAll('.dq-opt').forEach(b=>b.disabled=true);
-  const fb=document.getElementById('dq-fb'),w=drill[lk].items[drill[lk].idx].w;
-  if(ok){btn.classList.add('ok');drill[lk].score++;fb.textContent='✅ صحيح!';fb.style.color='var(--g)';
-    say(speak||w.e.replace(/\(.*?\)/g,'').trim());XP+=2;document.getElementById('xp').textContent=XP;save_progress();}
-  else{btn.classList.add('no');
-    document.querySelectorAll('.dq-opt').forEach(b=>{if((b.textContent===w.a)||(b.textContent===w.e))b.classList.add('ok');});
-    fb.textContent='الصح: '+coreAr(w.a);fb.style.color='var(--r)';}
-  drill_next(lk);
+  const st=drill[lk],fb=document.getElementById('dq-fb'),w=st.items[st.idx].w;
+  if(ok){
+    document.querySelectorAll('.dq-opt').forEach(b=>b.disabled=true);
+    btn.classList.add('ok');
+    if(!st.wrong)st.score++;
+    say(speak||w.e.replace(/\(.*?\)/g,'').trim());
+    fb.innerHTML='✅ صحيح! <span dir="ltr">'+w.e.replace(/\(.*?\)/g,'').trim()+'</span> = '+coreAr(w.a);
+    fb.style.color='var(--g)';
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+    drill_next(lk);
+  }else{
+    // فرصة إعادة المحاولة: عطّل الخيار الخطأ فقط ودع الطالب يحاول
+    st.wrong=true;btn.classList.add('no');btn.disabled=true;
+    fb.textContent='❌ حاول مرة أخرى';fb.style.color='var(--r)';
+  }
 }
 function drill_type(lk){
   const inp=document.getElementById('dq-input');if(!inp||inp.disabled)return;
-  const w=drill[lk].items[drill[lk].idx].w,fb=document.getElementById('dq-fb');
+  const st=drill[lk],w=st.items[st.idx].w,fb=document.getElementById('dq-fb');
   const ans=normAr(inp.value),key=normAr(coreAr(w.a));
+  if(!ans){return;}
   const ok=ans.length>1&&(ans===key||key.includes(ans)||ans.includes(key));
-  inp.disabled=true;
-  if(ok){inp.classList.add('ok');drill[lk].score++;fb.textContent='✅ ممتاز!';fb.style.color='var(--g)';
-    say(w.e.replace(/\(.*?\)/g,'').trim());XP+=3;document.getElementById('xp').textContent=XP;save_progress();}
-  else{inp.classList.add('no');fb.innerHTML='المعنى: <b>'+coreAr(w.a)+'</b>';fb.style.color='var(--r)';}
+  if(ok){
+    inp.disabled=true;inp.classList.remove('no');inp.classList.add('ok');
+    if(!st.wrong)st.score++;
+    say(w.e.replace(/\(.*?\)/g,'').trim());
+    fb.innerHTML='✅ ممتاز! <span dir="ltr">'+w.e.replace(/\(.*?\)/g,'').trim()+'</span> = '+coreAr(w.a);
+    fb.style.color='var(--g)';
+    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+    drill_next(lk);
+  }else{
+    st.wrong=true;inp.classList.remove('no');void inp.offsetWidth;inp.classList.add('no');
+    fb.textContent='❌ حاول مرة أخرى';fb.style.color='var(--r)';
+    inp.focus();inp.select();
+  }
+}
+function drill_reveal_type(lk){
+  const st=drill[lk],inp=document.getElementById('dq-input'),fb=document.getElementById('dq-fb'),w=st.items[st.idx].w;
+  if(inp)inp.disabled=true;
+  fb.innerHTML='المعنى: <b>'+coreAr(w.a)+'</b>';fb.style.color='var(--r)';
+  say(w.e.replace(/\(.*?\)/g,'').trim());
   drill_next(lk);
 }
 
@@ -3291,7 +3316,7 @@ track_screen('home');
 <div class="site-footer">
   <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
   <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
-  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.7</p>
+  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.8</p>
 </div>
 
 </body>

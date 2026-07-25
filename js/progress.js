@@ -17,7 +17,7 @@ function show_storage_warning(){
 }
 function save_progress(){
   if(!STORAGE_OK)return;
-  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP}));}
+  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP,rw:RW}));}
   catch(e){STORAGE_OK=false;show_storage_warning();}
 }
 function apply_lessons(){
@@ -44,7 +44,7 @@ function load_progress(){
   let data=null;
   try{data=JSON.parse(localStorage.getItem(PKEY));}catch(e){}
   if(!data)return;
-  XP=data.xp||0;STK=data.streak||0;LP=data.lessons||{};
+  XP=data.xp||0;STK=data.streak||0;LP=data.lessons||{};RW=data.rw||{};
   document.getElementById('xp').textContent=XP;
   document.getElementById('streak').textContent=STK;
   apply_lessons();

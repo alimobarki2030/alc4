@@ -18,7 +18,7 @@ l1:[
   {q:"Kay: Did Paul play baseball yesterday? May: No, he _______.",o:["not did","I did","did not","no did plays"],a:2,en:"No, he did not. = didn't",ar:"لا، هو لم يفعل"},
   {q:"Bob visited Chicago last year, and he wants to go _______ this year.",o:["again","long","like","basketball"],a:0,en:"again = one more time",ar:"مرة أخرى"},
   {q:"_______ you clean up your room?",o:["Did","Where","What","Are"],a:0,en:"Did = question word for simple past",ar:"Did = أداة السؤال في الماضي"},
-  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Houston is a large city",ar:"هيوستن مدينة كبيرة"},
+  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Houston is large → city, not a small town",ar:"هيوستن كبيرة → city، وليست بلدة صغيرة (town)"},
   {q:"There are eleven players on a football _______.",o:["game","sport","team","play"],a:2,en:"11 players = a team",ar:"11 لاعب = فريق"},
   {q:"My brother is a doctor. He _______ in a big hospital downtown.",o:["cleans","works","visits","ends"],a:1,en:"works = his job location",ar:"يعمل هناك"},
   {q:"On Saturday, let's play _______.",o:["basketball","restaurant","town","visit"],a:0,en:"You play basketball",ar:"تلعب كرة السلة"},
@@ -209,7 +209,7 @@ l1:[
   {q:"Did you eat at a _______ on Sunday?",o:["show","hospital","restaurant","dispensary"],a:2,en:"You eat at a restaurant",ar:"تأكل في مطعم"},
   {q:"Sam: Did you watch the game? Yes, _______.",o:["I watch","I did","I did watched","I watching"],a:1,en:"Short answer: Yes, I did.",ar:"الإجابة القصيرة"},
   {q:"There are eleven players on a football _______.",o:["game","sport","team","play"],a:2,en:"11 players = a team",ar:"11 لاعب = فريق"},
-  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Large city in Texas",ar:"مدينة كبيرة في تكساس"},
+  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Large → city, not a small town",ar:"كبيرة → city، وليست بلدة صغيرة (town)"},
   {q:"Mr. Gregg works 7am to 7pm. He works _______.",o:["all night","all year long","all day long","every day"],a:2,en:"7am to 7pm = all day long",ar:"من الصباح للمساء"},
 ],
 l2:[
@@ -251,6 +251,8 @@ l4:[
 let CL=null,CT='learn',XP=0,STK=0,TANS={},FANS={},built={};
 let LP={}; // lesson progress: {l1:{pct, done}, ...} — best score per lesson
 let ddSelected=null; // word selected for drag
+let RW={}; // grammar-check weakness tracker: {'l1-0':{wrong,right}, ...}
+let MX_QUIZ=[]; // last built mixed-review question set
 
 // ═══════════════════════════════════════
 // SPEECH
@@ -265,11 +267,11 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen'];
+const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen','mrscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
 
 // ── Analytics: track which section + time spent ──
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع'};
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع',mrscreen:'مراجعة مختلطة'};
 let _curScreen=null,_screenStart=0;
 function track_screen(id){
   if(typeof gtag!=='function')return;
@@ -454,6 +456,7 @@ l1:[
   {
     title:'Simple Past', ar:'الماضي البسيط',
     rule:'أضف -ed للفعل + كلمة ماضية (yesterday / last week / ago)',
+    check:{q:'Jane _______ baseball yesterday.',o:['plays','played','play','playing'],a:1,en:'yesterday = past tense → played',ar:'yesterday تدل على الماضي'},
     formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'verb + ed',c:'v'},{t:'+',c:'p'},{t:'yesterday / last...',c:'k'}],
     compare:[
       {c1:'He visits every year.',c2:'He visited last year.',ar:'every year ↔ last year'},
@@ -467,6 +470,7 @@ l1:[
   {
     title:"Negative: didn't", ar:'النفي في الماضي',
     rule:"didn't + فعل مجرد — لا تضع -ed بعد didn't أبداً",
+    check:{q:"Tom _______ his room yesterday.",o:["didn't cleaned","didn't clean","not cleaned","clean not"],a:1,en:"didn't + base verb, no -ed",ar:"didn't + الفعل مجرد بدون -ed"},
     formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:"didn't",c:'n'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
     compare:[
       {c1:'Tom cleaned his room.',c2:"Tom didn't clean his room.",ar:'إثبات ↔ نفي'},
@@ -479,6 +483,7 @@ l1:[
   {
     title:'Questions: Did?', ar:'سؤال الماضي',
     rule:'Did + subject + base verb? — واحذف -d أو -ed من الفعل',
+    check:{q:'_______ you watch the game last night?',o:['Do','Did','Watched','Watching'],a:1,en:'Did + subject + base verb',ar:'Did + الفعل الأصلي'},
     formula:[{t:'Did',c:'k'},{t:'+',c:'p'},{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'base verb',c:'v'},{t:'?',c:'p'}],
     compare:[
       {c1:'She liked Chicago.',c2:'Did she like Chicago?',ar:'liked → like (احذف -d)'},
@@ -491,6 +496,7 @@ l1:[
   {
     title:'Time Expressions', ar:'تعبيرات الزمن الماضي',
     rule:'هذه الكلمات تدل على الماضي — استخدم معها الفعل الماضي دائماً',
+    check:{q:"Which phrase means 'in the past'?",o:['every day','tomorrow','last week','next year'],a:2,en:'last week = past',ar:'last week = ماضٍ'},
     formula:[],
     compare:[],
     examples:[
@@ -504,11 +510,13 @@ l2:[
   {
     title:'Military Ranks', ar:'الرتب العسكرية',
     rule:'الرتب من الأدنى للأعلى — كل رتبة أعلى من السابقة',
+    check:{q:'Which rank is higher?',o:['Captain (O-3)','Major (O-4)'],a:1,en:'Major (O-4) is one rank above Captain (O-3)',ar:'Major أعلى من Captain برتبة واحدة'},
     formula:[],compare:[],examples:[],isRanks:true
   },
   {
     title:'Military Time', ar:'التوقيت العسكري 24 ساعة',
     rule:'من 1pm إلى 11pm: أضف 12 على الساعة للحصول على التوقيت العسكري',
+    check:{q:'3:00 pm بالتوقيت العسكري؟',o:['0300','1500','1300','2200'],a:1,en:'3pm + 12 = 1500',ar:'3+12 = 1500'},
     formula:[{t:'1pm - 11pm',c:'k'},{t:'+',c:'p'},{t:'12',c:'v'},{t:'=',c:'p'},{t:'Military Time',c:'s'}],
     compare:[
       {c1:'7:30 am',c2:'0730',ar:'الصباح = نفس الرقم'},
@@ -524,6 +532,7 @@ l2:[
   {
     title:'Irregular Verbs', ar:'الأفعال الشاذة',
     rule:'هذه الأفعال لا تأخذ -ed في الماضي — يجب حفظها',
+    check:{q:'Sgt. Jones _______ to LA last week. (fly)',o:['flied','flyed','flew','flow'],a:2,en:'fly → flew (irregular)',ar:'fly فعل شاذ → flew'},
     formula:[{t:'Present',c:'s'},{t:'→',c:'p'},{t:'Past (شاذ)',c:'n'},{t:'لا يصح',c:'k'},{t:'verb + ed',c:'v'}],
     compare:[
       {c1:'speak',c2:'spoke',ar:'تكلّم'},{c1:'fly',c2:'flew',ar:'طار'},
@@ -541,6 +550,7 @@ l3:[
   {
     title:'Can / Can\'t', ar:'القدرة على فعل شيء',
     rule:'can + فعل مجرد — نفس الشكل لجميع الضمائر، لا تضع s أو -ing',
+    check:{q:'Pvt Jones can _______ four languages.',o:['speaks','speak','speaking','spoke'],a:1,en:'can + base verb, no s',ar:'can + الفعل بدون s'},
     formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:"can / can't",c:'k'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
     compare:[
       {c1:'Jim can run 10 miles.',c2:"Kelly can't run 10 miles.",ar:'can ↔ can\'t'},
@@ -553,6 +563,7 @@ l3:[
   {
     title:'Must', ar:'يجب — واجب',
     rule:'must + فعل مجرد — يعني الشيء إلزامي ولا مفر منه',
+    check:{q:'Soldiers _______ wear uniforms. (إلزامي)',o:['can','must','may','could'],a:1,en:'must = obligatory',ar:'must = إلزامي'},
     formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'must',c:'k'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
     compare:[],
     examples:[
@@ -563,6 +574,7 @@ l3:[
   {
     title:'Must not / Mustn\'t', ar:'ممنوع — نهي تام',
     rule:'must not = ممنوع تماماً — مثل Do not في اللوحات التحذيرية',
+    check:{q:'I must not _______ here. (ممنوع)',o:['to smoke','smoking','smoke','smoked'],a:2,en:'must not + base verb, no to',ar:'must not + الفعل مباشرة بدون to'},
     formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'must not',c:'n'},{t:'+',c:'p'},{t:'base verb',c:'v'}],
     compare:[
       {c1:'Do not smoke here.',c2:'You must not smoke here.',ar:'Do not = must not (نفس المعنى)'},
@@ -575,6 +587,7 @@ l3:[
   {
     title:'May', ar:'يُسمح — طلب إذن رسمي',
     rule:'May I...? = طلب إذن رسمي | Can I...? = طلب إذن غير رسمي',
+    check:{q:'_______ I go to the library? (طلب إذن رسمي)',o:['Do','Can','May','Must'],a:2,en:'May I...? = formal permission',ar:'May = طلب إذن رسمي'},
     formula:[{t:'May',c:'k'},{t:'+',c:'p'},{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'base verb',c:'v'},{t:'?',c:'p'}],
     compare:[
       {c1:'May I go? (رسمي)',c2:'Can I go? (غير رسمي)',ar:'may = formal | can = informal'},
@@ -587,6 +600,7 @@ l3:[
   {
     title:'-ed Sounds', ar:'أصوات لاحقة الماضي',
     rule:'ثلاثة أصوات مختلفة عند نطق -ed — المفتاح هو الحرف قبل الأخير',
+    check:{q:'أي كلمة تنطق /t/ في نهايتها؟',o:['studied','played','watched','repeated'],a:2,en:'watched ends in a voiceless sound → /t/',ar:'ch صوت مهموس → /t/'},
     formula:[],compare:[],examples:[],isSounds:true
   }
 ],
@@ -594,6 +608,7 @@ l4:[
   {
     title:'Seasons', ar:'الفصول الأربعة',
     rule:'Fall = Autumn — نفس الفصل باسمين مختلفين',
+    check:{q:'Autumn تعني نفس معنى؟',o:['Winter','Spring','Fall','Summer'],a:2,en:'Fall = Autumn, same season',ar:'Fall و Autumn نفس الفصل'},
     formula:[],
     compare:[
       {c1:'Winter: Dec, Jan, Feb',c2:"It's cold.",ar:'الشتاء ❄️'},
@@ -608,6 +623,7 @@ l4:[
   {
     title:'Days Sequence', ar:'ترتيب الأيام',
     rule:'the day after tomorrow = بعد يومين | the day before yesterday = قبل يومين',
+    check:{q:"لو اليوم Monday، فـ 'the day after tomorrow' هو؟",o:['Tuesday','Wednesday','Sunday','Saturday'],a:1,en:'Mon +1 = tomorrow, +2 = day after tomorrow',ar:'بعد الغد = يومين من اليوم'},
     formula:[],
     compare:[
       {c1:'Tomorrow',c2:'Tuesday (if today=Mon)',ar:'اليوم التالي'},
@@ -620,6 +636,7 @@ l4:[
   {
     title:'This / That / These / Those', ar:'أسماء الإشارة',
     rule:'قريب = this/these | بعيد = that/those',
+    check:{q:'_______ cars are big. (بعيد + جمع)',o:['This','That','These','Those'],a:3,en:'far + plural → those',ar:'بعيد + جمع → those'},
     formula:[{t:'Near',c:'k'},{t:'this',c:'v'},{t:'(مفرد)',c:'p'},{t:'these',c:'v'},{t:'(جمع)',c:'p'}],
     compare:[
       {c1:'this (قريب مفرد)',c2:'these (قريب جمع)',ar:'near'},
@@ -633,6 +650,7 @@ l4:[
   {
     title:'How much...?', ar:'كم الثمن؟',
     rule:'How much is/does = سؤال عن السعر',
+    check:{q:'_______ does the pen cost?',o:['How many','How much','What price','How'],a:1,en:'How much = asking price',ar:'How much = سؤال عن السعر'},
     formula:[{t:'How much',c:'k'},{t:'+',c:'p'},{t:'is / does',c:'v'},{t:'+',c:'p'},{t:'item',c:'s'},{t:'cost?',c:'p'}],
     compare:[
       {c1:'How much is the shirt?',c2:"It's $29.",ar:'is = للمفرد'},
@@ -645,6 +663,7 @@ l4:[
   {
     title:'-ed Sounds Review', ar:'مراجعة أصوات الماضي',
     rule:'مراجعة: /t/ مهموس | /d/ مجهور | /əd/ بعد t أو d',
+    check:{q:'أي كلمة تنطق /əd/؟',o:['played','smoked','wanted','talked'],a:2,en:'wanted ends in t/d → /əd/',ar:'تنتهي بـ t/d → /əd/'},
     formula:[],compare:[],examples:[],isSounds:true
   }
 ]
@@ -865,7 +884,7 @@ function build_grammar_sec(lk){
         <span class="gcard-arrow">▼</span>
       </div>
       <div class="gcard-body" id="gb${lk}${i}">
-        ${build_gcard_body(g)}
+        ${build_gcard_body(g,lk,i)}
       </div>
     </div>`;
   });
@@ -879,8 +898,39 @@ function toggle_gcard(lk,i){
   body.classList.toggle('open');
 }
 
-function build_gcard_body(g){
+function build_check_widget(check,lk,i){
+  return `<div class="chk-box" id="chk${lk}${i}">
+    <div class="chk-label">🧠 جرّب بنفسك</div>
+    <div class="chk-q">${check.q}</div>
+    <div class="chk-opts">
+      ${check.o.map((opt,oi)=>`<button class="chk-opt" onclick="check_grammar('${lk}',${i},${oi})">${opt}</button>`).join('')}
+    </div>
+    <div class="chk-fb" id="chkfb${lk}${i}"></div>
+  </div>`;
+}
+
+function check_grammar(lk,i,oi){
+  const g=GRAMMAR[lk][i];
+  const box=document.getElementById(`chk${lk}${i}`);
+  const btns=box.querySelectorAll('.chk-opt');
+  btns.forEach(b=>b.disabled=true);
+  const ok=oi===g.check.a;
+  btns[oi].classList.add(ok?'ok':'no');
+  if(!ok)btns[g.check.a].classList.add('ok');
+  const ruleId=lk+'-'+i;
+  RW[ruleId]=RW[ruleId]||{wrong:0,right:0};
+  if(ok)RW[ruleId].right++; else RW[ruleId].wrong++;
+  const fb=document.getElementById(`chkfb${lk}${i}`);
+  fb.className='chk-fb show '+(ok?'ok':'no');
+  fb.innerHTML=`${ok?'✅':'❌'} ${g.check.ar}`;
+  if(ok){XP+=2;document.getElementById('xp').textContent=XP;}
+  save_progress();
+  say(g.check.o[g.check.a]);
+}
+
+function build_gcard_body(g,lk,i){
   let html='';
+  const checkHtml=g.check?build_check_widget(g.check,lk,i):'';
 
   // One-line rule
   html+=`<div class="rule-box">
@@ -900,7 +950,7 @@ function build_gcard_body(g){
       <tr><td>General</td><td>Gen</td><td>O-7</td><td class="slv">Silver فضي</td></tr>
     </tbody></table>
     <div class="rank-tip">💡 مثال: Carol is a new <strong>Major (O-4)</strong>. Last year she was a <strong>Captain (O-3)</strong> — النقيب أقل من الرائد مباشرة.</div>`;
-    return html;
+    return html+checkHtml;
   }
 
   // Special: Sounds
@@ -915,7 +965,7 @@ function build_gcard_body(g){
       <tr><td><strong>/əd/</strong></td><td>بعد حرف t أو d</td><td>want<u>ed</u> repeat<u>ed</u> indent<u>ed</u></td></tr>
     </tbody></table>
     <div class="sound-tip">💡 الطريقة السهلة: هل الفعل ينتهي بـ t أو d؟ → صوت /əd/ | مهموس → /t/ | مجهور → /d/</div>`;
-    return html;
+    return html+checkHtml;
   }
 
   // Formula strip
@@ -990,7 +1040,7 @@ function build_gcard_body(g){
     html+='</div>';
   }
 
-  return html;
+  return html+checkHtml;
 }
 
 
@@ -1043,6 +1093,53 @@ function build_quiz(elId,qs,prefix){
     sr.innerHTML=`<button class="sbtn" onclick="submit_test()">إرسال الإجابات →</button>`;
     el.appendChild(sr);
   }
+}
+
+// ═══════════════════════════════════════
+// MIXED REVIEW — spaced/interleaved practice
+// pulls weakest grammar checks first, fills the rest
+// from lesson tests the student has attempted
+// ═══════════════════════════════════════
+function gather_mixed_review_questions(){
+  const rules=[];
+  Object.keys(GRAMMAR).forEach(lk=>{
+    GRAMMAR[lk].forEach((g,i)=>{
+      if(!g.check)return;
+      const w=RW[lk+'-'+i]||{wrong:0,right:0};
+      rules.push({g,score:w.wrong-w.right,attempted:(w.wrong+w.right)>0});
+    });
+  });
+  rules.sort((a,b)=>{
+    if(a.score!==b.score)return b.score-a.score;
+    if(a.attempted!==b.attempted)return a.attempted?1:-1;
+    return Math.random()-.5;
+  });
+  const picked=rules.slice(0,6).map(r=>({q:r.g.check.q,o:r.g.check.o,a:r.g.check.a,en:r.g.check.en,ar:r.g.check.ar}));
+  if(picked.length<5){
+    const lessonsToUse=Object.keys(LP).length?Object.keys(LP):['l1','l2','l3','l4'];
+    const pool=[];
+    lessonsToUse.forEach(lk=>{if(EE[lk])pool.push(...EE[lk]);});
+    const shuffled=pool.sort(()=>Math.random()-.5);
+    while(picked.length<5&&shuffled.length)picked.push(shuffled.pop());
+  }
+  return picked.sort(()=>Math.random()-.5);
+}
+
+function open_mixed_review(){
+  show_screen('mrscreen');
+  build_mixed_review();
+}
+
+function build_mixed_review(){
+  MX_QUIZ=gather_mixed_review_questions();
+  const empty=document.getElementById('mr-empty');
+  if(MX_QUIZ.length===0){
+    empty.style.display='block';
+    document.getElementById('mr-quiz').innerHTML='';
+    return;
+  }
+  empty.style.display='none';
+  build_quiz('mr-quiz',MX_QUIZ,'mx');
 }
 
 // ═══════════════════════════════════════
@@ -1205,7 +1302,7 @@ function ans(pfx,qi,oi,correct,en,ar){
   fb.className='fb show '+(ok?'ok':'no');
   if(ok){XP+=pfx==='te'||pfx==='fi'?5:3;STK++;document.getElementById('xp').textContent=XP;document.getElementById('streak').textContent=STK;save_progress();}
   else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}
-  say(pfx==='fi'?FINAL[qi].o[correct]:(pfx==='te'?EE[CL][qi].o[correct]:PR[CL][qi].o[correct]));
+  say(pfx==='fi'?FINAL[qi].o[correct]:(pfx==='te'?EE[CL][qi].o[correct]:(pfx==='mx'?MX_QUIZ[qi].o[correct]:PR[CL][qi].o[correct])));
 
   // Update progress bar
   const total=pfx==='fi'?FINAL.length:(pfx==='te'?EE[CL].length:PR[CL].length);

@@ -18,7 +18,7 @@ l1:[
   {q:"Kay: Did Paul play baseball yesterday? May: No, he _______.",o:["not did","I did","did not","no did plays"],a:2,en:"No, he did not. = didn't",ar:"لا، هو لم يفعل"},
   {q:"Bob visited Chicago last year, and he wants to go _______ this year.",o:["again","long","like","basketball"],a:0,en:"again = one more time",ar:"مرة أخرى"},
   {q:"_______ you clean up your room?",o:["Did","Where","What","Are"],a:0,en:"Did = question word for simple past",ar:"Did = أداة السؤال في الماضي"},
-  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Houston is a large city",ar:"هيوستن مدينة كبيرة"},
+  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Houston is large → city, not a small town",ar:"هيوستن كبيرة → city، وليست بلدة صغيرة (town)"},
   {q:"There are eleven players on a football _______.",o:["game","sport","team","play"],a:2,en:"11 players = a team",ar:"11 لاعب = فريق"},
   {q:"My brother is a doctor. He _______ in a big hospital downtown.",o:["cleans","works","visits","ends"],a:1,en:"works = his job location",ar:"يعمل هناك"},
   {q:"On Saturday, let's play _______.",o:["basketball","restaurant","town","visit"],a:0,en:"You play basketball",ar:"تلعب كرة السلة"},
@@ -209,7 +209,7 @@ l1:[
   {q:"Did you eat at a _______ on Sunday?",o:["show","hospital","restaurant","dispensary"],a:2,en:"You eat at a restaurant",ar:"تأكل في مطعم"},
   {q:"Sam: Did you watch the game? Yes, _______.",o:["I watch","I did","I did watched","I watching"],a:1,en:"Short answer: Yes, I did.",ar:"الإجابة القصيرة"},
   {q:"There are eleven players on a football _______.",o:["game","sport","team","play"],a:2,en:"11 players = a team",ar:"11 لاعب = فريق"},
-  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Large city in Texas",ar:"مدينة كبيرة في تكساس"},
+  {q:"Houston is a _______ in Texas.",o:["game","town","city","sport"],a:2,en:"Large → city, not a small town",ar:"كبيرة → city، وليست بلدة صغيرة (town)"},
   {q:"Mr. Gregg works 7am to 7pm. He works _______.",o:["all night","all year long","all day long","every day"],a:2,en:"7am to 7pm = all day long",ar:"من الصباح للمساء"},
 ],
 l2:[

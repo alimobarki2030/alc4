@@ -252,7 +252,6 @@ let CL=null,CT='learn',XP=0,STK=0,TANS={},FANS={},built={};
 let LP={}; // lesson progress: {l1:{pct, done}, ...} — best score per lesson
 let ddSelected=null; // word selected for drag
 let RW={}; // grammar-check weakness tracker: {'l1-0':{wrong,right}, ...}
-let MX_QUIZ=[]; // last built mixed-review question set
 
 // ═══════════════════════════════════════
 // SPEECH
@@ -267,11 +266,11 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen','mrscreen'];
+const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
 
 // ── Analytics: track which section + time spent ──
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع',mrscreen:'مراجعة مختلطة'};
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع'};
 let _curScreen=null,_screenStart=0;
 function track_screen(id){
   if(typeof gtag!=='function')return;
@@ -1096,53 +1095,6 @@ function build_quiz(elId,qs,prefix){
 }
 
 // ═══════════════════════════════════════
-// MIXED REVIEW — spaced/interleaved practice
-// pulls weakest grammar checks first, fills the rest
-// from lesson tests the student has attempted
-// ═══════════════════════════════════════
-function gather_mixed_review_questions(){
-  const rules=[];
-  Object.keys(GRAMMAR).forEach(lk=>{
-    GRAMMAR[lk].forEach((g,i)=>{
-      if(!g.check)return;
-      const w=RW[lk+'-'+i]||{wrong:0,right:0};
-      rules.push({g,score:w.wrong-w.right,attempted:(w.wrong+w.right)>0});
-    });
-  });
-  rules.sort((a,b)=>{
-    if(a.score!==b.score)return b.score-a.score;
-    if(a.attempted!==b.attempted)return a.attempted?1:-1;
-    return Math.random()-.5;
-  });
-  const picked=rules.slice(0,6).map(r=>({q:r.g.check.q,o:r.g.check.o,a:r.g.check.a,en:r.g.check.en,ar:r.g.check.ar}));
-  if(picked.length<5){
-    const lessonsToUse=Object.keys(LP).length?Object.keys(LP):['l1','l2','l3','l4'];
-    const pool=[];
-    lessonsToUse.forEach(lk=>{if(EE[lk])pool.push(...EE[lk]);});
-    const shuffled=pool.sort(()=>Math.random()-.5);
-    while(picked.length<5&&shuffled.length)picked.push(shuffled.pop());
-  }
-  return picked.sort(()=>Math.random()-.5);
-}
-
-function open_mixed_review(){
-  show_screen('mrscreen');
-  build_mixed_review();
-}
-
-function build_mixed_review(){
-  MX_QUIZ=gather_mixed_review_questions();
-  const empty=document.getElementById('mr-empty');
-  if(MX_QUIZ.length===0){
-    empty.style.display='block';
-    document.getElementById('mr-quiz').innerHTML='';
-    return;
-  }
-  empty.style.display='none';
-  build_quiz('mr-quiz',MX_QUIZ,'mx');
-}
-
-// ═══════════════════════════════════════
 // BUILD WORD ORDER
 // ═══════════════════════════════════════
 function build_dd(lk){
@@ -1302,7 +1254,7 @@ function ans(pfx,qi,oi,correct,en,ar){
   fb.className='fb show '+(ok?'ok':'no');
   if(ok){XP+=pfx==='te'||pfx==='fi'?5:3;STK++;document.getElementById('xp').textContent=XP;document.getElementById('streak').textContent=STK;save_progress();}
   else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}
-  say(pfx==='fi'?FINAL[qi].o[correct]:(pfx==='te'?EE[CL][qi].o[correct]:(pfx==='mx'?MX_QUIZ[qi].o[correct]:PR[CL][qi].o[correct])));
+  say(pfx==='fi'?FINAL[qi].o[correct]:(pfx==='te'?EE[CL][qi].o[correct]:PR[CL][qi].o[correct]));
 
   // Update progress bar
   const total=pfx==='fi'?FINAL.length:(pfx==='te'?EE[CL].length:PR[CL].length);

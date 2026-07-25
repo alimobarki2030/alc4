@@ -10,6 +10,14 @@
   gtag('js', new Date());
   gtag('config', 'G-1396QQS2S5');
 </script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xqhawn6noe");
+</script>
 <meta name="description" content="تعلّم، تدرّب، واختبر نفسك على Book 4 بالكامل — مع اختبار نهائي شامل">
 <meta property="og:title" content="Book 4 ALC — مركز التدريب الإنجليزي">
 <meta property="og:description" content="تعلّم، تدرّب، واختبر نفسك على Book 4 بالكامل — مع اختبار نهائي شامل">
@@ -33,6 +41,7 @@
   --ok-bg:#D7FFB8;--ok-txt:#2D8A00;--no-bg:#FFDFE0;--no-txt:#CC0000;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+button{-webkit-tap-highlight-color:transparent}
 body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;font-size:17px}
 
 /* NAV */
@@ -233,11 +242,11 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   background:#fff;border:2px solid var(--bdr);border-radius:9px;
   font-family:'Inter',sans-serif;font-size:.95rem;color:var(--txt);
   cursor:pointer;transition:all .15s;text-align:left;direction:ltr;width:100%}
-.opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
+@media(hover:hover){.opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}}
 .oltr{width:24px;height:24px;border-radius:6px;background:var(--bdr);
   display:flex;align-items:center;justify-content:center;font-weight:700;
   font-size:.72rem;color:var(--muted);flex-shrink:0;transition:all .15s}
-.opt:hover:not(:disabled) .oltr{background:var(--b);color:#fff}
+@media(hover:hover){.opt:hover:not(:disabled) .oltr{background:var(--b);color:#fff}}
 .opt.ok{border-color:var(--g);background:var(--ok-bg)}
 .opt.ok .oltr{background:var(--g);color:#fff}
 .opt.no{border-color:var(--r);background:var(--no-bg);opacity:.7}
@@ -258,7 +267,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .wo-card.wo-no{border-color:var(--r);background:var(--no-bg)}
 .wo-prompt{font-family:'Cairo',sans-serif;font-size:.88rem;color:var(--muted);margin-bottom:10px}
 .wo-answer{min-height:44px;border:2px dashed var(--b);border-radius:10px;
-  padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;
+  padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;direction:ltr;justify-content:flex-start;
   background:rgba(28,176,246,.03);transition:border-color .3s;align-items:center}
 .wo-answer.has-words{border-style:solid;background:rgba(28,176,246,.06)}
 .wo-answer.wo-correct{border-color:var(--g);background:var(--ok-bg)}
@@ -270,7 +279,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .wo-chip:hover{background:var(--navy2);transform:scale(1.04)}
 .wo-chip.placed{background:var(--b);color:#fff}
 .wo-chip.placed:hover{background:var(--bd)}
-.wo-bank{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.wo-bank{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px;direction:ltr;justify-content:flex-start}
 .wo-bank-chip{background:#fff;border:2px solid var(--navy);border-radius:8px;
   padding:7px 13px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;
   color:var(--navy);cursor:pointer;transition:all .15s;user-select:none}
@@ -425,6 +434,28 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .pr-arrow{color:var(--muted)}
 .pr-spk{background:none;border:none;cursor:pointer;font-size:.82rem;padding:0}
 .pr-ar{text-align:center;font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin-top:5px}
+/* Vocab drill */
+.dq{background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:22px 16px;text-align:center}
+.dq-emoji{font-size:3rem;margin-bottom:6px}
+.dq-word{font-family:'Inter',sans-serif;font-weight:800;font-size:1.7rem;color:var(--navy);display:flex;align-items:center;justify-content:center;gap:10px}
+.dq-word-ar{font-family:'Cairo',sans-serif;font-weight:900;font-size:1.7rem;color:var(--navy)}
+.dq-spk{background:var(--b);border:none;border-radius:8px;width:34px;height:34px;color:#fff;cursor:pointer;font-size:.85rem}
+.dq-ask{font-family:'Cairo',sans-serif;font-size:.86rem;color:var(--muted);margin:8px 0 14px}
+.dq-opts{display:flex;flex-direction:column;gap:8px}
+.dq-opt{padding:13px;border:2px solid var(--bdr);border-radius:12px;background:#fff;font-family:'Cairo',sans-serif;
+  font-weight:700;font-size:1rem;color:var(--navy);cursor:pointer;transition:.15s;outline:none;-webkit-tap-highlight-color:transparent}
+.dq-opt.en{font-family:'Inter',sans-serif;font-weight:800}
+.dq-opt:focus{outline:none}
+@media(hover:hover){.dq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}}
+.dq-opt.ok{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
+.dq-opt.no{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
+.dq-opt:disabled{cursor:default}
+.dq-input{width:100%;max-width:280px;border:2px solid var(--bdr);border-radius:12px;padding:12px;margin:0 auto;display:block;
+  font-family:'Cairo',sans-serif;text-align:center;font-size:1.15rem;font-weight:700;color:var(--navy);outline:none;transition:.15s}
+.dq-input:focus{border-color:var(--b);box-shadow:0 0 0 3px rgba(28,176,246,.15)}
+.dq-input.ok{border-color:var(--g);background:var(--ok-bg)}
+.dq-input.no{border-color:var(--r);background:var(--no-bg)}
+.dq-fb{margin-top:12px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.92rem;min-height:1.3em}
 
 /* Grammar cards */
 .gcard{background:var(--card);border-radius:14px;border:2px solid var(--bdr);
@@ -537,128 +568,6 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .prep-card .pc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:900}
 .prep-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.8rem;margin-top:2px}
 
-/* ── PREP JOURNEY ── */
-.journey-track{margin-bottom:12px}
-.journey-step{display:none}
-.journey-step.active{display:block;animation:qfade .35s ease}
-
-/* Path selector cards */
-.path-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}
-.path-card{border-radius:16px;padding:20px 16px;text-align:center;cursor:pointer;
-  border:3px solid;transition:all .2s;user-select:none}
-.path-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
-.path-card.place{background:#EFF6FF;border-color:#93C5FD}
-.path-card.time{background:#FFF7ED;border-color:#FDBA74}
-.path-card.locked{opacity:.45;cursor:not-allowed;transform:none!important;box-shadow:none!important}
-.path-card.done{position:relative}
-.path-card.done::after{content:'✓';position:absolute;top:10px;left:10px;
-  background:var(--g);color:#fff;width:24px;height:24px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
-.pc-emoji{font-size:2.5rem;display:block;margin-bottom:8px}
-.pc-title{font-family:'Inter',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy)}
-.pc-sub{font-family:'Cairo',sans-serif;font-size:.8rem;color:var(--muted);margin-top:4px}
-.pc-badge{display:inline-block;margin-top:8px;font-size:.72rem;font-weight:700;
-  padding:3px 10px;border-radius:20px;font-family:'Cairo',sans-serif}
-.pc-badge.place{background:#DBEAFE;color:#1D4ED8}
-.pc-badge.time{background:#FFEDD5;color:#C2410C}
-.pc-badge.done{background:#D7FFB8;color:#2D8A00}
-
-/* Step card */
-.step-card{background:var(--card);border-radius:16px;border:2px solid var(--bdr);
-  padding:20px 18px;margin-bottom:14px}
-.step-num{font-size:.68rem;font-weight:700;color:var(--muted);letter-spacing:2px;
-  text-transform:uppercase;font-family:'Cairo',sans-serif;margin-bottom:8px}
-.step-hook{font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;
-  color:var(--navy);line-height:1.7;margin-bottom:14px}
-.step-hook span{color:var(--b)}
-
-/* Keyword reveal */
-.kw-box{border-radius:14px;padding:16px;margin-bottom:14px;border:2px solid}
-.kw-box.in-box{background:#EFF6FF;border-color:#93C5FD}
-.kw-box.on-box{background:#F0FDF4;border-color:#86EFAC}
-.kw-box.at-box{background:#FFF7ED;border-color:#FDBA74}
-.kw-word{font-family:'Inter',sans-serif;font-weight:900;font-size:2rem;
-  display:flex;align-items:center;gap:10px;margin-bottom:8px;direction:ltr}
-.kw-word.in-c{color:#1D4ED8}
-.kw-word.on-c{color:#15803D}
-.kw-word.at-c{color:#C2410C}
-.kw-spk{background:#fff;border:2px solid;border-radius:8px;width:34px;height:34px;
-  cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.15s}
-.kw-spk.in-c{border-color:#93C5FD;color:#1D4ED8}
-.kw-spk.on-c{border-color:#86EFAC;color:#15803D}
-.kw-spk.at-c{border-color:#FDBA74;color:#C2410C}
-.kw-rule{font-family:'Cairo',sans-serif;font-size:.95rem;font-weight:700;
-  color:var(--navy);margin-bottom:10px;line-height:1.7}
-.kw-rule b{font-family:'Inter',sans-serif}
-.kw-examples{display:flex;flex-direction:column;gap:6px}
-.kw-ex{display:flex;align-items:center;justify-content:space-between;gap:8px;
-  background:#fff;border-radius:9px;padding:9px 12px;border:1.5px solid #E5E5E5}
-.kw-ex-en{font-family:'Inter',sans-serif;font-weight:700;color:var(--navy);
-  font-size:.92rem;direction:ltr;text-align:left;flex:1}
-.kw-ex-en b{color:inherit}
-.kw-ex-ar{font-family:'Cairo',sans-serif;font-size:.8rem;color:var(--muted)}
-.kw-ex-spk{background:none;border:none;cursor:pointer;font-size:.85rem;flex-shrink:0}
-
-/* Comparison strip */
-.compare-strip{background:var(--navy);border-radius:14px;padding:14px 16px;margin-bottom:14px}
-.compare-strip-title{font-family:'Cairo',sans-serif;font-size:.82rem;color:rgba(255,255,255,.7);
-  margin-bottom:10px;text-align:center}
-.compare-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;direction:ltr}
-.compare-row:last-child{margin-bottom:0}
-.cr-prep{font-family:'Inter',sans-serif;font-weight:900;font-size:.95rem;
-  padding:5px 12px;border-radius:8px;min-width:40px;text-align:center}
-.cr-prep.in-c{background:#1D4ED8;color:#fff}
-.cr-prep.on-c{background:#15803D;color:#fff}
-.cr-prep.at-c{background:#C2410C;color:#fff}
-.cr-en{font-family:'Inter',sans-serif;font-weight:600;color:#fff;font-size:.88rem;flex:1}
-.cr-ar{font-family:'Cairo',sans-serif;font-size:.75rem;color:rgba(255,255,255,.6)}
-.cr-spk{background:rgba(255,255,255,.15);border:none;border-radius:6px;
-  width:26px;height:26px;color:#fff;cursor:pointer;font-size:.7rem;flex-shrink:0}
-
-/* Inline quiz */
-.iq-label{font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;
-  color:var(--muted);margin-bottom:8px}
-.iq-sent{font-family:'Inter',sans-serif;direction:ltr;font-size:.95rem;font-weight:600;
-  color:var(--navy);margin-bottom:10px;line-height:1.8}
-.iq-opts{display:flex;gap:8px}
-.iq-opt{flex:1;padding:11px 6px;border:2px solid var(--bdr);border-radius:10px;
-  background:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:1rem;
-  color:var(--navy);cursor:pointer;transition:.15s;text-align:center}
-.iq-opt:hover:not(:disabled){border-color:var(--b);background:#EFF6FF}
-.iq-opt.ok{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
-.iq-opt.no{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
-.iq-fb{margin-top:8px;border-radius:8px;padding:8px 12px;font-family:'Cairo',sans-serif;
-  font-size:.85rem;font-weight:700;display:none}
-.iq-fb.show.ok{display:block;background:var(--ok-bg);color:var(--ok-txt)}
-.iq-fb.show.no{display:block;background:var(--no-bg);color:var(--no-txt)}
-
-/* Next button */
-.step-next{width:100%;margin-top:14px;padding:13px;background:var(--navy);color:#fff;
-  border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-weight:800;
-  font-size:.95rem;cursor:pointer;transition:.15s;display:none}
-.step-next.show{display:block;animation:qfade .3s ease}
-.step-next:hover{filter:brightness(1.15);transform:translateY(-1px)}
-
-/* Challenge */
-.challenge-box{background:linear-gradient(135deg,#7C3AED,#4338CA);border-radius:16px;
-  padding:20px;text-align:center;margin-bottom:14px}
-.challenge-box h3{color:#fff;font-size:1.05rem;font-weight:900;margin-bottom:4px}
-.challenge-box p{color:rgba(255,255,255,.8);font-size:.82rem;margin-bottom:14px}
-.challenge-score{font-size:2.5rem;font-weight:900;color:#FFC800;margin:8px 0}
-.challenge-stars{font-size:1.5rem;margin-bottom:12px}
-.chal-item{background:var(--card);border-radius:12px;padding:14px;margin-bottom:10px;border:2px solid var(--bdr)}
-.chal-sent{font-family:'Inter',sans-serif;direction:ltr;font-size:.95rem;font-weight:600;
-  color:var(--navy);margin-bottom:10px}
-.locked-msg{background:#FFF7ED;border:2px solid #FDBA74;border-radius:12px;
-  padding:14px;text-align:center;font-family:'Cairo',sans-serif;font-size:.88rem;
-  font-weight:700;color:#B45309;margin-bottom:12px}
-
-/* Progress dots */
-.step-dots{display:flex;justify-content:center;gap:6px;margin-bottom:16px}
-.step-dot{width:8px;height:8px;border-radius:50%;background:var(--bdr);transition:.3s}
-.step-dot.done{background:var(--g)}
-.step-dot.active{background:var(--b);transform:scale(1.3)}
-
 #pscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
 .prep-hero{background:linear-gradient(135deg,#0EA5E9,#2563EB);border-radius:16px;padding:20px;text-align:center;margin-bottom:16px}
 .prep-hero h2{color:#fff;font-size:1.25rem;font-weight:900}
@@ -698,7 +607,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .pq-opts{display:flex;gap:8px}
 .pq-opt{flex:1;padding:10px;border:2px solid var(--bdr);border-radius:9px;background:#fff;
   font-family:'Inter',sans-serif;font-weight:800;font-size:.95rem;color:var(--navy);cursor:pointer;transition:.15s}
-.pq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
+@media(hover:hover){.pq-opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}}
 .pq-opt.ok{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
 .pq-opt.no{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
 .pq-fb{margin-top:9px;border-radius:8px;padding:8px 11px;font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:600;display:none}
@@ -1146,15 +1055,26 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 <div id="pscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero">
-    <h2>in · on · at</h2>
-    <p>رحلتان قصيرتان — تعلّم بالخطوات مع أمثلة من حياتك</p>
+    <h2>in · on · at 🎯</h2>
+    <p>كل ما اتّسعت الدائرة زاد العموم — والعكس يزيد التحديد</p>
   </div>
+  <div class="prep-toggle">
+    <button class="on" id="pt-place" onclick="sw_prep('place')">📍 المكان</button>
+    <button id="pt-time" onclick="sw_prep('time')">🕐 الزمن</button>
+  </div>
+  <div class="prep-hint">👇 اضغط على أيّ لون في الدائرة</div>
+  <div class="target-wrap">
+    <div class="target">
+      <div class="ring ring-in" id="ring-in" onclick="sel_prep('in')"><span>in</span></div>
+      <div class="ring ring-on" id="ring-on" onclick="sel_prep('on')"><span>on</span></div>
+      <div class="ring ring-at" id="ring-at" onclick="sel_prep('at')"><span>at</span></div>
+    </div>
+  </div>
+  <div class="zoom-cap" id="zoom-cap"></div>
+  <div id="prep-detail"></div>
+  <div id="prep-except"></div>
 
-  <!-- JOURNEY CONTAINER -->
-  <div id="prep-journey"></div>
-
-  <!-- VIDEO — always visible at bottom -->
-  <div class="lesson-video" style="margin-top:24px">
+  <div class="lesson-video">
     <div class="lv-title">🎬 شاهد الشرح كاملاً — in · on · at</div>
     <div class="yt-embed">
       <iframe src="https://www.youtube.com/embed/Q8gMUILX6xk?rel=0" title="in on at explanation"
@@ -1162,6 +1082,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
         allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
     </div>
   </div>
+
+  <button class="quiz-toggle" id="prep-toggle" onclick="reveal_quiz('prep')">🎯 فهمت الفكرة؟ اختبر نفسك ←</button>
+  <div id="prep-quiz" class="quiz-wrap"></div>
 </div>
 
 <!-- ARTICLES SCREEN -->
@@ -1702,7 +1625,7 @@ function sw_tab(t){
     document.getElementById('ph-'+x).classList.toggle('active',x===t);
   });
   const lk=CL;
-  if(t==='practice'&&!built['pr'+lk]){build_quiz('ph-practice',PR[lk],'pr');built['pr'+lk]=1;}
+  if(t==='practice'&&!built['pr'+lk]){build_vocab_drill(lk);built['pr'+lk]=1;}
   if(t==='drag'&&!built['dd'+lk]){build_dd(lk);built['dd'+lk]=1;}
   if(t==='test'&&!built['te'+lk]){TANS={};build_quiz('ph-test',EE[lk],'te');built['te'+lk]=1;}
 }
@@ -1720,9 +1643,9 @@ l1:[
   {e:'basketball',a:'كرة السلة',em:'🏀'},{e:'football',a:'كرة القدم الأمريكية',em:'🏈'},
   {e:'soccer',a:'كرة القدم',em:'⚽'},{e:'tennis',a:'التنس',em:'🎾'},
   {e:'sports',a:'رياضة',em:'🏅'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'مباراة / لعبة',em:'🎮'},
-  {e:'restaurant',a:'مطعم',em:'🍽️'},{e:'show',a:'برنامج / عرض',em:'📺'},
+  {e:'restaurant',a:'مطعم',em:'🍽️'},{e:'show',a:'عرض / برنامج',em:'📺'},
   {e:'downtown',a:'وسط المدينة',em:'🌆'},{e:'city',a:'مدينة',em:'🏙️'},
-  {e:'break',a:'استراحة',em:'☕'},{e:'again',a:'مرة أخرى',em:'🔁'},
+  {e:'break',a:'استراحة',em:'☕'},{e:'again',a:'مرة أخرى',alt:['إعادة','تكرار','مرة ثانية','مجدداً'],em:'🔁'},
   {e:'clean up',a:'ينظّف / يرتّب',em:'🧹'},{e:'visit',a:'يزور',em:'🗺️'},
 ],
 l2:[
@@ -1743,7 +1666,6 @@ l2:[
   {e:'smoke',a:'يُدخّن',em:'💨'},{e:'break',a:'استراحة',em:'☕'},
 ],
 l3:[
-  // ── ملابس ──
   {e:'clothes',a:'ملابس',em:'👕'},
   {e:'dress',a:'فستان',em:'👗'},{e:'skirt',a:'تنورة',em:'👗'},
   {e:'blouse',a:'بلوزة',em:'👚'},{e:'stockings',a:'جوارب طويلة',em:'🧦'},
@@ -1755,29 +1677,19 @@ l3:[
   {e:'tie / necktie',a:'ربطة عنق',em:'👔'},{e:'belt',a:'حزام',em:'🔗'},
   {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'jacket / coat',a:'جاكيت / معطف',em:'🧥'},
   {e:'suit',a:'بدلة = jacket + slacks',em:'🤵'},{e:'shorts',a:'شورت قصير',em:'🩳'},
-  // ── أفعال ──
-  {e:'wear',a:'يرتدي',past:'wore',pa:'ارتدى',em:'👔'},
-  {e:'put on',a:'يلبس',past:'put on',pa:'لبِس',em:'🧥'},
-  {e:'take off',a:'يخلع',past:'took off',pa:'خلع',em:'🧤'},
-  {e:'wake up',a:'يستيقظ',past:'woke up',pa:'استيقظ',em:'⏰'},
-  {e:'fall asleep',a:'يغفو / ينام',past:'fell asleep',pa:'غفا',em:'😴'},
-  {e:'hang (up)',a:'يعلّق',past:'hung (up)',pa:'علّق',em:'🪝'},
-  // ── القواعد والإملاء ──
-  {e:'sentence',a:'جملة',em:'📝'},
-  {e:'statement',a:'جملة خبرية',em:'📋'},
-  {e:'paragraph',a:'فقرة',em:'📄'},
-  {e:'punctuation',a:'علامات الترقيم',em:'✏️'},
-  {e:'period',a:'نقطة .',em:'⏺️'},
-  {e:'comma',a:'فاصلة ,',em:'🔤'},
-  {e:'question mark',a:'علامة استفهام ?',em:'❓'},
-  {e:'apostrophe',a:'فاصلة علوية \'',em:'🔡'},
-  {e:'contraction',a:'اختصار (can\'t = cannot)',em:'🔀'},
-  {e:'indent',a:'مسافة بداية الفقرة',em:'↪️'},
-  {e:'punctuate',a:'يضع علامات الترقيم',em:'✍️'},
-  // ── كلمات أخرى ──
-  {e:'asleep',a:'نائم',em:'😴'},
-  {e:'awake',a:'صاحٍ / مستيقظ',em:'👀'},
-  {e:'well',a:'بشكل جيد',em:'✅'},
+  {e:'wear',a:'يرتدي',past:'wore',pa:'ارتدى',em:'👔'},{e:'put on',a:'يلبس',past:'put on',pa:'لبِس',em:'🧥'},
+  {e:'take off',a:'يخلع',past:'took off',pa:'خلع',em:'🧤'},{e:'wake up',a:'يستيقظ',past:'woke up',pa:'استيقظ',em:'⏰'},
+  {e:'fall asleep',a:'يغفو / يستغرق نوماً',past:'fell asleep',pa:'غفا',em:'😴'},{e:'hang (up)',a:'يعلّق',past:'hung',pa:'علّق',em:'🪝'},
+  {e:'can',a:'يستطيع',em:'💪'},{e:"can't",a:'لا يستطيع',em:'🚫'},
+  {e:'may',a:'يُسمح له / قد',em:'🙋'},{e:'must',a:'يجب',em:'❗'},
+  {e:'must not',a:'يجب ألّا (ممنوع)',em:'⛔'},{e:'well',a:'جيّداً / بمهارة',em:'👍'},
+  {e:'asleep',a:'نائم',em:'😴'},{e:'awake',a:'صاحٍ / مستيقظ',em:'👀'},
+  {e:'sentence',a:'جملة',em:'📝'},{e:'statement',a:'جملة خبرية',em:'💬'},
+  {e:'paragraph',a:'فقرة',em:'📄'},{e:'indent',a:'يُزيح بداية السطر',em:'➡️'},
+  {e:'punctuation',a:'علامات الترقيم',em:'❕'},{e:'punctuate',a:'يضع علامات الترقيم',em:'✍️'},
+  {e:'period',a:'نقطة نهاية ( . )',em:'⏹️'},{e:'comma',a:'فاصلة ( , )',em:'🔹'},
+  {e:'question mark',a:'علامة استفهام ( ? )',em:'❓'},{e:'apostrophe',a:"فاصلة عُليا ( ' )",em:'✒️'},
+  {e:'contraction',a:"اختصار مثل don't",em:'✂️'},
 ],
 l4:[
   {e:'spring',a:'الربيع — مارس أبريل مايو',em:'🌸'},
@@ -2064,6 +1976,141 @@ function build_vocab_sec(lk){
     html+='</div>';
   }
   el.innerHTML=html;
+}
+
+// ═══════════════════════════════════════
+// VOCAB DRILL (تدرّب) — تدريب مفردات متنوّع
+// ═══════════════════════════════════════
+const drill={};
+function normAr(s){return (s||'').replace(/[ً-ْـ]/g,'').replace(/[إأآا]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[()\/\.\-—،؟?]/g,' ').replace(/\s+/g,' ').trim();}
+function coreAr(a){return a.split(/[—\/\(]/)[0].trim();}
+// كل المعاني المقبولة لكلمة (تقسم على / و«أو» + مرادفات alt)
+function acceptedAr(w){
+  const out=[];
+  [w.a,...(w.alt||[])].forEach(x=>String(x).split(/[\/،,]| او | أو /).forEach(p=>{const t=p.replace(/\(.*?\)/g,'').trim();if(t)out.push(t);}));
+  return out;
+}
+// هيكل الحروف الساكنة (يتجاهل حروف العلّة عشان يتسامح مع النقل الحرفي: بيسبول = بيسيبول)
+function arSkel(s){return normAr(s).replace(/^ال/,'').replace(/ ال/g,' ').replace(/[اويهءئؤ]/g,'');}
+function drillTypeOk(input,w){
+  const ans=normAr(input);if(ans.length<2)return false;
+  const alts=acceptedAr(w).map(normAr);
+  for(const k of alts){if(k&&(ans===k||k.includes(ans)||ans.includes(k)))return true;}
+  const aSk=arSkel(input);
+  if(aSk.length>=2){for(const k of acceptedAr(w)){if(arSkel(k)===aSk)return true;}}
+  return false;
+}
+function pickDistractors(pool,correct,keyFn,n){
+  const out=[],seen=new Set([keyFn(correct)]);
+  const shuffled=pool.slice().sort(()=>Math.random()-.5);
+  for(const w of shuffled){const k=keyFn(w);if(!seen.has(k)){seen.add(k);out.push(w);}if(out.length>=n)break;}
+  return out;
+}
+function build_vocab_drill(lk){
+  const words=VOCAB[lk].slice();
+  const deck=words.slice().sort(()=>Math.random()-.5);
+  const items=deck.map((w,idx)=>{
+    const short=coreAr(w.a).split(' ').length<=2;
+    let type;
+    if((idx+1)%3===0&&short)type='type';
+    else type=(idx%2===0)?'en2ar':'ar2en';
+    return {w,type};
+  });
+  drill[lk]={items,idx:0,score:0};
+  render_drill(lk);
+}
+function render_drill(lk){
+  const el=document.getElementById('ph-practice');
+  const st=drill[lk],total=st.items.length;
+  if(st.idx>=total){
+    el.innerHTML=`<div class="sp-card sp-done"><div class="sp-emoji">${st.score>=Math.ceil(total*.7)?'🏆':'📚'}</div>
+      <div class="sp-donetxt">أحسنت! أكملت تدريب المفردات</div>
+      <div class="sp-score">نتيجتك: ${st.score} / ${total}</div>
+      <button class="sp-btn check" onclick="build_vocab_drill('${lk}')">🔁 مرّة ثانية</button></div>`;
+    return;
+  }
+  st.wrong=false;
+  const it=st.items[st.idx],w=it.w,words=VOCAB[lk];
+  const eSafe=w.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
+  let head=`<div class="qprog"><div class="qpbar"><div class="qpfill" style="width:${Math.round(st.idx/total*100)}%"></div></div>
+    <div class="qptxt">${st.idx+1} / ${total}</div></div>`;
+  let body='';
+  if(it.type==='en2ar'){
+    const opts=[w,...pickDistractors(words,w,x=>x.a,3)].sort(()=>Math.random()-.5);
+    body=`<div class="dq">
+      <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')">🔊</button></div>
+      <div class="dq-ask">اختر المعنى الصحيح</div>
+      <div class="dq-opts">${opts.map(o=>`<button class="dq-opt" onclick="drill_ans('${lk}',this,${o.a===w.a})">${o.a}</button>`).join('')}</div>
+      <div class="dq-fb" id="dq-fb"></div></div>`;
+  }else if(it.type==='ar2en'){
+    const opts=[w,...pickDistractors(words,w,x=>x.e,3)].sort(()=>Math.random()-.5);
+    body=`<div class="dq">
+      <div class="dq-word-ar">${coreAr(w.a)}</div>
+      <div class="dq-ask">اختر الكلمة الإنجليزية</div>
+      <div class="dq-opts">${opts.map(o=>{const s=o.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();return `<button class="dq-opt en" dir="ltr" onclick="drill_ans('${lk}',this,${o.e===w.e},'${s}')">${o.e}</button>`;}).join('')}</div>
+      <div class="dq-fb" id="dq-fb"></div></div>`;
+  }else{ // type
+    body=`<div class="dq">
+      <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')">🔊</button></div>
+      <div class="dq-ask">✍️ اكتب المعنى بالعربية</div>
+      <input class="dq-input" id="dq-input" autocomplete="off" placeholder="اكتب هنا..." onkeydown="if(event.key==='Enter')drill_type('${lk}')">
+      <div class="dq-fb" id="dq-fb"></div>
+      <button class="sp-btn check" style="margin-top:12px" onclick="drill_type('${lk}')">تحقّق ✓</button>
+      <button class="sp-skip" onclick="drill_reveal_type('${lk}')">لا أعرف — أظهر المعنى ←</button></div>`;
+  }
+  el.innerHTML=head+body;
+  const inp=document.getElementById('dq-input');if(inp)inp.focus();
+}
+function drill_next(lk){setTimeout(()=>{drill[lk].idx++;render_drill(lk);},900);}
+function drill_ans(lk,btn,ok,speak){
+  const st=drill[lk],fb=document.getElementById('dq-fb'),w=st.items[st.idx].w;
+  if(ok){
+    document.querySelectorAll('.dq-opt').forEach(b=>b.disabled=true);
+    btn.classList.add('ok');
+    if(!st.wrong)st.score++;
+    say(speak||w.e.replace(/\(.*?\)/g,'').trim());
+    fb.innerHTML='✅ صحيح! <span dir="ltr">'+w.e.replace(/\(.*?\)/g,'').trim()+'</span> = '+coreAr(w.a);
+    fb.style.color='var(--g)';
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+    drill_next(lk);
+  }else{
+    // فرصة إعادة المحاولة: عطّل الخيار الخطأ فقط ودع الطالب يحاول
+    st.wrong=true;btn.classList.add('no');btn.disabled=true;
+    fb.textContent='❌ حاول مرة أخرى';fb.style.color='var(--r)';
+  }
+}
+function drill_type(lk){
+  const inp=document.getElementById('dq-input');if(!inp||inp.disabled)return;
+  const st=drill[lk],w=st.items[st.idx].w,fb=document.getElementById('dq-fb');
+  if(!inp.value.trim()){return;}
+  const ok=drillTypeOk(inp.value,w);
+  if(ok){
+    inp.disabled=true;inp.classList.remove('no');inp.classList.add('ok');
+    if(!st.wrong)st.score++;
+    say(w.e.replace(/\(.*?\)/g,'').trim());
+    fb.innerHTML='✅ ممتاز! <span dir="ltr">'+w.e.replace(/\(.*?\)/g,'').trim()+'</span> = '+coreAr(w.a);
+    fb.style.color='var(--g)';
+    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+    drill_next(lk);
+  }else{
+    st.wrong=true;inp.classList.remove('no');void inp.offsetWidth;inp.classList.add('no');
+    fb.textContent='❌ حاول مرة أخرى';fb.style.color='var(--r)';
+    inp.focus();setTimeout(()=>{inp.classList.remove('no');},600);
+  }
+}
+function drill_reveal_type(lk){
+  const st=drill[lk],dq=document.querySelector('#ph-practice .dq'),inp=document.getElementById('dq-input'),fb=document.getElementById('dq-fb'),w=st.items[st.idx].w;
+  if(inp)inp.disabled=true;
+  st.wrong=true;
+  const eClean=w.e.replace(/\(.*?\)/g,'').trim();
+  say(eClean);
+  fb.innerHTML='📖 <span dir="ltr">'+eClean+'</span> = <b>'+coreAr(w.a)+'</b> — احفظها 👍';fb.style.color='var(--navy)';
+  if(dq)dq.querySelectorAll('.sp-btn.check, .sp-skip').forEach(b=>b.style.display='none');
+  if(dq&&!document.getElementById('dq-cont')){
+    const nb=document.createElement('button');nb.id='dq-cont';nb.className='sp-btn next';nb.style.marginTop='14px';nb.textContent='التالي ←';
+    nb.onclick=()=>{st.idx++;render_drill(lk);};
+    dq.appendChild(nb);
+  }
 }
 
 function build_grammar_sec(lk){
@@ -2581,569 +2628,103 @@ function confetti(){
 // ═══════════════════════════════════════
 // PREPOSITIONS  in / on / at
 // ═══════════════════════════════════════
-// ═══════════════════════════════════════
-// IN · ON · AT — SEQUENTIAL JOURNEY
-// ═══════════════════════════════════════
-
-// Progress state
-let prepPlaceDone=false, prepTimeDone=false;
-let placeStep=0, timeStep=0;
-let placeAnswered={}, timeAnswered={};
-
-// ── PLACE journey data ──
-const PLACE_STEPS=[
-  // Step 0: Hook
-  {type:'hook',
-   title:'🤔 ايش الفرق؟',
-   body:`<div class="step-hook">ثلاث جمل — نفس الشخص، لكن كل جملة مختلفة:<br><br>
-     <span style="direction:ltr;display:block;font-family:Inter,sans-serif;font-size:.95rem;line-height:2.5;background:#F8FAFC;border-radius:10px;padding:12px">
-       I live <b style="color:#1D4ED8;font-size:1.1rem">in</b> Riyadh.<br>
-       I work <b style="color:#15803D;font-size:1.1rem">on</b> King Fahd Road.<br>
-       I study <b style="color:#C2410C;font-size:1.1rem">at</b> ALC.
-     </span></div>`,
-   btnLabel:'اكتشف الفرق ←'},
-
-  // Step 1: in
-  {type:'learn', prep:'in',
-   kw:{cls:'in', label:'في — مكان كبير',
-     rule:'مدينة / دولة / بناية = <b>in</b>',
-     examples:[
-       {en:'I live <b>in</b> Riyadh.',ar:'أنا ساكن في الرياض.',speak:'I live in Riyadh'},
-       {en:'She works <b>in</b> a hospital.',ar:'تعمل في مستشفى.',speak:'She works in a hospital'},
-       {en:'He studied <b>in</b> the US.',ar:'درس في أمريكا.',speak:'He studied in the US'},
-     ]},
-   q:{sent:'I live ___ Riyadh.',a:'in',fb:'✅ صح! الرياض مدينة كبيرة = في = in'},
-   btnLabel:'فهمت — التالي ←'},
-
-  // Step 2: on
-  {type:'learn', prep:'on',
-   kw:{cls:'on', label:'في / على — شارع أو سطح',
-     rule:'الشارع والطابق والسطح = <b>on</b><br>بالعربي تقول «في شارع» أو «على الطاولة»',
-     examples:[
-       {en:'I work <b>on</b> King Fahd Road.',ar:'أعمل في شارع الملك فهد.',speak:'I work on King Fahd Road'},
-       {en:'The book is <b>on</b> the table.',ar:'الكتاب على الطاولة.',speak:'The book is on the table'},
-       {en:'We live <b>on</b> the second floor.',ar:'نسكن في الطابق الثاني.',speak:'We live on the second floor'},
-     ]},
-   q:{sent:'The book is ___ the table.',a:'on',fb:'✅ صح! الطاولة سطح = على = on'},
-   btnLabel:'فهمت — التالي ←'},
-
-  // Step 3: at
-  {type:'learn', prep:'at',
-   kw:{cls:'at', label:'عند / في — نقطة محددة',
-     rule:'نقطة محددة جداً — مكان تحدد بالاسم كاملاً = <b>at</b><br>بالعربي تقول «عند» أو «في» نقطة دقيقة',
-     examples:[
-       {en:'I study <b>at</b> ALC.',ar:'أدرس في مركز ALC.',speak:'I study at ALC'},
-       {en:'Meet me <b>at</b> the coffee shop.',ar:'قابلني عند الكوفي.',speak:'Meet me at the coffee shop'},
-       {en:'She is <b>at</b> the bus stop.',ar:'هي عند موقف الباص.',speak:'She is at the bus stop'},
-     ]},
-   q:{sent:'She is ___ the bus stop.',a:'at',fb:'✅ صح! موقف الباص نقطة محددة = عند = at'},
-   btnLabel:'فهمت — التالي ←'},
-
-  // Step 4: Compare
-  {type:'compare',
-   title:'👀 شوف الفرق مع بعض',
-   strip:[
-     {prep:'in',cls:'in-c',en:'I live in Riyadh.',ar:'مدينة كبيرة',speak:'I live in Riyadh'},
-     {prep:'on',cls:'on-c',en:'I work on King Fahd Road.',ar:'شارع',speak:'I work on King Fahd Road'},
-     {prep:'at',cls:'at-c',en:'I study at ALC.',ar:'نقطة محددة',speak:'I study at ALC'},
-   ],
-   qs:[
-     {sent:'She works ___ a big hospital.',a:'in',fb:'✅ صح! المستشفى مكان كبير = in'},
-     {sent:'He is ___ the office right now.',a:'at',fb:'✅ صح! المكتب نقطة محددة = at'},
-   ],
-   btnLabel:'ممتاز — تحدي المكان ←'},
-
-  // Step 5: Challenge
-  {type:'challenge', mode:'place',
-   title:'🏆 تحدي المكان',
-   qs:[
-     {sent:'I study ___ Saudi Arabia.',a:'in',fb:'✅ السعودية دولة كبيرة = in'},
-     {sent:'The cat is ___ the box.',a:'in',fb:'✅ داخل الصندوق = in'},
-     {sent:'She lives ___ Tahlia Street.',a:'on',fb:'✅ الشارع = on'},
-     {sent:'We met ___ the airport.',a:'at',fb:'✅ المطار نقطة محددة = at'},
-     {sent:'The keys are ___ the table.',a:'on',fb:'✅ سطح الطاولة = on'},
-   ]}
+const PREP = {
+  place:{
+    in:{meaning:'in = داخل مكان محاط أو كبير.',when:'لأنه مكان واسع (مدينة/دولة).',link:'مكان واسع/محاط؟ ⟵ in',ex:{e:'in Abha',a:'في أبها'},bad:'at Abha',good:'in Abha'},
+    on:{meaning:'on = على سطح، أو في شارع.',when:'لأنه سطح أو شارع أو طابق.',link:'على سطح/شارع؟ ⟵ on',ex:{e:'on Al-Fann Street',a:'في شارع الفن'},bad:'in Al-Fann Street',good:'on Al-Fann Street'},
+    at:{meaning:'at = عند نقطة محدّدة.',when:'لأنه نقطة أو مكان دقيق.',link:'نقطة محدّدة؟ ⟵ at',ex:{e:'at the cafe',a:'عند الكوفي (المقهى)'},bad:'in the cafe',good:'at the cafe'}
+  },
+  time:{
+    in:{meaning:'in = خلال فترة طويلة.',when:'لأنها فترة طويلة (شهر/سنة/فصل).',link:'فترة طويلة؟ ⟵ in',ex:{e:'in July',a:'في يوليو'},bad:'at July',good:'in July'},
+    on:{meaning:'on = في يوم أو تاريخ.',when:'لأنه يوم أو تاريخ محدّد.',link:'يوم أو تاريخ؟ ⟵ on',ex:{e:'on Monday',a:'يوم الاثنين'},bad:'in Monday',good:'on Monday'},
+    at:{meaning:'at = عند لحظة محدّدة.',when:'لأنه وقت محدّد بالساعة.',link:'وقت محدّد؟ ⟵ at',ex:{e:'at 7:00',a:'الساعة السابعة'},bad:'in 7:00',good:'at 7:00'}
+  }
+};
+const PREP_COLORS={in:{bg:'#DBEAFE',bd:'#60A5FA',tx:'#1D4ED8'},on:{bg:'#DCFCE7',bd:'#4ADE80',tx:'#15803D'},at:{bg:'#FFEDD5',bd:'#FB923C',tx:'#C2410C'}};
+const PREP_QUIZ=[
+  {q:'I live ___ Riyadh.',a:'in',tr:'أعيش في الرياض. — مدينة ← in'},
+  {q:'The book is ___ the table.',a:'on',tr:'الكتاب على الطاولة. — سطح ← on'},
+  {q:'Class starts ___ 7:30.',a:'at',tr:'يبدأ الدرس الساعة 7:30. — وقت محدّد ← at'},
+  {q:'My birthday is ___ July.',a:'in',tr:'عيد ميلادي في يوليو. — شهر ← in'},
+  {q:'See you ___ Monday.',a:'on',tr:'أراك يوم الاثنين. — يوم ← on'},
+  {q:'I wake up ___ 6 a.m.',a:'at',tr:'أستيقظ الساعة 6 صباحاً. — وقت محدّد ← at'},
+  {q:'We meet ___ the bus stop.',a:'at',tr:'نلتقي عند موقف الحافلة. — نقطة محدّدة ← at'},
+  {q:'It is cold ___ winter.',a:'in',tr:'الجو بارد في الشتاء. — فصل ← in'}
 ];
-
-// ── TIME journey data ──
-const TIME_STEPS=[
-  // Step 0: Hook
-  {type:'hook',
-   title:'🤔 ايش الفرق؟',
-   body:`<div class="step-hook">ثلاث جمل — كلها عن الوقت:<br><br>
-     <span style="direction:ltr;display:block;font-family:Inter,sans-serif;font-size:.95rem;line-height:2.5;background:#F8FAFC;border-radius:10px;padding:12px">
-       I was born <b style="color:#1D4ED8;font-size:1.1rem">in</b> July.<br>
-       Class is <b style="color:#15803D;font-size:1.1rem">on</b> Monday.<br>
-       It starts <b style="color:#C2410C;font-size:1.1rem">at</b> 7:30.
-     </span></div>`,
-   btnLabel:'اكتشف الفرق ←'},
-
-  // Step 1: in (time)
-  {type:'learn', prep:'in',
-   kw:{cls:'in', label:'في — فترة طويلة',
-     rule:'شهر، سنة، فصل، أو صباح/مساء = <b>in</b><br>كلها فترات طويلة تقول عنها «في»',
-     examples:[
-       {en:'I was born <b>in</b> July.',ar:'وُلدت في يوليو.',speak:'I was born in July'},
-       {en:'She came <b>in</b> 2020.',ar:'جاءت في عام 2020.',speak:'She came in 2020'},
-       {en:'It is cold <b>in</b> winter.',ar:'الجو بارد في الشتاء.',speak:'It is cold in winter'},
-     ]},
-   q:{sent:'My birthday is ___ July.',a:'in',fb:'✅ صح! يوليو شهر = فترة طويلة = in'},
-   btnLabel:'فهمت — التالي ←'},
-
-  // Step 2: on (time)
-  {type:'learn', prep:'on',
-   kw:{cls:'on', label:'يوم — يوم محدد أو تاريخ',
-     rule:'يوم الأسبوع أو تاريخ محدد = <b>on</b><br>Sunday / Monday / January 1st',
-     examples:[
-       {en:'Class is <b>on</b> Monday.',ar:'الدرس يوم الاثنين.',speak:'Class is on Monday'},
-       {en:'I was born <b>on</b> January 5th.',ar:'وُلدت في الخامس من يناير.',speak:'I was born on January fifth'},
-       {en:'See you <b>on</b> Friday!',ar:'أشوفك يوم الجمعة!',speak:'See you on Friday'},
-     ]},
-   q:{sent:'See you ___ Monday.',a:'on',fb:'✅ صح! يوم الاثنين = يوم محدد = on'},
-   btnLabel:'فهمت — التالي ←'},
-
-  // Step 3: at (time)
-  {type:'learn', prep:'at',
-   kw:{cls:'at', label:'الساعة — وقت محدد بالدقيقة',
-     rule:'وقت محدد بالساعة = <b>at</b><br>at 7:00 / at noon / at midnight',
-     examples:[
-       {en:'Class starts <b>at</b> 7:30.',ar:'الدرس يبدأ الساعة 7:30.',speak:'Class starts at seven thirty'},
-       {en:'I wake up <b>at</b> 6 a.m.',ar:'أستيقظ الساعة 6 الصبح.',speak:'I wake up at six a m'},
-       {en:'We eat lunch <b>at</b> noon.',ar:'نأكل الغداء عند الظهر.',speak:'We eat lunch at noon'},
-     ]},
-   q:{sent:'Class starts ___ 7:30.',a:'at',fb:'✅ صح! الساعة 7:30 = وقت محدد = at'},
-   btnLabel:'فهمت — التالي ←'},
-
-  // Step 4: Compare
-  {type:'compare',
-   title:'👀 شوف الفرق مع بعض',
-   strip:[
-     {prep:'in',cls:'in-c',en:'in July / in 2020 / in winter',ar:'شهر / سنة / فصل',speak:'in July'},
-     {prep:'on',cls:'on-c',en:'on Monday / on Friday',ar:'يوم محدد',speak:'on Monday'},
-     {prep:'at',cls:'at-c',en:'at 7:00 / at noon / at midnight',ar:'ساعة محددة',speak:'at seven'},
-   ],
-   qs:[
-     {sent:'It was cold ___ winter.',a:'in',fb:'✅ صح! الشتاء فصل = فترة طويلة = in'},
-     {sent:'I wake up ___ 6 a.m.',a:'at',fb:'✅ صح! الساعة 6 = وقت محدد = at'},
-   ],
-   btnLabel:'ممتاز — تحدي الزمن ←'},
-
-  // Step 5: Challenge
-  {type:'challenge', mode:'time',
-   title:'🏆 تحدي الزمن',
-   qs:[
-     {sent:'She was born ___ 1995.',a:'in',fb:'✅ السنة = فترة طويلة = in'},
-     {sent:'See you ___ Friday.',a:'on',fb:'✅ يوم الجمعة = يوم محدد = on'},
-     {sent:'The movie starts ___ 8 p.m.',a:'at',fb:'✅ الساعة 8 = وقت محدد = at'},
-     {sent:'It rains a lot ___ spring.',a:'in',fb:'✅ الربيع فصل = in'},
-     {sent:'We meet ___ noon.',a:'at',fb:'✅ الظهر = وقت محدد = at'},
-   ]}
-];
-
-// ── FINAL CHALLENGE (mix) ──
-const FINAL_PREP_QS=[
-  {sent:'I live ___ Riyadh.',a:'in',fb:'✅ مدينة = in'},
-  {sent:'She was born ___ July.',a:'in',fb:'✅ شهر = in'},
-  {sent:'Class is ___ Monday.',a:'on',fb:'✅ يوم = on'},
-  {sent:'The pen is ___ the table.',a:'on',fb:'✅ سطح = on'},
-  {sent:'He is ___ the airport.',a:'at',fb:'✅ نقطة محددة = at'},
-  {sent:'It starts ___ 9:00.',a:'at',fb:'✅ ساعة محددة = at'},
-  {sent:'I work ___ King Fahd Road.',a:'on',fb:'✅ شارع = on'},
-  {sent:'It is hot ___ summer.',a:'in',fb:'✅ فصل = in'},
-  {sent:'Meet me ___ the coffee shop.',a:'at',fb:'✅ مكان محدد = at'},
-  {sent:'She studies ___ Saudi Arabia.',a:'in',fb:'✅ دولة = in'},
-];
-
-let finalPrepAnswered={};
+let prepMode='place',prepSel=null;
 
 function open_prep(){
   show_screen('pscreen');
   document.getElementById('pscreen').scrollIntoView({behavior:'smooth',block:'start'});
-  placeStep=0; timeStep=0;
-  placeAnswered={}; timeAnswered={};
-  finalPrepAnswered={};
-  render_prep_journey();
+  prepMode='place';prepSel=null;
+  document.getElementById('pt-place').classList.add('on');
+  document.getElementById('pt-time').classList.remove('on');
+  render_zoom();
+  ['in','on','at'].forEach(x=>document.getElementById('ring-'+x).classList.remove('active'));
+  document.getElementById('prep-detail').innerHTML='';
+  build_prep_quiz();reset_quiz('prep');
 }
 
-function render_prep_journey(){
-  const el=document.getElementById('prep-journey');
-  const placeDone=prepPlaceDone, timeDone=prepTimeDone;
-  const bothDone=placeDone&&timeDone;
-  const timeOnclick=placeDone?"start_prep_path('time')":'show_lock_msg()';
-
-  let html=`
-  <div class="path-cards">
-    <div class="path-card place ${placeDone?'done':''}" onclick="start_prep_path('place')">
-      <span class="pc-emoji">📍</span>
-      <div class="pc-title">المكان</div>
-      <div class="pc-sub" style="direction:ltr">in · on · at</div>
-      <span class="pc-badge ${placeDone?'done':'place'}">${placeDone?'✓ مكتمل':'ابدأ هنا'}</span>
-    </div>
-    <div class="path-card time ${timeDone?'done':''} ${!placeDone?'locked':''}" onclick="${timeOnclick}">
-      <span class="pc-emoji">${placeDone?'🕐':'🔒'}</span>
-      <div class="pc-title">الزمن</div>
-      <div class="pc-sub" style="direction:ltr">in · on · at</div>
-      <span class="pc-badge ${timeDone?'done':'time'}">${timeDone?'✓ مكتمل':placeDone?'ابدأ هنا':'بعد المكان'}</span>
-    </div>
-  </div>`;
-
-  if(bothDone){
-    html+=build_final_prep_html();
-  }
-
-  el.innerHTML=html;
+function render_zoom(){
+  const place='🔎 من الواسع إلى الضيق: <span dir="ltr" class="zc-seq"><span class="zc in">in</span> Abha → <span class="zc on">on</span> Al-Fann St → <span class="zc at">at</span> the cafe</span>';
+  const time='🔎 من الأطول إلى الأدقّ: <span dir="ltr" class="zc-seq"><span class="zc in">in</span> July → <span class="zc on">on</span> Monday → <span class="zc at">at</span> 7:00</span>';
+  document.getElementById('zoom-cap').innerHTML=(prepMode==='place')?place:time;
+  document.getElementById('prep-except').innerHTML=(prepMode==='time')?`
+    <div class="except-box">
+      <div class="except-h">⭐ استثناءات تُحفظ كما هي</div>
+      <div class="except-row" dir="ltr"><span class="zc in">in</span> ( the morning / afternoon / evening )
+        <button class="ex-spk" onclick="say('in the evening')">🔊</button></div>
+      <div class="except-row" dir="ltr"><span class="zc at">at</span> ( noon / midnight )
+        <button class="ex-spk" onclick="say('at midnight')">🔊</button></div>
+    </div>`:'';
 }
 
-function show_lock_msg(){
-  const msg=document.createElement('div');
-  msg.style.cssText='position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 20px;border-radius:12px;font-family:Cairo,sans-serif;font-size:.88rem;font-weight:700;z-index:999;animation:qfade .3s ease';
-  msg.textContent='🔒 أكمل مسار المكان أولاً';
-  document.body.appendChild(msg);
-  setTimeout(()=>msg.remove(),2000);
+function sw_prep(m){
+  prepMode=m;
+  document.getElementById('pt-place').classList.toggle('on',m==='place');
+  document.getElementById('pt-time').classList.toggle('on',m==='time');
+  render_zoom();
+  if(prepSel)sel_prep(prepSel);
 }
 
-function start_prep_path(mode){
-  const steps=mode==='place'?PLACE_STEPS:TIME_STEPS;
-  const step=mode==='place'?placeStep:timeStep;
-  render_prep_step(mode, step, steps);
+function sel_prep(p){
+  prepSel=p;
+  ['in','on','at'].forEach(x=>document.getElementById('ring-'+x).classList.toggle('active',x===p));
+  const d=PREP[prepMode][p],c=PREP_COLORS[p];
+  const header=`${p} <span class="pd-tag" style="background:${c.bg};color:${c.tx}">${prepMode==='place'?'📍 مكان':'🕐 زمن'}</span>`;
+  document.getElementById('prep-detail').innerHTML=concept_html(c.tx,c.bd,header,d);
 }
 
-function render_prep_step(mode, stepIdx, steps){
-  const el=document.getElementById('prep-journey');
-  const step=steps[stepIdx];
-  const total=steps.length;
-  const answered=mode==='place'?placeAnswered:timeAnswered;
-
-  // Dots
-  let dotsHtml='<div class="step-dots">';
-  for(let i=0;i<total;i++){
-    const cls=i<stepIdx?'done':i===stepIdx?'active':'';
-    dotsHtml+=`<div class="step-dot ${cls}"></div>`;
-  }
-  dotsHtml+='</div>';
-
-  // Back button
-  const backTarget=stepIdx>0?`go_prep_step('${mode}',${stepIdx-1})`:`render_prep_journey()`;
-  let html=`<button class="back" style="margin-bottom:12px" onclick="${backTarget}">← رجوع</button>`;
-  html+=dotsHtml;
-
-  if(step.type==='hook'){
-    html+=`<div class="step-card">
-      <div class="step-num">${mode==='place'?'مسار المكان 📍':'مسار الزمن 🕐'} · ${stepIdx+1} من ${total}</div>
-      <div style="font-family:Cairo,sans-serif;font-weight:900;font-size:1rem;color:var(--navy);margin-bottom:12px">${step.title}</div>
-      ${step.body}
-      <button class="step-next show" onclick="go_prep_step('${mode}',${stepIdx+1})">${step.btnLabel}</button>
+function build_prep_quiz(){
+  let html='';
+  PREP_QUIZ.forEach((q,i)=>{
+    html+=`<div class="pq-item">
+      <div class="pq-sent">${i+1}. ${q.q}</div>
+      <div class="pq-opts">
+        ${['in','on','at'].map(o=>`<button class="pq-opt" id="pqo${i}_${o}" onclick="prep_answer(${i},'${o}')">${o}</button>`).join('')}
+      </div>
+      <div class="pq-fb" id="pqfb${i}"></div>
     </div>`;
-  }
-
-  else if(step.type==='learn'){
-    const k=step.kw;
-    const cls=step.prep;
-    const alreadyAnswered=answered[stepIdx]!==undefined&&answered[stepIdx]!==false;
-    html+=`<div class="step-card">
-      <div class="step-num">${mode==='place'?'مسار المكان 📍':'مسار الزمن 🕐'} · ${stepIdx+1} من ${total}</div>
-      <div class="kw-box ${cls}-box">
-        <div class="kw-word ${cls}-c">
-          <b>${step.prep}</b>
-          <button class="kw-spk ${cls}-c" onclick="say('${step.prep}')">🔊</button>
-          <span style="font-family:Cairo,sans-serif;font-size:.88rem;font-weight:700;color:var(--muted)">${k.label}</span>
-        </div>
-        <div class="kw-rule">${k.rule}</div>
-        <div class="kw-examples">
-          ${k.examples.map(ex=>`<div class="kw-ex">
-            <div>
-              <div class="kw-ex-en">${ex.en}</div>
-              <div class="kw-ex-ar">${ex.ar}</div>
-            </div>
-            <button class="kw-ex-spk" onclick="say('${ex.speak}')">🔊</button>
-          </div>`).join('')}
-        </div>
-      </div>
-      <div class="iq-label">🎯 طبّق ما تعلّمت:</div>
-      <div class="step-card" style="padding:12px;background:#F8FAFC">
-        <div class="iq-sent">${stepIdx+1}. ${step.q.sent}</div>
-        <div class="iq-opts" id="iqopts_${mode}_${stepIdx}">
-          ${['in','on','at'].map(o=>`<button class="iq-opt ${alreadyAnswered&&o===step.q.a?'ok':''}" id="iqo_${mode}_${stepIdx}_${o}"
-            onclick="prep_inline_ans(event,'${mode}',${stepIdx},'${o}','${step.q.a}')"
-            ${alreadyAnswered?'disabled':''}>
-            ${o}</button>`).join('')}
-        </div>
-        <div class="iq-fb ${alreadyAnswered?'show ok':''}" id="iqfb_${mode}_${stepIdx}">
-          ${alreadyAnswered?step.q.fb:''}
-        </div>
-      </div>
-      <button class="step-next ${alreadyAnswered?'show':''}" id="step-next-${mode}-${stepIdx}"
-        onclick="go_prep_step('${mode}',${stepIdx+1})">${step.btnLabel}</button>
-    </div>`;
-  }
-
-  else if(step.type==='compare'){
-    const qs=step.qs;
-    html+=`<div class="step-card">
-      <div class="step-num">${mode==='place'?'مسار المكان 📍':'مسار الزمن 🕐'} · ${stepIdx+1} من ${total}</div>
-      <div style="font-family:Cairo,sans-serif;font-weight:900;font-size:1rem;color:var(--navy);margin-bottom:12px">أمثلة</div>
-      <div class="compare-strip">
-        <div class="compare-strip-title">الثلاثة مع بعض</div>
-        ${step.strip.map(r=>`<div class="compare-row">
-          <span class="cr-prep ${r.cls}">${r.prep}</span>
-          <span class="cr-en">${r.en}</span>
-          <span class="cr-ar">${r.ar}</span>
-          <button class="cr-spk" onclick="say('${r.speak}')">🔊</button>
-        </div>`).join('')}
-      </div>
-      ${qs.map((q,qi)=>`<div class="step-card" style="padding:12px;background:#F8FAFC;margin-bottom:8px">
-        <div class="iq-sent">${q.sent}</div>
-        <div class="iq-opts" id="cqopts_${mode}_${stepIdx}_${qi}">
-          ${['in','on','at'].map(o=>`<button class="iq-opt" id="cqo_${mode}_${stepIdx}_${qi}_${o}"
-            onclick="prep_compare_ans('${mode}',${stepIdx},${qi},'${o}')">
-            ${o}</button>`).join('')}
-        </div>
-        <div class="iq-fb" id="cqfb_${mode}_${stepIdx}_${qi}"></div>
-      </div>`).join('')}
-      <button class="step-next" id="step-next-${mode}-${stepIdx}">${step.btnLabel}</button>
-    </div>`;
-  }
-
-  else if(step.type==='challenge'){
-    const qs=step.qs;
-    const challAnswered=answered[stepIdx]||{};
-    const allDone=qs.every((_,i)=>challAnswered[i]!==undefined);
-    const score=Object.values(challAnswered).filter(Boolean).length;
-    html+=`<div class="challenge-box">
-      <h3>${step.title}</h3>
-      <p>${mode==='place'?'٥ أسئلة على المكان — in · on · at':'٥ أسئلة على الزمن — in · on · at'}</p>
-      ${allDone?`<div class="challenge-score">${score}/5</div>
-        <div class="challenge-stars">${score>=5?'⭐⭐⭐':score>=3?'⭐⭐':'⭐'}</div>`:''}
-    </div>
-    ${qs.map((q,qi)=>`<div class="chal-item">
-      <div class="chal-sent">${qi+1}. ${q.sent}</div>
-      <div class="iq-opts" id="chalq_${mode}_${qi}">
-        ${['in','on','at'].map(o=>`<button class="iq-opt ${challAnswered[qi]!==undefined&&o===q.a?'ok':''}"
-          id="chalo_${mode}_${qi}_${o}"
-          onclick="prep_chal_ans('${mode}',${stepIdx},${qi},'${o}')"
-          ${challAnswered[qi]!==undefined?'disabled':''}>
-          ${o}</button>`).join('')}
-      </div>
-      <div class="iq-fb ${challAnswered[qi]!==undefined?'show ok':''}" id="chalfb_${mode}_${qi}">
-        ${challAnswered[qi]!==undefined?q.fb:''}
-      </div>
-    </div>`).join('')}
-    <button class="step-next ${allDone?'show':''}" id="chal-finish-${mode}"
-      onclick="finish_prep_path('${mode}')">
-      ${mode==='place'?'🎉 أكملت المكان — التالي':'🎉 أكملت الزمن — التالي'}
-    </button>`;
-
-    // restore correct marks
-    if(Object.keys(challAnswered).length>0){
-      setTimeout(()=>{
-        qs.forEach((q,qi)=>{
-          if(challAnswered[qi]!==undefined){
-            const correctBtn=document.getElementById(`chalo_${mode}_${qi}_${q.a}`);
-            if(correctBtn)correctBtn.classList.add('ok');
-          }
-        });
-      },50);
-    }
-  }
-
-  el.innerHTML=html;
-  document.getElementById('pscreen').scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-function go_prep_step(mode,nextStep){
-  if(mode==='place')placeStep=nextStep;
-  else timeStep=nextStep;
-  const steps=mode==='place'?PLACE_STEPS:TIME_STEPS;
-  render_prep_step(mode, nextStep, steps);
-}
-
-function prep_inline_ans(evt,mode,stepIdx,chosen,correct){
-  const stepsRef=mode==='place'?PLACE_STEPS:TIME_STEPS;
-  const fb=stepsRef[stepIdx].q.fb;
-  const answered=mode==='place'?placeAnswered:timeAnswered;
-  if(answered[stepIdx]!==undefined&&answered[stepIdx]!==false)return;
-
-  ['in','on','at'].forEach(o=>{
-    const b=document.getElementById(`iqo_${mode}_${stepIdx}_${o}`);
-    if(b)b.disabled=true;
   });
-  const correctBtn=document.getElementById(`iqo_${mode}_${stepIdx}_${correct}`);
-  const chosenBtn=document.getElementById(`iqo_${mode}_${stepIdx}_${chosen}`);
-  const fbEl=document.getElementById(`iqfb_${mode}_${stepIdx}`);
-  const nextBtn=document.getElementById(`step-next-${mode}-${stepIdx}`);
+  document.getElementById('prep-quiz').innerHTML=html;
+}
 
-  if(chosen===correct){
-    correctBtn.classList.add('ok');
-    fbEl.textContent=fb;
-    fbEl.className='iq-fb show ok';
-    answered[stepIdx]=true;
+function prep_answer(i,o){
+  const q=PREP_QUIZ[i];
+  const fb=document.getElementById('pqfb'+i);
+  const btn=document.getElementById('pqo'+i+'_'+o);
+  if(o===q.a){
+    ['in','on','at'].forEach(x=>{const b=document.getElementById('pqo'+i+'_'+x);if(b)b.disabled=true;});
+    btn.classList.add('ok');
+    fb.textContent='✅ '+q.tr;
+    fb.className='pq-fb show ok';
+    say(q.q.replace('___',o));
     XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-    say(correct);
-  } else {
-    chosenBtn.classList.add('no');
-    fbEl.textContent='❌ ليست صحيحة — حاول مرة أخرى';
-    fbEl.className='iq-fb show no';
-    setTimeout(()=>{
-      chosenBtn.classList.remove('no');
-      chosenBtn.disabled=false;
-      fbEl.className='iq-fb';
-    },700);
-    return;
-  }
-  if(nextBtn)nextBtn.classList.add('show');
-}
-
-let compareAnsweredCount={};
-function prep_compare_ans(mode,stepIdx,qi,chosen){
-  const stepsRef=mode==='place'?PLACE_STEPS:TIME_STEPS;
-  const q=stepsRef[stepIdx].qs[qi];
-  const correct=q.a, fb=q.fb;
-  const key=`${mode}_${stepIdx}_${qi}`;
-  if(compareAnsweredCount[key])return;
-  ['in','on','at'].forEach(o=>{
-    const b=document.getElementById(`cqo_${mode}_${stepIdx}_${qi}_${o}`);
-    if(b)b.disabled=true;
-  });
-  const correctBtn=document.getElementById(`cqo_${mode}_${stepIdx}_${qi}_${correct}`);
-  const chosenBtn=document.getElementById(`cqo_${mode}_${stepIdx}_${qi}_${chosen}`);
-  const fbEl=document.getElementById(`cqfb_${mode}_${stepIdx}_${qi}`);
-  const totalQs=stepsRef[stepIdx].qs.length;
-
-  if(chosen===correct){
-    correctBtn.classList.add('ok');
-    fbEl.textContent=fb;fbEl.className='iq-fb show ok';
-    compareAnsweredCount[key]=true;
-    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-    // Check if all compare questions done
-    const allDone=stepsRef[stepIdx].qs.every((_,i)=>compareAnsweredCount[`${mode}_${stepIdx}_${i}`]);
-    if(allDone){
-      const nextBtn=document.getElementById(`step-next-${mode}-${stepIdx}`);
-      if(nextBtn)nextBtn.classList.add('show');
-    }
-  } else {
-    chosenBtn.classList.add('no');
-    fbEl.textContent='❌ ليست صحيحة — حاول مرة أخرى';fbEl.className='iq-fb show no';
-    setTimeout(()=>{
-      chosenBtn.classList.remove('no');chosenBtn.disabled=false;fbEl.className='iq-fb';
-    },700);
-  }
-}
-
-function prep_chal_ans(mode,stepIdx,qi,chosen){
-  const stepsRef=mode==='place'?PLACE_STEPS:TIME_STEPS;
-  const q=stepsRef[stepIdx].qs[qi];
-  const correct=q.a, fb=q.fb;
-  const answered=mode==='place'?placeAnswered:timeAnswered;
-  if(!answered[stepIdx])answered[stepIdx]={};
-  if(answered[stepIdx][qi]!==undefined)return;
-
-  ['in','on','at'].forEach(o=>{
-    const b=document.getElementById(`chalo_${mode}_${qi}_${o}`);
-    if(b)b.disabled=true;
-  });
-  const correctBtn=document.getElementById(`chalo_${mode}_${qi}_${correct}`);
-  const fbEl=document.getElementById(`chalfb_${mode}_${qi}`);
-
-  if(chosen===correct){
-    correctBtn.classList.add('ok');
-    fbEl.textContent=fb;fbEl.className='iq-fb show ok';
-    answered[stepIdx][qi]=true;
-    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
-  } else {
-    const chosenBtn=document.getElementById(`chalo_${mode}_${qi}_${chosen}`);
-    chosenBtn.classList.add('no');
-    fbEl.textContent='❌ حاول مرة أخرى';fbEl.className='iq-fb show no';
-    setTimeout(()=>{
-      chosenBtn.classList.remove('no');
-      ['in','on','at'].forEach(o=>{const b=document.getElementById(`chalo_${mode}_${qi}_${o}`);if(b)b.disabled=false;});
-      fbEl.className='iq-fb';
-    },700);
-    return;
-  }
-
-  const challQs=stepsRef[stepIdx].qs;
-  const allDone=challQs.every((_,i)=>answered[stepIdx][i]!==undefined);
-  if(allDone){
-    const score=Object.values(answered[stepIdx]).filter(Boolean).length;
-    const box=document.querySelector('.challenge-box');
-    if(box&&!box.querySelector('.challenge-score')){
-      const sc=document.createElement('div');sc.className='challenge-score';sc.textContent=`${score}/5`;
-      const st=document.createElement('div');st.className='challenge-stars';
-      st.textContent=score>=5?'⭐⭐⭐':score>=3?'⭐⭐':'⭐';
-      box.appendChild(sc);box.appendChild(st);
-    }
-    const finBtn=document.getElementById(`chal-finish-${mode}`);
-    if(finBtn)finBtn.classList.add('show');
-  }
-}
-
-function finish_prep_path(mode){
-  if(mode==='place')prepPlaceDone=true;
-  else prepTimeDone=true;
-  render_prep_journey();
-  document.getElementById('pscreen').scrollIntoView({behavior:'smooth',block:'start'});
-}
-
-// ── FINAL CHALLENGE (mix place + time) ──
-function build_final_prep_html(){
-  let html=`<div class="challenge-box" style="background:linear-gradient(135deg,#1A2744,#243560)">
-    <h3>🏆 التحدي النهائي — مكان + زمن</h3>
-    <p>١٠ أسئلة تجمع المكان والزمن معاً</p>
-  </div>`;
-  FINAL_PREP_QS.forEach((q,qi)=>{
-    html+=`<div class="chal-item">
-      <div class="chal-sent">${qi+1}. ${q.sent}</div>
-      <div class="iq-opts" id="fpchalq_${qi}">
-        ${['in','on','at'].map(o=>`<button class="iq-opt ${finalPrepAnswered[qi]!==undefined&&o===q.a?'ok':''}"
-          id="fpchalo_${qi}_${o}"
-          onclick="fp_chal_ans(${qi},'${o}')"
-          ${finalPrepAnswered[qi]!==undefined?'disabled':''}>
-          ${o}</button>`).join('')}
-      </div>
-      <div class="iq-fb ${finalPrepAnswered[qi]!==undefined?'show ok':''}" id="fpchalfb_${qi}">
-        ${finalPrepAnswered[qi]!==undefined?q.fb:''}
-      </div>
-    </div>`;
-  });
-  return html;
-}
-
-function fp_chal_ans(qi,chosen){
-  const q=FINAL_PREP_QS[qi];
-  const correct=q.a, fb=q.fb;
-  if(finalPrepAnswered[qi]!==undefined)return;
-  ['in','on','at'].forEach(o=>{
-    const b=document.getElementById(`fpchalo_${qi}_${o}`);if(b)b.disabled=true;
-  });
-  const correctBtn=document.getElementById(`fpchalo_${qi}_${correct}`);
-  const fbEl=document.getElementById(`fpchalfb_${qi}`);
-  if(chosen===correct){
-    correctBtn.classList.add('ok');
-    fbEl.textContent=fb;fbEl.className='iq-fb show ok';
-    finalPrepAnswered[qi]=true;
-    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
-    const done=Object.keys(finalPrepAnswered).length;
-    if(done===FINAL_PREP_QS.length){
-      const score=Object.values(finalPrepAnswered).filter(Boolean).length;
-      setTimeout(()=>{
-        const box=document.querySelector('[style*="1A2744"]');
-        if(box&&!box.querySelector('.challenge-score')){
-          const sc=document.createElement('div');sc.className='challenge-score';sc.textContent=`${score}/10`;
-          const st=document.createElement('div');st.className='challenge-stars';
-          st.textContent=score>=9?'⭐⭐⭐':score>=7?'⭐⭐':'⭐';
-          box.appendChild(sc);box.appendChild(st);
-        }
-      },100);
-    }
-  } else {
-    const chosenBtn=document.getElementById(`fpchalo_${qi}_${chosen}`);
-    chosenBtn.classList.add('no');
-    fbEl.textContent='❌ حاول مرة أخرى';fbEl.className='iq-fb show no';
-    setTimeout(()=>{
-      chosenBtn.classList.remove('no');
-      ['in','on','at'].forEach(o=>{const b=document.getElementById(`fpchalo_${qi}_${o}`);if(b)b.disabled=false;});
-      fbEl.className='iq-fb';
-    },700);
+  }else{
+    btn.classList.add('no');
+    fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
+    fb.className='pq-fb show no';
+    setTimeout(()=>{btn.classList.remove('no');},700);
   }
 }
 
@@ -3423,14 +3004,10 @@ const SPELL_LESSONS=[
   {t:'📗 Lesson 2 — الحياة العسكرية',w:[
     {e:'base',a:'قاعدة',em:'🏕️'},{e:'rank',a:'رتبة',em:'🎖️'},{e:'cap',a:'قبعة',em:'🧢'},
     {e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},{e:'break',a:'استراحة',em:'☕'}]},
-  {t:'📙 Lesson 3 — الملابس والقواعد',w:[
+  {t:'📙 Lesson 3 — الملابس',w:[
     {e:'dress',a:'فستان',em:'👗'},{e:'shirt',a:'قميص',em:'👔'},{e:'shoes',a:'حذاء',em:'👟'},
     {e:'socks',a:'جوارب',em:'🧦'},{e:'belt',a:'حزام',em:'🔗'},{e:'coat',a:'معطف',em:'🧥'},
-    {e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'},{e:'suit',a:'بدلة',em:'🤵'},
-    {e:'sentence',a:'جملة',em:'📝'},{e:'paragraph',a:'فقرة',em:'📄'},
-    {e:'period',a:'نقطة',em:'⏺️'},{e:'comma',a:'فاصلة',em:'🔤'},
-    {e:'contraction',a:'اختصار',em:'🔀'},{e:'awake',a:'صاحٍ',em:'👀'},
-    {e:'asleep',a:'نائم',em:'😴'}]},
+    {e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'}]},
   {t:'📕 Lesson 4 — الفصول والطقس',w:[
     {e:'spring',a:'الربيع',em:'🌸'},{e:'summer',a:'الصيف',em:'☀️'},{e:'winter',a:'الشتاء',em:'❄️'},
     {e:'music',a:'موسيقى',em:'🎵'},{e:'radio',a:'راديو',em:'📻'},{e:'store',a:'متجر',em:'🏪'},
@@ -3763,7 +3340,7 @@ track_screen('home');
 <div class="site-footer">
   <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
   <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
-  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.3</p>
+  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v3.4</p>
 </div>
 
 </body>

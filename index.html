@@ -2,6 +2,14 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1396QQS2S5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1396QQS2S5');
+</script>
 <meta name="description" content="تعلّم، تدرّب، واختبر نفسك على Book 4 بالكامل — مع اختبار نهائي شامل">
 <meta property="og:title" content="Book 4 ALC — مركز التدريب الإنجليزي">
 <meta property="og:description" content="تعلّم، تدرّب، واختبر نفسك على Book 4 بالكامل — مع اختبار نهائي شامل">
@@ -25,7 +33,7 @@
   --ok-bg:#D7FFB8;--ok-txt:#2D8A00;--no-bg:#FFDFE0;--no-txt:#CC0000;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;font-size:17px}
 
 /* NAV */
 .nav{background:var(--navy);height:56px;display:flex;align-items:center;
@@ -48,10 +56,10 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .gpbar{background:rgba(255,255,255,.2);border-radius:8px;height:8px;margin-bottom:6px}
 .gpfill{background:var(--g);height:8px;border-radius:8px;transition:width .6s;width:0%}
 .gptxt{color:rgba(255,255,255,.6);font-size:.75rem}
-.reset-btn{margin-top:12px;background:rgba(255,255,255,.12);color:#fff;
-  border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:5px 14px;
-  font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;transition:.15s}
-.reset-btn:hover{background:rgba(255,255,255,.22)}
+.reset-btn{margin-top:12px;background:rgba(255,75,75,.18);color:#FFAAAA;
+  border:1px solid rgba(255,75,75,.35);border-radius:8px;padding:6px 16px;
+  font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:.15s}
+.reset-btn:hover{background:rgba(255,75,75,.32);color:#fff}
 .lbl{font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:2px;
   text-transform:uppercase;margin-bottom:10px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
@@ -63,12 +71,12 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   background:var(--g);color:#fff;width:22px;height:22px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}
 .lcard-icon{font-size:2rem;display:block;margin-bottom:8px}
-.lcard-num{font-size:.65rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.lcard-name{font-size:.9rem;font-weight:700;color:var(--txt);margin:3px 0}
-.lcard-sub{font-size:.72rem;color:var(--muted)}
+.lcard-num{font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.lcard-name{font-size:1rem;font-weight:700;color:var(--txt);margin:3px 0}
+.lcard-sub{font-size:.82rem;color:var(--muted)}
 .lpbar{background:var(--bdr);border-radius:4px;height:4px;margin-top:10px}
 .lpfill{background:var(--g);height:4px;border-radius:4px;transition:width .4s;width:0%}
-.lcard-score{font-family:'Cairo',sans-serif;font-size:.66rem;font-weight:700;margin-top:5px}
+.lcard-score{font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;margin-top:5px}
 .test-top{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);
   border:2px solid var(--bdr);border-radius:10px;padding:9px 13px;margin-bottom:10px}
 .test-best{font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:700;color:var(--muted)}
@@ -86,6 +94,17 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .final-card p{color:rgba(255,255,255,.8);font-size:.82rem}
 .final-card .fc-badge{display:inline-block;background:var(--y);color:var(--navy);
   border-radius:12px;padding:3px 12px;font-size:.75rem;font-weight:700;margin-top:8px}
+
+/* STREAK COMEBACK BANNER */
+.streak-comeback{background:linear-gradient(135deg,#FF9600,#EF6C00);border-radius:14px;
+  padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:14px;
+  animation:slideIn .4s ease}
+@keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.streak-comeback .sc-ico{font-size:2rem;flex-shrink:0}
+.streak-comeback .sc-txt h3{color:#fff;font-size:.95rem;font-weight:900;margin-bottom:2px}
+.streak-comeback .sc-txt p{color:rgba(255,255,255,.88);font-size:.82rem}
+.streak-comeback .sc-close{background:rgba(255,255,255,.2);border:none;border-radius:50%;
+  width:28px;height:28px;color:#fff;font-size:1rem;cursor:pointer;margin-right:auto;flex-shrink:0;font-weight:700}
 
 /* LESSON SCREEN */
 #lscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
@@ -156,9 +175,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   gap:8px;direction:ltr;text-align:left}
 .exrow.ok{background:#F0FDF4;border-color:var(--g)}
 .exrow.no{background:#FEF2F2;border-color:var(--r);text-decoration:line-through;color:#999}
-.spk{background:var(--b);border:none;border-radius:7px;width:28px;height:28px;
+.spk{background:var(--b);border:none;border-radius:7px;width:36px;height:36px;
   display:flex;align-items:center;justify-content:center;cursor:pointer;
-  font-size:.75rem;transition:all .2s;flex-shrink:0}
+  font-size:.9rem;transition:all .2s;flex-shrink:0}
 .spk:hover{background:var(--bd)}
 .spk.dark{background:var(--navy)}
 
@@ -189,9 +208,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .vleft{display:flex;align-items:center;gap:10px}
 .vemoji{font-size:1.5rem}
 .ven{font-size:.9rem;font-weight:700;color:var(--navy);font-family:'Inter',sans-serif}
-.var{font-size:.75rem;color:var(--muted);margin-top:2px}
-.vspk{background:var(--b);border:none;border-radius:8px;width:32px;height:32px;
-  display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.85rem;flex-shrink:0}
+.var{font-size:.88rem;color:var(--muted);margin-top:2px}
+.vspk{background:var(--b);border:none;border-radius:8px;width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;flex-shrink:0}
 .vspk:hover{background:var(--bd)}
 
 /* QUIZ */
@@ -210,9 +229,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .qspk{background:var(--b);border:none;border-radius:7px;width:30px;height:30px;
   display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.75rem;flex-shrink:0}
 .opts{display:flex;flex-direction:column;gap:6px}
-.opt{display:flex;align-items:center;gap:9px;padding:10px 13px;
+.opt{display:flex;align-items:center;gap:9px;padding:11px 13px;
   background:#fff;border:2px solid var(--bdr);border-radius:9px;
-  font-family:'Inter',sans-serif;font-size:.85rem;color:var(--txt);
+  font-family:'Inter',sans-serif;font-size:.95rem;color:var(--txt);
   cursor:pointer;transition:all .15s;text-align:left;direction:ltr;width:100%}
 .opt:hover:not(:disabled){border-color:var(--b);background:#F0F7FF}
 .oltr{width:24px;height:24px;border-radius:6px;background:var(--bdr);
@@ -225,33 +244,59 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .opt.no .oltr{background:var(--r);color:#fff}
 .opt:disabled{cursor:default}
 .fb{display:none;align-items:flex-start;gap:7px;margin-top:7px;
-  padding:8px 11px;border-radius:8px;font-size:.78rem;font-weight:600}
+  padding:8px 11px;border-radius:8px;font-size:.88rem;font-weight:600}
 .fb.show{display:flex}
 .fb.ok{background:var(--ok-bg);color:var(--ok-txt)}
 .fb.no{background:var(--no-bg);color:var(--no-txt)}
 .fb-en{font-family:'Inter',sans-serif;direction:ltr;font-size:.76rem}
 .fb-ar{font-family:'Cairo',sans-serif;font-size:.73rem;opacity:.85;margin-top:2px}
 
-/* DRAG DROP */
-.dd-sentence{background:var(--card);border:2px solid var(--bdr);border-radius:12px;
-  padding:14px;margin-bottom:10px;transition:border-color .3s}
-.dd-sentence.dd-ok{border-color:var(--g);background:var(--ok-bg)}
-.dd-sentence.dd-no{border-color:var(--r);background:var(--no-bg)}
-.dd-top{font-family:'Inter',sans-serif;direction:ltr;text-align:left;
-  font-size:.88rem;color:var(--navy);font-weight:600;margin-bottom:10px;line-height:1.8}
-.dd-blank{display:inline-block;min-width:100px;height:28px;
-  border-bottom:2px dashed var(--b);margin:0 4px;vertical-align:middle;
-  background:rgba(28,176,246,.05);border-radius:4px;padding:0 6px;
-  font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;text-align:center;line-height:26px;color:var(--b);font-weight:700}
-.dd-blank.filled{border-style:solid;background:rgba(28,176,246,.1)}
-.dd-blank.correct{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
-.dd-blank.wrong{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
-.dd-words{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.dd-word{background:#fff;border:2px solid var(--b);border-radius:8px;
-  padding:5px 12px;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;
-  color:var(--b);cursor:pointer;transition:all .2s;user-select:none}
-.dd-word:hover{background:var(--b);color:#fff}
-.dd-word.used{opacity:.3;pointer-events:none;background:#f5f5f5;border-color:#ccc;color:#999}
+/* WORD ORDER */
+.wo-card{background:var(--card);border:2px solid var(--bdr);border-radius:14px;
+  padding:14px;margin-bottom:12px;transition:border-color .3s}
+.wo-card.wo-ok{border-color:var(--g);background:var(--ok-bg)}
+.wo-card.wo-no{border-color:var(--r);background:var(--no-bg)}
+.wo-prompt{font-family:'Cairo',sans-serif;font-size:.88rem;color:var(--muted);margin-bottom:10px}
+.wo-answer{min-height:44px;border:2px dashed var(--b);border-radius:10px;
+  padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;
+  background:rgba(28,176,246,.03);transition:border-color .3s;align-items:center}
+.wo-answer.has-words{border-style:solid;background:rgba(28,176,246,.06)}
+.wo-answer.wo-correct{border-color:var(--g);background:var(--ok-bg)}
+.wo-answer.wo-wrong{border-color:var(--r);background:var(--no-bg);animation:shake .3s ease}
+@keyframes shake{0%,100%{transform:none}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.wo-chip{background:var(--navy);color:#fff;border:none;border-radius:8px;
+  padding:7px 13px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;
+  cursor:pointer;transition:all .15s;user-select:none}
+.wo-chip:hover{background:var(--navy2);transform:scale(1.04)}
+.wo-chip.placed{background:var(--b);color:#fff}
+.wo-chip.placed:hover{background:var(--bd)}
+.wo-bank{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.wo-bank-chip{background:#fff;border:2px solid var(--navy);border-radius:8px;
+  padding:7px 13px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;
+  color:var(--navy);cursor:pointer;transition:all .15s;user-select:none}
+.wo-bank-chip:hover{background:var(--navy);color:#fff}
+.wo-bank-chip.used{opacity:.25;pointer-events:none}
+.wo-check{background:var(--g);color:#fff;border:none;border-radius:9px;
+  padding:9px 20px;font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;
+  cursor:pointer;transition:.15s}
+.wo-check:hover{background:var(--gd)}
+.wo-clear{background:#fff;border:2px solid var(--bdr);border-radius:9px;
+  padding:9px 14px;font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;
+  color:var(--muted);cursor:pointer;margin-right:8px;transition:.15s}
+.wo-clear:hover{border-color:var(--r);color:var(--r)}
+.wo-reveal{background:#F0FDF4;border:1.5px solid #BCE3C8;border-radius:9px;
+  padding:10px 13px;margin-top:8px;animation:ddpop .25s ease}
+.wo-tr{font-family:'Cairo',sans-serif;font-weight:700;color:#15803D;font-size:.9rem}
+.wo-note{font-family:'Cairo',sans-serif;font-size:.78rem;color:#166534;margin-top:3px}
+.wo-wrong-reveal{background:var(--no-bg);border:1.5px solid #FFBDBD;border-radius:9px;
+  padding:10px 13px;margin-top:8px}
+.wo-hint-btn{background:#FFF7ED;border:2px solid var(--o);border-radius:9px;
+  padding:9px 14px;font-family:'Cairo',sans-serif;font-size:.88rem;font-weight:700;
+  color:var(--o);cursor:pointer;transition:.15s;display:flex;align-items:center;gap:5px}
+.wo-hint-btn:hover:not(:disabled){background:#FED7AA}
+.wo-hint-btn:disabled{opacity:.35;cursor:not-allowed;border-color:#ccc;color:#999;background:#f5f5f5}
+.wo-wrong-ans{font-family:'Inter',sans-serif;direction:ltr;font-weight:700;color:#CC0000;font-size:.88rem}
+.wo-wrong-ar{font-family:'Cairo',sans-serif;font-size:.78rem;color:#CC0000;margin-top:3px}
 .dd-check{margin-top:10px;text-align:right}
 .dd-reveal{background:#F0FDF4;border:1.5px solid #BCE3C8;border-radius:8px;padding:8px 12px;margin:8px 0;animation:ddpop .25s ease}
 @keyframes ddpop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
@@ -369,6 +414,17 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .vcard .vs{position:absolute;top:7px;left:7px;background:var(--b);border:none;border-radius:6px;
   width:24px;height:24px;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .vcard .vs:hover{background:var(--bd)}
+.past-sec{background:#F5F3FF;border:2px solid #DDD6FE;border-radius:14px;padding:14px;margin-top:16px}
+.past-h{font-family:'Cairo',sans-serif;font-weight:900;color:#5B21B6;font-size:1rem;text-align:center;margin-bottom:3px}
+.past-note{font-family:'Cairo',sans-serif;font-size:.72rem;color:var(--muted);text-align:center;margin-bottom:11px}
+.past-row{background:#fff;border-radius:10px;padding:9px 12px;margin-bottom:8px}
+.past-row:last-child{margin-bottom:0}
+.pr-forms{display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif;font-weight:800;font-size:1rem}
+.pr-base{color:var(--navy);display:inline-flex;align-items:center;gap:3px}
+.pr-past{color:#C2410C;display:inline-flex;align-items:center;gap:3px}
+.pr-arrow{color:var(--muted)}
+.pr-spk{background:none;border:none;cursor:pointer;font-size:.82rem;padding:0}
+.pr-ar{text-align:center;font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin-top:5px}
 
 /* Grammar cards */
 .gcard{background:var(--card);border-radius:14px;border:2px solid var(--bdr);
@@ -481,6 +537,128 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .prep-card .pc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.15rem;font-weight:900}
 .prep-card .pc-txt p{color:rgba(255,255,255,.85);font-size:.8rem;margin-top:2px}
 
+/* ── PREP JOURNEY ── */
+.journey-track{margin-bottom:12px}
+.journey-step{display:none}
+.journey-step.active{display:block;animation:qfade .35s ease}
+
+/* Path selector cards */
+.path-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px}
+.path-card{border-radius:16px;padding:20px 16px;text-align:center;cursor:pointer;
+  border:3px solid;transition:all .2s;user-select:none}
+.path-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.path-card.place{background:#EFF6FF;border-color:#93C5FD}
+.path-card.time{background:#FFF7ED;border-color:#FDBA74}
+.path-card.locked{opacity:.45;cursor:not-allowed;transform:none!important;box-shadow:none!important}
+.path-card.done{position:relative}
+.path-card.done::after{content:'✓';position:absolute;top:10px;left:10px;
+  background:var(--g);color:#fff;width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+.pc-emoji{font-size:2.5rem;display:block;margin-bottom:8px}
+.pc-title{font-family:'Inter',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy)}
+.pc-sub{font-family:'Cairo',sans-serif;font-size:.8rem;color:var(--muted);margin-top:4px}
+.pc-badge{display:inline-block;margin-top:8px;font-size:.72rem;font-weight:700;
+  padding:3px 10px;border-radius:20px;font-family:'Cairo',sans-serif}
+.pc-badge.place{background:#DBEAFE;color:#1D4ED8}
+.pc-badge.time{background:#FFEDD5;color:#C2410C}
+.pc-badge.done{background:#D7FFB8;color:#2D8A00}
+
+/* Step card */
+.step-card{background:var(--card);border-radius:16px;border:2px solid var(--bdr);
+  padding:20px 18px;margin-bottom:14px}
+.step-num{font-size:.68rem;font-weight:700;color:var(--muted);letter-spacing:2px;
+  text-transform:uppercase;font-family:'Cairo',sans-serif;margin-bottom:8px}
+.step-hook{font-family:'Cairo',sans-serif;font-size:1rem;font-weight:700;
+  color:var(--navy);line-height:1.7;margin-bottom:14px}
+.step-hook span{color:var(--b)}
+
+/* Keyword reveal */
+.kw-box{border-radius:14px;padding:16px;margin-bottom:14px;border:2px solid}
+.kw-box.in-box{background:#EFF6FF;border-color:#93C5FD}
+.kw-box.on-box{background:#F0FDF4;border-color:#86EFAC}
+.kw-box.at-box{background:#FFF7ED;border-color:#FDBA74}
+.kw-word{font-family:'Inter',sans-serif;font-weight:900;font-size:2rem;
+  display:flex;align-items:center;gap:10px;margin-bottom:8px;direction:ltr}
+.kw-word.in-c{color:#1D4ED8}
+.kw-word.on-c{color:#15803D}
+.kw-word.at-c{color:#C2410C}
+.kw-spk{background:#fff;border:2px solid;border-radius:8px;width:34px;height:34px;
+  cursor:pointer;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.15s}
+.kw-spk.in-c{border-color:#93C5FD;color:#1D4ED8}
+.kw-spk.on-c{border-color:#86EFAC;color:#15803D}
+.kw-spk.at-c{border-color:#FDBA74;color:#C2410C}
+.kw-rule{font-family:'Cairo',sans-serif;font-size:.95rem;font-weight:700;
+  color:var(--navy);margin-bottom:10px;line-height:1.7}
+.kw-rule b{font-family:'Inter',sans-serif}
+.kw-examples{display:flex;flex-direction:column;gap:6px}
+.kw-ex{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  background:#fff;border-radius:9px;padding:9px 12px;border:1.5px solid #E5E5E5}
+.kw-ex-en{font-family:'Inter',sans-serif;font-weight:700;color:var(--navy);
+  font-size:.92rem;direction:ltr;text-align:left;flex:1}
+.kw-ex-en b{color:inherit}
+.kw-ex-ar{font-family:'Cairo',sans-serif;font-size:.8rem;color:var(--muted)}
+.kw-ex-spk{background:none;border:none;cursor:pointer;font-size:.85rem;flex-shrink:0}
+
+/* Comparison strip */
+.compare-strip{background:var(--navy);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.compare-strip-title{font-family:'Cairo',sans-serif;font-size:.82rem;color:rgba(255,255,255,.7);
+  margin-bottom:10px;text-align:center}
+.compare-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;direction:ltr}
+.compare-row:last-child{margin-bottom:0}
+.cr-prep{font-family:'Inter',sans-serif;font-weight:900;font-size:.95rem;
+  padding:5px 12px;border-radius:8px;min-width:40px;text-align:center}
+.cr-prep.in-c{background:#1D4ED8;color:#fff}
+.cr-prep.on-c{background:#15803D;color:#fff}
+.cr-prep.at-c{background:#C2410C;color:#fff}
+.cr-en{font-family:'Inter',sans-serif;font-weight:600;color:#fff;font-size:.88rem;flex:1}
+.cr-ar{font-family:'Cairo',sans-serif;font-size:.75rem;color:rgba(255,255,255,.6)}
+.cr-spk{background:rgba(255,255,255,.15);border:none;border-radius:6px;
+  width:26px;height:26px;color:#fff;cursor:pointer;font-size:.7rem;flex-shrink:0}
+
+/* Inline quiz */
+.iq-label{font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;
+  color:var(--muted);margin-bottom:8px}
+.iq-sent{font-family:'Inter',sans-serif;direction:ltr;font-size:.95rem;font-weight:600;
+  color:var(--navy);margin-bottom:10px;line-height:1.8}
+.iq-opts{display:flex;gap:8px}
+.iq-opt{flex:1;padding:11px 6px;border:2px solid var(--bdr);border-radius:10px;
+  background:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:1rem;
+  color:var(--navy);cursor:pointer;transition:.15s;text-align:center}
+.iq-opt:hover:not(:disabled){border-color:var(--b);background:#EFF6FF}
+.iq-opt.ok{border-color:var(--g);background:var(--ok-bg);color:var(--ok-txt)}
+.iq-opt.no{border-color:var(--r);background:var(--no-bg);color:var(--no-txt)}
+.iq-fb{margin-top:8px;border-radius:8px;padding:8px 12px;font-family:'Cairo',sans-serif;
+  font-size:.85rem;font-weight:700;display:none}
+.iq-fb.show.ok{display:block;background:var(--ok-bg);color:var(--ok-txt)}
+.iq-fb.show.no{display:block;background:var(--no-bg);color:var(--no-txt)}
+
+/* Next button */
+.step-next{width:100%;margin-top:14px;padding:13px;background:var(--navy);color:#fff;
+  border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-weight:800;
+  font-size:.95rem;cursor:pointer;transition:.15s;display:none}
+.step-next.show{display:block;animation:qfade .3s ease}
+.step-next:hover{filter:brightness(1.15);transform:translateY(-1px)}
+
+/* Challenge */
+.challenge-box{background:linear-gradient(135deg,#7C3AED,#4338CA);border-radius:16px;
+  padding:20px;text-align:center;margin-bottom:14px}
+.challenge-box h3{color:#fff;font-size:1.05rem;font-weight:900;margin-bottom:4px}
+.challenge-box p{color:rgba(255,255,255,.8);font-size:.82rem;margin-bottom:14px}
+.challenge-score{font-size:2.5rem;font-weight:900;color:#FFC800;margin:8px 0}
+.challenge-stars{font-size:1.5rem;margin-bottom:12px}
+.chal-item{background:var(--card);border-radius:12px;padding:14px;margin-bottom:10px;border:2px solid var(--bdr)}
+.chal-sent{font-family:'Inter',sans-serif;direction:ltr;font-size:.95rem;font-weight:600;
+  color:var(--navy);margin-bottom:10px}
+.locked-msg{background:#FFF7ED;border:2px solid #FDBA74;border-radius:12px;
+  padding:14px;text-align:center;font-family:'Cairo',sans-serif;font-size:.88rem;
+  font-weight:700;color:#B45309;margin-bottom:12px}
+
+/* Progress dots */
+.step-dots{display:flex;justify-content:center;gap:6px;margin-bottom:16px}
+.step-dot{width:8px;height:8px;border-radius:50%;background:var(--bdr);transition:.3s}
+.step-dot.done{background:var(--g)}
+.step-dot.active{background:var(--b);transform:scale(1.3)}
+
 #pscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
 .prep-hero{background:linear-gradient(135deg,#0EA5E9,#2563EB);border-radius:16px;padding:20px;text-align:center;margin-bottom:16px}
 .prep-hero h2{color:#fff;font-size:1.25rem;font-weight:900}
@@ -488,7 +666,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .prep-toggle{display:flex;gap:6px;background:var(--card);border:2px solid var(--bdr);border-radius:12px;padding:5px;margin-bottom:14px}
 .prep-toggle button{flex:1;padding:10px;border:none;border-radius:8px;font-family:'Cairo',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;background:transparent;color:var(--muted);transition:.2s}
 .prep-toggle button.on{background:var(--navy);color:#fff}
-.prep-hint{text-align:center;font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);margin-bottom:6px}
+.prep-hint{display:block;text-align:center;font-family:'Cairo',sans-serif;font-size:.92rem;font-weight:800;color:var(--navy);background:#EEF2FF;border:2px dashed #C7D2FE;border-radius:12px;padding:11px 14px;margin:0 auto 12px;max-width:440px;animation:tapPulse 1.8s ease-in-out infinite}
 .target-wrap{display:flex;justify-content:center;margin:6px 0 16px}
 .target{position:relative;width:280px;height:280px}
 .ring{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);
@@ -696,6 +874,12 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .zoom-cap{background:#EFF6FF;border:1.5px dashed #93C5FD;border-radius:10px;padding:9px 12px;margin-bottom:14px;
   text-align:center;font-family:'Cairo',sans-serif;font-weight:700;font-size:.82rem;color:#1E3A8A}
 .zc{font-family:'Inter',sans-serif;font-weight:800;padding:1px 7px;border-radius:6px;direction:ltr;display:inline-block}
+.zc-seq{font-family:'Inter',sans-serif;font-weight:800;display:inline-block;margin-top:3px}
+.except-box{background:#FFFBEB;border:2px solid #FCD34D;border-radius:14px;padding:14px;margin-top:14px}
+.except-h{font-family:'Cairo',sans-serif;font-weight:900;color:#B45309;font-size:.95rem;text-align:center;margin-bottom:10px}
+.except-row{display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;font-weight:800;font-size:.98rem;color:var(--navy);margin-bottom:8px}
+.except-row:last-child{margin-bottom:0}
+.ex-spk{background:none;border:none;cursor:pointer;font-size:.85rem;padding:0}
 .zc.in{background:#DBEAFE;color:#1D4ED8}.zc.on{background:#DCFCE7;color:#15803D}.zc.at{background:#FFEDD5;color:#C2410C}
 /* Reveal quiz only after understanding */
 .quiz-toggle{width:100%;margin:22px 0 6px;padding:15px;border:none;border-radius:12px;background:var(--navy);
@@ -705,6 +889,78 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .quiz-wrap{display:none}
 .quiz-wrap.show{display:block;animation:qfade .3s ease}
 @keyframes qfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ── IRREGULAR VERBS ── */
+.iv-card-home{background:linear-gradient(135deg,#6366F1,#4338CA);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #C7D2FE;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.iv-card-home:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(67,56,202,.35)}
+.iv-card-home .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.iv-card-home .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
+.iv-card-home .pc-txt p{color:rgba(255,255,255,.9);font-size:.8rem;margin-top:2px;font-family:'Cairo',sans-serif}
+#ivscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.iv-intro{background:#EEF2FF;border:1.5px dashed #A5B4FC;border-radius:10px;padding:10px 13px;margin-bottom:14px;
+  font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;color:#3730A3;text-align:center}
+.iv-fam{background:var(--card);border:2px solid var(--bdr);border-radius:14px;padding:13px 14px;margin-bottom:12px}
+.iv-fam-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px}
+.iv-fam-pat{font-family:'Inter',sans-serif;font-weight:800;font-size:.9rem;color:#fff;background:#6366F1;
+  padding:3px 11px;border-radius:8px;direction:ltr}
+.iv-fam-hint{font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin:2px 0 10px}
+.iv-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 11px;border-radius:9px;
+  background:#F8FAFC;border:1px solid var(--bdr);margin-bottom:6px;direction:ltr}
+.iv-base{font-family:'Inter',sans-serif;font-weight:700;color:var(--navy);font-size:.95rem;direction:ltr}
+.iv-arrow{color:#6366F1;font-weight:800;font-size:1.05rem}
+.iv-past{font-family:'Inter',sans-serif;font-weight:800;color:#4338CA;font-size:.95rem;direction:ltr}
+.iv-spk{background:#6366F1;border:none;border-radius:6px;width:26px;height:26px;color:#fff;cursor:pointer;font-size:.7rem;flex:none}
+.iv-spk:hover{background:#4338CA}
+.iv-mean{font-family:'Cairo',sans-serif;font-size:.76rem;color:var(--muted);margin-left:auto;direction:rtl}
+.iv-note{width:100%;font-family:'Cairo',sans-serif;font-size:.72rem;color:#B45309;background:#FEF3C7;border-radius:6px;padding:3px 8px;margin-top:4px}
+/* Drill */
+.iv-drill-top{text-align:center;font-family:'Cairo',sans-serif;font-size:.82rem;color:var(--muted);margin-bottom:10px}
+.iv-drill-top b{color:#4338CA;font-family:'Inter',sans-serif}
+.iv-dcard{background:var(--card);border:2px solid #C7D2FE;border-radius:18px;padding:26px 18px;text-align:center;box-shadow:0 4px 16px rgba(67,56,202,.08)}
+.iv-base-big{font-family:'Inter',sans-serif;font-weight:900;font-size:2rem;color:var(--navy);direction:ltr;display:flex;align-items:center;justify-content:center;gap:10px}
+.iv-mean-big{font-family:'Cairo',sans-serif;font-size:1rem;color:var(--muted);margin-top:4px}
+.iv-arrow-big{font-family:'Cairo',sans-serif;font-size:.8rem;color:#6366F1;font-weight:700;margin:14px 0 4px}
+.iv-past-big{font-family:'Inter',sans-serif;font-weight:900;font-size:2rem;color:#4338CA;direction:ltr;display:flex;align-items:center;justify-content:center;gap:10px;
+  background:#EEF2FF;border-radius:12px;padding:10px;animation:qfade .3s ease}
+.iv-spk2{background:#6366F1;border:none;border-radius:8px;width:34px;height:34px;color:#fff;cursor:pointer;font-size:.85rem}
+.iv-spk2:hover{background:#4338CA}
+.iv-reveal-btn{margin-top:18px;background:var(--navy);color:#fff;border:none;border-radius:12px;padding:13px 28px;
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:.95rem;cursor:pointer;transition:.15s}
+.iv-reveal-btn:hover{filter:brightness(1.15)}
+.iv-judge{display:flex;gap:10px;justify-content:center;margin-top:18px}
+.iv-btn{padding:12px 22px;border:none;border-radius:12px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.9rem;cursor:pointer;transition:.15s}
+.iv-btn.known{background:var(--g);color:#fff}.iv-btn.known:hover{background:var(--gd)}
+.iv-btn.hard{background:#FEE2E2;color:#B91C1C}.iv-btn.hard:hover{background:#FECACA}
+.iv-done{text-align:center;background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:26px 18px}
+.iv-done .em{font-size:3rem}
+.iv-done .t{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin:8px 0 14px}
+.iv-done .iv-btn{margin:4px}
+
+/* ── LISTENING (YouTube) ── */
+.yt-card{background:linear-gradient(135deg,#1F2937,#0B1220);border-radius:16px;padding:18px 20px;
+  cursor:pointer;transition:all .2s;border:3px solid #FCA5A5;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.yt-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,18,32,.4)}
+.yt-card .ac-ic{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.yt-card .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
+.yt-card .pc-txt p{color:rgba(255,255,255,.9);font-size:.8rem;margin-top:2px;font-family:'Cairo',sans-serif}
+#ytscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+.yt-tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
+.yt-tab{flex:none;min-width:112px;padding:10px 14px;border:2px solid var(--bdr);border-radius:12px;background:#fff;cursor:pointer;text-align:center;transition:.15s}
+.yt-tab:hover{border-color:#1F2937}
+.yt-tab.on{border-color:#1F2937;background:#F1F5F9;box-shadow:0 0 0 3px rgba(31,41,55,.14)}
+.yt-tab b{display:block;font-family:'Inter',sans-serif;font-weight:800;color:var(--navy);font-size:.95rem}
+.yt-tab span{display:block;font-family:'Cairo',sans-serif;font-size:.68rem;color:var(--muted);margin-top:2px}
+.yt-embed{position:relative;width:100%;padding-bottom:56.25%;height:0;border-radius:14px;overflow:hidden;background:#000;margin-bottom:12px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.lesson-video{margin:18px 0}
+.lv-title{font-family:'Cairo',sans-serif;font-weight:800;font-size:.92rem;color:var(--navy);margin-bottom:10px;text-align:center}
+.tap-hint{background:#F8FAFC;border:2px dashed var(--bdr);border-radius:14px;padding:26px 16px;text-align:center;color:var(--muted);font-family:'Cairo',sans-serif;font-weight:700;font-size:.95rem;margin-top:6px;animation:tapPulse 1.8s ease-in-out infinite}
+@keyframes tapPulse{0%,100%{opacity:.65}50%{opacity:1}}
+.yt-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-note{background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:10px;padding:9px 12px;
+  font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;text-align:center}
 
 </style>
 </head>
@@ -737,6 +993,15 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <div class="gptxt" id="gptxt">0 من 4 دروس مكتملة</div>
     <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
   </div>
+  <!-- WELCOME BANNER (shown only on first visit) -->
+  <div id="welcome-banner" style="display:none;background:linear-gradient(135deg,#0EA5E9,#0369A1);border-radius:16px;padding:18px 20px;margin-bottom:20px;position:relative">
+    <button onclick="dismiss_welcome()" style="position:absolute;top:10px;left:12px;background:rgba(255,255,255,.2);border:none;border-radius:50%;width:28px;height:28px;color:#fff;font-size:1rem;cursor:pointer;font-weight:700;line-height:1">✕</button>
+    <div style="font-size:2rem;margin-bottom:8px">👋</div>
+    <h2 style="color:#fff;font-size:1.15rem;font-weight:900;margin-bottom:6px">مرحباً بك في مركز التدريب</h2>
+    <p style="color:rgba(255,255,255,.9);font-size:.92rem;line-height:1.7;margin-bottom:14px">ابدأ من <strong style="color:#FFC800">الدرس الأول</strong> في الأسفل، وتقدّم بالترتيب — كل درس يبني على السابق. بعد كل درس تجد تماريَن وترتيب جُمل وكلمات للاستماع.</p>
+    <button onclick="dismiss_welcome_start()" style="background:#FFC800;color:#1A2744;border:none;border-radius:10px;padding:10px 22px;font-family:'Cairo',sans-serif;font-weight:900;font-size:.95rem;cursor:pointer">ابدأ الدرس الأول ←</button>
+  </div>
+
   <div class="lbl">الدروس</div>
   <div class="grid2">
     <div class="lcard" id="hc-l1" onclick="open_lesson('l1')">
@@ -793,8 +1058,24 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   <div class="time-card" onclick="open_time()">
     <div class="ac-ic">⏳</div>
     <div class="pc-txt">
-      <h3>yesterday · last · ago</h3>
+      <h3>الماضي البسيط · yesterday · last · ago</h3>
       <p>كلمات الزمن الماضي — على خطّ زمني</p>
+    </div>
+  </div>
+  <div class="iv-card-home" onclick="open_iv()">
+    <div class="ac-ic">🔄</div>
+    <div class="pc-txt">
+      <h3>الأفعال الشاذة</h3>
+      <p>مجمّعة بالعائلات — احفظ النمط لا الكلمات</p>
+    </div>
+  </div>
+
+  <div class="lbl">الاستماع</div>
+  <div class="yt-card" onclick="open_yt()">
+    <div class="ac-ic">🎧</div>
+    <div class="pc-txt">
+      <h3>استماع Book 4</h3>
+      <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B · C</p>
     </div>
   </div>
 
@@ -831,7 +1112,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
       <span class="ti">🎯</span><span>تدرّب</span>
     </button>
     <button class="tab" id="tab-drag" onclick="sw_tab('drag')">
-      <span class="ti">✋</span><span>سحب</span>
+      <span class="ti">🔤</span><span>رتّب الجملة</span>
     </button>
     <button class="tab" id="tab-test" onclick="sw_tab('test')">
       <span class="ti">🏆</span><span>اختبر</span>
@@ -865,26 +1146,22 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 <div id="pscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero">
-    <h2>in · on · at 🎯</h2>
-    <p>كل ما اتّسعت الدائرة زاد العموم — والعكس يزيد التحديد</p>
+    <h2>in · on · at</h2>
+    <p>رحلتان قصيرتان — تعلّم بالخطوات مع أمثلة من حياتك</p>
   </div>
-  <div class="prep-toggle">
-    <button class="on" id="pt-place" onclick="sw_prep('place')">📍 المكان</button>
-    <button id="pt-time" onclick="sw_prep('time')">🕐 الزمن</button>
-  </div>
-  <div class="prep-hint">اضغط على أي دائرة في الهدف 👇</div>
-  <div class="target-wrap">
-    <div class="target">
-      <div class="ring ring-in" id="ring-in" onclick="sel_prep('in')"><span>in</span></div>
-      <div class="ring ring-on" id="ring-on" onclick="sel_prep('on')"><span>on</span></div>
-      <div class="ring ring-at" id="ring-at" onclick="sel_prep('at')"><span>at</span></div>
+
+  <!-- JOURNEY CONTAINER -->
+  <div id="prep-journey"></div>
+
+  <!-- VIDEO — always visible at bottom -->
+  <div class="lesson-video" style="margin-top:24px">
+    <div class="lv-title">🎬 شاهد الشرح كاملاً — in · on · at</div>
+    <div class="yt-embed">
+      <iframe src="https://www.youtube.com/embed/Q8gMUILX6xk?rel=0" title="in on at explanation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+        allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
     </div>
   </div>
-  <div class="zoom-cap" id="zoom-cap"></div>
-  <div id="prep-detail"></div>
-
-  <button class="quiz-toggle" id="prep-toggle" onclick="reveal_quiz('prep')">🎯 فهمت الفكرة؟ اختبر نفسك ←</button>
-  <div id="prep-quiz" class="quiz-wrap"></div>
 </div>
 
 <!-- ARTICLES SCREEN -->
@@ -911,13 +1188,22 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     </div>
   </div>
 
-  <div class="prep-hint">اضغط على أيّ أداة 👇</div>
+  <div class="prep-hint">👇 اضغط على أيّ أداة (a · an · the)</div>
   <div class="art-chips">
     <button class="art-chip" id="art-a" onclick="sel_art('a')">a</button>
     <button class="art-chip" id="art-an" onclick="sel_art('an')">an</button>
     <button class="art-chip" id="art-the" onclick="sel_art('the')">the</button>
   </div>
   <div id="art-detail"></div>
+
+  <div class="lesson-video">
+    <div class="lv-title">🎬 شاهد الشرح كاملاً — a · an · the</div>
+    <div class="yt-embed">
+      <iframe src="https://www.youtube.com/embed/26qCP6YLfiA?rel=0" title="a an the explanation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+        allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
 
   <button class="quiz-toggle" id="art-toggle" onclick="reveal_quiz('art')">✨ فهمت الفكرة؟ اختبر نفسك ←</button>
   <div id="art-quiz" class="quiz-wrap"></div>
@@ -930,7 +1216,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <h2>أدوات السؤال — WH ❓</h2>
     <p>كل كلمة تسأل عن شيء مختلف — اضغط لتتعلّم</p>
   </div>
-  <div class="prep-hint">اضغط على أيّ أداة 👇</div>
+  <div class="prep-hint">👇 اضغط على أيّ أداة سؤال</div>
   <div class="wh-grid" id="wh-grid"></div>
   <div id="wh-detail"></div>
   <button class="quiz-toggle" id="wh-toggle" onclick="reveal_quiz('wh')">❓ فهمت الفكرة؟ اختبر نفسك ←</button>
@@ -941,7 +1227,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 <div id="tmscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#F59E0B,#B45309)">
-    <h2>كلمات الزمن الماضي ⏳</h2>
+    <h2>الماضي البسيط · كلمات الزمن ⏳</h2>
     <p>yesterday · last · ago — والأهمّ: ترتيب الكلمات</p>
   </div>
   <div class="tl">
@@ -964,13 +1250,23 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
       <button class="story-spk" onclick="say('Yesterday I visited my friend')">🔊</button>
       <span class="ar">أمس زرت صديقي.</span></div>
   </div>
-  <div class="prep-hint">اضغط على أيّ كلمة (أو نقطة على الخطّ) 👇</div>
+  <div class="prep-hint">👇 اضغط على أيّ كلمة أو نقطة على الخطّ</div>
   <div class="tm-chips">
     <button class="tm-chip" id="tm-yesterday" onclick="sel_time('yesterday')">yesterday</button>
     <button class="tm-chip" id="tm-last" onclick="sel_time('last')">last</button>
     <button class="tm-chip" id="tm-ago" onclick="sel_time('ago')">ago</button>
   </div>
   <div id="time-detail"></div>
+
+  <div class="lesson-video">
+    <div class="lv-title">🎬 شاهد الشرح كاملاً — الماضي البسيط</div>
+    <div class="yt-embed">
+      <iframe src="https://www.youtube.com/embed/oSNLR7zep_E?rel=0" title="simple past explanation"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+        allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+
   <button class="quiz-toggle" id="time-toggle" onclick="reveal_quiz('time')">⏳ فهمت الفكرة؟ اختبر نفسك ←</button>
   <div id="time-quiz" class="quiz-wrap"></div>
 </div>
@@ -988,6 +1284,36 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
     <div class="sp-count" id="sp-count">0 / 0</div>
   </div>
   <div id="spell-body"></div>
+</div>
+
+<!-- IRREGULAR VERBS SCREEN -->
+<div id="ivscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#6366F1,#4338CA)">
+    <h2>الأفعال الشاذة 🔄</h2>
+    <p>ليست عشوائية — بل عائلات لها أنماط</p>
+  </div>
+  <div class="prep-toggle">
+    <button class="on" id="iv-t-learn" onclick="sw_iv('learn')">📖 تعلّم بالعائلات</button>
+    <button id="iv-t-drill" onclick="sw_iv('drill')">🎴 تدرّب (بطاقات)</button>
+  </div>
+  <div id="iv-learn-body"></div>
+  <div id="iv-drill-body" style="display:none"></div>
+</div>
+
+<!-- LISTENING (YouTube) SCREEN -->
+<div id="ytscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#1F2937,#0B1220)">
+    <h2>استماع Book 4 🎧</h2>
+    <p>اختبارات استماع وقراءة مع الحل — LangVox</p>
+  </div>
+  <div class="yt-tabs" id="yt-tabs"></div>
+  <div class="yt-embed">
+    <iframe id="yt-iframe" src="" title="ALC Book 4 Listening"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+      allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+  </div>
 </div>
 
 <!-- MODAL -->
@@ -1172,7 +1498,49 @@ l4:[
 ]
 };
 
-// PRACTICE per lesson (mix of types)
+// WORD ORDER data per lesson — رتّب الكلمات لتكوين جملة صحيحة
+const WO = {
+l1:[
+  {words:["Jane","played","baseball","yesterday"],ans:"Jane played baseball yesterday.",tr:"لعبت جين البيسبول أمس.",ar:"yesterday = ماضٍ → played"},
+  {words:["Tom","didn't","clean","his","room","last","Saturday"],ans:"Tom didn't clean his room last Saturday.",tr:"لم ينظّف توم غرفته السبت الماضي.",ar:"didn't + الفعل الأصلي بدون -ed"},
+  {words:["Did","you","watch","the","game","?"],ans:"Did you watch the game ?",tr:"هل شاهدت المباراة؟",ar:"Did + الفعل الأصلي في السؤال"},
+  {words:["Bob","visited","Chicago","last","year"],ans:"Bob visited Chicago last year.",tr:"زار بوب شيكاغو العام الماضي.",ar:"last year = ماضٍ → visited"},
+  {words:["There","are","eleven","players","on","a","football","team"],ans:"There are eleven players on a football team.",tr:"يوجد أحد عشر لاعباً في فريق كرة القدم.",ar:"team = الفريق"},
+  {words:["She","didn't","visit","New","York","last","month"],ans:"She didn't visit New York last month.",tr:"لم تزُر نيويورك الشهر الماضي.",ar:"didn't + visit (بدون -ed)"},
+  {words:["Did","Bill","play","football","yesterday","afternoon","?"],ans:"Did Bill play football yesterday afternoon ?",tr:"هل لعب بيل كرة القدم مساء أمس؟",ar:"Did + الفعل المجرد"},
+  {words:["Houston","is","a","big","city","in","Texas"],ans:"Houston is a big city in Texas.",tr:"هيوستن مدينة كبيرة في تكساس.",ar:"مدينة كبيرة"},
+],
+l2:[
+  {words:["A","soldier","works","on","an","Army","post"],ans:"A soldier works on an Army post.",tr:"يعمل الجندي في ثكنة الجيش.",ar:"Army → post"},
+  {words:["Airmen","always","salute","officers"],ans:"Airmen always salute officers.",tr:"يُحيّي جنود سلاح الجو الضباط دائماً.",ar:"salute = يُحيّي عسكرياً"},
+  {words:["I","spoke","to","the","teacher","yesterday"],ans:"I spoke to the teacher yesterday.",tr:"تحدّثت إلى المعلّم أمس.",ar:"speak → spoke (شاذ)"},
+  {words:["Sgt.","Jones","flew","to","LA","last","week"],ans:"Sgt. Jones flew to LA last week.",tr:"سافر الرقيب جونز جواً الأسبوع الماضي.",ar:"fly → flew (شاذ)"},
+  {words:["I","left","class","early","yesterday"],ans:"I left class early yesterday.",tr:"غادرت الصف مبكراً أمس.",ar:"leave → left (شاذ)"},
+  {words:["Please","bring","your","books","to","class"],ans:"Please bring your books to class.",tr:"أحضر كتبك إلى الصف.",ar:"bring = أحضر"},
+  {words:["She","didn't","have","her","name","tag","on"],ans:"She didn't have her name tag on.",tr:"لم تكن ترتدي بطاقة اسمها.",ar:"name tag = بطاقة الاسم"},
+  {words:["It's","8:50","p.m.","In","military","time","it's","2050"],ans:"It's 8:50 p.m. In military time it's 2050.",tr:"الساعة 8:50 مساءً = 2050 بالتوقيت العسكري.",ar:"8+12=20 → 2050"},
+],
+l3:[
+  {words:["Students","must","listen","to","the","teacher"],ans:"Students must listen to the teacher.",tr:"يجب على الطلاب الاستماع للمعلّم.",ar:"must + فعل مجرد"},
+  {words:["You","must","not","smoke","here"],ans:"You must not smoke here.",tr:"ممنوع التدخين هنا.",ar:"must not = ممنوع"},
+  {words:["May","I","go","to","the","library","?"],ans:"May I go to the library ?",tr:"هل تسمح لي بالذهاب إلى المكتبة؟",ar:"May I = طلب إذن رسمي"},
+  {words:["I","can't","swim","very","well"],ans:"I can't swim very well.",tr:"لا أستطيع السباحة جيداً.",ar:"can't + well"},
+  {words:["Soldiers","must","wear","uniforms","to","class"],ans:"Soldiers must wear uniforms to class.",tr:"يجب على الجنود لبس الزي العسكري.",ar:"must + الفعل الأصلي"},
+  {words:["A","suit","is","slacks","and","a","jacket"],ans:"A suit is slacks and a jacket.",tr:"البدلة = بنطلون + جاكيت.",ar:"suit = slacks + jacket"},
+  {words:["Pvt","Jones","can","speak","four","languages"],ans:"Pvt Jones can speak four languages.",tr:"يستطيع الجندي جونز التحدث بأربع لغات.",ar:"can + الفعل الأصلي"},
+  {words:["Do","not","smoke","=","You","must","not","smoke"],ans:"Do not smoke = You must not smoke.",tr:"ممنوع التدخين = يجب ألا تدخّن.",ar:"Do not = must not"},
+],
+l4:[
+  {words:["Autumn","and","fall","are","the","same","season"],ans:"Autumn and fall are the same season.",tr:"Autumn و fall اسمان لنفس الفصل.",ar:"نفس الفصل، كلمتان"},
+  {words:["December","January","and","February","are","winter","months"],ans:"December January and February are winter months.",tr:"ديسمبر ويناير وفبراير أشهر الشتاء.",ar:"الشتاء ❄️"},
+  {words:["Today","is","Monday","The","day","after","tomorrow","is","Wednesday"],ans:"Today is Monday The day after tomorrow is Wednesday.",tr:"اليوم الاثنين، بعد الغد الأربعاء.",ar:"بعد الغد = +يومين"},
+  {words:["I","like","to","listen","to","music","on","the","radio"],ans:"I like to listen to music on the radio.",tr:"أحبّ الاستماع إلى الموسيقى على الراديو.",ar:"listen to music"},
+  {words:["Catherine","listens","to","CDs","on","her","headphones"],ans:"Catherine listens to CDs on her headphones.",tr:"تستمع كاثرين للأقراص على سماعاتها.",ar:"headphones = للـ CDs"},
+  {words:["It's","very","warm","I","want","to","take","off","my","sweater"],ans:"It's very warm I want to take off my sweater.",tr:"الجو دافئ، أريد خلع سترتي.",ar:"take off = يخلع"},
+  {words:["How","much","does","this","pen","cost","?"],ans:"How much does this pen cost ?",tr:"كم يكلّف هذا القلم؟",ar:"How much + does + cost"},
+  {words:["John","works","at","a","store","He's","a","clerk"],ans:"John works at a store He's a clerk.",tr:"يعمل جون في متجر، هو موظف متجر.",ar:"store worker = clerk"},
+]
+};
 const PR = {
 l1:[
   {q:"Jane _______ baseball yesterday.",o:["is playing","playing","played","plays"],a:2,en:"yesterday → simple past",ar:"أمس = الماضي"},
@@ -1237,8 +1605,32 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen'];
-function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});}
+const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen'];
+function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
+
+// ── Analytics: track which section + time spent ──
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع'};
+let _curScreen=null,_screenStart=0;
+function track_screen(id){
+  if(typeof gtag!=='function')return;
+  const now=Date.now();
+  if(_curScreen&&_screenStart){
+    const secs=Math.round((now-_screenStart)/1000);
+    if(secs>0&&secs<7200)gtag('event','section_time',{section:SCREEN_NAMES[_curScreen]||_curScreen,seconds:secs});
+  }
+  let name=SCREEN_NAMES[id]||id;
+  if(id==='lscreen'&&typeof CL==='string'&&CL)name='درس '+CL.toUpperCase();
+  gtag('event','section_view',{section:name});
+  _curScreen=id;_screenStart=now;
+}
+function _flush_screen_time(){
+  if(typeof gtag!=='function'||!_curScreen||!_screenStart)return;
+  const secs=Math.round((Date.now()-_screenStart)/1000);
+  if(secs>0&&secs<7200)gtag('event','section_time',{section:SCREEN_NAMES[_curScreen]||_curScreen,seconds:secs});
+  _screenStart=Date.now();
+}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')_flush_screen_time();});
+window.addEventListener('pagehide',_flush_screen_time);
 
 // Quizzes stay hidden until the learner clicks "اختبر نفسك"
 function reset_quiz(id){
@@ -1327,7 +1719,7 @@ l1:[
   {e:'ball',a:'كرة',em:'⚽'},{e:'baseball',a:'البيسبول',em:'⚾'},
   {e:'basketball',a:'كرة السلة',em:'🏀'},{e:'football',a:'كرة القدم الأمريكية',em:'🏈'},
   {e:'soccer',a:'كرة القدم',em:'⚽'},{e:'tennis',a:'التنس',em:'🎾'},
-  {e:'team',a:'فريق',em:'🤝'},{e:'game',a:'مباراة / لعبة',em:'🎮'},
+  {e:'sports',a:'رياضة',em:'🏅'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'مباراة / لعبة',em:'🎮'},
   {e:'restaurant',a:'مطعم',em:'🍽️'},{e:'show',a:'برنامج / عرض',em:'📺'},
   {e:'downtown',a:'وسط المدينة',em:'🌆'},{e:'city',a:'مدينة',em:'🏙️'},
   {e:'break',a:'استراحة',em:'☕'},{e:'again',a:'مرة أخرى',em:'🔁'},
@@ -1341,14 +1733,18 @@ l2:[
   {e:'Lieutenant Colonel (Lt Col)',a:'مقدّم — O-5',em:'🍂'},
   {e:'Colonel (Col)',a:'عقيد — O-6',em:'🦅'},
   {e:'General (Gen)',a:'لواء — O-7',em:'⭐'},
+  {e:'sergeant (Sgt)',a:'رقيب — رتبة أفراد',em:'🎗️'},
   {e:'base',a:'قاعدة عسكرية',em:'🏕️'},{e:'post',a:'ثكنة (معسكر الجيش)',em:'🪖'},
   {e:'naval base',a:'قاعدة بحرية',em:'⚓'},{e:'uniform',a:'الزي العسكري',em:'👔'},
   {e:'name tag',a:'بطاقة الاسم',em:'🪪'},{e:'rank',a:'الرتبة',em:'🎖️'},
-  {e:'stripe',a:'شريط الرتبة',em:'〰️'},{e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},
-  {e:'ID card',a:'بطاقة الهوية',em:'🪪'},{e:'cap',a:'قبعة عسكرية',em:'🧢'},
-  {e:'cigarette / pack',a:'سيجارة / علبة',em:'🚬'},{e:'break',a:'استراحة',em:'☕'},
+  {e:'insignia',a:'الشارة (رمز الرتبة)',em:'🏅'},{e:'stripe',a:'شريط الرتبة',em:'〰️'},
+  {e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},{e:'ID card',a:'بطاقة الهوية',em:'🪪'},
+  {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'cigarette / pack',a:'سيجارة / علبة',em:'🚬'},
+  {e:'smoke',a:'يُدخّن',em:'💨'},{e:'break',a:'استراحة',em:'☕'},
 ],
 l3:[
+  // ── ملابس ──
+  {e:'clothes',a:'ملابس',em:'👕'},
   {e:'dress',a:'فستان',em:'👗'},{e:'skirt',a:'تنورة',em:'👗'},
   {e:'blouse',a:'بلوزة',em:'👚'},{e:'stockings',a:'جوارب طويلة',em:'🧦'},
   {e:'sweater',a:'بلوزة صوف',em:'🧥'},{e:'scarf',a:'وشاح',em:'🧣'},
@@ -1359,6 +1755,29 @@ l3:[
   {e:'tie / necktie',a:'ربطة عنق',em:'👔'},{e:'belt',a:'حزام',em:'🔗'},
   {e:'cap',a:'قبعة عسكرية',em:'🧢'},{e:'jacket / coat',a:'جاكيت / معطف',em:'🧥'},
   {e:'suit',a:'بدلة = jacket + slacks',em:'🤵'},{e:'shorts',a:'شورت قصير',em:'🩳'},
+  // ── أفعال ──
+  {e:'wear',a:'يرتدي',past:'wore',pa:'ارتدى',em:'👔'},
+  {e:'put on',a:'يلبس',past:'put on',pa:'لبِس',em:'🧥'},
+  {e:'take off',a:'يخلع',past:'took off',pa:'خلع',em:'🧤'},
+  {e:'wake up',a:'يستيقظ',past:'woke up',pa:'استيقظ',em:'⏰'},
+  {e:'fall asleep',a:'يغفو / ينام',past:'fell asleep',pa:'غفا',em:'😴'},
+  {e:'hang (up)',a:'يعلّق',past:'hung (up)',pa:'علّق',em:'🪝'},
+  // ── القواعد والإملاء ──
+  {e:'sentence',a:'جملة',em:'📝'},
+  {e:'statement',a:'جملة خبرية',em:'📋'},
+  {e:'paragraph',a:'فقرة',em:'📄'},
+  {e:'punctuation',a:'علامات الترقيم',em:'✏️'},
+  {e:'period',a:'نقطة .',em:'⏺️'},
+  {e:'comma',a:'فاصلة ,',em:'🔤'},
+  {e:'question mark',a:'علامة استفهام ?',em:'❓'},
+  {e:'apostrophe',a:'فاصلة علوية \'',em:'🔡'},
+  {e:'contraction',a:'اختصار (can\'t = cannot)',em:'🔀'},
+  {e:'indent',a:'مسافة بداية الفقرة',em:'↪️'},
+  {e:'punctuate',a:'يضع علامات الترقيم',em:'✍️'},
+  // ── كلمات أخرى ──
+  {e:'asleep',a:'نائم',em:'😴'},
+  {e:'awake',a:'صاحٍ / مستيقظ',em:'👀'},
+  {e:'well',a:'بشكل جيد',em:'✅'},
 ],
 l4:[
   {e:'spring',a:'الربيع — مارس أبريل مايو',em:'🌸'},
@@ -1372,7 +1791,12 @@ l4:[
   {e:'music',a:'موسيقى',em:'🎵'},{e:'season',a:'فصل',em:'📅'},
   {e:'this / these',a:'هذا / هؤلاء (قريب)',em:'👆'},
   {e:'that / those',a:'ذلك / أولئك (بعيد)',em:'👉'},
-  {e:'How much?',a:'كم ثمنه؟',em:'💰'},{e:'sell → sold',a:'يبيع → باع',em:'🏷️'},
+  {e:'How much?',a:'كم ثمنه؟',em:'💰'},{e:'sell',a:'يبيع',past:'sold',pa:'باع',em:'🏷️'},
+  {e:'colors',a:'الألوان',em:'🎨'},
+  {e:'red',a:'أحمر',em:'🔴'},{e:'blue',a:'أزرق',em:'🔵'},{e:'green',a:'أخضر',em:'🟢'},
+  {e:'yellow',a:'أصفر',em:'🟡'},{e:'orange',a:'برتقالي',em:'🟠'},{e:'purple',a:'بنفسجي',em:'🟣'},
+  {e:'brown',a:'بنّي',em:'🟤'},{e:'black',a:'أسود',em:'⚫'},{e:'white',a:'أبيض',em:'⬜'},
+  {e:'gray',a:'رمادي',em:'🩶'},{e:'pink',a:'وردي',em:'🩷'},
 ]
 };
 
@@ -1621,6 +2045,24 @@ function build_vocab_sec(lk){
     </div>`;
   });
   html+='</div>';
+  const pastWords=words.filter(w=>w.past);
+  if(pastWords.length){
+    html+=`<div class="past-sec">
+      <div class="past-h">⏮️ نفس الأفعال في الماضي</div>
+      <div class="past-note">الأصل ← الماضي · اضغط 🔊 لسماع كلٍّ على حدة</div>`;
+    pastWords.forEach(w=>{
+      const baseSafe=w.e.replace(/'/g,"\\'"),pastSafe=w.past.replace(/'/g,"\\'");
+      html+=`<div class="past-row">
+        <div class="pr-forms" dir="ltr">
+          <span class="pr-base">${w.e}<button class="pr-spk" onclick="say('${baseSafe}')">🔊</button></span>
+          <span class="pr-arrow">→</span>
+          <span class="pr-past">${w.past}<button class="pr-spk" onclick="say('${pastSafe}')">🔊</button></span>
+        </div>
+        <div class="pr-ar">الأصل: ${w.a} · الماضي: ${w.pa}</div>
+      </div>`;
+    });
+    html+='</div>';
+  }
   el.innerHTML=html;
 }
 
@@ -1820,97 +2262,145 @@ function build_quiz(elId,qs,prefix){
 }
 
 // ═══════════════════════════════════════
-// BUILD DRAG-DROP
+// BUILD WORD ORDER
 // ═══════════════════════════════════════
 function build_dd(lk){
   const el=document.getElementById('ph-drag');
-  el.innerHTML=`<div style="background:#FFF7ED;border:2px solid #FED7AA;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.8rem;font-family:'Cairo',sans-serif;color:#92400E">
-    💡 اختر الكلمة الصحيحة لملء الفراغ — عند الإجابة الصحيحة تظهر الترجمة للتعلّم
+  el.innerHTML=`<div style="background:#EFF6FF;border:2px solid #BFDBFE;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.88rem;font-family:'Cairo',sans-serif;color:#1E40AF">
+    ✋ رتّب الكلمات لتكوين جملة صحيحة — اضغط الكلمات بالترتيب الصحيح
   </div>`;
 
-  const items=DD[lk];
+  const items=WO[lk];
   items.forEach((item,idx)=>{
-    const div=document.createElement('div');div.className='dd-sentence';div.id=`dd${idx}`;
-
-    // Build sentence with blank
-    const parts=item.sent.split('_____');
-    const top=document.createElement('div');top.className='dd-top';
-    top.appendChild(document.createTextNode(parts[0]));
-    const blank=document.createElement('span');blank.className='dd-blank';blank.id=`ddb${idx}`;
-    blank.textContent='؟';
-    blank.onclick=()=>fill_blank(idx,item);
-    top.appendChild(blank);
-    if(parts[1])top.appendChild(document.createTextNode(parts[1]));
-
-    div.appendChild(top);
-
-    // Reveal container — translation appears here ONLY after a correct answer
-    const rev=document.createElement('div');rev.id=`ddrev${idx}`;
-    div.appendChild(rev);
-
-    // Word bank
-    const bank=document.createElement('div');bank.className='dd-words';bank.id=`ddw${idx}`;
     const shuffled=[...item.words].sort(()=>Math.random()-.5);
-    shuffled.forEach(w=>{
-      const btn=document.createElement('button');btn.className='dd-word';btn.id=`ddwb${idx}_${w}`;
-      btn.textContent=w;
-      btn.onclick=()=>select_word(idx,w,item);
-      bank.appendChild(btn);
-    });
-    div.appendChild(bank);
+    const div=document.createElement('div');
+    div.className='wo-card';div.id=`wo${idx}`;
+    div.innerHTML=`
+      <div class="wo-prompt">🔤 رتّب الكلمات:</div>
+      <div class="wo-answer" id="woa${idx}"></div>
+      <div class="wo-bank" id="wob${idx}">
+        ${shuffled.map((w,wi)=>`<button class="wo-bank-chip" id="woc${idx}_${wi}" onclick="wo_pick(${idx},${wi},'${w.replace(/'/g,"\\'")}',${JSON.stringify(item.words.indexOf(w))})">${w}</button>`).join('')}
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <button class="wo-check" onclick="wo_check(${idx},'${item.ans.replace(/'/g,"\\'")}','${item.tr.replace(/'/g,"\\'")}','${item.ar.replace(/'/g,"\\'")}')">✓ تحقق</button>
+        <button class="wo-hint-btn" id="wohint${idx}" onclick="wo_hint(${idx},'${item.ans.replace(/'/g,"\\'")}')">💡 تلميح <span id="wohintc${idx}">٣</span></button>
+      </div>
+      <div id="wofb${idx}"></div>`;
     el.appendChild(div);
   });
 }
 
-let ddActive={idx:null,word:null};
-
-function select_word(idx,word,item){
-  // Deselect previous
-  if(ddActive.idx!==null){
-    const prev=document.getElementById(`ddwb${ddActive.idx}_${ddActive.word}`);
-    if(prev){prev.style.background='';prev.style.color='';}
+// placed = array of {wi, word} in order clicked
+const woState={};
+function wo_pick(idx,wi,word){
+  if(!woState[idx])woState[idx]=[];
+  // if already placed, remove it
+  const existing=woState[idx].findIndex(x=>x.wi===wi);
+  if(existing!==-1){
+    woState[idx].splice(existing,1);
+    document.getElementById(`woc${idx}_${wi}`).classList.remove('used');
+  } else {
+    woState[idx].push({wi,word});
+    document.getElementById(`woc${idx}_${wi}`).classList.add('used');
   }
-  ddActive={idx,word};
-  const btn=document.getElementById(`ddwb${idx}_${word}`);
-  if(btn){btn.style.background='var(--b)';btn.style.color='#fff';}
-
-  // Auto-fill blank
-  fill_blank(idx,item);
+  // render answer zone
+  const ans=document.getElementById(`woa${idx}`);
+  if(woState[idx].length===0){
+    ans.innerHTML='';ans.classList.remove('has-words');
+  } else {
+    ans.classList.add('has-words');
+    ans.innerHTML=woState[idx].map((x,pos)=>
+      `<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`
+    ).join('');
+  }
+}
+function wo_remove(idx,wi){
+  wo_pick(idx,wi,''); // toggle off
+  // re-render by refreshing state
+  const ans=document.getElementById(`woa${idx}`);
+  if(!woState[idx]||woState[idx].length===0){ans.innerHTML='';ans.classList.remove('has-words');return;}
+  ans.innerHTML=woState[idx].map(x=>`<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`).join('');
+}
+function wo_clear(idx,shuffledJson){
+  woState[idx]=[];
+  const ans=document.getElementById(`woa${idx}`);
+  ans.innerHTML='';ans.classList.remove('has-words');
+  // re-enable all chips
+  const shuffled=shuffledJson;
+  document.querySelectorAll(`[id^="woc${idx}_"]`).forEach(b=>b.classList.remove('used'));
+  document.getElementById(`wofb${idx}`).innerHTML='';
+  const card=document.getElementById(`wo${idx}`);
+  card.className='wo-card';
+  ans.className='wo-answer';
+}
+function wo_check(idx,correct,tr,ar){
+  if(!woState[idx]||woState[idx].length===0){
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-wrong-reveal"><div class="wo-wrong-ar">⚠️ رتّب الكلمات أولاً</div></div>`;
+    return;
+  }
+  const student=woState[idx].map(x=>x.word).join(' ');
+  // normalize: remove trailing punctuation for comparison
+  const norm=s=>s.replace(/\s*[.?!]+\s*$/,'').replace(/\s+/g,' ').trim().toLowerCase();
+  const isOk=norm(student)===norm(correct);
+  const card=document.getElementById(`wo${idx}`);
+  const ans=document.getElementById(`woa${idx}`);
+  if(isOk){
+    card.className='wo-card wo-ok';
+    ans.className='wo-answer wo-correct';
+    document.querySelectorAll(`[id^="woc${idx}_"]`).forEach(b=>b.disabled=true);
+    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+    say(correct.replace(/[?!.]/g,''));
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-reveal">
+      <div class="wo-tr">✅ ${tr}</div>
+      ${ar?`<div class="wo-note">💡 ${ar}</div>`:''}
+    </div>`;
+  } else {
+    ans.className='wo-answer wo-wrong';
+    setTimeout(()=>{ans.className='wo-answer has-words';},400);
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-wrong-reveal">
+      <div class="wo-wrong-ar">❌ الترتيب غير صحيح — حاول مرة أخرى</div>
+      <div class="wo-wrong-ans" style="margin-top:6px;font-size:.78rem;color:#999">💡 الجملة لها ${correct.split(' ').length} كلمة</div>
+    </div>`;
+  }
 }
 
-function fill_blank(idx,item){
-  if(!ddActive.word||ddActive.idx!==idx)return;
-  const word=ddActive.word;
-  const correct=item.blank;
-  const blank=document.getElementById(`ddb${idx}`);
-  const card=document.getElementById(`dd${idx}`);
-  const rev=document.getElementById(`ddrev${idx}`);
-  const isOk=word.toLowerCase()===correct.toLowerCase();
+// hint state: how many hints used per card
+const woHints={};
+function wo_hint(idx,correct){
+  if(!woHints[idx])woHints[idx]=0;
+  if(woHints[idx]>=3)return;
 
-  if(isOk){
-    // Correct → lock it and reveal the translation for learning
-    blank.textContent=word;
-    blank.className='dd-blank filled correct';
-    card.className='dd-sentence dd-ok';
-    item.words.forEach(w=>{
-      const wb=document.getElementById(`ddwb${idx}_${w}`);
-      if(wb)wb.classList.add('used');
-    });
-    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-    rev.innerHTML=`<div class="dd-reveal">
-      <div class="dd-tr">📖 ${item.tr||''}</div>
-      ${item.ar?`<div class="dd-note">💡 ${item.ar}</div>`:''}
-    </div>`;
-  }else{
-    // Wrong → let the student try again, do NOT reveal the answer
-    blank.textContent='؟';
-    blank.className='dd-blank';
-    card.className='dd-sentence';
-    const wb=document.getElementById(`ddwb${idx}_${word}`);
-    if(wb){wb.style.background='';wb.style.color='';}
-    rev.innerHTML=`<div class="dd-retry">❌ ليست صحيحة — جرّب كلمة أخرى</div>`;
+  const words=correct.replace(/\s*[.?!]+\s*$/,'').split(' ');
+  const nextPos=woHints[idx];
+  const wordToReveal=words[nextPos];
+
+  // find this word's chip in the bank (first unused match)
+  const chips=document.querySelectorAll(`[id^="woc${idx}_"]`);
+  let foundChip=null;
+  chips.forEach(chip=>{
+    if(!foundChip&&!chip.classList.contains('used')&&chip.textContent.trim()===wordToReveal){
+      foundChip=chip;
+    }
+  });
+
+  if(foundChip){
+    foundChip.style.background='var(--o)';
+    foundChip.style.color='#fff';
+    foundChip.style.borderColor='var(--o)';
+    setTimeout(()=>{ foundChip.click(); },400);
   }
-  ddActive={idx:null,word:null};
+
+  woHints[idx]++;
+  const remaining=3-woHints[idx];
+  const hintBtn=document.getElementById(`wohint${idx}`);
+  const countEl=document.getElementById(`wohintc${idx}`);
+  const nums=['٣','٢','١'];
+  if(remaining===0){
+    hintBtn.disabled=true;
+    hintBtn.innerHTML='💡 انتهت التلميحات';
+  } else {
+    if(countEl)countEl.textContent=nums[woHints[idx]]||'١';
+  }
 }
 
 // ═══════════════════════════════════════
@@ -2091,94 +2581,569 @@ function confetti(){
 // ═══════════════════════════════════════
 // PREPOSITIONS  in / on / at
 // ═══════════════════════════════════════
-const PREP = {
-  place:{
-    in:{meaning:'in = داخل مكان محاط أو كبير.',when:'لأنه مكان واسع أو محيط مغلق.',link:'مكان واسع/محاط؟ ⟵ in',ex:{e:'in Riyadh',a:'في الرياض'},bad:'at Riyadh',good:'in Riyadh'},
-    on:{meaning:'on = على سطح شيء.',when:'لأنه سطح أو شارع أو طابق.',link:'على سطح؟ ⟵ on',ex:{e:'on the table',a:'على الطاولة'},bad:'in the table',good:'on the table'},
-    at:{meaning:'at = عند نقطة محدّدة.',when:'لأنه نقطة أو عنوان دقيق.',link:'نقطة محدّدة؟ ⟵ at',ex:{e:'at the door',a:'عند الباب'},bad:'in the door',good:'at the door'}
-  },
-  time:{
-    in:{meaning:'in = خلال فترة طويلة.',when:'لأنها فترة طويلة (شهر/سنة/فصل).',link:'فترة طويلة؟ ⟵ in',ex:{e:'in July',a:'في يوليو'},bad:'at July',good:'in July'},
-    on:{meaning:'on = في يوم أو تاريخ.',when:'لأنه يوم أو تاريخ محدّد.',link:'يوم أو تاريخ؟ ⟵ on',ex:{e:'on Monday',a:'يوم الاثنين'},bad:'in Monday',good:'on Monday'},
-    at:{meaning:'at = عند لحظة محدّدة.',when:'لأنه وقت محدّد بالساعة (ولاحظ: at night).',link:'وقت محدّد؟ ⟵ at',ex:{e:'at 7:00',a:'الساعة السابعة'},bad:'in 7:00',good:'at 7:00'}
-  }
-};
-const PREP_COLORS={in:{bg:'#DBEAFE',bd:'#60A5FA',tx:'#1D4ED8'},on:{bg:'#DCFCE7',bd:'#4ADE80',tx:'#15803D'},at:{bg:'#FFEDD5',bd:'#FB923C',tx:'#C2410C'}};
-const PREP_QUIZ=[
-  {q:'I live ___ Riyadh.',a:'in',tr:'أعيش في الرياض. — مدينة ← in'},
-  {q:'The book is ___ the table.',a:'on',tr:'الكتاب على الطاولة. — سطح ← on'},
-  {q:'Class starts ___ 7:30.',a:'at',tr:'يبدأ الدرس الساعة 7:30. — وقت محدّد ← at'},
-  {q:'My birthday is ___ July.',a:'in',tr:'عيد ميلادي في يوليو. — شهر ← in'},
-  {q:'See you ___ Monday.',a:'on',tr:'أراك يوم الاثنين. — يوم ← on'},
-  {q:'I wake up ___ 6 a.m.',a:'at',tr:'أستيقظ الساعة 6 صباحاً. — وقت محدّد ← at'},
-  {q:'We meet ___ the bus stop.',a:'at',tr:'نلتقي عند موقف الحافلة. — نقطة محدّدة ← at'},
-  {q:'It is cold ___ winter.',a:'in',tr:'الجو بارد في الشتاء. — فصل ← in'}
+// ═══════════════════════════════════════
+// IN · ON · AT — SEQUENTIAL JOURNEY
+// ═══════════════════════════════════════
+
+// Progress state
+let prepPlaceDone=false, prepTimeDone=false;
+let placeStep=0, timeStep=0;
+let placeAnswered={}, timeAnswered={};
+
+// ── PLACE journey data ──
+const PLACE_STEPS=[
+  // Step 0: Hook
+  {type:'hook',
+   title:'🤔 ايش الفرق؟',
+   body:`<div class="step-hook">ثلاث جمل — نفس الشخص، لكن كل جملة مختلفة:<br><br>
+     <span style="direction:ltr;display:block;font-family:Inter,sans-serif;font-size:.95rem;line-height:2.5;background:#F8FAFC;border-radius:10px;padding:12px">
+       I live <b style="color:#1D4ED8;font-size:1.1rem">in</b> Riyadh.<br>
+       I work <b style="color:#15803D;font-size:1.1rem">on</b> King Fahd Road.<br>
+       I study <b style="color:#C2410C;font-size:1.1rem">at</b> ALC.
+     </span></div>`,
+   btnLabel:'اكتشف الفرق ←'},
+
+  // Step 1: in
+  {type:'learn', prep:'in',
+   kw:{cls:'in', label:'في — مكان كبير',
+     rule:'مدينة / دولة / بناية = <b>in</b>',
+     examples:[
+       {en:'I live <b>in</b> Riyadh.',ar:'أنا ساكن في الرياض.',speak:'I live in Riyadh'},
+       {en:'She works <b>in</b> a hospital.',ar:'تعمل في مستشفى.',speak:'She works in a hospital'},
+       {en:'He studied <b>in</b> the US.',ar:'درس في أمريكا.',speak:'He studied in the US'},
+     ]},
+   q:{sent:'I live ___ Riyadh.',a:'in',fb:'✅ صح! الرياض مدينة كبيرة = في = in'},
+   btnLabel:'فهمت — التالي ←'},
+
+  // Step 2: on
+  {type:'learn', prep:'on',
+   kw:{cls:'on', label:'في / على — شارع أو سطح',
+     rule:'الشارع والطابق والسطح = <b>on</b><br>بالعربي تقول «في شارع» أو «على الطاولة»',
+     examples:[
+       {en:'I work <b>on</b> King Fahd Road.',ar:'أعمل في شارع الملك فهد.',speak:'I work on King Fahd Road'},
+       {en:'The book is <b>on</b> the table.',ar:'الكتاب على الطاولة.',speak:'The book is on the table'},
+       {en:'We live <b>on</b> the second floor.',ar:'نسكن في الطابق الثاني.',speak:'We live on the second floor'},
+     ]},
+   q:{sent:'The book is ___ the table.',a:'on',fb:'✅ صح! الطاولة سطح = على = on'},
+   btnLabel:'فهمت — التالي ←'},
+
+  // Step 3: at
+  {type:'learn', prep:'at',
+   kw:{cls:'at', label:'عند / في — نقطة محددة',
+     rule:'نقطة محددة جداً — مكان تحدد بالاسم كاملاً = <b>at</b><br>بالعربي تقول «عند» أو «في» نقطة دقيقة',
+     examples:[
+       {en:'I study <b>at</b> ALC.',ar:'أدرس في مركز ALC.',speak:'I study at ALC'},
+       {en:'Meet me <b>at</b> the coffee shop.',ar:'قابلني عند الكوفي.',speak:'Meet me at the coffee shop'},
+       {en:'She is <b>at</b> the bus stop.',ar:'هي عند موقف الباص.',speak:'She is at the bus stop'},
+     ]},
+   q:{sent:'She is ___ the bus stop.',a:'at',fb:'✅ صح! موقف الباص نقطة محددة = عند = at'},
+   btnLabel:'فهمت — التالي ←'},
+
+  // Step 4: Compare
+  {type:'compare',
+   title:'👀 شوف الفرق مع بعض',
+   strip:[
+     {prep:'in',cls:'in-c',en:'I live in Riyadh.',ar:'مدينة كبيرة',speak:'I live in Riyadh'},
+     {prep:'on',cls:'on-c',en:'I work on King Fahd Road.',ar:'شارع',speak:'I work on King Fahd Road'},
+     {prep:'at',cls:'at-c',en:'I study at ALC.',ar:'نقطة محددة',speak:'I study at ALC'},
+   ],
+   qs:[
+     {sent:'She works ___ a big hospital.',a:'in',fb:'✅ صح! المستشفى مكان كبير = in'},
+     {sent:'He is ___ the office right now.',a:'at',fb:'✅ صح! المكتب نقطة محددة = at'},
+   ],
+   btnLabel:'ممتاز — تحدي المكان ←'},
+
+  // Step 5: Challenge
+  {type:'challenge', mode:'place',
+   title:'🏆 تحدي المكان',
+   qs:[
+     {sent:'I study ___ Saudi Arabia.',a:'in',fb:'✅ السعودية دولة كبيرة = in'},
+     {sent:'The cat is ___ the box.',a:'in',fb:'✅ داخل الصندوق = in'},
+     {sent:'She lives ___ Tahlia Street.',a:'on',fb:'✅ الشارع = on'},
+     {sent:'We met ___ the airport.',a:'at',fb:'✅ المطار نقطة محددة = at'},
+     {sent:'The keys are ___ the table.',a:'on',fb:'✅ سطح الطاولة = on'},
+   ]}
 ];
-let prepMode='place',prepSel='in';
+
+// ── TIME journey data ──
+const TIME_STEPS=[
+  // Step 0: Hook
+  {type:'hook',
+   title:'🤔 ايش الفرق؟',
+   body:`<div class="step-hook">ثلاث جمل — كلها عن الوقت:<br><br>
+     <span style="direction:ltr;display:block;font-family:Inter,sans-serif;font-size:.95rem;line-height:2.5;background:#F8FAFC;border-radius:10px;padding:12px">
+       I was born <b style="color:#1D4ED8;font-size:1.1rem">in</b> July.<br>
+       Class is <b style="color:#15803D;font-size:1.1rem">on</b> Monday.<br>
+       It starts <b style="color:#C2410C;font-size:1.1rem">at</b> 7:30.
+     </span></div>`,
+   btnLabel:'اكتشف الفرق ←'},
+
+  // Step 1: in (time)
+  {type:'learn', prep:'in',
+   kw:{cls:'in', label:'في — فترة طويلة',
+     rule:'شهر، سنة، فصل، أو صباح/مساء = <b>in</b><br>كلها فترات طويلة تقول عنها «في»',
+     examples:[
+       {en:'I was born <b>in</b> July.',ar:'وُلدت في يوليو.',speak:'I was born in July'},
+       {en:'She came <b>in</b> 2020.',ar:'جاءت في عام 2020.',speak:'She came in 2020'},
+       {en:'It is cold <b>in</b> winter.',ar:'الجو بارد في الشتاء.',speak:'It is cold in winter'},
+     ]},
+   q:{sent:'My birthday is ___ July.',a:'in',fb:'✅ صح! يوليو شهر = فترة طويلة = in'},
+   btnLabel:'فهمت — التالي ←'},
+
+  // Step 2: on (time)
+  {type:'learn', prep:'on',
+   kw:{cls:'on', label:'يوم — يوم محدد أو تاريخ',
+     rule:'يوم الأسبوع أو تاريخ محدد = <b>on</b><br>Sunday / Monday / January 1st',
+     examples:[
+       {en:'Class is <b>on</b> Monday.',ar:'الدرس يوم الاثنين.',speak:'Class is on Monday'},
+       {en:'I was born <b>on</b> January 5th.',ar:'وُلدت في الخامس من يناير.',speak:'I was born on January fifth'},
+       {en:'See you <b>on</b> Friday!',ar:'أشوفك يوم الجمعة!',speak:'See you on Friday'},
+     ]},
+   q:{sent:'See you ___ Monday.',a:'on',fb:'✅ صح! يوم الاثنين = يوم محدد = on'},
+   btnLabel:'فهمت — التالي ←'},
+
+  // Step 3: at (time)
+  {type:'learn', prep:'at',
+   kw:{cls:'at', label:'الساعة — وقت محدد بالدقيقة',
+     rule:'وقت محدد بالساعة = <b>at</b><br>at 7:00 / at noon / at midnight',
+     examples:[
+       {en:'Class starts <b>at</b> 7:30.',ar:'الدرس يبدأ الساعة 7:30.',speak:'Class starts at seven thirty'},
+       {en:'I wake up <b>at</b> 6 a.m.',ar:'أستيقظ الساعة 6 الصبح.',speak:'I wake up at six a m'},
+       {en:'We eat lunch <b>at</b> noon.',ar:'نأكل الغداء عند الظهر.',speak:'We eat lunch at noon'},
+     ]},
+   q:{sent:'Class starts ___ 7:30.',a:'at',fb:'✅ صح! الساعة 7:30 = وقت محدد = at'},
+   btnLabel:'فهمت — التالي ←'},
+
+  // Step 4: Compare
+  {type:'compare',
+   title:'👀 شوف الفرق مع بعض',
+   strip:[
+     {prep:'in',cls:'in-c',en:'in July / in 2020 / in winter',ar:'شهر / سنة / فصل',speak:'in July'},
+     {prep:'on',cls:'on-c',en:'on Monday / on Friday',ar:'يوم محدد',speak:'on Monday'},
+     {prep:'at',cls:'at-c',en:'at 7:00 / at noon / at midnight',ar:'ساعة محددة',speak:'at seven'},
+   ],
+   qs:[
+     {sent:'It was cold ___ winter.',a:'in',fb:'✅ صح! الشتاء فصل = فترة طويلة = in'},
+     {sent:'I wake up ___ 6 a.m.',a:'at',fb:'✅ صح! الساعة 6 = وقت محدد = at'},
+   ],
+   btnLabel:'ممتاز — تحدي الزمن ←'},
+
+  // Step 5: Challenge
+  {type:'challenge', mode:'time',
+   title:'🏆 تحدي الزمن',
+   qs:[
+     {sent:'She was born ___ 1995.',a:'in',fb:'✅ السنة = فترة طويلة = in'},
+     {sent:'See you ___ Friday.',a:'on',fb:'✅ يوم الجمعة = يوم محدد = on'},
+     {sent:'The movie starts ___ 8 p.m.',a:'at',fb:'✅ الساعة 8 = وقت محدد = at'},
+     {sent:'It rains a lot ___ spring.',a:'in',fb:'✅ الربيع فصل = in'},
+     {sent:'We meet ___ noon.',a:'at',fb:'✅ الظهر = وقت محدد = at'},
+   ]}
+];
+
+// ── FINAL CHALLENGE (mix) ──
+const FINAL_PREP_QS=[
+  {sent:'I live ___ Riyadh.',a:'in',fb:'✅ مدينة = in'},
+  {sent:'She was born ___ July.',a:'in',fb:'✅ شهر = in'},
+  {sent:'Class is ___ Monday.',a:'on',fb:'✅ يوم = on'},
+  {sent:'The pen is ___ the table.',a:'on',fb:'✅ سطح = on'},
+  {sent:'He is ___ the airport.',a:'at',fb:'✅ نقطة محددة = at'},
+  {sent:'It starts ___ 9:00.',a:'at',fb:'✅ ساعة محددة = at'},
+  {sent:'I work ___ King Fahd Road.',a:'on',fb:'✅ شارع = on'},
+  {sent:'It is hot ___ summer.',a:'in',fb:'✅ فصل = in'},
+  {sent:'Meet me ___ the coffee shop.',a:'at',fb:'✅ مكان محدد = at'},
+  {sent:'She studies ___ Saudi Arabia.',a:'in',fb:'✅ دولة = in'},
+];
+
+let finalPrepAnswered={};
 
 function open_prep(){
   show_screen('pscreen');
   document.getElementById('pscreen').scrollIntoView({behavior:'smooth',block:'start'});
-  prepMode='place';
-  document.getElementById('pt-place').classList.add('on');
-  document.getElementById('pt-time').classList.remove('on');
-  render_zoom();
-  sel_prep('in');
-  build_prep_quiz();reset_quiz('prep');
+  placeStep=0; timeStep=0;
+  placeAnswered={}; timeAnswered={};
+  finalPrepAnswered={};
+  render_prep_journey();
 }
 
-function render_zoom(){
-  const place='🔎 من الواسع إلى الضيق: <span class="zc in">in</span> أبها ⟵ <span class="zc on">on</span> شارع الفن ⟵ <span class="zc at">at</span> الكوفي';
-  const time='🔎 من الأطول إلى الأدقّ: <span class="zc in">in</span> يوليو ⟵ <span class="zc on">on</span> الاثنين ⟵ <span class="zc at">at</span> الساعة السابعة';
-  document.getElementById('zoom-cap').innerHTML=(prepMode==='place')?place:time;
+function render_prep_journey(){
+  const el=document.getElementById('prep-journey');
+  const placeDone=prepPlaceDone, timeDone=prepTimeDone;
+  const bothDone=placeDone&&timeDone;
+  const timeOnclick=placeDone?"start_prep_path('time')":'show_lock_msg()';
+
+  let html=`
+  <div class="path-cards">
+    <div class="path-card place ${placeDone?'done':''}" onclick="start_prep_path('place')">
+      <span class="pc-emoji">📍</span>
+      <div class="pc-title">المكان</div>
+      <div class="pc-sub" style="direction:ltr">in · on · at</div>
+      <span class="pc-badge ${placeDone?'done':'place'}">${placeDone?'✓ مكتمل':'ابدأ هنا'}</span>
+    </div>
+    <div class="path-card time ${timeDone?'done':''} ${!placeDone?'locked':''}" onclick="${timeOnclick}">
+      <span class="pc-emoji">${placeDone?'🕐':'🔒'}</span>
+      <div class="pc-title">الزمن</div>
+      <div class="pc-sub" style="direction:ltr">in · on · at</div>
+      <span class="pc-badge ${timeDone?'done':'time'}">${timeDone?'✓ مكتمل':placeDone?'ابدأ هنا':'بعد المكان'}</span>
+    </div>
+  </div>`;
+
+  if(bothDone){
+    html+=build_final_prep_html();
+  }
+
+  el.innerHTML=html;
 }
 
-function sw_prep(m){
-  prepMode=m;
-  document.getElementById('pt-place').classList.toggle('on',m==='place');
-  document.getElementById('pt-time').classList.toggle('on',m==='time');
-  render_zoom();
-  sel_prep(prepSel);
+function show_lock_msg(){
+  const msg=document.createElement('div');
+  msg.style.cssText='position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 20px;border-radius:12px;font-family:Cairo,sans-serif;font-size:.88rem;font-weight:700;z-index:999;animation:qfade .3s ease';
+  msg.textContent='🔒 أكمل مسار المكان أولاً';
+  document.body.appendChild(msg);
+  setTimeout(()=>msg.remove(),2000);
 }
 
-function sel_prep(p){
-  prepSel=p;
-  ['in','on','at'].forEach(x=>document.getElementById('ring-'+x).classList.toggle('active',x===p));
-  const d=PREP[prepMode][p],c=PREP_COLORS[p];
-  const header=`${p} <span class="pd-tag" style="background:${c.bg};color:${c.tx}">${prepMode==='place'?'📍 مكان':'🕐 زمن'}</span>`;
-  document.getElementById('prep-detail').innerHTML=concept_html(c.tx,c.bd,header,d);
+function start_prep_path(mode){
+  const steps=mode==='place'?PLACE_STEPS:TIME_STEPS;
+  const step=mode==='place'?placeStep:timeStep;
+  render_prep_step(mode, step, steps);
 }
 
-function build_prep_quiz(){
-  let html='';
-  PREP_QUIZ.forEach((q,i)=>{
-    html+=`<div class="pq-item">
-      <div class="pq-sent">${i+1}. ${q.q}</div>
-      <div class="pq-opts">
-        ${['in','on','at'].map(o=>`<button class="pq-opt" id="pqo${i}_${o}" onclick="prep_answer(${i},'${o}')">${o}</button>`).join('')}
+function render_prep_step(mode, stepIdx, steps){
+  const el=document.getElementById('prep-journey');
+  const step=steps[stepIdx];
+  const total=steps.length;
+  const answered=mode==='place'?placeAnswered:timeAnswered;
+
+  // Dots
+  let dotsHtml='<div class="step-dots">';
+  for(let i=0;i<total;i++){
+    const cls=i<stepIdx?'done':i===stepIdx?'active':'';
+    dotsHtml+=`<div class="step-dot ${cls}"></div>`;
+  }
+  dotsHtml+='</div>';
+
+  // Back button
+  const backTarget=stepIdx>0?`go_prep_step('${mode}',${stepIdx-1})`:`render_prep_journey()`;
+  let html=`<button class="back" style="margin-bottom:12px" onclick="${backTarget}">← رجوع</button>`;
+  html+=dotsHtml;
+
+  if(step.type==='hook'){
+    html+=`<div class="step-card">
+      <div class="step-num">${mode==='place'?'مسار المكان 📍':'مسار الزمن 🕐'} · ${stepIdx+1} من ${total}</div>
+      <div style="font-family:Cairo,sans-serif;font-weight:900;font-size:1rem;color:var(--navy);margin-bottom:12px">${step.title}</div>
+      ${step.body}
+      <button class="step-next show" onclick="go_prep_step('${mode}',${stepIdx+1})">${step.btnLabel}</button>
+    </div>`;
+  }
+
+  else if(step.type==='learn'){
+    const k=step.kw;
+    const cls=step.prep;
+    const alreadyAnswered=answered[stepIdx]!==undefined&&answered[stepIdx]!==false;
+    html+=`<div class="step-card">
+      <div class="step-num">${mode==='place'?'مسار المكان 📍':'مسار الزمن 🕐'} · ${stepIdx+1} من ${total}</div>
+      <div class="kw-box ${cls}-box">
+        <div class="kw-word ${cls}-c">
+          <b>${step.prep}</b>
+          <button class="kw-spk ${cls}-c" onclick="say('${step.prep}')">🔊</button>
+          <span style="font-family:Cairo,sans-serif;font-size:.88rem;font-weight:700;color:var(--muted)">${k.label}</span>
+        </div>
+        <div class="kw-rule">${k.rule}</div>
+        <div class="kw-examples">
+          ${k.examples.map(ex=>`<div class="kw-ex">
+            <div>
+              <div class="kw-ex-en">${ex.en}</div>
+              <div class="kw-ex-ar">${ex.ar}</div>
+            </div>
+            <button class="kw-ex-spk" onclick="say('${ex.speak}')">🔊</button>
+          </div>`).join('')}
+        </div>
       </div>
-      <div class="pq-fb" id="pqfb${i}"></div>
+      <div class="iq-label">🎯 طبّق ما تعلّمت:</div>
+      <div class="step-card" style="padding:12px;background:#F8FAFC">
+        <div class="iq-sent">${stepIdx+1}. ${step.q.sent}</div>
+        <div class="iq-opts" id="iqopts_${mode}_${stepIdx}">
+          ${['in','on','at'].map(o=>`<button class="iq-opt ${alreadyAnswered&&o===step.q.a?'ok':''}" id="iqo_${mode}_${stepIdx}_${o}"
+            onclick="prep_inline_ans(event,'${mode}',${stepIdx},'${o}','${step.q.a}')"
+            ${alreadyAnswered?'disabled':''}>
+            ${o}</button>`).join('')}
+        </div>
+        <div class="iq-fb ${alreadyAnswered?'show ok':''}" id="iqfb_${mode}_${stepIdx}">
+          ${alreadyAnswered?step.q.fb:''}
+        </div>
+      </div>
+      <button class="step-next ${alreadyAnswered?'show':''}" id="step-next-${mode}-${stepIdx}"
+        onclick="go_prep_step('${mode}',${stepIdx+1})">${step.btnLabel}</button>
+    </div>`;
+  }
+
+  else if(step.type==='compare'){
+    const qs=step.qs;
+    html+=`<div class="step-card">
+      <div class="step-num">${mode==='place'?'مسار المكان 📍':'مسار الزمن 🕐'} · ${stepIdx+1} من ${total}</div>
+      <div style="font-family:Cairo,sans-serif;font-weight:900;font-size:1rem;color:var(--navy);margin-bottom:12px">أمثلة</div>
+      <div class="compare-strip">
+        <div class="compare-strip-title">الثلاثة مع بعض</div>
+        ${step.strip.map(r=>`<div class="compare-row">
+          <span class="cr-prep ${r.cls}">${r.prep}</span>
+          <span class="cr-en">${r.en}</span>
+          <span class="cr-ar">${r.ar}</span>
+          <button class="cr-spk" onclick="say('${r.speak}')">🔊</button>
+        </div>`).join('')}
+      </div>
+      ${qs.map((q,qi)=>`<div class="step-card" style="padding:12px;background:#F8FAFC;margin-bottom:8px">
+        <div class="iq-sent">${q.sent}</div>
+        <div class="iq-opts" id="cqopts_${mode}_${stepIdx}_${qi}">
+          ${['in','on','at'].map(o=>`<button class="iq-opt" id="cqo_${mode}_${stepIdx}_${qi}_${o}"
+            onclick="prep_compare_ans('${mode}',${stepIdx},${qi},'${o}')">
+            ${o}</button>`).join('')}
+        </div>
+        <div class="iq-fb" id="cqfb_${mode}_${stepIdx}_${qi}"></div>
+      </div>`).join('')}
+      <button class="step-next" id="step-next-${mode}-${stepIdx}">${step.btnLabel}</button>
+    </div>`;
+  }
+
+  else if(step.type==='challenge'){
+    const qs=step.qs;
+    const challAnswered=answered[stepIdx]||{};
+    const allDone=qs.every((_,i)=>challAnswered[i]!==undefined);
+    const score=Object.values(challAnswered).filter(Boolean).length;
+    html+=`<div class="challenge-box">
+      <h3>${step.title}</h3>
+      <p>${mode==='place'?'٥ أسئلة على المكان — in · on · at':'٥ أسئلة على الزمن — in · on · at'}</p>
+      ${allDone?`<div class="challenge-score">${score}/5</div>
+        <div class="challenge-stars">${score>=5?'⭐⭐⭐':score>=3?'⭐⭐':'⭐'}</div>`:''}
+    </div>
+    ${qs.map((q,qi)=>`<div class="chal-item">
+      <div class="chal-sent">${qi+1}. ${q.sent}</div>
+      <div class="iq-opts" id="chalq_${mode}_${qi}">
+        ${['in','on','at'].map(o=>`<button class="iq-opt ${challAnswered[qi]!==undefined&&o===q.a?'ok':''}"
+          id="chalo_${mode}_${qi}_${o}"
+          onclick="prep_chal_ans('${mode}',${stepIdx},${qi},'${o}')"
+          ${challAnswered[qi]!==undefined?'disabled':''}>
+          ${o}</button>`).join('')}
+      </div>
+      <div class="iq-fb ${challAnswered[qi]!==undefined?'show ok':''}" id="chalfb_${mode}_${qi}">
+        ${challAnswered[qi]!==undefined?q.fb:''}
+      </div>
+    </div>`).join('')}
+    <button class="step-next ${allDone?'show':''}" id="chal-finish-${mode}"
+      onclick="finish_prep_path('${mode}')">
+      ${mode==='place'?'🎉 أكملت المكان — التالي':'🎉 أكملت الزمن — التالي'}
+    </button>`;
+
+    // restore correct marks
+    if(Object.keys(challAnswered).length>0){
+      setTimeout(()=>{
+        qs.forEach((q,qi)=>{
+          if(challAnswered[qi]!==undefined){
+            const correctBtn=document.getElementById(`chalo_${mode}_${qi}_${q.a}`);
+            if(correctBtn)correctBtn.classList.add('ok');
+          }
+        });
+      },50);
+    }
+  }
+
+  el.innerHTML=html;
+  document.getElementById('pscreen').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function go_prep_step(mode,nextStep){
+  if(mode==='place')placeStep=nextStep;
+  else timeStep=nextStep;
+  const steps=mode==='place'?PLACE_STEPS:TIME_STEPS;
+  render_prep_step(mode, nextStep, steps);
+}
+
+function prep_inline_ans(evt,mode,stepIdx,chosen,correct){
+  const stepsRef=mode==='place'?PLACE_STEPS:TIME_STEPS;
+  const fb=stepsRef[stepIdx].q.fb;
+  const answered=mode==='place'?placeAnswered:timeAnswered;
+  if(answered[stepIdx]!==undefined&&answered[stepIdx]!==false)return;
+
+  ['in','on','at'].forEach(o=>{
+    const b=document.getElementById(`iqo_${mode}_${stepIdx}_${o}`);
+    if(b)b.disabled=true;
+  });
+  const correctBtn=document.getElementById(`iqo_${mode}_${stepIdx}_${correct}`);
+  const chosenBtn=document.getElementById(`iqo_${mode}_${stepIdx}_${chosen}`);
+  const fbEl=document.getElementById(`iqfb_${mode}_${stepIdx}`);
+  const nextBtn=document.getElementById(`step-next-${mode}-${stepIdx}`);
+
+  if(chosen===correct){
+    correctBtn.classList.add('ok');
+    fbEl.textContent=fb;
+    fbEl.className='iq-fb show ok';
+    answered[stepIdx]=true;
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+    say(correct);
+  } else {
+    chosenBtn.classList.add('no');
+    fbEl.textContent='❌ ليست صحيحة — حاول مرة أخرى';
+    fbEl.className='iq-fb show no';
+    setTimeout(()=>{
+      chosenBtn.classList.remove('no');
+      chosenBtn.disabled=false;
+      fbEl.className='iq-fb';
+    },700);
+    return;
+  }
+  if(nextBtn)nextBtn.classList.add('show');
+}
+
+let compareAnsweredCount={};
+function prep_compare_ans(mode,stepIdx,qi,chosen){
+  const stepsRef=mode==='place'?PLACE_STEPS:TIME_STEPS;
+  const q=stepsRef[stepIdx].qs[qi];
+  const correct=q.a, fb=q.fb;
+  const key=`${mode}_${stepIdx}_${qi}`;
+  if(compareAnsweredCount[key])return;
+  ['in','on','at'].forEach(o=>{
+    const b=document.getElementById(`cqo_${mode}_${stepIdx}_${qi}_${o}`);
+    if(b)b.disabled=true;
+  });
+  const correctBtn=document.getElementById(`cqo_${mode}_${stepIdx}_${qi}_${correct}`);
+  const chosenBtn=document.getElementById(`cqo_${mode}_${stepIdx}_${qi}_${chosen}`);
+  const fbEl=document.getElementById(`cqfb_${mode}_${stepIdx}_${qi}`);
+  const totalQs=stepsRef[stepIdx].qs.length;
+
+  if(chosen===correct){
+    correctBtn.classList.add('ok');
+    fbEl.textContent=fb;fbEl.className='iq-fb show ok';
+    compareAnsweredCount[key]=true;
+    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
+    // Check if all compare questions done
+    const allDone=stepsRef[stepIdx].qs.every((_,i)=>compareAnsweredCount[`${mode}_${stepIdx}_${i}`]);
+    if(allDone){
+      const nextBtn=document.getElementById(`step-next-${mode}-${stepIdx}`);
+      if(nextBtn)nextBtn.classList.add('show');
+    }
+  } else {
+    chosenBtn.classList.add('no');
+    fbEl.textContent='❌ ليست صحيحة — حاول مرة أخرى';fbEl.className='iq-fb show no';
+    setTimeout(()=>{
+      chosenBtn.classList.remove('no');chosenBtn.disabled=false;fbEl.className='iq-fb';
+    },700);
+  }
+}
+
+function prep_chal_ans(mode,stepIdx,qi,chosen){
+  const stepsRef=mode==='place'?PLACE_STEPS:TIME_STEPS;
+  const q=stepsRef[stepIdx].qs[qi];
+  const correct=q.a, fb=q.fb;
+  const answered=mode==='place'?placeAnswered:timeAnswered;
+  if(!answered[stepIdx])answered[stepIdx]={};
+  if(answered[stepIdx][qi]!==undefined)return;
+
+  ['in','on','at'].forEach(o=>{
+    const b=document.getElementById(`chalo_${mode}_${qi}_${o}`);
+    if(b)b.disabled=true;
+  });
+  const correctBtn=document.getElementById(`chalo_${mode}_${qi}_${correct}`);
+  const fbEl=document.getElementById(`chalfb_${mode}_${qi}`);
+
+  if(chosen===correct){
+    correctBtn.classList.add('ok');
+    fbEl.textContent=fb;fbEl.className='iq-fb show ok';
+    answered[stepIdx][qi]=true;
+    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+  } else {
+    const chosenBtn=document.getElementById(`chalo_${mode}_${qi}_${chosen}`);
+    chosenBtn.classList.add('no');
+    fbEl.textContent='❌ حاول مرة أخرى';fbEl.className='iq-fb show no';
+    setTimeout(()=>{
+      chosenBtn.classList.remove('no');
+      ['in','on','at'].forEach(o=>{const b=document.getElementById(`chalo_${mode}_${qi}_${o}`);if(b)b.disabled=false;});
+      fbEl.className='iq-fb';
+    },700);
+    return;
+  }
+
+  const challQs=stepsRef[stepIdx].qs;
+  const allDone=challQs.every((_,i)=>answered[stepIdx][i]!==undefined);
+  if(allDone){
+    const score=Object.values(answered[stepIdx]).filter(Boolean).length;
+    const box=document.querySelector('.challenge-box');
+    if(box&&!box.querySelector('.challenge-score')){
+      const sc=document.createElement('div');sc.className='challenge-score';sc.textContent=`${score}/5`;
+      const st=document.createElement('div');st.className='challenge-stars';
+      st.textContent=score>=5?'⭐⭐⭐':score>=3?'⭐⭐':'⭐';
+      box.appendChild(sc);box.appendChild(st);
+    }
+    const finBtn=document.getElementById(`chal-finish-${mode}`);
+    if(finBtn)finBtn.classList.add('show');
+  }
+}
+
+function finish_prep_path(mode){
+  if(mode==='place')prepPlaceDone=true;
+  else prepTimeDone=true;
+  render_prep_journey();
+  document.getElementById('pscreen').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── FINAL CHALLENGE (mix place + time) ──
+function build_final_prep_html(){
+  let html=`<div class="challenge-box" style="background:linear-gradient(135deg,#1A2744,#243560)">
+    <h3>🏆 التحدي النهائي — مكان + زمن</h3>
+    <p>١٠ أسئلة تجمع المكان والزمن معاً</p>
+  </div>`;
+  FINAL_PREP_QS.forEach((q,qi)=>{
+    html+=`<div class="chal-item">
+      <div class="chal-sent">${qi+1}. ${q.sent}</div>
+      <div class="iq-opts" id="fpchalq_${qi}">
+        ${['in','on','at'].map(o=>`<button class="iq-opt ${finalPrepAnswered[qi]!==undefined&&o===q.a?'ok':''}"
+          id="fpchalo_${qi}_${o}"
+          onclick="fp_chal_ans(${qi},'${o}')"
+          ${finalPrepAnswered[qi]!==undefined?'disabled':''}>
+          ${o}</button>`).join('')}
+      </div>
+      <div class="iq-fb ${finalPrepAnswered[qi]!==undefined?'show ok':''}" id="fpchalfb_${qi}">
+        ${finalPrepAnswered[qi]!==undefined?q.fb:''}
+      </div>
     </div>`;
   });
-  document.getElementById('prep-quiz').innerHTML=html;
+  return html;
 }
 
-function prep_answer(i,o){
-  const q=PREP_QUIZ[i];
-  const fb=document.getElementById('pqfb'+i);
-  const btn=document.getElementById('pqo'+i+'_'+o);
-  if(o===q.a){
-    ['in','on','at'].forEach(x=>{const b=document.getElementById('pqo'+i+'_'+x);if(b)b.disabled=true;});
-    btn.classList.add('ok');
-    fb.textContent='✅ '+q.tr;
-    fb.className='pq-fb show ok';
-    say(q.q.replace('___',o));
-    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-  }else{
-    btn.classList.add('no');
-    fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
-    fb.className='pq-fb show no';
-    setTimeout(()=>{btn.classList.remove('no');},700);
+function fp_chal_ans(qi,chosen){
+  const q=FINAL_PREP_QS[qi];
+  const correct=q.a, fb=q.fb;
+  if(finalPrepAnswered[qi]!==undefined)return;
+  ['in','on','at'].forEach(o=>{
+    const b=document.getElementById(`fpchalo_${qi}_${o}`);if(b)b.disabled=true;
+  });
+  const correctBtn=document.getElementById(`fpchalo_${qi}_${correct}`);
+  const fbEl=document.getElementById(`fpchalfb_${qi}`);
+  if(chosen===correct){
+    correctBtn.classList.add('ok');
+    fbEl.textContent=fb;fbEl.className='iq-fb show ok';
+    finalPrepAnswered[qi]=true;
+    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+    const done=Object.keys(finalPrepAnswered).length;
+    if(done===FINAL_PREP_QS.length){
+      const score=Object.values(finalPrepAnswered).filter(Boolean).length;
+      setTimeout(()=>{
+        const box=document.querySelector('[style*="1A2744"]');
+        if(box&&!box.querySelector('.challenge-score')){
+          const sc=document.createElement('div');sc.className='challenge-score';sc.textContent=`${score}/10`;
+          const st=document.createElement('div');st.className='challenge-stars';
+          st.textContent=score>=9?'⭐⭐⭐':score>=7?'⭐⭐':'⭐';
+          box.appendChild(sc);box.appendChild(st);
+        }
+      },100);
+    }
+  } else {
+    const chosenBtn=document.getElementById(`fpchalo_${qi}_${chosen}`);
+    chosenBtn.classList.add('no');
+    fbEl.textContent='❌ حاول مرة أخرى';fbEl.className='iq-fb show no';
+    setTimeout(()=>{
+      chosenBtn.classList.remove('no');
+      ['in','on','at'].forEach(o=>{const b=document.getElementById(`fpchalo_${qi}_${o}`);if(b)b.disabled=false;});
+      fbEl.className='iq-fb';
+    },700);
   }
 }
 
@@ -2209,12 +3174,14 @@ const ART_QUIZ=[
   {q:'I want ___ university degree.',a:'a',tr:'أريد شهادة جامعية. — «يو» صوت ساكن ← a'},
   {q:'Look at ___ moon tonight.',a:'the',tr:'انظر إلى القمر. — فريد ← the'}
 ];
-let artSel='a';
+let artSel=null;
 
 function open_art(){
   show_screen('ascreen');
   document.getElementById('ascreen').scrollIntoView({behavior:'smooth',block:'start'});
-  sel_art('a');
+  artSel=null;
+  ['a','an','the'].forEach(x=>document.getElementById('art-'+x).classList.remove('active'));
+  document.getElementById('art-detail').innerHTML='';
   build_art_quiz();reset_quiz('art');
 }
 
@@ -2287,12 +3254,15 @@ const WH_QUIZ=[
   {q:'___ do you go to work? — By car.',a:'How',o:['How','Where','What'],tr:'كيف تذهب للعمل؟ — بالسيارة. (طريقة ← How)'},
   {q:'___ color do you want? — The blue one.',a:'Which',o:['Which','What','Whose'],tr:'أيّ لون تريد؟ — الأزرق. (اختيار محدّد ← Which)'}
 ];
-let whSel='what';
+let whSel=null;
 
 function open_wh(){
   show_screen('wscreen');
   document.getElementById('wscreen').scrollIntoView({behavior:'smooth',block:'start'});
-  build_wh_grid();sel_wh('what');build_wh_quiz();reset_quiz('wh');
+  whSel=null;
+  build_wh_grid();
+  document.getElementById('wh-detail').innerHTML='';
+  build_wh_quiz();reset_quiz('wh');
 }
 function build_wh_grid(){
   document.getElementById('wh-grid').innerHTML=WH_ORDER.map(k=>{
@@ -2368,12 +3338,18 @@ const TIME_QUIZ=[
   {q:'She called ___.',o:['an hour ago','ago an hour','last an hour'],a:'an hour ago',tr:'اتصلت قبل ساعة. — ago في الآخر'},
   {q:'I finished it ___.',o:['a year ago','last a year','ago a year'],a:'a year ago',tr:'أنهيتها قبل عام. — المدّة + ago'}
 ];
-let timeSel='yesterday';
+let timeSel=null;
 
 function open_time(){
   show_screen('tmscreen');
   document.getElementById('tmscreen').scrollIntoView({behavior:'smooth',block:'start'});
-  sel_time('yesterday');build_time_quiz();reset_quiz('time');
+  timeSel=null;
+  ['yesterday','last','ago'].forEach(x=>{
+    document.getElementById('tm-'+x).classList.remove('active');
+    const dot=document.getElementById('tld-'+x);if(dot)dot.classList.remove('on');
+  });
+  document.getElementById('time-detail').innerHTML='';
+  build_time_quiz();reset_quiz('time');
 }
 function sel_time(k){
   timeSel=k;
@@ -2447,14 +3423,22 @@ const SPELL_LESSONS=[
   {t:'📗 Lesson 2 — الحياة العسكرية',w:[
     {e:'base',a:'قاعدة',em:'🏕️'},{e:'rank',a:'رتبة',em:'🎖️'},{e:'cap',a:'قبعة',em:'🧢'},
     {e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},{e:'break',a:'استراحة',em:'☕'}]},
-  {t:'📙 Lesson 3 — الملابس',w:[
+  {t:'📙 Lesson 3 — الملابس والقواعد',w:[
     {e:'dress',a:'فستان',em:'👗'},{e:'shirt',a:'قميص',em:'👔'},{e:'shoes',a:'حذاء',em:'👟'},
     {e:'socks',a:'جوارب',em:'🧦'},{e:'belt',a:'حزام',em:'🔗'},{e:'coat',a:'معطف',em:'🧥'},
-    {e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'}]},
-  {t:'📕 Lesson 4 — الفصول والألوان',w:[
+    {e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'},{e:'suit',a:'بدلة',em:'🤵'},
+    {e:'sentence',a:'جملة',em:'📝'},{e:'paragraph',a:'فقرة',em:'📄'},
+    {e:'period',a:'نقطة',em:'⏺️'},{e:'comma',a:'فاصلة',em:'🔤'},
+    {e:'contraction',a:'اختصار',em:'🔀'},{e:'awake',a:'صاحٍ',em:'👀'},
+    {e:'asleep',a:'نائم',em:'😴'}]},
+  {t:'📕 Lesson 4 — الفصول والطقس',w:[
     {e:'spring',a:'الربيع',em:'🌸'},{e:'summer',a:'الصيف',em:'☀️'},{e:'winter',a:'الشتاء',em:'❄️'},
     {e:'music',a:'موسيقى',em:'🎵'},{e:'radio',a:'راديو',em:'📻'},{e:'store',a:'متجر',em:'🏪'},
-    {e:'warm',a:'دافئ',em:'🌡️'},{e:'cold',a:'بارد',em:'🥶'}]}
+    {e:'warm',a:'دافئ',em:'🌡️'},{e:'cold',a:'بارد',em:'🥶'}]},
+  {t:'🎨 Lesson 5 — الألوان',w:[
+    {e:'red',a:'أحمر',em:'🔴'},{e:'blue',a:'أزرق',em:'🔵'},{e:'green',a:'أخضر',em:'🟢'},
+    {e:'black',a:'أسود',em:'⚫'},{e:'white',a:'أبيض',em:'⬜'},{e:'brown',a:'بنّي',em:'🟤'},
+    {e:'pink',a:'وردي',em:'🩷'},{e:'gray',a:'رمادي',em:'🩶'}]}
 ];
 let spellWords=[],spellIdx=0,spellTries=0,spellHint=0,spellScore=0;
 
@@ -2544,11 +3528,152 @@ function spell_check(){
 function spell_next(){spellIdx++;render_spell();}
 
 // ═══════════════════════════════════════
+// IRREGULAR VERBS (grouped by family)
+// ═══════════════════════════════════════
+const IV_FAMILIES=[
+  {pat:'no change',hook:'لا يتغيّر — نفس الشكل في الماضي',verbs:[
+    {b:'put',p:'put',m:'وضع'},{b:'read',p:'read',m:'قرأ',note:'يُكتب read لكن يُنطق «رِد» في الماضي'}]},
+  {pat:'i / o → a',hook:'حرف العلّة يتحوّل إلى a',verbs:[
+    {b:'begin',p:'began',m:'بدأ'},{b:'drink',p:'drank',m:'شرب'},{b:'swim',p:'swam',m:'سبح'},{b:'sit',p:'sat',m:'جلس'},{b:'come',p:'came',m:'أتى / جاء'}]},
+  {pat:'…o-e',hook:'الماضي بصوت o',verbs:[
+    {b:'speak',p:'spoke',m:'تكلّم'},{b:'drive',p:'drove',m:'قاد'},{b:'write',p:'wrote',m:'كتب'},{b:'choose',p:'chose',m:'اختار'}]},
+  {pat:'…ought',hook:'الماضي ينتهي بـ ought',verbs:[
+    {b:'bring',p:'brought',m:'أحضر'},{b:'buy',p:'bought',m:'اشترى'}]},
+  {pat:'…ew',hook:'الماضي ينتهي بـ ew',verbs:[
+    {b:'fly',p:'flew',m:'طار'},{b:'know',p:'knew',m:'عرف'}]},
+  {pat:'…oo',hook:'الماضي فيه صوت oo',verbs:[
+    {b:'stand',p:'stood',m:'وقف'},{b:'take',p:'took',m:'أخذ'}]},
+  {pat:'…t / …d',hook:'الماضي ينتهي بـ t أو d',verbs:[
+    {b:'leave',p:'left',m:'غادر'},{b:'sleep',p:'slept',m:'نام'},{b:'hear',p:'heard',m:'سمع'},{b:'say',p:'said',m:'قال'},{b:'have',p:'had',m:'يملك / لديه'},{b:'do',p:'did',m:'فعل'}]},
+  {pat:'unique',hook:'شاذّة تماماً — احفظها وحدها',verbs:[
+    {b:'go',p:'went',m:'ذهب'},{b:'see',p:'saw',m:'رأى'},{b:'eat',p:'ate',m:'أكل'},{b:'get up',p:'got up',m:'استيقظ / نهض'}]}
+];
+const IV_ALL=IV_FAMILIES.reduce((a,f)=>a.concat(f.verbs),[]);
+let ivDeck=[],ivCur=null,ivHardSeen=new Set();
+
+function open_iv(){
+  show_screen('ivscreen');
+  document.getElementById('ivscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  sw_iv('learn');
+}
+function sw_iv(m){
+  const learn=m==='learn';
+  document.getElementById('iv-t-learn').classList.toggle('on',learn);
+  document.getElementById('iv-t-drill').classList.toggle('on',!learn);
+  document.getElementById('iv-learn-body').style.display=learn?'block':'none';
+  document.getElementById('iv-drill-body').style.display=learn?'none':'block';
+  if(learn)build_iv_learn();else start_iv_drill();
+}
+function build_iv_learn(){
+  let html='<div class="iv-intro">💡 الأفعال الشاذة عائلات — احفظ نمط العائلة لا كل كلمة وحدها</div>';
+  IV_FAMILIES.forEach(f=>{
+    html+=`<div class="iv-fam"><div class="iv-fam-h"><span class="iv-fam-pat">${f.pat}</span></div>
+      <div class="iv-fam-hint">${f.hook}</div>`;
+    f.verbs.forEach(v=>{
+      const bs=v.b.replace(/'/g,"\\'"),ps=v.p.replace(/'/g,"\\'");
+      html+=`<div class="iv-row">
+        <span class="iv-base">${v.b}</span><span class="iv-arrow">→</span><span class="iv-past">${v.p}</span>
+        <button class="iv-spk" onclick="say('${ps}')" aria-label="استمع">🔊</button>
+        <span class="iv-mean">${v.m}</span>
+        ${v.note?`<span class="iv-note">💡 ${v.note}</span>`:''}
+      </div>`;
+    });
+    html+='</div>';
+  });
+  document.getElementById('iv-learn-body').innerHTML=html;
+}
+function start_iv_drill(){
+  ivDeck=[...IV_ALL].sort(()=>Math.random()-.5);
+  ivHardSeen=new Set();
+  iv_next();
+}
+function iv_next(){
+  const body=document.getElementById('iv-drill-body');
+  if(ivDeck.length===0){
+    const hard=IV_ALL.filter(v=>ivHardSeen.has(v.b));
+    body.innerHTML=`<div class="iv-done"><div class="em">🎉</div>
+      <div class="t">أحسنت! راجعت كل الأفعال</div>
+      ${hard.length?`<button class="iv-btn hard" onclick="iv_review_hard()">راجع الصعبة فقط (${hard.length})</button>`:''}
+      <button class="iv-btn known" onclick="start_iv_drill()">🔁 من جديد</button></div>`;
+    return;
+  }
+  ivCur=ivDeck[0];
+  const bs=ivCur.b.replace(/'/g,"\\'"),ps=ivCur.p.replace(/'/g,"\\'");
+  body.innerHTML=`<div class="iv-drill-top">متبقّي: <b>${ivDeck.length}</b></div>
+  <div class="iv-dcard">
+    <div class="iv-base-big">${ivCur.b}<button class="iv-spk2" onclick="say('${bs}')" aria-label="استمع">🔊</button></div>
+    <div class="iv-mean-big">${ivCur.m}</div>
+    <div id="iv-ans" style="display:none">
+      <div class="iv-arrow-big">↓ الماضي</div>
+      <div class="iv-past-big">${ivCur.p}<button class="iv-spk2" onclick="say('${ps}')" aria-label="استمع">🔊</button></div>
+    </div>
+    <div id="iv-controls"><button class="iv-reveal-btn" onclick="iv_reveal()">🤔 ما الماضي؟ اضغط للكشف</button></div>
+    <div id="iv-judge" class="iv-judge" style="display:none">
+      <button class="iv-btn known" onclick="iv_mark(true)">عرفتها ✅</button>
+      <button class="iv-btn hard" onclick="iv_mark(false)">صعبة ❌</button>
+    </div>
+  </div>`;
+}
+function iv_reveal(){
+  document.getElementById('iv-ans').style.display='';
+  document.getElementById('iv-controls').style.display='none';
+  document.getElementById('iv-judge').style.display='flex';
+  say(ivCur.p);
+}
+function iv_mark(known){
+  const cur=ivDeck.shift();
+  if(known){XP+=2;document.getElementById('xp').textContent=XP;save_progress();}
+  else{ivDeck.push(cur);ivHardSeen.add(cur.b);}
+  iv_next();
+}
+function iv_review_hard(){
+  ivDeck=IV_ALL.filter(v=>ivHardSeen.has(v.b)).sort(()=>Math.random()-.5);
+  iv_next();
+}
+
+// ═══════════════════════════════════════
+// LISTENING — YouTube videos
+// (لإضافة مقطع: أضف سطراً {id:'YOUTUBE_ID', t:'العنوان', s:'وصف قصير'})
+// ═══════════════════════════════════════
+const YT_VIDEOS=[
+  {id:'0slGq0JJKHs',t:'Quiz A',s:'استماع وقراءة مع الحل'},
+  {id:'elzqhXfnqbQ',t:'Quiz B',s:'استماع وقراءة مع الحل'},
+  {id:'qP6UyAVijUI',t:'Quiz C',s:'استماع وقراءة مع الحل'}
+];
+function open_yt(){
+  show_screen('ytscreen');
+  document.getElementById('ytscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('yt-tabs').innerHTML=YT_VIDEOS.map((v,i)=>
+    `<button class="yt-tab" id="yt-tab-${i}" onclick="sw_yt(${i},true)"><b>${v.t}</b><span>${v.s}</span></button>`).join('');
+  sw_yt(0,false);
+}
+function sw_yt(i,autoplay){
+  YT_VIDEOS.forEach((v,j)=>{const t=document.getElementById('yt-tab-'+j);if(t)t.classList.toggle('on',j===i);});
+  const v=YT_VIDEOS[i];
+  document.getElementById('yt-iframe').src=`https://www.youtube.com/embed/${v.id}?rel=0${autoplay?'&autoplay=1':''}`;
+}
+
+// ═══════════════════════════════════════
 // PROGRESS PERSISTENCE (localStorage)
 // ═══════════════════════════════════════
 const PKEY='alc_book4_progress';
+// Check that the browser actually allows saving (Private Browsing on iOS blocks it)
+let STORAGE_OK=true;
+try{const t='__alc_test__';localStorage.setItem(t,'1');localStorage.removeItem(t);}
+catch(e){STORAGE_OK=false;}
+function show_storage_warning(){
+  if(STORAGE_OK)return;
+  if(document.getElementById('storage-warn'))return;
+  const w=document.createElement('div');
+  w.id='storage-warn';
+  w.style.cssText="background:#FEF3C7;color:#92400E;border:1.5px solid #FCD34D;border-radius:12px;padding:12px 16px;margin:12px;font-family:'Cairo',sans-serif;font-size:.82rem;font-weight:700;text-align:center;line-height:1.6";
+  w.innerHTML="⚠️ متصفحك يمنع حفظ التقدّم (غالبًا وضع التصفّح الخفي). للحفظ: افتح الموقع في نافذة عادية — وليست خاصة/خفية.";
+  document.body.insertBefore(w,document.body.firstChild);
+}
 function save_progress(){
-  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP}));}catch(e){}
+  if(!STORAGE_OK)return;
+  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP}));}
+  catch(e){STORAGE_OK=false;show_storage_warning();}
 }
 function apply_lessons(){
   ['l1','l2','l3','l4'].forEach(lk=>{
@@ -2580,18 +3705,65 @@ function load_progress(){
   apply_lessons();
   upd_global();
 }
+if(!STORAGE_OK)show_storage_warning();
+
+// ─── STREAK COMEBACK BANNER ───
+const STREAK_DATE_KEY='alc_last_streak_date';
+function check_streak_comeback(){
+  if(!STORAGE_OK)return;
+  try{
+    const last=localStorage.getItem(STREAK_DATE_KEY);
+    const today=new Date().toDateString();
+    if(last && last!==today && STK===0){
+      // streak was broken — show encouragement
+      const home=document.getElementById('home');
+      const banner=document.createElement('div');
+      banner.className='streak-comeback';
+      banner.innerHTML=`<span class="sc-ico">💪</span>
+        <div class="sc-txt"><h3>عودة مرحباً!</h3>
+        <p>انتهى الـ streak، لكن الأهم أنك رجعت — ابدأ streak جديداً اليوم.</p></div>
+        <button class="sc-close" onclick="this.parentElement.remove()">✕</button>`;
+      home.insertBefore(banner, home.firstChild);
+    }
+    localStorage.setItem(STREAK_DATE_KEY,today);
+  }catch(e){}
+}
+
 function reset_progress(){
-  if(!confirm('هل تريد مسح كل تقدّمك والبدء من جديد؟'))return;
+  if(!confirm('⚠️ تحذير: سيُمسح كل تقدّمك (الدرجات والـ XP والـ Streak) ولا يمكن التراجع.\n\nهل أنت متأكد تماماً؟'))return;
   try{localStorage.removeItem(PKEY);}catch(e){}
   location.reload();
 }
+
+// ─── WELCOME BANNER ───
+const WKEY='alc_welcomed';
+function show_welcome_if_new(){
+  try{
+    const seen=localStorage.getItem(WKEY);
+    if(!seen){
+      document.getElementById('welcome-banner').style.display='block';
+    }
+  }catch(e){}
+}
+function dismiss_welcome(){
+  document.getElementById('welcome-banner').style.display='none';
+  try{localStorage.setItem(WKEY,'1');}catch(e){}
+}
+function dismiss_welcome_start(){
+  dismiss_welcome();
+  open_lesson('l1');
+}
+show_welcome_if_new();
 load_progress();
+check_streak_comeback();
+track_screen('home');
 </script>
 
 <!-- FOOTER -->
 <div class="site-footer">
   <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
   <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
+  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v2.3</p>
 </div>
 
 </body>

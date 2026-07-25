@@ -1279,40 +1279,27 @@ function build_final(){
   const el=document.getElementById('final-quiz');
   el.innerHTML='';
 
-  // Section headers
-  const sections=[
-    {label:'📘 Lesson 1 — Sports & Games (Q1-20)',start:0,end:19,color:'#2563EB'},
-    {label:'📗 Lesson 2 — Military Life (Q21-40)',start:20,end:39,color:'#DC2626'},
-    {label:'📙 Lesson 3 — Clothing & Abilities (Q41-60)',start:40,end:59,color:'#7C3AED'},
-    {label:'📕 Lesson 4 — Seasons & Colors (Q61-80)',start:60,end:FINAL.length-1,color:'#059669'},
-  ];
+  // Shuffle question order each time the exam opens, so students measure
+  // understanding instead of memorizing question position/order.
+  const order=FINAL.map((_,i)=>i).sort(()=>Math.random()-.5);
 
   const wrap=document.createElement('div');
-  let secIdx=0;
-  FINAL.forEach((q,i)=>{
-    // Section header
-    if(secIdx<sections.length&&i===sections[secIdx].start){
-      const sh=document.createElement('div');
-      sh.style.cssText=`background:${sections[secIdx].color};color:#fff;border-radius:10px;padding:10px 14px;margin-bottom:10px;margin-top:${i>0?'20px':'0'};font-family:'Cairo',sans-serif;font-weight:700;font-size:.88rem`;
-      sh.textContent=sections[secIdx].label;
-      wrap.appendChild(sh);
-      secIdx++;
-    }
-
-    const c=document.createElement('div');c.className='qcrd';c.id=`fic${i}`;
+  order.forEach((origIdx,pos)=>{
+    const q=FINAL[origIdx];
+    const c=document.createElement('div');c.className='qcrd';c.id=`fic${origIdx}`;
     const L=['A','B','C','D'];
     c.innerHTML=`<div class="qhdr">
-      <div class="qtxt">${i+1}. ${q.q}</div>
+      <div class="qtxt">${pos+1}. ${q.q}</div>
       <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')">🔊</button>
     </div>
-    <div class="opts" id="fio${i}">
-      ${q.o.map((opt,oi)=>`<button class="opt" id="fiop${i}${oi}"
-        onclick="ans('fi',${i},${oi},${q.a},'${q.en.replace(/'/g,"\\'")}','${q.ar.replace(/'/g,"\\'")}')">
+    <div class="opts" id="fio${origIdx}">
+      ${q.o.map((opt,oi)=>`<button class="opt" id="fiop${origIdx}${oi}"
+        onclick="ans('fi',${origIdx},${oi},${q.a},'${q.en.replace(/'/g,"\\'")}','${q.ar.replace(/'/g,"\\'")}')">
         <span class="oltr">${L[oi]}</span>${opt}</button>`).join('')}
     </div>
-    <div class="fb" id="fifb${i}">
-      <span style="font-size:.9rem;flex-shrink:0" id="fifi${i}"></span>
-      <div><div class="fb-en" id="fife${i}"></div><div class="fb-ar" id="fifa${i}"></div></div>
+    <div class="fb" id="fifb${origIdx}">
+      <span style="font-size:.9rem;flex-shrink:0" id="fifi${origIdx}"></span>
+      <div><div class="fb-en" id="fife${origIdx}"></div><div class="fb-ar" id="fifa${origIdx}"></div></div>
     </div>`;
     wrap.appendChild(c);
   });

@@ -89,8 +89,19 @@ l4:[
 ]
 };
 
-// All 80 questions combined for final test (l1:20, l2:20, l3:20, l4:13 + 7 extra)
-const FINAL = [
+// All questions combined for final test, deduped by exact question text
+// (EE.l3/EE.l4 and the extra tail questions below share a few identical
+// review questions — keep only the first occurrence of each).
+function dedupe_by_q(arr){
+  const seen=new Set();
+  return arr.filter(q=>{
+    const k=q.q.trim();
+    if(seen.has(k))return false;
+    seen.add(k);
+    return true;
+  });
+}
+const FINAL = dedupe_by_q([
   ...EE.l1.map((q,i)=>({...q,lbl:'L1-'+(i+1)})),
   ...EE.l2.map((q,i)=>({...q,lbl:'L2-'+(i+1)})),
   ...EE.l3.map((q,i)=>({...q,lbl:'L3-'+(i+1)})),
@@ -104,7 +115,7 @@ const FINAL = [
   {q:"What time did you _______ this morning?",o:["woke up","wakes up","wake up","waking up"],a:0,en:"Answer: woke up (past)",ar:"الجواب في الماضي = woke up",lbl:'L4-15'},
   {q:"I'm very tired. I am going to _______ in lab this afternoon.",o:["put on","fall asleep","take off","wake up"],a:1,en:"fall asleep = go to sleep",ar:"fall asleep = يغفو",lbl:'L4-16'},
   {q:"My sister bought two _______ at the store.",o:["hat","dress","belts","scarf"],a:2,en:"two = plural → belts",ar:"اثنان = جمع → belts",lbl:'L4-17'},
-];
+]);
 
 // DRAG-DROP data per lesson
 const DD = {
@@ -252,7 +263,6 @@ let CL=null,CT='learn',XP=0,STK=0,TANS={},FANS={},built={};
 let LP={}; // lesson progress: {l1:{pct, done}, ...} — best score per lesson
 let ddSelected=null; // word selected for drag
 let RW={}; // grammar-check weakness tracker: {'l1-0':{wrong,right}, ...}
-let MX_QUIZ=[]; // last built mixed-review question set
 
 // ═══════════════════════════════════════
 // SPEECH
@@ -267,11 +277,11 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen','mrscreen'];
+const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
 
 // ── Analytics: track which section + time spent ──
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع',mrscreen:'مراجعة مختلطة'};
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع'};
 let _curScreen=null,_screenStart=0;
 function track_screen(id){
   if(typeof gtag!=='function')return;
@@ -1096,53 +1106,6 @@ function build_quiz(elId,qs,prefix){
 }
 
 // ═══════════════════════════════════════
-// MIXED REVIEW — spaced/interleaved practice
-// pulls weakest grammar checks first, fills the rest
-// from lesson tests the student has attempted
-// ═══════════════════════════════════════
-function gather_mixed_review_questions(){
-  const rules=[];
-  Object.keys(GRAMMAR).forEach(lk=>{
-    GRAMMAR[lk].forEach((g,i)=>{
-      if(!g.check)return;
-      const w=RW[lk+'-'+i]||{wrong:0,right:0};
-      rules.push({g,score:w.wrong-w.right,attempted:(w.wrong+w.right)>0});
-    });
-  });
-  rules.sort((a,b)=>{
-    if(a.score!==b.score)return b.score-a.score;
-    if(a.attempted!==b.attempted)return a.attempted?1:-1;
-    return Math.random()-.5;
-  });
-  const picked=rules.slice(0,6).map(r=>({q:r.g.check.q,o:r.g.check.o,a:r.g.check.a,en:r.g.check.en,ar:r.g.check.ar}));
-  if(picked.length<5){
-    const lessonsToUse=Object.keys(LP).length?Object.keys(LP):['l1','l2','l3','l4'];
-    const pool=[];
-    lessonsToUse.forEach(lk=>{if(EE[lk])pool.push(...EE[lk]);});
-    const shuffled=pool.sort(()=>Math.random()-.5);
-    while(picked.length<5&&shuffled.length)picked.push(shuffled.pop());
-  }
-  return picked.sort(()=>Math.random()-.5);
-}
-
-function open_mixed_review(){
-  show_screen('mrscreen');
-  build_mixed_review();
-}
-
-function build_mixed_review(){
-  MX_QUIZ=gather_mixed_review_questions();
-  const empty=document.getElementById('mr-empty');
-  if(MX_QUIZ.length===0){
-    empty.style.display='block';
-    document.getElementById('mr-quiz').innerHTML='';
-    return;
-  }
-  empty.style.display='none';
-  build_quiz('mr-quiz',MX_QUIZ,'mx');
-}
-
-// ═══════════════════════════════════════
 // BUILD WORD ORDER
 // ═══════════════════════════════════════
 function build_dd(lk){
@@ -1302,7 +1265,7 @@ function ans(pfx,qi,oi,correct,en,ar){
   fb.className='fb show '+(ok?'ok':'no');
   if(ok){XP+=pfx==='te'||pfx==='fi'?5:3;STK++;document.getElementById('xp').textContent=XP;document.getElementById('streak').textContent=STK;save_progress();}
   else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}
-  say(pfx==='fi'?FINAL[qi].o[correct]:(pfx==='te'?EE[CL][qi].o[correct]:(pfx==='mx'?MX_QUIZ[qi].o[correct]:PR[CL][qi].o[correct])));
+  say(pfx==='fi'?FINAL[qi].o[correct]:(pfx==='te'?EE[CL][qi].o[correct]:PR[CL][qi].o[correct]));
 
   // Update progress bar
   const total=pfx==='fi'?FINAL.length:(pfx==='te'?EE[CL].length:PR[CL].length);
@@ -1327,40 +1290,27 @@ function build_final(){
   const el=document.getElementById('final-quiz');
   el.innerHTML='';
 
-  // Section headers
-  const sections=[
-    {label:'📘 Lesson 1 — Sports & Games (Q1-20)',start:0,end:19,color:'#2563EB'},
-    {label:'📗 Lesson 2 — Military Life (Q21-40)',start:20,end:39,color:'#DC2626'},
-    {label:'📙 Lesson 3 — Clothing & Abilities (Q41-60)',start:40,end:59,color:'#7C3AED'},
-    {label:'📕 Lesson 4 — Seasons & Colors (Q61-80)',start:60,end:FINAL.length-1,color:'#059669'},
-  ];
+  // Shuffle question order each time the exam opens, so students measure
+  // understanding instead of memorizing question position/order.
+  const order=FINAL.map((_,i)=>i).sort(()=>Math.random()-.5);
 
   const wrap=document.createElement('div');
-  let secIdx=0;
-  FINAL.forEach((q,i)=>{
-    // Section header
-    if(secIdx<sections.length&&i===sections[secIdx].start){
-      const sh=document.createElement('div');
-      sh.style.cssText=`background:${sections[secIdx].color};color:#fff;border-radius:10px;padding:10px 14px;margin-bottom:10px;margin-top:${i>0?'20px':'0'};font-family:'Cairo',sans-serif;font-weight:700;font-size:.88rem`;
-      sh.textContent=sections[secIdx].label;
-      wrap.appendChild(sh);
-      secIdx++;
-    }
-
-    const c=document.createElement('div');c.className='qcrd';c.id=`fic${i}`;
+  order.forEach((origIdx,pos)=>{
+    const q=FINAL[origIdx];
+    const c=document.createElement('div');c.className='qcrd';c.id=`fic${origIdx}`;
     const L=['A','B','C','D'];
     c.innerHTML=`<div class="qhdr">
-      <div class="qtxt">${i+1}. ${q.q}</div>
+      <div class="qtxt">${pos+1}. ${q.q}</div>
       <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')">🔊</button>
     </div>
-    <div class="opts" id="fio${i}">
-      ${q.o.map((opt,oi)=>`<button class="opt" id="fiop${i}${oi}"
-        onclick="ans('fi',${i},${oi},${q.a},'${q.en.replace(/'/g,"\\'")}','${q.ar.replace(/'/g,"\\'")}')">
+    <div class="opts" id="fio${origIdx}">
+      ${q.o.map((opt,oi)=>`<button class="opt" id="fiop${origIdx}${oi}"
+        onclick="ans('fi',${origIdx},${oi},${q.a},'${q.en.replace(/'/g,"\\'")}','${q.ar.replace(/'/g,"\\'")}')">
         <span class="oltr">${L[oi]}</span>${opt}</button>`).join('')}
     </div>
-    <div class="fb" id="fifb${i}">
-      <span style="font-size:.9rem;flex-shrink:0" id="fifi${i}"></span>
-      <div><div class="fb-en" id="fife${i}"></div><div class="fb-ar" id="fifa${i}"></div></div>
+    <div class="fb" id="fifb${origIdx}">
+      <span style="font-size:.9rem;flex-shrink:0" id="fifi${origIdx}"></span>
+      <div><div class="fb-en" id="fife${origIdx}"></div><div class="fb-ar" id="fifa${origIdx}"></div></div>
     </div>`;
     wrap.appendChild(c);
   });

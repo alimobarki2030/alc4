@@ -113,6 +113,7 @@ const FINAL = dedupe_by_q([
   {q:"These words are in alphabetical order:",o:["colonel, captain, cap, cigarette","pants, paragraph, pastel, pattern","shirt, skirt, shoes, she","coat, contraction, clothes, can"],a:1,en:"pants(pa-n), paragraph(pa-r), pastel(pa-s), pattern(pa-t)",ar:"ترتيب أبجدي صحيح",lbl:'L3-21'},
   {q:"Do not smoke cigarettes in this building. This means:",o:["You may smoke in this building","You must not smoke in this building","You sometimes smoke in this building","You can smoke in this building"],a:1,en:"Do not = must not",ar:"لا تفعل = يجب ألّا تفعل",lbl:'L3-22'},
   {q:"A suit is slacks and a _______.",o:["hat","jacket","shoe","dress"],a:1,en:"suit = jacket + slacks",ar:"البدلة = جاكيت + بنطلون",lbl:'L3-23'},
+  {q:"These words are in alphabetical order.",o:["Shirt, Sock, Sport, spring","Sweater, Summer, Shoe, Show","Season, Salute, Sentence, Scarf","Smoke, Sell, Suit, Start"],a:0,en:"Sh → So → Sp → sp = ascending alphabetical order",ar:"ترتيب أبجدي تصاعدي: Sh → So → Sp → sp",lbl:'L3-24'},
   // Additional L4
   {q:"Pvt Jones can _______ four languages.",o:["speak","speaks","spoke","speaking"],a:0,en:"can + base verb",ar:"can + فعل مجرد",lbl:'L4-14'},
   {q:"What time did you _______ this morning?",o:["woke up","wakes up","wake up","waking up"],a:2,en:"After Did, the main verb stays in base form: wake up",ar:"بعد Did يرجع الفعل لصيغة المصدر: wake up",lbl:'L4-15'},

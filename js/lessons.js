@@ -53,7 +53,7 @@ l3:[
   {q:"Which has the past tense sound /t/?",o:["saluted","listened","smoked","indented"],a:2,en:"smoked → /smokt/ (k is voiceless → /t/)",ar:"k مهموسة → صوت /t/"},
   {q:"Which has the past tense sound /əd/?",o:["repeated","spelled","answered","asked"],a:0,en:"repeated → ends in t → /əd/",ar:"تنتهي بـ t → /əd/"},
   {q:"Which has the past tense sound /d/?",o:["talked","studied","watched","wanted"],a:1,en:"studied → vowel sound → /d/",ar:"حرف علة → /d/"},
-  {q:"What time did you _______ this morning?",o:["woke up","wakes up","wake up","waking up"],a:0,en:"Past answer: woke up",ar:"الجواب في الماضي = woke up"},
+  {q:"What time did you _______ this morning?",o:["woke up","wakes up","wake up","waking up"],a:2,en:"After Did, the main verb stays in base form: wake up",ar:"بعد Did يرجع الفعل لصيغة المصدر: wake up"},
   {q:"Pvt Jones can _______ English, French, Japanese, and German.",o:["speak","speaks","spoke","speaking"],a:0,en:"can + base verb",ar:"can + فعل مجرد"},
   {q:"I wore my new pants yesterday. (pants = ?)",o:["ties","socks","blouses","slacks"],a:3,en:"pants = slacks",ar:"بنطلون = slacks"},
   {q:"May I go to the library?",o:["No, he didn't.","Yes, it is.","No, you must.","Yes, you may."],a:3,en:"May I? → Yes, you may.",ar:"May I? → Yes, you may."},
@@ -93,9 +93,12 @@ l4:[
 // (EE.l3/EE.l4 and the extra tail questions below share a few identical
 // review questions — keep only the first occurrence of each).
 function dedupe_by_q(arr){
+  // Key on question text + options: some question stems (e.g. the -ed
+  // sounds drill) legitimately repeat with a different word bank, so
+  // only treat two entries as duplicates when both text and options match.
   const seen=new Set();
   return arr.filter(q=>{
-    const k=q.q.trim();
+    const k=q.q.trim()+'|'+q.o.join(',');
     if(seen.has(k))return false;
     seen.add(k);
     return true;
@@ -110,9 +113,10 @@ const FINAL = dedupe_by_q([
   {q:"These words are in alphabetical order:",o:["colonel, captain, cap, cigarette","pants, paragraph, pastel, pattern","shirt, skirt, shoes, she","coat, contraction, clothes, can"],a:1,en:"pants(pa-n), paragraph(pa-r), pastel(pa-s), pattern(pa-t)",ar:"ترتيب أبجدي صحيح",lbl:'L3-21'},
   {q:"Do not smoke cigarettes in this building. This means:",o:["You may smoke in this building","You must not smoke in this building","You sometimes smoke in this building","You can smoke in this building"],a:1,en:"Do not = must not",ar:"لا تفعل = يجب ألّا تفعل",lbl:'L3-22'},
   {q:"A suit is slacks and a _______.",o:["hat","jacket","shoe","dress"],a:1,en:"suit = jacket + slacks",ar:"البدلة = جاكيت + بنطلون",lbl:'L3-23'},
+  {q:"These words are in alphabetical order.",o:["Shirt, Sock, Sport, spring","Sweater, Summer, Shoe, Show","Season, Salute, Sentence, Scarf","Smoke, Sell, Suit, Start"],a:0,en:"Sh → So → Sp → sp = ascending alphabetical order",ar:"ترتيب أبجدي تصاعدي: Sh → So → Sp → sp",lbl:'L3-24'},
   // Additional L4
   {q:"Pvt Jones can _______ four languages.",o:["speak","speaks","spoke","speaking"],a:0,en:"can + base verb",ar:"can + فعل مجرد",lbl:'L4-14'},
-  {q:"What time did you _______ this morning?",o:["woke up","wakes up","wake up","waking up"],a:0,en:"Answer: woke up (past)",ar:"الجواب في الماضي = woke up",lbl:'L4-15'},
+  {q:"What time did you _______ this morning?",o:["woke up","wakes up","wake up","waking up"],a:2,en:"After Did, the main verb stays in base form: wake up",ar:"بعد Did يرجع الفعل لصيغة المصدر: wake up",lbl:'L4-15'},
   {q:"I'm very tired. I am going to _______ in lab this afternoon.",o:["put on","fall asleep","take off","wake up"],a:1,en:"fall asleep = go to sleep",ar:"fall asleep = يغفو",lbl:'L4-16'},
   {q:"My sister bought two _______ at the store.",o:["hat","dress","belts","scarf"],a:2,en:"two = plural → belts",ar:"اثنان = جمع → belts",lbl:'L4-17'},
 ]);

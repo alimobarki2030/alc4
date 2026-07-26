@@ -89,8 +89,19 @@ l4:[
 ]
 };
 
-// All 80 questions combined for final test (l1:20, l2:20, l3:20, l4:13 + 7 extra)
-const FINAL = [
+// All questions combined for final test, deduped by exact question text
+// (EE.l3/EE.l4 and the extra tail questions below share a few identical
+// review questions — keep only the first occurrence of each).
+function dedupe_by_q(arr){
+  const seen=new Set();
+  return arr.filter(q=>{
+    const k=q.q.trim();
+    if(seen.has(k))return false;
+    seen.add(k);
+    return true;
+  });
+}
+const FINAL = dedupe_by_q([
   ...EE.l1.map((q,i)=>({...q,lbl:'L1-'+(i+1)})),
   ...EE.l2.map((q,i)=>({...q,lbl:'L2-'+(i+1)})),
   ...EE.l3.map((q,i)=>({...q,lbl:'L3-'+(i+1)})),
@@ -104,7 +115,7 @@ const FINAL = [
   {q:"What time did you _______ this morning?",o:["woke up","wakes up","wake up","waking up"],a:0,en:"Answer: woke up (past)",ar:"الجواب في الماضي = woke up",lbl:'L4-15'},
   {q:"I'm very tired. I am going to _______ in lab this afternoon.",o:["put on","fall asleep","take off","wake up"],a:1,en:"fall asleep = go to sleep",ar:"fall asleep = يغفو",lbl:'L4-16'},
   {q:"My sister bought two _______ at the store.",o:["hat","dress","belts","scarf"],a:2,en:"two = plural → belts",ar:"اثنان = جمع → belts",lbl:'L4-17'},
-];
+]);
 
 // DRAG-DROP data per lesson
 const DD = {

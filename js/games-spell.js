@@ -83,12 +83,13 @@ function spell_enter(){
   if(nb&&nb.style.display!=='none')spell_next();else spell_check();
 }
 function spell_check(){
-  const inp=document.getElementById('sp-input'),w=spellWords[spellIdx].e;
+  const cur=spellWords[spellIdx],w=cur.e;
+  const inp=document.getElementById('sp-input');
   const val=(inp.value||'').trim().toLowerCase().replace(/\s+/g,' '),fb=document.getElementById('sp-fb');
   if(!val)return;
   if(val===w.toLowerCase()){
     inp.disabled=true;inp.classList.remove('no');inp.classList.add('ok');
-    fb.textContent='✅ ممتاز! إملاء صحيح';fb.className='sp-fb show ok';
+    fb.innerHTML=`✅ ممتاز! <span dir="ltr">${w}</span> = ${cur.a}`;fb.className='sp-fb show ok';
     document.getElementById('sp-hintbtn').style.display='none';
     document.getElementById('sp-checkbtn').style.display='none';
     document.getElementById('sp-nextbtn').style.display='';

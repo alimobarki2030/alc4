@@ -102,3 +102,12 @@ show_welcome_if_new();
 load_progress();
 check_streak_comeback();
 track_screen('home');
+
+// ─── BACK-TO-TOP FAB (shows once the student scrolls into a lesson) ───
+(function(){
+  const btn=document.getElementById('top-fab');
+  if(!btn)return;
+  window.addEventListener('scroll',()=>{
+    btn.classList.toggle('show',window.scrollY>300);
+  },{passive:true});
+})();

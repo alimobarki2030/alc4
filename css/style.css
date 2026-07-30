@@ -853,3 +853,12 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .yt-note{background:#FFFBEB;border:1.5px solid #FCD34D;border-radius:10px;padding:9px 12px;
   font-family:'Cairo',sans-serif;font-size:.78rem;color:#92400E;text-align:center}
 
+/* ── BACK-TO-TOP FAB ── */
+.top-fab{position:fixed;bottom:20px;left:16px;width:46px;height:46px;border-radius:50%;
+  background:var(--navy);color:#fff;border:none;font-size:1.3rem;line-height:1;cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:90;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .25s,transform .25s}
+.top-fab.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.top-fab:active{transform:scale(.92)}
+

@@ -19,9 +19,9 @@
     })(window, document, "clarity", "script", "xqhawn6noe");
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALC — مركز التدريب الإنجليزي</title>
+<title>ALC — تعلم بسهولة</title>
 <meta name="description" content="تدرّب على كتب American Language Course — قواعد، مفردات، تمارين، واختبارات">
-<meta property="og:title" content="ALC — مركز التدريب الإنجليزي">
+<meta property="og:title" content="ALC — تعلم بسهولة">
 <meta property="og:description" content="تدرّب على كتب American Language Course — قواعد، مفردات، تمارين، واختبارات">
 <meta property="og:type" content="website">
 <meta name="author" content="Ali Mobarki">
@@ -52,11 +52,14 @@ nav{background:var(--navy);height:58px;display:flex;align-items:center;
 .sub{font-size:.78rem;color:rgba(255,255,255,.6);font-weight:600}
 .nav-by{font-size:.75rem;color:rgba(255,255,255,.45);font-weight:600}
 
-.hero{
-  background:
-    linear-gradient(180deg,rgba(10,16,32,.35) 0%,rgba(10,16,32,.5) 55%,rgba(10,16,32,.88) 100%),
-    url('hero-bg.jpg') center 62%/cover no-repeat;
-  padding:72px 20px 56px;text-align:center;position:relative;overflow:hidden}
+.hero{padding:72px 20px 56px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:-6px;
+  background:url('hero-bg.jpg') center 20%/cover no-repeat;
+  filter:blur(4px) saturate(1.1);z-index:0}
+.hero::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,16,32,.45) 0%,rgba(10,16,32,.6) 55%,rgba(10,16,32,.9) 100%);
+  z-index:1}
+.hero>*{position:relative;z-index:2}
 .eyebrow{display:inline-flex;align-items:center;gap:6px;
   background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
   border-radius:20px;padding:5px 14px;margin-bottom:18px;
@@ -146,9 +149,8 @@ footer span{color:#FFC800;font-weight:700}
   <div class="nav-logo">
     <div class="alc">ALC<span>.</span></div>
     <div class="divider"></div>
-    <div class="sub">مركز التدريب الإنجليزي</div>
+    <div class="sub">تعلم بسهولة</div>
   </div>
-  <div class="nav-by">علي مبارکي</div>
 </nav>
 
 <div class="hero">

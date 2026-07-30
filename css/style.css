@@ -16,6 +16,11 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   box-shadow:0 2px 12px rgba(0,0,0,.3)}
 .nav-logo{font-family:'Cairo',sans-serif;font-weight:900;font-size:1.1rem;color:#fff}
 .nav-logo span{color:var(--g)}
+.nav-home-btn{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.1);
+  border:1.5px solid rgba(255,255,255,.28);border-radius:20px;padding:5px 11px;
+  color:#fff;font-family:'Cairo',sans-serif;font-weight:700;font-size:.78rem;
+  text-decoration:none;transition:.15s;white-space:nowrap}
+.nav-home-btn:hover{background:rgba(255,255,255,.2);border-color:var(--b)}
 .nav-pills{display:flex;gap:10px;align-items:center}
 .xp-pill{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.1);
   border:2px solid var(--y);border-radius:20px;padding:4px 12px;

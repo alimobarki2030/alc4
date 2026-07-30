@@ -52,14 +52,11 @@ nav{background:var(--navy);height:58px;display:flex;align-items:center;
 .sub{font-size:.78rem;color:rgba(255,255,255,.6);font-weight:600}
 .nav-by{font-size:.75rem;color:rgba(255,255,255,.45);font-weight:600}
 
-.hero{background:linear-gradient(160deg,#1A2744 0%,#243560 55%,#2E4080 100%);
-  padding:48px 20px 52px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 70% 50%,rgba(88,204,2,.08),transparent 65%),
-             radial-gradient(ellipse at 20% 80%,rgba(28,176,246,.06),transparent 60%);
-  pointer-events:none}
-.hero-banner{width:190px;margin:0 auto 14px;display:block;
-  filter:drop-shadow(0 10px 22px rgba(0,0,0,.3))}
+.hero{
+  background:
+    linear-gradient(180deg,rgba(8,13,26,.45) 0%,rgba(8,13,26,.6) 50%,rgba(10,16,32,.92) 100%),
+    url('hero-bg.jpg') center 28%/cover no-repeat;
+  padding:72px 20px 56px;text-align:center;position:relative;overflow:hidden}
 .eyebrow{display:inline-flex;align-items:center;gap:6px;
   background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
   border-radius:20px;padding:5px 14px;margin-bottom:18px;
@@ -155,24 +152,6 @@ footer span{color:#FFC800;font-weight:700}
 </nav>
 
 <div class="hero">
-  <svg class="hero-banner" viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="70" cy="40" r="4" fill="#FFC800" opacity=".8"/>
-    <circle cx="255" cy="150" r="5" fill="#1CB0F6" opacity=".7"/>
-    <circle cx="250" cy="35" r="3" fill="#58CC02" opacity=".8"/>
-    <path d="M150,58 C112,48 72,53 42,73 L42,138 C72,118 112,113 150,123 Z" fill="#fff"/>
-    <path d="M150,58 C188,48 228,53 258,73 L258,138 C228,118 188,113 150,123 Z" fill="#F0F4FF"/>
-    <path d="M150,58 L150,123" stroke="#1A2744" stroke-width="3" stroke-linecap="round"/>
-    <path d="M150,58 C112,48 72,53 42,73 L42,138 C72,118 112,113 150,123 Z M150,58 C188,48 228,53 258,73 L258,138 C228,118 188,113 150,123 Z" fill="none" stroke="#1A2744" stroke-width="3" stroke-linejoin="round"/>
-    <path d="M58,82 L108,74 M58,96 L104,89 M58,110 L98,104" stroke="#1CB0F6" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-    <path d="M242,82 L192,74 M242,96 L196,89 M242,110 L202,104" stroke="#58CC02" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-    <polygon points="150,20 194,42 150,64 106,42" fill="#1A2744"/>
-    <rect x="133" y="42" width="34" height="11" rx="2" fill="#243560"/>
-    <path d="M150,42 L168,68" stroke="#FFC800" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <circle cx="168" cy="70" r="5" fill="#FFC800"/>
-    <rect x="205" y="10" width="76" height="42" rx="14" fill="#58CC02"/>
-    <polygon points="222,50 212,62 234,50" fill="#58CC02"/>
-    <text x="243" y="37" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="19" fill="#fff">ABC</text>
-  </svg>
   <div class="eyebrow"><span class="dot"></span>American Language Course</div>
   <h1>خلّ اختبارك <span>أسهل.</span></h1>
   <p>مفردات، قواعد، وتمارين تفاعلية</p>

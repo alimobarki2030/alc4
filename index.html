@@ -18,9 +18,11 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xqhawn6noe");
 </script>
-<meta name="description" content="تعلّم، تدرّب، واختبر نفسك على Book 4 بالكامل — مع اختبار نهائي شامل">
-<meta property="og:title" content="Book 4 ALC — مركز التدريب الإنجليزي">
-<meta property="og:description" content="تعلّم، تدرّب، واختبر نفسك على Book 4 بالكامل — مع اختبار نهائي شامل">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALC — مركز التدريب الإنجليزي</title>
+<meta name="description" content="تدرّب على كتب American Language Course — قواعد، مفردات، تمارين، واختبارات">
+<meta property="og:title" content="ALC — مركز التدريب الإنجليزي">
+<meta property="og:description" content="تدرّب على كتب American Language Course — قواعد، مفردات، تمارين، واختبارات">
 <meta property="og:type" content="website">
 <meta name="author" content="Ali Mobarki">
 <meta property="og:url" content="https://alc4.alimobarki.com/">
@@ -29,414 +31,246 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://alc4.alimobarki.com/alc.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book 4 ALC — مركز التدريب الإنجليزي</title>
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2744;--navy2:#243560;--navy3:#2E4080;
+  --g:#58CC02;--b:#1CB0F6;--y:#FFC800;
+  --bg:#F0F4FF;--card:#fff;
+  --txt:#3C3C3C;--muted:#9AA0B8;--bdr:#E2E8F0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
+
+nav{background:var(--navy);height:58px;display:flex;align-items:center;
+  justify-content:space-between;padding:0 20px;position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 16px rgba(0,0,0,.25)}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.alc{font-family:'Inter',sans-serif;font-weight:900;font-size:1.25rem;color:#fff}
+.alc span{color:#58CC02}
+.divider{width:1px;height:18px;background:rgba(255,255,255,.2)}
+.sub{font-size:.78rem;color:rgba(255,255,255,.6);font-weight:600}
+.nav-by{font-size:.75rem;color:rgba(255,255,255,.45);font-weight:600}
+
+.hero{background:linear-gradient(160deg,#1A2744 0%,#243560 55%,#2E4080 100%);
+  padding:48px 20px 52px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 50%,rgba(88,204,2,.08),transparent 65%),
+             radial-gradient(ellipse at 20% 80%,rgba(28,176,246,.06),transparent 60%);
+  pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  border-radius:20px;padding:5px 14px;margin-bottom:18px;
+  font-size:.75rem;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.5px}
+.dot{width:6px;height:6px;border-radius:50%;background:#58CC02;
+  animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero h1{font-size:clamp(1.6rem,5vw,2.4rem);font-weight:900;color:#fff;
+  line-height:1.2;margin-bottom:10px}
+.hero h1 span{color:#58CC02}
+.hero p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:380px;
+  margin:0 auto 28px;line-height:1.7}
+.stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+.stat-n{font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;color:#FFC800;line-height:1}
+.stat-l{font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px}
+
+.section{max-width:700px;margin:0 auto;padding:28px 16px 60px}
+.sec-label{font-size:.68rem;font-weight:700;color:var(--muted);letter-spacing:2px;
+  text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--bdr)}
+
+.books-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
+
+.book-card{background:var(--card);border-radius:20px;border:2px solid var(--bdr);
+  overflow:hidden;transition:all .22s;position:relative;text-decoration:none;display:block;color:inherit}
+.book-card.available:hover{transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,.1);border-color:#1CB0F6}
+.book-card.coming{cursor:default;opacity:.65}
+
+.bc-top{padding:18px 16px 12px;position:relative}
+.bc-accent{position:absolute;top:14px;left:14px;width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+.b4 .bc-accent{background:#EFF6FF}
+.b5 .bc-accent{background:#F5F3FF}
+.b6 .bc-accent{background:#ECFEFF}
+.b7 .bc-accent{background:#FFFBEB}
+
+.bc-num{font-family:'Inter',sans-serif;font-size:.62rem;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.b4 .bc-num{color:#2563EB}
+.b5 .bc-num{color:#7C3AED}
+.b6 .bc-num{color:#0891B2}
+.b7 .bc-num{color:#B45309}
+
+.bc-title{font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;
+  color:var(--navy);margin-bottom:4px;line-height:1}
+.bc-sub{font-size:.76rem;color:var(--muted);line-height:1.5}
+
+.bc-topics{display:flex;flex-wrap:wrap;gap:5px;padding:0 16px 12px}
+.chip{font-size:.62rem;font-weight:700;padding:3px 8px;border-radius:20px}
+.b4 .chip{background:#EFF6FF;color:#1D4ED8;border:1px solid #BFDBFE}
+.b5 .chip{background:#F5F3FF;color:#6D28D9;border:1px solid #DDD6FE}
+.coming .chip{background:var(--bg);color:var(--muted);border:1px solid var(--bdr)}
+
+.bc-footer{border-top:1px solid var(--bdr);padding:10px 14px;
+  display:flex;align-items:center;gap:10px}
+.bc-progress{flex:1}
+.prog-bar{background:var(--bdr);border-radius:4px;height:4px;margin-bottom:4px}
+.prog-fill{height:4px;border-radius:4px;background:#58CC02;transition:width .6s}
+.prog-txt{font-size:.62rem;color:var(--muted);font-weight:600}
+.bc-cta{font-size:.75rem;font-weight:800;white-space:nowrap}
+.available .bc-cta{color:#1CB0F6}
+.coming .bc-cta{color:var(--muted)}
+
+.cs-badge{position:absolute;top:10px;left:10px;background:var(--navy);
+  color:rgba(255,255,255,.55);font-size:.58rem;font-weight:700;
+  padding:2px 7px;border-radius:7px;letter-spacing:.5px}
+
+.features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+.feat{background:var(--card);border-radius:14px;padding:14px;border:1.5px solid var(--bdr)}
+.feat-ico{font-size:1.3rem;margin-bottom:6px}
+.feat-t{font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:2px}
+.feat-s{font-size:.7rem;color:var(--muted);line-height:1.5}
+
+footer{background:var(--navy);padding:20px;text-align:center}
+footer p{color:rgba(255,255,255,.4);font-size:.75rem}
+footer span{color:#FFC800;font-weight:700}
+
+@media(max-width:420px){
+  .books-grid,.features{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-
-<!-- SPLASH -->
-<div id="splash">
-  <div class="splash-emoji">🎓</div>
-  <div class="splash-title">مركز التدريب <span>Book 4</span></div>
-  <div class="splash-sub">American Language Course</div>
-  <div class="splash-by">تصميم علي مبارکي</div>
-  <div class="splash-bar"><div class="splash-fill"></div></div>
-</div>
-
-<nav class="nav">
-  <div class="nav-logo">ALC <span>Book 4</span></div>
-  <div class="nav-pills">
-    <span class="streak">🔥<span id="streak">0</span></span>
-    <span class="xp-pill">⚡<span id="xp">0</span></span>
+<nav>
+  <div class="nav-logo">
+    <div class="alc">ALC<span>.</span></div>
+    <div class="divider"></div>
+    <div class="sub">مركز التدريب الإنجليزي</div>
   </div>
+  <div class="nav-by">علي مبارکي</div>
 </nav>
 
-<!-- HOME -->
-<div id="home">
-  <div class="hero">
-    <h1>مركز التدريب — Book 4 📚</h1>
-    <p>تعلّم القواعد · تدرّب · اختبر نفسك · الاختبار النهائي</p>
-    <div class="gpbar"><div class="gpfill" id="gpfill"></div></div>
-    <div class="gptxt" id="gptxt">0 من 4 دروس مكتملة</div>
-    <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
-  </div>
-  <!-- WELCOME BANNER (shown only on first visit) -->
-  <div id="welcome-banner" style="display:none;background:linear-gradient(135deg,#0EA5E9,#0369A1);border-radius:16px;padding:18px 20px;margin-bottom:20px;position:relative">
-    <button onclick="dismiss_welcome()" style="position:absolute;top:10px;left:12px;background:rgba(255,255,255,.2);border:none;border-radius:50%;width:28px;height:28px;color:#fff;font-size:1rem;cursor:pointer;font-weight:700;line-height:1">✕</button>
-    <div style="font-size:2rem;margin-bottom:8px">👋</div>
-    <h2 style="color:#fff;font-size:1.15rem;font-weight:900;margin-bottom:6px">مرحباً بك في مركز التدريب</h2>
-    <p style="color:rgba(255,255,255,.9);font-size:.92rem;line-height:1.7;margin-bottom:14px">ابدأ من <strong style="color:#FFC800">الدرس الأول</strong> في الأسفل، وتقدّم بالترتيب — كل درس يبني على السابق. بعد كل درس تجد تماريَن وترتيب جُمل وكلمات للاستماع.</p>
-    <button onclick="dismiss_welcome_start()" style="background:#FFC800;color:#1A2744;border:none;border-radius:10px;padding:10px 22px;font-family:'Cairo',sans-serif;font-weight:900;font-size:.95rem;cursor:pointer">ابدأ الدرس الأول ←</button>
-  </div>
-
-  <div class="lbl">الدروس</div>
-  <div class="grid2">
-    <div class="lcard" id="hc-l1" onclick="open_lesson('l1')">
-      <span class="lcard-icon">🏃</span>
-      <div class="lcard-num">Lesson 1</div>
-      <div class="lcard-name">Sports & Games</div>
-      <div class="lcard-sub">الرياضة والألعاب</div>
-      <div class="lpbar"><div class="lpfill" id="lp-l1"></div></div>
-    </div>
-    <div class="lcard" id="hc-l2" onclick="open_lesson('l2')">
-      <span class="lcard-icon">🎖️</span>
-      <div class="lcard-num">Lesson 2</div>
-      <div class="lcard-name">He's in the Army</div>
-      <div class="lcard-sub">الحياة العسكرية</div>
-      <div class="lpbar"><div class="lpfill" id="lp-l2"></div></div>
-    </div>
-    <div class="lcard" id="hc-l3" onclick="open_lesson('l3')">
-      <span class="lcard-icon">👕</span>
-      <div class="lcard-num">Lesson 3</div>
-      <div class="lcard-name">Where Are My Clothes?</div>
-      <div class="lcard-sub">الملابس والقدرات</div>
-      <div class="lpbar"><div class="lpfill" id="lp-l3"></div></div>
-    </div>
-    <div class="lcard" id="hc-l4" onclick="open_lesson('l4')">
-      <span class="lcard-icon">🌤️</span>
-      <div class="lcard-num">Lesson 4</div>
-      <div class="lcard-name">Pencils in 10 Colors</div>
-      <div class="lcard-sub">الفصول والألوان</div>
-      <div class="lpbar"><div class="lpfill" id="lp-l4"></div></div>
-    </div>
-  </div>
-
-  <div class="lbl">شرح تفاعلي</div>
-  <div class="prep-card" onclick="open_prep()">
-    <div class="pc-rings"><i></i><i></i><i></i></div>
-    <div class="pc-txt">
-      <h3>in · on · at</h3>
-      <p>حروف الجر — المكان والزمن, مبسّطة برسم الهدف 🎯</p>
-    </div>
-  </div>
-  <div class="art-card" onclick="open_art()">
-    <div class="ac-ic">✨</div>
-    <div class="pc-txt">
-      <h3>a · an · the</h3>
-      <p>أدوات التعريف والتنكير — المعلوم والمجهول</p>
-    </div>
-  </div>
-  <div class="wh-card" onclick="open_wh()">
-    <div class="ac-ic">❓</div>
-    <div class="pc-txt">
-      <h3>WH — أدوات السؤال</h3>
-      <p>what · where · when · who · why · how</p>
-    </div>
-  </div>
-  <div class="time-card" onclick="open_time()">
-    <div class="ac-ic">⏳</div>
-    <div class="pc-txt">
-      <h3>الماضي البسيط · yesterday · last · ago</h3>
-      <p>كلمات الزمن الماضي — على خطّ زمني</p>
-    </div>
-  </div>
-  <div class="iv-card-home" onclick="open_iv()">
-    <div class="ac-ic">🔄</div>
-    <div class="pc-txt">
-      <h3>الأفعال الشاذة</h3>
-      <p>مجمّعة بالعائلات — احفظ النمط لا الكلمات</p>
-    </div>
-  </div>
-
-  <div class="lbl">الاستماع</div>
-  <div class="yt-card" onclick="open_yt()">
-    <div class="ac-ic">🎧</div>
-    <div class="pc-txt">
-      <h3>استماع Book 4</h3>
-      <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B · C</p>
-    </div>
-  </div>
-
-  <div class="lbl">الكتابة</div>
-  <div class="spell-card" onclick="open_spell()">
-    <div class="ac-ic">✍️</div>
-    <div class="pc-txt">
-      <h3>اكتب من السماع</h3>
-      <p>اسمع الكلمة واكتبها بنفسك — إملاء واستماع</p>
-    </div>
-  </div>
-
-  <div class="lbl">الاختبار</div>
-  <div class="final-card" onclick="open_final()">
-    <div style="font-size:2.2rem;margin-bottom:8px">🏆</div>
-    <h3>الاختبار النهائي الشامل</h3>
-    <p>جميع أسئلة التقييم الرسمية من الكتاب — الدروس 1 إلى 4</p>
-    <span class="fc-badge">77 سؤالاً</span>
+<div class="hero">
+  <div class="eyebrow"><span class="dot"></span>American Language Course</div>
+  <h1>خلّ اختبارك <span>أسهل.</span></h1>
+  <p>مفردات، قواعد، وتمارين تفاعلية</p>
+  <div class="stats">
+    <div><div class="stat-n">1</div><div class="stat-l">كتاب متاح</div></div>
+    <div><div class="stat-n">+200</div><div class="stat-l">سؤال</div></div>
+    <div><div class="stat-n">4</div><div class="stat-l">دروس</div></div>
   </div>
 </div>
 
-<!-- LESSON SCREEN -->
-<div id="lscreen">
-  <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div class="lhdr">
-    <div class="lhdr-icon" id="lh-ico">🏃</div>
-    <div><h2 id="lh-ttl"></h2><p id="lh-sub"></p></div>
-  </div>
-  <div class="tabs">
-    <button class="tab active" id="tab-learn" onclick="sw_tab('learn')">
-      <span class="ti">📚</span><span>تعلّم</span>
-    </button>
-    <button class="tab" id="tab-practice" onclick="sw_tab('practice')">
-      <span class="ti">🎯</span><span>تدرّب</span>
-    </button>
-    <button class="tab" id="tab-drag" onclick="sw_tab('drag')">
-      <span class="ti">🔤</span><span>رتّب الجملة</span>
-    </button>
-    <button class="tab" id="tab-test" onclick="sw_tab('test')">
-      <span class="ti">🏆</span><span>اختبر</span>
-    </button>
-  </div>
-  <div class="phase active" id="ph-learn"></div>
-  <div class="phase" id="ph-practice"></div>
-  <div class="phase" id="ph-drag"></div>
-  <div class="phase" id="ph-test"></div>
-</div>
+<div class="section">
+  <div class="sec-label">الكتب</div>
+  <div class="books-grid">
 
-<!-- FINAL TEST SCREEN -->
-<div id="fscreen" style="display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px">
-  <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div style="background:linear-gradient(135deg,#7C3AED,#5B21B6);border-radius:14px;padding:18px;margin-bottom:16px;text-align:center">
-    <div style="font-size:2rem;margin-bottom:6px">🏆</div>
-    <h2 style="color:#fff;font-size:1.1rem;font-weight:900">الاختبار النهائي الشامل</h2>
-    <p style="color:rgba(255,255,255,.75);font-size:.82rem;margin-top:4px">جميع أسئلة التقييم الرسمية من الكتاب</p>
-  </div>
-  <div class="qprog">
-    <div class="qpbar"><div class="qpfill" id="fpfill"></div></div>
-    <div class="qptxt" id="fptxt">0 / 77</div>
-  </div>
-  <div id="final-quiz"></div>
-  <div class="submit-row">
-    <button class="sbtn" onclick="submit_final()">إرسال الاختبار النهائي →</button>
-  </div>
-</div>
+    <a class="book-card b4 available" href="book4.html">
+      <div class="bc-top">
+        <div class="bc-accent">📘</div>
+        <div class="bc-num">Book 4</div>
+        <div class="bc-title">4</div>
+        <div class="bc-sub">الماضي البسيط · الملابس · الرياضة</div>
+      </div>
+      <div class="bc-topics">
+        <span class="chip">Simple Past</span>
+        <span class="chip">can / must</span>
+        <span class="chip">in · on · at</span>
+      </div>
+      <div class="bc-footer">
+        <div class="bc-progress">
+          <div class="prog-bar"><div class="prog-fill" id="prog-b4" style="width:0%"></div></div>
+          <div class="prog-txt" id="prog-b4-txt">لم تبدأ بعد</div>
+        </div>
+        <div class="bc-cta">ابدأ ←</div>
+      </div>
+    </a>
 
-<!-- PREPOSITIONS SCREEN -->
-<div id="pscreen">
-  <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div class="prep-hero">
-    <h2>in · on · at 🎯</h2>
-    <p>كل ما اتّسعت الدائرة زاد العموم — والعكس يزيد التحديد</p>
-  </div>
-  <div class="prep-toggle">
-    <button class="on" id="pt-place" onclick="sw_prep('place')">📍 المكان</button>
-    <button id="pt-time" onclick="sw_prep('time')">🕐 الزمن</button>
-  </div>
-  <div class="prep-hint">👇 اضغط على أيّ لون في الدائرة</div>
-  <div class="target-wrap">
-    <div class="target">
-      <div class="ring ring-in" id="ring-in" onclick="sel_prep('in')"><span>in</span></div>
-      <div class="ring ring-on" id="ring-on" onclick="sel_prep('on')"><span>on</span></div>
-      <div class="ring ring-at" id="ring-at" onclick="sel_prep('at')"><span>at</span></div>
+    <div class="book-card b5 coming">
+      <div class="cs-badge">قريباً</div>
+      <div class="bc-top">
+        <div class="bc-accent">📗</div>
+        <div class="bc-num">Book 5</div>
+        <div class="bc-title">5</div>
+        <div class="bc-sub">قيد الإعداد</div>
+      </div>
+      <div class="bc-topics"><span class="chip">قريباً</span></div>
+      <div class="bc-footer">
+        <div class="bc-progress">
+          <div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div>
+          <div class="prog-txt">غير متاح بعد</div>
+        </div>
+        <div class="bc-cta">🔒</div>
+      </div>
     </div>
-  </div>
-  <div class="zoom-cap" id="zoom-cap"></div>
-  <div id="prep-detail"></div>
-  <div id="prep-except"></div>
 
-  <div class="lesson-video">
-    <div class="lv-title">🎬 شاهد الشرح كاملاً — in · on · at</div>
-    <div class="yt-embed">
-      <iframe src="https://www.youtube.com/embed/Q8gMUILX6xk?rel=0" title="in on at explanation"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
-        allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+    <div class="book-card b6 coming">
+      <div class="cs-badge">قريباً</div>
+      <div class="bc-top">
+        <div class="bc-accent">📘</div>
+        <div class="bc-num">Book 6</div>
+        <div class="bc-title">6</div>
+        <div class="bc-sub">قيد الإعداد</div>
+      </div>
+      <div class="bc-topics"><span class="chip">قريباً</span></div>
+      <div class="bc-footer">
+        <div class="bc-progress">
+          <div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div>
+          <div class="prog-txt">غير متاح بعد</div>
+        </div>
+        <div class="bc-cta">🔒</div>
+      </div>
     </div>
-  </div>
 
-  <button class="quiz-toggle" id="prep-toggle" onclick="reveal_quiz('prep')">🎯 فهمت الفكرة؟ اختبر نفسك ←</button>
-  <div id="prep-quiz" class="quiz-wrap"></div>
-</div>
-
-<!-- ARTICLES SCREEN -->
-<div id="ascreen">
-  <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#4F46E5)">
-    <h2>a · an · the ✨</h2>
-    <p>متى «أيّ واحد» ومتى «المحدّد المعروف»؟</p>
-  </div>
-
-  <div class="art-meta">
-    <div class="am-card am-any">
-      <div class="am-ic">👥</div>
-      <div class="am-t">أيّ واحد — جديد/مجهول</div>
-      <div class="am-w">a / an</div>
-      <div class="am-ex">a car = أيّ سيارة</div>
+    <div class="book-card b7 coming">
+      <div class="cs-badge">قريباً</div>
+      <div class="bc-top">
+        <div class="bc-accent">📙</div>
+        <div class="bc-num">Book 7</div>
+        <div class="bc-title">7</div>
+        <div class="bc-sub">قيد الإعداد</div>
+      </div>
+      <div class="bc-topics"><span class="chip">قريباً</span></div>
+      <div class="bc-footer">
+        <div class="bc-progress">
+          <div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div>
+          <div class="prog-txt">غير متاح بعد</div>
+        </div>
+        <div class="bc-cta">🔒</div>
+      </div>
     </div>
-    <div class="am-vs">مقابل</div>
-    <div class="am-card am-the">
-      <div class="am-ic">🔦</div>
-      <div class="am-t">محدّد — معروف للطرفين</div>
-      <div class="am-w">the</div>
-      <div class="am-ex">the car = السيارة المعروفة</div>
-    </div>
+
   </div>
 
-  <div class="prep-hint">👇 اضغط على أيّ أداة (a · an · the)</div>
-  <div class="art-chips">
-    <button class="art-chip" id="art-a" onclick="sel_art('a')">a</button>
-    <button class="art-chip" id="art-an" onclick="sel_art('an')">an</button>
-    <button class="art-chip" id="art-the" onclick="sel_art('the')">the</button>
-  </div>
-  <div id="art-detail"></div>
-
-  <div class="lesson-video">
-    <div class="lv-title">🎬 شاهد الشرح كاملاً — a · an · the</div>
-    <div class="yt-embed">
-      <iframe src="https://www.youtube.com/embed/26qCP6YLfiA?rel=0" title="a an the explanation"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
-        allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
-
-  <button class="quiz-toggle" id="art-toggle" onclick="reveal_quiz('art')">✨ فهمت الفكرة؟ اختبر نفسك ←</button>
-  <div id="art-quiz" class="quiz-wrap"></div>
-</div>
-
-<!-- WH QUESTIONS SCREEN -->
-<div id="wscreen">
-  <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div class="prep-hero" style="background:linear-gradient(135deg,#0D9488,#0F766E)">
-    <h2>أدوات السؤال — WH ❓</h2>
-    <p>كل كلمة تسأل عن شيء مختلف — اضغط لتتعلّم</p>
-  </div>
-  <div class="prep-hint">👇 اضغط على أيّ أداة سؤال</div>
-  <div class="wh-grid" id="wh-grid"></div>
-  <div id="wh-detail"></div>
-  <button class="quiz-toggle" id="wh-toggle" onclick="reveal_quiz('wh')">❓ فهمت الفكرة؟ اختبر نفسك ←</button>
-  <div id="wh-quiz" class="quiz-wrap"></div>
-</div>
-
-<!-- PAST-TIME SIGNALS SCREEN -->
-<div id="tmscreen">
-  <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div class="prep-hero" style="background:linear-gradient(135deg,#F59E0B,#B45309)">
-    <h2>الماضي البسيط · كلمات الزمن ⏳</h2>
-    <p>yesterday · last · ago — والأهمّ: ترتيب الكلمات</p>
-  </div>
-  <div class="tl">
-    <div class="tl-line"></div>
-    <div class="tl-pt"><span class="tl-dot now"></span><span class="tl-lbl">اليوم<span class="en">today</span></span></div>
-    <div class="tl-pt" onclick="sel_time('yesterday')"><span class="tl-dot" id="tld-yesterday"></span><span class="tl-lbl">أمس<span class="en">yesterday</span></span></div>
-    <div class="tl-pt" onclick="sel_time('last')"><span class="tl-dot" id="tld-last"></span><span class="tl-lbl">قبل أسبوع<span class="en">last week</span></span></div>
-    <div class="tl-pt" onclick="sel_time('ago')"><span class="tl-dot" id="tld-ago"></span><span class="tl-lbl">قبل سنوات<span class="en">ago</span></span></div>
-  </div>
-  <div class="tl-cap">⟵ كلّما اتّجهنا يساراً ابتعدنا في الماضي · واليمين هو الآن ⟶</div>
-  <div class="story-box">
-    <div class="story-h">📖 قصة واحدة تربطها كلها — أحداث في حياة شخص:</div>
-    <div class="story-line"><span class="en">Last week I traveled to Riyadh.</span>
-      <button class="story-spk" onclick="say('Last week I traveled to Riyadh')">🔊</button>
-      <span class="ar">الأسبوع الماضي سافرت إلى الرياض.</span></div>
-    <div class="story-line"><span class="en">Two days ago I bought a car.</span>
-      <button class="story-spk" onclick="say('Two days ago I bought a car')">🔊</button>
-      <span class="ar">قبل يومين اشتريت سيارة.</span></div>
-    <div class="story-line"><span class="en">Yesterday I visited my friend.</span>
-      <button class="story-spk" onclick="say('Yesterday I visited my friend')">🔊</button>
-      <span class="ar">أمس زرت صديقي.</span></div>
-  </div>
-  <div class="prep-hint">👇 اضغط على أيّ كلمة أو نقطة على الخطّ</div>
-  <div class="tm-chips">
-    <button class="tm-chip" id="tm-yesterday" onclick="sel_time('yesterday')">yesterday</button>
-    <button class="tm-chip" id="tm-last" onclick="sel_time('last')">last</button>
-    <button class="tm-chip" id="tm-ago" onclick="sel_time('ago')">ago</button>
-  </div>
-  <div id="time-detail"></div>
-
-  <div class="lesson-video">
-    <div class="lv-title">🎬 شاهد الشرح كاملاً — الماضي البسيط</div>
-    <div class="yt-embed">
-      <iframe src="https://www.youtube.com/embed/oSNLR7zep_E?rel=0" title="simple past explanation"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
-        allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
-
-  <button class="quiz-toggle" id="time-toggle" onclick="reveal_quiz('time')">⏳ فهمت الفكرة؟ اختبر نفسك ←</button>
-  <div id="time-quiz" class="quiz-wrap"></div>
-</div>
-
-<!-- SPELLING SCREEN -->
-<div id="spscreen">
-  <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div class="prep-hero" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
-    <h2>اكتب من السماع ✍️</h2>
-    <p>استمع للكلمة واكتبها — يبني الإملاء والاستماع</p>
-  </div>
-  <div class="sp-prog">
-    <button class="sp-restart" onclick="start_spell()" title="ابدأ من الأول">🔁 من البداية</button>
-    <div class="sp-bar"><div class="sp-fill" id="sp-fill"></div></div>
-    <div class="sp-count" id="sp-count">0 / 0</div>
-  </div>
-  <div id="spell-body"></div>
-</div>
-
-<!-- IRREGULAR VERBS SCREEN -->
-<div id="ivscreen">
-  <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div class="prep-hero" style="background:linear-gradient(135deg,#6366F1,#4338CA)">
-    <h2>الأفعال الشاذة 🔄</h2>
-    <p>ليست عشوائية — بل عائلات لها أنماط</p>
-  </div>
-  <div class="prep-toggle">
-    <button class="on" id="iv-t-learn" onclick="sw_iv('learn')">📖 تعلّم بالعائلات</button>
-    <button id="iv-t-drill" onclick="sw_iv('drill')">🎴 تدرّب (بطاقات)</button>
-  </div>
-  <div id="iv-learn-body"></div>
-  <div id="iv-drill-body" style="display:none"></div>
-</div>
-
-<!-- LISTENING (YouTube) SCREEN -->
-<div id="ytscreen">
-  <button class="back" onclick="go_home()">← الرئيسية</button>
-  <div class="prep-hero" style="background:linear-gradient(135deg,#1F2937,#0B1220)">
-    <h2>استماع Book 4 🎧</h2>
-    <p>اختبارات استماع وقراءة مع الحل — LangVox</p>
-  </div>
-  <div class="yt-tabs" id="yt-tabs"></div>
-  <div class="yt-embed">
-    <iframe id="yt-iframe" src="" title="ALC Book 4 Listening"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
-      allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+  <div class="sec-label">ميزات الموقع</div>
+  <div class="features">
+    <div class="feat"><div class="feat-ico">📚</div><div class="feat-t">تعلّم بالخطوات</div><div class="feat-s">قواعد مبسّطة بأمثلة من الحياة اليومية</div></div>
+    <div class="feat"><div class="feat-ico">🎯</div><div class="feat-t">تمارين تفاعلية</div><div class="feat-s">ترتيب جمل، اختيار متعدد، وإملاء صوتي</div></div>
+    <div class="feat"><div class="feat-ico">🏆</div><div class="feat-t">اختبارات رسمية</div><div class="feat-s">الأسئلة مأخوذة مباشرة من الكتاب</div></div>
+    <div class="feat"><div class="feat-ico">🔊</div><div class="feat-t">استماع ونطق</div><div class="feat-s">كل كلمة وجملة يمكن سماعها بالصوت</div></div>
+    <div class="feat"><div class="feat-ico">📊</div><div class="feat-t">تتبّع التقدم</div><div class="feat-s">يحفظ درجاتك تلقائياً</div></div>
+    <div class="feat"><div class="feat-ico">🔄</div><div class="feat-t">مراجعة الأفعال الشاذة</div><div class="feat-s">بطاقات تفاعلية مرتّبة بالعائلات</div></div>
   </div>
 </div>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
-  <div class="mcrd">
-    <span class="memo" id="m-emo">🏆</span>
-    <div class="mscore" id="m-score">0%</div>
-    <div class="mgrade" id="m-grade">ممتاز!</div>
-    <div class="msub" id="m-sub"></div>
-    <div class="stars">
-      <span class="star" id="s1">⭐</span>
-      <span class="star" id="s2">⭐</span>
-      <span class="star" id="s3">⭐</span>
-    </div>
-    <div class="mbtns">
-      <button class="mbtn sec" onclick="retry()">↺ أعد الاختبار</button>
-      <button class="mbtn primary" id="m-next" style="display:none" onclick="next_lesson()">الدرس التالي ←</button>
-      <button class="mbtn primary" onclick="close_modal()">متابعة →</button>
-    </div>
-  </div>
-</div>
-<div class="conf" id="conf"></div>
-
-<script src="js/lessons.js"></script>
-<script src="js/games-prep.js"></script>
-<script src="js/games-art.js"></script>
-<script src="js/games-wh.js"></script>
-<script src="js/games-time.js"></script>
-<script src="js/games-spell.js"></script>
-<script src="js/games-irregular.js"></script>
-<script src="js/youtube.js"></script>
-<script src="js/progress.js"></script>
-
-<!-- FOOTER -->
-<div class="site-footer">
+<footer>
   <p>صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
-  <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 4 — American Language Course</p>
-  <p style="margin-top:4px;font-size:.66rem;opacity:.45" id="ver-tag">v3.4</p>
-</div>
+  <p style="margin-top:4px;font-size:.7rem;opacity:.5">American Language Course — Training Center</p>
+</footer>
 
+<script>
+try{
+  const data=JSON.parse(localStorage.getItem('alc_book4_progress'));
+  if(data){
+    const done=Object.values(data.lessons||{}).filter(l=>l&&l.done).length;
+    const pct=Math.round(done/4*100);
+    document.getElementById('prog-b4').style.width=pct+'%';
+    document.getElementById('prog-b4-txt').textContent=
+      pct===0?'لم تبدأ بعد':pct===100?`مكتمل ✓ · ${data.xp||0} XP`:`${done} من 4 دروس · ${data.xp||0} XP`;
+  }
+}catch(e){}
+</script>
 </body>
 </html>

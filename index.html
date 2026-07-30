@@ -42,6 +42,14 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
 
+.hero>nav{position:absolute;top:0;left:0;right:0;height:58px;display:flex;align-items:center;
+  justify-content:space-between;padding:0 20px;z-index:3}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.alc{font-family:'Inter',sans-serif;font-weight:900;font-size:1.25rem;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.alc span{color:#58CC02}
+.divider{width:1px;height:18px;background:rgba(255,255,255,.3)}
+.sub{font-size:.78rem;color:rgba(255,255,255,.8);font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+
 .hero{padding:72px 20px 56px;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:-6px;
   background:url('hero-bg.jpg') center 20%/cover no-repeat;
@@ -137,6 +145,13 @@ footer span{color:#FFC800;font-weight:700}
 
 
 <div class="hero">
+  <nav>
+    <div class="nav-logo">
+      <div class="alc">ALC<span>.</span></div>
+      <div class="divider"></div>
+      <div class="sub">تعلم بسهولة</div>
+    </div>
+  </nav>
   <div class="eyebrow"><span class="dot"></span>American Language Course</div>
   <h1>خلّ اختبارك <span>أسهل.</span></h1>
   <p>مفردات، قواعد، وتمارين تفاعلية</p>

@@ -31,6 +31,13 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://alc4.alimobarki.com/alc.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A2744">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ALC">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -291,6 +298,11 @@ try{
       pct===0?'لم تبدأ بعد':pct===100?`مكتمل ✓ · ${data.xp||0} XP`:`${done} من 4 دروس · ${data.xp||0} XP`;
   }
 }catch(e){}
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
+}
 </script>
 </body>
 </html>

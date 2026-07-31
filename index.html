@@ -154,28 +154,12 @@ footer{background:var(--navy);padding:20px;text-align:center}
 footer p{color:rgba(255,255,255,.4);font-size:.75rem}
 footer span{color:#FFC800;font-weight:700}
 
-.install-banner{display:none;align-items:center;gap:10px;background:#58CC02;
-  color:#fff;padding:11px 16px;font-size:.82rem;font-weight:700}
-.install-banner .ib-icon{font-size:1.15rem;flex:none}
-.install-banner .ib-text{flex:1;line-height:1.4}
-.install-banner .ib-btn{flex:none;background:#fff;color:#2D8A00;border:none;border-radius:8px;
-  padding:7px 14px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.8rem;cursor:pointer}
-.install-banner .ib-close{flex:none;background:none;border:none;color:#fff;font-size:1rem;
-  cursor:pointer;opacity:.8;padding:4px}
-
 @media(max-width:420px){
   .books-grid,.features{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-
-<div class="install-banner" id="install-banner">
-  <span class="ib-icon">📲</span>
-  <span class="ib-text" id="ib-text">ثبّت التطبيق على جوالك لسهولة الوصول</span>
-  <button class="ib-btn" id="ib-btn" onclick="doInstall()">تثبيت</button>
-  <button class="ib-close" onclick="dismissInstallBanner()" aria-label="إغلاق">✕</button>
-</div>
 
 <div class="hero">
   <nav>
@@ -318,52 +302,6 @@ try{
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
 }
-</script>
-<script>
-(function(){
-  const DISMISS_KEY='alc_install_dismissed';
-  const banner=document.getElementById('install-banner');
-  const text=document.getElementById('ib-text');
-  const btn=document.getElementById('ib-btn');
-  let deferredPrompt=null;
-
-  function isStandalone(){
-    return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
-  }
-  function isIOS(){
-    return /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
-  }
-  function showBanner(mode){
-    if(isStandalone())return;
-    try{if(localStorage.getItem(DISMISS_KEY))return;}catch(e){}
-    if(mode==='ios'){
-      text.textContent='لتثبيت التطبيق: اضغط زر المشاركة ↑ ثم "إضافة إلى الشاشة الرئيسية"';
-      btn.style.display='none';
-    }else{
-      text.textContent='ثبّت التطبيق على جوالك لسهولة الوصول';
-      btn.style.display='';
-    }
-    banner.style.display='flex';
-  }
-  window.addEventListener('beforeinstallprompt',(e)=>{
-    e.preventDefault();
-    deferredPrompt=e;
-    showBanner('android');
-  });
-  window.doInstall=function(){
-    if(!deferredPrompt)return;
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.finally(()=>{
-      deferredPrompt=null;
-      banner.style.display='none';
-    });
-  };
-  window.dismissInstallBanner=function(){
-    banner.style.display='none';
-    try{localStorage.setItem(DISMISS_KEY,'1');}catch(e){}
-  };
-  if(isIOS())showBanner('ios');
-})();
 </script>
 </body>
 </html>

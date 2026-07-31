@@ -281,11 +281,11 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','spscreen','tmscreen','ivscreen','ytscreen'];
+const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','pnscreen','modscreen','spscreen','tmscreen','ivscreen','ytscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
 
 // ── Analytics: track which section + time spent ──
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع'};
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',pnscreen:'الضمائر وفعل الكينونة',modscreen:'الأفعال الناقصة',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع'};
 let _curScreen=null,_screenStart=0;
 function track_screen(id){
   if(typeof gtag!=='function')return;

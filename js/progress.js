@@ -103,7 +103,7 @@ load_progress();
 check_streak_comeback();
 
 // ─── Deep link into a grammar screen (e.g. book4.html?open=prep from the homepage) ───
-const GRAMMAR_OPEN_MAP={prep:open_prep,art:open_art,wh:open_wh,time:open_time,iv:open_iv};
+const GRAMMAR_OPEN_MAP={prep:open_prep,art:open_art,wh:open_wh,pronouns:open_pn,modals:open_modal,time:open_time,iv:open_iv};
 const openParam=new URLSearchParams(location.search).get('open');
 if(openParam&&GRAMMAR_OPEN_MAP[openParam])GRAMMAR_OPEN_MAP[openParam]();
 else track_screen('home');

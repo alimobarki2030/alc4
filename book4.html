@@ -272,6 +272,38 @@
   <div id="wh-quiz" class="quiz-wrap"></div>
 </div>
 
+<!-- PRONOUNS + TO BE SCREEN -->
+<div id="pnscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#06B6D4,#0E7490)">
+    <h2>الضمائر وفعل الكينونة 🙋</h2>
+    <p>كل ضمير له شكل ثابت من الفعل be — احفظ الزوج مو الكلمة</p>
+  </div>
+  <div class="prep-toggle">
+    <button class="on" id="pn-t-present" onclick="sw_pn('present')">☀️ الحاضر (am/is/are)</button>
+    <button id="pn-t-past" onclick="sw_pn('past')">⏳ الماضي (was/were)</button>
+  </div>
+  <div class="prep-hint">👇 اضغط على أيّ ضمير</div>
+  <div class="wh-grid" id="pn-grid"></div>
+  <div id="pn-detail"></div>
+  <button class="quiz-toggle" id="pn-toggle" onclick="reveal_quiz('pn')">🙋 فهمت الفكرة؟ اختبر نفسك ←</button>
+  <div id="pn-quiz" class="quiz-wrap"></div>
+</div>
+
+<!-- MODAL VERBS SCREEN -->
+<div id="modscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
+    <h2>الأفعال الناقصة 💪</h2>
+    <p>can · must · may — كل فعل يوصّل معنى مختلف</p>
+  </div>
+  <div class="prep-hint">👇 اضغط على أيّ فعل</div>
+  <div class="wh-grid" id="mod-grid" style="grid-template-columns:repeat(3,1fr)"></div>
+  <div id="mod-detail"></div>
+  <button class="quiz-toggle" id="mod-toggle" onclick="reveal_quiz('mod')">💪 فهمت الفكرة؟ اختبر نفسك ←</button>
+  <div id="mod-quiz" class="quiz-wrap"></div>
+</div>
+
 <!-- PAST-TIME SIGNALS SCREEN -->
 <div id="tmscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
@@ -392,6 +424,8 @@
 <script src="js/games-prep.js"></script>
 <script src="js/games-art.js"></script>
 <script src="js/games-wh.js"></script>
+<script src="js/games-pronouns.js"></script>
+<script src="js/games-modals.js"></script>
 <script src="js/games-time.js"></script>
 <script src="js/games-spell.js"></script>
 <script src="js/games-irregular.js"></script>

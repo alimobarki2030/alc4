@@ -521,6 +521,16 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .ctab td.ar{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;color:#888;font-size:.72rem}
 .ctab tr:last-child td{border-bottom:none}
 
+/* Question → Answer pair (clearer alternative to the cramped 3-col compare table) */
+.qa-pair{background:#F8FAFC;border:1.5px solid var(--bdr);border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.qa-row{display:flex;align-items:center;gap:8px;padding:5px 0}
+.qa-tag{flex:none;font-family:'Cairo',sans-serif;font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.qa-row.q .qa-tag{background:#DBEAFE;color:#1D4ED8}
+.qa-row.a .qa-tag{background:#EDE9FE;color:#6D28D9}
+.qa-txt{flex:1;font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.86rem;font-weight:700;color:var(--navy)}
+.qa-spk{flex:none;background:none;border:none;cursor:pointer;font-size:.85rem;padding:2px}
+.qa-note{font-family:'Cairo',sans-serif;font-size:.74rem;color:var(--muted);margin-top:6px;padding-top:6px;border-top:1px dashed var(--bdr)}
+
 /* Sounds table */
 .stab{width:100%;border-collapse:collapse;font-size:.8rem;border-radius:8px;overflow:hidden;margin-bottom:8px}
 .stab th{padding:7px 10px;color:#fff;font-family:'Cairo',sans-serif;font-size:.75rem}

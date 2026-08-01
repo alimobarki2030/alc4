@@ -294,8 +294,6 @@ l1:[
     title:'Which + one / ones', ar:'أيّ + one/ones (بدل تكرار الاسم)',
     rule:'نسأل بـ Which عن الاختيار، ونرد بـ one (بدل اسم مفرد) أو ones (بدل اسم جمع) — بدون ما نكرر نفس الاسم.',
     check:{q:'Which arm did he hurt? — He hurt the left _______.',o:['arm','ones','one','arms'],a:2,en:"one replaces the singular noun 'arm'",ar:'one تحل محل الاسم المفرد arm'},
-    formula:[{t:'Which',c:'k'},{t:'+ noun',c:'s'},{t:'...?',c:'p'},{t:'the + صفة',c:'n'},{t:'+',c:'p'},{t:'one / ones',c:'v'}],
-    compareHeaders:['السؤال (Question)','الجواب (Answer)'],
     compare:[
       {c1:'Which tie do you want?',c2:'I want that one.',ar:'one = بدل tie (مفرد)'},
       {c1:'Which suits do you like?',c2:'I like the blue ones.',ar:'ones = بدل suits (جمع)'},
@@ -311,8 +309,6 @@ l1:[
     title:'Connector: or', ar:'أداة الربط or — الاختيار بين شيئين',
     rule:'نستخدم or بين خيارين بالسؤال — والجواب يحدّد واحد منهم بس، مو الاثنين.',
     check:{q:'Do you like tea _______ coffee?',o:['and','or','but','so'],a:1,en:'or = choice between two options',ar:'or = اختيار بين شيئين'},
-    formula:[{t:'Do you like',c:'s'},{t:'A',c:'v'},{t:'or',c:'k'},{t:'B',c:'v'},{t:'?',c:'p'}],
-    compareHeaders:['السؤال (Question)','الجواب (Answer)'],
     compare:[
       {c1:'Do you like the red one or the blue one?',c2:'I like the blue one.',ar:'or يعرض خيارين — الجواب يحدّد واحد'},
     ],
@@ -440,21 +436,15 @@ function build_gcard_body(g,lk,i){
   }
 
   if(g.compare&&g.compare.length>0){
-    const h1=(g.compareHeaders&&g.compareHeaders[0])||'Present / Base';
-    const h2=(g.compareHeaders&&g.compareHeaders[1])||'Past';
-    html+=`<table class="ctab"><thead><tr>
-      <th class="c1">${h1}</th><th class="c2">${h2}</th><th class="c3">معنى</th>
-    </tr></thead><tbody>`;
     g.compare.forEach(r=>{
       const safe1=r.c1.replace(/'/g,"\\'");
       const safe2=r.c2.replace(/'/g,"\\'");
-      html+=`<tr>
-        <td>${r.c1} <button class="ex-spk" style="background:var(--b);border:none;border-radius:5px;width:22px;height:22px;font-size:.65rem;cursor:pointer;float:left" onclick="say('${safe1}')">🔊</button></td>
-        <td>${r.c2} <button class="ex-spk" style="background:#7C3AED;border:none;border-radius:5px;width:22px;height:22px;font-size:.65rem;cursor:pointer;float:left" onclick="say('${safe2}')">🔊</button></td>
-        <td class="ar">${r.ar}</td>
-      </tr>`;
+      html+=`<div class="qa-pair">
+        <div class="qa-row q"><span class="qa-tag">السؤال</span><span class="qa-txt">${r.c1}</span><button class="qa-spk" onclick="say('${safe1}')">🔊</button></div>
+        <div class="qa-row a"><span class="qa-tag">الجواب</span><span class="qa-txt">${r.c2}</span><button class="qa-spk" onclick="say('${safe2}')">🔊</button></div>
+        ${r.ar?`<div class="qa-note">💡 ${r.ar}</div>`:''}
+      </div>`;
     });
-    html+='</tbody></table>';
   }
 
   if(g.examples&&g.examples.length>0){

@@ -138,7 +138,7 @@ function sw_tab(t){
   const lk=CL;
   if(t==='practice'&&!built['pr'+lk]){build_vocab_drill(lk);built['pr'+lk]=1;}
   if(t==='drag'&&!built['dd'+lk]){build_dd(lk);built['dd'+lk]=1;}
-  if(t==='test'&&!built['te'+lk]){build_wip('ph-test','🏆','اختبار الدرس قيد الإعداد','هذا الجزء بيصير جاهز قريبًا');built['te'+lk]=1;}
+  if(t==='test'&&!built['te'+lk]){build_quiz('ph-test',EE[lk],'te');built['te'+lk]=1;}
 }
 
 function build_wip(elId,ico,title,sub){
@@ -657,4 +657,176 @@ function drill_reveal_type(lk){
     nb.onclick=()=>{st.idx++;render_drill(lk);};
     dq.appendChild(nb);
   }
+}
+
+// ═══════════════════════════════════════
+// EVALUATION EXERCISES (اختبر) — EXACT FROM BOOK
+// ═══════════════════════════════════════
+const EE={
+l1:[
+  {q:'The _______ month of the year is December.',o:['large','long','last'],a:2,en:'December is the last month of the year',ar:'last = الأخير — ديسمبر آخر شهر بالسنة'},
+  {q:'My brother has a big family. They have a _______ car.',o:['large','long','last'],a:0,en:'A big family needs a large car',ar:'large = كبير الحجم، يناسب عائلة كبيرة'},
+  {q:"Kim didn't hurt her right leg. She hurt her _______ leg.",o:['short','one','left'],a:2,en:'Not right → left (the opposite side)',ar:'عكس right = left'},
+  {q:'Your tongue is inside your _______.',o:['neck','mouth','ear'],a:1,en:'The tongue is inside the mouth',ar:'اللسان داخل الفم'},
+  {q:'You wear your shoes on your _______.',o:['toes','foot','feet'],a:2,en:'Shoes (plural) go on feet (plural)',ar:'shoes جمع → feet جمع'},
+  {q:'My throat was _______ yesterday. I took medicine. My throat is okay today.',o:['sore','large','next'],a:0,en:'A sore throat needs medicine',ar:'sore = مؤلم/ملتهب، لذلك أخذ دواء'},
+  {q:"Lewis: _______ with Peter? Joan: He's sick.",o:["What's wrong","What hurts","Which is the matter"],a:0,en:"What's wrong? is the standard question for asking about someone's health",ar:"What's wrong? = وش المشكلة؟ (سؤال عن الصحة)"},
+  {q:'Did Jack hurt his arm _______ his leg?',o:['one','of','or'],a:2,en:'or connects two choices in a question',ar:'or يربط بين خيارين بالسؤال'},
+  {q:'_______ arm did he hurt?',o:['When','Which','Where'],a:1,en:'Which asks about a choice',ar:'Which للسؤال عن الاختيار'},
+  {q:'Anne: Which car do you like? Karen: I like the blue _______.',o:['one','of','or'],a:0,en:"one replaces the noun 'car'",ar:'one = بدل تكرار car'},
+  {q:'The paragraph is _______ the muscles of the body.',o:['about','of','one'],a:0,en:'about = on the topic of',ar:'about = بخصوص/عن'},
+  {q:'That book has 1,345 pages. It is a _______ book.',o:['short','long','last'],a:1,en:'Many pages = a long book',ar:'صفحات كثيرة = كتاب طويل'},
+]
+};
+
+function build_quiz(elId,qs,prefix){
+  const el=document.getElementById(elId);
+  el.innerHTML='';
+  const isTest=prefix==='te';
+
+  if(isTest){
+    const L=LP[CL];
+    const bestTxt=(L&&typeof L.pct==='number')?`أفضل نتيجة سابقة: ${L.pct}%${L.done?' ✓':''}`:'لم تُنهِ هذا الاختبار بعد';
+    const top=`<div class="test-top">
+      <span class="test-best ${(L&&L.done)?'done':''}">${bestTxt}</span>
+      <button class="test-restart" onclick="restart_test()">🔄 ابدأ من جديد</button>
+    </div>`;
+    el.innerHTML=top+`<div class="qprog"><div class="qpbar"><div class="qpfill" id="${prefix}pf"></div></div>
+      <div class="qptxt" id="${prefix}pt">0 / ${qs.length}</div></div>`;
+  }
+
+  const wrap=document.createElement('div');
+  qs.forEach((q,i)=>{
+    const c=document.createElement('div');c.className='qcrd';c.id=`${prefix}c${i}`;
+    const L=['A','B','C','D'];
+    c.innerHTML=`<div class="qhdr">
+      <div class="qtxt">${i+1}. ${q.q}</div>
+      <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')">🔊</button>
+    </div>
+    <div class="opts" id="${prefix}o${i}">
+      ${q.o.map((opt,oi)=>`<button class="opt" id="${prefix}op${i}${oi}"
+        onclick="ans('${prefix}',${i},${oi},${q.a},'${q.en.replace(/'/g,"\\'")}','${q.ar.replace(/'/g,"\\'")}')">
+        <span class="oltr">${L[oi]}</span>${opt}</button>`).join('')}
+    </div>
+    <div class="fb" id="${prefix}fb${i}">
+      <span style="font-size:.9rem;flex-shrink:0" id="${prefix}fi${i}"></span>
+      <div><div class="fb-en" id="${prefix}fe${i}"></div><div class="fb-ar" id="${prefix}fa${i}"></div></div>
+    </div>`;
+    wrap.appendChild(c);
+  });
+  el.appendChild(wrap);
+
+  if(isTest){
+    const sr=document.createElement('div');sr.className='submit-row';
+    sr.innerHTML=`<button class="sbtn" onclick="submit_test()">إرسال الإجابات →</button>`;
+    el.appendChild(sr);
+  }
+}
+
+function ans(pfx,qi,oi,correct,en,ar){
+  const opts=document.querySelectorAll(`#${pfx}o${qi} .opt`);
+  opts.forEach(b=>b.disabled=true);
+  const fb=document.getElementById(`${pfx}fb${qi}`);
+  const card=document.getElementById(`${pfx}c${qi}`);
+  const ok=oi===correct;
+  opts[correct].classList.add('ok');
+  if(!ok)opts[oi].classList.add('no');
+  card.classList.add(ok?'qok':'qno');
+  document.getElementById(`${pfx}fi${qi}`).textContent=ok?'✅':'❌';
+  document.getElementById(`${pfx}fe${qi}`).textContent=ok?`Correct! ${en}`:`Answer: ${['A','B','C','D'][correct]}. ${en}`;
+  document.getElementById(`${pfx}fa${qi}`).textContent=ar;
+  fb.className='fb show '+(ok?'ok':'no');
+  if(ok){XP+=5;document.getElementById('xp').textContent=XP;STK++;document.getElementById('streak').textContent=STK;save_progress();}
+  else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}
+  say(EE[CL][qi].o[correct]);
+
+  const total=EE[CL].length;
+  TANS[qi]=ok;
+  const done=Object.keys(TANS).length;
+  const pf=document.getElementById('tepf'),pt=document.getElementById('tept');
+  if(pf)pf.style.width=Math.round(done/total*100)+'%';
+  if(pt)pt.textContent=`${done} / ${total}`;
+}
+
+function submit_test(){
+  const total=EE[CL].length;
+  const correct=Object.values(TANS).filter(Boolean).length;
+  show_result(correct,total);
+}
+
+function show_result(correct,total){
+  const pct=Math.round(correct/total*100);
+  document.getElementById('m-score').textContent=pct+'%';
+  document.getElementById('m-sub').textContent=`أجبت بشكل صحيح على ${correct} من ${total} سؤالاً`;
+  let emo,grade,color;
+  if(pct>=90){emo='🏆';grade='ممتاز! أداء رائع!';color='var(--g)';}
+  else if(pct>=70){emo='✅';grade='جيد جداً! استمر!';color='var(--b)';}
+  else if(pct>=50){emo='📚';grade='راجع المادة مرة أخرى';color='var(--o)';}
+  else{emo='💪';grade='تحتاج مزيداً من التدريب';color='var(--r)';}
+  document.getElementById('m-emo').textContent=emo;
+  document.getElementById('m-grade').textContent=grade;
+  document.getElementById('m-grade').style.color=color;
+  ['s1','s2','s3'].forEach(s=>document.getElementById(s).classList.remove('lit'));
+  if(pct>=50)document.getElementById('s1').classList.add('lit');
+  if(pct>=70)document.getElementById('s2').classList.add('lit');
+  if(pct>=90)document.getElementById('s3').classList.add('lit');
+  document.getElementById('modal').classList.add('show');
+  const nb=document.getElementById('m-next');
+  if(nb){
+    const order=['l1'];const i=order.indexOf(CL);
+    nb.style.display=(i>=0&&i<order.length-1)?'inline-block':'none';
+  }
+  const prev=(LP[CL]&&LP[CL].pct)||0;
+  const best=Math.max(prev,pct);
+  LP[CL]={pct:best,done:best>=70};
+  apply_lessons();
+  upd_global();
+  save_progress();
+  if(pct>=90)confetti();
+}
+
+function close_modal(){document.getElementById('modal').classList.remove('show');}
+
+function next_lesson(){
+  const order=['l1'];const i=order.indexOf(CL);
+  close_modal();
+  if(i>=0&&i<order.length-1)open_lesson(order[i+1]);
+  else go_home();
+}
+
+function retry(){
+  close_modal();
+  TANS={};delete built['te'+CL];
+  document.getElementById('ph-test').innerHTML='';
+  build_quiz('ph-test',EE[CL],'te');
+  built['te'+CL]=1;
+}
+
+function restart_test(){
+  TANS={};
+  delete built['te'+CL];
+  document.getElementById('ph-test').innerHTML='';
+  build_quiz('ph-test',EE[CL],'te');
+  built['te'+CL]=1;
+}
+
+function upd_global(){
+  const done=document.querySelectorAll('.lcard.done').length;
+  document.getElementById('gpfill').style.width=(done/4*100)+'%';
+  document.getElementById('gptxt').textContent=`${done} من 4 دروس مكتملة`;
+}
+
+function confetti(){
+  const con=document.getElementById('conf');con.innerHTML='';
+  const cols=['#58CC02','#1CB0F6','#FFC800','#FF9600','#CE82FF','#FF4B4B'];
+  for(let i=0;i<80;i++){
+    const p=document.createElement('div');p.className='cp';
+    p.style.cssText=`left:${Math.random()*100}%;top:-10px;
+      background:${cols[Math.floor(Math.random()*cols.length)]};
+      border-radius:${Math.random()>.5?'50%':'2px'};
+      animation-delay:${Math.random()*1.5}s;
+      animation-duration:${1.5+Math.random()}s;`;
+    con.appendChild(p);
+  }
+  setTimeout(()=>{con.innerHTML='';},3000);
 }

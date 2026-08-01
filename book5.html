@@ -76,7 +76,7 @@
     <h1>مركز التدريب — Book 5 📚</h1>
     <p>تعلّم القواعد · تدرّب · اختبر نفسك</p>
     <div class="gpbar"><div class="gpfill" id="gpfill"></div></div>
-    <div class="gptxt" id="gptxt">0 من 5 دروس مكتملة</div>
+    <div class="gptxt" id="gptxt">0 من 4 دروس مكتملة</div>
     <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
   </div>
 
@@ -136,6 +136,27 @@
   <div class="phase" id="ph-drag"></div>
   <div class="phase" id="ph-test"></div>
 </div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="mcrd">
+    <span class="memo" id="m-emo">🏆</span>
+    <div class="mscore" id="m-score">0%</div>
+    <div class="mgrade" id="m-grade">ممتاز!</div>
+    <div class="msub" id="m-sub"></div>
+    <div class="stars">
+      <span class="star" id="s1">⭐</span>
+      <span class="star" id="s2">⭐</span>
+      <span class="star" id="s3">⭐</span>
+    </div>
+    <div class="mbtns">
+      <button class="mbtn sec" onclick="retry()">↺ أعد الاختبار</button>
+      <button class="mbtn primary" id="m-next" style="display:none" onclick="next_lesson()">الدرس التالي ←</button>
+      <button class="mbtn primary" onclick="close_modal()">متابعة →</button>
+    </div>
+  </div>
+</div>
+<div class="conf" id="conf"></div>
 
 <button class="top-fab" id="top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى" title="العودة للأعلى">⬆</button>
 

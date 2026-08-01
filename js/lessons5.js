@@ -150,9 +150,43 @@ function build_wip(elId,ico,title,sub){
 }
 
 // ═══════════════════════════════════════
-// GRAMMAR (قواعد) — يُضاف لاحقًا لكل درس
+// GRAMMAR (قواعد)
 // ═══════════════════════════════════════
-const GRAMMAR={l1:[]};
+const GRAMMAR={
+l1:[
+  {
+    title:'Which + one / ones', ar:'أيّ + one/ones (بدل تكرار الاسم)',
+    rule:'نسأل بـ Which عن الاختيار، ونرد بـ one (بدل اسم مفرد) أو ones (بدل اسم جمع) — بدون ما نكرر نفس الاسم.',
+    check:{q:'Which arm did he hurt? — He hurt the left _______.',o:['arm','ones','one','arms'],a:2,en:"one replaces the singular noun 'arm'",ar:'one تحل محل الاسم المفرد arm'},
+    formula:[{t:'Which',c:'k'},{t:'+ noun',c:'s'},{t:'...?',c:'p'},{t:'the + صفة',c:'n'},{t:'+',c:'p'},{t:'one / ones',c:'v'}],
+    compareHeaders:['السؤال (Question)','الجواب (Answer)'],
+    compare:[
+      {c1:'Which tie do you want?',c2:'I want that one.',ar:'one = بدل tie (مفرد)'},
+      {c1:'Which suits do you like?',c2:'I like the blue ones.',ar:'ones = بدل suits (جمع)'},
+    ],
+    examples:[
+      {s:'Which leg did you hurt? — I hurt my right one.',tr:'أي رجل آذيت؟ — آذيت رجلي اليمنى.',ar:'one = بدل leg',ok:true},
+      {s:'Which uniform did he wear? — He wore the white one.',tr:'أي زي لبس؟ — لبس الأبيض.',ar:'one = بدل uniform',ok:true},
+      {s:'Which do you like? — We like the black ones.',tr:'أيّ تحب؟ — نحب السود.',ar:'ones = جمع (أكثر من واحد)',ok:true},
+      {s:'I want that tie.',wrong:'tie',right:'one',tr:'لا تكرر نفس الاسم اللي قبله بالسؤال — استبدله بـ one.',ok:false},
+    ]
+  },
+  {
+    title:'Connector: or', ar:'أداة الربط or — الاختيار بين شيئين',
+    rule:'نستخدم or بين خيارين بالسؤال — والجواب يحدّد واحد منهم بس، مو الاثنين.',
+    check:{q:'Do you like tea _______ coffee?',o:['and','or','but','so'],a:1,en:'or = choice between two options',ar:'or = اختيار بين شيئين'},
+    formula:[{t:'Do you like',c:'s'},{t:'A',c:'v'},{t:'or',c:'k'},{t:'B',c:'v'},{t:'?',c:'p'}],
+    compareHeaders:['السؤال (Question)','الجواب (Answer)'],
+    compare:[
+      {c1:'Do you like the red one or the blue one?',c2:'I like the blue one.',ar:'or يعرض خيارين — الجواب يحدّد واحد'},
+    ],
+    examples:[
+      {s:'Do you like to play soccer or basketball? — I like to play soccer.',tr:'تحب تلعب كرة قدم ولا سلة؟ — أحب كرة القدم.',ar:'or بين خيارين، الجواب حدّد واحد',ok:true},
+      {s:'Do you like soccer and basketball?',wrong:'and',right:'or',tr:'لما تعرض خيارين يختار منهم واحد، استخدم or مو and.',ok:false},
+    ]
+  }
+]
+};
 
 // ═══════════════════════════════════════
 // LEARN (تعلّم) — مفردات + قواعد
@@ -270,8 +304,10 @@ function build_gcard_body(g,lk,i){
   }
 
   if(g.compare&&g.compare.length>0){
+    const h1=(g.compareHeaders&&g.compareHeaders[0])||'Present / Base';
+    const h2=(g.compareHeaders&&g.compareHeaders[1])||'Past';
     html+=`<table class="ctab"><thead><tr>
-      <th class="c1">Present / Base</th><th class="c2">Past</th><th class="c3">معنى</th>
+      <th class="c1">${h1}</th><th class="c2">${h2}</th><th class="c3">معنى</th>
     </tr></thead><tbody>`;
     g.compare.forEach(r=>{
       const safe1=r.c1.replace(/'/g,"\\'");

@@ -392,7 +392,11 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .vcard:hover{border-color:var(--b);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
 .vcard .ve{font-size:2rem;display:block;margin-bottom:6px}
 .vcard .vw{font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy)}
-.vcard .va{font-size:.75rem;color:var(--muted);margin-top:3px}
+.vcard .va{font-size:.75rem;color:var(--muted);margin-top:3px;display:none}
+.vcard .va-hint{font-size:.66rem;color:var(--muted);opacity:.55;margin-top:3px}
+.vcard.revealed .va{display:block;animation:qfade .25s ease}
+.vcard.revealed .va-hint{display:none}
+.vcard.revealed{border-color:var(--g);background:var(--ok-bg)}
 .vcard .vs{position:absolute;top:7px;left:7px;background:var(--b);border:none;border-radius:6px;
   width:24px;height:24px;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .vcard .vs:hover{background:var(--bd)}

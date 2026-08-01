@@ -150,13 +150,171 @@ function build_wip(elId,ico,title,sub){
 }
 
 // ═══════════════════════════════════════
-// LEARN (تعلّم) — مفردات
+// GRAMMAR (قواعد) — يُضاف لاحقًا لكل درس
+// ═══════════════════════════════════════
+const GRAMMAR={l1:[]};
+
+// ═══════════════════════════════════════
+// LEARN (تعلّم) — مفردات + قواعد
 // ═══════════════════════════════════════
 function build_learn(lk){
   const el=document.getElementById('ph-learn');
   el.innerHTML='';
-  el.innerHTML=`<div class="lsec on" id="ls-v"></div>`;
+
+  el.innerHTML=`
+  <div class="learn-tabs">
+    <button class="ltab on" id="lt-v" onclick="sw_learn_tab('v','${lk}')">
+      <span class="li">📚</span><span>مفردات</span>
+    </button>
+    <button class="ltab" id="lt-g" onclick="sw_learn_tab('g','${lk}')">
+      <span class="li">📖</span><span>قواعد</span>
+    </button>
+  </div>
+  <div class="lsec on" id="ls-v"></div>
+  <div class="lsec" id="ls-g"></div>`;
+
   build_vocab_sec(lk);
+  build_grammar_sec(lk);
+}
+
+function sw_learn_tab(t,lk){
+  document.querySelectorAll('.ltab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.lsec').forEach(x=>x.classList.remove('on'));
+  document.getElementById('lt-'+t).classList.add('on');
+  document.getElementById('ls-'+t).classList.add('on');
+}
+
+function build_grammar_sec(lk){
+  const el=document.getElementById('ls-g');
+  const rules=GRAMMAR[lk];
+  if(!rules||!rules.length){
+    el.innerHTML=`<div class="wip-card">
+      <div class="wip-ico">📖</div>
+      <div class="wip-t">قواعد الدرس قيد الإعداد</div>
+      <div class="wip-s">هذا الجزء بيصير جاهز قريبًا</div>
+    </div>`;
+    return;
+  }
+  let html='';
+  rules.forEach((g,i)=>{
+    html+=`<div class="gcard">
+      <div class="gcard-head" id="gh${lk}${i}" onclick="toggle_gcard('${lk}',${i})">
+        <div class="gcard-num">${i+1}</div>
+        <div style="flex:1">
+          <div class="gcard-title">${g.title}</div>
+          <div class="gcard-ar">${g.ar}</div>
+        </div>
+        <span class="gcard-arrow">▼</span>
+      </div>
+      <div class="gcard-body" id="gb${lk}${i}">
+        ${build_gcard_body(g,lk,i)}
+      </div>
+    </div>`;
+  });
+  el.innerHTML=html;
+}
+
+function toggle_gcard(lk,i){
+  const head=document.getElementById('gh'+lk+i);
+  const body=document.getElementById('gb'+lk+i);
+  head.classList.toggle('open');
+  body.classList.toggle('open');
+}
+
+function build_check_widget(check,lk,i){
+  return `<div class="chk-box" id="chk${lk}${i}">
+    <div class="chk-label">🧠 جرّب بنفسك</div>
+    <div class="chk-q">${check.q}</div>
+    <div class="chk-opts">
+      ${check.o.map((opt,oi)=>`<button class="chk-opt" onclick="check_grammar('${lk}',${i},${oi})">${opt}</button>`).join('')}
+    </div>
+    <div class="chk-fb" id="chkfb${lk}${i}"></div>
+  </div>`;
+}
+
+function check_grammar(lk,i,oi){
+  const g=GRAMMAR[lk][i];
+  const box=document.getElementById(`chk${lk}${i}`);
+  const btns=box.querySelectorAll('.chk-opt');
+  btns.forEach(b=>b.disabled=true);
+  const ok=oi===g.check.a;
+  btns[oi].classList.add(ok?'ok':'no');
+  if(!ok)btns[g.check.a].classList.add('ok');
+  const ruleId=lk+'-'+i;
+  RW[ruleId]=RW[ruleId]||{wrong:0,right:0};
+  if(ok)RW[ruleId].right++; else RW[ruleId].wrong++;
+  const fb=document.getElementById(`chkfb${lk}${i}`);
+  fb.className='chk-fb show '+(ok?'ok':'no');
+  fb.innerHTML=`${ok?'✅':'❌'} ${g.check.ar}`;
+  if(ok){XP+=2;document.getElementById('xp').textContent=XP;}
+  save_progress();
+  say(g.check.o[g.check.a]);
+}
+
+function build_gcard_body(g,lk,i){
+  let html='';
+  const checkHtml=g.check?build_check_widget(g.check,lk,i):'';
+
+  html+=`<div class="rule-box">
+    <div class="rb-label">القاعدة</div>
+    <div class="rb-text">💡 ${g.rule}</div>
+  </div>`;
+
+  if(g.formula&&g.formula.length>0){
+    html+='<div class="fstrip">';
+    g.formula.forEach(f=>{
+      if(f.c==='p')html+=`<span class="farr">${f.t}</span>`;
+      else html+=`<span class="fchip ${f.c}">${f.t}</span>`;
+    });
+    html+='</div>';
+  }
+
+  if(g.compare&&g.compare.length>0){
+    html+=`<table class="ctab"><thead><tr>
+      <th class="c1">Present / Base</th><th class="c2">Past</th><th class="c3">معنى</th>
+    </tr></thead><tbody>`;
+    g.compare.forEach(r=>{
+      const safe1=r.c1.replace(/'/g,"\\'");
+      const safe2=r.c2.replace(/'/g,"\\'");
+      html+=`<tr>
+        <td>${r.c1} <button class="ex-spk" style="background:var(--b);border:none;border-radius:5px;width:22px;height:22px;font-size:.65rem;cursor:pointer;float:left" onclick="say('${safe1}')">🔊</button></td>
+        <td>${r.c2} <button class="ex-spk" style="background:#7C3AED;border:none;border-radius:5px;width:22px;height:22px;font-size:.65rem;cursor:pointer;float:left" onclick="say('${safe2}')">🔊</button></td>
+        <td class="ar">${r.ar}</td>
+      </tr>`;
+    });
+    html+='</tbody></table>';
+  }
+
+  if(g.examples&&g.examples.length>0){
+    html+='<div style="margin-top:8px">';
+    g.examples.forEach(ex=>{
+      if(ex.ok){
+        const safe=ex.s.replace(/'/g,"\\'");
+        html+=`<div class="ex2 ok">
+          <div class="ex2-top">
+            <span class="ex2-tag ok">✅ مثال صحيح</span>
+            <button class="ex2-spk" onclick="say('${safe}')" aria-label="استمع">🔊</button>
+          </div>
+          <div class="ex2-en">${ex.s}</div>
+          ${ex.tr?`<div class="ex2-tr">${ex.tr}</div>`:''}
+          ${ex.ar?`<div class="ex2-note">${ex.ar}</div>`:''}
+        </div>`;
+      }else{
+        let fix=ex.s;
+        if(ex.wrong&&ex.right){
+          fix=ex.s.replace(ex.wrong,`<span class="ex2-bad">${ex.wrong}</span><span class="ex2-arr">←</span><span class="ex2-rt">${ex.right}</span>`);
+        }
+        html+=`<div class="ex2 no">
+          <div class="ex2-top"><span class="ex2-tag no">⚠️ الخطأ الشائع</span></div>
+          <div class="ex2-fix">${fix}</div>
+          ${(ex.tr||ex.ar)?`<div class="ex2-tr no">${ex.tr||ex.ar}</div>`:''}
+        </div>`;
+      }
+    });
+    html+='</div>';
+  }
+
+  return html+checkHtml;
 }
 
 function build_vocab_sec(lk){

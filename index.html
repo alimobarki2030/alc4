@@ -154,28 +154,12 @@ footer{background:var(--navy);padding:20px;text-align:center}
 footer p{color:rgba(255,255,255,.4);font-size:.75rem}
 footer span{color:#FFC800;font-weight:700}
 
-.install-banner{display:none;align-items:center;gap:10px;background:#58CC02;
-  color:#fff;padding:11px 16px;font-size:.82rem;font-weight:700}
-.install-banner .ib-icon{font-size:1.15rem;flex:none}
-.install-banner .ib-text{flex:1;line-height:1.4}
-.install-banner .ib-btn{flex:none;background:#fff;color:#2D8A00;border:none;border-radius:8px;
-  padding:7px 14px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.8rem;cursor:pointer}
-.install-banner .ib-close{flex:none;background:none;border:none;color:#fff;font-size:1rem;
-  cursor:pointer;opacity:.8;padding:4px}
-
 @media(max-width:420px){
   .books-grid,.features{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-
-<div class="install-banner" id="install-banner">
-  <span class="ib-icon">📲</span>
-  <span class="ib-text" id="ib-text">ثبّت التطبيق على جوالك لسهولة الوصول</span>
-  <button class="ib-btn" id="ib-btn" onclick="doInstall()">تثبيت</button>
-  <button class="ib-close" onclick="dismissInstallBanner()" aria-label="إغلاق">✕</button>
-</div>
 
 <div class="hero">
   <nav>
@@ -189,7 +173,7 @@ footer span{color:#FFC800;font-weight:700}
   <h1>خلّ اختبارك <span>أسهل.</span></h1>
   <p>مفردات، قواعد، وتمارين تفاعلية</p>
   <div class="stats">
-    <div><div class="stat-n">1</div><div class="stat-l">كتاب متاح</div></div>
+    <div><div class="stat-n">2</div><div class="stat-l">كتاب متاح</div></div>
     <div><div class="stat-n">+200</div><div class="stat-l">سؤال</div></div>
     <div><div class="stat-n">4</div><div class="stat-l">دروس</div></div>
   </div>
@@ -220,23 +204,25 @@ footer span{color:#FFC800;font-weight:700}
       </div>
     </a>
 
-    <div class="book-card b5 coming">
-      <div class="cs-badge">قريباً</div>
+    <a class="book-card b5 available" href="book5.html">
       <div class="bc-top">
         <div class="bc-accent">📗</div>
         <div class="bc-num">Book 5</div>
         <div class="bc-title">5</div>
-        <div class="bc-sub">قيد الإعداد</div>
+        <div class="bc-sub">جسم الإنسان · الصحة · التسوّق</div>
       </div>
-      <div class="bc-topics"><span class="chip">قريباً</span></div>
+      <div class="bc-topics">
+        <span class="chip">What's Wrong?</span>
+        <span class="chip">Body Parts</span>
+      </div>
       <div class="bc-footer">
         <div class="bc-progress">
-          <div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div>
-          <div class="prog-txt">غير متاح بعد</div>
+          <div class="prog-bar"><div class="prog-fill" id="prog-b5" style="width:0%"></div></div>
+          <div class="prog-txt" id="prog-b5-txt">لم تبدأ بعد</div>
         </div>
-        <div class="bc-cta">🔒</div>
+        <div class="bc-cta">ابدأ ←</div>
       </div>
-    </div>
+    </a>
 
     <div class="book-card b6 coming">
       <div class="cs-badge">قريباً</div>
@@ -313,57 +299,21 @@ try{
       pct===0?'لم تبدأ بعد':pct===100?`مكتمل ✓ · ${data.xp||0} XP`:`${done} من 4 دروس · ${data.xp||0} XP`;
   }
 }catch(e){}
+try{
+  const data5=JSON.parse(localStorage.getItem('alc_book5_progress'));
+  if(data5){
+    const done5=Object.values(data5.lessons||{}).filter(l=>l&&l.done).length;
+    const pct5=Math.round(done5/1*100);
+    document.getElementById('prog-b5').style.width=pct5+'%';
+    document.getElementById('prog-b5-txt').textContent=
+      pct5===0?'لم تبدأ بعد':`مكتمل ✓ · ${data5.xp||0} XP`;
+  }
+}catch(e){}
 </script>
 <script>
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
 }
-</script>
-<script>
-(function(){
-  const DISMISS_KEY='alc_install_dismissed';
-  const banner=document.getElementById('install-banner');
-  const text=document.getElementById('ib-text');
-  const btn=document.getElementById('ib-btn');
-  let deferredPrompt=null;
-
-  function isStandalone(){
-    return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
-  }
-  function isIOS(){
-    return /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
-  }
-  function showBanner(mode){
-    if(isStandalone())return;
-    try{if(localStorage.getItem(DISMISS_KEY))return;}catch(e){}
-    if(mode==='ios'){
-      text.textContent='لتثبيت التطبيق: اضغط زر المشاركة ↑ ثم "إضافة إلى الشاشة الرئيسية"';
-      btn.style.display='none';
-    }else{
-      text.textContent='ثبّت التطبيق على جوالك لسهولة الوصول';
-      btn.style.display='';
-    }
-    banner.style.display='flex';
-  }
-  window.addEventListener('beforeinstallprompt',(e)=>{
-    e.preventDefault();
-    deferredPrompt=e;
-    showBanner('android');
-  });
-  window.doInstall=function(){
-    if(!deferredPrompt)return;
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.finally(()=>{
-      deferredPrompt=null;
-      banner.style.display='none';
-    });
-  };
-  window.dismissInstallBanner=function(){
-    banner.style.display='none';
-    try{localStorage.setItem(DISMISS_KEY,'1');}catch(e){}
-  };
-  if(isIOS())showBanner('ios');
-})();
 </script>
 </body>
 </html>

@@ -137,7 +137,7 @@ function sw_tab(t){
   });
   const lk=CL;
   if(t==='practice'&&!built['pr'+lk]){build_vocab_drill(lk);built['pr'+lk]=1;}
-  if(t==='drag'&&!built['dd'+lk]){build_wip('ph-drag','🔤','رتّب الجملة قيد الإعداد','هذا الجزء بيصير جاهز قريبًا');built['dd'+lk]=1;}
+  if(t==='drag'&&!built['dd'+lk]){build_dd(lk);built['dd'+lk]=1;}
   if(t==='test'&&!built['te'+lk]){build_wip('ph-test','🏆','اختبار الدرس قيد الإعداد','هذا الجزء بيصير جاهز قريبًا');built['te'+lk]=1;}
 }
 
@@ -147,6 +147,142 @@ function build_wip(elId,ico,title,sub){
     <div class="wip-t">${title}</div>
     <div class="wip-s">${sub}</div>
   </div>`;
+}
+
+// ═══════════════════════════════════════
+// WORD ORDER (رتّب الجملة)
+// ═══════════════════════════════════════
+const WO={
+l1:[
+  {words:["I","hurt","my","fingernail"],ans:"I hurt my fingernail.",tr:"آذيت ظفر إصبعي.",ar:"hurt فعل شاذ: hurt-hurt-hurt"},
+  {words:["You","need","some","medicine"],ans:"You need some medicine.",tr:"تحتاج بعض الدواء.",ar:"medicine = الدواء"},
+  {words:["She","has","a","sore","muscle"],ans:"She has a sore muscle.",tr:"عندها عضلة مؤلمة.",ar:"sore = مؤلم/ملتهب"},
+  {words:["Which","leg","did","you","hurt","?"],ans:"Which leg did you hurt ?",tr:"أي رجل آذيت؟",ar:"Which + noun للسؤال عن الاختيار"},
+  {words:["He","wore","the","white","one"],ans:"He wore the white one.",tr:"لبس الأبيض.",ar:"one = بدل تكرار الاسم (uniform)"},
+  {words:["Do","you","like","soccer","or","basketball","?"],ans:"Do you like soccer or basketball ?",tr:"تحب كرة القدم ولا السلة؟",ar:"or بين خيارين — تختار واحد"},
+  {words:["His","shoes","are","large"],ans:"His shoes are large.",tr:"حذاؤه كبير.",ar:"large = كبير الحجم"},
+  {words:["First","was","Steve","Thomas"],ans:"First was Steve Thomas.",tr:"كان الأول ستيف توماس.",ar:"First تدل على الترتيب"},
+]
+};
+
+function build_dd(lk){
+  const el=document.getElementById('ph-drag');
+  el.innerHTML=`<div style="background:#EFF6FF;border:2px solid #BFDBFE;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.88rem;font-family:'Cairo',sans-serif;color:#1E40AF">
+    ✋ رتّب الكلمات لتكوين جملة صحيحة — اضغط الكلمات بالترتيب الصحيح
+  </div>`;
+
+  const items=WO[lk];
+  items.forEach((item,idx)=>{
+    const shuffled=[...item.words].sort(()=>Math.random()-.5);
+    const div=document.createElement('div');
+    div.className='wo-card';div.id=`wo${idx}`;
+    div.innerHTML=`
+      <div class="wo-prompt">🔤 رتّب الكلمات:</div>
+      <div class="wo-answer" id="woa${idx}"></div>
+      <div class="wo-bank" id="wob${idx}">
+        ${shuffled.map((w,wi)=>`<button class="wo-bank-chip" id="woc${idx}_${wi}" onclick="wo_pick(${idx},${wi},'${w.replace(/'/g,"\\'")}',${JSON.stringify(item.words.indexOf(w))})">${w}</button>`).join('')}
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <button class="wo-check" onclick="wo_check(${idx},'${item.ans.replace(/'/g,"\\'")}','${item.tr.replace(/'/g,"\\'")}','${item.ar.replace(/'/g,"\\'")}')">✓ تحقق</button>
+        <button class="wo-hint-btn" id="wohint${idx}" onclick="wo_hint(${idx},'${item.ans.replace(/'/g,"\\'")}')">💡 تلميح <span id="wohintc${idx}">٣</span></button>
+      </div>
+      <div id="wofb${idx}"></div>`;
+    el.appendChild(div);
+  });
+}
+
+const woState={};
+function wo_pick(idx,wi,word){
+  if(!woState[idx])woState[idx]=[];
+  const existing=woState[idx].findIndex(x=>x.wi===wi);
+  if(existing!==-1){
+    woState[idx].splice(existing,1);
+    document.getElementById(`woc${idx}_${wi}`).classList.remove('used');
+  } else {
+    woState[idx].push({wi,word});
+    document.getElementById(`woc${idx}_${wi}`).classList.add('used');
+  }
+  const ans=document.getElementById(`woa${idx}`);
+  if(woState[idx].length===0){
+    ans.innerHTML='';ans.classList.remove('has-words');
+  } else {
+    ans.classList.add('has-words');
+    ans.innerHTML=woState[idx].map((x,pos)=>
+      `<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`
+    ).join('');
+  }
+}
+function wo_remove(idx,wi){
+  wo_pick(idx,wi,'');
+  const ans=document.getElementById(`woa${idx}`);
+  if(!woState[idx]||woState[idx].length===0){ans.innerHTML='';ans.classList.remove('has-words');return;}
+  ans.innerHTML=woState[idx].map(x=>`<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`).join('');
+}
+function wo_check(idx,correct,tr,ar){
+  if(!woState[idx]||woState[idx].length===0){
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-wrong-reveal"><div class="wo-wrong-ar">⚠️ رتّب الكلمات أولاً</div></div>`;
+    return;
+  }
+  const student=woState[idx].map(x=>x.word).join(' ');
+  const norm=s=>s.replace(/\s*[.?!]+\s*$/,'').replace(/\s+/g,' ').trim().toLowerCase();
+  const isOk=norm(student)===norm(correct);
+  const card=document.getElementById(`wo${idx}`);
+  const ans=document.getElementById(`woa${idx}`);
+  if(isOk){
+    card.className='wo-card wo-ok';
+    ans.className='wo-answer wo-correct';
+    document.querySelectorAll(`[id^="woc${idx}_"]`).forEach(b=>b.disabled=true);
+    XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+    say(correct.replace(/[?!.]/g,''));
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-reveal">
+      <div class="wo-tr">✅ ${tr}</div>
+      ${ar?`<div class="wo-note">💡 ${ar}</div>`:''}
+    </div>`;
+  } else {
+    ans.className='wo-answer wo-wrong';
+    setTimeout(()=>{ans.className='wo-answer has-words';},400);
+    document.getElementById(`wofb${idx}`).innerHTML=`<div class="wo-wrong-reveal">
+      <div class="wo-wrong-ar">❌ الترتيب غير صحيح — حاول مرة أخرى</div>
+      <div class="wo-wrong-ans" style="margin-top:6px;font-size:.78rem;color:#999">💡 الجملة لها ${correct.split(' ').length} كلمة</div>
+    </div>`;
+  }
+}
+
+const woHints={};
+function wo_hint(idx,correct){
+  if(!woHints[idx])woHints[idx]=0;
+  if(woHints[idx]>=3)return;
+
+  const words=correct.replace(/\s*[.?!]+\s*$/,'').split(' ');
+  const nextPos=woHints[idx];
+  const wordToReveal=words[nextPos];
+
+  const chips=document.querySelectorAll(`[id^="woc${idx}_"]`);
+  let foundChip=null;
+  chips.forEach(chip=>{
+    if(!foundChip&&!chip.classList.contains('used')&&chip.textContent.trim()===wordToReveal){
+      foundChip=chip;
+    }
+  });
+
+  if(foundChip){
+    foundChip.style.background='var(--o)';
+    foundChip.style.color='#fff';
+    foundChip.style.borderColor='var(--o)';
+    setTimeout(()=>{ foundChip.click(); },400);
+  }
+
+  woHints[idx]++;
+  const remaining=3-woHints[idx];
+  const hintBtn=document.getElementById(`wohint${idx}`);
+  const countEl=document.getElementById(`wohintc${idx}`);
+  const nums=['٣','٢','١'];
+  if(remaining===0){
+    hintBtn.disabled=true;
+    hintBtn.innerHTML='💡 انتهت التلميحات';
+  } else {
+    if(countEl)countEl.textContent=nums[woHints[idx]]||'١';
+  }
 }
 
 // ═══════════════════════════════════════

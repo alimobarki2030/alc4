@@ -61,6 +61,59 @@ l1:[
   {e:'sore',a:'مؤلم / ملتهب',em:'🤒'},
   {e:'then',a:'ثمّ / حينها',em:'⏭️'},
   {e:'which',a:'أيّ',em:'❓'},
+],
+l2:[
+  {e:'barbershop',a:'محل الحلاقة',em:'💈'},
+  {e:'bathroom',a:'الحمام',em:'🛁'},
+  {e:'birthday',a:'عيد الميلاد',em:'🎂'},
+  {e:'brush',a:'فرشاة (شعر)',em:'🪮'},
+  {e:'butter',a:'الزبدة',em:'🧈'},
+  {e:'comb',a:'المشط',em:'🪮'},
+  {e:'drugstore',a:'الصيدلية',em:'💊'},
+  {e:'face',a:'الوجه',em:'🙂'},
+  {e:'grocery store',a:'محل البقالة',em:'🛒'},
+  {e:'hair',a:'الشعر',em:'💇'},
+  {e:'haircut',a:'قصة الشعر',em:'✂️'},
+  {e:'mirror',a:'المرآة',em:'🪞'},
+  {e:'pepper',a:'الفلفل',em:'🌶️'},
+  {e:'pocket',a:'الجيب',em:'👖'},
+  {e:'razor',a:'شفرة الحلاقة',em:'🪒'},
+  {e:'salt',a:'الملح',em:'🧂'},
+  {e:'shampoo',a:'الشامبو',em:'🧴'},
+  {e:'sink',a:'المغسلة',em:'🚰'},
+  {e:'soap',a:'الصابون',em:'🧼'},
+  {e:'soup',a:'الحساء / الشوربة',em:'🍲'},
+  {e:'subject',a:'مادة دراسية / موضوع',em:'📘'},
+  {e:'sugar',a:'السكر',em:'🧁'},
+  {e:'thing',a:'شيء',em:'📦'},
+  {e:'toilet',a:'المرحاض',em:'🚽'},
+  {e:'toilet paper',a:'ورق التواليت',em:'🧻'},
+  {e:'tooth',a:'السن',em:'🦷'},
+  {e:'teeth',a:'الأسنان',em:'🦷'},
+  {e:'toothbrush',a:'فرشاة الأسنان',em:'🪥'},
+  {e:'toothpaste',a:'معجون الأسنان',em:'🧴'},
+  {e:'topic',a:'موضوع',em:'📝'},
+  {e:'towel',a:'المنشفة',em:'🧺'},
+  {e:'washcloth',a:'قطعة قماش للاستحمام',em:'🧽'},
+  {e:'brush (verb)',a:'يفرش',past:'brushed',pa:'فرش',em:'🪥'},
+  {e:'can',a:'من الممكن / يمكن',em:'🎲'},
+  {e:'change',a:'يُغيّر',past:'changed',pa:'غيّر',em:'🔄'},
+  {e:'comb (verb)',a:'يُمشّط',past:'combed',pa:'مشّط',em:'🪮'},
+  {e:'dry',a:'يُجفّف',past:'dried',pa:'جفّف',em:'🌬️'},
+  {e:'get',a:'يحصل على',past:'got',pa:'حصل على',em:'🤲'},
+  {e:'need',a:'يحتاج (إلى)',past:'needed',pa:'احتاج',em:'❗'},
+  {e:'rinse',a:'يشطف',past:'rinsed',pa:'شطف',em:'🚿'},
+  {e:'shampoo (verb)',a:'يغسل بالشامبو',past:'shampooed',pa:'غسل بالشامبو',em:'🧴'},
+  {e:'wash',a:'يغسل',past:'washed',pa:'غسل',em:'🧼'},
+  {e:'a few',a:'قليل من (معدود)',em:'🔢'},
+  {e:'a little',a:'قليل من (غير معدود)',em:'🤏'},
+  {e:'a lot of',a:'الكثير من',em:'🔼'},
+  {e:'any',a:'أيّ (بالسؤال أو النفي)',em:'❓'},
+  {e:'clean',a:'نظيف',em:'✨'},
+  {e:'dirty',a:'وسخ',em:'🟤'},
+  {e:'lots of',a:'الكثير من',em:'💠'},
+  {e:'only',a:'فقط',em:'1️⃣'},
+  {e:'some',a:'بعض (بالإثبات)',em:'🔹'},
 ]
 };
 
@@ -103,7 +156,8 @@ function track_screen(id){
 }
 
 const LESSON_META={
-  l1:{ico:'🤕',title:'Lesson 1 — What\u2019s Wrong?',sub:'جسم الإنسان والصحة'}
+  l1:{ico:'🤕',title:'Lesson 1 — What\u2019s Wrong?',sub:'جسم الإنسان والصحة'},
+  l2:{ico:'🧴',title:'Lesson 2 — Where Can I Get Shampoo?',sub:'أدوات الحمام والتسوّق'}
 };
 
 function open_lesson(lk){
@@ -163,6 +217,16 @@ l1:[
   {words:["Do","you","like","soccer","or","basketball","?"],ans:"Do you like soccer or basketball ?",tr:"تحب كرة القدم ولا السلة؟",ar:"or بين خيارين — تختار واحد"},
   {words:["His","shoes","are","large"],ans:"His shoes are large.",tr:"حذاؤه كبير.",ar:"large = كبير الحجم"},
   {words:["First","was","Steve","Thomas"],ans:"First was Steve Thomas.",tr:"كان الأول ستيف توماس.",ar:"First تدل على الترتيب"},
+],
+l2:[
+  {words:["There","is","a","sink","in","the","bathroom"],ans:"There is a sink in the bathroom.",tr:"يوجد حوض في الحمام.",ar:"sink مفرد → There is"},
+  {words:["Do","you","have","any","soap","?"],ans:"Do you have any soap ?",tr:"عندك صابون؟",ar:"سؤال → any"},
+  {words:["I","have","a","little","sugar"],ans:"I have a little sugar.",tr:"عندي شوي سكر.",ar:"sugar غير معدود → a little"},
+  {words:["I","want","to","buy","a","few","toothbrushes"],ans:"I want to buy a few toothbrushes.",tr:"أبي أشتري كم فرشاة أسنان.",ar:"toothbrushes معدود → a few"},
+  {words:["Can","I","get","shampoo","at","the","drugstore","?"],ans:"Can I get shampoo at the drugstore ?",tr:"أقدر أجيب شامبو من الصيدلية؟",ar:"can = سؤال عن خيار متاح"},
+  {words:["Daniel","washes","his","face","with","soap"],ans:"Daniel washes his face with soap.",tr:"دانيال يغسل وجهه بالصابون.",ar:"washes = يغسل (مضارع، هو)"},
+  {words:["He","combs","his","hair"],ans:"He combs his hair.",tr:"يمشط شعره.",ar:"combs = يُمشّط"},
+  {words:["You","need","a","haircut"],ans:"You need a haircut.",tr:"تحتاج قصة شعر.",ar:"need = يحتاج"},
 ]
 };
 
@@ -302,7 +366,7 @@ l1:[
     examples:[
       {s:'Which leg did you hurt? — I hurt my right one.',tr:'أي رجل آذيت؟ — آذيت رجلي اليمنى.',ar:'one = بدل leg',ok:true},
       {s:'Which uniform did he wear? — He wore the white one.',tr:'أي زي لبس؟ — لبس الأبيض.',ar:'one = بدل uniform',ok:true},
-      {s:'Which do you like? — We like the black ones.',tr:'أيّ تحب؟ — نحب السود.',ar:'ones = جمع (أكثر من واحد)',ok:true},
+      {s:'Which shoes do you like? — We like the black ones.',tr:'أيّ حذاء تحب؟ — نحب الأسود.',ar:'ones = بدل shoes (جمع، أكثر من واحد)',ok:true},
       {s:'I want that tie.',wrong:'tie',right:'one',tr:'لا تكرر نفس الاسم اللي قبله بالسؤال — استبدله بـ one.',ok:false},
     ]
   },
@@ -316,6 +380,63 @@ l1:[
     examples:[
       {s:'Do you like to play soccer or basketball? — I like to play soccer.',tr:'تحب تلعب كرة قدم ولا سلة؟ — أحب كرة القدم.',ar:'or بين خيارين، الجواب حدّد واحد',ok:true},
       {s:'Do you like soccer and basketball?',wrong:'and',right:'or',tr:'لما تعرض خيارين يختار منهم واحد، استخدم or مو and.',ok:false},
+    ]
+  }
+],
+l2:[
+  {
+    title:'There is / There are', ar:'وجود شيء — يوجد / توجد',
+    rule:'نستخدم There is مع الاسم المفرد، و There are مع الاسم الجمع، للتعبير عن وجود شيء في مكان.',
+    check:{q:'_______ a mirror on the wall.',o:['There is','There are','Is there','Are there'],a:0,en:'mirror is singular → There is',ar:'mirror مفرد → There is'},
+    compare:[
+      {c1:'Is there a toilet in the bathroom?',c2:'Yes, there is.',ar:'toilet مفرد → is'},
+      {c1:'Are there towels in the bathroom?',c2:'Yes, there are.',ar:'towels جمع → are'},
+    ],
+    examples:[
+      {s:'There is a sink in the bathroom.',tr:'يوجد حوض في الحمام.',ar:'sink مفرد → There is',ok:true},
+      {s:'There are some towels on the wall.',tr:'توجد بعض المناشف على الحائط.',ar:'towels جمع → There are',ok:true},
+      {s:'There is towels in the bathroom.',wrong:'is',right:'are',tr:'towels جمع، فلازم نستخدم are مو is.',ok:false},
+    ]
+  },
+  {
+    title:'Some / Any', ar:'some بالإثبات، any بالسؤال والنفي',
+    rule:'نستخدم some في الجمل المثبتة، و any في الأسئلة والنفي.',
+    check:{q:"I don't have _______ shampoo.",o:['some','any','a','the'],a:1,en:'negative sentence → any',ar:'جملة منفية → any'},
+    compare:[
+      {c1:'Do you have any soap?',c2:'Yes, I have some.',ar:'سؤال → any، جواب مثبت → some'},
+      {c1:'Do you have any milk?',c2:"No, I don't have any.",ar:'سؤال ونفي → any بالاثنين'},
+    ],
+    examples:[
+      {s:'I have some sugar at home.',tr:'عندي بعض السكر بالبيت.',ar:'جملة مثبتة → some',ok:true},
+      {s:"We don't have any butter.",tr:'ما عندنا زبدة.',ar:'جملة منفية → any',ok:true},
+      {s:'I have any sugar.',wrong:'any',right:'some',tr:'الجملة مثبتة (مو نفي ولا سؤال) — لازم some.',ok:false},
+    ]
+  },
+  {
+    title:'a few / a little / a lot of / lots of', ar:'الكمية — معدود وغير معدود',
+    rule:'مع الأسماء المعدودة (تُجمع: towels, eggs) استخدم a few. مع غير المعدودة (ما تُجمع: sugar, water) استخدم a little. أما a lot of / lots of فتصلح مع الاثنين.',
+    check:{q:'I need _______ eggs for the cake.',o:['a little','a few','much','any'],a:1,en:'eggs is a count noun (plural) → a few',ar:'eggs اسم معدود (يُجمع) → a few'},
+    compare:[
+      {c1:'towels — اسم معدود',c2:'a few towels',ar:'اسم معدود → a few'},
+      {c1:'sugar — اسم غير معدود',c2:'a little sugar',ar:'اسم غير معدود → a little'},
+    ],
+    examples:[
+      {s:'I want to buy a few toothbrushes.',tr:'أبي أشتري كم فرشاة أسنان.',ar:'toothbrushes معدود → a few',ok:true},
+      {s:'We have a little butter.',tr:'عندنا شوي زبدة.',ar:'butter غير معدود → a little',ok:true},
+      {s:'I need a little eggs.',wrong:'a little',right:'a few',tr:'eggs معدود (يُجمع) — لازم a few مو a little.',ok:false},
+    ]
+  },
+  {
+    title:'Can (Possibility)', ar:'can للتعبير عن إمكانية أو خيار',
+    rule:'نستخدم can هنا مو للقدرة، بل للتعبير عن خيار متاح — إذا فيه أكثر من طريقة أو مكان ممكن.',
+    check:{q:'_______ I get shampoo at the drugstore?',o:['Do','Am','Can','Will'],a:2,en:'can = asking about a possible option',ar:'can = سؤال عن خيار متاح'},
+    compare:[
+      {c1:'Can I drive to Dallas?',c2:'Yes, you can. You can also fly.',ar:'can = فيه أكثر من خيار ممكن'},
+    ],
+    examples:[
+      {s:'You can get shampoo at the drugstore.',tr:'تقدر تجيب شامبو من الصيدلية.',ar:'can = خيار متاح',ok:true},
+      {s:"You can't drive to Honolulu. You can only fly.",tr:'ما تقدر توصل هونولولو بالسيارة، بس بالطيارة.',ar:"can't = غير ممكن، can only = الخيار الوحيد",ok:true},
+      {s:'Can I to drive to Dallas?',wrong:'to drive',right:'drive',tr:'بعد can نستخدم الفعل مجرد بدون to.',ok:false},
     ]
   }
 ]
@@ -484,14 +605,15 @@ function build_vocab_sec(lk){
   const el=document.getElementById('ls-v');
   const words=VOCAB[lk];
   let html=`<div style="font-size:.75rem;color:var(--muted);font-family:'Cairo',sans-serif;margin-bottom:12px;text-align:center">
-    اضغط زر 🔊 لسماع النطق</div>
+    اضغط على البطاقة لرؤية المعنى · اضغط 🔊 لسماع النطق</div>
   <div class="vcards">`;
   words.forEach(v=>{
     const safe=v.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
-    html+=`<div class="vcard">
-      <button class="vs" onclick="say('${safe}')">🔊</button>
+    html+=`<div class="vcard" onclick="this.classList.toggle('revealed')">
+      <button class="vs" onclick="event.stopPropagation();say('${safe}')">🔊</button>
       <span class="ve">${v.em}</span>
       <div class="vw">${v.e}</div>
+      <div class="va-hint">👆 اضغط لرؤية المعنى</div>
       <div class="va">${v.a}</div>
     </div>`;
   });
@@ -667,6 +789,20 @@ l1:[
   {q:'Anne: Which car do you like? Karen: I like the blue _______.',o:['one','of','or'],a:0,en:"one replaces the noun 'car'",ar:'one = بدل تكرار car'},
   {q:'The paragraph is _______ the muscles of the body.',o:['about','of','one'],a:0,en:'about = on the topic of',ar:'about = بخصوص/عن'},
   {q:'That book has 1,345 pages. It is a _______ book.',o:['short','long','last'],a:1,en:'Many pages = a long book',ar:'صفحات كثيرة = كتاب طويل'},
+],
+l2:[
+  {q:'Is there a desk in the room? — Yes, _______.',o:['they is','there is','they are','it is'],a:1,en:'The answer matches the question form: Is there → there is',ar:'الجواب يطابق صيغة السؤال: Is there → there is'},
+  {q:"Do you have some coffee? — No, _______.",o:['I didn’t','I don’t have some','I have any',"I don't have any"],a:3,en:'any is used in negative statements',ar:'any تُستخدم في النفي'},
+  {q:"_______ you walk home? — No, I can't.",o:['Can','May','Must','Did'],a:0,en:"The short answer “I can't” matches the question “Can”",ar:'الجواب I can\'t يطابق السؤال Can'},
+  {q:'There are _______ combs.',o:['a little','any','a few','a lot'],a:2,en:'combs is a count noun (plural) → a few',ar:'combs اسم معدود جمع → a few'},
+  {q:"You need a haircut. — I know, I'm going to the _______.",o:['commissary','barber shop','grocery store','drug store'],a:1,en:'You get a haircut at the barber shop',ar:'تحصل على قصة شعر في محل الحلاقة'},
+  {q:'Monica needs _______ sugar.',o:['a few','any','a little','a lots of'],a:2,en:'sugar is a noncount noun → a little',ar:'sugar اسم غير معدود → a little'},
+  {q:"How old is Alicia? — It's her _______ birthday.",o:['sixteen','sixteenth','sixteen years','sixteen years old'],a:1,en:'Birthday takes the ordinal number: sixteenth',ar:'birthday تاخذ العدد الترتيبي: sixteenth'},
+  {q:'_______ any dry towels? — Yes, there are.',o:['Was','Is there','Do you','Are there'],a:3,en:'towels is plural → Are there',ar:'towels جمع → Are there'},
+  {q:'Jean needed _______ a haircut.',o:['have','got','to do','to get'],a:3,en:'needed + to get (infinitive)',ar:'needed + to get (مصدر)'},
+  {q:"What is Sue doing? — She's _______ her hair.",o:['drying','rinse','shampoo','is combing'],a:0,en:"She's + verb-ing",ar:"She's + فعل+ing"},
+  {q:'John washed his face with a _______.',o:['shampoo','washcloth','water','rinse'],a:1,en:'You wash your face with a washcloth',ar:'تغسل وجهك بقطعة قماش (washcloth)'},
+  {q:"Mitch doesn't have _______ money.",o:['no','many','any','lots'],a:2,en:"doesn't have + any (negative)",ar:"doesn't have + any (نفي)"},
 ]
 };
 

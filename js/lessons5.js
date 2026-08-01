@@ -302,7 +302,7 @@ l1:[
     examples:[
       {s:'Which leg did you hurt? — I hurt my right one.',tr:'أي رجل آذيت؟ — آذيت رجلي اليمنى.',ar:'one = بدل leg',ok:true},
       {s:'Which uniform did he wear? — He wore the white one.',tr:'أي زي لبس؟ — لبس الأبيض.',ar:'one = بدل uniform',ok:true},
-      {s:'Which do you like? — We like the black ones.',tr:'أيّ تحب؟ — نحب السود.',ar:'ones = جمع (أكثر من واحد)',ok:true},
+      {s:'Which shoes do you like? — We like the black ones.',tr:'أيّ حذاء تحب؟ — نحب الأسود.',ar:'ones = بدل shoes (جمع، أكثر من واحد)',ok:true},
       {s:'I want that tie.',wrong:'tie',right:'one',tr:'لا تكرر نفس الاسم اللي قبله بالسؤال — استبدله بـ one.',ok:false},
     ]
   },

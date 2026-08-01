@@ -173,7 +173,7 @@ footer span{color:#FFC800;font-weight:700}
   <h1>خلّ اختبارك <span>أسهل.</span></h1>
   <p>مفردات، قواعد، وتمارين تفاعلية</p>
   <div class="stats">
-    <div><div class="stat-n">1</div><div class="stat-l">كتاب متاح</div></div>
+    <div><div class="stat-n">2</div><div class="stat-l">كتاب متاح</div></div>
     <div><div class="stat-n">+200</div><div class="stat-l">سؤال</div></div>
     <div><div class="stat-n">4</div><div class="stat-l">دروس</div></div>
   </div>
@@ -204,23 +204,25 @@ footer span{color:#FFC800;font-weight:700}
       </div>
     </a>
 
-    <div class="book-card b5 coming">
-      <div class="cs-badge">قريباً</div>
+    <a class="book-card b5 available" href="book5.html">
       <div class="bc-top">
         <div class="bc-accent">📗</div>
         <div class="bc-num">Book 5</div>
         <div class="bc-title">5</div>
-        <div class="bc-sub">قيد الإعداد</div>
+        <div class="bc-sub">جسم الإنسان · الصحة · التسوّق</div>
       </div>
-      <div class="bc-topics"><span class="chip">قريباً</span></div>
+      <div class="bc-topics">
+        <span class="chip">What's Wrong?</span>
+        <span class="chip">Body Parts</span>
+      </div>
       <div class="bc-footer">
         <div class="bc-progress">
-          <div class="prog-bar"><div class="prog-fill" style="width:0%"></div></div>
-          <div class="prog-txt">غير متاح بعد</div>
+          <div class="prog-bar"><div class="prog-fill" id="prog-b5" style="width:0%"></div></div>
+          <div class="prog-txt" id="prog-b5-txt">لم تبدأ بعد</div>
         </div>
-        <div class="bc-cta">🔒</div>
+        <div class="bc-cta">ابدأ ←</div>
       </div>
-    </div>
+    </a>
 
     <div class="book-card b6 coming">
       <div class="cs-badge">قريباً</div>
@@ -295,6 +297,16 @@ try{
     document.getElementById('prog-b4').style.width=pct+'%';
     document.getElementById('prog-b4-txt').textContent=
       pct===0?'لم تبدأ بعد':pct===100?`مكتمل ✓ · ${data.xp||0} XP`:`${done} من 4 دروس · ${data.xp||0} XP`;
+  }
+}catch(e){}
+try{
+  const data5=JSON.parse(localStorage.getItem('alc_book5_progress'));
+  if(data5){
+    const done5=Object.values(data5.lessons||{}).filter(l=>l&&l.done).length;
+    const pct5=Math.round(done5/1*100);
+    document.getElementById('prog-b5').style.width=pct5+'%';
+    document.getElementById('prog-b5-txt').textContent=
+      pct5===0?'لم تبدأ بعد':`مكتمل ✓ · ${data5.xp||0} XP`;
   }
 }catch(e){}
 </script>

@@ -3,7 +3,8 @@
 // (لإضافة مقطع: أضف سطراً {id:'YOUTUBE_ID', t:'العنوان', s:'وصف قصير'})
 // ═══════════════════════════════════════
 const YT_VIDEOS=[
-  {id:'Q8l4Pu8HjIw',t:'Quiz A',s:'استماع وقراءة مع الحل'}
+  {id:'Q8l4Pu8HjIw',t:'Quiz A',s:'استماع وقراءة مع الحل'},
+  {id:'dATRyfVvPMo',t:'Quiz B',s:'استماع وقراءة مع الحل'}
 ];
 function open_yt(){
   show_screen('ytscreen');

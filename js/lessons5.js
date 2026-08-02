@@ -200,10 +200,10 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen'];
+const SCREENS=['home','lscreen','ytscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
 
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس'};
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع'};
 let _curScreen=null,_screenStart=0;
 function track_screen(id){
   if(typeof gtag!=='function')return;

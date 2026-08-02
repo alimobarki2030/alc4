@@ -111,6 +111,15 @@
     </div>
   </div>
 
+  <div class="lbl" style="margin-top:20px">الاستماع</div>
+  <div class="yt-card" onclick="open_yt()">
+    <div class="ac-ic">🎧</div>
+    <div class="pc-txt">
+      <h3>استماع Book 5</h3>
+      <p>اختبارات استماع وقراءة بالفيديو — Quiz A</p>
+    </div>
+  </div>
+
   <div class="lbl" style="margin-top:20px">مراجع</div>
   <div class="grid2">
     <a class="lcard" href="book5-pronouns.html" style="text-decoration:none;display:block">
@@ -119,6 +128,21 @@
       <div class="lcard-name">Pronouns</div>
       <div class="lcard-sub">الضمائر — الفاعل، المفعول، الملكية، الانعكاسي</div>
     </a>
+  </div>
+</div>
+
+<!-- LISTENING (YouTube) SCREEN -->
+<div id="ytscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#1F2937,#0B1220)">
+    <h2>استماع Book 5 🎧</h2>
+    <p>اختبارات استماع وقراءة مع الحل</p>
+  </div>
+  <div class="yt-tabs" id="yt-tabs"></div>
+  <div class="yt-embed">
+    <iframe id="yt-iframe" src="" title="ALC Book 5 Listening"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+      allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
   </div>
 </div>
 
@@ -173,6 +197,7 @@
 <button class="top-fab" id="top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى" title="العودة للأعلى">⬆</button>
 
 <script src="js/lessons5.js"></script>
+<script src="js/youtube5.js"></script>
 <script src="js/progress5.js"></script>
 
 <!-- FOOTER -->

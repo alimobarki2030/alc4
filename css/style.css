@@ -392,14 +392,23 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .vcard:hover{border-color:var(--b);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
 .vcard .ve{font-size:2rem;display:block;margin-bottom:6px}
 .vcard .vw{font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy)}
-.vcard .va{font-size:.75rem;color:var(--muted);margin-top:3px;display:none}
-.vcard .va-hint{font-size:.66rem;color:var(--muted);opacity:.55;margin-top:3px}
-.vcard.revealed .va{display:block;animation:qfade .25s ease}
-.vcard.revealed .va-hint{display:none}
-.vcard.revealed{border-color:var(--g);background:var(--ok-bg)}
+.vcard .va{font-size:.75rem;color:var(--muted);margin-top:3px}
 .vcard .vs{position:absolute;top:7px;left:7px;background:var(--b);border:none;border-radius:6px;
-  width:24px;height:24px;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  width:24px;height:24px;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5}
 .vcard .vs:hover{background:var(--bd)}
+
+/* Flip variant (Book 5): tap the card to flip and reveal the Arabic meaning */
+.vcard.flip{background:none;border:none;padding:0;perspective:800px}
+.vcard.flip:hover{transform:none;box-shadow:none}
+.vcard.flip .vflip-inner{position:relative;width:100%;min-height:100px;transition:transform .5s;
+  transform-style:preserve-3d}
+.vcard.flip.flipped .vflip-inner{transform:rotateY(180deg)}
+.vcard.flip .vflip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border:2px solid var(--bdr);border-radius:14px;background:var(--card);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:14px 10px;text-align:center;transition:border-color .2s}
+.vcard.flip:hover .vflip-face{border-color:var(--b)}
+.vcard.flip .vflip-face.back{transform:rotateY(180deg);border-color:var(--g);background:var(--ok-bg)}
+.vcard.flip .vflip-face .va{margin-top:0}
 .past-sec{background:#F5F3FF;border:2px solid #DDD6FE;border-radius:14px;padding:14px;margin-top:16px}
 .past-h{font-family:'Cairo',sans-serif;font-weight:900;color:#5B21B6;font-size:1rem;text-align:center;margin-bottom:3px}
 .past-note{font-family:'Cairo',sans-serif;font-size:.72rem;color:var(--muted);text-align:center;margin-bottom:11px}

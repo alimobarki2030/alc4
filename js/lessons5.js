@@ -605,16 +605,21 @@ function build_vocab_sec(lk){
   const el=document.getElementById('ls-v');
   const words=VOCAB[lk];
   let html=`<div style="font-size:.75rem;color:var(--muted);font-family:'Cairo',sans-serif;margin-bottom:12px;text-align:center">
-    اضغط على البطاقة لرؤية المعنى · اضغط 🔊 لسماع النطق</div>
+    اضغط 🔊 لسماع النطق</div>
   <div class="vcards">`;
   words.forEach(v=>{
     const safe=v.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
-    html+=`<div class="vcard" onclick="this.classList.toggle('revealed')">
+    html+=`<div class="vcard flip" onclick="this.classList.toggle('flipped')">
       <button class="vs" onclick="event.stopPropagation();say('${safe}')">🔊</button>
-      <span class="ve">${v.em}</span>
-      <div class="vw">${v.e}</div>
-      <div class="va-hint">👆 اضغط لرؤية المعنى</div>
-      <div class="va">${v.a}</div>
+      <div class="vflip-inner">
+        <div class="vflip-face front">
+          <span class="ve">${v.em}</span>
+          <div class="vw">${v.e}</div>
+        </div>
+        <div class="vflip-face back">
+          <div class="va">${v.a}</div>
+        </div>
+      </div>
     </div>`;
   });
   html+='</div>';

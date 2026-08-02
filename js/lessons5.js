@@ -114,6 +114,69 @@ l2:[
   {e:'lots of',a:'الكثير من',em:'💠'},
   {e:'only',a:'فقط',em:'1️⃣'},
   {e:'some',a:'بعض (بالإثبات)',em:'🔹'},
+],
+l3:[
+  {e:'airline',a:'شركة طيران',em:'✈️'},
+  {e:'airport',a:'المطار',em:'🛫'},
+  {e:'arrival',a:'الوصول',em:'🛬'},
+  {e:'button',a:'زر (الملابس)',em:'🔘'},
+  {e:'cuff',a:'كم القميص (الأسورة)',em:'👔'},
+  {e:'customer',a:'الزبون',em:'🧑‍💼'},
+  {e:'departure',a:'المغادرة',em:'🛫'},
+  {e:'doorknob',a:'مقبض الباب',em:'🚪'},
+  {e:'flight',a:'رحلة طيران',em:'✈️'},
+  {e:'gate',a:'بوابة (المطار)',em:'🚪'},
+  {e:'graduation',a:'التخرّج',em:'🎓'},
+  {e:'handle',a:'المقبض',em:'🖐️'},
+  {e:'instructions',a:'تعليمات',em:'📋'},
+  {e:'key',a:'المفتاح',em:'🔑'},
+  {e:'knob',a:'المقبض (الدائري)',em:'🔘'},
+  {e:'lock',a:'القفل',em:'🔒'},
+  {e:'phone',a:'الهاتف',em:'☎️'},
+  {e:'reservation',a:'الحجز',em:'📅'},
+  {e:'school',a:'المدرسة',em:'🏫'},
+  {e:'sharpener',a:'مبراة',em:'✏️'},
+  {e:'sleeve',a:'كم الملابس',em:'👕'},
+  {e:'suitcase',a:'حقيبة السفر',em:'🧳'},
+  {e:'telephone',a:'الهاتف',em:'☎️'},
+  {e:'ticket',a:'التذكرة',em:'🎫'},
+  {e:'travel agency',a:'وكالة سفريات',em:'🏢'},
+  {e:'travel agent',a:'وكيل سفريات',em:'🧑‍💼'},
+  {e:'trip',a:'رحلة',em:'🧳'},
+  {e:'twin',a:'توأم',em:'👯'},
+  {e:'zipper',a:'السحّاب',em:'🤐'},
+  {e:'arrive',a:'يصل',em:'🛬'},
+  {e:'button (verb)',a:'يزرّر',em:'🔘'},
+  {e:'call',a:'يتصل / ينادي',em:'📞'},
+  {e:'come back',a:'يرجع',past:'came back',pa:'رجع',em:'🔙'},
+  {e:'depart (from)',a:'يغادر (من)',em:'🛫'},
+  {e:'go back',a:'يرجع (لمكان)',past:'went back',pa:'رجع (لمكان)',em:'↩️'},
+  {e:'graduate',a:'يتخرّج',em:'🎓'},
+  {e:'lock (verb)',a:'يقفل',em:'🔒'},
+  {e:'meet',a:'يقابل / يلتقي',past:'met',pa:'قابل / التقى',em:'🤝'},
+  {e:'pack',a:'يحزم',em:'🧳'},
+  {e:'pick up',a:'يستلم / يوصّل شخص',em:'🚗'},
+  {e:'pull',a:'يسحب',em:'⬅️'},
+  {e:'push',a:'يدفع',em:'➡️'},
+  {e:'return',a:'يرجع / يعيد',em:'🔄'},
+  {e:'sharpen',a:'يبري',em:'✏️'},
+  {e:'stop',a:'يوقف / يتوقف',em:'🛑'},
+  {e:'turn',a:'يلف / يدير',em:'🔄'},
+  {e:'turn off',a:'يطفئ',em:'🔴'},
+  {e:'turn on',a:'يشغّل',em:'🟢'},
+  {e:'will',a:'سوف / راح (فعل مساعد للمستقبل)',em:'🔮'},
+  {e:"won't",a:'لن (نفي المستقبل — will + not)',em:'🚫'},
+  {e:'first',a:'أولاً',em:'1️⃣'},
+  {e:'from',a:'من',em:'📍'},
+  {e:'in (an hour)',a:'خلال (ساعة)',em:'⏳'},
+  {e:'next to',a:'بجانب',em:'➡️'},
+  {e:'off',a:'مطفأ',em:'🔴'},
+  {e:'on',a:'مشغّل',em:'🟢'},
+  {e:'one-way',a:'اتجاه واحد (تذكرة)',em:'➡️'},
+  {e:'push-button',a:'بأزرار (هاتف بأزرار)',em:'☎️'},
+  {e:'round-trip',a:'ذهاب وعودة (تذكرة)',em:'🔁'},
+  {e:'together',a:'مع بعض',em:'🤝'},
+  {e:'tonight',a:'الليلة',em:'🌙'},
 ]
 };
 
@@ -157,7 +220,8 @@ function track_screen(id){
 
 const LESSON_META={
   l1:{ico:'🤕',title:'Lesson 1 — What\u2019s Wrong?',sub:'جسم الإنسان والصحة'},
-  l2:{ico:'🧴',title:'Lesson 2 — Where Can I Get Shampoo?',sub:'أدوات الحمام والتسوّق'}
+  l2:{ico:'🧴',title:'Lesson 2 — Where Can I Get Shampoo?',sub:'أدوات الحمام والتسوّق'},
+  l3:{ico:'🧳',title:'Lesson 3 — I’ll Take a Trip',sub:'السفر والحجوزات'}
 };
 
 function open_lesson(lk){
@@ -227,6 +291,16 @@ l2:[
   {words:["Daniel","washes","his","face","with","soap"],ans:"Daniel washes his face with soap.",tr:"دانيال يغسل وجهه بالصابون.",ar:"washes = يغسل (مضارع، هو)"},
   {words:["He","combs","his","hair"],ans:"He combs his hair.",tr:"يمشط شعره.",ar:"combs = يُمشّط"},
   {words:["You","need","a","haircut"],ans:"You need a haircut.",tr:"تحتاج قصة شعر.",ar:"need = يحتاج"},
+],
+l3:[
+  {words:["He","will","be","at","the","library","tonight"],ans:"He will be at the library tonight.",tr:"بيكون بالمكتبة الليلة.",ar:"will قبل الفعل = المستقبل"},
+  {words:["Will","he","be","at","the","library","tomorrow","?"],ans:"Will he be at the library tomorrow ?",tr:"بيكون بالمكتبة باكر؟",ar:"Will قبل الفاعل = سؤال نعم/لا"},
+  {words:["When","will","he","go","to","class","?"],ans:"When will he go to class ?",tr:"متى بيروح للصف؟",ar:"أداة سؤال + will + فاعل"},
+  {words:["The","taxi","picked","her","up","and","stopped","at","the","airport"],ans:"The taxi picked her up and stopped at the airport.",tr:"التاكسي وصّلها وتوقف عند المطار.",ar:"جملة من نص الكتاب"},
+  {words:["Diana","will","make","a","reservation","to","Chicago"],ans:"Diana will make a reservation to Chicago.",tr:"ديانا بتسوي حجز لشيكاغو.",ar:"will + make a reservation"},
+  {words:["I","will","meet","Jim","tomorrow","morning"],ans:"I will meet Jim tomorrow morning.",tr:"بقابل جيم باكر الصبح.",ar:"tomorrow + morning"},
+  {words:["The","plane","will","arrive","in","an","hour"],ans:"The plane will arrive in an hour.",tr:"الطيارة بتوصل خلال ساعة.",ar:"in + مدة زمنية"},
+  {words:["Push","the","small","button","on","your","right"],ans:"Push the small button on your right.",tr:"ادفع الزر الصغير يمينك.",ar:"جملة تعليمات من نص الكتاب"},
 ]
 };
 
@@ -468,6 +542,68 @@ l2:[
       {s:'You can get shampoo at the drugstore.',tr:'تقدر تجيب شامبو من الصيدلية.',ar:'can = خيار متاح',ok:true},
       {s:"You can't drive to Honolulu. You can only fly.",tr:'ما تقدر توصل هونولولو بالسيارة، بس بالطيارة.',ar:"can't = غير ممكن، can only = الخيار الوحيد",ok:true},
       {s:'Can I to drive to Dallas?',wrong:'to drive',right:'drive',tr:'بعد can نستخدم الفعل مجرد بدون to.',ok:false},
+    ]
+  }
+],
+l3:[
+  {
+    title:'Talking about the Future — will / won’t', ar:'المستقبل بـ will، والنفي بـ won’t',
+    rule:'نستخدم will + الفعل الأصلي للتعبير عن المستقبل — will ثابت مع كل الضمائر (ما تتغيّر شكلها). نختصر will إلى ’ll، ونختصر will not إلى won’t.',
+    check:{q:"No, he _______. He'll be in class.",o:["won't","will","isn't","doesn't"],a:0,en:"won't = will not",ar:'won’t = will + not (اختصار النفي)'},
+    compare:[
+      {c1:'I will call.',c2:"I'll call.",ar:'will = ’ll (اختصار)'},
+      {c1:'She will not go.',c2:"She won't go.",ar:'will not = won’t'},
+    ],
+    examples:[
+      {s:'I will call you tonight.',tr:'بكلمك الليلة.',ar:'will + الفعل الأصلي = المستقبل',ok:true},
+      {s:"I'll call you tonight.",tr:'بكلمك الليلة (اختصار).',ar:'I’ll = I will',ok:true},
+      {s:"She won't be at school tomorrow.",tr:'ما بتكون بالمدرسة باكر.',ar:'won’t = will not',ok:true},
+      {s:'She wills not go.',wrong:'wills',right:'will',tr:'will ثابت بكل الضمائر — ما تضيف s حتى مع he/she/it.',ok:false},
+    ]
+  },
+  {
+    title:'Yes/No Questions with will', ar:'أسئلة نعم/لا بـ will',
+    rule:'نسوي سؤال نعم/لا بـ will بتقديم will قبل الفاعل: will + الفاعل + الفعل؟ الجواب القصير: Yes, ضمير + will. / No, ضمير + won’t.',
+    check:{q:'_______ Janet see the doctor tomorrow?',o:['Will','Do','Is','Does'],a:0,en:'Yes/no future question starts with Will',ar:'سؤال المستقبل نعم/لا يبدأ بـ Will'},
+    compare:[
+      {c1:'He will be at the library.',c2:'Will he be at the library?',ar:'قدّم will قبل الفاعل he لتكوين السؤال'},
+      {c1:'Will he go to class?',c2:"Yes, he will. / No, he won't.",ar:'الجواب القصير: will أو won’t بس'},
+    ],
+    examples:[
+      {s:'Will you make a reservation?',tr:'بتسوي حجز؟',ar:'Will + فاعل + فعل = سؤال',ok:true},
+      {s:'Will they arrive tonight?',tr:'بيوصلون الليلة؟',ar:'Will قبل الفاعل they',ok:true},
+      {s:'Yes, they will.',tr:'إي، بيوصلون.',ar:'جواب قصير: will بس، بدون تكرار الفعل',ok:true},
+      {s:'Do you will go?',wrong:'Do you will',right:'Will you',tr:'ما نستخدم Do مع will — will نفسها تتقدّم على الفاعل.',ok:false},
+    ]
+  },
+  {
+    title:'Information Questions with will', ar:'أسئلة معلومات بـ will (Who/What/Where...)',
+    rule:'نحط أداة السؤال (Who, What, Where, When, Why, How) قبل will مباشرة: أداة السؤال + will + الفاعل + الفعل؟',
+    check:{q:'_______ will you make a reservation?',o:['When','Is','Do','Will'],a:0,en:'Wh-word + will + subject + verb',ar:'أداة سؤال + will + فاعل + فعل'},
+    compare:[
+      {c1:'Dorothy will arrive tomorrow.',c2:'When will Dorothy arrive?',ar:'أداة السؤال + will + الفاعل + الفعل'},
+      {c1:'Who will arrive tomorrow?',c2:'Dorothy will arrive tomorrow.',ar:'Who يسأل عن الفاعل نفسه'},
+    ],
+    examples:[
+      {s:'Where will you fly?',tr:'وين بتطير (تسافر)؟',ar:'Where + will + فاعل + فعل',ok:true},
+      {s:'Who will meet Wanda for lunch?',tr:'مين بيقابل واندا على الغدا؟',ar:'Who = يسأل عن الفاعل',ok:true},
+      {s:'When she will arrive?',wrong:'she will',right:'will she',tr:'لازم will قبل الفاعل بالسؤال، مو بعده.',ok:false},
+    ]
+  },
+  {
+    title:'Future Time Expressions', ar:'تعبيرات الوقت المستقبلية — next / tomorrow / in',
+    rule:'نستخدم next قبل (year, month, week, weekend, Saturday...)، وtomorrow قبل (morning, afternoon, evening, night)، وin قبل مدة زمنية (in a week, in two days) للتعبير عن وقت مستقبلي.',
+    check:{q:'I will study the lesson tomorrow _______.',o:['evening','next','in','week'],a:0,en:'tomorrow + part of day (evening)',ar:'tomorrow + جزء من اليوم'},
+    compare:[
+      {c1:'next',c2:'month, week, year, weekend, Saturday',ar:'next + وحدة زمنية قادمة'},
+      {c1:'tomorrow',c2:'morning, afternoon, evening, night',ar:'tomorrow + جزء من اليوم'},
+      {c1:'in',c2:'two minutes, an hour, four days, a week',ar:'in + مدة = بعد مرور هالمدة'},
+    ],
+    examples:[
+      {s:'We will meet Jim tomorrow morning.',tr:'بنقابل جيم باكر الصبح.',ar:'tomorrow + morning',ok:true},
+      {s:'Ben will graduate from school next month.',tr:'بن بيتخرّج من المدرسة الشهر الجاي.',ar:'next + month',ok:true},
+      {s:'The plane will arrive in an hour.',tr:'الطيارة بتوصل خلال ساعة.',ar:'in + مدة زمنية',ok:true},
+      {s:'I will see you in tomorrow.',wrong:'in tomorrow',right:'tomorrow',tr:'tomorrow ما تحتاج in قبلها.',ok:false},
     ]
   }
 ]
@@ -839,6 +975,20 @@ l2:[
   {q:"What is Sue doing? — She's _______ her hair.",o:['drying','rinse','shampoo','is combing'],a:0,en:"She's + verb-ing",ar:"She's + فعل+ing"},
   {q:'John washed his face with a _______.',o:['shampoo','washcloth','water','rinse'],a:1,en:'You wash your face with a washcloth',ar:'تغسل وجهك بقطعة قماش (washcloth)'},
   {q:"Mitch doesn't have _______ money.",o:['no','many','any','lots'],a:2,en:"doesn't have + any (negative)",ar:"doesn't have + any (نفي)"},
+],
+l3:[
+  {q:"_______ your coat and put on your gloves. It's very cold outside.",o:['Lock','Button','Turn on','Sharpen'],a:1,en:'Button (verb) = fasten with buttons',ar:'Button (فعل) = يزرّر'},
+  {q:'My classes end on Tuesday. My _______ will be on Friday.',o:['reservation','gate','graduation','ticket'],a:2,en:'graduation = the school finishing ceremony',ar:'graduation = حفل التخرّج'},
+  {q:"Jerry is 30 years old. He's _______ to school next year. He wants to learn about computers.",o:['graduating','going back','meeting','turning'],a:1,en:'going back = returning to school after time away',ar:'going back = يرجع لمكان كان فيه قبل'},
+  {q:'A: Is the television on in your room? B: No, I _______.',o:['turned it on','turned it off','changed it','pulled it'],a:1,en:'No matches the opposite of on: turned it off',ar:'الجواب No يطابق: طفّاها (turned it off)'},
+  {q:"It's too cold. I need a shirt with long _______.",o:['sleeves','legs','buttons','zippers'],a:0,en:'sleeves = the parts of a shirt covering the arms',ar:'sleeves = أكمام القميص'},
+  {q:'A: How much were the _______ for the game? B: They were $7 each.',o:['buttons','flights','tickets','customers'],a:2,en:'tickets = what you buy to attend a game',ar:'tickets = تذاكر للحضور'},
+  {q:'A: The music _______. B: Yes, Tom turned off the radio.',o:['returned','came back','moved','stopped'],a:3,en:'stopped matches turned off the radio',ar:'stopped = توقّفت (طفّى الراديو)'},
+  {q:'A: Can I turn off the TV? B: Yes, _______ the small button on your right.',o:['lock','push','call','pack'],a:1,en:'push = press a button',ar:'push = اضغط/ادفع الزر'},
+  {q:'A: When is your sister _______ from her trip? B: Next month.',o:['coming back','stopping','going back','packing'],a:0,en:'coming back = returning from a trip',ar:'coming back = ترجع من رحلة'},
+  {q:'A: Which knob do I _______ to change the music on the radio? B: The one on the right.',o:['lock','sharpen','turn','stop'],a:2,en:'turn a knob = rotate it to adjust',ar:'turn = تلف/تدير المقبض'},
+  {q:'A: Which _______ are you flying? B: I’m flying Northwest.',o:['airplane','airport','airline','arrival'],a:2,en:'airline = the company you fly with',ar:'airline = شركة الطيران'},
+  {q:"I'll come back _______ one week.",o:['off','from','on','in'],a:3,en:'in + duration = after that time passes',ar:'in + مدة = بعد مرور هالمدة'},
 ]
 };
 

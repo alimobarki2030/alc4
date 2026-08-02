@@ -381,6 +381,37 @@ l1:[
       {s:'Do you like to play soccer or basketball? — I like to play soccer.',tr:'تحب تلعب كرة قدم ولا سلة؟ — أحب كرة القدم.',ar:'or بين خيارين، الجواب حدّد واحد',ok:true},
       {s:'Do you like soccer and basketball?',wrong:'and',right:'or',tr:'لما تعرض خيارين يختار منهم واحد، استخدم or مو and.',ok:false},
     ]
+  },
+  {
+    title:'Ordinal Numbers 1st – 12th', ar:'الأعداد الترتيبية من الأول للثاني عشر',
+    rule:'نستخدم الأعداد الترتيبية للترتيب مو للعدّ: first, second, third... إلى twelfth. أول ثلاثة أعداد لها صيغة خاصة (first, second, third)، والباقي بس نزيد th بآخر العدد.',
+    check:{q:"How old is Alicia? — It's her _______ birthday.",o:['sixteen','sixteenth','sixteen years','sixteen years old'],a:1,en:'Birthday takes the ordinal number: sixteenth',ar:'birthday تاخذ العدد الترتيبي: sixteenth'},
+    compare:[
+      {c1:'one, two, three',c2:'first, second, third',ar:'صيغة خاصة، مو بس +th'},
+      {c1:'four, five, six',c2:'fourth, fifth, sixth',ar:'من هنا وطالع بس نزيد th بالآخر'},
+      {c1:'eleven, twelve',c2:'eleventh, twelfth',ar:'eleventh وtwelfth بنفس القاعدة (+th)'},
+    ],
+    examples:[
+      {s:'Steve was first, and Thomas was second.',tr:'ستيف كان الأول، وتوماس كان الثاني.',ar:'first/second = الترتيب مو الرقم العادي',ok:true},
+      {s:"It's her twelfth birthday.",tr:'هذا عيد ميلادها الثاني عشر.',ar:'twelfth = العدد الترتيبي لـ 12',ok:true},
+      {s:"It's her twelve birthday.",wrong:'twelve',right:'twelfth',tr:'عيد الميلاد ياخذ العدد الترتيبي (twelfth) مو العدد العادي (twelve).',ok:false},
+    ]
+  },
+  {
+    title:'Useful Phrases', ar:'عبارات مفيدة عن الصحة',
+    rule:'عبارات نستخدمها لما نسأل عن صحة شخص أو نطلب منه ياخذ علاجه — احفظها كوحدة وحدة زي ما هي.',
+    check:{q:"Lewis: _______ with Peter? Joan: He's sick.",o:["What's wrong","What hurts","Which is the matter"],a:0,en:"What's wrong? is the standard question for asking about someone's health",ar:"What's wrong? = وش المشكلة؟ (سؤال عن الصحة)"},
+    compare:[
+      {c1:"What's wrong?",c2:'وش المشكلة؟',ar:'نسأل فيها عن الصحة أو المشكلة'},
+      {c1:"What's the matter?",c2:'وش فيك؟',ar:"نفس معنى What's wrong، بس صيغة ثانية"},
+      {c1:'take the medicine',c2:'ياخذ / يشرب الدواء',ar:'العبارة اللي نقولها للمريض عشان ياخذ دواه'},
+    ],
+    examples:[
+      {s:"What's wrong? — My throat is sore.",tr:'وش المشكلة؟ — حلقي ملتهب.',ar:"نسأل عن العرض بـ What's wrong؟",ok:true},
+      {s:"What's the matter? — My head hurts.",tr:'وش فيك؟ — راسي يألمني.',ar:'صيغة ثانية لنفس السؤال',ok:true},
+      {s:'You need to take the medicine.',tr:'لازم تاخذ الدواء.',ar:'take the medicine = ياخذ الدواء',ok:true},
+      {s:'What wrong with you?',wrong:'What wrong',right:"What's wrong",tr:"ناقص is — الصح What's wrong؟ مو What wrong؟",ok:false},
+    ]
   }
 ],
 l2:[
@@ -641,7 +672,7 @@ function build_vocab_sec(lk){
     });
     html+='</div>';
   }
-  html+=`<div class="vocab-note">🔢 <b>ordinal numbers 1st – 12th</b> (first – twelfth) — الأعداد الترتيبية من الأول إلى الثاني عشر، بتنجي بالتفصيل بقسم القواعد قريبًا.</div>`;
+  html+=`<div class="vocab-note">🔢 <b>ordinal numbers 1st – 12th</b> (first – twelfth) — تقدر تتعلمها بالتفصيل من تبويب <b>قواعد</b> 📖.</div>`;
   el.innerHTML=html;
 }
 

@@ -949,46 +949,46 @@ function drill_reveal_type(lk){
 // ═══════════════════════════════════════
 const EE={
 l1:[
-  {q:'The _______ month of the year is December.',o:['large','long','last'],a:2,en:'December is the last month of the year',ar:'last = الأخير — ديسمبر آخر شهر بالسنة'},
-  {q:'My brother has a big family. They have a _______ car.',o:['large','long','last'],a:0,en:'A big family needs a large car',ar:'large = كبير الحجم، يناسب عائلة كبيرة'},
-  {q:"Kim didn't hurt her right leg. She hurt her _______ leg.",o:['short','one','left'],a:2,en:'Not right → left (the opposite side)',ar:'عكس right = left'},
-  {q:'Your tongue is inside your _______.',o:['neck','mouth','ear'],a:1,en:'The tongue is inside the mouth',ar:'اللسان داخل الفم'},
-  {q:'You wear your shoes on your _______.',o:['toes','foot','feet'],a:2,en:'Shoes (plural) go on feet (plural)',ar:'shoes جمع → feet جمع'},
-  {q:'My throat was _______ yesterday. I took medicine. My throat is okay today.',o:['sore','large','next'],a:0,en:'A sore throat needs medicine',ar:'sore = مؤلم/ملتهب، لذلك أخذ دواء'},
-  {q:"Lewis: _______ with Peter? Joan: He's sick.",o:["What's wrong","What hurts","Which is the matter"],a:0,en:"What's wrong? is the standard question for asking about someone's health",ar:"What's wrong? = وش المشكلة؟ (سؤال عن الصحة)"},
-  {q:'Did Jack hurt his arm _______ his leg?',o:['one','of','or'],a:2,en:'or connects two choices in a question',ar:'or يربط بين خيارين بالسؤال'},
-  {q:'_______ arm did he hurt?',o:['When','Which','Where'],a:1,en:'Which asks about a choice',ar:'Which للسؤال عن الاختيار'},
-  {q:'Anne: Which car do you like? Karen: I like the blue _______.',o:['one','of','or'],a:0,en:"one replaces the noun 'car'",ar:'one = بدل تكرار car'},
-  {q:'The paragraph is _______ the muscles of the body.',o:['about','of','one'],a:0,en:'about = on the topic of',ar:'about = بخصوص/عن'},
-  {q:'That book has 1,345 pages. It is a _______ book.',o:['short','long','last'],a:1,en:'Many pages = a long book',ar:'صفحات كثيرة = كتاب طويل'},
+  {q:'The _______ month of the year is December.',o:['large','long','last'],a:2,en:'December is the last month of the year',ar:'last = الأخير — ديسمبر آخر شهر بالسنة',tr:'آخر شهر بالسنة هو ديسمبر.'},
+  {q:'My brother has a big family. They have a _______ car.',o:['large','long','last'],a:0,en:'A big family needs a large car',ar:'large = كبير الحجم، يناسب عائلة كبيرة',tr:'أخوي عنده عائلة كبيرة. عندهم سيارة كبيرة.'},
+  {q:"Kim didn't hurt her right leg. She hurt her _______ leg.",o:['short','one','left'],a:2,en:'Not right → left (the opposite side)',ar:'عكس right = left',tr:'كيم ما آذت رجلها اليمنى. آذت رجلها اليسار.'},
+  {q:'Your tongue is inside your _______.',o:['neck','mouth','ear'],a:1,en:'The tongue is inside the mouth',ar:'اللسان داخل الفم',tr:'لسانك جوا فمك.'},
+  {q:'You wear your shoes on your _______.',o:['toes','foot','feet'],a:2,en:'Shoes (plural) go on feet (plural)',ar:'shoes جمع → feet جمع',tr:'تلبس حذاءك على قدميك.'},
+  {q:'My throat was _______ yesterday. I took medicine. My throat is okay today.',o:['sore','large','next'],a:0,en:'A sore throat needs medicine',ar:'sore = مؤلم/ملتهب، لذلك أخذ دواء',tr:'حلقي كان ملتهب أمس. أخذت دواء. حلقي تمام اليوم.'},
+  {q:"Lewis: _______ with Peter? Joan: He's sick.",o:["What's wrong","What hurts","Which is the matter"],a:0,en:"What's wrong? is the standard question for asking about someone's health",ar:"What's wrong? = وش المشكلة؟ (سؤال عن الصحة)",tr:'وش المشكلة مع بيتر؟ — هو مريض.'},
+  {q:'Did Jack hurt his arm _______ his leg?',o:['one','of','or'],a:2,en:'or connects two choices in a question',ar:'or يربط بين خيارين بالسؤال',tr:'جاك آذى ذراعه ولا رجله؟'},
+  {q:'_______ arm did he hurt?',o:['When','Which','Where'],a:1,en:'Which asks about a choice',ar:'Which للسؤال عن الاختيار',tr:'أي ذراع آذى؟'},
+  {q:'Anne: Which car do you like? Karen: I like the blue _______.',o:['one','of','or'],a:0,en:"one replaces the noun 'car'",ar:'one = بدل تكرار car',tr:'آن: أي سيارة تحبين؟ كارين: أحب الزرقاء.'},
+  {q:'The paragraph is _______ the muscles of the body.',o:['about','of','one'],a:0,en:'about = on the topic of',ar:'about = بخصوص/عن',tr:'الفقرة عن عضلات الجسم.'},
+  {q:'That book has 1,345 pages. It is a _______ book.',o:['short','long','last'],a:1,en:'Many pages = a long book',ar:'صفحات كثيرة = كتاب طويل',tr:'هذا الكتاب فيه ١٣٤٥ صفحة. هو كتاب طويل.'},
 ],
 l2:[
-  {q:'Is there a desk in the room? — Yes, _______.',o:['they is','there is','they are','it is'],a:1,en:'The answer matches the question form: Is there → there is',ar:'الجواب يطابق صيغة السؤال: Is there → there is'},
-  {q:"Do you have some coffee? — No, _______.",o:['I didn’t','I don’t have some','I have any',"I don't have any"],a:3,en:'any is used in negative statements',ar:'any تُستخدم في النفي'},
-  {q:"_______ you walk home? — No, I can't.",o:['Can','May','Must','Did'],a:0,en:"The short answer “I can't” matches the question “Can”",ar:'الجواب I can\'t يطابق السؤال Can'},
-  {q:'There are _______ combs.',o:['a little','any','a few','a lot'],a:2,en:'combs is a count noun (plural) → a few',ar:'combs اسم معدود جمع → a few'},
-  {q:"You need a haircut. — I know, I'm going to the _______.",o:['commissary','barber shop','grocery store','drug store'],a:1,en:'You get a haircut at the barber shop',ar:'تحصل على قصة شعر في محل الحلاقة'},
-  {q:'Monica needs _______ sugar.',o:['a few','any','a little','a lots of'],a:2,en:'sugar is a noncount noun → a little',ar:'sugar اسم غير معدود → a little'},
-  {q:"How old is Alicia? — It's her _______ birthday.",o:['sixteen','sixteenth','sixteen years','sixteen years old'],a:1,en:'Birthday takes the ordinal number: sixteenth',ar:'birthday تاخذ العدد الترتيبي: sixteenth'},
-  {q:'_______ any dry towels? — Yes, there are.',o:['Was','Is there','Do you','Are there'],a:3,en:'towels is plural → Are there',ar:'towels جمع → Are there'},
-  {q:'Jean needed _______ a haircut.',o:['have','got','to do','to get'],a:3,en:'needed + to get (infinitive)',ar:'needed + to get (مصدر)'},
-  {q:"What is Sue doing? — She's _______ her hair.",o:['drying','rinse','shampoo','is combing'],a:0,en:"She's + verb-ing",ar:"She's + فعل+ing"},
-  {q:'John washed his face with a _______.',o:['shampoo','washcloth','water','rinse'],a:1,en:'You wash your face with a washcloth',ar:'تغسل وجهك بقطعة قماش (washcloth)'},
-  {q:"Mitch doesn't have _______ money.",o:['no','many','any','lots'],a:2,en:"doesn't have + any (negative)",ar:"doesn't have + any (نفي)"},
+  {q:'Is there a desk in the room? — Yes, _______.',o:['they is','there is','they are','it is'],a:1,en:'The answer matches the question form: Is there → there is',ar:'الجواب يطابق صيغة السؤال: Is there → there is',tr:'فيه مكتب بالغرفة؟ — إي، فيه.'},
+  {q:"Do you have some coffee? — No, _______.",o:['I didn’t','I don’t have some','I have any',"I don't have any"],a:3,en:'any is used in negative statements',ar:'any تُستخدم في النفي',tr:'عندك قهوة؟ — لا، ما عندي أي.'},
+  {q:"_______ you walk home? — No, I can't.",o:['Can','May','Must','Did'],a:0,en:"The short answer “I can't” matches the question “Can”",ar:'الجواب I can\'t يطابق السؤال Can',tr:'تقدر تمشي للبيت؟ — لا، ما أقدر.'},
+  {q:'There are _______ combs.',o:['a little','any','a few','a lot'],a:2,en:'combs is a count noun (plural) → a few',ar:'combs اسم معدود جمع → a few',tr:'فيه شوي أمشاط.'},
+  {q:"You need a haircut. — I know, I'm going to the _______.",o:['commissary','barber shop','grocery store','drug store'],a:1,en:'You get a haircut at the barber shop',ar:'تحصل على قصة شعر في محل الحلاقة',tr:'تحتاج قصة شعر. — أعرف، رايح لمحل الحلاقة.'},
+  {q:'Monica needs _______ sugar.',o:['a few','any','a little','a lots of'],a:2,en:'sugar is a noncount noun → a little',ar:'sugar اسم غير معدود → a little',tr:'مونيكا تحتاج شوي سكر.'},
+  {q:"How old is Alicia? — It's her _______ birthday.",o:['sixteen','sixteenth','sixteen years','sixteen years old'],a:1,en:'Birthday takes the ordinal number: sixteenth',ar:'birthday تاخذ العدد الترتيبي: sixteenth',tr:'كم عمر أليشا؟ — عيد ميلادها السادس عشر.'},
+  {q:'_______ any dry towels? — Yes, there are.',o:['Was','Is there','Do you','Are there'],a:3,en:'towels is plural → Are there',ar:'towels جمع → Are there',tr:'فيه مناشف ناشفة؟ — إي، فيه.'},
+  {q:'Jean needed _______ a haircut.',o:['have','got','to do','to get'],a:3,en:'needed + to get (infinitive)',ar:'needed + to get (مصدر)',tr:'جين احتاجت تسوي قصة شعر.'},
+  {q:"What is Sue doing? — She's _______ her hair.",o:['drying','rinse','shampoo','is combing'],a:0,en:"She's + verb-ing",ar:"She's + فعل+ing",tr:'وش تسوي سو؟ — تجفف شعرها.'},
+  {q:'John washed his face with a _______.',o:['shampoo','washcloth','water','rinse'],a:1,en:'You wash your face with a washcloth',ar:'تغسل وجهك بقطعة قماش (washcloth)',tr:'جون غسل وجهه بقطعة قماش.'},
+  {q:"Mitch doesn't have _______ money.",o:['no','many','any','lots'],a:2,en:"doesn't have + any (negative)",ar:"doesn't have + any (نفي)",tr:'ميتش ما عنده أي فلوس.'},
 ],
 l3:[
-  {q:"_______ your coat and put on your gloves. It's very cold outside.",o:['Lock','Button','Turn on','Sharpen'],a:1,en:'Button (verb) = fasten with buttons',ar:'Button (فعل) = يزرّر'},
-  {q:'My classes end on Tuesday. My _______ will be on Friday.',o:['reservation','gate','graduation','ticket'],a:2,en:'graduation = the school finishing ceremony',ar:'graduation = حفل التخرّج'},
-  {q:"Jerry is 30 years old. He's _______ to school next year. He wants to learn about computers.",o:['graduating','going back','meeting','turning'],a:1,en:'going back = returning to school after time away',ar:'going back = يرجع لمكان كان فيه قبل'},
-  {q:'A: Is the television on in your room? B: No, I _______.',o:['turned it on','turned it off','changed it','pulled it'],a:1,en:'No matches the opposite of on: turned it off',ar:'الجواب No يطابق: طفّاها (turned it off)'},
-  {q:"It's too cold. I need a shirt with long _______.",o:['sleeves','legs','buttons','zippers'],a:0,en:'sleeves = the parts of a shirt covering the arms',ar:'sleeves = أكمام القميص'},
-  {q:'A: How much were the _______ for the game? B: They were $7 each.',o:['buttons','flights','tickets','customers'],a:2,en:'tickets = what you buy to attend a game',ar:'tickets = تذاكر للحضور'},
-  {q:'A: The music _______. B: Yes, Tom turned off the radio.',o:['returned','came back','moved','stopped'],a:3,en:'stopped matches turned off the radio',ar:'stopped = توقّفت (طفّى الراديو)'},
-  {q:'A: Can I turn off the TV? B: Yes, _______ the small button on your right.',o:['lock','push','call','pack'],a:1,en:'push = press a button',ar:'push = اضغط/ادفع الزر'},
-  {q:'A: When is your sister _______ from her trip? B: Next month.',o:['coming back','stopping','going back','packing'],a:0,en:'coming back = returning from a trip',ar:'coming back = ترجع من رحلة'},
-  {q:'A: Which knob do I _______ to change the music on the radio? B: The one on the right.',o:['lock','sharpen','turn','stop'],a:2,en:'turn a knob = rotate it to adjust',ar:'turn = تلف/تدير المقبض'},
-  {q:'A: Which _______ are you flying? B: I’m flying Northwest.',o:['airplane','airport','airline','arrival'],a:2,en:'airline = the company you fly with',ar:'airline = شركة الطيران'},
-  {q:"I'll come back _______ one week.",o:['off','from','on','in'],a:3,en:'in + duration = after that time passes',ar:'in + مدة = بعد مرور هالمدة'},
+  {q:"_______ your coat and put on your gloves. It's very cold outside.",o:['Lock','Button','Turn on','Sharpen'],a:1,en:'Button (verb) = fasten with buttons',ar:'Button (فعل) = يزرّر',tr:'زرّر معطفك ولبس قفازاتك. الجو بره بارد جدًا.'},
+  {q:'My classes end on Tuesday. My _______ will be on Friday.',o:['reservation','gate','graduation','ticket'],a:2,en:'graduation = the school finishing ceremony',ar:'graduation = حفل التخرّج',tr:'صفوفي تخلص يوم الثلاثاء. تخرّجي بيكون يوم الجمعة.'},
+  {q:"Jerry is 30 years old. He's _______ to school next year. He wants to learn about computers.",o:['graduating','going back','meeting','turning'],a:1,en:'going back = returning to school after time away',ar:'going back = يرجع لمكان كان فيه قبل',tr:'جيري عمره ٣٠ سنة. بيرجع للمدرسة السنة الجاية.'},
+  {q:'A: Is the television on in your room? B: No, I _______.',o:['turned it on','turned it off','changed it','pulled it'],a:1,en:'No matches the opposite of on: turned it off',ar:'الجواب No يطابق: طفّاها (turned it off)',tr:'التلفزيون شغال بغرفتك؟ — لا، طفّيته.'},
+  {q:"It's too cold. I need a shirt with long _______.",o:['sleeves','legs','buttons','zippers'],a:0,en:'sleeves = the parts of a shirt covering the arms',ar:'sleeves = أكمام القميص',tr:'الجو بارد جدًا. أحتاج قميص بأكمام طويلة.'},
+  {q:'A: How much were the _______ for the game? B: They were $7 each.',o:['buttons','flights','tickets','customers'],a:2,en:'tickets = what you buy to attend a game',ar:'tickets = تذاكر للحضور',tr:'بكم كانت تذاكر المباراة؟ — كانت ٧ دولار للواحدة.'},
+  {q:'A: The music _______. B: Yes, Tom turned off the radio.',o:['returned','came back','moved','stopped'],a:3,en:'stopped matches turned off the radio',ar:'stopped = توقّفت (طفّى الراديو)',tr:'الموسيقى توقفت. — إي، توم طفى الراديو.'},
+  {q:'A: Can I turn off the TV? B: Yes, _______ the small button on your right.',o:['lock','push','call','pack'],a:1,en:'push = press a button',ar:'push = اضغط/ادفع الزر',tr:'أقدر أطفي التلفزيون؟ — إي، اضغط الزر الصغير يمينك.'},
+  {q:'A: When is your sister _______ from her trip? B: Next month.',o:['coming back','stopping','going back','packing'],a:0,en:'coming back = returning from a trip',ar:'coming back = ترجع من رحلة',tr:'متى راح ترجع أختك من رحلتها؟ — الشهر الجاي.'},
+  {q:'A: Which knob do I _______ to change the music on the radio? B: The one on the right.',o:['lock','sharpen','turn','stop'],a:2,en:'turn a knob = rotate it to adjust',ar:'turn = تلف/تدير المقبض',tr:'أي مقبض ألف عشان أغيّر الموسيقى بالراديو؟ — اللي على اليمين.'},
+  {q:'A: Which _______ are you flying? B: I’m flying Northwest.',o:['airplane','airport','airline','arrival'],a:2,en:'airline = the company you fly with',ar:'airline = شركة الطيران',tr:'أي شركة طيران بتسافر فيها؟ — بسافر مع Northwest.'},
+  {q:"I'll come back _______ one week.",o:['off','from','on','in'],a:3,en:'in + duration = after that time passes',ar:'in + مدة = بعد مرور هالمدة',tr:'بارجع خلال أسبوع.'},
 ]
 };
 
@@ -1018,7 +1018,7 @@ function build_quiz(elId,qs,prefix){
     </div>
     <div class="opts" id="${prefix}o${i}">
       ${q.o.map((opt,oi)=>`<button class="opt" id="${prefix}op${i}${oi}"
-        onclick="ans('${prefix}',${i},${oi},${q.a},'${q.en.replace(/'/g,"\\'")}','${q.ar.replace(/'/g,"\\'")}')">
+        onclick="ans('${prefix}',${i},${oi},${q.a},'${(q.tr||'').replace(/'/g,"\\'")}')">
         <span class="oltr">${L[oi]}</span>${opt}</button>`).join('')}
     </div>
     <div class="fb" id="${prefix}fb${i}">
@@ -1036,7 +1036,7 @@ function build_quiz(elId,qs,prefix){
   }
 }
 
-function ans(pfx,qi,oi,correct,en,ar){
+function ans(pfx,qi,oi,correct,tr){
   const opts=document.querySelectorAll(`#${pfx}o${qi} .opt`);
   opts.forEach(b=>b.disabled=true);
   const fb=document.getElementById(`${pfx}fb${qi}`);
@@ -1046,8 +1046,8 @@ function ans(pfx,qi,oi,correct,en,ar){
   if(!ok)opts[oi].classList.add('no');
   card.classList.add(ok?'qok':'qno');
   document.getElementById(`${pfx}fi${qi}`).textContent=ok?'✅':'❌';
-  document.getElementById(`${pfx}fe${qi}`).textContent=ok?`Correct! ${en}`:`Answer: ${['A','B','C','D'][correct]}. ${en}`;
-  document.getElementById(`${pfx}fa${qi}`).textContent=ar;
+  document.getElementById(`${pfx}fe${qi}`).textContent=ok?'Correct!':`Answer: ${['A','B','C','D'][correct]}`;
+  document.getElementById(`${pfx}fa${qi}`).textContent=tr;
   fb.className='fb show '+(ok?'ok':'no');
   if(ok){XP+=5;document.getElementById('xp').textContent=XP;STK++;document.getElementById('streak').textContent=STK;save_progress();}
   else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}

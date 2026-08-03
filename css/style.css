@@ -548,7 +548,7 @@ html.splash-seen #splash{display:none}
 .qa-row.a .qa-tag{background:#EDE9FE;color:#6D28D9}
 .qa-txt{flex:1;font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.86rem;font-weight:700;color:var(--navy)}
 .qa-spk{flex:none;background:none;border:none;cursor:pointer;font-size:.85rem;padding:2px}
-.qa-note{font-family:'Cairo',sans-serif;font-size:.74rem;color:var(--muted);margin-top:6px;padding-top:6px;border-top:1px dashed var(--bdr)}
+.qa-note{font-family:'Cairo',sans-serif;font-size:.76rem;font-weight:600;color:#475569;margin-top:6px;padding-top:6px;border-top:1px dashed var(--bdr)}
 
 /* Sounds table */
 .stab{width:100%;border-collapse:collapse;font-size:.8rem;border-radius:8px;overflow:hidden;margin-bottom:8px}

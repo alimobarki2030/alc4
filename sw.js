@@ -1,7 +1,7 @@
-const CACHE_NAME='alc-v3';
+const CACHE_NAME='alc-v4';
 const CORE_ASSETS=[
   '/','/index.html','/book4.html','/book5.html','/book5-pronouns.html','/book6.html','/grammar.html',
-  '/css/style.css',
+  '/css/style.css','/icons.svg',
   '/js/engine-core.js','/js/engine-progress.js','/js/engine-lessons.js',
   '/js/engine-youtube.js','/js/engine-spell.js','/js/engine-concepts.js',
   '/js/concepts-prep.js','/js/concepts-art.js','/js/concepts-wh.js',

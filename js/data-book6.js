@@ -10,7 +10,9 @@ const BOOK_ID='book6';
 
 const LESSON_META={
   l1:{ico:'🌦️',title:"Lesson 1 — How's the Weather?",sub:'الطقس والأحوال الجوية'},
-  l2:{ico:'✈️',title:'Lesson 2 — Taking a Trip',sub:'السفر والمطاعم'}
+  l2:{ico:'✈️',title:'Lesson 2 — Taking a Trip',sub:'السفر والمطاعم'},
+  l3:{ico:'📮',title:'Lesson 3 — Sending Mail',sub:'البريد والبنك'},
+  l4:{ico:'🏕️',title:"Lesson 4 — Let's Take a Vacation",sub:'الإجازات والسفر'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -52,7 +54,7 @@ l1:[
   {e:'how',a:'كيف',em:'❓'},
 ],
 l2:[
-  {e:'blade',a:'نصل (السكين)',em:'🔪'},
+  {e:'blade',a:'سكين',em:'🔪'},
   {e:'boat',a:'قارب',em:'🛥️'},
   {e:'check',a:'فاتورة الحساب',em:'🧾'},
   {e:'helicopter',a:'طائرة هليكوبتر',em:'🚁'},
@@ -94,6 +96,72 @@ l2:[
   {e:'upset',a:'منزعج / مستاء',em:'😟'},
   {e:'us',a:'لنا / إيانا (ضمير مفعول)',em:'🙌'},
   {e:'without',a:'بدون',em:'➖'},
+],
+l3:[
+  {e:'address',a:'عنوان',em:'🏠'},
+  {e:'bank',a:'بنك',em:'🏦'},
+  {e:'check',a:'شيك',em:'🧾'},
+  {e:"driver's license",a:'رخصة القيادة',em:'🪪'},
+  {e:'envelope',a:'ظرف (رسالة)',em:'✉️'},
+  {e:'identification',a:'بطاقة هوية',em:'🪪'},
+  {e:'letter',a:'رسالة',em:'💌'},
+  {e:'letter carrier',a:'ساعي البريد',em:'📬'},
+  {e:'mail',a:'بريد',em:'📮'},
+  {e:'mailman / mailmen',a:'ساعي بريد / سعاة بريد',em:'👨‍✉️'},
+  {e:'money order',a:'حوالة مالية',em:'💸'},
+  {e:'package',a:'طرد',em:'📦'},
+  {e:'postcard',a:'بطاقة بريدية',em:'🖼️'},
+  {e:'post office',a:'مكتب البريد',em:'🏤'},
+  {e:'return address',a:'عنوان المرسل',em:'↩️'},
+  {e:'stamp',a:'طابع بريد',em:'🏷️'},
+  {e:'street',a:'شارع',em:'🛣️'},
+  {e:'teller',a:'صراف (بنك)',em:'🧑‍💼'},
+  {e:"traveler's check",a:'شيك سياحي',em:'🧳'},
+  {e:'deliver',a:'يوصّل',em:'🚚'},
+  {e:'finish',a:'يخلّص / ينهي',em:'✅'},
+  {e:'give',a:'يعطي',past:'gave',pa:'أعطى',em:'🎁'},
+  {e:'mail (verb)',a:'يبعث بالبريد',em:'📤'},
+  {e:'pick out',a:'يختار',em:'👉'},
+  {e:'send',a:'يرسل',past:'sent',pa:'أرسل',em:'📨'},
+  {e:'show',a:'يري / يوضّح',em:'👀'},
+  {e:'sign',a:'يوقّع',em:'✍️'},
+  {e:'also',a:'كمان / أيضًا',em:'➕'},
+  {e:'crowded',a:'مزدحم',em:'👥'},
+  {e:'near',a:'قريب من',em:'📍'},
+],
+l4:[
+  {e:'camera',a:'كاميرا',em:'📷'},
+  {e:'film',a:'فيلم (شريط تصوير)',em:'🎞️'},
+  {e:'hotel',a:'فندق',em:'🏨'},
+  {e:'lake',a:'بحيرة',em:'🏞️'},
+  {e:'mountain',a:'جبل',em:'⛰️'},
+  {e:'ocean',a:'محيط',em:'🌊'},
+  {e:'river',a:'نهر',em:'🏞️'},
+  {e:'desert',a:'صحراء',em:'🏜️'},
+  {e:'waterfall',a:'شلال',em:'💦'},
+  {e:'stream',a:'جدول ماء',em:'💧'},
+  {e:'tent',a:'خيمة',em:'⛺'},
+  {e:'rest',a:'راحة',em:'😌'},
+  {e:'roll (of)',a:'لفة / بكرة (من)',em:'🎞️'},
+  {e:'sight',a:'معلم سياحي / منظر',em:'👁️'},
+  {e:'sightseeing',a:'التجوّل السياحي',em:'🗺️'},
+  {e:'state',a:'ولاية',em:'🏛️'},
+  {e:'tree',a:'شجرة',em:'🌳'},
+  {e:'vacation',a:'إجازة',em:'🏖️'},
+  {e:'check in',a:'يسجّل الوصول (فندق)',em:'📝'},
+  {e:'check out',a:'يسجّل المغادرة (فندق)',em:'🧳'},
+  {e:'load',a:'يحمّل (الكاميرا بالفيلم)',em:'🔄'},
+  {e:'relax',a:'يسترخي',em:'😌'},
+  {e:'smile',a:'يبتسم',em:'😊'},
+  {e:'stay',a:'يقيم / يبقى',em:'🏨'},
+  {e:'because',a:'لأن',em:'🔗'},
+  {e:'but',a:'لكن',em:'↔️'},
+  {e:'final',a:'أخير / نهائي',em:'🏁'},
+  {e:'for (time)',a:'لمدة',em:'⏱️'},
+  {e:'long (trip/time)',a:'طويل (رحلة/وقت)',em:'📏'},
+  {e:'overnight',a:'لليلة واحدة / طوال الليل',em:'🌙'},
+  {e:'short (trip/time)',a:'قصير (رحلة/وقت)',em:'📏'},
+  {e:'why',a:'لماذا',em:'❓'},
 ]
 };
 
@@ -223,6 +291,70 @@ l2:[
       {s:'Bruce talked to she.',wrong:'she',right:'her',tr:'بعد حرف الجر لازم نستخدم ضمير المفعول: her.',ok:false},
     ]
   }
+],
+l3:[
+  {
+    title:'Making Sentences with an Indirect Object', ar:'المفعول غير المباشر',
+    rule:'نقدر نصيغ الجملة بطريقتين بنفس المعنى: فعل + شيء + to/for + شخص، أو فعل + شخص (مباشرة بدون to/for) + شيء.',
+    check:{q:'Sara mailed _______ a package.',o:['to Bruce','Bruce','for Bruce','Bruce to'],a:1,en:'indirect object comes right after the verb, no preposition',ar:'المفعول غير المباشر يجي مباشرة بعد الفعل بدون حرف جر',tr:'سارة بعثت لبروس طرد.'},
+    compare:[
+      {c1:'Sara will send a package to him.',c2:'Sara will send him a package.',ar:'نفس المعنى — نبدّل الترتيب ونشيل to'},
+      {c1:'Bruce mailed a postcard to her.',c2:'Bruce mailed her a postcard.',ar:'her تجي مباشرة بعد الفعل'},
+      {c1:'The dentist gives toothbrushes to the children.',c2:'The dentist gives the children toothbrushes.',ar:'gives + شخص + شيء'},
+    ],
+    examples:[
+      {s:'Mrs. Swenson sent Bruce some money.',tr:'السيدة سوينسون أرسلت لبروس بعض المال.',ar:'sent + شخص + شيء (بدون to)',ok:true},
+      {s:'The mailman will leave you some letters.',tr:'ساعي البريد بيسيبلك بعض الرسائل.',ar:'will leave + شخص + شيء',ok:true},
+      {s:'Sara mailed to Bruce a package.',wrong:'to Bruce a package',right:'Bruce a package',tr:'لما نحذف to لازم نحط الشخص مباشرة بعد الفعل: mailed Bruce a package.',ok:false},
+    ]
+  },
+  {
+    title:'Using Also', ar:'كمان / أيضًا — also',
+    rule:'also (بمعنى too) تدل إن فعل أو صفة تنطبق على شخص أو شي ثاني كمان — تجي بعد BE/can/does، أو قبل الفعل الأساسي.',
+    check:{q:'Bruce is in the Navy. Kelly _______ in the Navy.',o:['also is','is also','also','is'],a:1,en:'also comes right after BE',ar:'also تجي بعد BE مباشرة',tr:'بروس بالبحرية. كيلي كمان بالبحرية.'},
+    compare:[
+      {c1:'Sara chose a CD player for Bruce.',c2:'She also made him some cookies.',ar:'also قبل الفعل الأساسي'},
+      {c1:"She'll go to the bank.",c2:"She'll also go to the post office.",ar:'also بعد will'},
+      {c1:'Bruce is in the Navy.',c2:'Kelly is also in the Navy.',ar:'also بعد is'},
+    ],
+    examples:[
+      {s:'A letter carrier also delivers packages.',tr:'ساعي البريد كمان يوصّل الطرود.',ar:'also قبل الفعل الأساسي',ok:true},
+      {s:'A military ID card is also identification.',tr:'بطاقة الهوية العسكرية هي كمان بطاقة تعريف.',ar:'also بعد is',ok:true},
+      {s:'She also is tired.',wrong:'also is',right:'is also',tr:'also تجي بعد BE مباشرة: is also.',ok:false},
+    ]
+  }
+],
+l4:[
+  {
+    title:'Combining Sentences with And/But', ar:'دمج الجمل — and/but',
+    rule:'نستخدم and لربط جملتين متشابهتين بالمعنى (إضافة)، وbut لربط جملتين بمعنى متعاكس (تناقض).',
+    check:{q:"John speaks Spanish, _______ he doesn't speak French.",o:['and','but'],a:1,en:'opposite ideas → but',ar:'فكرتان متعاكستان → but',tr:'جون يتكلم إسباني، بس ما يتكلم فرنسي.'},
+    compare:[
+      {c1:'My vacation is next month.',c2:'My vacation is next month, and I want to travel.',ar:'and لإضافة فكرة مشابهة'},
+      {c1:"I didn't at first.",c2:"I like the Navy now, but I didn't at first.",ar:'but لعكس الفكرة'},
+      {c1:'Jan signed her letter.',c2:'Jan signed her letter, and then she put it in an envelope.',ar:'and لتتابع الأحداث'},
+    ],
+    examples:[
+      {s:"Meg drinks coffee at breakfast, but she doesn't drink it at lunch.",tr:'ميغ تشرب قهوة بالفطور، بس ما تشربها بالغدا.',ar:'but = تناقض',ok:true},
+      {s:'Their teacher asked a question, and all the students answered.',tr:'معلمهم سأل سؤال، والطلاب كلهم جاوبوا.',ar:'and = إضافة / تتابع',ok:true},
+      {s:'Ted reads a lot of books, and his brother never reads any.',wrong:'and',right:'but',tr:'تيد يقرأ كتب كثيرة، بس أخوه ما يقرأ ولا كتاب — تناقض فلازم but.',ok:false},
+    ]
+  },
+  {
+    title:'Answering Why Questions with Because', ar:'الإجابة على أسئلة Why بـ Because',
+    rule:'نسأل بـ Why...؟ ونجاوب بـ Because + جملة كاملة توضح السبب.',
+    check:{q:'Why did your brother travel to Hawaii?',o:['Because he likes the ocean.','He likes the ocean.','Why he likes the ocean.','Because likes the ocean.'],a:0,en:'answer starts with Because + full clause',ar:'الجواب يبدأ بـ Because + جملة كاملة',tr:'ليش أخوك سافر لهاواي؟ لأنه يحب المحيط.'},
+    compare:[
+      {c1:'Why are you smiling?',c2:"Because I'm happy.",ar:'سؤال why + جواب because'},
+      {c1:'Why is Tom upset?',c2:'Because his test grade was bad.',ar:'يوضح السبب بجملة كاملة'},
+      {c1:'Why did you go to California?',c2:'Because my family lives there.',ar:'because + سبب'},
+    ],
+    examples:[
+      {s:"Because it's hot and sunny.",tr:'لأن الجو حار ومشمس.',ar:'جواب Why بجملة سبب',ok:true},
+      {s:'Because he studied.',tr:'لأنه ذاكر.',ar:'because + سبب',ok:true},
+      {s:'Why I like the ocean.',wrong:'Why I like',right:'Because I like',tr:'الجواب لازم يبدأ بـ Because مو Why.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -249,6 +381,26 @@ l2:[
   {words:['I',"didn't",'eat','anything','for','lunch'],ans:"I didn't eat anything for lunch.",tr:'ما أكلت شي للغدا.',ar:'نفي = anything'},
   {words:['Bruce','talked','to','her'],ans:'Bruce talked to her.',tr:'بروس تكلم معها.',ar:'ضمير المفعول بعد حرف جر'},
   {words:['The','server','brought','us','the','check'],ans:'The server brought us the check.',tr:'النادل جابلنا الفاتورة.',ar:'us = ضمير مفعول لـ we'},
+],
+l3:[
+  {words:['Sara','will','send','him','a','package'],ans:'Sara will send him a package.',tr:'سارة بترسله طرد.',ar:'will send + شخص + شيء'},
+  {words:['Bruce','mailed','her','a','postcard'],ans:'Bruce mailed her a postcard.',tr:'بروس بعتلها بطاقة بريدية.',ar:'mailed + شخص + شيء'},
+  {words:['I','need','to','cash','a','check'],ans:'I need to cash a check.',tr:'أحتاج أصرف شيك.',ar:'cash a check تعبير مفيد'},
+  {words:['You','need','some','identification'],ans:'You need some identification.',tr:'تحتاج بطاقة هوية.',ar:'need + مفعول'},
+  {words:['The','bank','is','near','the','post','office'],ans:'The bank is near the post office.',tr:'البنك قريب من مكتب البريد.',ar:'near = قريب من'},
+  {words:['Walk','to','First','Street','and','turn','right'],ans:'Walk to First Street and turn right.',tr:'امشِ لشارع فيرست ولف يمين.',ar:'تعليمات اتجاهات'},
+  {words:['She','also','went','to','the','bank'],ans:'She also went to the bank.',tr:'هي كمان راحت للبنك.',ar:'also قبل الفعل الماضي'},
+  {words:['Kelly','is','also','in','the','Navy'],ans:'Kelly is also in the Navy.',tr:'كيلي كمان بالبحرية.',ar:'also بعد is'},
+],
+l4:[
+  {words:['My','vacation','is','next','month'],ans:'My vacation is next month.',tr:'إجازتي الشهر الجاي.',ar:'جملة بسيطة عن الوقت'},
+  {words:['I','like','the','Navy','now','but','I',"didn't",'at','first'],ans:"I like the Navy now, but I didn't at first.",tr:'أحب البحرية الحين، بس ما كنت أحبها بالأول.',ar:'but لعكس الفكرة'},
+  {words:['Why','are','you','smiling'],ans:'Why are you smiling ?',tr:'ليش تبتسم؟',ar:'سؤال Why'},
+  {words:['Because',"I'm",'happy'],ans:"Because I'm happy.",tr:'لأني سعيد.',ar:'جواب Because'},
+  {words:['We','stayed','at','the','hotel','overnight'],ans:'We stayed at the hotel overnight.',tr:'بقينا بالفندق طول الليل.',ar:'overnight = لليلة كاملة'},
+  {words:['I',"can't",'wait','to','take','my','vacation'],ans:"I can't wait to take my vacation.",tr:'ما أقدر أستنى آخذ إجازتي.',ar:'take a vacation تعبير مفيد'},
+  {words:['She','always','smiles','in','pictures'],ans:'She always smiles in pictures.',tr:'هي دايمًا تبتسم بالصور.',ar:'مضارع بسيط لعادة'},
+  {words:['You','have','to','check','out','before','noon'],ans:'You have to check out before noon.',tr:'لازم تسجل مغادرتك قبل الظهر.',ar:'check out تعبير فندقي'},
 ]
 };
 
@@ -290,6 +442,52 @@ l2:[
   {q:"The show didn't start at 7:00. It started _______.",o:['sure','awful','later'],a:2,en:'started after 7:00 → later',ar:'بدأ بعد الساعة 7 → later',tr:'العرض ما بدأ الساعة 7. بدأ متأخر.'},
   {q:'Our waiter brought us the _______ after our meal.',o:['tip','order','check'],a:2,en:'bill after the meal = check',ar:'الفاتورة بعد الأكل = check',tr:'النادل جابلنا الفاتورة بعد الأكل.'},
   {q:'Use your knife to _______ your meat.',o:['leave','cut','get'],a:1,en:'knife is used to cut',ar:'السكين تُستخدم للقطع',tr:'استخدم سكينك عشان تقطع لحمك.'},
+],
+l3:[
+  {q:'This box is for you. It came in the _______ today.',o:['letter','bank','package','mail'],a:3,en:'a box arrives "in the mail"',ar:'الصندوق وصل بالبريد',tr:'هذا الصندوق لك. وصل بالبريد اليوم.'},
+  {q:"Henry didn't get my letter. I didn't put the correct _______ on it.",o:['return address','post office','address','check'],a:2,en:"recipient's address needed for delivery",ar:'العنوان الصحيح ضروري للتوصيل',tr:'هنري ما استلم رسالتي. أنا ما حطيت العنوان الصحيح عليها.'},
+  {q:'I want to see the letter. Can you please _______ it to me?',o:['sign','finish','show','deliver'],a:2,en:'let me see it = show it',ar:'يريني إياها = show',tr:'أبغى أشوف الرسالة. ممكن تريني إياها؟'},
+  {q:"It's time to go to class. Did you _______ your breakfast?",o:['finish','show','sign','give'],a:0,en:'complete breakfast = finish',ar:'خلّص فطوره = finish',tr:'وقت نروح الصف. خلّصت فطورك؟'},
+  {q:"I don't have any money. I have to cash a _______.",o:['stamp','check','bank','package'],a:1,en:'cash a check',ar:'يصرف شيك',tr:'ما عندي فلوس. لازم أصرف شيك.'},
+  {q:'We bought our dinner in the restaurant with a _______.',o:['post office',"driver's license","traveler's check",'postcard'],a:2,en:'paid with a traveler\'s check',ar:'دفع بشيك سياحي',tr:'دفعنا عشانا بالمطعم بشيك سياحي.'},
+  {q:'My sister likes to read. I want to _______ her this book.',o:['bank','mail','finish','sign'],a:1,en:'send by mail = mail',ar:'يبعثلها بالبريد = mail',tr:'أختي تحب تقرأ. أبغى أبعتلها هذا الكتاب بالبريد.'},
+  {q:'Tom wants eggs for breakfast. Bob _______ wants eggs.',o:['sure','how','near','also'],a:3,en:'Bob also wants eggs = too',ar:'بوب كمان يبغى = also',tr:'توم يبغى بيض للفطور. بوب كمان يبغى بيض.'},
+  {q:'_______ are not people.',o:['Tellers','Mail clerks','Money orders','Letter carriers'],a:2,en:'money orders are documents, not people',ar:'الحوالات المالية أوراق مو بشر',tr:'الحوالات المالية مو بشر.'},
+  {q:'Canada is _______ the United States.',o:['near','at','on','also'],a:0,en:'Canada is near the US',ar:'كندا قريبة من أمريكا',tr:'كندا قريبة من الولايات المتحدة.'},
+  {q:'Many families buy food on Saturday. They always have to _______ at the commissary then.',o:['mail a package','give a quiz','make a reservation','stand in line'],a:3,en:'busy Saturday at the commissary = stand in line',ar:'يوم مزدحم بالبقالة = يقفون بالطابور',tr:'عوائل كثيرة تشتري أكل يوم السبت. دايمًا لازم يقفوا بالطابور بالبقالة العسكرية وقتها.'},
+  {q:'Write your name on the money order. _______ right here, please.',o:['Show','Sign','Give','Finish'],a:1,en:'write your name = sign',ar:'يكتب اسمه = يوقّع',tr:'اكتب اسمك على الحوالة المالية. وقّع هنا لو سمحت.'},
+  {q:'Did Al send a postcard to you? Yes, he sent _______ one.',o:['them','him','it','me'],a:3,en:'sent "to you" → answer uses "me"',ar:'أرسل "لك" → الجواب بضمير me',tr:'آل بعتلك بطاقة بريدية؟ أيوه، بعتلي وحدة.'},
+  {q:"Does your teacher give a quiz to your class every day? No, she doesn't give _______ one every day.",o:['it','them','us','you'],a:2,en:'"your class" (the speaker is part of it) → us',ar:'صفك (المتكلم منه) → us',tr:'معلمك يعطي صفك اختبار كل يوم؟ لا، ما تعطينا وحد كل يوم.'},
+  {q:'Can I give a check to Ben? Yes, you can give _______ a check.',o:['her','him','you','us'],a:1,en:'Ben = him',ar:'بين = him',tr:'أقدر أعطي بين شيك؟ أيوه، تقدر تعطيه شيك.'},
+  {q:'Did Bill buy a CD for Melanie? Yes, he bought _______ a CD.',o:['me','them','her','it'],a:2,en:'Melanie = her',ar:'ميلاني = her',tr:'بيل اشترى لميلاني سي دي؟ أيوه، اشترى لها وحد.'},
+  {q:'Did Mr. Jones give an answer to the students? No, he didn\'t give _______ an answer.',o:['you','me','them','us'],a:2,en:'the students = them',ar:'الطلاب = them',tr:'مستر جونز أعطى الطلاب جواب؟ لا، ما أعطاهم جواب.'},
+  {q:'Jeff: Excuse me, is the post office _______ here?',o:['for','near','with','at'],a:1,en:'near here',ar:'قريب من هنا',tr:'جيف: عفوًا، مكتب البريد قريب من هنا؟'},
+  {q:"Man: No, _______ downtown.",o:['that','what',"it's",'this'],a:2,en:"No, it's downtown",ar:'لا، هو وسط البلد',tr:'الرجل: لا، هو وسط البلد.'},
+  {q:'Jeff: What _______ is it on?',o:['street','state','address','building'],a:0,en:'What street is it on?',ar:'أي شارع؟',tr:'جيف: أي شارع هو فيه؟'},
+  {q:'Man: It\'s on Andrews _______ First Street and Second Street.',o:['near','on','between','without'],a:2,en:'between two streets',ar:'بين شارعين = between',tr:'الرجل: هو بشارع أندروز بين الشارع الأول والثاني.'},
+  {q:"Man: It's _______ the library.",o:['without','between','at','next to'],a:3,en:'next to the library',ar:'جنب المكتبة',tr:'الرجل: هو جنب المكتبة.'},
+],
+l4:[
+  {q:"Jan: Can you put some film in my camera? Tom: Sure, I'll _______ it for you.",o:['load','relax','take'],a:0,en:'put film in a camera = load',ar:'يحمّل الكاميرا بالفيلم',tr:'جان: تقدر تحط فيلم بكاميرتي؟ توم: أكيد، بحمّلها لك.'},
+  {q:'Class ends June 15th. Our _______ test is June 14th.',o:['short','final','later'],a:1,en:'the last test before class ends = final',ar:'آخر اختبار = final',tr:'الصف ينتهي 15 يونيو. اختبارنا النهائي يوم 14 يونيو.'},
+  {q:'Tom: What time did your plane get in? John: Oh, it was late. It _______ got in at midnight.',o:['too','at first','finally'],a:2,en:'eventually, after delay = finally',ar:'بعد تأخير = finally',tr:'توم: أي وقت وصلت طائرتك؟ جون: كان متأخر. وصلت أخيرًا نص الليل.'},
+  {q:"That _______ doesn't turn brown in winter; it's always green.",o:['tree','lake','vacation'],a:0,en:'turns brown / stays green = a tree',ar:'يصفر أو يخضر = شجرة',tr:'تلك الشجرة ما تصفر بالشتاء؛ هي دايمًا خضراء.'},
+  {q:'Dallas has many nice _______. You can stay in any one of them.',o:['lakes','mountains','hotels'],a:2,en:'stay in = hotels',ar:'يقيم في = فنادق',tr:'دالاس فيها فنادق حلوة كثيرة. تقدر تقيم بأي وحد منها.'},
+  {q:'You have to _______ to this hotel before noon.',o:['rest','check in','check out'],a:2,en:'before noon = standard checkout time',ar:'قبل الظهر = وقت تسجيل المغادرة المعتاد',tr:'لازم تسجل مغادرتك من هذا الفندق قبل الظهر.'},
+  {q:'I think that she likes me. She _______ at me.',o:['went sightseeing','smiled','took a picture'],a:1,en:'sign of liking someone = smiled',ar:'علامة الإعجاب = ابتسمت',tr:'أعتقد إنها تحبني. هي ابتسمت لي.'},
+  {q:'Ed and Brian went to Houston. They stayed there _______ and came back this morning.',o:['final','overnight','rest'],a:1,en:'stayed one night = overnight',ar:'باتوا ليلة = overnight',tr:'إيد وبراين راحوا هيوستن. باتوا هناك ليلة ورجعوا الصبح.'},
+  {q:'My friend Linda lives in the _______ of California.',o:['state','country','ocean'],a:0,en:'California is a state',ar:'كاليفورنيا ولاية',tr:'صديقتي ليندا تسكن بولاية كاليفورنيا.'},
+  {q:'Lt. Hill: What do you do to _______? Lt. Lamb: I play table tennis.',o:['relax','smile','stay'],a:0,en:'playing table tennis = relaxing activity',ar:'لعب تنس الطاولة = نشاط استرخاء',tr:'الملازم هيل: وش تسوي عشان ترتاح؟ الملازم لامب: ألعب تنس طاولة.'},
+  {q:'How long was your vacation?',o:['Next month.','Two weeks.','In June.'],a:1,en:'"how long" asks about duration',ar:'How long يسأل عن المدة',tr:'كم طالت إجازتك؟ أسبوعين.'},
+  {q:'Jane: _______ did you go to California for your vacation?',o:['Where','Who','Why','What'],a:2,en:'answer gives a reason → Why',ar:'الجواب سبب → Why',tr:'جين: ليش رحتي كاليفورنيا لإجازتك؟'},
+  {q:'Barb: _______ my family lives there.',o:['Also','And','Because','But'],a:2,en:'gives a reason = Because',ar:'يعطي سبب = Because',tr:'بارب: لأن عائلتي تسكن هناك.'},
+  {q:'Jane: How _______ did you stay?',o:['long','many','short','final'],a:0,en:'"How long" asks duration',ar:'How long = كم المدة',tr:'جين: كم المدة اللي بقيتيها؟'},
+  {q:'Barb: Just three days. My vacation was very _______.',o:['long','short','final','overnight'],a:1,en:'three days = short',ar:'ثلاث أيام = قصيرة',tr:'بارب: بس ثلاث أيام. إجازتي كانت قصيرة جدًا.'},
+  {q:"John speaks Spanish, _______ he doesn't speak French.",o:['and','but'],a:1,en:'opposite ideas → but',ar:'فكرتان متعاكستان → but',tr:'جون يتكلم إسباني، بس ما يتكلم فرنسي.'},
+  {q:'Jan signed her letter, _______ then she put it in an envelope.',o:['and','but'],a:0,en:'sequence of similar actions → and',ar:'تتابع أفعال → and',tr:'جان وقّعت رسالتها، وبعدين حطتها بالظرف.'},
+  {q:"Meg drinks coffee at breakfast, _______ she doesn't drink it at lunch.",o:['and','but'],a:1,en:'opposite ideas → but',ar:'فكرتان متعاكستان → but',tr:'ميغ تشرب قهوة بالفطور، بس ما تشربها بالغدا.'},
+  {q:'Ted reads a lot of books, _______ his brother never reads any.',o:['and','but'],a:1,en:'opposite ideas → but',ar:'فكرتان متعاكستان → but',tr:'تيد يقرأ كتب كثيرة، بس أخوه ما يقرأ ولا كتاب.'},
+  {q:'Their teacher asked a question, _______ all the students answered.',o:['and','but'],a:0,en:'addition/result → and',ar:'إضافة أو نتيجة → and',tr:'معلمهم سأل سؤال، والطلاب كلهم جاوبوا.'},
 ]
 };
 

@@ -46,9 +46,9 @@ function render_zoom(){
     <div class="except-box">
       <div class="except-h">⭐ استثناءات تُحفظ كما هي</div>
       <div class="except-row" dir="ltr"><span class="zc in">in</span> ( the morning / afternoon / evening )
-        <button class="ex-spk" onclick="say('in the evening')">🔊</button></div>
+        <button class="ex-spk" onclick="say('in the evening')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
       <div class="except-row" dir="ltr"><span class="zc at">at</span> ( noon / midnight )
-        <button class="ex-spk" onclick="say('at midnight')">🔊</button></div>
+        <button class="ex-spk" onclick="say('at midnight')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
     </div>`:'';
 }
 

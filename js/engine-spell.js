@@ -32,7 +32,7 @@ function render_spell(){
   const safe=w.e.replace(/'/g,"\\'");
   body.innerHTML=`<div class="sp-lesson">${w.lt}</div>
   <div class="sp-card">
-    <button class="sp-listen" onclick="say('${safe}')">🔊 اسمع الكلمة</button>
+    <button class="sp-listen" onclick="say('${safe}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg> اسمع الكلمة</button>
     <div class="sp-emoji">${w.em}</div>
     <div class="sp-ar">${w.a}</div>
     <div class="sp-hintline" id="sp-hintline"></div>

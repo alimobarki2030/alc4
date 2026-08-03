@@ -25,16 +25,16 @@ function concept_html(accentTx,borderBd,headerInner,d,block2Extra){
     <h3 style="color:${accentTx};margin-bottom:6px">${headerInner}</h3>
     <div class="cblock b-mean"><div class="cblock-h"><span class="cblock-n" style="background:#3B82F6">1</span>💬 المعنى</div>
       <div class="cblock-txt">${d.meaning}</div></div>
-    <div class="cblock b-when"><div class="cblock-h"><span class="cblock-n" style="background:#16A34A">2</span>🎯 متى ولماذا؟</div>
+    <div class="cblock b-when"><div class="cblock-h"><span class="cblock-n" style="background:#16A34A">2</span><svg class="svgico" aria-hidden="true"><use href="#icon-target"></use></svg> متى ولماذا؟</div>
       <div class="cblock-txt">${d.when}</div>${block2Extra||''}
       ${d.triggers?`<div class="trig-list">${d.triggers.map(t=>`<div class="trig"><span class="trig-en">${t.e}</span><span class="trig-ar">${t.a}</span></div>`).join('')}</div>`:''}
       ${d.link?`<div class="mind-link">💡 ${d.link}</div>`:''}</div>
     <div class="cblock b-order"><div class="cblock-h"><span class="cblock-n" style="background:#7C3AED">3</span>✍️ مثال</div>
-      <div class="order-ex"><span class="en">${d.ex.e}</span><button class="mini-spk" onclick="say('${exSafe}')" aria-label="استمع">🔊</button></div>
+      <div class="order-ex"><span class="en">${d.ex.e}</span><button class="mini-spk" onclick="say('${exSafe}')" aria-label="استمع"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
       <div class="cblock-txt" style="margin-top:5px">${d.ex.a}</div></div>
     <div class="cblock b-bad"><div class="cblock-h"><span class="cblock-n" style="background:#EA580C">4</span>⚠️ أشهر خطأ للمبتدئين</div>
       <div class="badgood"><span class="bg-x">❌ <span class="en strike">${d.bad}</span></span>
-      <span class="bg-ok">✅ <span class="en">${d.good}</span> <button class="mini-spk ok" onclick="say('${goodSafe}')" aria-label="استمع">🔊</button></span></div></div>
+      <span class="bg-ok">✅ <span class="en">${d.good}</span> <button class="mini-spk ok" onclick="say('${goodSafe}')" aria-label="استمع"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></span></div></div>
   </div>`;
 }
 

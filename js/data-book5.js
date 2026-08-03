@@ -6,7 +6,7 @@
 const BOOK_ID='book5';
 
 const LESSON_META={
-  l1:{ico:'🤕',title:'Lesson 1 — What’s Wrong?',sub:'جسم الإنسان والصحة',vocabNote:'🔢 <b>ordinal numbers 1st – 12th</b> (first – twelfth) — تقدر تتعلمها بالتفصيل من تبويب <b>قواعد</b> 📖.'},
+  l1:{ico:'🤕',title:'Lesson 1 — What’s Wrong?',sub:'جسم الإنسان والصحة',vocabNote:'🔢 <b>ordinal numbers 1st – 12th</b> (first – twelfth) — تقدر تتعلمها بالتفصيل من تبويب <b>قواعد</b> <svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg>.'},
   l2:{ico:'🧴',title:'Lesson 2 — Where Can I Get Shampoo?',sub:'أدوات الحمام والتسوّق'},
   l3:{ico:'🧳',title:'Lesson 3 — I’ll Take a Trip',sub:'السفر والحجوزات'},
   l4:{ico:'🥛',title:'Lesson 4 — I’ll Buy a Gallon of Milk',sub:'التسوق والطبخ'}
@@ -658,18 +658,18 @@ const YT_VIDEOS=[
 // SPELLING — write from listening (by lesson)
 // ═══════════════════════════════════════
 const SPELL_LESSONS=[
-  {t:'📘 Lesson 1 — جسم الإنسان والصحة',w:[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 1 — جسم الإنسان والصحة',w:[
     {e:'head',a:'الرأس',em:'🤕'},{e:'hand',a:'اليد',em:'✋'},{e:'leg',a:'الساق',em:'🦵'},
     {e:'nose',a:'الأنف',em:'👃'},{e:'ear',a:'الأذن',em:'👂'},{e:'hurt',a:'يؤلم',em:'🤕'},
     {e:'sore',a:'مؤلم',em:'🤒'}]},
-  {t:'📗 Lesson 2 — أدوات الحمام والتسوّق',w:[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 2 — أدوات الحمام والتسوّق',w:[
     {e:'soap',a:'الصابون',em:'🧼'},{e:'towel',a:'المنشفة',em:'🧺'},{e:'sink',a:'المغسلة',em:'🚰'},
     {e:'mirror',a:'المرآة',em:'🪞'},{e:'comb',a:'المشط',em:'🪮'},{e:'sugar',a:'السكر',em:'🧁'},
     {e:'salt',a:'الملح',em:'🧂'}]},
-  {t:'📙 Lesson 3 — السفر والحجوزات',w:[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 3 — السفر والحجوزات',w:[
     {e:'trip',a:'رحلة',em:'🧳'},{e:'ticket',a:'التذكرة',em:'🎫'},{e:'flight',a:'رحلة طيران',em:'✈️'},
     {e:'key',a:'المفتاح',em:'🔑'},{e:'gate',a:'بوابة',em:'🚪'},{e:'twin',a:'توأم',em:'👯'}]},
-  {t:'📕 Lesson 4 — التسوق والطبخ',w:[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 4 — التسوق والطبخ',w:[
     {e:'cake',a:'كيك',em:'🎂'},{e:'bowl',a:'وعاء',em:'🥣'},{e:'fork',a:'شوكة',em:'🍴'},
     {e:'plate',a:'صحن',em:'🍽️'},{e:'onion',a:'بصل',em:'🧅'},{e:'lettuce',a:'خس',em:'🥬'},
     {e:'tomato',a:'طماطم',em:'🍅'}]}

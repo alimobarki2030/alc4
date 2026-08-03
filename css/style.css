@@ -53,6 +53,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .lcard.locked{cursor:default;opacity:.55}
 .lcard.locked:hover{transform:none;box-shadow:none;border-color:var(--bdr)}
 .lcard-icon{font-size:2rem;display:block;margin-bottom:8px}
+.svgico{width:1em;height:1em;display:inline-block;vertical-align:-0.15em;stroke-width:2;flex-shrink:0}
 .lcard-num{font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase}
 .lcard-name{font-size:1rem;font-weight:700;color:var(--txt);margin:3px 0}
 .lcard-sub{font-size:.82rem;color:var(--muted)}
@@ -85,7 +86,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   padding:14px 18px;margin-bottom:16px;display:flex;align-items:center;gap:14px;
   animation:slideIn .4s ease}
 @keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
-.streak-comeback .sc-ico{font-size:2rem;flex-shrink:0}
+.streak-comeback .sc-ico{font-size:2rem;flex-shrink:0;color:#fff}
 .streak-comeback .sc-txt h3{color:#fff;font-size:.95rem;font-weight:900;margin-bottom:2px}
 .streak-comeback .sc-txt p{color:rgba(255,255,255,.88);font-size:.82rem}
 .streak-comeback .sc-close{background:rgba(255,255,255,.2);border:none;border-radius:50%;

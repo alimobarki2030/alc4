@@ -41,6 +41,99 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!-- shared icon sprite (Lucide, inline for offline-first + zero flash) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+  <symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
+  </symbol>
+
+  <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="12" cy="12" r="6" />
+    <circle cx="12" cy="12" r="2" />
+  </symbol>
+
+  <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+    <path d="M20 2v4" />
+    <path d="M22 4h-4" />
+    <circle cx="4" cy="20" r="2" />
+  </symbol>
+
+  <symbol id="icon-help-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+    <path d="M12 17h.01" />
+  </symbol>
+
+  <symbol id="icon-user-round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="5" />
+    <path d="M20 21a8 8 0 0 0-16 0" />
+  </symbol>
+
+  <symbol id="icon-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17.596 12.768a2 2 0 1 0 2.829-2.829l-1.768-1.767a2 2 0 0 0 2.828-2.829l-2.828-2.828a2 2 0 0 0-2.829 2.828l-1.767-1.768a2 2 0 1 0-2.829 2.829z" />
+    <path d="m2.5 21.5 1.4-1.4" />
+    <path d="m20.1 3.9 1.4-1.4" />
+    <path d="M5.343 21.485a2 2 0 1 0 2.829-2.828l1.767 1.768a2 2 0 1 0 2.829-2.829l-6.364-6.364a2 2 0 1 0-2.829 2.829l1.768 1.767a2 2 0 0 0-2.828 2.829z" />
+    <path d="m9.6 14.4 4.8-4.8" />
+  </symbol>
+
+  <symbol id="icon-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 22h14" />
+    <path d="M5 2h14" />
+    <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+    <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+  </symbol>
+
+  <symbol id="icon-refresh-cw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+    <path d="M21 3v5h-5" />
+    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+    <path d="M8 16H3v5" />
+  </symbol>
+
+  <symbol id="icon-book-open-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 5v16" />
+    <path d="M16 13h2" />
+    <path d="M16 9h2" />
+    <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" />
+    <path d="M6 13h2" />
+    <path d="M6 9h2" />
+  </symbol>
+
+  <symbol id="icon-library" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m16 6 4 14" />
+    <path d="M12 6v14" />
+    <path d="M8 8v12" />
+    <path d="M4 4v16" />
+  </symbol>
+
+  <symbol id="icon-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2" />
+    <path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2" />
+    <path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3" />
+    <path d="M4 22h16" />
+    <path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z" />
+    <path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3" />
+  </symbol>
+
+  <symbol id="icon-volume-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
+    <path d="M16 9a5 5 0 0 1 0 6" />
+    <path d="M19.364 18.364a9 9 0 0 0 0-12.728" />
+  </symbol>
+
+  <symbol id="icon-bar-chart-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+    <path d="M18 17V9" />
+    <path d="M13 17V5" />
+    <path d="M8 17v-3" />
+  </symbol>
+
+</svg>
+
 
 
 <!-- SPLASH -->
@@ -65,7 +158,7 @@
 <!-- HOME -->
 <div id="home">
   <div class="hero">
-    <h1>مركز التدريب — Book 4 📚</h1>
+    <h1>مركز التدريب — Book 4 <svg class="svgico" aria-hidden="true"><use href="#icon-library"></use></svg></h1>
     <p>تعلّم القواعد · تدرّب · اختبر نفسك · الاختبار النهائي</p>
     <div class="gpbar"><div class="gpfill" id="gpfill"></div></div>
     <div class="gptxt" id="gptxt">0 من 4 دروس مكتملة</div>
@@ -132,7 +225,7 @@
 
   <div class="lbl">الاختبار</div>
   <div class="final-card" onclick="open_final()">
-    <div style="font-size:2.2rem;margin-bottom:8px">🏆</div>
+    <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
     <h3>الاختبار النهائي الشامل</h3>
     <p>جميع أسئلة التقييم الرسمية من الكتاب — الدروس 1 إلى 4</p>
     <span class="fc-badge">77 سؤالاً</span>
@@ -148,16 +241,16 @@
   </div>
   <div class="tabs">
     <button class="tab active" id="tab-learn" onclick="sw_tab('learn')">
-      <span class="ti">📚</span><span>تعلّم</span>
+      <span class="ti"><svg class="svgico" aria-hidden="true"><use href="#icon-library"></use></svg></span><span>تعلّم</span>
     </button>
     <button class="tab" id="tab-practice" onclick="sw_tab('practice')">
-      <span class="ti">🎯</span><span>تدرّب</span>
+      <span class="ti"><svg class="svgico" aria-hidden="true"><use href="#icon-target"></use></svg></span><span>تدرّب</span>
     </button>
     <button class="tab" id="tab-drag" onclick="sw_tab('drag')">
       <span class="ti">🔤</span><span>رتّب الجملة</span>
     </button>
     <button class="tab" id="tab-test" onclick="sw_tab('test')">
-      <span class="ti">🏆</span><span>اختبر</span>
+      <span class="ti"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></span><span>اختبر</span>
     </button>
   </div>
   <div class="phase active" id="ph-learn"></div>
@@ -170,7 +263,7 @@
 <div id="fscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div style="background:linear-gradient(135deg,#7C3AED,#5B21B6);border-radius:14px;padding:18px;margin-bottom:16px;text-align:center">
-    <div style="font-size:2rem;margin-bottom:6px">🏆</div>
+    <div style="font-size:2rem;margin-bottom:6px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
     <h2 style="color:#fff;font-size:1.1rem;font-weight:900">الاختبار النهائي الشامل</h2>
     <p style="color:rgba(255,255,255,.75);font-size:.82rem;margin-top:4px">جميع أسئلة التقييم الرسمية من الكتاب</p>
   </div>
@@ -181,7 +274,7 @@
 <div id="pscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero">
-    <h2>in · on · at 🎯</h2>
+    <h2>in · on · at <svg class="svgico" aria-hidden="true"><use href="#icon-target"></use></svg></h2>
     <p>كل ما اتّسعت الدائرة زاد العموم — والعكس يزيد التحديد</p>
   </div>
   <div class="prep-toggle">
@@ -209,7 +302,7 @@
     </div>
   </div>
 
-  <button class="quiz-toggle" id="prep-toggle" onclick="reveal_quiz('prep')">🎯 فهمت الفكرة؟ اختبر نفسك ←</button>
+  <button class="quiz-toggle" id="prep-toggle" onclick="reveal_quiz('prep')"><svg class="svgico" aria-hidden="true"><use href="#icon-target"></use></svg> فهمت الفكرة؟ اختبر نفسك ←</button>
   <div id="prep-quiz" class="quiz-wrap"></div>
 </div>
 
@@ -217,7 +310,7 @@
 <div id="ascreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#4F46E5)">
-    <h2>a · an · the ✨</h2>
+    <h2>a · an · the <svg class="svgico" aria-hidden="true"><use href="#icon-sparkles"></use></svg></h2>
     <p>متى «أيّ واحد» ومتى «المحدّد المعروف»؟</p>
   </div>
 
@@ -254,7 +347,7 @@
     </div>
   </div>
 
-  <button class="quiz-toggle" id="art-toggle" onclick="reveal_quiz('art')">✨ فهمت الفكرة؟ اختبر نفسك ←</button>
+  <button class="quiz-toggle" id="art-toggle" onclick="reveal_quiz('art')"><svg class="svgico" aria-hidden="true"><use href="#icon-sparkles"></use></svg> فهمت الفكرة؟ اختبر نفسك ←</button>
   <div id="art-quiz" class="quiz-wrap"></div>
 </div>
 
@@ -262,13 +355,13 @@
 <div id="wscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#0D9488,#0F766E)">
-    <h2>أدوات السؤال — WH ❓</h2>
+    <h2>أدوات السؤال — WH <svg class="svgico" aria-hidden="true"><use href="#icon-help-circle"></use></svg></h2>
     <p>كل كلمة تسأل عن شيء مختلف — اضغط لتتعلّم</p>
   </div>
   <div class="prep-hint">👇 اضغط على أيّ أداة سؤال</div>
   <div class="wh-grid" id="wh-grid"></div>
   <div id="wh-detail"></div>
-  <button class="quiz-toggle" id="wh-toggle" onclick="reveal_quiz('wh')">❓ فهمت الفكرة؟ اختبر نفسك ←</button>
+  <button class="quiz-toggle" id="wh-toggle" onclick="reveal_quiz('wh')"><svg class="svgico" aria-hidden="true"><use href="#icon-help-circle"></use></svg> فهمت الفكرة؟ اختبر نفسك ←</button>
   <div id="wh-quiz" class="quiz-wrap"></div>
 </div>
 
@@ -276,17 +369,17 @@
 <div id="pnscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#06B6D4,#0E7490)">
-    <h2>الضمائر وفعل الكينونة 🙋</h2>
+    <h2>الضمائر وفعل الكينونة <svg class="svgico" aria-hidden="true"><use href="#icon-user-round"></use></svg></h2>
     <p>كل ضمير له شكل ثابت من الفعل be — احفظ الزوج مو الكلمة</p>
   </div>
   <div class="prep-toggle">
     <button class="on" id="pn-t-present" onclick="sw_pn('present')">☀️ الحاضر (am/is/are)</button>
-    <button id="pn-t-past" onclick="sw_pn('past')">⏳ الماضي (was/were)</button>
+    <button id="pn-t-past" onclick="sw_pn('past')"><svg class="svgico" aria-hidden="true"><use href="#icon-hourglass"></use></svg> الماضي (was/were)</button>
   </div>
   <div class="prep-hint">👇 اضغط على أيّ ضمير</div>
   <div class="wh-grid" id="pn-grid"></div>
   <div id="pn-detail"></div>
-  <button class="quiz-toggle" id="pn-toggle" onclick="reveal_quiz('pn')">🙋 فهمت الفكرة؟ اختبر نفسك ←</button>
+  <button class="quiz-toggle" id="pn-toggle" onclick="reveal_quiz('pn')"><svg class="svgico" aria-hidden="true"><use href="#icon-user-round"></use></svg> فهمت الفكرة؟ اختبر نفسك ←</button>
   <div id="pn-quiz" class="quiz-wrap"></div>
 </div>
 
@@ -294,13 +387,13 @@
 <div id="modscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
-    <h2>الأفعال الناقصة 💪</h2>
+    <h2>الأفعال الناقصة <svg class="svgico" aria-hidden="true"><use href="#icon-dumbbell"></use></svg></h2>
     <p>can · must · may — كل فعل يوصّل معنى مختلف</p>
   </div>
   <div class="prep-hint">👇 اضغط على أيّ فعل</div>
   <div class="wh-grid" id="mod-grid" style="grid-template-columns:repeat(3,1fr)"></div>
   <div id="mod-detail"></div>
-  <button class="quiz-toggle" id="mod-toggle" onclick="reveal_quiz('mod')">💪 فهمت الفكرة؟ اختبر نفسك ←</button>
+  <button class="quiz-toggle" id="mod-toggle" onclick="reveal_quiz('mod')"><svg class="svgico" aria-hidden="true"><use href="#icon-dumbbell"></use></svg> فهمت الفكرة؟ اختبر نفسك ←</button>
   <div id="mod-quiz" class="quiz-wrap"></div>
 </div>
 
@@ -308,7 +401,7 @@
 <div id="tmscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#F59E0B,#B45309)">
-    <h2>الماضي البسيط · كلمات الزمن ⏳</h2>
+    <h2>الماضي البسيط · كلمات الزمن <svg class="svgico" aria-hidden="true"><use href="#icon-hourglass"></use></svg></h2>
     <p>yesterday · last · ago — والأهمّ: ترتيب الكلمات</p>
   </div>
   <div class="tl">
@@ -320,15 +413,15 @@
   </div>
   <div class="tl-cap">⟵ كلّما اتّجهنا يساراً ابتعدنا في الماضي · واليمين هو الآن ⟶</div>
   <div class="story-box">
-    <div class="story-h">📖 قصة واحدة تربطها كلها — أحداث في حياة شخص:</div>
+    <div class="story-h"><svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg> قصة واحدة تربطها كلها — أحداث في حياة شخص:</div>
     <div class="story-line"><span class="en">Last week I traveled to Riyadh.</span>
-      <button class="story-spk" onclick="say('Last week I traveled to Riyadh')">🔊</button>
+      <button class="story-spk" onclick="say('Last week I traveled to Riyadh')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
       <span class="ar">الأسبوع الماضي سافرت إلى الرياض.</span></div>
     <div class="story-line"><span class="en">Two days ago I bought a car.</span>
-      <button class="story-spk" onclick="say('Two days ago I bought a car')">🔊</button>
+      <button class="story-spk" onclick="say('Two days ago I bought a car')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
       <span class="ar">قبل يومين اشتريت سيارة.</span></div>
     <div class="story-line"><span class="en">Yesterday I visited my friend.</span>
-      <button class="story-spk" onclick="say('Yesterday I visited my friend')">🔊</button>
+      <button class="story-spk" onclick="say('Yesterday I visited my friend')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
       <span class="ar">أمس زرت صديقي.</span></div>
   </div>
   <div class="prep-hint">👇 اضغط على أيّ كلمة أو نقطة على الخطّ</div>
@@ -348,7 +441,7 @@
     </div>
   </div>
 
-  <button class="quiz-toggle" id="time-toggle" onclick="reveal_quiz('time')">⏳ فهمت الفكرة؟ اختبر نفسك ←</button>
+  <button class="quiz-toggle" id="time-toggle" onclick="reveal_quiz('time')"><svg class="svgico" aria-hidden="true"><use href="#icon-hourglass"></use></svg> فهمت الفكرة؟ اختبر نفسك ←</button>
   <div id="time-quiz" class="quiz-wrap"></div>
 </div>
 
@@ -371,11 +464,11 @@
 <div id="ivscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#6366F1,#4338CA)">
-    <h2>الأفعال الشاذة 🔄</h2>
+    <h2>الأفعال الشاذة <svg class="svgico" aria-hidden="true"><use href="#icon-refresh-cw"></use></svg></h2>
     <p>ليست عشوائية — بل عائلات لها أنماط</p>
   </div>
   <div class="prep-toggle">
-    <button class="on" id="iv-t-learn" onclick="sw_iv('learn')">📖 تعلّم بالعائلات</button>
+    <button class="on" id="iv-t-learn" onclick="sw_iv('learn')"><svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg> تعلّم بالعائلات</button>
     <button id="iv-t-drill" onclick="sw_iv('drill')">🎴 تدرّب (بطاقات)</button>
   </div>
   <div id="iv-learn-body"></div>

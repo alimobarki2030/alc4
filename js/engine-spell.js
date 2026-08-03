@@ -20,7 +20,7 @@ function render_spell(){
     document.getElementById('sp-fill').style.width='100%';
     document.getElementById('sp-count').textContent=`${total} / ${total}`;
     body.innerHTML=`<div class="sp-card sp-done"><div class="sp-emoji">🎉</div>
-      <div class="sp-donetxt">أحسنت! أكملت جميع كلمات الدروس الأربعة</div>
+      <div class="sp-donetxt">أحسنت! أكملت جميع كلمات الإملاء</div>
       <div class="sp-score">نتيجتك: ${spellScore} / ${total}</div>
       <button class="sp-btn check" onclick="start_spell()">🔁 ابدأ من الأول</button></div>`;
     return;

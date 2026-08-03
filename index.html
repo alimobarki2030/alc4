@@ -187,9 +187,34 @@ footer span{color:#FFC800;font-weight:700}
 #access-gate #ag-submit:hover{filter:brightness(1.15)}
 #access-gate #ag-submit:disabled{opacity:.6;cursor:default}
 #access-gate .ag-err{margin-top:12px;font-size:.78rem;color:#FF4B4B;font-weight:600;min-height:1em}
+/* Intro splash — shown once per visit on site entry, hidden after (see the
+   sessionStorage gate at the top of <body>). */
+#splash{position:fixed;inset:0;background:var(--navy);z-index:9999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:20px;animation:splashOut 0.5s ease 2.5s forwards}
+html.splash-seen #splash{display:none}
+@keyframes splashOut{0%{opacity:1;pointer-events:all}100%{opacity:0;pointer-events:none;display:none}}
+.splash-emoji{font-size:4rem;margin-bottom:16px;animation:bounce 0.8s ease infinite alternate}
+@keyframes bounce{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+.splash-title{font-family:'Cairo',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;margin-bottom:6px}
+.splash-title span{color:var(--g)}
+.splash-sub{color:rgba(255,255,255,.6);font-size:.9rem;font-family:'Cairo',sans-serif;margin-bottom:24px}
+.splash-bar{width:200px;height:4px;background:rgba(255,255,255,.15);border-radius:4px;margin-top:20px;overflow:hidden}
+.splash-fill{height:4px;background:var(--g);border-radius:4px;animation:load 2.5s ease forwards}
+@keyframes load{from{width:0%}to{width:100%}}
 </style>
 </head>
 <body>
+<!-- SPLASH — shown once per visit on site entry, then the sessionStorage flag
+     keeps it hidden on every later navigation (including into the books). -->
+<script>if(sessionStorage.getItem('alc_splash')){document.documentElement.classList.add('splash-seen');}else{sessionStorage.setItem('alc_splash','1');}</script>
+<div id="splash">
+  <div class="splash-emoji">🎓</div>
+  <div class="splash-title">مركز التدريب <span>ALC</span></div>
+  <div class="splash-sub">American Language Course</div>
+  <div class="splash-bar"><div class="splash-fill"></div></div>
+</div>
+
 <!-- shared icon sprite (Lucide, inline for offline-first + zero flash) -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 

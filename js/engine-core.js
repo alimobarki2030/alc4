@@ -98,3 +98,9 @@ function dedupe_by_q(arr){
     return true;
   });
 }
+// Fisher-Yates in-place shuffle (unbiased). Returns the same array reference
+// so callers that share it (e.g. EE[CL] === the rendered array) stay aligned.
+function shuffle_arr(a){
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}

@@ -256,6 +256,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .wo-chip:hover{background:var(--navy2);transform:scale(1.04)}
 .wo-chip.placed{background:var(--b);color:#fff}
 .wo-chip.placed:hover{background:var(--bd)}
+.wo-chip.hinted{background:var(--o)}
+.wo-chip.hinted:hover{background:#E08600}
 .wo-bank{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px;direction:ltr;justify-content:flex-start}
 .wo-bank-chip{background:#fff;border:2px solid var(--navy);border-radius:8px;
   padding:7px 13px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;

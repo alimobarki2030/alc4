@@ -44,6 +44,11 @@ function apply_lessons(){
     const F=LP.final;
     fb.textContent=(F&&typeof F.pct==='number')?`أفضل نتيجة ${F.pct}%${F.done?' ✓':''}`:'ابدأ الاختبار';
   }
+  const rb=document.getElementById('review-badge');
+  if(rb){
+    const R=LP.review;
+    rb.textContent=(R&&typeof R.pct==='number')?`أفضل نتيجة ${R.pct}%${R.done?' ✓':''}`:'ابدأ المراجعة';
+  }
 }
 function load_progress(){
   let data=null;

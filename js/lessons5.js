@@ -1146,9 +1146,24 @@ l4:[
 };
 
 // ═══════════════════════════════════════
-// FINAL EXAM (الاختبار النهائي الشامل) — Review 5, EXERCISE Z
+// FINAL EXAM (الاختبار النهائي الشامل)
+// كل أسئلة اختبر بالدروس 1-4 مجمّعة (نفس طريقة Book 4) + أسئلة Review 5
 // ═══════════════════════════════════════
-const FINAL=[
+function dedupe_by_q(arr){
+  const seen=new Set();
+  return arr.filter(q=>{
+    const k=q.q.trim()+'|'+q.o.join(',');
+    if(seen.has(k))return false;
+    seen.add(k);
+    return true;
+  });
+}
+const FINAL=dedupe_by_q([
+  ...EE.l1,
+  ...EE.l2,
+  ...EE.l3,
+  ...EE.l4,
+  // Additional questions from Book 5's Review 5 (EXERCISE Z)
   {q:"Don't _______ that bowl of soup. It's very hot.",o:['point to','touch','turn off','comb'],a:1,en:'hot soup → warning not to touch',ar:'شوربة حارة → تحذير من اللمس',tr:'لا تلمس وعاء الشوربة ذاك. هو حار جدًا.'},
   {q:'Thomas ate a dozen cookies before lunch. A dozen = _______.',o:['six','eight','twelve','twenty'],a:2,en:'a dozen = 12',ar:'دزينة = ١٢',tr:'توماس أكل دزينة كوكيز قبل الغدا. دزينة = اثنا عشر.'},
   {q:'The sandwich has one slice of cheese _______ two slices of bread.',o:['between','among','before','at'],a:0,en:'between = in the middle of two things',ar:'between = بين شيئين',tr:'الساندويتش فيه شريحة جبن بين شريحتين خبز.'},
@@ -1169,7 +1184,7 @@ const FINAL=[
   {q:'Is there milk on the table?',o:['Yes, they are.','Yes, there is.','Yes, it is.','Yes, there are.'],a:1,en:'milk is noncount → there is',ar:'milk غير معدود → there is',tr:'فيه حليب على الطاولة؟ — إي، فيه.'},
   {q:'You have a lot of friends at school.',o:['Yes, I have many friends.','Yes, I have much friends.','Yes, I have a little friends.','Yes, I have few friends.'],a:0,en:'friends is countable → many',ar:'friends معدود → many',tr:'عندك أصحاب كثير بالمدرسة. — إي، عندي أصحاب كثير.'},
   {q:'Will the tests be long tests every day?',o:["No, they aren't.","No, there weren't.","No, they will.","No, they won't."],a:3,en:'short answer to a will-question: won’t',ar:'جواب قصير لسؤال will: won’t',tr:'بتكون الاختبارات طويلة كل يوم؟ — لا، ما بتكون.'},
-];
+]);
 EE.final=FINAL;
 
 function build_quiz(elId,qs,prefix){

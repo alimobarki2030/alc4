@@ -873,6 +873,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .yt-card .pc-txt h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.15rem;font-weight:900}
 .yt-card .pc-txt p{color:rgba(255,255,255,.9);font-size:.8rem;margin-top:2px;font-family:'Cairo',sans-serif}
 #ytscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+#fscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+#rscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
 .yt-tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
 .yt-tab{flex:none;min-width:112px;padding:10px 14px;border:2px solid var(--bdr);border-radius:12px;background:#fff;cursor:pointer;text-align:center;transition:.15s}
 .yt-tab:hover{border-color:#1F2937}

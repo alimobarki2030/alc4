@@ -17,10 +17,10 @@
     overlay.id = 'access-gate';
     overlay.innerHTML = `
       <div class="ag-card">
-        <div class="ag-emoji">🔒</div>
+        <div class="ag-icon"><svg class="svgico" aria-hidden="true"><use href="#icon-lock"></use></svg></div>
+        <div class="ag-brand">ALC</div>
         <h2>هذا الموقع خاص بطلاب المعهد</h2>
-        <p>أدخل كود الدخول اللي وصلك من معلمك</p>
-        <input id="ag-input" type="text" autocomplete="off" placeholder="الكود السري">
+        <input id="ag-input" type="text" autocomplete="off" placeholder="اكتب الكود هنا">
         <button id="ag-submit">دخول</button>
         <div id="ag-err" class="ag-err"></div>
       </div>`;

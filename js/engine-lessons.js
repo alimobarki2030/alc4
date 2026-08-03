@@ -480,7 +480,7 @@ function wo_pick(idx,wi,word){
   } else {
     ans.classList.add('has-words');
     ans.innerHTML=woState[idx].map((x,pos)=>
-      `<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`
+      `<button class="wo-chip placed${x.hinted?' hinted':''}" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`
     ).join('');
   }
 }
@@ -488,7 +488,7 @@ function wo_remove(idx,wi){
   wo_pick(idx,wi,'');
   const ans=document.getElementById(`woa${idx}`);
   if(!woState[idx]||woState[idx].length===0){ans.innerHTML='';ans.classList.remove('has-words');return;}
-  ans.innerHTML=woState[idx].map(x=>`<button class="wo-chip placed" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`).join('');
+  ans.innerHTML=woState[idx].map(x=>`<button class="wo-chip placed${x.hinted?' hinted':''}" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`).join('');
 }
 function wo_check(idx,correct,tr,ar){
   if(!woState[idx]||woState[idx].length===0){
@@ -524,26 +524,46 @@ const woHints={};
 function wo_hint(idx,correct){
   if(!woHints[idx])woHints[idx]=0;
   if(woHints[idx]>=3)return;
-
+  if(!woState[idx])woState[idx]=[];
   const words=correct.replace(/\s*[.?!]+\s*$/,'').split(' ');
-  const nextPos=woHints[idx];
-  const wordToReveal=words[nextPos];
 
-  const chips=document.querySelectorAll(`[id^="woc${idx}_"]`);
-  let foundChip=null;
-  chips.forEach(chip=>{
-    if(!foundChip&&!chip.classList.contains('used')&&chip.textContent.trim()===wordToReveal){
-      foundChip=chip;
+  // Keep the student's correct leading run; only correct from the first error —
+  // don't punish good work by wiping the whole box.
+  let keep=0;
+  while(keep<woState[idx].length&&keep<words.length&&woState[idx][keep].word===words[keep])keep++;
+
+  // Return every chip from the first wrong/extra position onward to the bank.
+  for(let i=keep;i<woState[idx].length;i++){
+    const c=document.getElementById(`woc${idx}_${woState[idx][i].wi}`);
+    if(c)c.classList.remove('used');
+  }
+  woState[idx]=woState[idx].slice(0,keep);
+
+  // Reveal the next correct word at the first unresolved position.
+  let revealed=false;
+  if(keep<words.length){
+    let chip=null;
+    document.querySelectorAll(`[id^="woc${idx}_"]`).forEach(c=>{
+      if(!chip&&!c.classList.contains('used')&&c.textContent.trim()===words[keep])chip=c;
+    });
+    if(chip){
+      chip.classList.add('used');
+      woState[idx].push({wi:parseInt(chip.id.split('_').pop(),10),word:words[keep],hinted:true});
+      revealed=true;
     }
-  });
-
-  if(foundChip){
-    foundChip.style.background='var(--o)';
-    foundChip.style.color='#fff';
-    foundChip.style.borderColor='var(--o)';
-    setTimeout(()=>{ foundChip.click(); },400);
   }
 
+  // Re-render the answer box; hinted words keep a distinct colour.
+  const ans=document.getElementById(`woa${idx}`);
+  if(woState[idx].length){
+    ans.classList.add('has-words');
+    ans.innerHTML=woState[idx].map(x=>`<button class="wo-chip placed${x.hinted?' hinted':''}" onclick="wo_remove(${idx},${x.wi})">${x.word}</button>`).join('');
+  } else {
+    ans.innerHTML='';ans.classList.remove('has-words');
+  }
+
+  // Only spend a hint when a new word was actually revealed.
+  if(!revealed)return;
   woHints[idx]++;
   const remaining=3-woHints[idx];
   const hintBtn=document.getElementById(`wohint${idx}`);

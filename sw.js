@@ -1,6 +1,6 @@
-const CACHE_NAME='alc-v5';
+const CACHE_NAME='alc-v6';
 const CORE_ASSETS=[
-  '/','/index.html','/book4.html','/book5.html','/book5-pronouns.html','/book6.html','/grammar.html',
+  '/','/book4','/book5','/book5-pronouns','/book6','/grammar',
   '/css/style.css','/icons.svg',
   '/js/access-gate.js',
   '/js/engine-core.js','/js/engine-progress.js','/js/engine-lessons.js',
@@ -34,7 +34,7 @@ self.addEventListener('fetch',e=>{
   e.respondWith(
     caches.match(e.request).then(cached=>{
       const fetchPromise=fetch(e.request).then(res=>{
-        if(res&&res.status===200){
+        if(res&&res.status===200&&!res.redirected){
           const clone=res.clone();
           caches.open(CACHE_NAME).then(cache=>cache.put(e.request,clone));
         }

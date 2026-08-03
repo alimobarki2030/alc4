@@ -11,7 +11,8 @@ const BOOK_ID='book6';
 const LESSON_META={
   l1:{ico:'🌦️',title:"Lesson 1 — How's the Weather?",sub:'الطقس والأحوال الجوية'},
   l2:{ico:'✈️',title:'Lesson 2 — Taking a Trip',sub:'السفر والمطاعم'},
-  l3:{ico:'📮',title:'Lesson 3 — Sending Mail',sub:'البريد والبنك'}
+  l3:{ico:'📮',title:'Lesson 3 — Sending Mail',sub:'البريد والبنك'},
+  l4:{ico:'🏕️',title:"Lesson 4 — Let's Take a Vacation",sub:'الإجازات والسفر'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -127,6 +128,40 @@ l3:[
   {e:'also',a:'كمان / أيضًا',em:'➕'},
   {e:'crowded',a:'مزدحم',em:'👥'},
   {e:'near',a:'قريب من',em:'📍'},
+],
+l4:[
+  {e:'camera',a:'كاميرا',em:'📷'},
+  {e:'film',a:'فيلم (شريط تصوير)',em:'🎞️'},
+  {e:'hotel',a:'فندق',em:'🏨'},
+  {e:'lake',a:'بحيرة',em:'🏞️'},
+  {e:'mountain',a:'جبل',em:'⛰️'},
+  {e:'ocean',a:'محيط',em:'🌊'},
+  {e:'river',a:'نهر',em:'🏞️'},
+  {e:'desert',a:'صحراء',em:'🏜️'},
+  {e:'waterfall',a:'شلال',em:'💦'},
+  {e:'stream',a:'جدول ماء',em:'💧'},
+  {e:'tent',a:'خيمة',em:'⛺'},
+  {e:'rest',a:'راحة',em:'😌'},
+  {e:'roll (of)',a:'لفة / بكرة (من)',em:'🎞️'},
+  {e:'sight',a:'معلم سياحي / منظر',em:'👁️'},
+  {e:'sightseeing',a:'التجوّل السياحي',em:'🗺️'},
+  {e:'state',a:'ولاية',em:'🏛️'},
+  {e:'tree',a:'شجرة',em:'🌳'},
+  {e:'vacation',a:'إجازة',em:'🏖️'},
+  {e:'check in',a:'يسجّل الوصول (فندق)',em:'📝'},
+  {e:'check out',a:'يسجّل المغادرة (فندق)',em:'🧳'},
+  {e:'load',a:'يحمّل (الكاميرا بالفيلم)',em:'🔄'},
+  {e:'relax',a:'يسترخي',em:'😌'},
+  {e:'smile',a:'يبتسم',em:'😊'},
+  {e:'stay',a:'يقيم / يبقى',em:'🏨'},
+  {e:'because',a:'لأن',em:'🔗'},
+  {e:'but',a:'لكن',em:'↔️'},
+  {e:'final',a:'أخير / نهائي',em:'🏁'},
+  {e:'for (time)',a:'لمدة',em:'⏱️'},
+  {e:'long (trip/time)',a:'طويل (رحلة/وقت)',em:'📏'},
+  {e:'overnight',a:'لليلة واحدة / طوال الليل',em:'🌙'},
+  {e:'short (trip/time)',a:'قصير (رحلة/وقت)',em:'📏'},
+  {e:'why',a:'لماذا',em:'❓'},
 ]
 };
 
@@ -288,6 +323,38 @@ l3:[
       {s:'She also is tired.',wrong:'also is',right:'is also',tr:'also تجي بعد BE مباشرة: is also.',ok:false},
     ]
   }
+],
+l4:[
+  {
+    title:'Combining Sentences with And/But', ar:'دمج الجمل — and/but',
+    rule:'نستخدم and لربط جملتين متشابهتين بالمعنى (إضافة)، وbut لربط جملتين بمعنى متعاكس (تناقض).',
+    check:{q:"John speaks Spanish, _______ he doesn't speak French.",o:['and','but'],a:1,en:'opposite ideas → but',ar:'فكرتان متعاكستان → but',tr:'جون يتكلم إسباني، بس ما يتكلم فرنسي.'},
+    compare:[
+      {c1:'My vacation is next month.',c2:'My vacation is next month, and I want to travel.',ar:'and لإضافة فكرة مشابهة'},
+      {c1:"I didn't at first.",c2:"I like the Navy now, but I didn't at first.",ar:'but لعكس الفكرة'},
+      {c1:'Jan signed her letter.',c2:'Jan signed her letter, and then she put it in an envelope.',ar:'and لتتابع الأحداث'},
+    ],
+    examples:[
+      {s:"Meg drinks coffee at breakfast, but she doesn't drink it at lunch.",tr:'ميغ تشرب قهوة بالفطور، بس ما تشربها بالغدا.',ar:'but = تناقض',ok:true},
+      {s:'Their teacher asked a question, and all the students answered.',tr:'معلمهم سأل سؤال، والطلاب كلهم جاوبوا.',ar:'and = إضافة / تتابع',ok:true},
+      {s:'Ted reads a lot of books, and his brother never reads any.',wrong:'and',right:'but',tr:'تيد يقرأ كتب كثيرة، بس أخوه ما يقرأ ولا كتاب — تناقض فلازم but.',ok:false},
+    ]
+  },
+  {
+    title:'Answering Why Questions with Because', ar:'الإجابة على أسئلة Why بـ Because',
+    rule:'نسأل بـ Why...؟ ونجاوب بـ Because + جملة كاملة توضح السبب.',
+    check:{q:'Why did your brother travel to Hawaii?',o:['Because he likes the ocean.','He likes the ocean.','Why he likes the ocean.','Because likes the ocean.'],a:0,en:'answer starts with Because + full clause',ar:'الجواب يبدأ بـ Because + جملة كاملة',tr:'ليش أخوك سافر لهاواي؟ لأنه يحب المحيط.'},
+    compare:[
+      {c1:'Why are you smiling?',c2:"Because I'm happy.",ar:'سؤال why + جواب because'},
+      {c1:'Why is Tom upset?',c2:'Because his test grade was bad.',ar:'يوضح السبب بجملة كاملة'},
+      {c1:'Why did you go to California?',c2:'Because my family lives there.',ar:'because + سبب'},
+    ],
+    examples:[
+      {s:"Because it's hot and sunny.",tr:'لأن الجو حار ومشمس.',ar:'جواب Why بجملة سبب',ok:true},
+      {s:'Because he studied.',tr:'لأنه ذاكر.',ar:'because + سبب',ok:true},
+      {s:'Why I like the ocean.',wrong:'Why I like',right:'Because I like',tr:'الجواب لازم يبدأ بـ Because مو Why.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -324,6 +391,16 @@ l3:[
   {words:['Walk','to','First','Street','and','turn','right'],ans:'Walk to First Street and turn right.',tr:'امشِ لشارع فيرست ولف يمين.',ar:'تعليمات اتجاهات'},
   {words:['She','also','went','to','the','bank'],ans:'She also went to the bank.',tr:'هي كمان راحت للبنك.',ar:'also قبل الفعل الماضي'},
   {words:['Kelly','is','also','in','the','Navy'],ans:'Kelly is also in the Navy.',tr:'كيلي كمان بالبحرية.',ar:'also بعد is'},
+],
+l4:[
+  {words:['My','vacation','is','next','month'],ans:'My vacation is next month.',tr:'إجازتي الشهر الجاي.',ar:'جملة بسيطة عن الوقت'},
+  {words:['I','like','the','Navy','now','but','I',"didn't",'at','first'],ans:"I like the Navy now, but I didn't at first.",tr:'أحب البحرية الحين، بس ما كنت أحبها بالأول.',ar:'but لعكس الفكرة'},
+  {words:['Why','are','you','smiling'],ans:'Why are you smiling ?',tr:'ليش تبتسم؟',ar:'سؤال Why'},
+  {words:['Because',"I'm",'happy'],ans:"Because I'm happy.",tr:'لأني سعيد.',ar:'جواب Because'},
+  {words:['We','stayed','at','the','hotel','overnight'],ans:'We stayed at the hotel overnight.',tr:'بقينا بالفندق طول الليل.',ar:'overnight = لليلة كاملة'},
+  {words:['I',"can't",'wait','to','take','my','vacation'],ans:"I can't wait to take my vacation.",tr:'ما أقدر أستنى آخذ إجازتي.',ar:'take a vacation تعبير مفيد'},
+  {words:['She','always','smiles','in','pictures'],ans:'She always smiles in pictures.',tr:'هي دايمًا تبتسم بالصور.',ar:'مضارع بسيط لعادة'},
+  {words:['You','have','to','check','out','before','noon'],ans:'You have to check out before noon.',tr:'لازم تسجل مغادرتك قبل الظهر.',ar:'check out تعبير فندقي'},
 ]
 };
 
@@ -389,6 +466,28 @@ l3:[
   {q:'Jeff: What _______ is it on?',o:['street','state','address','building'],a:0,en:'What street is it on?',ar:'أي شارع؟',tr:'جيف: أي شارع هو فيه؟'},
   {q:'Man: It\'s on Andrews _______ First Street and Second Street.',o:['near','on','between','without'],a:2,en:'between two streets',ar:'بين شارعين = between',tr:'الرجل: هو بشارع أندروز بين الشارع الأول والثاني.'},
   {q:"Man: It's _______ the library.",o:['without','between','at','next to'],a:3,en:'next to the library',ar:'جنب المكتبة',tr:'الرجل: هو جنب المكتبة.'},
+],
+l4:[
+  {q:"Jan: Can you put some film in my camera? Tom: Sure, I'll _______ it for you.",o:['load','relax','take'],a:0,en:'put film in a camera = load',ar:'يحمّل الكاميرا بالفيلم',tr:'جان: تقدر تحط فيلم بكاميرتي؟ توم: أكيد، بحمّلها لك.'},
+  {q:'Class ends June 15th. Our _______ test is June 14th.',o:['short','final','later'],a:1,en:'the last test before class ends = final',ar:'آخر اختبار = final',tr:'الصف ينتهي 15 يونيو. اختبارنا النهائي يوم 14 يونيو.'},
+  {q:'Tom: What time did your plane get in? John: Oh, it was late. It _______ got in at midnight.',o:['too','at first','finally'],a:2,en:'eventually, after delay = finally',ar:'بعد تأخير = finally',tr:'توم: أي وقت وصلت طائرتك؟ جون: كان متأخر. وصلت أخيرًا نص الليل.'},
+  {q:"That _______ doesn't turn brown in winter; it's always green.",o:['tree','lake','vacation'],a:0,en:'turns brown / stays green = a tree',ar:'يصفر أو يخضر = شجرة',tr:'تلك الشجرة ما تصفر بالشتاء؛ هي دايمًا خضراء.'},
+  {q:'Dallas has many nice _______. You can stay in any one of them.',o:['lakes','mountains','hotels'],a:2,en:'stay in = hotels',ar:'يقيم في = فنادق',tr:'دالاس فيها فنادق حلوة كثيرة. تقدر تقيم بأي وحد منها.'},
+  {q:'You have to _______ to this hotel before noon.',o:['rest','check in','check out'],a:2,en:'before noon = standard checkout time',ar:'قبل الظهر = وقت تسجيل المغادرة المعتاد',tr:'لازم تسجل مغادرتك من هذا الفندق قبل الظهر.'},
+  {q:'I think that she likes me. She _______ at me.',o:['went sightseeing','smiled','took a picture'],a:1,en:'sign of liking someone = smiled',ar:'علامة الإعجاب = ابتسمت',tr:'أعتقد إنها تحبني. هي ابتسمت لي.'},
+  {q:'Ed and Brian went to Houston. They stayed there _______ and came back this morning.',o:['final','overnight','rest'],a:1,en:'stayed one night = overnight',ar:'باتوا ليلة = overnight',tr:'إيد وبراين راحوا هيوستن. باتوا هناك ليلة ورجعوا الصبح.'},
+  {q:'My friend Linda lives in the _______ of California.',o:['state','country','ocean'],a:0,en:'California is a state',ar:'كاليفورنيا ولاية',tr:'صديقتي ليندا تسكن بولاية كاليفورنيا.'},
+  {q:'Lt. Hill: What do you do to _______? Lt. Lamb: I play table tennis.',o:['relax','smile','stay'],a:0,en:'playing table tennis = relaxing activity',ar:'لعب تنس الطاولة = نشاط استرخاء',tr:'الملازم هيل: وش تسوي عشان ترتاح؟ الملازم لامب: ألعب تنس طاولة.'},
+  {q:'How long was your vacation?',o:['Next month.','Two weeks.','In June.'],a:1,en:'"how long" asks about duration',ar:'How long يسأل عن المدة',tr:'كم طالت إجازتك؟ أسبوعين.'},
+  {q:'Jane: _______ did you go to California for your vacation?',o:['Where','Who','Why','What'],a:2,en:'answer gives a reason → Why',ar:'الجواب سبب → Why',tr:'جين: ليش رحتي كاليفورنيا لإجازتك؟'},
+  {q:'Barb: _______ my family lives there.',o:['Also','And','Because','But'],a:2,en:'gives a reason = Because',ar:'يعطي سبب = Because',tr:'بارب: لأن عائلتي تسكن هناك.'},
+  {q:'Jane: How _______ did you stay?',o:['long','many','short','final'],a:0,en:'"How long" asks duration',ar:'How long = كم المدة',tr:'جين: كم المدة اللي بقيتيها؟'},
+  {q:'Barb: Just three days. My vacation was very _______.',o:['long','short','final','overnight'],a:1,en:'three days = short',ar:'ثلاث أيام = قصيرة',tr:'بارب: بس ثلاث أيام. إجازتي كانت قصيرة جدًا.'},
+  {q:"John speaks Spanish, _______ he doesn't speak French.",o:['and','but'],a:1,en:'opposite ideas → but',ar:'فكرتان متعاكستان → but',tr:'جون يتكلم إسباني، بس ما يتكلم فرنسي.'},
+  {q:'Jan signed her letter, _______ then she put it in an envelope.',o:['and','but'],a:0,en:'sequence of similar actions → and',ar:'تتابع أفعال → and',tr:'جان وقّعت رسالتها، وبعدين حطتها بالظرف.'},
+  {q:"Meg drinks coffee at breakfast, _______ she doesn't drink it at lunch.",o:['and','but'],a:1,en:'opposite ideas → but',ar:'فكرتان متعاكستان → but',tr:'ميغ تشرب قهوة بالفطور، بس ما تشربها بالغدا.'},
+  {q:'Ted reads a lot of books, _______ his brother never reads any.',o:['and','but'],a:1,en:'opposite ideas → but',ar:'فكرتان متعاكستان → but',tr:'تيد يقرأ كتب كثيرة، بس أخوه ما يقرأ ولا كتاب.'},
+  {q:'Their teacher asked a question, _______ all the students answered.',o:['and','but'],a:0,en:'addition/result → and',ar:'إضافة أو نتيجة → and',tr:'معلمهم سأل سؤال، والطلاب كلهم جاوبوا.'},
 ]
 };
 

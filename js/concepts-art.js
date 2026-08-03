@@ -33,7 +33,7 @@ function open_art(){
   artSel=null;
   ['a','an','the'].forEach(x=>document.getElementById('art-'+x).classList.remove('active'));
   document.getElementById('art-detail').innerHTML='';
-  build_art_quiz();reset_quiz('art');
+  build_concept_quiz('art-quiz',ART_QUIZ,'art',['a','an','the']);reset_quiz('art');
 }
 
 function sel_art(p){
@@ -46,37 +46,4 @@ function sel_art(p){
     extra=`<div class="vowel-strip" style="margin-top:8px">${['a','e','i','o','u'].map(v=>`<div class="vowel-chip">${v}</div>`).join('')}</div>`;
   }
   document.getElementById('art-detail').innerHTML=concept_html(c.tx,c.bd,header,d,extra);
-}
-
-function build_art_quiz(){
-  let html='';
-  ART_QUIZ.forEach((q,i)=>{
-    html+=`<div class="pq-item">
-      <div class="pq-sent">${i+1}. ${q.q}</div>
-      <div class="pq-opts">
-        ${['a','an','the'].map(o=>`<button class="pq-opt" id="aqo${i}_${o}" onclick="art_answer(${i},'${o}')">${o}</button>`).join('')}
-      </div>
-      <div class="pq-fb" id="aqfb${i}"></div>
-    </div>`;
-  });
-  document.getElementById('art-quiz').innerHTML=html;
-}
-
-function art_answer(i,o){
-  const q=ART_QUIZ[i];
-  const fb=document.getElementById('aqfb'+i);
-  const btn=document.getElementById('aqo'+i+'_'+o);
-  if(o===q.a){
-    ['a','an','the'].forEach(x=>{const b=document.getElementById('aqo'+i+'_'+x);if(b)b.disabled=true;});
-    btn.classList.add('ok');
-    fb.textContent='✅ '+q.tr;
-    fb.className='pq-fb show ok';
-    say(q.q.replace('___',o));
-    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-  }else{
-    btn.classList.add('no');
-    fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
-    fb.className='pq-fb show no';
-    setTimeout(()=>{btn.classList.remove('no');},700);
-  }
 }

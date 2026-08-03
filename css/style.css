@@ -899,3 +899,11 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .top-fab.show{opacity:1;pointer-events:auto;transform:translateY(0)}
 .top-fab:active{transform:scale(.92)}
 
+/* ── WORK-IN-PROGRESS CARD (empty-state guard, e.g. a lesson shipped before its grammar) ── */
+.wip-card{background:var(--card);border:2px dashed var(--bdr);border-radius:16px;padding:36px 20px;text-align:center;color:var(--muted)}
+.wip-card .wip-ico{font-size:2.4rem;margin-bottom:10px}
+.wip-card .wip-t{font-family:'Cairo',sans-serif;font-weight:800;color:var(--navy);font-size:1rem;margin-bottom:4px}
+.wip-card .wip-s{font-size:.82rem}
+.vocab-note{background:#EEF2FF;border:2px dashed #C7D2FE;border-radius:12px;padding:12px 14px;
+  font-family:'Cairo',sans-serif;font-size:.82rem;color:var(--navy);text-align:center;margin-top:14px;line-height:1.7}
+

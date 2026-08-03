@@ -30,7 +30,7 @@ function open_wh(){
   whSel=null;
   build_wh_grid();
   document.getElementById('wh-detail').innerHTML='';
-  build_wh_quiz();reset_quiz('wh');
+  build_concept_quiz('wh-quiz',WH_QUIZ,'wh');reset_quiz('wh');
 }
 function build_wh_grid(){
   document.getElementById('wh-grid').innerHTML=WH_ORDER.map(k=>{
@@ -45,25 +45,4 @@ function sel_wh(k){
   const d=WH[k],cap=k.charAt(0).toUpperCase()+k.slice(1);
   const header=`${d.ic} ${cap} <span class="pd-tag" style="background:#CCFBF1;color:#0F766E">${d.word}</span>`;
   document.getElementById('wh-detail').innerHTML=concept_html('#0F766E','#5EEAD4',header,d);
-}
-function build_wh_quiz(){
-  let html='';
-  WH_QUIZ.forEach((q,i)=>{
-    html+=`<div class="pq-item"><div class="pq-sent">${i+1}. ${q.q}</div>
-      <div class="pq-opts">${q.o.map(o=>`<button class="pq-opt" id="wqo${i}_${o}" onclick="wh_answer(${i},'${o}')">${o}</button>`).join('')}</div>
-      <div class="pq-fb" id="wqfb${i}"></div></div>`;
-  });
-  document.getElementById('wh-quiz').innerHTML=html;
-}
-function wh_answer(i,o){
-  const q=WH_QUIZ[i],fb=document.getElementById('wqfb'+i),btn=document.getElementById('wqo'+i+'_'+o);
-  if(o===q.a){
-    q.o.forEach(x=>{const b=document.getElementById('wqo'+i+'_'+x);if(b)b.disabled=true;});
-    btn.classList.add('ok');fb.textContent='✅ '+q.tr;fb.className='pq-fb show ok';
-    say(q.q.split('—')[0].replace('___',o));
-    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-  }else{
-    btn.classList.add('no');fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';fb.className='pq-fb show no';
-    setTimeout(()=>{btn.classList.remove('no');},700);
-  }
 }

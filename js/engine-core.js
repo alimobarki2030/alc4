@@ -35,6 +35,17 @@ function track_screen(id){
   gtag('event','section_view',{section:name});
   _curScreen=id;_screenStart=now;
 }
+// Flushes the current screen's dwell time when the tab is hidden/closed
+// without another in-site navigation (e.g. the learner just closes the tab
+// while reading a lesson) — otherwise that dwell time is never recorded.
+function _flush_screen_time(){
+  if(typeof gtag!=='function'||!_curScreen||!_screenStart)return;
+  const secs=Math.round((Date.now()-_screenStart)/1000);
+  if(secs>0&&secs<7200)gtag('event','section_time',{section:SCREEN_NAMES[_curScreen]||_curScreen,seconds:secs});
+  _screenStart=Date.now();
+}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')_flush_screen_time();});
+window.addEventListener('pagehide',_flush_screen_time);
 
 function go_home(){
   show_screen('home');

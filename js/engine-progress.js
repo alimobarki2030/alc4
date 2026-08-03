@@ -124,7 +124,7 @@ function check_streak_comeback(){
     if(last && last!==today && STK===0){
       const banner=document.createElement('div');
       banner.className='streak-comeback';
-      banner.innerHTML=`<span class="sc-ico">💪</span>
+      banner.innerHTML=`<span class="sc-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-dumbbell"></use></svg></span>
         <div class="sc-txt"><h3>عودة مرحباً!</h3>
         <p>انتهى الـ streak، لكن الأهم أنك رجعت — ابدأ streak جديداً اليوم.</p></div>
         <button class="sc-close" onclick="this.parentElement.remove()">✕</button>`;

@@ -56,10 +56,10 @@ function build_learn(lk){
   el.innerHTML=`
   <div class="learn-tabs">
     <button class="ltab on" id="lt-v" onclick="sw_learn_tab('v','${lk}')">
-      <span class="li">📚</span><span>مفردات</span>
+      <span class="li"><svg class="svgico" aria-hidden="true"><use href="#icon-library"></use></svg></span><span>مفردات</span>
     </button>
     <button class="ltab" id="lt-g" onclick="sw_learn_tab('g','${lk}')">
-      <span class="li">📖</span><span>قواعد</span>
+      <span class="li"><svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg></span><span>قواعد</span>
     </button>
   </div>
   <div class="lsec on" id="ls-v"></div>
@@ -80,12 +80,12 @@ function build_vocab_sec(lk){
   const el=document.getElementById('ls-v');
   const words=VOCAB[lk];
   let html=`<div style="font-size:.75rem;color:var(--muted);font-family:'Cairo',sans-serif;margin-bottom:12px;text-align:center">
-    اضغط 🔊 لسماع النطق</div>
+    اضغط <svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg> لسماع النطق</div>
   <div class="vcards">`;
   words.forEach(v=>{
     const safe=v.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
     html+=`<div class="vcard flip" onclick="this.classList.toggle('flipped')">
-      <button class="vs" onclick="event.stopPropagation();say('${safe}')">🔊</button>
+      <button class="vs" onclick="event.stopPropagation();say('${safe}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
       <div class="vflip-inner">
         <div class="vflip-face front">
           <span class="ve">${v.em}</span>
@@ -102,14 +102,14 @@ function build_vocab_sec(lk){
   if(pastWords.length){
     html+=`<div class="past-sec">
       <div class="past-h">⏮️ نفس الأفعال في الماضي</div>
-      <div class="past-note">الأصل ← الماضي · اضغط 🔊 لسماع كلٍّ على حدة</div>`;
+      <div class="past-note">الأصل ← الماضي · اضغط <svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg> لسماع كلٍّ على حدة</div>`;
     pastWords.forEach(w=>{
       const baseSafe=w.e.replace(/'/g,"\\'"),pastSafe=w.past.replace(/'/g,"\\'");
       html+=`<div class="past-row">
         <div class="pr-forms" dir="ltr">
-          <span class="pr-base">${w.e}<button class="pr-spk" onclick="say('${baseSafe}')">🔊</button></span>
+          <span class="pr-base">${w.e}<button class="pr-spk" onclick="say('${baseSafe}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></span>
           <span class="pr-arrow">→</span>
-          <span class="pr-past">${w.past}<button class="pr-spk" onclick="say('${pastSafe}')">🔊</button></span>
+          <span class="pr-past">${w.past}<button class="pr-spk" onclick="say('${pastSafe}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></span>
         </div>
         <div class="pr-ar">الأصل: ${w.a} · الماضي: ${w.pa}</div>
       </div>`;
@@ -126,7 +126,7 @@ function build_grammar_sec(lk){
   const rules=GRAMMAR[lk];
   if(!rules||!rules.length){
     el.innerHTML=`<div class="wip-card">
-      <div class="wip-ico">📖</div>
+      <div class="wip-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg></div>
       <div class="wip-t">قواعد الدرس قيد الإعداد</div>
       <div class="wip-s">هذا الجزء بيصير جاهز قريبًا</div>
     </div>`;
@@ -248,8 +248,8 @@ function build_gcard_body(g,lk,i){
       const safe1=r.c1.replace(/'/g,"\\'");
       const safe2=r.c2.replace(/'/g,"\\'");
       html+=`<div class="qa-pair">
-        <div class="qa-row q"><span class="qa-tag">السؤال</span><span class="qa-txt">${r.c1}</span><button class="qa-spk" onclick="say('${safe1}')">🔊</button></div>
-        <div class="qa-row a"><span class="qa-tag">الجواب</span><span class="qa-txt">${r.c2}</span><button class="qa-spk" onclick="say('${safe2}')">🔊</button></div>
+        <div class="qa-row q"><span class="qa-tag">السؤال</span><span class="qa-txt">${r.c1}</span><button class="qa-spk" onclick="say('${safe1}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
+        <div class="qa-row a"><span class="qa-tag">الجواب</span><span class="qa-txt">${r.c2}</span><button class="qa-spk" onclick="say('${safe2}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
         ${r.ar?`<div class="qa-note">💡 ${r.ar}</div>`:''}
       </div>`;
     });
@@ -275,7 +275,7 @@ function build_gcard_body(g,lk,i){
         html+=`<div class="ex2 ok">
           <div class="ex2-top">
             <span class="ex2-tag ok">✅ مثال صحيح</span>
-            <button class="ex2-spk" onclick="say('${safe}')" aria-label="استمع">🔊</button>
+            <button class="ex2-spk" onclick="say('${safe}')" aria-label="استمع"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
           </div>
           <div class="ex2-en">${ex.s}</div>
           ${ex.tr?`<div class="ex2-tr">${ex.tr}</div>`:''}
@@ -357,7 +357,7 @@ function render_drill(lk){
   if(it.type==='en2ar'){
     const opts=[w,...pickDistractors(words,w,x=>x.a,3)].sort(()=>Math.random()-.5);
     body=`<div class="dq">
-      <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')">🔊</button></div>
+      <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
       <div class="dq-ask">اختر المعنى الصحيح</div>
       <div class="dq-opts">${opts.map(o=>`<button class="dq-opt" onclick="drill_ans('${lk}',this,${o.a===w.a})">${o.a}</button>`).join('')}</div>
       <div class="dq-fb" id="dq-fb"></div></div>`;
@@ -370,7 +370,7 @@ function render_drill(lk){
       <div class="dq-fb" id="dq-fb"></div></div>`;
   }else{
     body=`<div class="dq">
-      <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')">🔊</button></div>
+      <div class="dq-word" dir="ltr">${w.e}<button class="dq-spk" onclick="say('${eSafe}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
       <div class="dq-ask">✍️ اكتب المعنى بالعربية</div>
       <input class="dq-input" id="dq-input" autocomplete="off" placeholder="اكتب هنا..." onkeydown="if(event.key==='Enter')drill_type('${lk}')">
       <div class="dq-fb" id="dq-fb"></div>
@@ -422,7 +422,7 @@ function drill_reveal_type(lk){
   st.wrong=true;
   const eClean=w.e.replace(/\(.*?\)/g,'').trim();
   say(eClean);
-  fb.innerHTML='📖 <span dir="ltr">'+eClean+'</span> = <b>'+coreAr(w.a)+'</b> — احفظها 👍';fb.style.color='var(--navy)';
+  fb.innerHTML='<svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg> <span dir="ltr">'+eClean+'</span> = <b>'+coreAr(w.a)+'</b> — احفظها 👍';fb.style.color='var(--navy)';
   if(dq)dq.querySelectorAll('.sp-btn.check, .sp-skip').forEach(b=>b.style.display='none');
   if(dq&&!document.getElementById('dq-cont')){
     const nb=document.createElement('button');nb.id='dq-cont';nb.className='sp-btn next';nb.style.marginTop='14px';nb.textContent='التالي ←';
@@ -588,7 +588,7 @@ function build_quiz(elId,qs,prefix){
     const bestTxt=(L&&typeof L.pct==='number')?`أفضل نتيجة سابقة: ${L.pct}%${L.done?' ✓':''}`:'لم تُنهِ هذا الاختبار بعد';
     const top=`<div class="test-top">
       <span class="test-best ${(L&&L.done)?'done':''}">${bestTxt}</span>
-      <button class="test-restart" onclick="restart_test()">🔄 ابدأ من جديد</button>
+      <button class="test-restart" onclick="restart_test()"><svg class="svgico" aria-hidden="true"><use href="#icon-refresh-cw"></use></svg> ابدأ من جديد</button>
     </div>`;
     el.innerHTML=top+`<div class="qprog"><div class="qpbar"><div class="qpfill" id="${prefix}pf"></div></div>
       <div class="qptxt" id="${prefix}pt">0 / ${qs.length}</div></div>`;
@@ -600,7 +600,7 @@ function build_quiz(elId,qs,prefix){
     const L=['A','B','C','D'];
     c.innerHTML=`<div class="qhdr">
       <div class="qtxt">${i+1}. ${q.q}</div>
-      <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')">🔊</button>
+      <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
     </div>
     <div class="opts" id="${prefix}o${i}">
       ${q.o.map((opt,oi)=>`<button class="opt" id="${prefix}op${i}${oi}"

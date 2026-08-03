@@ -44,7 +44,7 @@ function build_iv_learn(){
       const bs=v.b.replace(/'/g,"\\'"),ps=v.p.replace(/'/g,"\\'");
       html+=`<div class="iv-row">
         <span class="iv-base">${v.b}</span><span class="iv-arrow">→</span><span class="iv-past">${v.p}</span>
-        <button class="iv-spk" onclick="say('${ps}')" aria-label="استمع">🔊</button>
+        <button class="iv-spk" onclick="say('${ps}')" aria-label="استمع"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
         <span class="iv-mean">${v.m}</span>
         ${v.note?`<span class="iv-note">💡 ${v.note}</span>`:''}
       </div>`;
@@ -72,11 +72,11 @@ function iv_next(){
   const bs=ivCur.b.replace(/'/g,"\\'"),ps=ivCur.p.replace(/'/g,"\\'");
   body.innerHTML=`<div class="iv-drill-top">متبقّي: <b>${ivDeck.length}</b></div>
   <div class="iv-dcard">
-    <div class="iv-base-big">${ivCur.b}<button class="iv-spk2" onclick="say('${bs}')" aria-label="استمع">🔊</button></div>
+    <div class="iv-base-big">${ivCur.b}<button class="iv-spk2" onclick="say('${bs}')" aria-label="استمع"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
     <div class="iv-mean-big">${ivCur.m}</div>
     <div id="iv-ans" style="display:none">
       <div class="iv-arrow-big">↓ الماضي</div>
-      <div class="iv-past-big">${ivCur.p}<button class="iv-spk2" onclick="say('${ps}')" aria-label="استمع">🔊</button></div>
+      <div class="iv-past-big">${ivCur.p}<button class="iv-spk2" onclick="say('${ps}')" aria-label="استمع"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
     </div>
     <div id="iv-controls"><button class="iv-reveal-btn" onclick="iv_reveal()">🤔 ما الماضي؟ اضغط للكشف</button></div>
     <div id="iv-judge" class="iv-judge" style="display:none">

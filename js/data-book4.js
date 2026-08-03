@@ -480,17 +480,17 @@ const YT_VIDEOS=[
 // SPELLING — write from listening (by lesson)
 // ═══════════════════════════════════════
 const SPELL_LESSONS=[
-  {t:'📘 Lesson 1 — الرياضة والألعاب',w:[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 1 — الرياضة والألعاب',w:[
     {e:'ball',a:'كرة',em:'🏀'},{e:'team',a:'فريق',em:'🤝'},{e:'game',a:'لعبة',em:'🎮'},
     {e:'city',a:'مدينة',em:'🏙️'},{e:'show',a:'عرض / برنامج',em:'📺'},{e:'visit',a:'يزور',em:'🗺️'}]},
-  {t:'📗 Lesson 2 — الحياة العسكرية',w:[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 2 — الحياة العسكرية',w:[
     {e:'base',a:'قاعدة',em:'🏕️'},{e:'rank',a:'رتبة',em:'🎖️'},{e:'cap',a:'قبعة',em:'🧢'},
     {e:'salute',a:'يُحيّي عسكرياً',em:'🫡'},{e:'break',a:'استراحة',em:'☕'}]},
-  {t:'📙 Lesson 3 — الملابس',w:[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 3 — الملابس',w:[
     {e:'dress',a:'فستان',em:'👗'},{e:'shirt',a:'قميص',em:'👔'},{e:'shoes',a:'حذاء',em:'👟'},
     {e:'socks',a:'جوارب',em:'🧦'},{e:'belt',a:'حزام',em:'🔗'},{e:'coat',a:'معطف',em:'🧥'},
     {e:'scarf',a:'وشاح',em:'🧣'},{e:'boots',a:'جزمة',em:'🥾'}]},
-  {t:'📕 Lesson 4 — الفصول والطقس',w:[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 4 — الفصول والطقس',w:[
     {e:'spring',a:'الربيع',em:'🌸'},{e:'summer',a:'الصيف',em:'☀️'},{e:'winter',a:'الشتاء',em:'❄️'},
     {e:'music',a:'موسيقى',em:'🎵'},{e:'radio',a:'راديو',em:'📻'},{e:'store',a:'متجر',em:'🏪'},
     {e:'warm',a:'دافئ',em:'🌡️'},{e:'cold',a:'بارد',em:'🥶'}]},

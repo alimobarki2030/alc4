@@ -66,7 +66,7 @@ function sel_time(k){
       <div class="cblock-txt">${d.meaning}</div>
     </div>
     <div class="cblock b-when">
-      <div class="cblock-h"><span class="cblock-n" style="background:#16A34A">2</span>🎯 متى ولماذا؟</div>
+      <div class="cblock-h"><span class="cblock-n" style="background:#16A34A">2</span><svg class="svgico" aria-hidden="true"><use href="#icon-target"></use></svg> متى ولماذا؟</div>
       <div class="cblock-txt">${d.when}</div>
       ${d.triggers?`<div class="trig-list">${d.triggers.map(t=>`<div class="trig"><span class="trig-en">${t.e}</span><span class="trig-ar">${t.a}</span></div>`).join('')}</div>`:''}
       ${d.link?`<div class="mind-link">💡 ${d.link}</div>`:''}
@@ -75,14 +75,14 @@ function sel_time(k){
       <div class="cblock-h"><span class="cblock-n" style="background:#7C3AED">3</span>🔤 كيف أرتّبها في الجملة؟</div>
       <div class="order-formula">${d.orderChips}</div>
       <div class="order-ex"><span class="en">${d.orderEx}</span>
-        <button class="mini-spk" onclick="say('${exSafe}')" aria-label="استمع">🔊</button></div>
+        <button class="mini-spk" onclick="say('${exSafe}')" aria-label="استمع"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
     </div>
     <div class="cblock b-bad">
       <div class="cblock-h"><span class="cblock-n" style="background:#EA580C">4</span>⚠️ أشهر خطأ للمبتدئين</div>
       <div class="badgood">
         <span class="bg-x">❌ <span class="en strike">${d.bad}</span></span>
         <span class="bg-ok">✅ <span class="en">${d.good}</span>
-          <button class="mini-spk ok" onclick="say('${goodSafe}')" aria-label="استمع">🔊</button></span>
+          <button class="mini-spk ok" onclick="say('${goodSafe}')" aria-label="استمع"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></span>
       </div>
     </div>
   </div>`;

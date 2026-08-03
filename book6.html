@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1396QQS2S5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1396QQS2S5');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xqhawn6noe");
+</script>
+<meta name="description" content="تعلّم، تدرّب، واختبر نفسك على Book 6 — الطقس والسفر والبريد">
+<meta property="og:title" content="Book 6 ALC — تعلم بسهولة">
+<meta property="og:description" content="تعلّم، تدرّب، واختبر نفسك على Book 6 — الطقس والسفر والبريد">
+<meta property="og:type" content="website">
+<meta name="author" content="Ali Mobarki">
+<meta property="og:url" content="https://alc4.alimobarki.com/book6">
+<meta property="og:image" content="https://alc4.alimobarki.com/alc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://alc4.alimobarki.com/alc.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book 6 ALC — تعلم بسهولة</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A2744">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ALC">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="splash-emoji">🎓</div>
+  <div class="splash-title">مركز التدريب <span>Book 6</span></div>
+  <div class="splash-sub">American Language Course</div>
+  <div class="splash-bar"><div class="splash-fill"></div></div>
+</div>
+
+<nav class="nav">
+  <div style="display:flex;align-items:center;gap:10px">
+    <a class="nav-home-btn" href="/" title="جميع الكتب">🏠 <span>الكتب</span></a>
+    <a class="nav-logo" href="/" style="text-decoration:none;cursor:pointer">ALC <span>Book 6</span></a>
+  </div>
+  <div class="nav-pills">
+    <span class="streak">🔥<span id="streak">0</span></span>
+    <span class="xp-pill">⚡<span id="xp">0</span></span>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="home">
+  <div class="hero">
+    <h1>مركز التدريب — Book 6 📚</h1>
+    <p>تعلّم القواعد · تدرّب · اختبر نفسك</p>
+    <div class="gpbar"><div class="gpfill" id="gpfill"></div></div>
+    <div class="gptxt" id="gptxt">0 من 2 دروس مكتملة</div>
+    <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
+  </div>
+
+  <div class="lbl">الدروس</div>
+  <div class="grid2">
+    <div class="lcard" id="hc-l1" onclick="open_lesson('l1')">
+      <span class="lcard-icon">🌦️</span>
+      <div class="lcard-num">Lesson 1</div>
+      <div class="lcard-name">How's the Weather?</div>
+      <div class="lcard-sub">الطقس والأحوال الجوية</div>
+      <div class="lpbar"><div class="lpfill" id="lp-l1"></div></div>
+    </div>
+    <div class="lcard" id="hc-l2" onclick="open_lesson('l2')">
+      <span class="lcard-icon">✈️</span>
+      <div class="lcard-num">Lesson 2</div>
+      <div class="lcard-name">Taking a Trip</div>
+      <div class="lcard-sub">السفر والمطاعم</div>
+      <div class="lpbar"><div class="lpfill" id="lp-l2"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON SCREEN -->
+<div id="lscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="lhdr">
+    <div class="lhdr-icon" id="lh-ico">🌦️</div>
+    <div><h2 id="lh-ttl"></h2><p id="lh-sub"></p></div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" id="tab-learn" onclick="sw_tab('learn')">
+      <span class="ti">📚</span><span>تعلّم</span>
+    </button>
+    <button class="tab" id="tab-practice" onclick="sw_tab('practice')">
+      <span class="ti">🎯</span><span>تدرّب</span>
+    </button>
+    <button class="tab" id="tab-drag" onclick="sw_tab('drag')">
+      <span class="ti">🔤</span><span>رتّب الجملة</span>
+    </button>
+    <button class="tab" id="tab-test" onclick="sw_tab('test')">
+      <span class="ti">🏆</span><span>اختبر</span>
+    </button>
+  </div>
+  <div class="phase active" id="ph-learn"></div>
+  <div class="phase" id="ph-practice"></div>
+  <div class="phase" id="ph-drag"></div>
+  <div class="phase" id="ph-test"></div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="mcrd">
+    <span class="memo" id="m-emo">🏆</span>
+    <div class="mscore" id="m-score">0%</div>
+    <div class="mgrade" id="m-grade">ممتاز!</div>
+    <div class="msub" id="m-sub"></div>
+    <div class="stars">
+      <span class="star" id="s1">⭐</span>
+      <span class="star" id="s2">⭐</span>
+      <span class="star" id="s3">⭐</span>
+    </div>
+    <div class="mbtns">
+      <button class="mbtn sec" onclick="retry()">↺ أعد الاختبار</button>
+      <button class="mbtn primary" id="m-next" style="display:none" onclick="next_lesson()">الدرس التالي ←</button>
+      <button class="mbtn primary" onclick="close_modal()">متابعة →</button>
+    </div>
+  </div>
+</div>
+<div class="conf" id="conf"></div>
+
+<button class="top-fab" id="top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى" title="العودة للأعلى">⬆</button>
+
+<script src="js/engine-core.js"></script>
+<script src="js/data-book6.js"></script>
+<script src="js/engine-progress.js"></script>
+<script src="js/engine-lessons.js"></script>
+
+<!-- FOOTER -->
+<div class="site-footer">
+  <p><a href="/" style="color:rgba(255,255,255,.55);text-decoration:none;font-weight:700">← جميع الكتب</a></p>
+  <p style="margin-top:8px">صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
+  <p style="margin-top:4px;font-size:.72rem;opacity:.5">Book 6 — American Language Course</p>
+</div>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
+}
+</script>
+</body>
+</html>

@@ -1,7 +1,11 @@
-const CACHE_NAME='alc-v5';
+const CACHE_NAME='alc-v6';
+// cleanUrls is enabled on Vercel, so navigations use extensionless paths
+// (/book4, not /book4.html). Precaching the extensionless URLs means the
+// install fetch hits the canonical page directly (200, not a 308 redirect),
+// so no redirected response ever enters the cache — the Safari-breaking case.
 const CORE_ASSETS=[
-  '/','/index.html','/book4.html','/book5.html','/book5-pronouns.html','/book6.html','/grammar.html',
-  '/css/style.css','/icons.svg',
+  '/','/book4','/book5','/book5-pronouns','/book6','/grammar',
+  '/css/style.css',
   '/js/access-gate.js',
   '/js/engine-core.js','/js/engine-progress.js','/js/engine-lessons.js',
   '/js/engine-youtube.js','/js/engine-spell.js','/js/engine-concepts.js',
@@ -9,13 +13,24 @@ const CORE_ASSETS=[
   '/js/concepts-pronouns.js','/js/concepts-modals.js','/js/concepts-time.js',
   '/js/concepts-irregular.js',
   '/js/data-book4.js','/js/data-book5.js','/js/data-book6.js',
-  '/alc.png','/icon-192.png','/icon-512.png'
+  '/alc.png','/icon-192.png','/icon-512.png','/hero-bg.jpg'
 ];
+
+// A response is only safe to cache when it is a final same-origin 200 that
+// was NOT produced by following a redirect. WebKit throws if a redirected
+// response is later served for a navigation request, which blanks the page.
+const cacheable=res=>res&&res.status===200&&res.type==='basic'&&!res.redirected;
 
 self.addEventListener('install',e=>{
   e.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache=>cache.addAll(CORE_ASSETS))
+      // addAll aborts the whole install if any single request fails, so add
+      // assets individually and tolerate per-asset failures.
+      .then(cache=>Promise.all(CORE_ASSETS.map(url=>
+        fetch(url,{cache:'reload'})
+          .then(res=>cacheable(res)?cache.put(url,res):null)
+          .catch(()=>null)
+      )))
       .then(()=>self.skipWaiting())
   );
 });
@@ -34,7 +49,7 @@ self.addEventListener('fetch',e=>{
   e.respondWith(
     caches.match(e.request).then(cached=>{
       const fetchPromise=fetch(e.request).then(res=>{
-        if(res&&res.status===200){
+        if(cacheable(res)){
           const clone=res.clone();
           caches.open(CACHE_NAME).then(cache=>cache.put(e.request,clone));
         }

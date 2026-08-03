@@ -1,10 +1,8 @@
 // ═══════════════════════════════════════
 // DATA — BOOK 6
-// Only Lesson 1 is ready so far — LESSON_META/LESSON_KEYS only lists
-// what actually has content (matches the pattern used while Book 5 was
-// built incrementally lesson by lesson). No final exam / listening /
-// spelling sections yet — those get added once more lessons + their
-// source material exist.
+// All 4 lessons are complete (vocab, grammar, word-order, per-lesson quiz).
+// No final exam / review / listening / spelling sections yet — those get
+// added once their source material exists (see Book 4/5 for the pattern).
 // ═══════════════════════════════════════
 const BOOK_ID='book6';
 
@@ -54,7 +52,7 @@ l1:[
   {e:'how',a:'كيف',em:'❓'},
 ],
 l2:[
-  {e:'blade',a:'سكين',em:'🔪'},
+  {e:'blade',a:'نصل',em:'🔪'},
   {e:'boat',a:'قارب',em:'🛥️'},
   {e:'check',a:'فاتورة الحساب',em:'🧾'},
   {e:'helicopter',a:'طائرة هليكوبتر',em:'🚁'},

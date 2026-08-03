@@ -245,8 +245,11 @@ function build_gcard_body(g,lk,i){
   // Default compare rendering — qa-pair stacked cards (Book 5 style).
   if(g.compare&&g.compare.length>0){
     g.compare.forEach(r=>{
-      const safe1=r.c1.replace(/'/g,"\\'");
-      const safe2=r.c2.replace(/'/g,"\\'");
+      // Escape ' for the JS string layer AND " for the double-quoted onclick
+      // attribute — some rows (e.g. Book 6 reported speech) contain literal ".
+      const spk=s=>s.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+      const safe1=spk(r.c1);
+      const safe2=spk(r.c2);
       html+=`<div class="qa-pair">
         <div class="qa-row q"><span class="qa-tag">السؤال</span><span class="qa-txt">${r.c1}</span><button class="qa-spk" onclick="say('${safe1}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>
         <div class="qa-row a"><span class="qa-tag">الجواب</span><span class="qa-txt">${r.c2}</span><button class="qa-spk" onclick="say('${safe2}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button></div>

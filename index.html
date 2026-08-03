@@ -90,7 +90,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .books-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
 
 .book-card{background:var(--card);border-radius:20px;border:2px solid var(--bdr);
-  overflow:hidden;transition:all .22s;position:relative;text-decoration:none;display:block;color:inherit}
+  overflow:hidden;transition:all .22s;position:relative;text-decoration:none;
+  display:flex;flex-direction:column;color:inherit}
 .book-card.available:hover{transform:translateY(-4px);
   box-shadow:0 12px 32px rgba(0,0,0,.1);border-color:#1CB0F6}
 .book-card.coming{cursor:default;opacity:.65}
@@ -122,7 +123,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .coming .chip{background:var(--bg);color:var(--muted);border:1px solid var(--bdr)}
 
 .bc-footer{border-top:1px solid var(--bdr);padding:10px 14px;
-  display:flex;align-items:center;gap:10px}
+  display:flex;align-items:center;gap:10px;margin-top:auto}
 .bc-progress{flex:1}
 .prog-bar{background:var(--bdr);border-radius:4px;height:4px;margin-bottom:4px}
 .prog-fill{height:4px;border-radius:4px;background:#58CC02;transition:width .6s}

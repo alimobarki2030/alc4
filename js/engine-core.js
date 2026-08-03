@@ -46,7 +46,13 @@ function say(t){
 }
 
 // ─── NAVIGATION ───
-function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
+function show_screen(id){
+  SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});
+  // Stop the YouTube player when leaving the listening screen — hiding the
+  // iframe alone keeps it playing (audio) in the background.
+  if(id!=='ytscreen'){const yt=document.getElementById('yt-iframe');if(yt&&yt.src&&yt.src!=='about:blank')yt.src='about:blank';}
+  track_screen(id);
+}
 
 let _curScreen=null,_screenStart=0;
 function track_screen(id){
@@ -91,4 +97,10 @@ function dedupe_by_q(arr){
     seen.add(k);
     return true;
   });
+}
+// Fisher-Yates in-place shuffle (unbiased). Returns the same array reference
+// so callers that share it (e.g. EE[CL] === the rendered array) stay aligned.
+function shuffle_arr(a){
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
 }

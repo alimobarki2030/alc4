@@ -203,6 +203,40 @@
       <div class="lpbar"><div class="lpfill" id="lp-l4"></div></div>
     </div>
   </div>
+
+  <div class="lbl" style="margin-top:20px">المراجعة</div>
+  <div class="final-card" style="background:linear-gradient(135deg,#0D9488,#0F766E);border-color:#5EEAD4" onclick="open_review()">
+    <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg></div>
+    <h3>Review 6 — مراجعة شاملة</h3>
+    <p>16 سؤال من مراجعة الكتاب الرسمية</p>
+    <span class="fc-badge" id="review-badge">ابدأ المراجعة</span>
+  </div>
+
+  <div class="lbl" style="margin-top:20px">الاستماع</div>
+  <div class="yt-card" onclick="open_yt()">
+    <div class="ac-ic">🎧</div>
+    <div class="pc-txt">
+      <h3>استماع Book 6</h3>
+      <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B · C</p>
+    </div>
+  </div>
+
+  <div class="lbl" style="margin-top:20px">الكتابة</div>
+  <div class="spell-card" onclick="open_spell()">
+    <div class="ac-ic">✍️</div>
+    <div class="pc-txt">
+      <h3>اكتب من السماع</h3>
+      <p>اسمع الكلمة واكتبها بنفسك — إملاء واستماع</p>
+    </div>
+  </div>
+
+  <div class="lbl" style="margin-top:20px">الاختبار</div>
+  <div class="final-card" onclick="open_final()">
+    <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
+    <h3>الاختبار النهائي الشامل</h3>
+    <p>جميع أسئلة "اختبر" من الدروس 1 إلى 4 مجمّعة بمكان واحد</p>
+    <span class="fc-badge" id="final-badge">ابدأ الاختبار</span>
+  </div>
 </div>
 
 <!-- LESSON SCREEN -->
@@ -253,12 +287,64 @@
 </div>
 <div class="conf" id="conf"></div>
 
+<!-- FINAL TEST SCREEN -->
+<div id="fscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">
+    <h2>الاختبار النهائي الشامل <svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></h2>
+    <p>جميع أسئلة "اختبر" من الدروس 1 إلى 4 مجمّعة بمكان واحد</p>
+  </div>
+  <div id="ph-final"></div>
+</div>
+
+<!-- SPELLING SCREEN -->
+<div id="spscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
+    <h2>اكتب من السماع ✍️</h2>
+    <p>استمع للكلمة واكتبها — يبني الإملاء والاستماع</p>
+  </div>
+  <div class="sp-prog">
+    <button class="sp-restart" onclick="start_spell()" title="ابدأ من الأول">🔁 من البداية</button>
+    <div class="sp-bar"><div class="sp-fill" id="sp-fill"></div></div>
+    <div class="sp-count" id="sp-count">0 / 0</div>
+  </div>
+  <div id="spell-body"></div>
+</div>
+
+<!-- REVIEW 6 SCREEN -->
+<div id="rscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#0D9488,#0F766E)">
+    <h2>Review 6 — مراجعة شاملة <svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg></h2>
+    <p>16 سؤال من مراجعة الكتاب الرسمية</p>
+  </div>
+  <div id="ph-review"></div>
+</div>
+
+<!-- LISTENING SCREEN -->
+<div id="ytscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#1F2937,#0B1220)">
+    <h2>استماع Book 6 🎧</h2>
+    <p>اختبارات استماع وقراءة مع الحل</p>
+  </div>
+  <div class="yt-tabs" id="yt-tabs"></div>
+  <div class="yt-embed">
+    <iframe id="yt-iframe" src="" title="ALC Book 6 Listening"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+      allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
+
 <button class="top-fab" id="top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى" title="العودة للأعلى">⬆</button>
 
 <script src="js/engine-core.js"></script>
 <script src="js/data-book6.js"></script>
 <script src="js/engine-progress.js"></script>
 <script src="js/engine-lessons.js"></script>
+<script src="js/engine-youtube.js"></script>
+<script src="js/engine-spell.js"></script>
 
 <!-- FOOTER -->
 <div class="site-footer">

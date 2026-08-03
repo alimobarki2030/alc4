@@ -586,6 +586,12 @@ function build_quiz(elId,qs,prefix){
   el.innerHTML='';
   const isTest=prefix==='te'||prefix==='fi'||prefix==='rv';
 
+  // Shuffle the comprehensive final exam on each open so answer positions
+  // aren't memorized. qs is the same array reference as EE[CL], so ans() /
+  // submit_test() / restart_test() index lookups stay aligned. Engine-level
+  // and keyed on the 'fi' prefix, so any book that defines FINAL gets it.
+  if(prefix==='fi')shuffle_arr(qs);
+
   if(isTest){
     const L=LP[CL];
     const bestTxt=(L&&typeof L.pct==='number')?`أفضل نتيجة سابقة: ${L.pct}%${L.done?' ✓':''}`:'لم تُنهِ هذا الاختبار بعد';

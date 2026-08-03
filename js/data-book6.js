@@ -513,7 +513,16 @@ const REVIEW=[
 EE.review=REVIEW;
 
 // ═══════════════════════════════════════
-// ROUTING MANIFEST — home + lesson + review screens
+// LISTENING (YouTube videos)
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','rscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة'};
+const YT_VIDEOS=[
+  {id:'XbGyesPWPno',t:'Quiz A',s:'استماع وقراءة مع الحل'},
+  {id:'2t6zWxxB4Sg',t:'Quiz B',s:'استماع وقراءة مع الحل'},
+  {id:'zES0kAj58bg',t:'Quiz C',s:'استماع وقراءة مع الحل'},
+];
+
+// ═══════════════════════════════════════
+// ROUTING MANIFEST — home + lesson + listening + review screens
+// ═══════════════════════════════════════
+const SCREENS=['home','lscreen','ytscreen','rscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',rscreen:'المراجعة'};

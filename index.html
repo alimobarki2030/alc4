@@ -240,7 +240,7 @@ function render_books(){
         <div class="bc-footer">
           <div class="bc-progress">
             <div class="prog-bar"><div class="prog-fill" id="prog-${b.id}" style="width:0%"></div></div>
-            <div class="prog-txt" id="prog-${b.id}-txt">لم تبدأ بعد</div>
+            <div class="prog-txt" id="prog-${b.id}-txt"></div>
           </div>
           <div class="bc-cta">ابدأ ←</div>
         </div>
@@ -279,7 +279,7 @@ BOOKS.filter(b=>b.available).forEach(b=>{
     const txt=document.getElementById('prog-'+b.id+'-txt');
     if(fill)fill.style.width=pct+'%';
     if(txt)txt.textContent=
-      pct===0?'لم تبدأ بعد':pct===100?`مكتمل ✓ · ${data.xp||0} XP`:`${done} من ${b.lessons} دروس · ${data.xp||0} XP`;
+      pct===0?'':pct===100?`مكتمل ✓ · ${data.xp||0} XP`:`${done} من ${b.lessons} دروس · ${data.xp||0} XP`;
   }catch(e){}
 });
 </script>

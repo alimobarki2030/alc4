@@ -161,7 +161,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   gap:8px;direction:ltr;text-align:left}
 .exrow.ok{background:#F0FDF4;border-color:var(--g)}
 .exrow.no{background:#FEF2F2;border-color:var(--r);text-decoration:line-through;color:#999}
-.spk{background:var(--b);border:none;border-radius:7px;width:36px;height:36px;
+.spk{background:var(--b);border:none;border-radius:7px;width:36px;height:36px;color:#fff;
   display:flex;align-items:center;justify-content:center;cursor:pointer;
   font-size:.9rem;transition:all .2s;flex-shrink:0}
 .spk:hover{background:var(--bd)}
@@ -195,7 +195,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .vemoji{font-size:1.5rem}
 .ven{font-size:.9rem;font-weight:700;color:var(--navy);font-family:'Inter',sans-serif}
 .var{font-size:.88rem;color:var(--muted);margin-top:2px}
-.vspk{background:var(--b);border:none;border-radius:8px;width:40px;height:40px;
+.vspk{background:var(--b);border:none;border-radius:8px;width:40px;height:40px;color:#fff;
   display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;flex-shrink:0}
 .vspk:hover{background:var(--bd)}
 
@@ -212,7 +212,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .qhdr{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:12px}
 .qtxt{font-size:.92rem;font-weight:700;color:var(--navy);flex:1;
   font-family:'Inter',sans-serif;direction:ltr;text-align:left;line-height:1.6}
-.qspk{background:var(--b);border:none;border-radius:7px;width:30px;height:30px;
+.qspk{background:var(--b);border:none;border-radius:7px;width:30px;height:30px;color:#fff;
   display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.75rem;flex-shrink:0}
 .opts{display:flex;flex-direction:column;gap:6px}
 .opt{display:flex;align-items:center;gap:9px;padding:11px 13px;
@@ -399,8 +399,8 @@ html.splash-seen #splash{display:none}
 .vcard .ve{font-size:2rem;display:block;margin-bottom:6px}
 .vcard .vw{font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy)}
 .vcard .va{font-size:.75rem;color:var(--muted);margin-top:3px}
-.vcard .vs{position:absolute;top:7px;left:7px;background:var(--b);border:none;border-radius:6px;
-  width:24px;height:24px;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5}
+.vcard .vs{position:absolute;top:7px;left:7px;background:var(--b);border:none;border-radius:6px;color:#fff;
+  width:26px;height:26px;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5}
 .vcard .vs:hover{background:var(--bd)}
 
 /* Flip variant (Book 5): tap the card to flip and reveal the Arabic meaning */
@@ -492,7 +492,7 @@ html.splash-seen #splash{display:none}
 .ex-row.no{background:#FEF2F2;border:1.5px solid #FCA5A5}
 .ex-row .ex-text{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--navy);flex:1;text-align:left}
 .ex-row .ex-ar{font-family:'Cairo',sans-serif;font-size:.72rem;color:#666;direction:rtl;text-align:right}
-.ex-row .ex-spk{background:var(--b);border:none;border-radius:6px;width:26px;height:26px;
+.ex-row .ex-spk{background:var(--b);border:none;border-radius:6px;width:26px;height:26px;color:#fff;
   font-size:.7rem;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .ex-row.no .ex-text{text-decoration:line-through;color:#999}
 

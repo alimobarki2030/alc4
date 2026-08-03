@@ -39,6 +39,11 @@ function apply_lessons(){
       sc.textContent='';
     }
   });
+  const fb=document.getElementById('final-badge');
+  if(fb){
+    const F=LP.final;
+    fb.textContent=(F&&typeof F.pct==='number')?`أفضل نتيجة ${F.pct}%${F.done?' ✓':''}`:'ابدأ الاختبار';
+  }
 }
 function load_progress(){
   let data=null;

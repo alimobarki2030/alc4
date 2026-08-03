@@ -257,10 +257,10 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','ytscreen'];
+const SCREENS=['home','lscreen','ytscreen','fscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
 
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع'};
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',fscreen:'الاختبار النهائي'};
 let _curScreen=null,_screenStart=0;
 function track_screen(id){
   if(typeof gtag!=='function')return;
@@ -304,6 +304,13 @@ function open_lesson(lk){
 function go_home(){
   show_screen('home');
   window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function open_final(){
+  CL='final';TANS={};
+  show_screen('fscreen');
+  document.getElementById('fscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  build_quiz('ph-final',FINAL,'fi');
 }
 
 function sw_tab(t){
@@ -1138,10 +1145,52 @@ l4:[
 ]
 };
 
+// ═══════════════════════════════════════
+// FINAL EXAM (الاختبار النهائي الشامل)
+// كل أسئلة اختبر بالدروس 1-4 مجمّعة (نفس طريقة Book 4) + أسئلة Review 5
+// ═══════════════════════════════════════
+function dedupe_by_q(arr){
+  const seen=new Set();
+  return arr.filter(q=>{
+    const k=q.q.trim()+'|'+q.o.join(',');
+    if(seen.has(k))return false;
+    seen.add(k);
+    return true;
+  });
+}
+const FINAL=dedupe_by_q([
+  ...EE.l1,
+  ...EE.l2,
+  ...EE.l3,
+  ...EE.l4,
+  // Additional questions from Book 5's Review 5 (EXERCISE Z)
+  {q:"Don't _______ that bowl of soup. It's very hot.",o:['point to','touch','turn off','comb'],a:1,en:'hot soup → warning not to touch',ar:'شوربة حارة → تحذير من اللمس',tr:'لا تلمس وعاء الشوربة ذاك. هو حار جدًا.'},
+  {q:'Thomas ate a dozen cookies before lunch. A dozen = _______.',o:['six','eight','twelve','twenty'],a:2,en:'a dozen = 12',ar:'دزينة = ١٢',tr:'توماس أكل دزينة كوكيز قبل الغدا. دزينة = اثنا عشر.'},
+  {q:'The sandwich has one slice of cheese _______ two slices of bread.',o:['between','among','before','at'],a:0,en:'between = in the middle of two things',ar:'between = بين شيئين',tr:'الساندويتش فيه شريحة جبن بين شريحتين خبز.'},
+  {q:'I went to the doctor. I had a _______ arm.',o:['only','right','sore','long'],a:2,en:'sore = painful',ar:'sore = مؤلم',tr:'رحت للدكتور. كان عندي ذراع مؤلمة.'},
+  {q:'Where can I _______ these pencils?',o:['lock','turn','push','sharpen'],a:3,en:'pencils need sharpening',ar:'الأقلام تحتاج بري',tr:'وين أقدر أبري هالأقلام؟'},
+  {q:'First, you wash your clothes. Then, you _______ the clothes in cold water.',o:['rinse','pull','dry','soap'],a:0,en:'laundry sequence: wash then rinse',ar:'ترتيب الغسيل: تغسل ثم تشطف',tr:'أول تغسل ملابسك. بعدين تشطفها بماء بارد.'},
+  {q:'I ate a big bowl of chocolate ice cream. Big = _______.',o:['long','short','large','ounce'],a:2,en:'big = large (size)',ar:'big = large (بمعنى الحجم)',tr:'أكلت وعاء كبير آيسكريم شوكولاتة. Big = large.'},
+  {q:'January the twentieth = _______.',o:['Jan 12th','Jan 20th','Jan 2nd','Jan 30th'],a:1,en:'twentieth = 20th',ar:'twentieth = العشرون (٢٠)',tr:'يناير العشرون = ٢٠ يناير.'},
+  {q:'There were lots of grammar questions on the test. Lots of = _______.',o:['a little','a few','many','some'],a:2,en:'lots of = many (with count nouns)',ar:'lots of = many (مع المعدود)',tr:'كان فيه أسئلة قواعد كثيرة بالاختبار. Lots of = many.'},
+  {q:'Your father can _______ a haircut for $6.00 at that barbershop.',o:['gets','got','getting','get'],a:3,en:'can + base verb: get',ar:'can + فعل مجرد: get',tr:'أبوك يقدر يسوي قصة شعر بـ٦ دولار بمحل الحلاقة ذاك.'},
+  {q:'I _______ for London next Tuesday.',o:['departing','departed','was depart','will depart'],a:3,en:'next Tuesday signals future tense with will',ar:'next Tuesday → المستقبل بـ will',tr:'بغادر لندن الثلاثاء الجاي.'},
+  {q:"There's _______ onion on the teacher's desk.",o:['a','any','an','many'],a:2,en:'onion starts with a vowel sound → an',ar:'onion يبدأ بصوت حرف علة → an',tr:'فيه بصلة على مكتب المعلم.'},
+  {q:'Is your flight a one-way flight?',o:["No, it's an airline flight.","No, I will fly with my son.","No, it's round-trip.","Yes, it leaves from gate one."],a:2,en:'the opposite of one-way is round-trip',ar:'عكس one-way هو round-trip',tr:'رحلتك اتجاه واحد؟ — لا، هي ذهاب وعودة.'},
+  {q:'Two days ago, I _______ a reservation with the travel agent.',o:['make','made','am making','will make'],a:1,en:'two days ago signals past tense: made',ar:'two days ago → ماضي: made',tr:'قبل يومين، سويت حجز مع وكيل السفر.'},
+  {q:'Do we have to take a test this week?',o:["No, we don't have to.","No, we have to.","No, we don't has to.","No, we doesn't has to."],a:0,en:"short answer with we: don't have to",ar:"جواب قصير مع we: don't have to",tr:'لازم نسوي اختبار هالأسبوع؟ — لا، مو لازم.'},
+  {q:'Our bus leaves at 7:45. We will return around 2:30. Return = _______.',o:['come back','put on','arrive','depart'],a:0,en:'return = come back',ar:'return = يرجع (come back)',tr:'الباص يطلع الساعة ٧:٤٥. بنرجع حوالي ٢:٣٠. Return = come back.'},
+  {q:'How much coffee do you want?',o:["I don't want no coffee.","I don't want some coffee.","I don't want much coffee.","I don't want the coffee."],a:2,en:'coffee is a noncount noun → much',ar:'coffee غير معدود → much',tr:'كم قهوة تبي؟ — ما أبي قهوة كثير.'},
+  {q:'Is there milk on the table?',o:['Yes, they are.','Yes, there is.','Yes, it is.','Yes, there are.'],a:1,en:'milk is noncount → there is',ar:'milk غير معدود → there is',tr:'فيه حليب على الطاولة؟ — إي، فيه.'},
+  {q:'You have a lot of friends at school.',o:['Yes, I have many friends.','Yes, I have much friends.','Yes, I have a little friends.','Yes, I have few friends.'],a:0,en:'friends is countable → many',ar:'friends معدود → many',tr:'عندك أصحاب كثير بالمدرسة. — إي، عندي أصحاب كثير.'},
+  {q:'Will the tests be long tests every day?',o:["No, they aren't.","No, there weren't.","No, they will.","No, they won't."],a:3,en:'short answer to a will-question: won’t',ar:'جواب قصير لسؤال will: won’t',tr:'بتكون الاختبارات طويلة كل يوم؟ — لا، ما بتكون.'},
+]);
+EE.final=FINAL;
+
 function build_quiz(elId,qs,prefix){
   const el=document.getElementById(elId);
   el.innerHTML='';
-  const isTest=prefix==='te';
+  const isTest=prefix==='te'||prefix==='fi';
 
   if(isTest){
     const L=LP[CL];
@@ -1254,18 +1303,22 @@ function next_lesson(){
 
 function retry(){
   close_modal();
-  TANS={};delete built['te'+CL];
-  document.getElementById('ph-test').innerHTML='';
-  build_quiz('ph-test',EE[CL],'te');
-  built['te'+CL]=1;
+  const elId=CL==='final'?'ph-final':'ph-test';
+  const prefix=CL==='final'?'fi':'te';
+  TANS={};delete built[prefix+CL];
+  document.getElementById(elId).innerHTML='';
+  build_quiz(elId,EE[CL],prefix);
+  built[prefix+CL]=1;
 }
 
 function restart_test(){
+  const elId=CL==='final'?'ph-final':'ph-test';
+  const prefix=CL==='final'?'fi':'te';
   TANS={};
-  delete built['te'+CL];
-  document.getElementById('ph-test').innerHTML='';
-  build_quiz('ph-test',EE[CL],'te');
-  built['te'+CL]=1;
+  delete built[prefix+CL];
+  document.getElementById(elId).innerHTML='';
+  build_quiz(elId,EE[CL],prefix);
+  built[prefix+CL]=1;
 }
 
 function upd_global(){

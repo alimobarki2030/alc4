@@ -6,6 +6,7 @@ const CACHE_NAME='alc-v6';
 const CORE_ASSETS=[
   '/','/book4','/book5','/book5-pronouns','/book6','/grammar',
   '/css/style.css',
+  '/js/error-report.js',
   '/js/access-gate.js',
   '/js/engine-core.js','/js/engine-progress.js','/js/engine-lessons.js',
   '/js/engine-youtube.js','/js/engine-spell.js','/js/engine-concepts.js',

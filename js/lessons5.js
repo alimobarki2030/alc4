@@ -257,10 +257,10 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','ytscreen','fscreen','rscreen'];
+const SCREENS=['home','lscreen','ytscreen','fscreen','rscreen','spscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
 
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',rscreen:'المراجعة'};
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',rscreen:'المراجعة',spscreen:'الإملاء'};
 let _curScreen=null,_screenStart=0;
 function track_screen(id){
   if(typeof gtag!=='function')return;

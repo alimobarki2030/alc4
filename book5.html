@@ -129,6 +129,15 @@
     </div>
   </div>
 
+  <div class="lbl" style="margin-top:20px">الكتابة</div>
+  <div class="spell-card" onclick="open_spell()">
+    <div class="ac-ic">✍️</div>
+    <div class="pc-txt">
+      <h3>اكتب من السماع</h3>
+      <p>اسمع الكلمة واكتبها بنفسك — إملاء واستماع</p>
+    </div>
+  </div>
+
   <div class="lbl" style="margin-top:20px">مراجع</div>
   <div class="grid2">
     <a class="lcard" href="book5-pronouns.html" style="text-decoration:none;display:block">
@@ -166,6 +175,21 @@
     <p>20 سؤال من مراجعة الكتاب الرسمية بعد الدرس الرابع</p>
   </div>
   <div id="ph-review"></div>
+</div>
+
+<!-- SPELLING SCREEN -->
+<div id="spscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
+    <h2>اكتب من السماع ✍️</h2>
+    <p>استمع للكلمة واكتبها — يبني الإملاء والاستماع</p>
+  </div>
+  <div class="sp-prog">
+    <button class="sp-restart" onclick="start_spell()" title="ابدأ من الأول">🔁 من البداية</button>
+    <div class="sp-bar"><div class="sp-fill" id="sp-fill"></div></div>
+    <div class="sp-count" id="sp-count">0 / 0</div>
+  </div>
+  <div id="spell-body"></div>
 </div>
 
 <!-- LISTENING (YouTube) SCREEN -->
@@ -235,6 +259,7 @@
 
 <script src="js/lessons5.js"></script>
 <script src="js/youtube5.js"></script>
+<script src="js/spell5.js"></script>
 <script src="js/progress5.js"></script>
 
 <!-- FOOTER -->

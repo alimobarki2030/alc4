@@ -513,6 +513,18 @@ const REVIEW=[
 EE.review=REVIEW;
 
 // ═══════════════════════════════════════
+// FINAL EXAM (الاختبار النهائي الشامل)
+// كل أسئلة "اختبر" بالدروس 1-4 مجمّعة (نفس طريقة Book 4/5)
+// ═══════════════════════════════════════
+const FINAL=dedupe_by_q([
+  ...EE.l1,
+  ...EE.l2,
+  ...EE.l3,
+  ...EE.l4,
+]);
+EE.final=FINAL;
+
+// ═══════════════════════════════════════
 // LISTENING (YouTube videos)
 // ═══════════════════════════════════════
 const YT_VIDEOS=[
@@ -522,7 +534,30 @@ const YT_VIDEOS=[
 ];
 
 // ═══════════════════════════════════════
-// ROUTING MANIFEST — home + lesson + listening + review screens
+// SPELLING — write from listening (by lesson)
+// كلمات مختارة من مفردات كل درس
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','ytscreen','rscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',rscreen:'المراجعة'};
+const SPELL_LESSONS=[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 1 — الطقس',w:[
+    {e:'weather',a:'الطقس',em:'🌡️'},{e:'cloud',a:'غيمة',em:'☁️'},{e:'rain',a:'مطر',em:'🌧️'},
+    {e:'storm',a:'عاصفة',em:'⛈️'},{e:'snow',a:'ثلج',em:'❄️'},{e:'wind',a:'الرياح',em:'💨'},
+    {e:'umbrella',a:'مظلة',em:'☂️'}]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 2 — السفر والمطاعم',w:[
+    {e:'boat',a:'قارب',em:'🛥️'},{e:'train',a:'قطار',em:'🚆'},{e:'ship',a:'سفينة',em:'🚢'},
+    {e:'jet',a:'طائرة نفاثة',em:'✈️'},{e:'menu',a:'قائمة الطعام',em:'📋'},{e:'waiter',a:'نادل',em:'🧑‍🍽️'},
+    {e:'delicious',a:'لذيذ',em:'😋'}]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 3 — البريد',w:[
+    {e:'address',a:'عنوان',em:'🏠'},{e:'bank',a:'بنك',em:'🏦'},{e:'envelope',a:'ظرف',em:'✉️'},
+    {e:'letter',a:'رسالة',em:'💌'},{e:'package',a:'طرد',em:'📦'},{e:'stamp',a:'طابع بريد',em:'🏷️'},
+    {e:'street',a:'شارع',em:'🛣️'}]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 4 — الإجازات',w:[
+    {e:'camera',a:'كاميرا',em:'📷'},{e:'hotel',a:'فندق',em:'🏨'},{e:'lake',a:'بحيرة',em:'🏞️'},
+    {e:'mountain',a:'جبل',em:'⛰️'},{e:'ocean',a:'محيط',em:'🌊'},{e:'tent',a:'خيمة',em:'⛺'},
+    {e:'vacation',a:'إجازة',em:'🏖️'}]},
+];
+
+// ═══════════════════════════════════════
+// ROUTING MANIFEST — home + lesson + listening + final + review + spelling
+// ═══════════════════════════════════════
+const SCREENS=['home','lscreen','ytscreen','fscreen','rscreen','spscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',rscreen:'المراجعة',spscreen:'الإملاء'};

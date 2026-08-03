@@ -46,7 +46,13 @@ function say(t){
 }
 
 // ─── NAVIGATION ───
-function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
+function show_screen(id){
+  SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});
+  // Stop the YouTube player when leaving the listening screen — hiding the
+  // iframe alone keeps it playing (audio) in the background.
+  if(id!=='ytscreen'){const yt=document.getElementById('yt-iframe');if(yt&&yt.src&&yt.src!=='about:blank')yt.src='about:blank';}
+  track_screen(id);
+}
 
 let _curScreen=null,_screenStart=0;
 function track_screen(id){

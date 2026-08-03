@@ -53,9 +53,12 @@
           localStorage.setItem(STORAGE_KEY, '1');
           document.documentElement.style.overflow = '';
           overlay.remove();
+          // Focusing the input can scroll the page behind the gate (mobile);
+          // land the unlocked page at the top instead of mid-scroll.
+          window.scrollTo(0, 0);
         } else {
           err.textContent = '❌ الكود غير صحيح، حاول مرة ثانية';
-          input.value = ''; input.focus();
+          input.value = ''; input.focus({ preventScroll: true });
         }
       } catch (e) {
         err.textContent = '⚠️ تعذر الاتصال، تأكد من الإنترنت وحاول مرة ثانية';
@@ -65,7 +68,7 @@
 
     btn.addEventListener('click', trySubmit);
     input.addEventListener('keydown', e => { if (e.key === 'Enter') trySubmit(); });
-    setTimeout(() => input.focus(), 50);
+    setTimeout(() => input.focus({ preventScroll: true }), 50);
   }
 
   if (document.readyState === 'loading') {

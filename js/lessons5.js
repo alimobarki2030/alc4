@@ -257,10 +257,10 @@ function say(t){
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','ytscreen','fscreen'];
+const SCREENS=['home','lscreen','ytscreen','fscreen','rscreen'];
 function show_screen(id){SCREENS.forEach(s=>{const el=document.getElementById(s);if(el)el.style.display=(s===id)?'block':'none';});track_screen(id);}
 
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',fscreen:'الاختبار النهائي'};
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',rscreen:'المراجعة'};
 let _curScreen=null,_screenStart=0;
 function track_screen(id){
   if(typeof gtag!=='function')return;
@@ -311,6 +311,20 @@ function open_final(){
   show_screen('fscreen');
   document.getElementById('fscreen').scrollIntoView({behavior:'smooth',block:'start'});
   build_quiz('ph-final',FINAL,'fi');
+}
+
+function open_review(){
+  CL='review';TANS={};
+  show_screen('rscreen');
+  document.getElementById('rscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  build_quiz('ph-review',REVIEW,'rv');
+}
+
+const QUIZ_TARGET={te:{elId:'ph-test',prefix:'te'},fi:{elId:'ph-final',prefix:'fi'},rv:{elId:'ph-review',prefix:'rv'}};
+function current_quiz_target(){
+  if(CL==='final')return QUIZ_TARGET.fi;
+  if(CL==='review')return QUIZ_TARGET.rv;
+  return QUIZ_TARGET.te;
 }
 
 function sw_tab(t){
@@ -1147,7 +1161,7 @@ l4:[
 
 // ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي الشامل)
-// كل أسئلة اختبر بالدروس 1-4 مجمّعة (نفس طريقة Book 4) + أسئلة Review 5
+// كل أسئلة اختبر بالدروس 1-4 مجمّعة (نفس طريقة Book 4)
 // ═══════════════════════════════════════
 function dedupe_by_q(arr){
   const seen=new Set();
@@ -1163,7 +1177,13 @@ const FINAL=dedupe_by_q([
   ...EE.l2,
   ...EE.l3,
   ...EE.l4,
-  // Additional questions from Book 5's Review 5 (EXERCISE Z)
+]);
+EE.final=FINAL;
+
+// ═══════════════════════════════════════
+// REVIEW 5 (قسم المراجعة) — EXERCISE Z, منفصل عن الاختبار الشامل
+// ═══════════════════════════════════════
+const REVIEW=[
   {q:"Don't _______ that bowl of soup. It's very hot.",o:['point to','touch','turn off','comb'],a:1,en:'hot soup → warning not to touch',ar:'شوربة حارة → تحذير من اللمس',tr:'لا تلمس وعاء الشوربة ذاك. هو حار جدًا.'},
   {q:'Thomas ate a dozen cookies before lunch. A dozen = _______.',o:['six','eight','twelve','twenty'],a:2,en:'a dozen = 12',ar:'دزينة = ١٢',tr:'توماس أكل دزينة كوكيز قبل الغدا. دزينة = اثنا عشر.'},
   {q:'The sandwich has one slice of cheese _______ two slices of bread.',o:['between','among','before','at'],a:0,en:'between = in the middle of two things',ar:'between = بين شيئين',tr:'الساندويتش فيه شريحة جبن بين شريحتين خبز.'},
@@ -1184,13 +1204,13 @@ const FINAL=dedupe_by_q([
   {q:'Is there milk on the table?',o:['Yes, they are.','Yes, there is.','Yes, it is.','Yes, there are.'],a:1,en:'milk is noncount → there is',ar:'milk غير معدود → there is',tr:'فيه حليب على الطاولة؟ — إي، فيه.'},
   {q:'You have a lot of friends at school.',o:['Yes, I have many friends.','Yes, I have much friends.','Yes, I have a little friends.','Yes, I have few friends.'],a:0,en:'friends is countable → many',ar:'friends معدود → many',tr:'عندك أصحاب كثير بالمدرسة. — إي، عندي أصحاب كثير.'},
   {q:'Will the tests be long tests every day?',o:["No, they aren't.","No, there weren't.","No, they will.","No, they won't."],a:3,en:'short answer to a will-question: won’t',ar:'جواب قصير لسؤال will: won’t',tr:'بتكون الاختبارات طويلة كل يوم؟ — لا، ما بتكون.'},
-]);
-EE.final=FINAL;
+];
+EE.review=REVIEW;
 
 function build_quiz(elId,qs,prefix){
   const el=document.getElementById(elId);
   el.innerHTML='';
-  const isTest=prefix==='te'||prefix==='fi';
+  const isTest=prefix==='te'||prefix==='fi'||prefix==='rv';
 
   if(isTest){
     const L=LP[CL];
@@ -1303,8 +1323,7 @@ function next_lesson(){
 
 function retry(){
   close_modal();
-  const elId=CL==='final'?'ph-final':'ph-test';
-  const prefix=CL==='final'?'fi':'te';
+  const {elId,prefix}=current_quiz_target();
   TANS={};delete built[prefix+CL];
   document.getElementById(elId).innerHTML='';
   build_quiz(elId,EE[CL],prefix);
@@ -1312,8 +1331,7 @@ function retry(){
 }
 
 function restart_test(){
-  const elId=CL==='final'?'ph-final':'ph-test';
-  const prefix=CL==='final'?'fi':'te';
+  const {elId,prefix}=current_quiz_target();
   TANS={};
   delete built[prefix+CL];
   document.getElementById(elId).innerHTML='';

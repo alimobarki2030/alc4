@@ -303,7 +303,7 @@ footer span{color:#FFC800;font-weight:700}
   <div class="stats">
     <div><div class="stat-n" id="stat-available">3</div><div class="stat-l">كتاب متاح</div></div>
     <div><div class="stat-n">+200</div><div class="stat-l">سؤال</div></div>
-    <div><div class="stat-n">4</div><div class="stat-l">دروس</div></div>
+    <div><div class="stat-n" id="stat-lessons">12</div><div class="stat-l">دروس</div></div>
   </div>
 </div>
 
@@ -393,8 +393,11 @@ function render_books(){
       </div>
     </div>`;
   }).join('');
+  const avail=BOOKS.filter(b=>b.available);
   const availCount=document.getElementById('stat-available');
-  if(availCount)availCount.textContent=BOOKS.filter(b=>b.available).length;
+  if(availCount)availCount.textContent=avail.length;
+  const lessonCount=document.getElementById('stat-lessons');
+  if(lessonCount)lessonCount.textContent=avail.reduce((s,b)=>s+(b.lessons||0),0);
 }
 render_books();
 

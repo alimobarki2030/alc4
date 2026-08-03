@@ -1,11 +1,7 @@
 // ═══════════════════════════════════════
-// LISTENING — YouTube videos (Book 5)
-// (لإضافة مقطع: أضف سطراً {id:'YOUTUBE_ID', t:'العنوان', s:'وصف قصير'})
+// ENGINE — LISTENING (YouTube videos)
+// Reads YT_VIDEOS from the book's data file.
 // ═══════════════════════════════════════
-const YT_VIDEOS=[
-  {id:'Q8l4Pu8HjIw',t:'Quiz A',s:'استماع وقراءة مع الحل'},
-  {id:'dATRyfVvPMo',t:'Quiz B',s:'استماع وقراءة مع الحل'}
-];
 function open_yt(){
   show_screen('ytscreen');
   document.getElementById('ytscreen').scrollIntoView({behavior:'smooth',block:'start'});

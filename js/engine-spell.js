@@ -1,23 +1,7 @@
 // ═══════════════════════════════════════
-// SPELLING — write from listening (by lesson) — Book 5
+// ENGINE — SPELLING (write from listening)
+// Reads SPELL_LESSONS from the book's data file.
 // ═══════════════════════════════════════
-const SPELL_LESSONS=[
-  {t:'📘 Lesson 1 — جسم الإنسان والصحة',w:[
-    {e:'head',a:'الرأس',em:'🤕'},{e:'hand',a:'اليد',em:'✋'},{e:'leg',a:'الساق',em:'🦵'},
-    {e:'nose',a:'الأنف',em:'👃'},{e:'ear',a:'الأذن',em:'👂'},{e:'hurt',a:'يؤلم',em:'🤕'},
-    {e:'sore',a:'مؤلم',em:'🤒'}]},
-  {t:'📗 Lesson 2 — أدوات الحمام والتسوّق',w:[
-    {e:'soap',a:'الصابون',em:'🧼'},{e:'towel',a:'المنشفة',em:'🧺'},{e:'sink',a:'المغسلة',em:'🚰'},
-    {e:'mirror',a:'المرآة',em:'🪞'},{e:'comb',a:'المشط',em:'🪮'},{e:'sugar',a:'السكر',em:'🧁'},
-    {e:'salt',a:'الملح',em:'🧂'}]},
-  {t:'📙 Lesson 3 — السفر والحجوزات',w:[
-    {e:'trip',a:'رحلة',em:'🧳'},{e:'ticket',a:'التذكرة',em:'🎫'},{e:'flight',a:'رحلة طيران',em:'✈️'},
-    {e:'key',a:'المفتاح',em:'🔑'},{e:'gate',a:'بوابة',em:'🚪'},{e:'twin',a:'توأم',em:'👯'}]},
-  {t:'📕 Lesson 4 — التسوق والطبخ',w:[
-    {e:'cake',a:'كيك',em:'🎂'},{e:'bowl',a:'وعاء',em:'🥣'},{e:'fork',a:'شوكة',em:'🍴'},
-    {e:'plate',a:'صحن',em:'🍽️'},{e:'onion',a:'بصل',em:'🧅'},{e:'lettuce',a:'خس',em:'🥬'},
-    {e:'tomato',a:'طماطم',em:'🍅'}]}
-];
 let spellWords=[],spellIdx=0,spellTries=0,spellHint=0,spellScore=0;
 
 function open_spell(){

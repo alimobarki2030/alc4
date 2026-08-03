@@ -47,6 +47,9 @@
   --txt:#3C3C3C;--muted:#9AA0B8;--bdr:#E2E8F0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+/* Guard against sub-pixel horizontal overflow that let the page drift
+   sideways while scrolling — the homepage has no horizontal content. */
+html,body{overflow-x:hidden}
 body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
 .svgico{width:1em;height:1em;display:inline-block;vertical-align:-0.15em;stroke-width:2;flex-shrink:0}
 

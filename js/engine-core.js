@@ -12,11 +12,37 @@ let LP={};
 let RW={};
 
 // ─── SPEECH ───
+// Picks the best-quality English voice available on the visitor's own
+// device instead of whatever the browser defaults to (often the most
+// basic/robotic one) — free, no backend, works with whatever the device
+// already has installed. Voices load asynchronously in most browsers, so
+// we cache the list and refresh it on the 'voiceschanged' event.
+let _voices=[];
+function _loadVoices(){ if(window.speechSynthesis)_voices=speechSynthesis.getVoices()||[]; }
+if(window.speechSynthesis){
+  _loadVoices();
+  speechSynthesis.addEventListener('voiceschanged',_loadVoices);
+}
+function _pickVoice(){
+  const en=_voices.filter(v=>v.lang&&v.lang.toLowerCase().startsWith('en'));
+  if(!en.length)return null;
+  const score=v=>{
+    const n=v.name.toLowerCase();
+    if(n.includes('natural')||n.includes('neural'))return 5; // e.g. Edge's "Online (Natural)" voices
+    if(n.includes('google'))return 4;
+    if(n.includes('enhanced')||n.includes('premium'))return 3; // e.g. macOS/iOS enhanced voices
+    if(v.lang.toLowerCase()==='en-us')return 2;
+    return 1;
+  };
+  return en.slice().sort((a,b)=>score(b)-score(a))[0];
+}
 function say(t){
   if(!window.speechSynthesis)return;
   speechSynthesis.cancel();
   const u=new SpeechSynthesisUtterance(String(t).replace(/\(.*?\)/g,'').trim());
-  u.lang='en-US';u.rate=0.82;speechSynthesis.speak(u);
+  const v=_pickVoice();
+  if(v){u.voice=v;u.lang=v.lang;}else{u.lang='en-US';}
+  u.rate=0.82;speechSynthesis.speak(u);
 }
 
 // ─── NAVIGATION ───

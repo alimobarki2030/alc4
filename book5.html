@@ -132,12 +132,22 @@
   </div>
 
   <div class="lbl" style="margin-top:20px">الاختبار</div>
-  <div class="final-card locked" title="يتفعّل بعد إضافة جميع الدروس">
+  <div class="final-card" onclick="open_final()">
     <div style="font-size:2.2rem;margin-bottom:8px">🏆</div>
     <h3>الاختبار النهائي الشامل</h3>
-    <p>جميع أسئلة التقييم الرسمية من الكتاب — الدروس 1 إلى 4</p>
-    <span class="fc-badge">🔒 يتفعّل بعد اكتمال جميع الدروس</span>
+    <p>مراجعة شاملة من الكتاب — 20 سؤال تغطي الدروس 1 إلى 4</p>
+    <span class="fc-badge" id="final-badge">ابدأ الاختبار</span>
   </div>
+</div>
+
+<!-- FINAL TEST SCREEN -->
+<div id="fscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">
+    <h2>الاختبار النهائي الشامل 🏆</h2>
+    <p>20 سؤال من مراجعة الكتاب — تغطي الدروس 1 إلى 4</p>
+  </div>
+  <div id="ph-final"></div>
 </div>
 
 <!-- LISTENING (YouTube) SCREEN -->

@@ -7,6 +7,7 @@
   --ok-bg:#D7FFB8;--ok-txt:#2D8A00;--no-bg:#FFDFE0;--no-txt:#CC0000;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;max-width:100%}
 button{-webkit-tap-highlight-color:transparent}
 body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;font-size:17px}
 

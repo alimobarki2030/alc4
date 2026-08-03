@@ -167,21 +167,14 @@
 </div>
 
 <!-- FINAL TEST SCREEN -->
-<div id="fscreen" style="display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px">
+<div id="fscreen">
   <button class="back" onclick="go_home()">← الرئيسية</button>
   <div style="background:linear-gradient(135deg,#7C3AED,#5B21B6);border-radius:14px;padding:18px;margin-bottom:16px;text-align:center">
     <div style="font-size:2rem;margin-bottom:6px">🏆</div>
     <h2 style="color:#fff;font-size:1.1rem;font-weight:900">الاختبار النهائي الشامل</h2>
     <p style="color:rgba(255,255,255,.75);font-size:.82rem;margin-top:4px">جميع أسئلة التقييم الرسمية من الكتاب</p>
   </div>
-  <div class="qprog">
-    <div class="qpbar"><div class="qpfill" id="fpfill"></div></div>
-    <div class="qptxt" id="fptxt">0 / 77</div>
-  </div>
-  <div id="final-quiz"></div>
-  <div class="submit-row">
-    <button class="sbtn" onclick="submit_final()">إرسال الاختبار النهائي →</button>
-  </div>
+  <div id="ph-final"></div>
 </div>
 
 <!-- PREPOSITIONS SCREEN -->
@@ -427,17 +420,23 @@
 
 <button class="top-fab" id="top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى" title="العودة للأعلى">⬆</button>
 
-<script src="js/lessons.js"></script>
-<script src="js/games-prep.js"></script>
-<script src="js/games-art.js"></script>
-<script src="js/games-wh.js"></script>
-<script src="js/games-pronouns.js"></script>
-<script src="js/games-modals.js"></script>
-<script src="js/games-time.js"></script>
-<script src="js/games-spell.js"></script>
-<script src="js/games-irregular.js"></script>
-<script src="js/youtube.js"></script>
-<script src="js/progress.js"></script>
+<script src="js/engine-core.js"></script>
+<script src="js/data-book4.js"></script>
+<script src="js/engine-lessons.js"></script>
+<script src="js/engine-youtube.js"></script>
+<script src="js/engine-spell.js"></script>
+<script src="js/engine-concepts.js"></script>
+<script src="js/concepts-prep.js"></script>
+<script src="js/concepts-art.js"></script>
+<script src="js/concepts-wh.js"></script>
+<script src="js/concepts-pronouns.js"></script>
+<script src="js/concepts-modals.js"></script>
+<script src="js/concepts-time.js"></script>
+<script src="js/concepts-irregular.js"></script>
+<!-- engine-progress.js loads last: its routing IIFE dispatches ?open=
+     deep links via GRAMMAR_OPEN_MAP, which needs every concept screen's
+     open_X() already defined on window by the time it runs. -->
+<script src="js/engine-progress.js"></script>
 
 <!-- FOOTER -->
 <div class="site-footer">

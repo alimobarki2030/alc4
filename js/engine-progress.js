@@ -80,7 +80,7 @@ function load_progress(){
 if(!STORAGE_OK)show_storage_warning();
 
 function reset_progress(){
-  if(!confirm('⚠️ تحذير: سيُمسح كل تقدّمك (الدرجات والـ XP) ولا يمكن التراجع.\n\nهل أنت متأكد تماماً؟'))return;
+  if(!confirm('⚠️ تحذير: سيُمسح كل تقدّمك (الدرجات والـ XP والـ Streak) ولا يمكن التراجع.\n\nهل أنت متأكد تماماً؟'))return;
   try{localStorage.removeItem(PKEY);}catch(e){}
   location.reload();
 }

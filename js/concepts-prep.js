@@ -35,7 +35,7 @@ function open_prep(){
   render_zoom();
   ['in','on','at'].forEach(x=>document.getElementById('ring-'+x).classList.remove('active'));
   document.getElementById('prep-detail').innerHTML='';
-  build_prep_quiz();reset_quiz('prep');
+  build_concept_quiz('prep-quiz',PREP_QUIZ,'prep',['in','on','at']);reset_quiz('prep');
 }
 
 function render_zoom(){
@@ -66,37 +66,4 @@ function sel_prep(p){
   const d=PREP[prepMode][p],c=PREP_COLORS[p];
   const header=`${p} <span class="pd-tag" style="background:${c.bg};color:${c.tx}">${prepMode==='place'?'📍 مكان':'🕐 زمن'}</span>`;
   document.getElementById('prep-detail').innerHTML=concept_html(c.tx,c.bd,header,d);
-}
-
-function build_prep_quiz(){
-  let html='';
-  PREP_QUIZ.forEach((q,i)=>{
-    html+=`<div class="pq-item">
-      <div class="pq-sent">${i+1}. ${q.q}</div>
-      <div class="pq-opts">
-        ${['in','on','at'].map(o=>`<button class="pq-opt" id="pqo${i}_${o}" onclick="prep_answer(${i},'${o}')">${o}</button>`).join('')}
-      </div>
-      <div class="pq-fb" id="pqfb${i}"></div>
-    </div>`;
-  });
-  document.getElementById('prep-quiz').innerHTML=html;
-}
-
-function prep_answer(i,o){
-  const q=PREP_QUIZ[i];
-  const fb=document.getElementById('pqfb'+i);
-  const btn=document.getElementById('pqo'+i+'_'+o);
-  if(o===q.a){
-    ['in','on','at'].forEach(x=>{const b=document.getElementById('pqo'+i+'_'+x);if(b)b.disabled=true;});
-    btn.classList.add('ok');
-    fb.textContent='✅ '+q.tr;
-    fb.className='pq-fb show ok';
-    say(q.q.replace('___',o));
-    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-  }else{
-    btn.classList.add('no');
-    fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';
-    fb.className='pq-fb show no';
-    setTimeout(()=>{btn.classList.remove('no');},700);
-  }
 }

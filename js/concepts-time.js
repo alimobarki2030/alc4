@@ -47,7 +47,7 @@ function open_time(){
     const dot=document.getElementById('tld-'+x);if(dot)dot.classList.remove('on');
   });
   document.getElementById('time-detail').innerHTML='';
-  build_time_quiz();reset_quiz('time');
+  build_concept_quiz('time-quiz',TIME_QUIZ,'time');reset_quiz('time');
 }
 function sel_time(k){
   timeSel=k;
@@ -87,26 +87,4 @@ function sel_time(k){
     </div>
   </div>`;
   document.getElementById('time-detail').innerHTML=html;
-}
-function build_time_quiz(){
-  let html='';
-  TIME_QUIZ.forEach((q,i)=>{
-    html+=`<div class="pq-item"><div class="pq-sent">${i+1}. ${q.q}</div>
-      <div class="pq-opts col">${q.o.map(o=>`<button class="pq-opt" id="tqo${i}_${o.replace(/ /g,'_')}" onclick="time_answer(${i},'${o.replace(/ /g,'_')}')">${o}</button>`).join('')}</div>
-      <div class="pq-fb" id="tqfb${i}"></div></div>`;
-  });
-  document.getElementById('time-quiz').innerHTML=html;
-}
-function time_answer(i,o){
-  const q=TIME_QUIZ[i],fb=document.getElementById('tqfb'+i),btn=document.getElementById('tqo'+i+'_'+o);
-  const chosen=o.replace(/_/g,' ');
-  if(chosen===q.a){
-    q.o.forEach(x=>{const b=document.getElementById('tqo'+i+'_'+x.replace(/ /g,'_'));if(b)b.disabled=true;});
-    btn.classList.add('ok');fb.textContent='✅ '+q.tr;fb.className='pq-fb show ok';
-    say(q.q.replace('___',chosen));
-    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-  }else{
-    btn.classList.add('no');fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';fb.className='pq-fb show no';
-    setTimeout(()=>{btn.classList.remove('no');},700);
-  }
 }

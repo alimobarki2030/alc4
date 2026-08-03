@@ -47,7 +47,7 @@ function open_pn(){
   document.getElementById('pn-t-past').classList.remove('on');
   build_pn_grid();
   document.getElementById('pn-detail').innerHTML='';
-  build_pn_quiz();reset_quiz('pn');
+  build_concept_quiz('pn-quiz',PRON_QUIZ,'pn');reset_quiz('pn');
 }
 function sw_pn(m){
   pnMode=m;
@@ -75,25 +75,4 @@ function sel_pn(k){
     bad:ex.bad,good:ex.good
   };
   document.getElementById('pn-detail').innerHTML=concept_html('#0E7490','#67E8F9',header,d);
-}
-function build_pn_quiz(){
-  let html='';
-  PRON_QUIZ.forEach((q,i)=>{
-    html+=`<div class="pq-item"><div class="pq-sent">${i+1}. ${q.q}</div>
-      <div class="pq-opts">${q.o.map(o=>`<button class="pq-opt" id="pqo${i}_${o}" onclick="pn_answer(${i},'${o}')">${o}</button>`).join('')}</div>
-      <div class="pq-fb" id="pqfb${i}"></div></div>`;
-  });
-  document.getElementById('pn-quiz').innerHTML=html;
-}
-function pn_answer(i,o){
-  const q=PRON_QUIZ[i],fb=document.getElementById('pqfb'+i),btn=document.getElementById('pqo'+i+'_'+o);
-  if(o===q.a){
-    q.o.forEach(x=>{const b=document.getElementById('pqo'+i+'_'+x);if(b)b.disabled=true;});
-    btn.classList.add('ok');fb.textContent='✅ '+q.tr;fb.className='pq-fb show ok';
-    say(q.q.replace('___',o));
-    XP+=2;document.getElementById('xp').textContent=XP;save_progress();
-  }else{
-    btn.classList.add('no');fb.textContent='❌ ليست صحيحة — حاول مرة أخرى';fb.className='pq-fb show no';
-    setTimeout(()=>{btn.classList.remove('no');},700);
-  }
 }

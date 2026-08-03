@@ -21,7 +21,6 @@
         <div class="ag-icon"><svg class="svgico" aria-hidden="true"><use href="#icon-lock"></use></svg></div>
         <div class="ag-brand">ALC</div>
         <div class="ag-brand-sub">American Language Course</div>
-        <h2>هذا الموقع خاص بطلاب المعهد</h2>
         <input id="ag-input" type="text" autocomplete="off" placeholder="اكتب الكود هنا">
         <button id="ag-submit">دخول</button>
         <div id="ag-err" class="ag-err"></div>

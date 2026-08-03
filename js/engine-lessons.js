@@ -116,7 +116,8 @@ function build_vocab_sec(lk){
     });
     html+='</div>';
   }
-  html+=`<div class="vocab-note">🔢 <b>ordinal numbers 1st – 12th</b> (first – twelfth) — تقدر تتعلمها بالتفصيل من تبويب <b>قواعد</b> 📖.</div>`;
+  const note=LESSON_META[lk]&&LESSON_META[lk].vocabNote;
+  if(note)html+=`<div class="vocab-note">${note}</div>`;
   el.innerHTML=html;
 }
 

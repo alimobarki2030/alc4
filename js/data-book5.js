@@ -6,7 +6,7 @@
 const BOOK_ID='book5';
 
 const LESSON_META={
-  l1:{ico:'🤕',title:'Lesson 1 — What’s Wrong?',sub:'جسم الإنسان والصحة'},
+  l1:{ico:'🤕',title:'Lesson 1 — What’s Wrong?',sub:'جسم الإنسان والصحة',vocabNote:'🔢 <b>ordinal numbers 1st – 12th</b> (first – twelfth) — تقدر تتعلمها بالتفصيل من تبويب <b>قواعد</b> 📖.'},
   l2:{ico:'🧴',title:'Lesson 2 — Where Can I Get Shampoo?',sub:'أدوات الحمام والتسوّق'},
   l3:{ico:'🧳',title:'Lesson 3 — I’ll Take a Trip',sub:'السفر والحجوزات'},
   l4:{ico:'🥛',title:'Lesson 4 — I’ll Buy a Gallon of Milk',sub:'التسوق والطبخ'}

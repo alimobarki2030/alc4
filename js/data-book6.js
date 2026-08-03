@@ -490,7 +490,30 @@ l4:[
 };
 
 // ═══════════════════════════════════════
-// ROUTING MANIFEST — home + lesson screen only for now
+// REVIEW 6 (قسم المراجعة) — EXERCISE W، منفصل عن الدروس (16 سؤال)
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس'};
+const REVIEW=[
+  {q:"Frank got a bad _______ on the book quiz because he didn't study.",o:["score","test","lesson","name"],a:0,en:"you get a bad score on a quiz",ar:"درجة سيئة = bad score",tr:"حصل فرانك على درجة سيئة في اختبار الكتاب لأنه لم يدرس."},
+  {q:"My father's plane arrived at 9:15 last night.",o:["It got in.","It got off.","It got on.","It got up."],a:0,en:"a plane 'gets in' = arrives",ar:"وصول الطائرة = get in",tr:"طائرة والدي وصلت الساعة 9:15 مساء أمس. (get in = يصل)"},
+  {q:"She can drive a car now because she got her driver's _______.",o:["check","order","identification","license"],a:3,en:"driver's license",ar:"رخصة القيادة",tr:"تستطيع قيادة السيارة الآن لأنها حصلت على رخصة القيادة."},
+  {q:"There was a _______ this morning. It rained only five minutes.",o:["snow","sun","weather","shower"],a:3,en:"a shower = brief rain",ar:"زخة مطر قصيرة = shower",tr:"كان هناك زخة مطر هذا الصباح. أمطرت خمس دقائق فقط."},
+  {q:"I can't mail a letter because I don't have _______.",o:["a menu","an envelope","a blade","a post office"],a:1,en:"you need an envelope to mail a letter",ar:"ظرف = envelope",tr:"لا أستطيع إرسال الرسالة لأنه ليس لدي ظرف."},
+  {q:"Tom lives in that big white _______ over there.",o:["street","plate","house","sky"],a:2,en:"you live in a house",ar:"بيت = house",tr:"يعيش توم في ذلك البيت الأبيض الكبير هناك."},
+  {q:"The food at the restaurant is delicious.",o:["It's awful.","It's very good.","It's very bad.","It's crowded."],a:1,en:"delicious = very good",ar:"لذيذ = very good",tr:"الطعام في المطعم لذيذ. (delicious = very good)"},
+  {q:"What would you like to do tonight?",o:["I didn't go out.","I'd like to see a movie.","I saw a movie.","I went to the movie."],a:1,en:"'would like' asks about a future wish",ar:"would like للرغبة في المستقبل",tr:"ماذا تحب أن تفعل الليلة؟ — أحب أن أشاهد فيلماً."},
+  {q:"I think _______ it will snow tomorrow.",o:["this","they","them","that"],a:3,en:"I think that ...",ar:"I think that = أعتقد أنّ",tr:"أعتقد أنها ستُثلج غداً."},
+  {q:"Ms. Jacobs mailed a package to her brother.",o:["He mailed his sister a package.","She mailed her brother a package.","He mailed his brother a package.","She mailed her sister a package."],a:1,en:"Ms. Jacobs = she; to her brother",ar:"السيدة جاكوبس = she، والمُرسَل إليه أخوها",tr:"أرسلت السيدة جاكوبس طرداً لأخيها."},
+  {q:"Why are you wearing your winter coat?",o:["Because I'm cold.","Because I'm hot.","Because I'm tired.","Because I'm hungry."],a:0,en:"winter coat → because I'm cold",ar:"معطف الشتاء لأنه بردان",tr:"لماذا ترتدي معطف الشتاء؟ — لأنني بردان."},
+  {q:"Where is your daughter?",o:["I think he's at the post office.","I think she was at home.","I think she's at the post office.","I think he will be here."],a:2,en:"daughter = she; present 'is'",ar:"daughter = she، والسؤال بصيغة المضارع",tr:"أين ابنتك؟ — أعتقد أنها في مكتب البريد."},
+  {q:"How did your mother and father get from Paris to Rome?",o:["They flew by train.","They will go on the train.","They went by train.","They wanted to walk."],a:2,en:"past 'did' → went ('flew by train' is contradictory)",ar:"سؤال بالماضي did → went",tr:"كيف وصل والداك من باريس إلى روما؟ — ذهبا بالقطار."},
+  {q:"Would you like some coffee or tea?",o:["Where is the coffee?","No, I don't want something, thanks.","Yes, I had some coffee.","No, I don't want anything, thanks."],a:3,en:"a negative sentence uses 'anything', not 'something'",ar:"مع النفي نستخدم anything لا something",tr:"هل تريد بعض القهوة أو الشاي؟ — لا، لا أريد شيئاً، شكراً."},
+  {q:"We stayed at the hotel from 4:45 p.m. to 10:00 a.m.",o:["We stayed a week.","We stayed a month.","We stayed overnight.","We stayed for a dozen hours."],a:2,en:"evening to morning = overnight",ar:"من المساء حتى الصباح = طوال الليل",tr:"بقينا في الفندق من 4:45 مساءً حتى 10:00 صباحاً. (overnight = طوال الليل)"},
+  {q:"I want to relax next Saturday.",o:["I want to work.","I want to study.","I want to smile.","I want to rest."],a:3,en:"relax = rest",ar:"relax = يرتاح (rest)",tr:"أريد أن أسترخي السبت القادم. (relax = rest)"},
+];
+EE.review=REVIEW;
+
+// ═══════════════════════════════════════
+// ROUTING MANIFEST — home + lesson + review screens
+// ═══════════════════════════════════════
+const SCREENS=['home','lscreen','rscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة'};

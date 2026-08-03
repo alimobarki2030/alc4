@@ -2,7 +2,7 @@
 // PROGRESS PERSISTENCE (localStorage) — Book 5
 // ═══════════════════════════════════════
 const PKEY='alc_book5_progress';
-const LESSON_KEYS=['l1','l2','l3'];
+const LESSON_KEYS=['l1','l2','l3','l4'];
 let STORAGE_OK=true;
 try{const t='__alc_test__';localStorage.setItem(t,'1');localStorage.removeItem(t);}
 catch(e){STORAGE_OK=false;}

@@ -177,6 +177,63 @@ l3:[
   {e:'round-trip',a:'ذهاب وعودة (تذكرة)',em:'🔁'},
   {e:'together',a:'مع بعض',em:'🤝'},
   {e:'tonight',a:'الليلة',em:'🌙'},
+],
+l4:[
+  {e:'bar',a:'قالب (شوكولاتة)',em:'🍫'},
+  {e:'bean',a:'فاصولياء / لوبيا',em:'🫘'},
+  {e:'bottle',a:'زجاجة',em:'🍾'},
+  {e:'bowl',a:'وعاء',em:'🥣'},
+  {e:'cake',a:'كيك',em:'🎂'},
+  {e:'can',a:'علبة معدنية',em:'🥫'},
+  {e:'candy',a:'حلوى',em:'🍬'},
+  {e:'carrot',a:'جزر',em:'🥕'},
+  {e:'cheese',a:'جبن',em:'🧀'},
+  {e:'chocolate',a:'شوكولاتة',em:'🍫'},
+  {e:'cookie',a:'كوكيز',em:'🍪'},
+  {e:'corn',a:'ذرة',em:'🌽'},
+  {e:'cup',a:'كوب / فنجان',em:'☕'},
+  {e:'dessert',a:'حلى / تحلية',em:'🍮'},
+  {e:'dial',a:'قرص الاتصال (بالهاتف القديم)',em:'☎️'},
+  {e:'dial tone',a:'نغمة الاتصال',em:'🔊'},
+  {e:'dish',a:'طبق',em:'🍽️'},
+  {e:'dozen',a:'دزينة (١٢)',em:'🥚'},
+  {e:'fork',a:'شوكة',em:'🍴'},
+  {e:'gallon',a:'جالون',em:'🥛'},
+  {e:'glass',a:'كوب زجاج',em:'🥛'},
+  {e:'ham',a:'لحم الفخذ المقدد',em:'🍖'},
+  {e:'ice cream',a:'آيسكريم',em:'🍦'},
+  {e:'kilogram',a:'كيلوجرام',em:'⚖️'},
+  {e:'knife',a:'سكين',em:'🔪'},
+  {e:'lettuce',a:'خس',em:'🥬'},
+  {e:'napkin',a:'منديل',em:'🧻'},
+  {e:'onion',a:'بصل',em:'🧅'},
+  {e:'ounce',a:'أونصة',em:'⚖️'},
+  {e:'paper',a:'ورق',em:'📄'},
+  {e:'pie',a:'فطيرة',em:'🥧'},
+  {e:'piece',a:'قطعة',em:'🧩'},
+  {e:'pint',a:'باينت (وحدة قياس سوائل)',em:'🥛'},
+  {e:'plate',a:'صحن',em:'🍽️'},
+  {e:'potato',a:'بطاطس',em:'🥔'},
+  {e:'pound',a:'رطل',em:'⚖️'},
+  {e:'quart',a:'كوارت (وحدة قياس)',em:'🥛'},
+  {e:'receiver',a:'سماعة الهاتف',em:'☎️'},
+  {e:'sandwich',a:'ساندويتش',em:'🥪'},
+  {e:'slice',a:'شريحة',em:'🍞'},
+  {e:'spoon',a:'ملعقة',em:'🥄'},
+  {e:'squash',a:'كوسا / قرع',em:'🎃'},
+  {e:'tomato',a:'طماطم',em:'🍅'},
+  {e:'ton',a:'طن',em:'⚖️'},
+  {e:'tube',a:'أنبوب (معجون)',em:'🧴'},
+  {e:'vanilla',a:'فانيليا',em:'🍦'},
+  {e:'vegetable',a:'خضار',em:'🥦'},
+  {e:'dial (verb)',a:'يطلب رقم (بالهاتف)',em:'☎️'},
+  {e:'have to',a:'يجب / لازم',past:'had to',pa:'كان لازم',em:'❗'},
+  {e:'make',a:'يصنع / يحضّر',past:'made',pa:'صنع / حضّر',em:'👩‍🍳'},
+  {e:'among',a:'وسط (لأكثر من شيئين)',em:'👥'},
+  {e:'between',a:'بين (شيئين)',em:'↔️'},
+  {e:'half',a:'نصف',em:'🍕'},
+  {e:'many',a:'كثير (معدود)',em:'🔢'},
+  {e:'much',a:'كثير (غير معدود)',em:'🔢'},
 ]
 };
 
@@ -221,7 +278,8 @@ function track_screen(id){
 const LESSON_META={
   l1:{ico:'🤕',title:'Lesson 1 — What\u2019s Wrong?',sub:'جسم الإنسان والصحة'},
   l2:{ico:'🧴',title:'Lesson 2 — Where Can I Get Shampoo?',sub:'أدوات الحمام والتسوّق'},
-  l3:{ico:'🧳',title:'Lesson 3 — I’ll Take a Trip',sub:'السفر والحجوزات'}
+  l3:{ico:'🧳',title:'Lesson 3 — I’ll Take a Trip',sub:'السفر والحجوزات'},
+  l4:{ico:'🥛',title:'Lesson 4 — I’ll Buy a Gallon of Milk',sub:'التسوق والطبخ'}
 };
 
 function open_lesson(lk){
@@ -301,6 +359,16 @@ l3:[
   {words:["I","will","meet","Jim","tomorrow","morning"],ans:"I will meet Jim tomorrow morning.",tr:"بقابل جيم باكر الصبح.",ar:"tomorrow + morning"},
   {words:["The","plane","will","arrive","in","an","hour"],ans:"The plane will arrive in an hour.",tr:"الطيارة بتوصل خلال ساعة.",ar:"in + مدة زمنية"},
   {words:["Push","the","small","button","on","your","right"],ans:"Push the small button on your right.",tr:"ادفع الزر الصغير يمينك.",ar:"جملة تعليمات من نص الكتاب"},
+],
+l4:[
+  {words:["I","had","to","take","the","car","to","a","mechanic"],ans:"I had to take the car to a mechanic.",tr:"اضطريت أوديّ السيارة للميكانيكي.",ar:"had to = ماضي have to"},
+  {words:["We","don't","have","a","lot","of","friends","among","the","students"],ans:"We don't have a lot of friends among the students.",tr:"ما عندنا كثير صحاب وسط الطلاب.",ar:"among = وسط أكثر من شخصين"},
+  {words:["How","many","dishes","did","you","have","to","wash","?"],ans:"How many dishes did you have to wash ?",tr:"كم صحن اضطريت تغسل؟",ar:"dishes معدود → How many"},
+  {words:["How","much","coffee","did","you","drink","?"],ans:"How much coffee did you drink ?",tr:"كم قهوة شربت؟",ar:"coffee غير معدود → How much"},
+  {words:["I","have","to","go","to","class"],ans:"I have to go to class.",tr:"لازم أروح الصف.",ar:"have to = التزام"},
+  {words:["We","don't","have","to","pay","any","money"],ans:"We don't have to pay any money.",tr:"مو لازم ندفع فلوس.",ar:"don't have to = مو ضروري"},
+  {words:["You","will","have","to","wear","a","uniform"],ans:"You will have to wear a uniform.",tr:"بيصير لازم تلبس زي موحد.",ar:"will have to = التزام مستقبلي"},
+  {words:["She","has","to","make","a","cake","for","the","party"],ans:"She has to make a cake for the party.",tr:"لازم تسوي كيك للحفلة.",ar:"has to مع she"},
 ]
 };
 
@@ -604,6 +672,62 @@ l3:[
       {s:'Ben will graduate from school next month.',tr:'بن بيتخرّج من المدرسة الشهر الجاي.',ar:'next + month',ok:true},
       {s:'The plane will arrive in an hour.',tr:'الطيارة بتوصل خلال ساعة.',ar:'in + مدة زمنية',ok:true},
       {s:'I will see you in tomorrow.',wrong:'in tomorrow',right:'tomorrow',tr:'tomorrow ما تحتاج in قبلها.',ok:false},
+    ]
+  }
+],
+l4:[
+  {
+    title:'Using articles — a, an, and the', ar:'a وan للمرة الأولى، the للمرة الثانية',
+    rule:'نستخدم a أو an لما نذكر شيء لأول مرة (والسامع ما يعرفه بعد) — an قبل حرف علة. نستخدم the لما نرجع نذكر نفس الشيء مرة ثانية (صار معروف للسامع).',
+    check:{q:'Gary bought a new car on Tuesday. Gary had to take _______ car to a mechanic on Friday.',o:['a','an','the','some'],a:2,en:'Second mention of the same thing takes the',ar:'ذكر ثاني لنفس الشيء ياخذ the'},
+    compare:[
+      {c1:'Look! I bought a new car.',c2:'I had to take the car to a mechanic.',ar:'a = أول ذكر، the = نفس السيارة (صارت معروفة)'},
+    ],
+    examples:[
+      {s:'I bought a jacket and a shirt. The jacket is blue.',tr:'اشتريت جاكيت وقميص. الجاكيت أزرق.',ar:'a لأول ذكر، the للرجوع لنفس الشيء',ok:true},
+      {s:'I had a sandwich and a cup of coffee. The coffee was bad.',tr:'اكلت ساندويتش وشربت قهوة. القهوة كانت وحشة.',ar:'the coffee = نفس القهوة المذكورة قبل',ok:true},
+      {s:'I bought a car. I had to take a car to a mechanic.',wrong:'a car',right:'the car',tr:'ثاني مرة نذكر نفس السيارة، لازم the مو a.',ok:false},
+    ]
+  },
+  {
+    title:'Many vs Much', ar:'many مع المعدود، much مع غير المعدود',
+    rule:'نستخدم many مع الأسماء المعدودة (تُجمع: friends, things)، وmuch مع الأسماء غير المعدودة (ما تُجمع: food, coffee). much نادرًا تُستخدم بالجمل المثبتة.',
+    check:{q:'They don’t need _______ cheese for the sandwiches.',o:['many','much','a','the'],a:1,en:'cheese is a noncount noun → much',ar:'cheese اسم غير معدود → much'},
+    compare:[
+      {c1:'many friends — اسم معدود',c2:'much food — اسم غير معدود',ar:'friends تُجمع → many، food ما تُجمع → much'},
+    ],
+    examples:[
+      {s:'We don’t have a lot of friends among the students.',tr:'ما عندنا كثير صحاب وسط الطلاب.',ar:'friends معدود، a lot of تصلح مع الاثنين',ok:true},
+      {s:'Did Mark buy lots of things at the store?',tr:'مارك اشترى أشياء كثيرة من المحل؟',ar:'things معدود → many/lots of',ok:true},
+      {s:'Do you have much friends?',wrong:'much',right:'many',tr:'friends اسم معدود (يُجمع) — لازم many مو much.',ok:false},
+    ]
+  },
+  {
+    title:'How many vs How much', ar:'How many مع المعدود، How much مع غير المعدود',
+    rule:'نسأل بـ How many + اسم معدود جمع (How many dishes?)، وHow much + اسم غير معدود (How much coffee?) للسؤال عن الكمية.',
+    check:{q:'_______ coffee do you want?',o:['How many','How much','How','What'],a:1,en:'coffee is noncount → How much',ar:'coffee غير معدود → How much'},
+    compare:[
+      {c1:'How many dishes did you wash?',c2:'I washed 30 dishes.',ar:'dishes معدود → How many'},
+      {c1:'How much coffee did you drink?',c2:'I drank a lot.',ar:'coffee غير معدود → How much'},
+    ],
+    examples:[
+      {s:'How many cups of coffee did you drink?',tr:'كم فنجان قهوة شربت؟',ar:'cups معدودة → How many',ok:true},
+      {s:'How much sugar did he put in his tea?',tr:'كم سكر حط بشايه؟',ar:'sugar غير معدود → How much',ok:true},
+      {s:'How much children are in that room?',wrong:'How much',right:'How many',tr:'children اسم معدود (جمع) — لازم How many مو How much.',ok:false},
+    ]
+  },
+  {
+    title:'Have to / Don’t have to', ar:'have to للالتزام، don’t have to = مو ضروري',
+    rule:'نستخدم have to (أو has to مع he/she/it) للتعبير عن التزام أو واجب. نستخدم don’t have to (أو doesn’t have to) لما الشي مو ضروري — مو نفس معنى must not (ممنوع).',
+    check:{q:"It's not necessary to have an ID card to see a movie. You _______ have an ID card.",o:['must','can','have to',"don't have to"],a:3,en:"not necessary means don't have to",ar:"مو ضروري = don't have to"},
+    compare:[
+      {c1:'I have to go to class.',c2:'He has to go to class.',ar:'has to مع he/she/it، have to مع الباقي'},
+      {c1:'I have to have an ID card.',c2:'I don’t have to live in the city.',ar:'don’t have to = مو ضروري، مو ممنوع'},
+    ],
+    examples:[
+      {s:'We have to pass the book quiz.',tr:'لازم نجتاز اختبار الكتاب.',ar:'have to = التزام',ok:true},
+      {s:'We don’t have to pay any money.',tr:'مو لازم ندفع فلوس.',ar:"don't have to = مو ضروري",ok:true},
+      {s:'She don’t have to wear a coat.',wrong:'don’t',right:'doesn’t',tr:'she تاخذ doesn’t مو don’t.',ok:false},
     ]
   }
 ]
@@ -989,6 +1113,28 @@ l3:[
   {q:'A: Which knob do I _______ to change the music on the radio? B: The one on the right.',o:['lock','sharpen','turn','stop'],a:2,en:'turn a knob = rotate it to adjust',ar:'turn = تلف/تدير المقبض',tr:'أي مقبض ألف عشان أغيّر الموسيقى بالراديو؟ — اللي على اليمين.'},
   {q:'A: Which _______ are you flying? B: I’m flying Northwest.',o:['airplane','airport','airline','arrival'],a:2,en:'airline = the company you fly with',ar:'airline = شركة الطيران',tr:'أي شركة طيران بتسافر فيها؟ — بسافر مع Northwest.'},
   {q:"I'll come back _______ one week.",o:['off','from','on','in'],a:3,en:'in + duration = after that time passes',ar:'in + مدة = بعد مرور هالمدة',tr:'بارجع خلال أسبوع.'},
+],
+l4:[
+  {q:'Lt Gregg: Do you _______ study tonight? Lt Yates: Yes, I have a test tomorrow.',o:['must','have to','will','much'],a:1,en:'have to + verb expresses obligation, matches a Do-question',ar:'have to = التزام، تتماشى مع سؤال Do',tr:'لازم تذاكر الليلة؟ — إي، عندي اختبار باكر.'},
+  {q:'Who _______ the sandwich? It was good.',o:['dialed','had to','made','brushed'],a:2,en:'made = past tense of make',ar:'made = ماضي make',tr:'مين سوى الساندويتش؟ كان زين.'},
+  {q:'Is there a pencil _______ all those pens on the desk?',o:['among','many','between','much'],a:0,en:'among is used with three or more things',ar:'among = مع ثلاثة أشياء أو أكثر',tr:'فيه قلم رصاص وسط كل هالأقلام اللي على المكتب؟'},
+  {q:'Four quarts make a(n) _______.',o:['pound','ounce','gallon','bottle'],a:2,en:'4 quarts = 1 gallon',ar:'٤ كوارت = جالون واحد',tr:'أربع كوارت تسوي جالون.'},
+  {q:'2000 lbs. make a _______.',o:['tube','kg','half a pound','ton'],a:3,en:'2000 lbs = 1 ton',ar:'٢٠٠٠ رطل = طن واحد',tr:'٢٠٠٠ رطل تسوي طن.'},
+  {q:'Do you want cake or _______ for dessert?',o:['cheese','carrots','cookies','corn'],a:2,en:'cookies is a dessert food',ar:'cookies نوع من الحلى',tr:'تبي كيك ولا كوكيز للتحلية؟'},
+  {q:'Did you have a _______ of pie?',o:['slice','glass','plate','fork'],a:0,en:'a slice of pie is the standard collocation',ar:'a slice of = تعبير ثابت مع pie',tr:'أكلت شريحة فطيرة؟'},
+  {q:'_______ you work in Canada next year?',o:['Make','Has to','Will','Have to'],a:2,en:'next year signals future tense with will',ar:'next year → المستقبل بـ will',tr:'بتشتغل بكندا السنة الجاية؟'},
+  {q:'Squash and corn are _______.',o:['potatoes','sandwiches','cans','vegetables'],a:3,en:'squash and corn are vegetables',ar:'الكوسا والذرة من الخضار',tr:'الكوسا والذرة خضار.'},
+  {q:'This is an old telephone. You have to _______ the numbers.',o:['make','makes','dial','dials'],a:2,en:'have to + base verb, no s: dial',ar:'have to + فعل مجرد بدون s: dial',tr:'هذا تلفون قديم. لازم تطلب الأرقام.'},
+  {q:'A lot of children in this school are _______ 10 and 14 years old.',o:['many','much','between','among'],a:2,en:'between + two numbers (a range)',ar:'between + رقمين (مدى)',tr:'كثير من الأطفال بهالمدرسة أعمارهم بين ١٠ و١٤ سنة.'},
+  {q:"I can't find a _______ for the soup.",o:['bowl','fork','can','glass'],a:0,en:'soup is served in a bowl',ar:'الشوربة تُقدَّم بوعاء',tr:'ما لقيت وعاء للشوربة.'},
+  {q:"It's not necessary to have an ID card to see a movie. You _______ have an ID card.",o:['must','can','have to',"don't have to"],a:3,en:"not necessary means don't have to",ar:"مو ضروري = don't have to",tr:'مو ضروري تجيب بطاقة هوية عشان تشوف فيلم. مو لازم تجيب بطاقة هوية.'},
+  {q:'There isn’t _______ salt in the soup.',o:['a','many','much','the'],a:2,en:'salt is a noncount noun → much',ar:'salt اسم غير معدود → much',tr:'ما فيه ملح كثير بالشوربة.'},
+  {q:'Will you buy _______ milk, please?',o:['a gallon of','a tube of','half a pound of','a dozen'],a:0,en:'milk is measured in gallons',ar:'الحليب يُقاس بالجالون',tr:'بتشتري جالون حليب، من فضلك؟'},
+  {q:'We need glasses, forks, knives, napkins, and _______.',o:['cans','receivers','bars','plates'],a:3,en:'plates complete the table setting',ar:'plates تكمل أدوات المائدة',tr:'نحتاج أكواب، شوك، سكاكين، مناديل، وصحون.'},
+  {q:'Do you have a _______ of paper for me to write a telephone number?',o:['slice','dial','dish','piece'],a:3,en:'a piece of paper is the standard collocation',ar:'a piece of = تعبير ثابت مع paper',tr:'عندك ورقة أكتب فيها رقم هاتف؟'},
+  {q:'I needed _______ eggs to make these 2 cakes.',o:['half dozen','a half of dozen','half a dozen','half dozen of'],a:2,en:'half a dozen is the correct phrase',ar:'half a dozen هي الصيغة الصحيحة',tr:'احتجت نص دزينة بيض عشان أسوي هالكيكتين.'},
+  {q:"She'll buy a _______ of toothpaste.",o:['ton','bottle','bowl','tube'],a:3,en:'toothpaste comes in a tube',ar:'معجون الأسنان يجي بأنبوب',tr:'بتشتري أنبوب معجون أسنان.'},
+  {q:'They went to see _______ movie yesterday.',o:['first','it','a','two'],a:2,en:'a movie = an unspecified movie',ar:'a movie = فيلم غير محدد',tr:'راحوا يتفرجون فيلم أمس.'},
 ]
 };
 

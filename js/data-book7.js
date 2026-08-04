@@ -635,7 +635,25 @@ l4:[
 };
 
 // ═══════════════════════════════════════
-// ROUTING MANIFEST — home + lesson + mistake-review screens
+// REVIEW — "مراجعة شاملة" (Lesson 5 review, Exercise K), spanning L1–L4
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','mkscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',mkscreen:'مراجعة الأخطاء'};
+const REVIEW=[
+  {q:"A diameter divides a circle into _______.",o:["tops","problems","halves","errors"],a:2,en:"a diameter cuts a circle in two → halves",ar:'القُطر يقسم الدائرة إلى نصفين → halves',tr:'القُطر يقسم الدائرة إلى نصفين.'},
+  {q:"Open the _______ to go into the backyard.",o:["shape","gate","drawer","cabinet"],a:1,en:"a fence opening → gate",ar:'مدخل السياج → gate (البوّابة)',tr:'افتح البوّابة لتدخل الفناء الخلفي.'},
+  {q:"The sun is much _______ than the moon.",o:["nearer","larger","nearest","largest"],a:1,en:"comparison with 'than' → larger",ar:'مقارنة مع than → larger (أكبر)',tr:'الشمس أكبر بكثير من القمر.'},
+  {q:"A triangle has three _______.",o:["sides","shapes","squares","circles"],a:0,en:"a triangle has three sides",ar:'المثلّث له ثلاثة أضلاع → sides',tr:'المثلّث له ثلاثة أضلاع.'},
+  {q:"A line from the center of a circle to its edge is the circle's _______.",o:["front","shape","radius","side"],a:2,en:"center → edge = radius",ar:'من المركز إلى الحافّة → radius (نصف القُطر)',tr:'الخط من مركز الدائرة إلى حافّتها هو نصف القُطر.'},
+  {q:"Drapes are like _______.",o:["rugs","chairs","curtains","drawers"],a:2,en:"drapes = heavy curtains",ar:'drapes تشبه الستائر → curtains',tr:'الستائر الثقيلة (drapes) تشبه الستائر (curtains).'},
+  {q:"The teacher is writing on the board in the _______ of the room.",o:["front","opposite","bottom","half"],a:0,en:"board is at the front",ar:'السبورة في مقدّمة الغرفة → front',tr:'المعلّم يكتب على السبورة في مقدّمة الغرفة.'},
+  {q:"It's hot in here. — Okay, I'll turn on the _______.",o:["stove","refrigerator","television","fan"],a:3,en:"cools the room → fan",ar:'يبرّد الغرفة → fan (المروحة)',tr:'الجوّ حارّ هنا. — حسنًا، سأشغّل المروحة.'},
+  {q:"This is a nice desk. — Yes, it has six large _______.",o:["books","carpets","drawers","errors"],a:2,en:"a desk has drawers",ar:'المكتب فيه أدراج → drawers',tr:'هذا مكتب جميل. — نعم، فيه ستة أدراج كبيرة.'},
+  {q:"Did you buy a new couch for your apartment? — No, I don't need any new _______.",o:["grass","furniture","explanation","appliance"],a:1,en:"a couch is furniture",ar:'الأريكة من الأثاث → furniture',tr:'هل اشتريت أريكة جديدة لشقّتك؟ — لا، لا أحتاج أيّ أثاث جديد.'},
+  {q:"Where is your brother's house? — It's on that _______ hill.",o:["low","rear","high","light"],a:2,en:"up on a hill → high",ar:'على تلّة مرتفعة → high',tr:'أين بيت أخيك؟ — إنه على تلك التلّة المرتفعة.'},
+  {q:"I call my wife every night. I also talk to my wife _______.",o:["seldom","often","never","yesterday"],a:1,en:"every night → often",ar:'كل ليلة → often (كثيرًا)',tr:'أتّصل بزوجتي كل ليلة. أتحدّث مع زوجتي كثيرًا أيضًا.'},
+];
+
+// ═══════════════════════════════════════
+// ROUTING MANIFEST — home + lesson + review + mistake-review screens
+// ═══════════════════════════════════════
+const SCREENS=['home','lscreen','rscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',mkscreen:'مراجعة الأخطاء'};

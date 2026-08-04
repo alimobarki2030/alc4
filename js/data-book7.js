@@ -292,26 +292,26 @@ l1:[
   {q:"Martha and Tom want to go to Venezuela. They can travel _______ by plane or by boat.",o:["here","there","where","their"],a:1,en:"to Venezuela = there",ar:'إلى فنزويلا → there',tr:'مارثا وتوم يريدان الذهاب إلى فنزويلا. يمكنهما السفر إلى هناك بالطائرة أو القارب.'},
 ],
 l2:[
-  {q:"Two plus two _______ four.",o:["equals","divides","subtracts","weighs"],a:0,en:"2 + 2 = 4 → equals",ar:'علامة = → equals',tr:'اثنان زائد اثنين يساوي أربعة.'},
-  {q:"Six _______ two equals three. (÷)",o:["times","divided by","plus","minus"],a:1,en:"÷ → divided by",ar:'علامة ÷ → divided by',tr:'ستة مقسومة على اثنين يساوي ثلاثة.'},
-  {q:"Three _______ four equals twelve. (×)",o:["plus","minus","times","divided by"],a:2,en:"× → times",ar:'علامة × → times (ضَرب)',tr:'ثلاثة في أربعة يساوي اثني عشر.'},
-  {q:"To find how much something weighs, you _______ it.",o:["count","weigh","divide","explain"],a:1,en:"weight → weigh",ar:'لمعرفة الوزن → weigh (يَزِن)',tr:'لمعرفة كم يزن الشيء، تَزِنه.'},
-  {q:"The teacher will _______ the hard problem so we understand it.",o:["weigh","count","explain","subtract"],a:2,en:"give an explanation → explain",ar:'يقدّم شرحاً → explain',tr:'المعلّم سيشرح المسألة الصعبة حتى نفهمها.'},
-  {q:"A feather is very _______.",o:["heavy","light","hard","big"],a:1,en:"feather → light (not heavy)",ar:'الريشة خفيفة → light (الوزن)',tr:'الريشة خفيفة جدّاً.'},
-  {q:"A baseball is _______ than a table-tennis ball.",o:["lighter","heavier","easier","smaller"],a:1,en:"baseball weighs more → heavier",ar:'كرة البيسبول أثقل → heavier',tr:'كرة البيسبول أثقل من كرة تنس الطاولة.'},
-  {q:"This box is heavy. That box is _______. (heavy)",o:["heavyer","more heavy","heavier","heaviest"],a:2,en:"heavy → heavier (y→i)",ar:'heavy تنتهي بـ y → heavier',tr:'هذا الصندوق ثقيل. ذاك الصندوق أثقل.'},
-  {q:"The line from the center to the edge of a circle is the _______.",o:["diameter","radius","circumference","top"],a:1,en:"center→edge = radius",ar:'من المركز إلى الحافّة → radius (نصف القُطر)',tr:'الخط من مركز الدائرة إلى حافّتها هو نصف القُطر.'},
-  {q:"The distance across a circle through its center is the _______.",o:["radius","circumference","diameter","bottom"],a:2,en:"across through center = diameter",ar:'عبر المركز → diameter (القُطر)',tr:'المسافة عبر الدائرة مارّةً بمركزها هي القُطر.'},
-  {q:"When you cut something into two equal parts, each part is a _______.",o:["total","half","price","radius"],a:1,en:"two equal parts → half",ar:'جزءان متساويان → half (نصف)',tr:'عندما تقسم شيئاً إلى جزأين متساويين، كل جزء نصف.'},
-  {q:"Did you buy _______ stamps at the post office?",o:["some","any","both","each"],a:1,en:"question → any",ar:'سؤال → any',tr:'هل اشتريت أيّ طوابع من مكتب البريد؟'},
-  {q:"Yes, I bought _______ stamps this morning.",o:["any","some","other","each"],a:1,en:"affirmative → some",ar:'إثبات → some',tr:'نعم، اشتريت بعض الطوابع هذا الصباح.'},
-  {q:"Julie and Judy are twins. _______ have brown hair.",o:["Each","Both","The other","Any"],a:1,en:"the two together → Both",ar:'الاثنتان معاً → Both',tr:'جولي وجودي توأمان. كلتاهما لهما شعر بنّي.'},
-  {q:"I have two pens. One is red; the _______ is blue.",o:["both","other","each","any"],a:1,en:"the remaining one → the other",ar:'الباقي من اثنين → the other',tr:'عندي قلمان. واحد أحمر، والآخر أزرق.'},
-  {q:'The opposite of "easy" is _______.',o:["light","hard","straight","present"],a:1,en:"easy/hard are opposites",ar:'عكس easy = hard',tr:'عكس كلمة easy هو hard.'},
-  {q:'The opposite of "present" is _______.',o:["absent","other","heavy","total"],a:0,en:"present/absent are opposites",ar:'عكس present (حاضِر) = absent (غائب)',tr:'عكس كلمة present هو absent.'},
-  {q:'Read: "We studied shapes. We drew triangles. We talked about circles." The topic is _______.',o:["sports","math shapes","cooking","weather"],a:1,en:"the paragraph is about shapes",ar:'الفقرة تدور حول الأشكال → الموضوع',tr:'اقرأ الفقرة: موضوعها الأشكال في الرياضيات.'},
-  {q:'"John swims. Mary plays soccer. My friends like sports." The main idea is _______.',o:["John swims.","My friends like sports.","Mary plays soccer.","sports"],a:1,en:"the sentence that tells about all",ar:'الجملة الجامعة = الفكرة الرئيسية',tr:'الجملة التي تلخّص البقية هي الفكرة الرئيسية.'},
-  {q:"Captain Jenson cooked for everyone. Everyone enjoys _______ meals.",o:["her","his","their","its"],a:1,en:"Captain Jenson (male) → his",ar:'يعود على Captain Jenson → his',tr:'الكابتن جِنسون طبخ للجميع. الجميع يستمتع بوجباته.'},
+  // Book 7 · Lesson 2 · Evaluation Exercises (EE-10 → EE-12)
+  // Exercise G — select the best answer
+  {q:"Mike is 30. David is 50. David is _______ Mike.",o:["more older","the oldest","older than","oldest than"],a:2,en:"comparative: old → older than",ar:'صيغة التفضيل: older than (أكبر سنًّا من)',tr:'مايك عمره ٣٠ وديفيد ٥٠. ديفيد أكبر سنًّا من مايك.'},
+  {q:"Ten _______ two is five.   (10 ÷ 2 = 5)",o:["into","multiplied by","plus","divided by"],a:3,en:"10 ÷ 2 = 5 → divided by",ar:'القسمة ÷ → divided by (مقسوم على)',tr:'عشرة مقسومة على اثنين يساوي خمسة.'},
+  {q:"Winter in Texas is _______ winter in New York.",o:["warmest","warm","warmer than","the warm"],a:2,en:"comparative: warm → warmer than",ar:'صيغة التفضيل: warmer than (أدفأ من)',tr:'الشتاء في تكساس أدفأ من الشتاء في نيويورك.'},
+  {q:"Ten _______ two is twenty.   (10 × 2 = 20)",o:["into","multiplied by","plus","divided by"],a:1,en:"10 × 2 = 20 → multiplied by",ar:'الضرب × → multiplied by (مضروب في)',tr:'عشرة مضروبة في اثنين يساوي عشرين.'},
+  {q:"I got this problem wrong. Can you _______ it to me?",o:["center","count","explain","subtract"],a:2,en:"give an explanation → explain",ar:'يشرح → explain',tr:'حللت هذه المسألة خطأً. هل يمكنك أن تشرحها لي؟'},
+  {q:"Give two cookies to _______ of the children.",o:["other","total","easy","each"],a:3,en:"to every one → each",ar:'لكل واحد على حِدة → each',tr:'أعطِ قطعتَي بسكويت لكل واحد من الأطفال.'},
+  {q:"Six _______ three is three.   (6 − 3 = 3)",o:["plus","minus","subtract","divide"],a:1,en:"6 − 3 = 3 → minus",ar:'الطرح − → minus (ناقص)',tr:'ستة ناقص ثلاثة يساوي ثلاثة.'},
+  {q:"Are all the students on the bus? — I don't know. I'll _______ them.",o:["add","explain","answer","count"],a:3,en:"count the students",ar:'يَعُدّ → count',tr:'هل كل الطلاب في الحافلة؟ — لا أعرف، سأعُدّهم.'},
+  {q:"How much does this book cost? — The _______ of the book is $20.00.",o:["circumference","price","description","problem"],a:1,en:"how much it costs → price",ar:'السِّعر → price',tr:'كم يكلّف هذا الكتاب؟ — سِعر الكتاب ٢٠ دولاراً.'},
+  {q:"Do you want cake or ice cream? — I want _______, please.",o:["other","any","both","some"],a:2,en:"cake AND ice cream → both",ar:'الاثنان معاً → both (كلاهما)',tr:'أتريد كعكاً أم آيس كريم؟ — أريد كليهما من فضلك.'},
+  {q:"What does 6 + 5 + 3 equal? — The _______ is 14.",o:["problem","total","plus","error"],a:1,en:"the sum → total",ar:'المجموع الكلّي → total',tr:'كم يساوي ٦ + ٥ + ٣؟ — المجموع ١٤.'},
+  {q:"Where do I put the flowers? — Put them in the _______ of the table.",o:["back","center","wide","tall"],a:1,en:"the middle → center",ar:'المنتصف → center (المركز)',tr:'أين أضع الزهور؟ — ضعها في منتصف الطاولة.'},
+  // Exercise H — the word that means the same as the underlined word
+  {q:'Jack has a test today and wants to make a good grade on it. The word "it" means _______.',o:["last night","test","TV","class"],a:1,en:'grade on it = grade on the test',ar:'الضمير it يعود على → test (الاختبار)',tr:'لدى جاك اختبار اليوم ويريد درجة جيدة فيه. كلمة it تعود على الاختبار.'},
+  // Exercise I — choose the topic
+  {q:'"Judy likes her town. The weather is nice. There are shops, theaters, and good schools." The topic is _______.',o:["Judy's children","good schools","Judy's town","shopping and sports"],a:2,en:"the paragraph is about her town",ar:'الفقرة تدور حول بلدتها → Judy’s town',tr:'الفقرة كلها عن بلدة جودي → الموضوع: بلدة جودي.'},
+  // Exercise J — choose the main idea
+  {q:'"Many children like snow. They play outside and make snow people. They have lots of fun in the snow." The main idea is _______.',o:["Snow is cold and wet.","Schools close when it snows.","Children like to go to school.","Children like snow."],a:3,en:"the sentence that tells about all",ar:'الجملة الجامعة → Children like snow.',tr:'الفكرة الرئيسية التي تلخّص الفقرة: الأطفال يحبّون الثلج.'},
 ]
 };
 

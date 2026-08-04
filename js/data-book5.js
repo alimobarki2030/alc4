@@ -391,6 +391,11 @@ l2:[
   {
     title:'a few / a little / a lot of / lots of', ar:'الكمية — معدود وغير معدود',
     rule:'مع الأسماء المعدودة (تُجمع: towels, eggs) استخدم a few. مع غير المعدودة (ما تُجمع: sugar, water) استخدم a little. أما a lot of / lots of فتصلح مع الاثنين.',
+    parts:[
+      {t:'a few',d:'بضع / عدد قليل من — مع الأسماء المعدودة (تُجمع). مثال: a few apples = بضع تفاحات.'},
+      {t:'a little',d:'قليل من — مع الأسماء غير المعدودة (لا تُجمع). مثال: a little water = قليل من الماء.'},
+      {t:'a lot of / lots of',d:'الكثير من — تصلح مع المعدود وغير المعدود. مثال: lots of apples / lots of water.'},
+    ],
     check:{q:'I need _______ eggs for the cake.',o:['a little','a few','much','any'],a:1,en:'eggs is a count noun (plural) → a few',ar:'eggs اسم معدود (يُجمع) → a few'},
     compare:[
       {c1:'towels — اسم معدود',c2:'a few towels',ar:'اسم معدود → a few'},

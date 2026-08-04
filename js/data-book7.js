@@ -651,6 +651,46 @@ const REVIEW=[
   {q:"Where is your brother's house? — It's on that _______ hill.",o:["low","rear","high","light"],a:2,en:"up on a hill → high",ar:'على تلّة مرتفعة → high',tr:'أين بيت أخيك؟ — إنه على تلك التلّة المرتفعة.'},
   {q:"I call my wife every night. I also talk to my wife _______.",o:["seldom","often","never","yesterday"],a:1,en:"every night → often",ar:'كل ليلة → often (كثيرًا)',tr:'أتّصل بزوجتي كل ليلة. أتحدّث مع زوجتي كثيرًا أيضًا.'},
 ];
+EE.review=REVIEW;
+
+// ═══════════════════════════════════════
+// FINAL EXAM (الاختبار النهائي الشامل)
+// كل أسئلة "اختبر" من الدروس 1-4 مجمّعة (نفس طريقة بقية الكتب)
+// ═══════════════════════════════════════
+const FINAL=dedupe_by_q([
+  ...EE.l1,
+  ...EE.l2,
+  ...EE.l3,
+  ...EE.l4,
+]);
+EE.final=FINAL;
+
+// ═══════════════════════════════════════
+// SPELLING — write from listening (by lesson)
+// كلمات مختارة من مفردات كل درس
+// ═══════════════════════════════════════
+const SPELL_LESSONS=[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 1 — الأشكال والخطوط',w:[
+    {e:'circle',a:'دائرة',em:'⭕'},{e:'square',a:'مربّع',em:'⬜'},{e:'triangle',a:'مثلّث',em:'🔺'},
+    {e:'rectangle',a:'مستطيل',em:'▭'},{e:'angle',a:'زاوية',em:'📐'},{e:'straight',a:'مستقيم',em:'📏'},
+    {e:'narrow',a:'ضيّق',em:'▫️'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 2 — فهم الرياضيات',w:[
+    {e:'divide',a:'يقسم',em:'➗'},{e:'multiply',a:'يضرب',em:'✖️'},{e:'subtract',a:'يطرح',em:'➖'},
+    {e:'weight',a:'الوَزن',em:'⚖️'},{e:'radius',a:'نصف القُطر',em:'📏'},{e:'diameter',a:'القُطر',em:'↔️'},
+    {e:'circumference',a:'المحيط',em:'⭕'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 3 — البيوت',w:[
+    {e:'garage',a:'الكراج',em:'🚗'},{e:'fence',a:'السِّياج',em:'🧱'},{e:'grass',a:'العُشب',em:'🌱'},
+    {e:'flower',a:'زهرة',em:'🌸'},{e:'river',a:'نهر',em:'🌊'},{e:'world',a:'العالَم',em:'🌐'},
+    {e:'climb',a:'يتسلّق',em:'🧗'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 4 — داخل البيت',w:[
+    {e:'furniture',a:'الأثاث',em:'🛋️'},{e:'cabinet',a:'خِزانة',em:'🗄️'},{e:'drawer',a:'دُرج',em:'📥'},
+    {e:'refrigerator',a:'الثلّاجة',em:'🧊'},{e:'dishwasher',a:'غسّالة الصحون',em:'🧽'},
+    {e:'toaster',a:'محمّصة الخبز',em:'🍞'},{e:'kitchen',a:'المطبخ',em:'🍽️'},
+  ]},
+];
 
 // ═══════════════════════════════════════
 // LISTENING — YouTube listening & reading quizzes (LangVox)
@@ -664,5 +704,5 @@ const YT_VIDEOS=[
 // ═══════════════════════════════════════
 // ROUTING MANIFEST — home + lesson + review + listening + mistake-review
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','rscreen','ytscreen','mkscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',ytscreen:'الاستماع',mkscreen:'مراجعة الأخطاء'};
+const SCREENS=['home','lscreen','rscreen','ytscreen','fscreen','spscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};

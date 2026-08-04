@@ -196,6 +196,48 @@
       <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B · C</p>
     </div>
   </div>
+
+  <div class="lbl" style="margin-top:20px">الإملاء</div>
+  <div class="spell-card" onclick="open_spell()">
+    <div class="ac-ic">✍️</div>
+    <div class="pc-txt">
+      <h3>اكتب من السماع</h3>
+      <p>اسمع الكلمة واكتبها بنفسك — إملاء واستماع</p>
+    </div>
+  </div>
+
+  <div class="lbl" style="margin-top:20px">الاختبار</div>
+  <div class="final-card" onclick="open_final()">
+    <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
+    <h3>الاختبار النهائي الشامل</h3>
+    <p>جميع أسئلة "اختبر" من الدروس 1 إلى 4 مجمّعة بمكان واحد</p>
+    <span class="fc-badge" id="final-badge">ابدأ الاختبار</span>
+  </div>
+</div>
+
+<!-- FINAL EXAM SCREEN -->
+<div id="fscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">
+    <h2>الاختبار النهائي الشامل <svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></h2>
+    <p>جميع أسئلة "اختبر" من الدروس 1 إلى 4 مجمّعة بمكان واحد</p>
+  </div>
+  <div id="ph-final"></div>
+</div>
+
+<!-- SPELLING SCREEN -->
+<div id="spscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
+    <h2>اكتب من السماع ✍️</h2>
+    <p>استمع للكلمة واكتبها — يبني الإملاء والاستماع</p>
+  </div>
+  <div class="sp-prog">
+    <button class="sp-restart" onclick="start_spell()" title="ابدأ من الأول">🔁 من البداية</button>
+    <div class="sp-bar"><div class="sp-fill" id="sp-fill"></div></div>
+    <div class="sp-count" id="sp-count">0 / 0</div>
+  </div>
+  <div id="spell-body"></div>
 </div>
 
 <!-- LISTENING SCREEN -->
@@ -289,6 +331,7 @@
 <script src="js/engine-progress.js"></script>
 <script src="js/engine-lessons.js"></script>
 <script src="js/engine-youtube.js"></script>
+<script src="js/engine-spell.js"></script>
 
 <!-- FOOTER -->
 <div class="site-footer">

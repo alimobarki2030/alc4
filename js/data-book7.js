@@ -8,7 +8,8 @@ const BOOK_ID='book7';
 const LESSON_META={
   l1:{ico:'🔷',title:'Lesson 1 — Shapes and Lines',sub:'الأشكال والخطوط والمقارنة'},
   l2:{ico:'🧮',title:'Lesson 2 — Understanding Math',sub:'العمليات الحسابية والمقارنة والفهم القرائي'},
-  l3:{ico:'🏡',title:'Lesson 3 — American Homes',sub:'البيوت وأجزاؤها وظروف المكان والتفضيل'}
+  l3:{ico:'🏡',title:'Lesson 3 — American Homes',sub:'البيوت وأجزاؤها وظروف المكان والتفضيل'},
+  l4:{ico:'🛋️',title:'Lesson 4 — Inside the House',sub:'الأثاث والمطبخ والغرض من الأشياء وظروف التكرار'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -139,6 +140,46 @@ l3:[
   // — أفعال Verbs —
   {e:'climb',a:'يتسلّق',em:'🧗'},
   {e:'run',a:'يجري',past:'ran',pa:'جرى',em:'🏃'},
+],
+l4:[
+  // — غرفة المعيشة Living room —
+  {e:'furniture',a:'الأثاث',em:'🛋️'},
+  {e:'sofa / couch',a:'الأريكة / الكنبة',em:'🛋️'},
+  {e:'armchair',a:'كرسي بذراعين',em:'🪑'},
+  {e:'coffee table',a:'طاولة القهوة',em:'☕'},
+  {e:'lamp',a:'مصباح',em:'💡'},
+  {e:'rug / carpet',a:'سجّادة / موكيت',em:'🧶'},
+  {e:'curtain / drapes',a:'ستارة / ستائر',em:'🪟'},
+  {e:'bookcase / shelf',a:'خزانة كتب / رفّ',em:'📚'},
+  {e:'cabinet',a:'خِزانة (بأبواب)',em:'🗄️'},
+  {e:'drawer',a:'دُرج',em:'📥'},
+  {e:'fan',a:'مروحة',em:'🪭'},
+  {e:'ceiling',a:'السَّقف (من الداخل)',em:'🔝'},
+  {e:'floor',a:'الأرضية',em:'🟫'},
+  // — المطبخ Kitchen —
+  {e:'kitchen',a:'المطبخ',em:'🍽️'},
+  {e:'sink',a:'الحوض',em:'🚰'},
+  {e:'faucet',a:'الصنبور / الحنفية',em:'💧'},
+  {e:'stove',a:'الموقد / البوتاجاز',em:'🔥'},
+  {e:'refrigerator',a:'الثلّاجة',em:'🧊'},
+  {e:'dishwasher',a:'غسّالة الصحون',em:'🧽'},
+  {e:'microwave oven',a:'فرن الميكروويف',em:'♨️'},
+  {e:'toaster',a:'محمّصة الخبز',em:'🍞'},
+  {e:'pot',a:'قِدر',em:'🍲'},
+  {e:'pan',a:'مقلاة',em:'🍳'},
+  {e:'can',a:'عُلبة (طعام معلّب)',em:'🥫'},
+  {e:'can opener',a:'فتّاحة العُلب',em:'🔧'},
+  {e:'plug',a:'القابس (الفيشة)',em:'🔌'},
+  {e:'outlet',a:'المقبس (الكهرباء)',em:'⚡'},
+  {e:'appliance',a:'جهاز كهربائي',em:'🧰'},
+  // — أفعال Verbs —
+  {e:'use',a:'يستخدم',em:'✋'},
+  {e:'keep',a:'يحفظ',past:'kept',pa:'حفِظ',em:'📦'},
+  {e:'lay',a:'يضع (أفقيًّا)',past:'laid',pa:'وضَع',em:'⬇️'},
+  {e:'plug in',a:'يوصّل بالكهرباء',em:'🔋'},
+  // — صفات Adjectives —
+  {e:'pretty',a:'جميل / حلو',em:'😍'},
+  {e:'ugly',a:'قبيح',em:'🙁'},
 ]
 };
 
@@ -361,6 +402,85 @@ l3:[
       {s:'The Smiths grow flowers and sell them.',tr:'آل سميث يزرعون الزهور ويبيعونها.',ar:'them = the flowers',ok:true},
     ]
   }
+],
+l4:[
+  {
+    title:'Talking about Purpose — to + verb / for + -ing', ar:'الغرض من الأشياء: لماذا نستخدمها؟',
+    rule:'للتعبير عن الغرض من شيء نستخدم صيغتين متساويتين في المعنى: to + مصدر، أو for + فعل-ing.',
+    parts:[
+      {t:'What … for?',d:'للسؤال عن الغرض. مثال: What do we use a stove for? = فيمَ نستخدم الموقد؟'},
+      {t:'to + verb',d:'الغرض بصيغة to + المصدر. مثال: We use a stove to cook food. = نستخدم الموقد لطهي الطعام.'},
+      {t:'for + verb-ing',d:'نفس المعنى بصيغة for + فعل-ing. مثال: We use a stove for cooking food.'},
+    ],
+    check:{q:'I use a sink _______ dishes.',o:['to washing','for washing','for wash','to washes'],a:1,en:'for + -ing → for washing',ar:'for + فعل-ing → for washing'},
+    formula:[{t:'use',c:'v'},{t:'+ thing +',c:'p'},{t:'to + verb',c:'s'},{t:'/',c:'p'},{t:'for + -ing',c:'k'}],
+    compare:[
+      {c1:'We use glasses to read.',c2:'We use glasses for reading.',ar:'to + مصدر = for + ing (نفس المعنى)'},
+      {c1:'She uses a knife to cut meat.',c2:'She uses a knife for cutting meat.',ar:'صيغتان للغرض'},
+    ],
+    examples:[
+      {s:'They use the living room to watch TV.',tr:'يستخدمون غرفة المعيشة لمشاهدة التلفاز.',ar:'to + watch',ok:true},
+      {s:'He uses the microwave for warming his coffee.',tr:'يستخدم الميكروويف لتدفئة قهوته.',ar:'for + warming',ok:true},
+      {s:'I use a pan for cook eggs.',wrong:'for cook',right:'for cooking',tr:'بعد for نضع فعل-ing → for cooking.',ok:false},
+    ]
+  },
+  {
+    title:'Adverbs of Frequency', ar:'ظروف التكرار: كم مرّة يحدث الشيء؟',
+    rule:'تصف كم مرّة يحدث الفعل، وتأتي عادةً قبل الفعل الرئيسي، وبعد فعل be.',
+    parts:[
+      {t:'always (100%)',d:'دائمًا — كل مرّة. مثال: He always plays on Fridays.'},
+      {t:'usually / often',d:'usually = عادةً (معظم الأوقات)، often = غالبًا (مرّات كثيرة).'},
+      {t:'sometimes (50%)',d:'أحيانًا — ليس دائمًا. مثال: He sometimes plays golf.'},
+      {t:'seldom / never (0%)',d:'seldom = نادرًا (يكاد لا)، never = أبدًا (ولا مرّة).'},
+      {t:'الموقع',d:'قبل الفعل الرئيسي: He always runs. وبعد فعل be: He is always late.'},
+    ],
+    check:{q:'Tom runs every single day. Tom _______ runs.',o:['seldom','never','always','sometimes'],a:2,en:'every day → always',ar:'كل يوم → always (دائمًا)'},
+    compare:[
+      {c1:'He always eats breakfast. (كل يوم)',c2:'He seldom eats breakfast. (نادرًا)',ar:'100% ←→ نادرًا'},
+      {c1:'She is usually happy.',c2:'She usually smiles.',ar:'بعد be / قبل الفعل الرئيسي'},
+    ],
+    examples:[
+      {s:'We always brush our teeth in the morning.',tr:'نفرّش أسناننا دائمًا في الصباح.',ar:'always قبل الفعل',ok:true},
+      {s:'He is never late for class.',tr:'لا يتأخّر أبدًا عن الصف.',ar:'never بعد is',ok:true},
+      {s:'I go always to the gym.',wrong:'go always',right:'always go',tr:'ظرف التكرار قبل الفعل الرئيسي → always go.',ok:false},
+    ]
+  },
+  {
+    title:'Reading Skill — Pronoun & Contextual References', ar:'مهارة القراءة: مرجع الضمير والكلمات',
+    rule:'الضمير أو الكلمة المرجعية (it / they / them / this furniture / these appliances) تحلّ محلّ اسم ذُكر قبلها. اسأل: تعود على ماذا؟',
+    parts:[
+      {t:'it / they / them',d:'it للمفرد، they/them للجمع. مثال: “The dishes are dirty. Wash them.” → them = the dishes.'},
+      {t:'this / these + noun',d:'كلمة مرجعية تلخّص ما سبق. مثال: “He bought a sofa and a lamp. This furniture is new.” → this furniture = the sofa and lamp.'},
+    ],
+    check:{q:'“Mary runs every Monday with friends. They meet at a park.” The word “They” = _______.',o:['the park','Mary and her friends','the town','Monday'],a:1,en:'They → Mary and her friends',ar:'They تعود على ماري وأصدقائها'},
+    compare:[
+      {c1:'“The forks are in the drawer. I put them there.”',c2:'them = the forks',ar:'الضمير يعود على أقرب اسم مناسب'},
+      {c1:'“He got a stove and a sink. These appliances are new.”',c2:'these appliances = the stove and sink',ar:'كلمة مرجعية جامعة'},
+    ],
+    examples:[
+      {s:'We use the living room for watching TV. It is large.',tr:'نستخدم غرفة المعيشة لمشاهدة التلفاز. إنها كبيرة.',ar:'It = the living room',ok:true},
+      {s:'Mom bought new curtains and hung them up.',tr:'أمّي اشترت ستائر جديدة وعلّقتها.',ar:'them = the curtains',ok:true},
+    ]
+  },
+  {
+    title:'lay / laid — placing something down', ar:'فعل lay: وضع الشيء أفقيًّا',
+    rule:'lay تعني «يضع شيئًا أفقيًّا على سطح». تصريفها: lay / lays / laying / (الماضي) laid.',
+    parts:[
+      {t:'lay / lays',d:'المضارع. مثال: I lay the book on the table. / He lays the book on the table.'},
+      {t:'laying',d:'المضارع المستمرّ. مثال: She is laying the papers on the desk.'},
+      {t:'laid (past)',d:'الماضي. مثال: Yesterday he laid the books on the table.'},
+    ],
+    check:{q:'Yesterday she _______ the paper on the table.',o:['lays','lay','laid','laying'],a:2,en:'past → laid',ar:'الماضي → laid'},
+    compare:[
+      {c1:'Present: He lays his keys on the shelf.',c2:'Past: He laid his keys on the shelf.',ar:'lays ←→ laid'},
+      {c1:'I lay the rug on the floor.',c2:'I am laying the rug on the floor.',ar:'البسيط / المستمرّ'},
+    ],
+    examples:[
+      {s:'He lays his books on the coffee table every day.',tr:'يضع كتبه على طاولة القهوة كل يوم.',ar:'lays (مضارع)',ok:true},
+      {s:'She laid the towel on the sink last night.',tr:'وضعت المنشفة على الحوض ليلة أمس.',ar:'laid (ماضٍ)',ok:true},
+      {s:'Yesterday I lay the plates on the table.',wrong:'lay',right:'laid',tr:'الماضي من lay هو laid.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -394,6 +514,15 @@ l3:[
   {words:['The','moon','travels','around','the','earth'],ans:'The moon travels around the earth.',tr:'القمر يدور حول الأرض.',ar:'around the earth'},
   {words:['How','old','is','your','house'],ans:'How old is your house?',tr:'كم عمر بيتك؟',ar:'سؤال العمر How old'},
   {words:['This','is','the','smallest','box','of','all'],ans:'This is the smallest box of all.',tr:'هذا أصغر صندوق على الإطلاق.',ar:'the smallest of all'},
+],
+l4:[
+  {words:['I','use','a','stove','to','cook','food'],ans:'I use a stove to cook food.',tr:'أستخدم الموقد لطهي الطعام.',ar:'الغرض: to + مصدر'},
+  {words:['She','uses','a','sink','for','washing','dishes'],ans:'She uses a sink for washing dishes.',tr:'تستخدم الحوض لغسل الصحون.',ar:'الغرض: for + ing'},
+  {words:['Tom','always','eats','at','the','snack','bar'],ans:'Tom always eats at the snack bar.',tr:'توم يأكل دائمًا في المقصف.',ar:'always قبل الفعل'},
+  {words:['Please','plug','in','the','lamp'],ans:'Please plug in the lamp.',tr:'من فضلك وصّل المصباح بالكهرباء.',ar:'plug in'},
+  {words:['The','forks','are','in','the','drawer'],ans:'The forks are in the drawer.',tr:'الشوك في الدُّرج.',ar:'مفردات المطبخ'},
+  {words:['We','keep','the','milk','in','the','refrigerator'],ans:'We keep the milk in the refrigerator.',tr:'نحفظ الحليب في الثلّاجة.',ar:'keep + refrigerator'},
+  {words:['He','laid','the','books','on','the','table'],ans:'He laid the books on the table.',tr:'وضع الكتب على الطاولة.',ar:'laid (ماضي lay)'},
 ]
 };
 
@@ -473,6 +602,35 @@ l3:[
   {q:"On the weekends, we like to take our boat to the _______.",o:["moon","land","earth","river"],a:3,en:"a boat goes on the → river",ar:'القارب يسير في → river (النهر)',tr:'في عطلة نهاية الأسبوع نحبّ أن نأخذ قاربنا إلى النهر.'},
   {q:"The earth is made of _______ and water.",o:["land","sky","stars","sun"],a:0,en:"earth = land and water",ar:'الأرض مكوّنة من يابسة وماء → land',tr:'الأرض مكوّنة من اليابسة والماء.'},
   {q:"Is 85 out of 100 a very _______ score on this test?",o:["low","high","wide","front"],a:1,en:"85/100 is a high score",ar:'٨٥ من ١٠٠ درجة مرتفعة → high',tr:'هل ٨٥ من ١٠٠ درجة مرتفعة جدًّا في هذا الاختبار؟'},
+],
+l4:[
+  // Book 7 · Lesson 4 · Evaluation Exercises (EE-19 → EE-24)
+  // Exercise G — read the question, choose the best answer
+  {q:"Those flowers are very _______.",o:["narrow","pretty","easy","fast"],a:1,en:"flowers look nice → pretty",ar:'الزهور جميلة → pretty',tr:'تلك الزهور جميلة جدًّا.'},
+  {q:"Couches are the same as _______.",o:["armchairs","lamps","sofas","bookcases"],a:2,en:"couch = sofa",ar:'الأريكة (couch) = sofa',tr:'الأرائك (couches) هي نفسها الـ sofas.'},
+  {q:"Which _______ are the forks in?",o:["stove","oven","refrigerator","drawer"],a:3,en:"forks are kept in a drawer",ar:'الشوك تُحفظ في الدُّرج → drawer',tr:'في أيّ دُرج توجد الشوك؟'},
+  {q:"We cook eggs on the _______.",o:["stove","pot","sink","kitchen"],a:0,en:"cook on a stove",ar:'نطهو على الموقد → stove',tr:'نطهو البيض على الموقد.'},
+  {q:"We can keep these new dishes in the _______ next to the sink.",o:["cabinet","pot","drapes","fan"],a:0,en:"dishes go in a cabinet",ar:'نحفظ الصحون في الخِزانة → cabinet',tr:'نحفظ هذه الصحون في الخِزانة بجوار الحوض.'},
+  {q:"Jackie made new _______ for the window.",o:["furniture","fans","drawers","curtains"],a:3,en:"for the window → curtains",ar:'للنافذة → ستائر curtains',tr:'صنعت جاكي ستائر جديدة للنافذة.'},
+  {q:"The food isn't cold because John turned off the _______.",o:["kitchen","sink","refrigerator","faucet"],a:2,en:"keeps food cold → refrigerator",ar:'يحفظ الطعام باردًا → الثلّاجة',tr:'الطعام ليس باردًا لأن جون أطفأ الثلّاجة.'},
+  {q:"Put the dishes in the _______, and we'll wash them later.",o:["sink","stove","drawer","microwave"],a:0,en:"wash dishes in a sink",ar:'نغسل الصحون في الحوض → sink',tr:'ضع الصحون في الحوض وسنغسلها لاحقًا.'},
+  {q:"Please _______ the radio. I want to listen to some music.",o:["keep","plug in","climb","lay down"],a:1,en:"connect to power → plug in",ar:'يوصّل بالكهرباء → plug in',tr:'من فضلك وصّل الراديو بالكهرباء، أريد أن أستمع لبعض الموسيقى.'},
+  {q:"Bob bought a new table and chairs. He likes his new _______.",o:["faucet","plug","furniture","ceiling"],a:2,en:"table and chairs = furniture",ar:'طاولة وكراسي = أثاث furniture',tr:'اشترى بوب طاولة وكراسي جديدة. يحبّ أثاثه الجديد.'},
+  {q:"Our family watches TV in the _______.",o:["living room","drawer","coffee table","refrigerator"],a:0,en:"watch TV in the living room",ar:'نشاهد التلفاز في غرفة المعيشة',tr:'عائلتنا تشاهد التلفاز في غرفة المعيشة.'},
+  {q:"Can you put this book on the top _______?",o:["fan","sink","lamp","shelf"],a:3,en:"a book goes on a shelf",ar:'الكتاب يوضع على الرفّ → shelf',tr:'هل يمكنك وضع هذا الكتاب على الرفّ العلوي؟'},
+  // Exercise D — adverbs of frequency
+  {q:"Tom runs every single day. Tom _______ runs.",o:["seldom","never","always","sometimes"],a:2,en:"every day → always",ar:'كل يوم → always (دائمًا)',tr:'توم يجري كل يوم. توم يجري دائمًا.'},
+  {q:"Jack and Jane take a vacation only once every three years. They _______ take a vacation.",o:["always","usually","seldom","often"],a:2,en:"almost never → seldom",ar:'يكاد لا → seldom (نادرًا)',tr:'جاك وجين يأخذان إجازة مرّة كل ثلاث سنوات. نادرًا ما يأخذان إجازة.'},
+  // Exercise F — purpose (to / for)
+  {q:"What do we use a stove for? — We use a stove _______ food.",o:["to cook","cooking","cook","cooked"],a:0,en:"purpose → to + verb",ar:'الغرض → to + مصدر (to cook)',tr:'فيمَ نستخدم الموقد؟ — نستخدمه لطهي الطعام.'},
+  {q:"I use glasses _______ reading books.",o:["to","for","with","by"],a:1,en:"for + -ing → for reading",ar:'for + فعل-ing → for reading',tr:'أستخدم النظّارة للقراءة.'},
+  // Exercise E — lay / laid
+  {q:"He _______ the books on the table every morning.",o:["lay","lays","laid","laying"],a:1,en:"He + present → lays",ar:'مع He في المضارع → lays',tr:'يضع الكتب على الطاولة كل صباح.'},
+  {q:"Yesterday she _______ the paper on the desk.",o:["lays","laid","lay","laying"],a:1,en:"past → laid",ar:'الماضي → laid',tr:'أمس وضعت الورقة على المكتب.'},
+  // Exercise B — pronoun reference
+  {q:'"Mary runs every Monday with friends. They meet at a park." The word "They" refers to _______.',o:["the park","Mary and her friends","the town","Monday"],a:1,en:"They → Mary and her friends",ar:'They تعود على ماري وأصدقائها',tr:'الضمير They يعود على ماري وأصدقائها.'},
+  // Exercise I — topic / main idea
+  {q:'"We can learn about countries, foods, music, and people from travel." The main idea is _______.',o:["Travel is only for vacations.","We can learn many different things from travel.","Music is the best subject.","Countries are far away."],a:1,en:"the sentence that sums it up",ar:'الجملة الجامعة = الفكرة الرئيسية',tr:'الفكرة الرئيسية: يمكننا تعلّم أشياء كثيرة مختلفة من السفر.'},
 ]
 };
 

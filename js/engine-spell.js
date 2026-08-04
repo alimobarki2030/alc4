@@ -47,7 +47,8 @@ function render_spell(){
   </div>`;
   render_hint();
   const inp=document.getElementById('sp-input');if(inp)inp.focus();
-  say(w.e);
+  // No auto-play: this is "write from listening", so the word is only spoken
+  // when the learner presses "اسمع الكلمة" (or after a correct answer).
 }
 function render_hint(){
   const w=spellWords[spellIdx].e;let s='';

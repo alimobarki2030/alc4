@@ -400,6 +400,9 @@ html.splash-seen #splash{display:none}
   text-align:center;cursor:pointer;transition:all .2s;position:relative}
 .vcard:hover{border-color:var(--b);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
 .vcard .ve{font-size:2rem;display:block;margin-bottom:6px}
+/* Inline vocab icon (fallback for abstract words) — sizes to its container's
+   font-size (.ve 2rem / .sp-emoji 3rem) so it sits like an emoji would. */
+.vico{width:.9em;height:.9em;display:inline-block;vertical-align:middle;color:#2563EB}
 .vcard .vw{font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;color:var(--navy)}
 .vcard .va{font-size:.75rem;color:var(--muted);margin-top:3px}
 .vcard .vs{position:absolute;top:7px;left:7px;background:var(--b);border:none;border-radius:6px;color:#fff;

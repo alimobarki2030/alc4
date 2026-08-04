@@ -55,7 +55,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .lcard-icon{font-size:2rem;display:block;margin-bottom:8px}
 .svgico{width:1em;height:1em;display:inline-block;vertical-align:-0.15em;stroke-width:2;flex-shrink:0}
 .lcard-num{font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.lcard-name{font-size:1rem;font-weight:700;color:var(--txt);margin:3px 0 1px}
+.lcard-name{font-size:1rem;font-weight:700;color:var(--txt);margin:3px 0 1px;direction:ltr;text-align:right}
 .lcard-name-ar{font-size:.92rem;font-weight:600;color:var(--txt);margin:0 0 3px}
 .lcard-sub{font-size:.82rem;color:var(--muted)}
 .lpbar{background:var(--bdr);border-radius:4px;height:4px;margin-top:10px}
@@ -103,7 +103,7 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .lhdr{background:var(--card);border-radius:14px;padding:16px;
   margin-bottom:16px;border:2px solid var(--bdr);display:flex;align-items:center;gap:14px}
 .lhdr-icon{font-size:2.6rem}
-.lhdr h2{font-size:1.1rem;font-weight:900;color:var(--navy)}
+.lhdr h2{font-size:1.1rem;font-weight:900;color:var(--navy);direction:ltr;text-align:right}
 .lhdr p{color:var(--muted);font-size:.82rem;margin-top:3px}
 
 /* TABS */

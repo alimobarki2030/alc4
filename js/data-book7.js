@@ -238,7 +238,7 @@ l1:[
     examples:[
       {s:'The old man got off the crowded bus.',tr:'الرجل العجوز نزل من الباص المزدحم.',ar:'old+man، crowded+bus',ok:true},
       {s:'Maggie has a fast car.',tr:'ماغي عندها سيارة سريعة.',ar:'fast قبل car',ok:true},
-      {s:'Jim has a umbrella large.',wrong:'umbrella large',right:'large umbrella',tr:'الصفة قبل الاسم → large umbrella.',ok:false},
+      {s:'Jim has an umbrella large.',wrong:'umbrella large',right:'large umbrella',tr:'الصفة قبل الاسم → large umbrella.',ok:false},
     ]
   }
 ],

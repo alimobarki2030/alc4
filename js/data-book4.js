@@ -6,10 +6,10 @@
 const BOOK_ID='book4';
 
 const LESSON_META={
-  l1:{ico:'🏃',title:'Lesson 1 — Sports & Games',sub:'الرياضة والألعاب'},
-  l2:{ico:'🎖️',title:"Lesson 2 — He's in the Army",sub:'الحياة العسكرية'},
-  l3:{ico:'👕',title:"Lesson 3 — Where Are My Clothes?",sub:'الملابس والقدرات'},
-  l4:{ico:'🌤️',title:'Lesson 4 — Pencils in 10 Colors',sub:'الفصول والألوان'}
+  l1:{ico:'🏃',title:'Lesson 1 — Sports & Games',sub:'الرياضة والألعاب · الماضي البسيط'},
+  l2:{ico:'🎖️',title:"Lesson 2 — He's in the Army",sub:'إنه في الجيش · الحياة العسكرية والأفعال الشاذّة'},
+  l3:{ico:'👕',title:"Lesson 3 — Where Are My Clothes?",sub:'أين ملابسي؟ · الملابس والقدرة (can)'},
+  l4:{ico:'🌤️',title:'Lesson 4 — Pencils in 10 Colors',sub:'أقلام بعشرة ألوان · الفصول والألوان'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 

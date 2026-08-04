@@ -19,7 +19,7 @@ l1:[
   {e:'line',a:'خط',em:'➖'},
   {e:'circle',a:'دائرة',em:'⭕'},
   {e:'square',a:'مربّع',em:'⬜'},
-  {e:'rectangle',a:'مستطيل',em:'🔳'},
+  {e:'rectangle',a:'مستطيل',em:'▭'},
   {e:'triangle',a:'مثلّث',em:'🔺'},
   {e:'side',a:'ضِلع / جانب',em:'📐'},
   {e:'edge',a:'حافّة',em:'🔲'},

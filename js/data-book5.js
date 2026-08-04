@@ -363,6 +363,7 @@ l2:[
   {
     title:'There is / There are', ar:'وجود شيء — يوجد / توجد',
     rule:'نستخدم There is مع الاسم المفرد، و There are مع الاسم الجمع، للتعبير عن وجود شيء في مكان.',
+    parts:[{"t":"There is","d":"مع الاسم المفرد. مثال: There is a book on the table."},{"t":"There are","d":"مع الاسم الجمع. مثال: There are three books on the table."}],
     check:{q:'_______ a mirror on the wall.',o:['There is','There are','Is there','Are there'],a:0,en:'mirror is singular → There is',ar:'mirror مفرد → There is'},
     compare:[
       {c1:'Is there a toilet in the bathroom?',c2:'Yes, there is.',ar:'toilet مفرد → is'},
@@ -377,6 +378,7 @@ l2:[
   {
     title:'Some / Any', ar:'some بالإثبات، any بالسؤال والنفي',
     rule:'نستخدم some في الجمل المثبتة، و any في الأسئلة والنفي.',
+    parts:[{"t":"some","d":"في الجمل المثبتة. مثال: I have some water."},{"t":"any","d":"في الأسئلة والنفي. مثال: Do you have any water? / I don't have any water."}],
     check:{q:"I don't have _______ shampoo.",o:['some','any','a','the'],a:1,en:'negative sentence → any',ar:'جملة منفية → any'},
     compare:[
       {c1:'Do you have any soap?',c2:'Yes, I have some.',ar:'سؤال → any، جواب مثبت → some'},
@@ -469,6 +471,7 @@ l3:[
   {
     title:'Future Time Expressions', ar:'تعبيرات الوقت المستقبلية — next / tomorrow / in',
     rule:'نستخدم next قبل (year, month, week, weekend, Saturday...)، وtomorrow قبل (morning, afternoon, evening, night)، وin قبل مدة زمنية (in a week, in two days) للتعبير عن وقت مستقبلي.',
+    parts:[{"t":"next","d":"قبل (year, month, week, weekend, Saturday...). مثال: next week = الأسبوع القادم."},{"t":"tomorrow","d":"قبل (morning, afternoon, evening, night). مثال: tomorrow morning = صباح الغد."},{"t":"in","d":"قبل مدة زمنية. مثال: in two days = بعد يومين."}],
     check:{q:'I will study the lesson tomorrow _______.',o:['evening','next','in','week'],a:0,en:'tomorrow + part of day (evening)',ar:'tomorrow + جزء من اليوم'},
     compare:[
       {c1:'next',c2:'month, week, year, weekend, Saturday',ar:'next + وحدة زمنية قادمة'},
@@ -487,6 +490,7 @@ l4:[
   {
     title:'Using articles — a, an, and the', ar:'a وan للمرة الأولى، the للمرة الثانية',
     rule:'نستخدم a أو an لما نذكر شيء لأول مرة (والسامع ما يعرفه بعد) — an قبل حرف علة. نستخدم the لما نرجع نذكر نفس الشيء مرة ثانية (صار معروف للسامع).',
+    parts:[{"t":"a / an","d":"لما نذكر الشيء لأول مرة (السامع ما يعرفه بعد). an قبل حرف علة. مثال: I saw a dog. / an apple."},{"t":"the","d":"لما نرجع نذكر نفس الشيء (صار معروفًا). مثال: The dog was big."}],
     check:{q:'Gary bought a new car on Tuesday. Gary had to take _______ car to a mechanic on Friday.',o:['a','an','the','some'],a:2,en:'Second mention of the same thing takes the',ar:'ذكر ثاني لنفس الشيء ياخذ the'},
     compare:[
       {c1:'Look! I bought a new car.',c2:'I had to take the car to a mechanic.',ar:'a = أول ذكر، the = نفس السيارة (صارت معروفة)'},
@@ -500,6 +504,7 @@ l4:[
   {
     title:'Many vs Much', ar:'many مع المعدود، much مع غير المعدود',
     rule:'نستخدم many مع الأسماء المعدودة (تُجمع: friends, things)، وmuch مع الأسماء غير المعدودة (ما تُجمع: food, coffee). much نادرًا تُستخدم بالجمل المثبتة.',
+    parts:[{"t":"many","d":"مع الأسماء المعدودة (تُجمع: friends, things). مثال: many friends."},{"t":"much","d":"مع الأسماء غير المعدودة (لا تُجمع: food, coffee). مثال: much coffee. وغالبًا في النفي والسؤال."}],
     check:{q:'They don’t need _______ cheese for the sandwiches.',o:['many','much','a','the'],a:1,en:'cheese is a noncount noun → much',ar:'cheese اسم غير معدود → much'},
     compare:[
       {c1:'many friends — اسم معدود',c2:'much food — اسم غير معدود',ar:'friends تُجمع → many، food ما تُجمع → much'},
@@ -513,6 +518,7 @@ l4:[
   {
     title:'How many vs How much', ar:'How many مع المعدود، How much مع غير المعدود',
     rule:'نسأل بـ How many + اسم معدود جمع (How many dishes?)، وHow much + اسم غير معدود (How much coffee?) للسؤال عن الكمية.',
+    parts:[{"t":"How many","d":"مع اسم معدود جمع. مثال: How many dishes? = كم صحن؟"},{"t":"How much","d":"مع اسم غير معدود. مثال: How much coffee? = كم قهوة؟"}],
     check:{q:'_______ coffee do you want?',o:['How many','How much','How','What'],a:1,en:'coffee is noncount → How much',ar:'coffee غير معدود → How much'},
     compare:[
       {c1:'How many dishes did you wash?',c2:'I washed 30 dishes.',ar:'dishes معدود → How many'},
@@ -527,6 +533,7 @@ l4:[
   {
     title:'Have to / Don’t have to', ar:'have to للالتزام، don’t have to = مو ضروري',
     rule:'نستخدم have to (أو has to مع he/she/it) للتعبير عن التزام أو واجب. نستخدم don’t have to (أو doesn’t have to) لما الشي مو ضروري — مو نفس معنى must not (ممنوع).',
+    parts:[{"t":"have to / has to","d":"التزام أو واجب (has to مع he/she/it). مثال: I have to study."},{"t":"don't have to / doesn't have to","d":"الشيء غير ضروري (لك حرية الاختيار). مثال: You don't have to come."},{"t":"must not","d":"ممنوع تمامًا — انتبه: مختلفة عن have to. مثال: You must not smoke here."}],
     check:{q:"It's not necessary to have an ID card to see a movie. You _______ have an ID card.",o:['must','can','have to',"don't have to"],a:3,en:"not necessary means don't have to",ar:"مو ضروري = don't have to"},
     compare:[
       {c1:'I have to go to class.',c2:'He has to go to class.',ar:'has to مع he/she/it، have to مع الباقي'},

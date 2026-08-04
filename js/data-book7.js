@@ -6,7 +6,8 @@
 const BOOK_ID='book7';
 
 const LESSON_META={
-  l1:{ico:'🔷',title:'Lesson 1 — Shapes and Lines',sub:'الأشكال والخطوط والمقارنة'}
+  l1:{ico:'🔷',title:'Lesson 1 — Shapes and Lines',sub:'الأشكال والخطوط والمقارنة'},
+  l2:{ico:'🧮',title:'Lesson 2 — Understanding Math',sub:'العمليات الحسابية والمقارنة والفهم القرائي'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -52,6 +53,51 @@ l1:[
   {e:'same',a:'نفس / متماثل',em:'🟰'},
   {e:'both',a:'كِلاهما',em:'👫'},
   {e:'other',a:'الآخر / الباقي',em:'↩️'},
+],
+l2:[
+  // — أسماء Nouns —
+  {e:'problem',a:'مسألة (حسابية)',em:'🧮'},
+  {e:'answer',a:'الإجابة / الحلّ',em:'✅'},
+  {e:'total',a:'المجموع الكلّي',em:'🧾'},
+  {e:'price',a:'السِّعر',em:'🏷️'},
+  {e:'weight',a:'الوَزن',em:'⚖️'},
+  {e:'half / halves',a:'نِصف / أنصاف',em:'🌗'},
+  {e:'top',a:'الأعلى',em:'🔝'},
+  {e:'bottom',a:'الأسفل',em:'🔽'},
+  {e:'center',a:'المركز',em:'🎯'},
+  {e:'radius',a:'نصف القُطر',em:'📏'},
+  {e:'diameter',a:'القُطر (يعبُر المركز)',em:'↔️'},
+  {e:'circumference',a:'المحيط (محيط الدائرة)',em:'⭕'},
+  {e:'error',a:'خطأ',em:'❌'},
+  {e:'explanation',a:'شرح / تفسير',em:'💬'},
+  // — أفعال Verbs —
+  {e:'understand',a:'يفهم',past:'understood',pa:'فَهِم',em:'💡'},
+  {e:'explain',a:'يشرح',em:'🗣️'},
+  {e:'count',a:'يَعُدّ',em:'🔢'},
+  {e:'add',a:'يجمع (يُضيف)',em:'➕'},
+  {e:'subtract',a:'يطرح',em:'➖'},
+  {e:'multiply',a:'يضرب',em:'✖️'},
+  {e:'divide',a:'يقسم',em:'➗'},
+  {e:'equal',a:'يساوي',em:'🟰'},
+  {e:'weigh',a:'يَزِن',em:'⚖️'},
+  {e:'solve',a:'يحلّ (المسألة)',em:'🧩'},
+  {e:'make a mistake',a:'يُخطئ',past:'made a mistake',pa:'أخطأ',em:'🙈'},
+  // — الرموز الحسابية Symbols —
+  {e:'plus (+)',a:'زائد — علامة الجمع',em:'➕'},
+  {e:'minus (−)',a:'ناقص — علامة الطرح',em:'➖'},
+  {e:'times (×)',a:'ضَرْب — علامة الضرب',em:'✖️'},
+  {e:'divided by (÷)',a:'مقسوم على',em:'➗'},
+  {e:'equals (=)',a:'يساوي',em:'🟰'},
+  // — كلمات أخرى Other words —
+  {e:'easy',a:'سهل',em:'😊'},
+  {e:'hard',a:'صعب',em:'😓'},
+  {e:'heavy',a:'ثقيل',em:'🏋️'},
+  {e:'light',a:'خفيف (الوَزن)',em:'🪶'},
+  {e:'more',a:'أكثر',em:'⬆️'},
+  {e:'each',a:'كلّ واحد (على حِدة)',em:'☝️'},
+  {e:'straight',a:'مستقيم',em:'📐'},
+  {e:'present',a:'حاضِر',em:'🙋'},
+  {e:'absent',a:'غائب',em:'🚫'},
 ]
 };
 
@@ -113,6 +159,85 @@ l1:[
       {s:'Jim has a umbrella large.',wrong:'umbrella large',right:'large umbrella',tr:'الصفة قبل الاسم → large umbrella.',ok:false},
     ]
   }
+],
+l2:[
+  {
+    title:'Comparative Adjectives — -er … than', ar:'صيغة التفضيل: المقارنة بين شيئين',
+    rule:'للمقارنة بين شيئين نضيف -er إلى الصفة القصيرة، ونتبعها بـ than (مِن).',
+    parts:[
+      {t:'adjective + -er + than',d:'صفة + er + than. مثال: A car is faster than a bike. = السيارة أسرع من الدرّاجة.'},
+      {t:'add -er',d:'لأغلب الصفات نضيف -er فقط. مثل: tall → taller، small → smaller، clean → cleaner.'},
+      {t:'drop silent -e, add -er',d:'إذا انتهت الصفة بـ e صامتة نحذفها: nice → nicer، large → larger، wide → wider.'},
+      {t:'double the consonant',d:'مقطع واحد على نمط (ساكن–متحرك–ساكن): نضاعف الحرف الأخير: big → bigger، hot → hotter، wet → wetter.'},
+      {t:'y → i, add -er',d:'إذا انتهت بحرف y نحوّله إلى i: happy → happier، heavy → heavier، easy → easier.'},
+    ],
+    check:{q:'This box is _______ than that one. (heavy)',o:['heavyer','heavier','more heavy','heaviest'],a:1,en:'heavy → heavier (y→i)',ar:'heavy تنتهي بـ y → heavier'},
+    formula:[{t:'adjective',c:'v'},{t:'+',c:'p'},{t:'-er',c:'s'},{t:'+',c:'p'},{t:'than',c:'k'}],
+    compare:[
+      {c1:'The first problem is easy.',c2:'The first problem is easier than the second.',ar:'easy → easier (y→i)'},
+      {c1:'This belt is wide.',c2:'This belt is wider than that one.',ar:'wide → wider (حذف e)'},
+    ],
+    examples:[
+      {s:'A table-tennis ball is lighter than a baseball.',tr:'كرة تنس الطاولة أخفّ من كرة البيسبول.',ar:'light → lighter',ok:true},
+      {s:'Tom is taller than Tim.',tr:'توم أطول من تيم.',ar:'tall → taller + than',ok:true},
+      {s:'This problem is more hard than that one.',wrong:'more hard',right:'harder',tr:'الصفة القصيرة تأخذ -er لا more → harder.',ok:false},
+    ]
+  },
+  {
+    title:'some / any', ar:'بعض / أيّ',
+    rule:'نستخدم some في الجُمل المُثبتة، و any في النفي والأسئلة.',
+    parts:[
+      {t:'some',d:'في الإثبات. مثال: He has some stamps. = عنده بعض الطوابع.'},
+      {t:'any',d:'في النفي والسؤال. مثال: Do you have any stamps? / I don’t have any. = هل عندك أيّ طوابع؟ / ليس عندي أيّ.'},
+    ],
+    check:{q:"I looked for chairs, but I didn't see _______.",o:['some','any','both','other'],a:1,en:'negative → any',ar:'جملة منفية → any'},
+    compare:[
+      {c1:'I have some money.',c2:"I don't have any money.",ar:'إثبات some ←→ نفي any'},
+      {c1:'She bought some bread.',c2:'Did she buy any bread?',ar:'إثبات some ←→ سؤال any'},
+    ],
+    examples:[
+      {s:'We need some more chairs for the class.',tr:'نحتاج بعض الكراسي الإضافية للصف.',ar:'إثبات → some',ok:true},
+      {s:'Does the army have any boats?',tr:'هل لدى الجيش أيّ قوارب؟',ar:'سؤال → any',ok:true},
+      {s:"I don't want some coffee.",wrong:'some',right:'any',tr:'مع النفي نستخدم any → any coffee.',ok:false},
+    ]
+  },
+  {
+    title:'both / one … the other', ar:'كِلاهما / أحدهما … والآخر',
+    rule:'نتحدّث عن شيئين: both للاثنين معاً، و one للأول و the other للثاني (الباقي)، و each لكلّ واحد على حِدة.',
+    parts:[
+      {t:'both',d:'كِلاهما — الاثنان معاً، وتأتي قبل اسم جمع. مثال: Both problems are easy. = كلتا المسألتين سهلة.'},
+      {t:'one … the other',d:'الأول one، والباقي the other. مثال: One is right; the other is wrong. = واحد صحيح والآخر خطأ.'},
+      {t:'each',d:'كلّ واحد على حِدة. مثال: Each answer is different. = كل إجابة مختلفة.'},
+    ],
+    check:{q:'Julie and Judy are twins. _______ have brown hair.',o:['Each','The other','Both','Any'],a:2,en:'the two together → Both',ar:'الاثنتان معاً → Both'},
+    compare:[
+      {c1:'This ball is heavy. The other ball is heavy, too.',c2:'Both balls are heavy.',ar:'الاثنان → both + اسم جمع'},
+      {c1:'One line is straight.',c2:'The other line is curved.',ar:'one … the other'},
+    ],
+    examples:[
+      {s:'Julie and Judy are both good at sports.',tr:'جولي وجودي كلتاهما بارعتان في الرياضة.',ar:'both',ok:true},
+      {s:'One shape is a circle; the other is a square.',tr:'شكلٌ دائرة، والآخر مربّع.',ar:'one … the other',ok:true},
+      {s:'Both boy is tall.',wrong:'boy is',right:'boys are',tr:'both تحتاج اسماً جمعاً وفعلاً جمعاً → boys are.',ok:false},
+    ]
+  },
+  {
+    title:'Reading Skill — Topic vs Main Idea', ar:'مهارة القراءة: الموضوع مقابل الفكرة الرئيسية',
+    rule:'الموضوع (Topic) = عمّاذا تتحدّث الفقرة؟ ويُكتب كلمة أو عبارة قصيرة. الفكرة الرئيسية (Main Idea) = أهمّ ما تقوله الفقرة عن الموضوع، وتُكتب جملة كاملة.',
+    parts:[
+      {t:'Topic',d:'الموضوع — بأيّ شيء تدور الفقرة؟ يُكتب كلمة أو عبارة قصيرة. مثال: sports.'},
+      {t:'Main Idea',d:'الفكرة الرئيسية — أهمّ نقطة عن الموضوع، وتُكتب جملة كاملة. مثال: My friends like sports.'},
+      {t:'Reference',d:'المرجع — انتبه لِما يعود عليه الضمير (it / them / they / he). مثال: “John swims. He is fast.” → He = John.'},
+    ],
+    check:{q:'John swims. Mary plays soccer. Jack plays basketball. My friends like sports. → الفكرة الرئيسية؟',o:['swimming','My friends like sports.','soccer','basketball'],a:1,en:'the sentence that tells about all',ar:'الجملة الجامعة = الفكرة الرئيسية'},
+    compare:[
+      {c1:'Topic: sports',c2:'Main idea: My friends like sports.',ar:'الموضوع عبارة قصيرة، والفكرة جملة كاملة'},
+      {c1:'We drew triangles and circles.',c2:'Topic: shapes in math',ar:'استخرج الموضوع من التفاصيل'},
+    ],
+    examples:[
+      {s:'The topic is one word or a short phrase.',tr:'الموضوع كلمة واحدة أو عبارة قصيرة.',ar:'Topic',ok:true},
+      {s:'The main idea is the sentence that tells about all the others.',tr:'الفكرة الرئيسية هي الجملة التي تُلخّص بقية الجُمل.',ar:'Main idea',ok:true},
+    ]
+  }
 ]
 };
 
@@ -128,6 +253,15 @@ l1:[
   {words:['A','triangle','has','three','straight','sides'],ans:'A triangle has three straight sides.',tr:'المثلّث له ثلاثة أضلاع مستقيمة.',ar:'straight+sides'},
   {words:['Jim','drew','a','circle','on','the','board'],ans:'Jim drew a circle on the board.',tr:'جيم رسم دائرة على السبّورة.',ar:'drew = ماضي draw'},
   {words:['The','two','belts','are','the','same','color'],ans:'The two belts are the same color.',tr:'الحزامان لهما نفس اللون.',ar:'the same'},
+],
+l2:[
+  {words:['Tom','is','taller','than','Tim'],ans:'Tom is taller than Tim.',tr:'توم أطول من تيم.',ar:'صيغة التفضيل + than'},
+  {words:['The','first','problem','is','easier','than','the','second'],ans:'The first problem is easier than the second.',tr:'المسألة الأولى أسهل من الثانية.',ar:'easy → easier'},
+  {words:['Both','balls','are','the','same','weight'],ans:'Both balls are the same weight.',tr:'كلتا الكرتين لهما نفس الوزن.',ar:'both + اسم جمع'},
+  {words:['Nine','divided','by','three','equals','three'],ans:'Nine divided by three equals three.',tr:'تسعة مقسومة على ثلاثة يساوي ثلاثة.',ar:'÷ عملية القسمة'},
+  {words:['Please','add','these','numbers','together'],ans:'Please add these numbers together.',tr:'من فضلك اجمع هذه الأرقام معاً.',ar:'add = يجمع'},
+  {words:['The','red','coat','is','heavier','than','the','blue','one'],ans:'The red coat is heavier than the blue one.',tr:'المعطف الأحمر أثقل من الأزرق.',ar:'heavy → heavier'},
+  {words:['A','diameter','passes','through','the','center'],ans:'A diameter passes through the center.',tr:'القُطر يمرّ عبر المركز.',ar:'diameter / center'},
 ]
 };
 
@@ -156,6 +290,28 @@ l1:[
   {q:"Alice's umbrella didn't help her. _______ was at home.",o:["She","He","It","They"],a:2,en:"umbrella = It",ar:'المظلّة شيء → It',tr:'مظلّة أليس لم تنفعها. كانت في البيت.'},
   {q:"Jim drew four shapes. Then he _______ them to the students.",o:["described","drew","compared","signed"],a:0,en:"described the shapes",ar:'وصف الأشكال → described',tr:'جيم رسم أربعة أشكال. ثم وصفها للطلاب.'},
   {q:"Martha and Tom want to go to Venezuela. They can travel _______ by plane or by boat.",o:["here","there","where","their"],a:1,en:"to Venezuela = there",ar:'إلى فنزويلا → there',tr:'مارثا وتوم يريدان الذهاب إلى فنزويلا. يمكنهما السفر إلى هناك بالطائرة أو القارب.'},
+],
+l2:[
+  {q:"Two plus two _______ four.",o:["equals","divides","subtracts","weighs"],a:0,en:"2 + 2 = 4 → equals",ar:'علامة = → equals',tr:'اثنان زائد اثنين يساوي أربعة.'},
+  {q:"Six _______ two equals three. (÷)",o:["times","divided by","plus","minus"],a:1,en:"÷ → divided by",ar:'علامة ÷ → divided by',tr:'ستة مقسومة على اثنين يساوي ثلاثة.'},
+  {q:"Three _______ four equals twelve. (×)",o:["plus","minus","times","divided by"],a:2,en:"× → times",ar:'علامة × → times (ضَرب)',tr:'ثلاثة في أربعة يساوي اثني عشر.'},
+  {q:"To find how much something weighs, you _______ it.",o:["count","weigh","divide","explain"],a:1,en:"weight → weigh",ar:'لمعرفة الوزن → weigh (يَزِن)',tr:'لمعرفة كم يزن الشيء، تَزِنه.'},
+  {q:"The teacher will _______ the hard problem so we understand it.",o:["weigh","count","explain","subtract"],a:2,en:"give an explanation → explain",ar:'يقدّم شرحاً → explain',tr:'المعلّم سيشرح المسألة الصعبة حتى نفهمها.'},
+  {q:"A feather is very _______.",o:["heavy","light","hard","big"],a:1,en:"feather → light (not heavy)",ar:'الريشة خفيفة → light (الوزن)',tr:'الريشة خفيفة جدّاً.'},
+  {q:"A baseball is _______ than a table-tennis ball.",o:["lighter","heavier","easier","smaller"],a:1,en:"baseball weighs more → heavier",ar:'كرة البيسبول أثقل → heavier',tr:'كرة البيسبول أثقل من كرة تنس الطاولة.'},
+  {q:"This box is heavy. That box is _______. (heavy)",o:["heavyer","more heavy","heavier","heaviest"],a:2,en:"heavy → heavier (y→i)",ar:'heavy تنتهي بـ y → heavier',tr:'هذا الصندوق ثقيل. ذاك الصندوق أثقل.'},
+  {q:"The line from the center to the edge of a circle is the _______.",o:["diameter","radius","circumference","top"],a:1,en:"center→edge = radius",ar:'من المركز إلى الحافّة → radius (نصف القُطر)',tr:'الخط من مركز الدائرة إلى حافّتها هو نصف القُطر.'},
+  {q:"The distance across a circle through its center is the _______.",o:["radius","circumference","diameter","bottom"],a:2,en:"across through center = diameter",ar:'عبر المركز → diameter (القُطر)',tr:'المسافة عبر الدائرة مارّةً بمركزها هي القُطر.'},
+  {q:"When you cut something into two equal parts, each part is a _______.",o:["total","half","price","radius"],a:1,en:"two equal parts → half",ar:'جزءان متساويان → half (نصف)',tr:'عندما تقسم شيئاً إلى جزأين متساويين، كل جزء نصف.'},
+  {q:"Did you buy _______ stamps at the post office?",o:["some","any","both","each"],a:1,en:"question → any",ar:'سؤال → any',tr:'هل اشتريت أيّ طوابع من مكتب البريد؟'},
+  {q:"Yes, I bought _______ stamps this morning.",o:["any","some","other","each"],a:1,en:"affirmative → some",ar:'إثبات → some',tr:'نعم، اشتريت بعض الطوابع هذا الصباح.'},
+  {q:"Julie and Judy are twins. _______ have brown hair.",o:["Each","Both","The other","Any"],a:1,en:"the two together → Both",ar:'الاثنتان معاً → Both',tr:'جولي وجودي توأمان. كلتاهما لهما شعر بنّي.'},
+  {q:"I have two pens. One is red; the _______ is blue.",o:["both","other","each","any"],a:1,en:"the remaining one → the other",ar:'الباقي من اثنين → the other',tr:'عندي قلمان. واحد أحمر، والآخر أزرق.'},
+  {q:'The opposite of "easy" is _______.',o:["light","hard","straight","present"],a:1,en:"easy/hard are opposites",ar:'عكس easy = hard',tr:'عكس كلمة easy هو hard.'},
+  {q:'The opposite of "present" is _______.',o:["absent","other","heavy","total"],a:0,en:"present/absent are opposites",ar:'عكس present (حاضِر) = absent (غائب)',tr:'عكس كلمة present هو absent.'},
+  {q:'Read: "We studied shapes. We drew triangles. We talked about circles." The topic is _______.',o:["sports","math shapes","cooking","weather"],a:1,en:"the paragraph is about shapes",ar:'الفقرة تدور حول الأشكال → الموضوع',tr:'اقرأ الفقرة: موضوعها الأشكال في الرياضيات.'},
+  {q:'"John swims. Mary plays soccer. My friends like sports." The main idea is _______.',o:["John swims.","My friends like sports.","Mary plays soccer.","sports"],a:1,en:"the sentence that tells about all",ar:'الجملة الجامعة = الفكرة الرئيسية',tr:'الجملة التي تلخّص البقية هي الفكرة الرئيسية.'},
+  {q:"Captain Jenson cooked for everyone. Everyone enjoys _______ meals.",o:["her","his","their","its"],a:1,en:"Captain Jenson (male) → his",ar:'يعود على Captain Jenson → his',tr:'الكابتن جِنسون طبخ للجميع. الجميع يستمتع بوجباته.'},
 ]
 };
 

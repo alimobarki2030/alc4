@@ -34,7 +34,7 @@ l2:[
   {e:'Major (Maj)',a:'رائد — O-4',em:'🍃'},
   {e:'Lieutenant Colonel (Lt Col)',a:'مقدّم — O-5',em:'🍂'},
   {e:'Colonel (Col)',a:'عقيد — O-6',em:'🦅'},
-  {e:'General (Gen)',a:'لواء — O-7',em:'⭐'},
+  {e:'Brigadier General (Brig Gen)',a:'عميد — O-7',em:'⭐'},
   {e:'sergeant (Sgt)',a:'رقيب — رتبة أفراد',em:'🎗️'},
   {e:'base',a:'قاعدة عسكرية',em:'🏕️'},{e:'post',a:'ثكنة (معسكر الجيش)',em:'🪖'},
   {e:'naval base',a:'قاعدة بحرية',em:'⚓'},{e:'uniform',a:'الزي العسكري',em:'👔'},
@@ -168,7 +168,7 @@ l2:[
       {c1:'10:30 pm',c2:'2230',ar:'10+12=22 → 2230'},
     ],
     examples:[
-      {s:"It's 8:50 p.m. = 2050.",tr:'الثامنة والنصف مساءً: 8+12=20 ثم الدقائق → 2050.',ar:"مساءً: أضف 12 للساعة",ok:true},
+      {s:"It's 8:50 p.m. = 2050.",tr:'الثامنة وخمسون دقيقة مساءً: 8+12=20 ثم الدقائق → 2050.',ar:"مساءً: أضف 12 للساعة",ok:true},
       {s:"It's 8:50 p.m. = 0850.",wrong:'0850',right:'2050',tr:'0850 يعني صباحاً — المساء يبدأ من 12 فما فوق.',ok:false},
     ]
   },
@@ -440,7 +440,7 @@ l4:[
   {q:"It's December, and it's cold in the United States. It's _______.",o:["summer","fall","winter","spring"],a:2,en:"December = winter",ar:"ديسمبر = الشتاء",tr:"الشهر ديسمبر، والجو بارد بأمريكا. يعني فصل الشتاء."},
   {q:"Autumn and fall are the _______.",o:["different","same","months","days"],a:1,en:"Same season, two names",ar:"نفس الفصل، اسمان",tr:"Autumn وfall نفس الفصل (الخريف)."},
   {q:"Dan: I bought a new shirt yesterday. Sue: _______?",o:["What do you want?","What day is tomorrow?","What color is it?","What must I do?"],a:2,en:"Natural question about new clothing = What color?",ar:"السؤال الطبيعي عن ملابس جديدة = ما لونها؟",tr:"دان: اشتريت قميص جديد أمس. سو: وش لونه؟"},
-  {q:"It's very _______ in here. I want to take off my sweater.",o:["cold","cool","warm","white"],a:2,en:"Take off sweater → too warm inside",ar:"يخلع سترته → الجو دافئ جداً",tr:"الجو حار جداً هنا. أبي أشلح الكنزة."},
+  {q:"It's very _______ in here. I want to take off my sweater.",o:["cold","cool","warm","white"],a:2,en:"Take off sweater → too warm inside",ar:"يخلع سترته → الجو دافئ جداً",tr:"الجو دافئ جداً هنا. أبي أشلح الكنزة."},
   {q:"I like to listen to _______ on the radio.",o:["music","headphones","dance","spring"],a:0,en:"listen to music on the radio",ar:"تستمع للموسيقى على الراديو",tr:"أحب أستمع للموسيقى بالراديو."},
   {q:"Catherine listens to CDs on her _______.",o:["telephone","television","headphones","radio"],a:2,en:"headphones for CDs",ar:"سماعات = للـ CDs",tr:"كاثرين تسمع السيديهات على سماعاتها."},
   {q:"Tom: _______ Bob: I went to the BX.",o:["What did you read?","Where were you last night?","When did you come to DLI?","Who ate my banana?"],a:1,en:"Bob answers where he was → Where were you?",ar:"بوب أجاب عن مكانه → أين كنت؟",tr:"توم: وين كنت البارحة بالليل؟ بوب: رحت الـ BX (المتجر العسكري)."},

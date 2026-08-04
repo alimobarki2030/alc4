@@ -46,11 +46,11 @@
 
 .pcard-forms{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
 .pform{display:flex;align-items:center;gap:8px;background:#F8FAFC;border-radius:10px;padding:7px 10px}
-.pf-tag{flex:none;width:150px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;color:var(--muted)}
+.pf-tag{flex:0 0 auto;max-width:45%;width:150px;font-family:'Cairo',sans-serif;font-size:.72rem;font-weight:700;color:var(--muted)}
 .pf-tag b{color:var(--navy);font-family:'Inter',sans-serif;display:block;font-size:.74rem}
 .pf-w{flex:1;font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-weight:800;color:var(--navy);font-size:.95rem}
 .pf-w.na{color:var(--muted);font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:600}
-.pf-spk{flex:none;background:var(--b);border:none;border-radius:6px;width:26px;height:26px;
+.pf-spk{flex:none;background:var(--b);border:none;border-radius:6px;width:30px;height:30px;
   font-size:.72rem;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center}
 .pf-spk:hover{background:var(--bd)}
 .pf-spk:disabled{opacity:.3;cursor:default}
@@ -160,7 +160,7 @@
 
 <nav class="nav">
   <div style="display:flex;align-items:center;gap:10px">
-    <a class="nav-home-btn" href="book5" title="Book 5">← <span>Book 5</span></a>
+    <a class="nav-home-btn" href="book5" title="Book 5">→ <span>Book 5</span></a>
     <a class="nav-logo" href="/" style="text-decoration:none;cursor:pointer">ALC <span>مرجع</span></a>
   </div>
 </nav>
@@ -291,7 +291,7 @@
 </div>
 
 <div class="site-footer">
-  <p><a href="book5" style="color:rgba(255,255,255,.55);text-decoration:none;font-weight:700">← Book 5</a></p>
+  <p><a href="book5" style="color:rgba(255,255,255,.55);text-decoration:none;font-weight:700">→ Book 5</a></p>
   <p style="margin-top:8px">صُمِّم بواسطة <span>علي مبارکي 🎓</span></p>
 </div>
 
@@ -302,6 +302,10 @@ function say(t){
   const u=new SpeechSynthesisUtterance(String(t).replace(/\(.*?\)/g,'').trim());
   u.lang='en-US';u.rate=0.82;speechSynthesis.speak(u);
 }
+// Speaker buttons hold only an aria-hidden icon — give each an accessible name.
+document.querySelectorAll('button:not([aria-label])').forEach(b=>{
+  if(b.querySelector('use[href="#icon-volume-2"]'))b.setAttribute('aria-label','استماع');
+});
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
 }

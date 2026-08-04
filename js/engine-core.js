@@ -105,3 +105,27 @@ function shuffle_arr(a){
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
+
+// ─── ACCESSIBILITY ───
+// Speaker buttons hold only an aria-hidden volume icon, so a screen reader
+// announces nothing. Give every one an Arabic accessible name — both the
+// buttons present at load and the many the engine injects after each render
+// (a MutationObserver keeps up with re-renders without re-labelling by hand).
+function _labelSpeakerButtons(root){
+  const scope=(root&&root.querySelectorAll)?root:document;
+  scope.querySelectorAll('button:not([aria-label])').forEach(b=>{
+    if(b.querySelector('use[href="#icon-volume-2"]'))b.setAttribute('aria-label','استماع');
+  });
+}
+if(typeof document!=='undefined'){
+  const _startA11y=()=>{
+    _labelSpeakerButtons(document);
+    if(window.MutationObserver&&document.body){
+      new MutationObserver(muts=>{
+        muts.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1)_labelSpeakerButtons(n);}));
+      }).observe(document.body,{childList:true,subtree:true});
+    }
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',_startA11y);
+  else _startA11y();
+}

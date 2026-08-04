@@ -497,7 +497,7 @@ l4:[
     ],
     examples:[
       {s:'I bought a jacket and a shirt. The jacket is blue.',tr:'اشتريت جاكيت وقميص. الجاكيت أزرق.',ar:'a لأول ذكر، the للرجوع لنفس الشيء',ok:true},
-      {s:'I had a sandwich and a cup of coffee. The coffee was bad.',tr:'اكلت ساندويتش وشربت قهوة. القهوة كانت وحشة.',ar:'the coffee = نفس القهوة المذكورة قبل',ok:true},
+      {s:'I had a sandwich and a cup of coffee. The coffee was bad.',tr:'أكلت ساندويتش وشربت قهوة. القهوة كانت وحشة.',ar:'the coffee = نفس القهوة المذكورة قبل',ok:true},
       {s:'I bought a car. I had to take a car to a mechanic.',wrong:'a car',right:'the car',tr:'ثاني مرة نذكر نفس السيارة، لازم the مو a.',ok:false},
     ]
   },

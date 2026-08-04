@@ -2,7 +2,7 @@
   "name": "ALC — تعلم بسهولة",
   "short_name": "ALC",
   "description": "مركز التدريب الإنجليزي — American Language Course",
-  "start_url": "/index.html",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#1A2744",

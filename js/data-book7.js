@@ -35,7 +35,7 @@ l1:[
   {e:'math / mathematics',a:'الرياضيات',em:'➗'},
   {e:'job',a:'وظيفة / عمل',em:'💼'},
   {e:'draw',a:'يرسم',past:'drew',pa:'رسم',em:'✏️'},
-  {e:'describe',a:'يصف',em:'🗣️'},
+  {e:'describe',a:'يصف',em:'🗣️',icon:'align-left'},
   {e:'compare',a:'يقارن',em:'🆚'},
   {e:'round',a:'مستدير',em:'⭕'},
   {e:'curved',a:'منحنٍ',em:'〰️'},

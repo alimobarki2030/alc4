@@ -34,7 +34,7 @@ l2:[
   {e:'Major (Maj)',a:'رائد — O-4',em:'🍃'},
   {e:'Lieutenant Colonel (Lt Col)',a:'مقدّم — O-5',em:'🍂'},
   {e:'Colonel (Col)',a:'عقيد — O-6',em:'🦅'},
-  {e:'Brigadier General (Brig Gen)',a:'عميد — O-7',em:'⭐'},
+  {e:'General (Gen)',a:'لواء — O-7',em:'⭐'},
   {e:'sergeant (Sgt)',a:'رقيب — رتبة أفراد',em:'🎗️'},
   {e:'base',a:'قاعدة عسكرية',em:'🏕️'},{e:'post',a:'ثكنة (معسكر الجيش)',em:'🪖'},
   {e:'naval base',a:'قاعدة بحرية',em:'⚓'},{e:'uniform',a:'الزي العسكري',em:'👔'},

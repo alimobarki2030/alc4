@@ -181,6 +181,16 @@
     <button onclick="dismiss_welcome_start()" style="background:#FFC800;color:#1A2744;border:none;border-radius:10px;padding:10px 22px;font-family:'Cairo',sans-serif;font-weight:900;font-size:.95rem;cursor:pointer">ابدأ الدرس الأول ←</button>
   </div>
 
+  <div id="mistakes-card-wrap" style="display:none">
+    <div class="lbl">مراجعة أخطائك</div>
+    <div class="final-card" style="background:linear-gradient(135deg,#DC2626,#991B1B);border-color:#FCA5A5" onclick="open_mistakes()">
+      <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-refresh-cw"></use></svg></div>
+      <h3>راجع أخطاءك</h3>
+      <p>تدرّب على الأسئلة التي أخطأت فيها حتى تتقنها وتخرج من القائمة</p>
+      <span class="fc-badge" id="mistakes-badge">٠</span>
+    </div>
+  </div>
+
   <div class="lbl">الدروس</div>
   <div class="grid2">
     <div class="lcard" id="hc-l1" onclick="open_lesson('l1')">
@@ -517,6 +527,16 @@
     </div>
   </div>
 </div>
+<!-- MISTAKE REVIEW SCREEN -->
+<div id="mkscreen">
+  <button class="back" onclick="go_home()">← الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#DC2626,#991B1B)">
+    <h2>راجع أخطاءك 🔁</h2>
+    <p>الأسئلة التي أخطأت فيها — أتقنها لتخرج من القائمة</p>
+  </div>
+  <div id="ph-mistakes"></div>
+</div>
+
 <div class="conf" id="conf"></div>
 
 <button class="top-fab" id="top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="العودة للأعلى" title="العودة للأعلى">⬆</button>

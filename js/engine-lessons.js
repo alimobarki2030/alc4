@@ -580,10 +580,11 @@ function wo_hint(idx,correct){
 // ═══════════════════════════════════════
 // QUIZZES (lesson test / final exam / review) — one generic implementation
 // ═══════════════════════════════════════
-const QUIZ_TARGET={te:{elId:'ph-test',prefix:'te'},fi:{elId:'ph-final',prefix:'fi'},rv:{elId:'ph-review',prefix:'rv'}};
+const QUIZ_TARGET={te:{elId:'ph-test',prefix:'te'},fi:{elId:'ph-final',prefix:'fi'},rv:{elId:'ph-review',prefix:'rv'},mk:{elId:'ph-mistakes',prefix:'mk'}};
 function current_quiz_target(){
   if(CL==='final')return QUIZ_TARGET.fi;
   if(CL==='review')return QUIZ_TARGET.rv;
+  if(CL==='mistakes')return QUIZ_TARGET.mk;
   return QUIZ_TARGET.te;
 }
 
@@ -601,10 +602,22 @@ function open_review(){
   build_quiz('ph-review',REVIEW,'rv');
 }
 
+// Builds a quiz from the student's own missed questions (the mistake bank),
+// so they re-practise exactly what they got wrong until they master it.
+function open_mistakes(){
+  const deck=Object.values(MISTAKES).map(m=>({q:m.q,o:m.o,a:m.a,tr:m.tr,ar:m.ar}));
+  if(!deck.length)return;
+  EE.mistakes=deck;
+  CL='mistakes';TANS={};
+  show_screen('mkscreen');
+  document.getElementById('mkscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  build_quiz('ph-mistakes',deck,'mk');
+}
+
 function build_quiz(elId,qs,prefix){
   const el=document.getElementById(elId);
   el.innerHTML='';
-  const isTest=prefix==='te'||prefix==='fi'||prefix==='rv';
+  const isTest=prefix==='te'||prefix==='fi'||prefix==='rv'||prefix==='mk';
 
   // Shuffle the comprehensive final exam on each open so answer positions
   // aren't memorized. qs is the same array reference as EE[CL], so ans() /
@@ -662,6 +675,17 @@ function ans(pfx,qi,oi,correct){
   const fb=document.getElementById(`${pfx}fb${qi}`);
   const card=document.getElementById(`${pfx}c${qi}`);
   const ok=oi===correct;
+  // Mistake bank: a wrong answer files the question for later review; two
+  // correct answers (anywhere the question reappears) master it and remove it.
+  if(q&&q.q){
+    if(!ok){
+      MISTAKES[q.q]={q:q.q,o:q.o,a:q.a,tr:q.tr||'',ar:q.ar||'',streak:0};
+    }else if(MISTAKES[q.q]){
+      MISTAKES[q.q].streak=(MISTAKES[q.q].streak||0)+1;
+      if(MISTAKES[q.q].streak>=2)delete MISTAKES[q.q];
+    }
+    update_mistakes_card();
+  }
   opts[correct].classList.add('ok');
   if(!ok)opts[oi].classList.add('no');
   card.classList.add(ok?'qok':'qno');

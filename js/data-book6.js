@@ -559,5 +559,5 @@ const SPELL_LESSONS=[
 // ═══════════════════════════════════════
 // ROUTING MANIFEST — home + lesson + listening + final + review + spelling
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','ytscreen','fscreen','rscreen','spscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',rscreen:'المراجعة',spscreen:'الإملاء'};
+const SCREENS=['home','lscreen','ytscreen','fscreen','rscreen','spscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',rscreen:'المراجعة',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};

@@ -503,5 +503,5 @@ const SPELL_LESSONS=[
 // ═══════════════════════════════════════
 // ROUTING MANIFEST
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','pnscreen','modscreen','spscreen','tmscreen','ivscreen','ytscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',pnscreen:'الضمائر وفعل الكينونة',modscreen:'الأفعال الناقصة',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع'};
+const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','pnscreen','modscreen','spscreen','tmscreen','ivscreen','ytscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',pnscreen:'الضمائر وفعل الكينونة',modscreen:'الأفعال الناقصة',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع',mkscreen:'مراجعة الأخطاء'};

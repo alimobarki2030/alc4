@@ -403,7 +403,6 @@ function render_books(){
             <div class="prog-bar"><div class="prog-fill" id="prog-${b.id}" style="width:0%"></div></div>
             <div class="prog-txt" id="prog-${b.id}-txt"></div>
           </div>
-          <div class="bc-cta" id="cta-${b.id}">ابدأ ←</div>
         </div>
       </a>`;
     }
@@ -444,8 +443,6 @@ BOOKS.filter(b=>b.available).forEach(b=>{
     if(fill)fill.style.width=pct+'%';
     if(txt)txt.textContent=
       pct===0?'':pct===100?`مكتمل ✓ · ${data.xp||0} XP`:`${done} من ${b.lessons} دروس · ${data.xp||0} XP`;
-    const cta=document.getElementById('cta-'+b.id);
-    if(cta)cta.textContent=pct===0?'ابدأ ←':pct===100?'مراجعة ←':'تابع ←';
   }catch(e){}
 });
 </script>

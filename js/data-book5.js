@@ -6,7 +6,7 @@
 const BOOK_ID='book5';
 
 const LESSON_META={
-  l1:{ico:'🤕',title:'Lesson 1 — What’s Wrong?',sub:'ما الخطب؟ · جسم الإنسان والصحة والأعداد الترتيبية',vocabNote:'🔢 <b>ordinal numbers 1st – 12th</b> (first – twelfth) — تقدر تتعلمها بالتفصيل من تبويب <b>قواعد</b> <svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg>.'},
+  l1:{ico:'🤕',title:'Lesson 1 — What’s Wrong?',sub:'ما المشكلة؟ · جسم الإنسان والصحة والأعداد الترتيبية',vocabNote:'🔢 <b>ordinal numbers 1st – 12th</b> (first – twelfth) — تقدر تتعلمها بالتفصيل من تبويب <b>قواعد</b> <svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg>.'},
   l2:{ico:'🧴',title:'Lesson 2 — Where Can I Get Shampoo?',sub:'أين أجد الشامبو؟ · أدوات الحمام والتسوّق'},
   l3:{ico:'🧳',title:'Lesson 3 — I’ll Take a Trip',sub:'سأقوم برحلة · السفر والحجوزات والمستقبل (will)'},
   l4:{ico:'🥛',title:'Lesson 4 — I’ll Buy a Gallon of Milk',sub:'سأشتري غالون حليب · التسوّق والطبخ والكمّية'}

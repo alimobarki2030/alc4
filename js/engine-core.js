@@ -81,6 +81,9 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 window.addEventListener('pagehide',_flush_screen_time);
 
 function go_home(){
+  // Arrived here via a grammar-hub deep link (?open=…)? Then this book has no
+  // home to show the visitor — send them back to the site homepage instead.
+  if(window.CONCEPT_DEEPLINK){location.href='/';return;}
   show_screen('home');
   window.scrollTo({top:0,behavior:'smooth'});
 }

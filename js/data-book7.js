@@ -7,7 +7,8 @@ const BOOK_ID='book7';
 
 const LESSON_META={
   l1:{ico:'🔷',title:'Lesson 1 — Shapes and Lines',sub:'الأشكال والخطوط والمقارنة'},
-  l2:{ico:'🧮',title:'Lesson 2 — Understanding Math',sub:'العمليات الحسابية والمقارنة والفهم القرائي'}
+  l2:{ico:'🧮',title:'Lesson 2 — Understanding Math',sub:'العمليات الحسابية والمقارنة والفهم القرائي'},
+  l3:{ico:'🏡',title:'Lesson 3 — American Homes',sub:'البيوت وأجزاؤها وظروف المكان والتفضيل'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -98,6 +99,46 @@ l2:[
   {e:'straight',a:'مستقيم',em:'📐'},
   {e:'present',a:'حاضِر',em:'🙋'},
   {e:'absent',a:'غائب',em:'🚫'},
+],
+l3:[
+  // — أجزاء البيت House parts —
+  {e:'roof',a:'السَّقف',em:'🛖'},
+  {e:'garage',a:'الكراج / المرآب',em:'🚗'},
+  {e:'yard',a:'الفِناء / الحوش',em:'🌿'},
+  {e:'backyard',a:'الفناء الخلفي',em:'🏡'},
+  {e:'fence',a:'السِّياج',em:'🪵'},
+  {e:'gate',a:'البوّابة',em:'🚪'},
+  {e:'grass',a:'العُشب',em:'🌱'},
+  {e:'flower',a:'زهرة',em:'🌸'},
+  {e:'hill',a:'تلّة',em:'⛰️'},
+  {e:'land',a:'أرض / يابسة',em:'🏞️'},
+  {e:'river',a:'نهر',em:'🌊'},
+  // — أنواع المساكن Types of homes —
+  {e:'apartment',a:'شقّة',em:'🏢'},
+  {e:'town house',a:'بيت متلاصق (تاون هاوس)',em:'🏘️'},
+  {e:'mobile home',a:'بيت متنقّل',em:'🚐'},
+  {e:'fixer-upper',a:'بيت يحتاج ترميمًا',em:'🔨'},
+  {e:'tepee',a:'خيمة هندية (تيبي)',em:'⛺'},
+  // — الحيوانات Animals —
+  {e:'animal',a:'حيوان',em:'🐾'},
+  {e:'bird',a:'طائر',em:'🐦'},
+  {e:'cat',a:'قطة',em:'🐱'},
+  {e:'dog',a:'كلب',em:'🐶'},
+  {e:'fish',a:'سمكة',em:'🐟'},
+  {e:'horse',a:'حصان',em:'🐴'},
+  {e:'rabbit',a:'أرنب',em:'🐰'},
+  // — الفضاء والطبيعة Space & nature —
+  {e:'sun',a:'الشمس',em:'☀️'},
+  {e:'earth',a:'الأرض (الكوكب)',em:'🌍'},
+  {e:'moon',a:'القمر',em:'🌙'},
+  {e:'star',a:'نجمة',em:'⭐'},
+  {e:'world',a:'العالَم',em:'🌐'},
+  // — الزمن Time —
+  {e:'past',a:'الماضي (قديمًا)',em:'⏮️'},
+  {e:'present',a:'الحاضر (حديثًا)',em:'🕐'},
+  // — أفعال Verbs —
+  {e:'climb',a:'يتسلّق',em:'🧗'},
+  {e:'run',a:'يجري',past:'ran',pa:'جرى',em:'🏃'},
 ]
 };
 
@@ -238,6 +279,88 @@ l2:[
       {s:'The main idea is the sentence that tells about all the others.',tr:'الفكرة الرئيسية هي الجملة التي تُلخّص بقية الجُمل.',ar:'Main idea',ok:true},
     ]
   }
+],
+l3:[
+  {
+    title:'Superlative Adjectives — the -est', ar:'صيغة التفضيل العُليا: الأعلى بين ثلاثة فأكثر',
+    rule:'للتفضيل بين ثلاثة فأكثر نضيف -est إلى الصفة القصيرة ونسبقها بـ the. مثال: the tallest = الأطول.',
+    parts:[
+      {t:'the + adjective + -est',d:'the + صفة + est. مثال: John is the tallest of the three. = جون الأطول بين الثلاثة.'},
+      {t:'add -est',d:'لأغلب الصفات نضيف -est. مثل: tall → the tallest، clean → the cleanest، weak → the weakest.'},
+      {t:'drop silent -e, add -st',d:'إذا انتهت بـ e صامتة نحذفها: nice → the nicest، large → the largest، late → the latest.'},
+      {t:'double the consonant',d:'مقطع واحد (ساكن–متحرك–ساكن): نضاعف الحرف الأخير: big → the biggest، hot → the hottest، wet → the wettest.'},
+      {t:'y → i, add -est',d:'إذا انتهت بحرف y نحوّله إلى i: happy → the happiest، heavy → the heaviest، easy → the easiest.'},
+    ],
+    check:{q:'Of the three boxes, this one is _______. (small)',o:['smaller','the smallest','more small','smallest'],a:1,en:'three items → the smallest',ar:'ثلاثة أشياء → the smallest'},
+    formula:[{t:'the',c:'k'},{t:'+',c:'p'},{t:'adjective',c:'v'},{t:'+',c:'p'},{t:'-est',c:'s'}],
+    compare:[
+      {c1:'Comparative: Bill is taller than John.',c2:'Superlative: Bill is the tallest of all.',ar:'بين اثنين -er / بين ثلاثة the -est'},
+      {c1:'Peter is young.',c2:'Peter is the youngest in the family.',ar:'young → the youngest'},
+    ],
+    examples:[
+      {s:'These prices are the lowest of all the restaurants.',tr:'هذه الأسعار هي الأدنى بين كل المطاعم.',ar:'low → the lowest',ok:true},
+      {s:'Mary is the youngest, and Tom is the oldest.',tr:'ماري الأصغر، وتوم الأكبر.',ar:'young→youngest، old→oldest',ok:true},
+      {s:'This is the most tall building.',wrong:'most tall',right:'tallest',tr:'الصفة القصيرة تأخذ the -est لا most → the tallest.',ok:false},
+    ]
+  },
+  {
+    title:'Talking about Location — prepositions', ar:'ظروف المكان: أين يقع الشيء؟',
+    rule:'نستخدم كلمات الموقع لنصف مكان الشيء بالنسبة لغيره.',
+    parts:[
+      {t:'above / below',d:'above = فوق، below = تحت. مثال: The clock is above the door. = الساعة فوق الباب.'},
+      {t:'next to / by',d:'next to = بجوار، by = بجانب. مثال: The desk is next to the window. = المكتب بجوار النافذة.'},
+      {t:'in front of / in back of',d:'in front of = أمام، in back of (behind) = خلف. مثال: The car is in front of the house.'},
+      {t:'over / around / between',d:'over = فوق (يعلو)، around = حول، between = بين. مثال: A fence goes around the yard.'},
+      {t:'high / low',d:'high = مرتفع، low = منخفض. مثال: The birds fly high. = الطيور تطير عاليًا.'},
+    ],
+    check:{q:'The clock is _______ the door. (higher position)',o:['below','above','next','around'],a:1,en:'higher = above',ar:'في الأعلى → above'},
+    compare:[
+      {c1:'The pencil is next to the book.',c2:'The pens are in front of you.',ar:'next to = بجوار / in front of = أمام'},
+      {c1:'The roof is above the rooms.',c2:'The garage is below the bedroom.',ar:'above ←→ below'},
+    ],
+    examples:[
+      {s:'There is a fence around the backyard.',tr:'يوجد سياج حول الفناء الخلفي.',ar:'around = حول',ok:true},
+      {s:'The mailman left the package by the door.',tr:'ترك ساعي البريد الطرد بجانب الباب.',ar:'by = بجانب',ok:true},
+      {s:'The teacher desk is front the room.',wrong:'front the room',right:'in front of the room',tr:'الصيغة الصحيحة in front of.',ok:false},
+    ]
+  },
+  {
+    title:'How old …?', ar:'كم عُمر …؟',
+    rule:'نسأل عن العُمر بـ How old …? ونجيب بـ … years old. ونقول متى حدث شيء بـ … years ago.',
+    parts:[
+      {t:'How old is …?',d:'للسؤال عن عمر شخص أو شيء. مثال: How old is your house? = كم عمر بيتك؟'},
+      {t:'… years old',d:'للإجابة عن العمر. مثال: It’s two years old. = عمره سنتان.'},
+      {t:'… years ago',d:'للتعبير عن زمن مضى. مثال: We bought it four years ago. = اشتريناه قبل أربع سنوات.'},
+    ],
+    check:{q:'_______ is your son? — He’s seven years old.',o:['How many','How old','How much','How long'],a:1,en:'age → How old',ar:'السؤال عن العمر → How old'},
+    compare:[
+      {c1:'How old is the house?',c2:'It’s ten years old.',ar:'سؤال العمر / جواب العمر'},
+      {c1:'We bought it three years ago.',c2:'My father is 55 years old.',ar:'years ago (زمن مضى) / years old (عمر)'},
+    ],
+    examples:[
+      {s:'How old is your car? — It’s five years old.',tr:'كم عمر سيارتك؟ — عمرها خمس سنوات.',ar:'years old = العمر',ok:true},
+      {s:'They bought the computer six years ago.',tr:'اشتروا الحاسوب قبل ست سنوات.',ar:'years ago = زمن مضى',ok:true},
+      {s:'How old your house is?',wrong:'How old your house is',right:'How old is your house',tr:'نقدّم الفعل is بعد How old.',ok:false},
+    ]
+  },
+  {
+    title:'Reading Skill — Pronoun References', ar:'مهارة القراءة: مرجع الضمير',
+    rule:'الضمير يحلّ محلّ اسم ذُكر قبله. اسأل: هذا الضمير يعود على مَن/ماذا؟ (it / they / he / she / them / there).',
+    parts:[
+      {t:'it / they',d:'للأشياء. it للمفرد، they للجمع. مثال: “The car is in the garage. It won’t start.” → It = the car.'},
+      {t:'he / she',d:'للأشخاص. he للمذكّر، she للمؤنّث. مثال: “Ted has a dog. He likes to run.” → He = Ted.'},
+      {t:'them / there',d:'them = مفعول جمع، there = مكان. مثال: “She cuts the flowers and puts them inside.” → them = the flowers.'},
+    ],
+    check:{q:'“Bob and Peter studied math. They were tired.” The word They = _______.',o:['the math','Bob and Peter','the homework','the teacher'],a:1,en:'They → Bob and Peter',ar:'They تعود على Bob and Peter'},
+    compare:[
+      {c1:'“There are apples on the trees. They are delicious.”',c2:'They = the apples',ar:'الضمير يعود على أقرب اسم مناسب'},
+      {c1:'“Ted lives in Houston. He’ll fly to Paris.”',c2:'He = Ted',ar:'he للشخص المذكّر'},
+    ],
+    examples:[
+      {s:'Our dog likes the yard. He runs there every day.',tr:'كلبنا يحبّ الفناء. يجري فيه كل يوم.',ar:'He = the dog / there = the yard',ok:true},
+      {s:'The Smiths grow flowers and sell them.',tr:'آل سميث يزرعون الزهور ويبيعونها.',ar:'them = the flowers',ok:true},
+    ]
+  }
 ]
 };
 
@@ -262,6 +385,15 @@ l2:[
   {words:['Please','add','these','numbers','together'],ans:'Please add these numbers together.',tr:'من فضلك اجمع هذه الأرقام معاً.',ar:'add = يجمع'},
   {words:['The','red','coat','is','heavier','than','the','blue','one'],ans:'The red coat is heavier than the blue one.',tr:'المعطف الأحمر أثقل من الأزرق.',ar:'heavy → heavier'},
   {words:['A','diameter','passes','through','the','center'],ans:'A diameter passes through the center.',tr:'القُطر يمرّ عبر المركز.',ar:'diameter / center'},
+],
+l3:[
+  {words:['The','house','has','a','red','roof'],ans:'The house has a red roof.',tr:'البيت له سقف أحمر.',ar:'الصفة قبل الاسم + roof'},
+  {words:['There','is','a','fence','around','the','backyard'],ans:'There is a fence around the backyard.',tr:'يوجد سياج حول الفناء الخلفي.',ar:'around = ظرف مكان'},
+  {words:['John','is','the','tallest','of','the','three'],ans:'John is the tallest of the three.',tr:'جون الأطول بين الثلاثة.',ar:'صيغة التفضيل العُليا the -est'},
+  {words:['The','garage','is','next','to','the','house'],ans:'The garage is next to the house.',tr:'الكراج بجوار البيت.',ar:'next to = بجوار'},
+  {words:['The','moon','travels','around','the','earth'],ans:'The moon travels around the earth.',tr:'القمر يدور حول الأرض.',ar:'around the earth'},
+  {words:['How','old','is','your','house'],ans:'How old is your house?',tr:'كم عمر بيتك؟',ar:'سؤال العمر How old'},
+  {words:['This','is','the','smallest','box','of','all'],ans:'This is the smallest box of all.',tr:'هذا أصغر صندوق على الإطلاق.',ar:'the smallest of all'},
 ]
 };
 
@@ -312,6 +444,35 @@ l2:[
   {q:'"Judy likes her town. The weather is nice. There are shops, theaters, and good schools." The topic is _______.',o:["Judy's children","good schools","Judy's town","shopping and sports"],a:2,en:"the paragraph is about her town",ar:'الفقرة تدور حول بلدتها → Judy’s town',tr:'الفقرة كلها عن بلدة جودي → الموضوع: بلدة جودي.'},
   // Exercise J — choose the main idea
   {q:'"Many children like snow. They play outside and make snow people. They have lots of fun in the snow." The main idea is _______.',o:["Snow is cold and wet.","Schools close when it snows.","Children like to go to school.","Children like snow."],a:3,en:"the sentence that tells about all",ar:'الجملة الجامعة → Children like snow.',tr:'الفكرة الرئيسية التي تلخّص الفقرة: الأطفال يحبّون الثلج.'},
+],
+l3:[
+  // Book 7 · Lesson 3 · Evaluation Exercises (EE-16 → EE-18)
+  // Exercise C — pronoun references (from the Lesson 3 reading, p.65)
+  {q:'"Bob and Peter studied math. They were tired." The word "They" refers to _______.',o:["the math","Bob and Peter","the homework","the tests"],a:1,en:"They → Bob and Peter",ar:'They تعود على Bob and Peter',tr:'الضمير They يعود على بوب وبيتر.'},
+  {q:'"The car is in the garage. It won\'t start." The word "It" refers to _______.',o:["the garage","the house","the car","the road"],a:2,en:"It → the car",ar:'It تعود على السيارة (the car)',tr:'الضمير It يعود على السيارة.'},
+  {q:'"Ted lives in Houston. He\'ll fly to Paris." The word "He" refers to _______.',o:["Paris","Houston","Ted","the pilot"],a:2,en:"He → Ted",ar:'He تعود على Ted',tr:'الضمير He يعود على تِد.'},
+  {q:'"Mrs. Peters cuts the flowers and puts them inside." The word "them" refers to _______.',o:["the flowers","the Smiths","the tables","the children"],a:0,en:"them → the flowers",ar:'them تعود على الزهور (the flowers)',tr:'الضمير them يعود على الزهور.'},
+  // Exercise D — opposites
+  {q:'The opposite of "high" is _______.',o:["above","low","over","tall"],a:1,en:"high/low are opposites",ar:'عكس high = low',tr:'عكس كلمة high (مرتفع) هو low (منخفض).'},
+  {q:'The opposite of "above" is _______.',o:["over","around","below","by"],a:2,en:"above/below are opposites",ar:'عكس above = below',tr:'عكس كلمة above (فوق) هو below (تحت).'},
+  {q:'The opposite of "front" is _______.',o:["rear","side","top","gate"],a:0,en:"front/rear are opposites",ar:'عكس front (الأمام) = rear (الخلف)',tr:'عكس كلمة front هو rear.'},
+  {q:'The opposite of "past" is _______.',o:["old","present","late","world"],a:1,en:"past/present are opposites",ar:'عكس past (الماضي) = present (الحاضر)',tr:'عكس كلمة past هو present.'},
+  // Exercise E — fill in the blank (house & nature vocabulary)
+  {q:"The dogs run and play on the green _______ in the backyard.",o:["roof","grass","river","moon"],a:1,en:"green ground → grass",ar:'الأرض الخضراء → grass (العشب)',tr:'الكلاب تجري وتلعب على العشب الأخضر في الفناء الخلفي.'},
+  {q:"The house is white and has a red _______ on top.",o:["fence","gate","roof","yard"],a:2,en:"top of the house → roof",ar:'أعلى البيت → roof (السقف)',tr:'البيت أبيض وله سقف أحمر في الأعلى.'},
+  {q:"We keep our car in the _______.",o:["garage","river","hill","star"],a:0,en:"place for the car → garage",ar:'مكان السيارة → garage (الكراج)',tr:'نضع سيارتنا في الكراج.'},
+  {q:"At night you can see the moon and the _______ in the sky.",o:["grass","stars","fence","roof"],a:1,en:"in the night sky → stars",ar:'في سماء الليل → stars (النجوم)',tr:'في الليل ترى القمر والنجوم في السماء.'},
+  // Location prepositions (p.66-68)
+  {q:"The clock is _______ the door, near the top of the wall.",o:["below","above","between","behind"],a:1,en:"higher position → above",ar:'في الأعلى → above (فوق)',tr:'الساعة فوق الباب قرب أعلى الجدار.'},
+  {q:"There is a fence _______ the backyard to keep the dogs inside.",o:["around","under","above","into"],a:0,en:"encloses the yard → around",ar:'يحيط بالفناء → around (حول)',tr:'يوجد سياج حول الفناء الخلفي ليبقي الكلاب بالداخل.'},
+  // Grammar: superlative & how old
+  {q:"Peter is 3, Mary is 9, and Tom is 36. Peter is _______.",o:["the oldest","older","the youngest","younger"],a:2,en:"smallest age → the youngest",ar:'الأصغر سنًّا → the youngest',tr:'بيتر ٣، وماري ٩، وتوم ٣٦. بيتر هو الأصغر.'},
+  {q:"Of the three restaurants, The Hills has _______ prices.",o:["lower","the lowest","low","less"],a:1,en:"three items → the lowest",ar:'بين ثلاثة → the lowest (الأدنى)',tr:'من بين المطاعم الثلاثة، مطعم The Hills له أدنى الأسعار.'},
+  {q:"_______ is your house? — It's ten years old.",o:["How much","How many","How old","How long"],a:2,en:"age of the house → How old",ar:'السؤال عن العمر → How old',tr:'كم عمر بيتك؟ — عمره عشر سنوات.'},
+  // Exercise F — select the best answer
+  {q:"On the weekends, we like to take our boat to the _______.",o:["moon","land","earth","river"],a:3,en:"a boat goes on the → river",ar:'القارب يسير في → river (النهر)',tr:'في عطلة نهاية الأسبوع نحبّ أن نأخذ قاربنا إلى النهر.'},
+  {q:"The earth is made of _______ and water.",o:["land","sky","stars","sun"],a:0,en:"earth = land and water",ar:'الأرض مكوّنة من يابسة وماء → land',tr:'الأرض مكوّنة من اليابسة والماء.'},
+  {q:"Is 85 out of 100 a very _______ score on this test?",o:["low","high","wide","front"],a:1,en:"85/100 is a high score",ar:'٨٥ من ١٠٠ درجة مرتفعة → high',tr:'هل ٨٥ من ١٠٠ درجة مرتفعة جدًّا في هذا الاختبار؟'},
 ]
 };
 

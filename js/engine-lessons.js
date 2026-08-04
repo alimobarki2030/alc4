@@ -88,7 +88,7 @@ function build_vocab_sec(lk){
       <button class="vs" onclick="event.stopPropagation();say('${safe}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
       <div class="vflip-inner">
         <div class="vflip-face front">
-          <span class="ve">${v.em}</span>
+          <span class="ve">${vIcon(v)}</span>
           <div class="vw">${v.e}</div>
         </div>
         <div class="vflip-face back">

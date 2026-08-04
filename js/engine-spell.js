@@ -11,7 +11,7 @@ function open_spell(){
 }
 function start_spell(){
   spellWords=[];
-  SPELL_LESSONS.forEach(L=>L.w.forEach(x=>spellWords.push({e:x.e,a:x.a,em:x.em,lt:L.t})));
+  SPELL_LESSONS.forEach(L=>L.w.forEach(x=>spellWords.push({e:x.e,a:x.a,em:x.em,icon:x.icon,lt:L.t})));
   spellIdx=0;spellScore=0;render_spell();
 }
 function render_spell(){
@@ -33,7 +33,7 @@ function render_spell(){
   body.innerHTML=`<div class="sp-lesson">${w.lt}</div>
   <div class="sp-card">
     <button class="sp-listen" onclick="say('${safe}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg> اسمع الكلمة</button>
-    <div class="sp-emoji">${w.em}</div>
+    <div class="sp-emoji">${vIcon(w)}</div>
     <div class="sp-ar">${w.a}</div>
     <div class="sp-hintline" id="sp-hintline"></div>
     <input class="sp-input" id="sp-input" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="اكتب الكلمة..." onkeydown="if(event.key==='Enter')spell_enter()">

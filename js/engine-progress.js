@@ -158,7 +158,13 @@ const GRAMMAR_OPEN_MAP={prep:'open_prep',art:'open_art',wh:'open_wh',pronouns:'o
   check_streak_comeback();
   const openParam=new URLSearchParams(location.search).get('open');
   const fnName=openParam&&GRAMMAR_OPEN_MAP[openParam];
-  if(fnName&&typeof window[fnName]==='function')window[fnName]();
+  if(fnName&&typeof window[fnName]==='function'){
+    // Deep-linked into a concept from the grammar hub — there is no in-book
+    // context here, so "الرئيسية" must exit to the site homepage, not Book 4's
+    // home. go_home() reads this flag.
+    window.CONCEPT_DEEPLINK=true;
+    window[fnName]();
+  }
   else track_screen('home');
 })();
 

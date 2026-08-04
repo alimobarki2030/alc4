@@ -81,6 +81,9 @@ document.addEventListener('visibilitychange',()=>{if(document.visibilityState===
 window.addEventListener('pagehide',_flush_screen_time);
 
 function go_home(){
+  // Arrived here via a grammar-hub deep link (?open=…)? Then this book has no
+  // home to show the visitor — send them back to the site homepage instead.
+  if(window.CONCEPT_DEEPLINK){location.href='/';return;}
   show_screen('home');
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -104,6 +107,29 @@ function dedupe_by_q(arr){
 function shuffle_arr(a){
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
+}
+
+// ─── VOCAB ICONS ───
+// For abstract words with no fitting emoji (grammar/writing/geometry terms), a
+// vocab item can set `icon:'name'` instead of relying on `em`. These are clean
+// line icons (Lucide style) rendered inline — scalable, offline, and visually
+// consistent with the rest of the UI. vIcon() prefers the icon and falls back
+// to the emoji, so existing data (emoji only) keeps working unchanged.
+const VOCAB_ICONS={
+  'align-left':'<line x1="21" x2="3" y1="6" y2="6"/><line x1="15" x2="3" y1="12" y2="12"/><line x1="17" x2="3" y1="18" y2="18"/>',
+  'pilcrow':'<path d="M13 4v16"/><path d="M17 4v16"/><path d="M19 4H9.5a4.5 4.5 0 0 0 0 9H13"/>',
+  'indent':'<polyline points="3 8 7 12 3 16"/><line x1="21" x2="11" y1="12" y2="12"/><line x1="21" x2="11" y1="6" y2="6"/><line x1="21" x2="11" y1="18" y2="18"/>',
+  'quote':'<path d="M10 11H6a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2h1a1 1 0 0 1 1 1v7a4 4 0 0 1-4 4"/><path d="M20 11h-4a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2h1a1 1 0 0 1 1 1v7a4 4 0 0 1-4 4"/>',
+  'spell-check':'<path d="m6 16 6-12 6 12"/><path d="M8 12h8"/><path d="m16 20 2 2 4-4"/>',
+  'triangle':'<path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>'
+};
+function vIcon(o){
+  if(o&&o.icon&&VOCAB_ICONS[o.icon]){
+    return '<svg class="vico" viewBox="0 0 24 24" fill="none" stroke="currentColor" '+
+      'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+
+      VOCAB_ICONS[o.icon]+'</svg>';
+  }
+  return (o&&o.em)?o.em:'';
 }
 
 // ─── ACCESSIBILITY ───

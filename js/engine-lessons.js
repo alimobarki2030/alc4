@@ -743,6 +743,20 @@ function show_result(correct,total){
   if(pct>=50)document.getElementById('s1').classList.add('lit');
   if(pct>=70)document.getElementById('s2').classList.add('lit');
   if(pct>=90)document.getElementById('s3').classList.add('lit');
+  // Mistake review gets its own message: celebrate clearing the whole list,
+  // or show how many are left to keep practising.
+  if(CL==='mistakes'){
+    const remaining=Object.keys(MISTAKES).length;
+    if(remaining===0){
+      document.getElementById('m-emo').textContent='🎉';
+      document.getElementById('m-grade').textContent='أحسنت! أتقنت جميع أخطائك';
+      document.getElementById('m-grade').style.color='var(--g)';
+      document.getElementById('m-sub').textContent='خرجت كل الأسئلة من قائمة المراجعة';
+    }else{
+      document.getElementById('m-grade').textContent='أحسنت! واصل المراجعة';
+      document.getElementById('m-sub').textContent=`بقي ${remaining} سؤال في قائمة أخطائك`;
+    }
+  }
   document.getElementById('modal').classList.add('show');
   const nb=document.getElementById('m-next');
   if(nb){
@@ -755,7 +769,8 @@ function show_result(correct,total){
   apply_lessons();
   upd_global();
   save_progress();
-  if(pct>=90)confetti();
+  const clearedMistakes=CL==='mistakes'&&Object.keys(MISTAKES).length===0;
+  if(pct>=90||clearedMistakes)confetti();
 }
 
 function hide_modal(){document.getElementById('modal').classList.remove('show');}

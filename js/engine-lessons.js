@@ -758,11 +758,6 @@ function show_result(correct,total){
     }
   }
   document.getElementById('modal').classList.add('show');
-  const nb=document.getElementById('m-next');
-  if(nb){
-    const order=LESSON_KEYS;const i=order.indexOf(CL);
-    nb.style.display=(i>=0&&i<order.length-1)?'inline-block':'none';
-  }
   const prev=(LP[CL]&&LP[CL].pct)||0;
   const best=Math.max(prev,pct);
   LP[CL]={pct:best,done:best>=70};
@@ -783,13 +778,6 @@ function hide_modal(){document.getElementById('modal').classList.remove('show');
 function close_modal(){
   hide_modal();
   if(CL==='mistakes'||CL==='review'||CL==='final')go_home();
-}
-
-function next_lesson(){
-  const order=LESSON_KEYS;const i=order.indexOf(CL);
-  hide_modal();
-  if(i>=0&&i<order.length-1)open_lesson(order[i+1]);
-  else go_home();
 }
 
 function retry(){

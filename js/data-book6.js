@@ -7,10 +7,10 @@
 const BOOK_ID='book6';
 
 const LESSON_META={
-  l1:{ico:'🌦️',title:"Lesson 1 — How's the Weather?",sub:'الطقس والأحوال الجوية'},
-  l2:{ico:'✈️',title:'Lesson 2 — Taking a Trip',sub:'السفر والمطاعم'},
-  l3:{ico:'📮',title:'Lesson 3 — Sending Mail',sub:'البريد والبنك'},
-  l4:{ico:'🏕️',title:"Lesson 4 — Let's Take a Vacation",sub:'الإجازات والسفر'}
+  l1:{ico:'🌦️',title:"Lesson 1 — How's the Weather?",sub:'كيف حال الطقس؟ · الطقس وصياغة الأسئلة'},
+  l2:{ico:'✈️',title:'Lesson 2 — Taking a Trip',sub:'القيام برحلة · السفر والمطاعم'},
+  l3:{ico:'📮',title:'Lesson 3 — Sending Mail',sub:'إرسال البريد · البريد والبنك'},
+  l4:{ico:'🏕️',title:"Lesson 4 — Let's Take a Vacation",sub:'لنأخذ إجازة · الإجازات والأسئلة (Why…Because)'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 

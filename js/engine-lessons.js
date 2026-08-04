@@ -198,9 +198,15 @@ function build_gcard_body(g,lk,i){
   let html='';
   const checkHtml=g.check?build_check_widget(g.check,lk,i):'';
 
+  // A grammar card can supply `parts` — a list of {t:English term, d:Arabic
+  // note} — rendered as separate blocks (English LTR on top, Arabic below) to
+  // avoid the jumbled look of English words mixed inline into an RTL sentence.
+  const ruleInner=(g.parts&&g.parts.length)
+    ? `<div class="rb-parts">${g.parts.map(p=>`<div class="rb-part"><span class="rb-en" dir="ltr">${p.t}</span><span class="rb-pd">${p.d}</span></div>`).join('')}</div>`
+    : `<div class="rb-text">💡 ${g.rule}</div>`;
   html+=`<div class="rule-box">
     <div class="rb-label">القاعدة</div>
-    <div class="rb-text">💡 ${g.rule}</div>
+    ${ruleInner}
   </div>`;
 
   // Special: Ranks (Book 4 — inert unless g.isRanks is set)

@@ -186,6 +186,7 @@ l1:[
   {
     title:'That + Noun Clause (think)', ar:'جملة كاملة بعد think — أعتقد أنّ',
     rule:'نستخدم think/thinks بالحاضر وthought بالماضي + (that) + جملة كاملة — كلمة that اختيارية ونقدر نحذفها.',
+    parts:[{"t":"think / thinks","d":"للحاضر (thinks مع he/she/it) + (that) + جملة. كلمة that اختيارية. مثال: I think that it is good."},{"t":"thought","d":"للماضي + (that) + جملة. مثال: I thought that it was cold."}],
     check:{q:'Bruce _______ the fruit in California is very good.',o:['think','thinks','thought','thinking'],a:1,en:'Bruce = he → thinks',ar:'Bruce = هو → thinks'},
     formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'think / thinks / thought',c:'v'},{t:'(that)',c:'k'},{t:'+',c:'p'},{t:'sentence',c:'s'}],
     compare:[
@@ -262,6 +263,7 @@ l2:[
   {
     title:'Using Something, Nothing, Anything, and Else', ar:'something / nothing / anything / else',
     rule:'نستخدم something بالإثبات، anything بالنفي، وsomething أو anything بالسؤال — else تُضاف بعدها للسؤال عن شيء إضافي.',
+    parts:[{"t":"something","d":"في الإثبات. مثال: I want something."},{"t":"anything","d":"في النفي. مثال: I don't want anything."},{"t":"else","d":"تُضاف بعدها للسؤال عن شيء إضافي. مثال: Anything else? = شيء آخر؟"}],
     check:{q:"I didn't buy _______ at the store.",o:['something','nothing','anything','else'],a:2,en:'negative sentence → anything',ar:'جملة منفية → anything'},
     compare:[
       {c1:"I'd like something to drink.",c2:"I don't want anything to drink.",ar:'إثبات = something / نفي = anything'},
@@ -326,6 +328,7 @@ l4:[
   {
     title:'Combining Sentences with And/But', ar:'دمج الجمل — and/but',
     rule:'نستخدم and لربط جملتين متشابهتين بالمعنى (إضافة)، وbut لربط جملتين بمعنى متعاكس (تناقض).',
+    parts:[{"t":"and","d":"لربط جملتين متشابهتين بالمعنى (إضافة). مثال: I like tea and coffee."},{"t":"but","d":"لربط جملتين بمعنى متعاكس (تناقض). مثال: I like tea but not coffee."}],
     check:{q:"John speaks Spanish, _______ he doesn't speak French.",o:['and','but'],a:1,en:'opposite ideas → but',ar:'فكرتان متعاكستان → but',tr:'جون يتكلم إسباني، بس ما يتكلم فرنسي.'},
     compare:[
       {c1:'My vacation is next month.',c2:'My vacation is next month, and I want to travel.',ar:'and لإضافة فكرة مشابهة'},

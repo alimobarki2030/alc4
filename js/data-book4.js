@@ -230,6 +230,7 @@ l3:[
   {
     title:'May', ar:'يُسمح — طلب إذن رسمي',
     rule:'May I...? = طلب إذن رسمي | Can I...? = طلب إذن غير رسمي',
+    parts:[{"t":"May I ...?","d":"طلب إذن رسمي ومؤدّب. مثال: May I come in? = هل تسمح لي بالدخول؟"},{"t":"Can I ...?","d":"طلب إذن غير رسمي (بين الأصدقاء). مثال: Can I use your pen? = ممكن أستخدم قلمك؟"}],
     check:{q:'_______ I go to the library? (طلب إذن رسمي)',o:['Do','Can','May','Must'],a:2,en:'May I...? = formal permission',ar:'May = طلب إذن رسمي'},
     formula:[{t:'May',c:'k'},{t:'+',c:'p'},{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'base verb',c:'v'},{t:'?',c:'p'}],
     compare:[
@@ -266,6 +267,7 @@ l4:[
   {
     title:'Days Sequence', ar:'ترتيب الأيام',
     rule:'the day after tomorrow = بعد يومين | the day before yesterday = قبل يومين',
+    parts:[{"t":"the day after tomorrow","d":"بعد يومين (اليوم الذي يلي غدًا)."},{"t":"the day before yesterday","d":"قبل يومين (اليوم الذي قبل أمس)."}],
     check:{q:"لو اليوم Monday، فـ 'the day after tomorrow' هو؟",o:['Tuesday','Wednesday','Sunday','Saturday'],a:1,en:'Mon +1 = tomorrow, +2 = day after tomorrow',ar:'بعد الغد = يومين من اليوم'},
     formula:[],
     compare:[
@@ -279,6 +281,7 @@ l4:[
   {
     title:'This / That / These / Those', ar:'أسماء الإشارة',
     rule:'قريب = this/these | بعيد = that/those',
+    parts:[{"t":"this / these","d":"للقريب. this للمفرد، these للجمع. مثال: this book / these books."},{"t":"that / those","d":"للبعيد. that للمفرد، those للجمع. مثال: that car / those cars."}],
     check:{q:'_______ cars are big. (بعيد + جمع)',o:['This','That','These','Those'],a:3,en:'far + plural → those',ar:'بعيد + جمع → those'},
     formula:[{t:'Near',c:'k'},{t:'this',c:'v'},{t:'(مفرد)',c:'p'},{t:'these',c:'v'},{t:'(جمع)',c:'p'}],
     compare:[
@@ -306,6 +309,7 @@ l4:[
   {
     title:'-ed Sounds Review', ar:'مراجعة أصوات الماضي',
     rule:'مراجعة: /t/ مهموس | /d/ مجهور | /əd/ بعد t أو d',
+    parts:[{"t":"/t/","d":"بعد الأصوات المهموسة (k, p, s, ch, sh). مثال: walked, watched."},{"t":"/d/","d":"بعد الأصوات المجهورة والحركات. مثال: played, studied."},{"t":"/əd/","d":"بعد حرف t أو d. مثال: wanted, needed."}],
     check:{q:'أي كلمة تنطق /əd/؟',o:['played','smoked','wanted','talked'],a:2,en:'wanted ends in t/d → /əd/',ar:'تنتهي بـ t/d → /əd/'},
     formula:[],compare:[],examples:[],isSounds:true
   }

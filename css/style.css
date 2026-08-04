@@ -474,6 +474,13 @@ html.splash-seen #splash{display:none}
 .rule-box .rb-label{font-size:.68rem;font-weight:700;color:var(--b);letter-spacing:1px;
   text-transform:uppercase;margin-bottom:4px;font-family:'Cairo',sans-serif}
 .rule-box .rb-text{font-size:.85rem;font-weight:600;color:var(--navy);font-family:'Cairo',sans-serif}
+/* Structured rule: each English term on its own line with the Arabic note
+   below it, so English never gets jumbled inline into the RTL sentence. */
+.rule-box .rb-parts{display:flex;flex-direction:column;gap:8px}
+.rule-box .rb-part{background:rgba(255,255,255,.65);border:1px solid var(--bdr);border-radius:10px;padding:8px 12px}
+.rule-box .rb-en{display:inline-block;direction:ltr;font-family:'Inter',sans-serif;font-weight:800;
+  font-size:.9rem;color:var(--b);background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:2px 10px;margin-bottom:6px}
+.rule-box .rb-pd{display:block;font-size:.82rem;font-weight:600;color:#475569;font-family:'Cairo',sans-serif;line-height:1.7}
 
 /* Formula strip */
 .fstrip{display:flex;align-items:center;gap:5px;flex-wrap:wrap;

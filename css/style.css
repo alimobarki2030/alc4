@@ -55,7 +55,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .lcard-icon{font-size:2rem;display:block;margin-bottom:8px}
 .svgico{width:1em;height:1em;display:inline-block;vertical-align:-0.15em;stroke-width:2;flex-shrink:0}
 .lcard-num{font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.lcard-name{font-size:1rem;font-weight:700;color:var(--txt);margin:3px 0}
+.lcard-name{font-size:1rem;font-weight:700;color:var(--txt);margin:3px 0 1px}
+.lcard-name-ar{font-size:.92rem;font-weight:600;color:var(--txt);margin:0 0 3px}
 .lcard-sub{font-size:.82rem;color:var(--muted)}
 .lpbar{background:var(--bdr);border-radius:4px;height:4px;margin-top:10px}
 .lpfill{background:var(--g);height:4px;border-radius:4px;transition:width .4s;width:0%}

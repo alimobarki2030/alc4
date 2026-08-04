@@ -653,7 +653,16 @@ const REVIEW=[
 ];
 
 // ═══════════════════════════════════════
-// ROUTING MANIFEST — home + lesson + review + mistake-review screens
+// LISTENING — YouTube listening & reading quizzes (LangVox)
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','rscreen','mkscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',mkscreen:'مراجعة الأخطاء'};
+const YT_VIDEOS=[
+  {id:'7e1IlBMn4TM',t:'Quiz A',s:'استماع وقراءة مع الحل'},
+  {id:'_yfEa0ONRnc',t:'Quiz B',s:'استماع وقراءة مع الحل'},
+  {id:'zO_KByxJk6E',t:'Quiz C',s:'استماع وقراءة مع الحل'},
+];
+
+// ═══════════════════════════════════════
+// ROUTING MANIFEST — home + lesson + review + listening + mistake-review
+// ═══════════════════════════════════════
+const SCREENS=['home','lscreen','rscreen','ytscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',ytscreen:'الاستماع',mkscreen:'مراجعة الأخطاء'};

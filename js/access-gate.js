@@ -2,15 +2,37 @@
 // ACCESS GATE — shared secret-code check via Supabase.
 // The code itself never reaches the client: verify_access_code() runs
 // server-side (security definer) and returns only true/false.
-// Once unlocked, the choice is remembered in localStorage — no further
-// network calls, works fully offline afterward.
+// Once unlocked, the device is remembered in BOTH localStorage and a
+// long-lived cookie, and the window is refreshed on every visit (sliding
+// expiry). This way a device that keeps being used never sees the gate
+// again. On iOS Safari, script-writable storage is still capped at ~7 days
+// of no first-party interaction (Apple ITP), so an inactive device may be
+// asked again after a week — installing the app to the Home Screen removes
+// that cap. Works fully offline after the first unlock.
 // ═══════════════════════════════════════
 (function(){
   const SUPABASE_URL = 'https://rfkqfwijuulgdjzqrcpi.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJma3Fmd2lqdXVsZ2RqenFyY3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU3NjUzMzQsImV4cCI6MjEwMTM0MTMzNH0.4oTM9bqa_3orsn_ZxxndrnCwt-eMC45ayqFqOX_tzsA';
   const STORAGE_KEY = 'alc_access_ok';
+  const REMEMBER_DAYS = 180;
 
-  if (localStorage.getItem(STORAGE_KEY) === '1') return;
+  // Remember the unlock in localStorage AND a cookie, refreshing the cookie's
+  // max-age on every call so an actively-used device keeps its access.
+  function rememberDevice(){
+    try { localStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+    try {
+      document.cookie = STORAGE_KEY + '=1; max-age=' + (REMEMBER_DAYS*24*60*60) + '; path=/; SameSite=Lax';
+    } catch (e) {}
+  }
+  function isRemembered(){
+    try { if (localStorage.getItem(STORAGE_KEY) === '1') return true; } catch (e) {}
+    try { if (document.cookie.split('; ').indexOf(STORAGE_KEY + '=1') !== -1) return true; } catch (e) {}
+    return false;
+  }
+
+  // Already unlocked on this device: re-arm both stores (restores whichever
+  // was evicted, slides the expiry forward) and skip the gate.
+  if (isRemembered()) { rememberDevice(); return; }
 
   function buildGate(){
     const overlay = document.createElement('div');
@@ -49,7 +71,7 @@
         });
         const ok = await res.json();
         if (ok === true) {
-          localStorage.setItem(STORAGE_KEY, '1');
+          rememberDevice();
           document.documentElement.style.overflow = '';
           overlay.remove();
           // Focusing the input can scroll the page behind the gate (mobile);

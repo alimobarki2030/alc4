@@ -75,7 +75,7 @@ l1:[
   {e:'which',a:'أيّ',em:'❓'},
 ],
 l2:[
-  {e:'barbershop',a:'محل الحلاقة',em:'💈'},
+  {e:'barbershop',a:'محل الحلاقة',em:'💇‍♂️'},
   {e:'bathroom',a:'الحمام',em:'🛁'},
   {e:'birthday',a:'عيد الميلاد',em:'🎂'},
   {e:'brush',a:'فرشاة (شعر)',em:'🪮'},

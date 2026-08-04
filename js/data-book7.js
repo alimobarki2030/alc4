@@ -6,10 +6,10 @@
 const BOOK_ID='book7';
 
 const LESSON_META={
-  l1:{ico:'🔷',title:'Lesson 1 — Shapes and Lines',sub:'الأشكال والخطوط والمقارنة'},
-  l2:{ico:'🧮',title:'Lesson 2 — Understanding Math',sub:'العمليات الحسابية والمقارنة والفهم القرائي'},
-  l3:{ico:'🏡',title:'Lesson 3 — American Homes',sub:'البيوت وأجزاؤها وظروف المكان والتفضيل'},
-  l4:{ico:'🛋️',title:'Lesson 4 — Inside the House',sub:'الأثاث والمطبخ والغرض من الأشياء وظروف التكرار'}
+  l1:{ico:'🔷',title:'Lesson 1 — Shapes and Lines',sub:'الأشكال والخطوط · وصف الأشياء والمقارنة بينها'},
+  l2:{ico:'🧮',title:'Lesson 2 — Understanding Math',sub:'فهم الرياضيات · العمليات الحسابية والفهم القرائي'},
+  l3:{ico:'🏡',title:'Lesson 3 — American Homes',sub:'البيوت الأمريكية · ظروف المكان وصيغة التفضيل'},
+  l4:{ico:'🛋️',title:'Lesson 4 — Inside the House',sub:'داخل البيت · الأثاث والمطبخ والغرض من الأشياء'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 

@@ -19,7 +19,7 @@ function show_storage_warning(){
 }
 function save_progress(){
   if(!STORAGE_OK)return;
-  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP,rw:RW}));}
+  try{localStorage.setItem(PKEY,JSON.stringify({xp:XP,streak:STK,lessons:LP,rw:RW,mistakes:MISTAKES}));}
   catch(e){STORAGE_OK=false;show_storage_warning();}
 }
 function apply_lessons(){
@@ -51,6 +51,17 @@ function apply_lessons(){
     const R=LP.review;
     rb.textContent=(R&&typeof R.pct==='number')?`أفضل نتيجة ${R.pct}%${R.done?' ✓':''}`:'ابدأ المراجعة';
   }
+  update_mistakes_card();
+}
+// Show the "review your mistakes" card only when the bank has questions, and
+// keep its count fresh. Safe no-op on pages without the card markup.
+function update_mistakes_card(){
+  const wrap=document.getElementById('mistakes-card-wrap');
+  if(!wrap)return;
+  const n=Object.keys(MISTAKES).length;
+  wrap.style.display=n>0?'block':'none';
+  const b=document.getElementById('mistakes-badge');
+  if(b)b.textContent=n+' سؤال للمراجعة';
 }
 // Fixed: denominator is now derived from LESSON_KEYS.length instead of a
 // hardcoded /4, so books with a different lesson count report correctly.
@@ -70,7 +81,7 @@ function load_progress(){
   let data=null;
   try{data=JSON.parse(localStorage.getItem(PKEY));}catch(e){}
   if(data){
-    XP=data.xp||0;STK=data.streak||0;LP=data.lessons||{};RW=data.rw||{};
+    XP=data.xp||0;STK=data.streak||0;LP=data.lessons||{};RW=data.rw||{};MISTAKES=data.mistakes||{};
     document.getElementById('xp').textContent=XP;
     document.getElementById('streak').textContent=STK;
   }

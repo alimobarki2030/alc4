@@ -10,6 +10,7 @@
 let CL=null,CT='learn',XP=0,STK=0,TANS={},built={};
 let LP={};
 let RW={};
+let MISTAKES={}; // bank of missed quiz questions, keyed by question text
 
 // ─── SPEECH ───
 // Picks the best-quality English voice available on the visitor's own

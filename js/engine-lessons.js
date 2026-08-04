@@ -687,8 +687,15 @@ function ans(pfx,qi,oi,correct){
     if(!ok){
       MISTAKES[q.q]={q:q.q,o:q.o,a:q.a,tr:q.tr||'',ar:q.ar||'',streak:0};
     }else if(MISTAKES[q.q]){
-      MISTAKES[q.q].streak=(MISTAKES[q.q].streak||0)+1;
-      if(MISTAKES[q.q].streak>=2)delete MISTAKES[q.q];
+      // In the dedicated mistake review, answering correctly clears the item
+      // right away — the student came here to master it. In ordinary lesson
+      // tests, a previously-missed question needs two correct answers to master.
+      if(CL==='mistakes'){
+        delete MISTAKES[q.q];
+      }else{
+        MISTAKES[q.q].streak=(MISTAKES[q.q].streak||0)+1;
+        if(MISTAKES[q.q].streak>=2)delete MISTAKES[q.q];
+      }
     }
     update_mistakes_card();
   }
@@ -751,17 +758,27 @@ function show_result(correct,total){
   if(pct>=90)confetti();
 }
 
-function close_modal(){document.getElementById('modal').classList.remove('show');}
+function hide_modal(){document.getElementById('modal').classList.remove('show');}
+
+// "متابعة" (continue). Lesson tests stay on the lesson so the student can
+// switch tabs; the standalone quizzes (mistake bank / review / final) have
+// nothing more to do on their screen, so return home where the updated
+// cards (mistake count, best scores) are visible instead of leaving the
+// student stranded on the finished quiz.
+function close_modal(){
+  hide_modal();
+  if(CL==='mistakes'||CL==='review'||CL==='final')go_home();
+}
 
 function next_lesson(){
   const order=LESSON_KEYS;const i=order.indexOf(CL);
-  close_modal();
+  hide_modal();
   if(i>=0&&i<order.length-1)open_lesson(order[i+1]);
   else go_home();
 }
 
 function retry(){
-  close_modal();
+  hide_modal();
   const {elId,prefix}=current_quiz_target();
   TANS={};delete built[prefix+CL];
   document.getElementById(elId).innerHTML='';

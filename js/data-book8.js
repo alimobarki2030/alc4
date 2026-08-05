@@ -1,0 +1,233 @@
+// ═══════════════════════════════════════
+// DATA — BOOK 8
+// Lesson 1 (Getting directions) — vocab, grammar, word-order, per-lesson quiz.
+// Built lesson by lesson; more lessons get appended here later.
+// ═══════════════════════════════════════
+const BOOK_ID='book8';
+
+const LESSON_META={
+  l1:{ico:'🧭',title:'Lesson 1 — Getting directions',sub:'الاتجاهات والإرشاد · المستقبل بـ BE going to · المقارنة'}
+};
+const LESSON_KEYS=Object.keys(LESSON_META);
+
+// ═══════════════════════════════════════
+// VOCABULARY
+// ═══════════════════════════════════════
+const VOCAB={
+l1:[
+  // — الاتجاهات والطُّرق —
+  {e:'direction',a:'اتجاه',em:'🧭'},
+  {e:'directions',a:'إرشادات الطريق',em:'🧭'},
+  {e:'north',a:'شمال',em:'⬆️'},
+  {e:'south',a:'جنوب',em:'⬇️'},
+  {e:'east',a:'شرق',em:'➡️'},
+  {e:'west',a:'غرب',em:'⬅️'},
+  {e:'straight (ahead)',a:'مستقيم إلى الأمام',em:'⏫'},
+  {e:'corner',a:'الزاوية / الناصية',em:'📐'},
+  {e:'block',a:'مربّع سكني (مسافة بين شارعين)',em:'🟦'},
+  {e:'avenue',a:'جادّة (شارع كبير)',em:'🛣️'},
+  {e:'road',a:'طريق',em:'🛣️'},
+  {e:'highway',a:'طريق سريع',em:'🛣️'},
+  {e:'freeway',a:'طريق حُرّ سريع',em:'🛣️'},
+  {e:'exit',a:'مَخرج',em:'🚪'},
+  {e:'mile',a:'ميل (1.6 كم)',em:'📏'},
+  {e:'kilometer',a:'كيلومتر',em:'📏'},
+  {e:'park',a:'حديقة عامّة',em:'🏞️'},
+  {e:'ground',a:'الأرض',em:'🟫'},
+  {e:'ice',a:'جليد',em:'🧊'},
+  {e:'follow',a:'يتبع',em:'👣'},
+  {e:'land',a:'تهبط (طائرة)',past:'landed',pa:'هبطت',em:'🛬'},
+  {e:'take off',a:'يُقلع (يرتفع)',past:'took off',pa:'أقلع',em:'🛫'},
+  {e:'turn (left/right)',a:'ينعطف (يسار/يمين)',em:'↩️'},
+  {e:'take (a right/left)',a:'يأخذ (يمين/يسار)',em:'↪️'},
+  {e:'grow',a:'ينمو',past:'grew',pa:'نما',em:'🌱'},
+  {e:'fall (down)',a:'يسقط',past:'fell',pa:'سقط',em:'🍂'},
+  {e:'freeze',a:'يتجمّد',past:'froze',pa:'تجمّد',em:'🥶'},
+  // — الحرارة —
+  {e:'temperature',a:'درجة الحرارة',em:'🌡️'},
+  {e:'thermometer',a:'ميزان الحرارة',em:'🌡️'},
+  {e:'degrees (°)',a:'درجات',em:'🌡️'},
+  {e:'Fahrenheit (F)',a:'فهرنهايت',em:'🌡️'},
+  {e:'Celsius (C) / centigrade',a:'مئوية',em:'🌡️'},
+  // — المقارنة —
+  {e:'good',a:'جيّد',em:'👍'},
+  {e:'better',a:'أفضل',em:'⬆️'},
+  {e:'best',a:'الأفضل',em:'🥇'},
+  {e:'bad',a:'سيّئ',em:'👎'},
+  {e:'worse',a:'أسوأ',em:'⬇️'},
+  {e:'worst',a:'الأسوأ',em:'🚫'},
+  // — الكتابة / علامات الترقيم —
+  {e:'exclamation mark',a:'علامة التعجّب ( ! )',em:'❗'},
+  {e:'quotation marks',a:'علامتا الاقتباس',em:'💬',icon:'quote'},
+]
+};
+
+// ═══════════════════════════════════════
+// GRAMMAR (قواعد)
+// ═══════════════════════════════════════
+const GRAMMAR={
+l1:[
+  {
+    title:'The Future — BE going to', ar:'المستقبل بـ BE going to',
+    rule:'للتحدّث عن المستقبل أو خطّة قادمة: (am/is/are) + going to + الفعل المجرّد.',
+    parts:[
+      {t:'I am going to …',d:'أنا + am. مثال: I am going to leave at 8:00. = سأغادر الساعة 8:00.'},
+      {t:'He / She / It is going to …',d:'المفرد الغائب + is. مثال: She is going to land now. = ستهبط الآن.'},
+      {t:'We / You / They are going to …',d:'الجمع + are. مثال: They are going to arrive at noon.'},
+      {t:'الاختصارات',d:"I'm · He's · She's · It's · We're · You're · They're going to…"},
+    ],
+    check:{q:'The plane _______ going to land in one hour.',o:['am','is','are','be'],a:1,en:'the plane (it) → is going to',ar:'الطائرة (مفرد) → is going to'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'am/is/are',c:'v'},{t:'+',c:'p'},{t:'going to + verb',c:'k'}],
+    compare:[
+      {c1:'She leaves at 8:00.',c2:'She is going to leave at 8:00.',ar:'مستقبل → is going to'},
+      {c1:'They arrive at noon.',c2:'They are going to arrive at noon.',ar:'جمع → are going to'},
+    ],
+    examples:[
+      {s:"I'm going to grow tomatoes this summer.",tr:'سأزرع الطماطم هذا الصيف.',ar:'I am → I\'m going to',ok:true},
+      {s:"The plane is going to take off in an hour.",tr:'ستُقلع الطائرة بعد ساعة.',ar:'the plane (it) → is going to',ok:true},
+      {s:'They is going to eat at noon.',wrong:'is',right:'are',tr:'they جمع → are going to.',ok:false},
+    ]
+  },
+  {
+    title:'Negative — BE going to', ar:'النفي مع BE going to',
+    rule:'للنفي نضع not بعد am/is/are: (am not / isn\'t / aren\'t) + going to + الفعل.',
+    parts:[
+      {t:"I'm not going to …",d:'أنا + am not. مثال: I\'m not going to buy a jacket.'},
+      {t:"He / She / It isn't going to …",d:'المفرد + isn\'t. مثال: It isn\'t going to rain.'},
+      {t:"We / You / They aren't going to …",d:'الجمع + aren\'t. مثال: We aren\'t going to leave now.'},
+    ],
+    check:{q:"It _______ going to rain today.",o:["not","isn't","aren't","am not"],a:1,en:"it → isn't going to",ar:'it (مفرد) → isn\'t going to'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:"am not/isn't/aren't",c:'n'},{t:'+',c:'p'},{t:'going to + verb',c:'v'}],
+    compare:[
+      {c1:'I am going to buy a sweater.',c2:"I'm not going to buy a sweater.",ar:'إثبات ↔ نفي'},
+      {c1:'They are going to leave.',c2:"They aren't going to leave.",ar:'are → aren\'t'},
+    ],
+    examples:[
+      {s:"I'm not going to cook lamb. I'm going to cook beef.",tr:'لن أطبخ لحم الخروف، سأطبخ لحم البقر.',ar:'am not = I\'m not',ok:true},
+      {s:"Our plane isn't going to take off on time.",tr:'لن تُقلع طائرتنا في موعدها.',ar:'the plane → isn\'t',ok:true},
+      {s:"They not going to swim.",wrong:'not',right:"aren't",tr:'لا بدّ من فعل الكينونة في النفي → aren\'t going to.',ok:false},
+    ]
+  },
+  {
+    title:'good / bad → better · worse · best · worst', ar:'المقارنة والتفضيل (شاذّة)',
+    rule:'good وbad صفتان شاذّتان: للمقارنة بين اثنين نستخدم better/worse … than، وللأفضل/الأسوأ بين الجميع the best/the worst.',
+    parts:[
+      {t:'good → better → the best',d:'جيّد ← أفضل ← الأفضل. مثال: Kate\'s score is better than Lee\'s.'},
+      {t:'bad → worse → the worst',d:'سيّئ ← أسوأ ← الأسوأ. مثال: Bob\'s score is the worst of all.'},
+      {t:'better / worse + than',d:'عند المقارنة بين اثنين نتبعها بـ than (مِن).'},
+      {t:'the best / the worst',d:'للأعلى أو الأدنى بين مجموعة نضع the قبلها.'},
+    ],
+    check:{q:'Robin got 100. That is _______ score of all.',o:['better','the best','good','worse'],a:1,en:'highest of all → the best',ar:'الأعلى بين الجميع → the best'},
+    compare:[
+      {c1:'Kate: 98, Lee: 93.',c2:"Kate's score is better than Lee's.",ar:'مقارنة بين اثنين → better than'},
+      {c1:'Bob: 58 (lowest).',c2:"Bob's score is the worst.",ar:'الأدنى بين الجميع → the worst'},
+    ],
+    examples:[
+      {s:"Jet Stream Air is better than Silver Air.",tr:'طيران جِت ستريم أفضل من طيران سِلفر.',ar:'better + than',ok:true},
+      {s:"Blue Sky is the best of all the airlines.",tr:'بلو سكاي هو الأفضل بين كل شركات الطيران.',ar:'the best of all',ok:true},
+      {s:"My score is more good than yours.",wrong:'more good',right:'better',tr:'good شاذّة: لا نقول more good بل better.',ok:false},
+    ]
+  }
+]
+};
+
+// ═══════════════════════════════════════
+// WO — رتّب الجملة (word order)
+// ═══════════════════════════════════════
+const WO={
+l1:[
+  {words:['Take','Highway','35','north','for','15','miles'],ans:'Take Highway 35 north for 15 miles.',tr:'اسلك الطريق السريع 35 شمالاً لمسافة 15 ميلاً.',ar:'إعطاء الاتجاهات'},
+  {words:['Go','straight','ahead','for','two','blocks'],ans:'Go straight ahead for two blocks.',tr:'اتّجه مستقيماً إلى الأمام مربّعين سكنيّين.',ar:'straight ahead'},
+  {words:['Take','a','right','at','the','corner'],ans:'Take a right at the corner.',tr:'انعطف يميناً عند الزاوية.',ar:'take a right'},
+  {words:["I'm",'going','to','leave','at','8:00'],ans:"I'm going to leave at 8:00.",tr:'سأغادر الساعة 8:00.',ar:'BE going to'},
+  {words:['The','plane','is','going','to','land','now'],ans:'The plane is going to land now.',tr:'ستهبط الطائرة الآن.',ar:'is going to + land'},
+  {words:["Kate's",'score','is','better','than',"Lee's"],ans:"Kate's score is better than Lee's.",tr:'درجة كيت أفضل من درجة لي.',ar:'better than'},
+  {words:['Water','freezes','at','32','degrees','Fahrenheit'],ans:'Water freezes at 32 degrees Fahrenheit.',tr:'يتجمّد الماء عند 32 درجة فهرنهايت.',ar:'freeze / degrees'},
+]
+};
+
+// ═══════════════════════════════════════
+// EE — "اختبر" (lesson quiz, multiple choice)
+// المصدر: أسئلة التقييم الرسمية (Exercise H) + الاستنتاج + المقارنة
+// ═══════════════════════════════════════
+const EE={
+l1:[
+  // — Evaluation Exercise H (الرسمية) —
+  {q:"North, south, east, and west are _______.",o:["opposites","directions","degrees","temperatures"],a:1,en:"N/S/E/W are directions",ar:'الجهات الأربع → directions (اتجاهات)',tr:'الشمال والجنوب والشرق والغرب اتجاهات.'},
+  {q:"A _______ of 32°F is the same as 0°C.",o:["comma","direction","thermometer","temperature"],a:3,en:"32°F = 0°C is a temperature",ar:'32 فهرنهايت = صفر مئوية → درجة حرارة',tr:'درجة حرارة 32 فهرنهايت تساوي صفر مئوية.'},
+  {q:"Some _______ show both Fahrenheit and Celsius.",o:["thermometers","blocks","corners","exclamations"],a:0,en:"instrument that shows temperature → thermometer",ar:'أداة قياس الحرارة → thermometer',tr:'بعض موازين الحرارة تُظهر الفهرنهايت والمئوية معاً.'},
+  {q:"Today, the temperature is below 20°F. I can see _______ on the ground.",o:["glass","snow","water","degrees"],a:1,en:"below freezing → snow",ar:'أقل من التجمّد → ثلج (snow)',tr:'اليوم درجة الحرارة أقل من 20 فهرنهايت. أرى ثلجاً على الأرض.'},
+  {q:"People like to go to the park because they can see _______.",o:["soldiers and barracks","books and libraries","grass and trees","vehicles and garages"],a:2,en:"in a park → grass and trees",ar:'في الحديقة → عُشب وأشجار',tr:'يحبّ الناس الذهاب إلى الحديقة لأنهم يرون العُشب والأشجار.'},
+  {q:"A thermometer shows the temperature in _______.",o:["miles","blocks","degrees","years"],a:2,en:"temperature is measured in degrees",ar:'الحرارة تُقاس بالدرجات → degrees',tr:'يُظهر ميزان الحرارة درجة الحرارة بالدرجات.'},
+  {q:"Walk _______ for two blocks to Jones Street.",o:["straight","some","curved","opposite"],a:0,en:"walk straight ahead",ar:'امشِ مستقيماً → straight',tr:'امشِ مستقيماً مربّعين سكنيّين حتى شارع جونز.'},
+  {q:"It's very dry this summer. _______ need water to grow.",o:["Buildings","Dishes","Shoes","Plants"],a:3,en:"things that grow → plants",ar:'ما ينمو ويحتاج ماءً → النباتات',tr:'الصيف جافّ جداً. تحتاج النباتات إلى الماء لتنمو.'},
+  {q:"I want to take this road. _______",o:["It is the shortest.","It's the cheapest.","It doesn't work.","It's nice to sit on."],a:0,en:"choose a road because it's shortest",ar:'نختار الطريق لأنه الأقصر → the shortest',tr:'أريد سلوك هذا الطريق. إنه الأقصر.'},
+  {q:"_______ come to my house tomorrow night?",o:["Are you going to","To you are going","Are you going","You to are going"],a:0,en:"question with BE going to",ar:'سؤال بـ BE going to → Are you going to',tr:'هل ستأتي إلى بيتي ليلة الغد؟'},
+  {q:"You can walk to the post office. Walk straight ahead for 4 _______.",o:["inches","blocks","degrees","freeways"],a:1,en:"distance in a town → blocks",ar:'المسافة في المدينة تُقاس بالمربّعات → blocks',tr:'يمكنك المشي إلى مكتب البريد. امشِ مستقيماً أربعة مربّعات.'},
+  {q:"Our plane takes off from San Antonio at 2:00 and _______ in Chicago at 4:30.",o:["follows","takes","lands","falls"],a:2,en:"a plane lands",ar:'الطائرة تهبط → lands',tr:'تُقلع طائرتنا من سان أنطونيو الساعة 2:00 وتهبط في شيكاغو الساعة 4:30.'},
+  {q:"I need to go to the library. Can you give me _______?",o:["miles","degrees","directions","roads"],a:2,en:"ask for directions",ar:'نطلب الإرشادات → directions',tr:'أريد الذهاب إلى المكتبة. هل يمكنك أن تعطيني الإرشادات؟'},
+  {q:"Take this highway for 10 miles. Get off at the _______ to Jefferson Street.",o:["block","park","mile","exit"],a:3,en:"leave a highway at the exit",ar:'نغادر الطريق السريع من المَخرج → exit',tr:'اسلك هذا الطريق السريع 10 أميال، واخرج من مَخرج شارع جيفرسون.'},
+  // — Reading: Making inferences (الاستنتاج) —
+  {q:"I studied last night, and I think I'll get a good score today. — This means:",o:["You're going to lunch.","You'll play football.","You'll have a test today.","You're doing homework."],a:2,en:"studied + good score → a test",ar:'ذاكر + درجة جيّدة → عنده اختبار اليوم',tr:'ذاكرتُ ليلة أمس وأظنّ أني سأحصل على درجة جيّدة اليوم. → عندك اختبار اليوم.'},
+  {q:"Mr. and Mrs. White got their traveler's checks, and now they're leaving. — This means:",o:["They're staying at a hospital.","They're going on a trip.","They're going to the bank.","They're driving a new car."],a:1,en:"traveler's checks → a trip",ar:'شيكات سياحية → ذاهبان في رحلة',tr:'أخذ السيد والسيدة وايت شيكاتهما السياحية والآن يغادران. → ذاهبان في رحلة.'},
+  {q:"Class starts at 8:30 a.m., and you're late! — This means:",o:["It's after 8:30 a.m.","It's 7 in the morning.","It's 5 o'clock.","It's 8:25 a.m."],a:0,en:"late for 8:30 → after 8:30",ar:'متأخّر عن 8:30 → الوقت بعد 8:30',tr:'يبدأ الصفّ 8:30 صباحاً وأنت متأخّر! → الوقت بعد 8:30.'},
+  {q:"Joe put on a heavy coat, a hat, and gloves, and left the building. — The season is:",o:["summer","winter","spring","fall"],a:1,en:"heavy coat + gloves → winter",ar:'معطف ثقيل وقفازات → الشتاء',tr:'ارتدى جو معطفاً ثقيلاً وقبّعة وقفازات وخرج. → الفصل شتاء.'},
+  {q:"My friend Maria is from Spain, and she speaks two languages. — She speaks:",o:["English and Arabic","French, English, and Spanish","only French and English","English and Spanish"],a:3,en:"from Spain + two languages → English and Spanish",ar:'من إسبانيا + لغتان → الإنجليزية والإسبانية',tr:'صديقتي ماريا من إسبانيا وتتحدّث لغتين. → الإنجليزية والإسبانية.'},
+  {q:"The Johnsons left the store with a couch, an armchair, a coffee table, and two end tables. — They:",o:["bought a new car","needed new clothes","needed living room furniture","went to eat dinner"],a:2,en:"couch + armchair + tables → living room furniture",ar:'أريكة وطاولات → أثاث غرفة معيشة',tr:'خرج آل جونسون من المتجر بأريكة وكرسيّ وطاولة قهوة وطاولتين جانبيّتين. → احتاجوا أثاث غرفة المعيشة.'},
+  {q:"For lunch today, Sam ate two sandwiches, three pieces of chicken, and some salad. — This means:",o:["He had a big breakfast.","He was very hungry.","He didn't eat much.","He wasn't hungry."],a:1,en:"ate a lot → very hungry",ar:'أكل كثيراً → كان جائعاً جداً',tr:'في الغداء أكل سام ساندويتشين وثلاث قطع دجاج وبعض السلطة. → كان جائعاً جداً.'},
+  {q:"Sally bought flour, butter, sugar, and chocolate at the store. — She:",o:["wants to make soup","wants to make a sandwich","didn't eat breakfast","wants to make cookies"],a:3,en:"flour + sugar + chocolate → cookies",ar:'طحين وسكّر وشوكولاتة → تريد صنع كوكيز',tr:'اشترت سالي طحيناً وزبدةً وسكّراً وشوكولاتة. → تريد صنع كوكيز.'},
+  // — Grammar: comparison with test scores (المقارنة) —
+  {q:"Robin has 100. That is _______ score of all.",o:["better","good","the best","worse"],a:2,en:"highest of all → the best",ar:'الأعلى بين الجميع → the best',tr:'حصل روبن على 100. تلك هي أفضل درجة على الإطلاق.'},
+  {q:"Kate got 98 and Lee got 93. Kate's score is _______ Lee's.",o:["worse than","the best","better than","the worst"],a:2,en:"98 > 93 → better than",ar:'98 أعلى من 93 → better than',tr:'حصلت كيت على 98 ولي على 93. درجة كيت أفضل من درجة لي.'},
+  {q:"Bob got 58 — the lowest. Bob's score is _______.",o:["the best","better","the worst","good"],a:2,en:"lowest of all → the worst",ar:'الأدنى بين الجميع → the worst',tr:'حصل بوب على 58، وهي الأدنى. درجة بوب هي الأسوأ.'},
+  {q:"Tina got 62 and Scott got 83. Tina's score is _______ Scott's.",o:["better than","worse than","the best","good"],a:1,en:"62 < 83 → worse than",ar:'62 أقل من 83 → worse than',tr:'حصلت تينا على 62 وسكوت على 83. درجة تينا أسوأ من درجة سكوت.'},
+  {q:"We're going to finish _______ time.",o:["in","at","on","for"],a:2,en:"on time = في الموعد",ar:'في الموعد → on time',tr:'سننهي العمل في الموعد.'},
+  {q:"Highway 37 _______ its number to 281 when you follow it north.",o:["changes","lands","grows","falls"],a:0,en:"the number changes",ar:'يتغيّر الرقم → changes',tr:'يتغيّر رقم الطريق السريع 37 إلى 281 عندما تتبعه شمالاً.'},
+]
+};
+
+// ═══════════════════════════════════════
+// REVIEW (مراجعة)
+// ═══════════════════════════════════════
+const REVIEW=[
+  {q:"Go _______ Pine Street to Main Street and turn left.",o:["up","for","of","at"],a:0,en:"go up a street",ar:'go up = اصعد/اسلك الشارع',tr:'اسلك شارع باين حتى الشارع الرئيسي ثم انعطف يساراً.'},
+  {q:"The plane is going to touch the _______ in a second.",o:["sky","ground","exit","corner"],a:1,en:"landing → touch the ground",ar:'الهبوط → تلامس الأرض (ground)',tr:'ستلامس الطائرة الأرض بعد لحظة.'},
+  {q:"There are 1.6 _______ in one mile.",o:["miles","exits","kilometers","degrees"],a:2,en:"1 mile ≈ 1.6 km",ar:'الميل ≈ 1.6 كيلومتر',tr:'في الميل الواحد 1.6 كيلومتر.'},
+  {q:"Water boils at 212°F or 100°C. Water _______ at 32°F.",o:["boils","grows","freezes","lands"],a:2,en:"32°F = freezing",ar:'32 فهرنهايت = التجمّد → freezes',tr:'يغلي الماء عند 212 فهرنهايت أو 100 مئوية، ويتجمّد عند 32 فهرنهايت.'},
+  {q:"When are we going to leave? — We _______ going to leave at 9:00.",o:["am","is","are","be"],a:2,en:"we → are going to",ar:'we → are going to',tr:'متى سنغادر؟ — سنغادر الساعة 9:00.'},
+  {q:"That plane isn't landing. It's _______.",o:["taking off","falling","freezing","growing"],a:0,en:"going up → taking off",ar:'ترتفع → taking off (تُقلع)',tr:'تلك الطائرة لا تهبط، بل تُقلع.'},
+  {q:"The bookstore is on the _______ of Jefferson and 3rd.",o:["exit","mile","corner","degree"],a:2,en:"meeting of two streets → corner",ar:'التقاء شارعين → corner (الزاوية)',tr:'المكتبة على زاوية شارعَي جيفرسون والثالث.'},
+  {q:"Silver Star is _______ airline of all — everyone avoids it.",o:["the best","better","the worst","good"],a:2,en:"everyone avoids → the worst",ar:'الجميع يتجنّبها → الأسوأ (the worst)',tr:'سِلفر ستار هي أسوأ شركة طيران على الإطلاق — الجميع يتجنّبها.'},
+];
+EE.review=REVIEW;
+
+// ═══════════════════════════════════════
+// FINAL EXAM (الاختبار النهائي) — الدرس 1 فقط حالياً
+// ═══════════════════════════════════════
+const FINAL=dedupe_by_q([
+  ...EE.l1,
+]);
+EE.final=FINAL;
+
+// ═══════════════════════════════════════
+// SPELLING — write from listening
+// ═══════════════════════════════════════
+const SPELL_LESSONS=[
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 1 — الاتجاهات والحرارة',w:[
+    {e:'north',a:'شمال',em:'⬆️'},{e:'south',a:'جنوب',em:'⬇️'},{e:'east',a:'شرق',em:'➡️'},
+    {e:'west',a:'غرب',em:'⬅️'},{e:'highway',a:'طريق سريع',em:'🛣️'},{e:'corner',a:'الزاوية',em:'📐'},
+    {e:'exit',a:'مَخرج',em:'🚪'},{e:'temperature',a:'درجة الحرارة',em:'🌡️'},
+    {e:'degrees',a:'درجات',em:'🌡️'},
+  ]},
+];
+
+// ═══════════════════════════════════════
+// LISTENING — لا يوجد فيديوهات لهذا الكتاب بعد
+// ═══════════════════════════════════════
+const YT_VIDEOS=[];
+
+// ═══════════════════════════════════════
+// ROUTING MANIFEST
+// ═══════════════════════════════════════
+const SCREENS=['home','lscreen','rscreen','ytscreen','fscreen','spscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};

@@ -1,4 +1,4 @@
-const CACHE_NAME='alc-v31';
+const CACHE_NAME='alc-v32';
 // cleanUrls is enabled on Vercel, so navigations use extensionless paths
 // (/book4, not /book4.html). Precaching the extensionless URLs means the
 // install fetch hits the canonical page directly (200, not a 308 redirect),
@@ -8,6 +8,7 @@ const CORE_ASSETS=[
   '/css/style.css',
   '/js/error-report.js',
   '/js/access-gate.js',
+  '/js/audio-index.js',
   '/js/engine-core.js','/js/engine-progress.js','/js/engine-lessons.js',
   '/js/engine-youtube.js','/js/engine-spell.js','/js/engine-concepts.js',
   '/js/concepts-prep.js','/js/concepts-art.js','/js/concepts-wh.js',

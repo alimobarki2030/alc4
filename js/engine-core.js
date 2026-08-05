@@ -37,7 +37,31 @@ function _pickVoice(){
   };
   return en.slice().sort((a,b)=>score(b)-score(a))[0];
 }
+// Slug must match the one the audio-generation script uses (see audio/en/).
+function _audioSlug(t){
+  return String(t).replace(/\(.*?\)/g,'').trim().toLowerCase()
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+}
+let _curAudio=null;
+// Prefer a pre-recorded high-quality clip when one exists for this exact word
+// (consistent American pronunciation on every device, works offline once
+// cached). Anything without a clip — sentences, other books — falls back to
+// the device's speech synthesis.
 function say(t){
+  const slug=_audioSlug(t);
+  if(typeof AUDIO_INDEX!=='undefined'&&AUDIO_INDEX.has(slug)){
+    try{
+      if(window.speechSynthesis)speechSynthesis.cancel();
+      if(_curAudio){try{_curAudio.pause();}catch(e){}}
+      const a=new Audio('/audio/en/'+slug+'.mp3');
+      _curAudio=a;
+      a.play().catch(()=>_sayTTS(t)); // autoplay blocked / missing file → fallback
+      return;
+    }catch(e){}
+  }
+  _sayTTS(t);
+}
+function _sayTTS(t){
   if(!window.speechSynthesis)return;
   speechSynthesis.cancel();
   const u=new SpeechSynthesisUtterance(String(t).replace(/\(.*?\)/g,'').trim());

@@ -143,6 +143,23 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   color:rgba(255,255,255,.55);font-size:.58rem;font-weight:700;
   padding:2px 7px;border-radius:7px;letter-spacing:.5px}
 
+/* الكتاب الحالي — تُبرز البطاقة بالكامل باللون الأخضر */
+.book-card.current{background:linear-gradient(150deg,#5BCC08,#3E9302);border-color:#3E9302;
+  box-shadow:0 10px 28px rgba(70,163,2,.35)}
+.book-card.current.available:hover{border-color:#2F7A00;box-shadow:0 14px 34px rgba(70,163,2,.45)}
+.book-card.current .bc-accent{background:rgba(255,255,255,.92);color:#3E9302}
+.book-card.current .bc-num,
+.book-card.current .bc-title{color:#fff}
+.book-card.current .bc-sub{color:rgba(255,255,255,.92)}
+.book-card.current .chip{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.38)}
+.book-card.current .bc-footer{border-top-color:rgba(255,255,255,.28)}
+.book-card.current .prog-bar{background:rgba(255,255,255,.32)}
+.book-card.current .prog-fill{background:#fff}
+.book-card.current .prog-txt{color:rgba(255,255,255,.9)}
+.cur-badge{position:absolute;top:10px;right:10px;z-index:2;background:#fff;color:#3E9302;
+  font-size:.6rem;font-weight:800;padding:3px 9px;border-radius:8px;letter-spacing:.3px;
+  box-shadow:0 2px 6px rgba(0,0,0,.18)}
+
 .gram-hub-card{display:flex;align-items:center;gap:16px;
   background:linear-gradient(135deg,#6366F1,#2563EB);border-radius:20px;padding:20px;
   text-decoration:none;margin-bottom:28px;transition:all .2s}
@@ -375,6 +392,11 @@ html.splash-seen #splash{display:none}
 // One registry entry per book drives both the card grid and the progress
 // readout — adding Book 6+ later needs only a new entry here (plus its own
 // data-book{N}.js/book{N}.html, per the engine's migration recipe).
+// الكتاب قيد الدراسة حاليًا — تُبرز بطاقته بالكامل باللون الأخضر مع وسم
+// «الكتاب الحالي». للانتقال أسبوعيًا: غيّر هذا السطر فقط (مثلاً 'book6').
+// اجعلها '' (فارغة) لإلغاء التمييز.
+const CURRENT_BOOK='book5';
+
 const BOOKS=[
   {id:'book4',num:4,href:'book4',title:'4',sub:'الماضي البسيط · الملابس · الرياضة',
     topics:['Simple Past','can / must','in · on · at'],cls:'b4',lessons:4,available:true},
@@ -395,7 +417,9 @@ function render_books(){
   grid.innerHTML=BOOKS.map(b=>{
     const topics=b.topics.map(t=>`<span class="chip">${t}</span>`).join('');
     if(b.available){
-      return `<a class="book-card ${b.cls} available" href="${b.href}">
+      const cur=b.id===CURRENT_BOOK;
+      return `<a class="book-card ${b.cls} available${cur?' current':''}" href="${b.href}">
+        ${cur?'<div class="cur-badge">📍 الكتاب الحالي</div>':''}
         <div class="bc-top">
           <div class="bc-accent">${svgIco('book')}</div>
           <div class="bc-num">Book ${b.num}</div>

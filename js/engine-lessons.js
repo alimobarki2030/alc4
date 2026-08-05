@@ -770,14 +770,13 @@ function show_result(correct,total){
 
 function hide_modal(){document.getElementById('modal').classList.remove('show');}
 
-// "متابعة" (continue). Lesson tests stay on the lesson so the student can
-// switch tabs; the standalone quizzes (mistake bank / review / final) have
-// nothing more to do on their screen, so return home where the updated
-// cards (mistake count, best scores) are visible instead of leaving the
-// student stranded on the finished quiz.
+// "متابعة" (continue) always returns to the lessons page. The finished quiz
+// (lesson test, mistake bank, review, or final) has nothing more to do on its
+// own screen, and home is where the updated cards — best scores, mistake
+// count, overall progress — are visible.
 function close_modal(){
   hide_modal();
-  if(CL==='mistakes'||CL==='review'||CL==='final')go_home();
+  go_home();
 }
 
 function retry(){

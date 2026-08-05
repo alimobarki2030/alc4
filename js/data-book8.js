@@ -575,15 +575,37 @@ l4:[
 // ═══════════════════════════════════════
 // REVIEW (مراجعة)
 // ═══════════════════════════════════════
+// المصدر: مراجعة الكتاب الرسمية — Lesson 5 Review (Exercise O + Exercise Y)
+// تجمع الدروس 1–4 (اتجاهات/حرارة · لياقة/to+verb · هاتف/may-might/whom · رسائل/tell/الوقت)
 const REVIEW=[
-  {q:"Go _______ Pine Street to Main Street and turn left.",o:["up","for","of","at"],a:0,en:"go up a street",ar:'go up = اصعد/اسلك الشارع',tr:'اسلك شارع باين حتى الشارع الرئيسي ثم انعطف يساراً.'},
-  {q:"The plane is going to touch the _______ in a second.",o:["sky","ground","exit","corner"],a:1,en:"landing → touch the ground",ar:'الهبوط → تلامس الأرض (ground)',tr:'ستلامس الطائرة الأرض بعد لحظة.'},
-  {q:"There are 1.6 _______ in one mile.",o:["miles","exits","kilometers","degrees"],a:2,en:"1 mile ≈ 1.6 km",ar:'الميل ≈ 1.6 كيلومتر',tr:'في الميل الواحد 1.6 كيلومتر.'},
-  {q:"Water boils at 212°F or 100°C. Water _______ at 32°F.",o:["boils","grows","freezes","lands"],a:2,en:"32°F = freezing",ar:'32 فهرنهايت = التجمّد → freezes',tr:'يغلي الماء عند 212 فهرنهايت أو 100 مئوية، ويتجمّد عند 32 فهرنهايت.'},
-  {q:"When are we going to leave? — We _______ going to leave at 9:00.",o:["am","is","are","be"],a:2,en:"we → are going to",ar:'we → are going to',tr:'متى سنغادر؟ — سنغادر الساعة 9:00.'},
-  {q:"That plane isn't landing. It's _______.",o:["taking off","falling","freezing","growing"],a:0,en:"going up → taking off",ar:'ترتفع → taking off (تُقلع)',tr:'تلك الطائرة لا تهبط، بل تُقلع.'},
-  {q:"The bookstore is on the _______ of Jefferson and 3rd.",o:["exit","mile","corner","degree"],a:2,en:"meeting of two streets → corner",ar:'التقاء شارعين → corner (الزاوية)',tr:'المكتبة على زاوية شارعَي جيفرسون والثالث.'},
-  {q:"Silver Star is _______ airline of all — everyone avoids it.",o:["the best","better","the worst","good"],a:2,en:"everyone avoids → the worst",ar:'الجميع يتجنّبها → الأسوأ (the worst)',tr:'سِلفر ستار هي أسوأ شركة طيران على الإطلاق — الجميع يتجنّبها.'},
+  // — Exercise O: المقارنة والتفضيل —
+  {q:"Which of these three questions is _______ important?",o:["the more","more than","the most","most than"],a:2,en:"most of three → the most",ar:'الأعلى بين ثلاثة → the most',tr:'أيّ هذه الأسئلة الثلاثة هو الأهمّ؟'},
+  {q:"Question number four was _______ difficult one.",o:["the least","less than","least","the less"],a:0,en:"lowest degree → the least",ar:'الأقلّ درجةً → the least (difficult)',tr:'كان السؤال الرابع هو الأقلّ صعوبةً.'},
+  {q:"My Spanish is _______ than my French.",o:["better","bad","best","the best"],a:0,en:"comparison of two → better than",ar:'مقارنة بين اثنين → better than',tr:'إسبانيّتي أفضل من فرنسيّتي.'},
+  {q:"This is _______ road in Texas.",o:["worse","worse than","the worst","worst than"],a:2,en:"lowest of all → the worst",ar:'الأسوأ بين الجميع → the worst',tr:'هذا هو أسوأ طريق في تكساس.'},
+  {q:"Is soccer _______ exciting than football?",o:["most","least","better","less"],a:3,en:"comparison with than → less",ar:'مقارنة مع than → less exciting',tr:'هل كرة القدم أقلّ إثارةً من كرة القدم الأمريكية؟'},
+  {q:"Which is _______ restaurant in town?",o:["better","best","the better","the best"],a:3,en:"best of all → the best",ar:'الأفضل بين الجميع → the best',tr:'أيّ مطعم هو الأفضل في المدينة؟'},
+  // — Exercise Y: مراجعة شاملة للمفردات والقواعد —
+  {q:"Janet forgot _______ her room.",o:["cleaning","cleans","to clean","cleaned"],a:2,en:"forget + to + verb",ar:'بعد forget نضع to → to clean',tr:'نسيت جانيت أن تنظّف غرفتها.'},
+  {q:"Tell Lt Smith that I need _______ him today.",o:["see","to see","seeing","saw"],a:1,en:"need + to + verb",ar:'بعد need نضع to → to see',tr:'أخبِر الملازم سميث أنني أحتاج أن أراه اليوم.'},
+  {q:"George _______ on the ice, but he's okay.",o:["grew","found","hit","fell"],a:3,en:"on the ice → fell",ar:'على الجليد → سقط (fell)',tr:'سقط جورج على الجليد لكنه بخير.'},
+  {q:"The plane will _______ at 3:00 this afternoon.",o:["deposit","hold on","hang up","land"],a:3,en:"a plane → land",ar:'الطائرة → تهبط (land)',tr:'ستهبط الطائرة الساعة 3:00 بعد الظهر.'},
+  {q:"Please _______ the door. It's cold in here.",o:["call","shut","rent","deposit"],a:1,en:"cold → shut the door",ar:'الجوّ بارد → أغلق الباب (shut)',tr:'من فضلك أغلق الباب، الجوّ بارد هنا.'},
+  {q:"She has a silver _______. She wears it on her arm.",o:["clock","bell","watch","fan"],a:2,en:"worn on the arm → watch",ar:'تُلبس على المعصم → ساعة يد (watch)',tr:'لديها ساعة يد فضّية تلبسها على معصمها.'},
+  {q:"Julie didn't talk to the captain because the line was _______.",o:["busy","healthy","cheap","terrific"],a:0,en:"couldn't get through → busy",ar:'الخطّ مشغول → busy',tr:'لم تتحدّث جولي إلى النقيب لأنّ الخطّ كان مشغولاً.'},
+  {q:"I need some _______ to use the pay phone.",o:["change","message","lines","slots"],a:0,en:"coins for a pay phone → change",ar:'فكّة للهاتف العمومي → change',tr:'أحتاج بعض الفكّة لاستخدام الهاتف العمومي.'},
+  {q:"These bananas are only fifteen cents a pound. They're _______.",o:["important","interesting","cheap","fun"],a:2,en:"low price → cheap",ar:'سعر منخفض → رخيص (cheap)',tr:'هذا الموز بخمسة عشر سنتاً للرطل فقط. إنه رخيص.'},
+  {q:"Ted and Bob talked to each other on the phone last night. They had a _______.",o:["slot","conversation","change","message"],a:1,en:"talked → a conversation",ar:'تحدّثا → محادثة (conversation)',tr:'تحدّث تيد وبوب على الهاتف الليلة الماضية. أجريا محادثة.'},
+  {q:"This coat costs a lot of money. It's _______.",o:["important","difficult","exciting","expensive"],a:3,en:"costs a lot → expensive",ar:'يكلّف كثيراً → غالٍ (expensive)',tr:'هذا المعطف يكلّف مالاً كثيراً. إنه غالٍ.'},
+  {q:"To make a call on a pay phone, you must put coins into the _______.",o:["bell","slot","block","cup"],a:1,en:"coins go in the slot",ar:'تُدخل العملات في الفتحة → slot',tr:'لإجراء مكالمة من هاتف عمومي، عليك إدخال العملات في الفتحة.'},
+  {q:"You've got mail! From _______ is your letter?",o:["who","what","why","whom"],a:3,en:"after preposition → whom",ar:'بعد حرف الجرّ from → whom',tr:'لديك بريد! مِمَّن رسالتك؟'},
+  {q:"How much is the apartment you have _______?",o:["for rent","to deposit","to take","straight ahead"],a:0,en:"apartment offered → for rent",ar:'شقة معروضة → للإيجار (for rent)',tr:'كم إيجار الشقة المعروضة لديك للإيجار؟'},
+  {q:"Dan and Linda work in a _______. They make cars there.",o:["basement","gymnasium","factory","conversation"],a:2,en:"make cars → factory",ar:'يصنعون السيارات → مصنع (factory)',tr:'يعمل دان وليندا في مصنع، يصنعون السيارات هناك.'},
+  {q:"What _______ of fruit do you want after dinner?",o:["shape","kind","change","line"],a:1,en:"what kind of + noun",ar:'أيّ نوع من → kind of',tr:'أيّ نوع من الفاكهة تريد بعد العشاء؟'},
+  {q:"Sam's not here now. Can you _______?",o:["grow up","take off","call back","work out"],a:2,en:"he's out → call back",ar:'غير موجود → عاود الاتصال (call back)',tr:'سام ليس هنا الآن. هل يمكنك معاودة الاتصال؟'},
+  {q:"I'm not sure. Mr. Brown may not be here. Can you _______, and I'll see?",o:["hold on","take off","call back","hang up"],a:0,en:"wait on the line → hold on",ar:'انتظر على الخط → hold on',tr:'لست متأكّداً، قد لا يكون السيد براون هنا. هل تنتظر على الخط وسأرى؟'},
+  {q:"Col Johnson _______ for you. It's on your desk.",o:["got in shape","had a good time","left a message","returned a call"],a:2,en:"note on desk → left a message",ar:'رسالة على المكتب → ترك رسالة (left a message)',tr:'ترك العقيد جونسون رسالة لك، إنها على مكتبك.'},
+  {q:"_______ put these flowers on my table?",o:["Whom","Who","What","Where"],a:1,en:"subject question → Who",ar:'سؤال عن الفاعل → Who (put)',tr:'مَن وضع هذه الأزهار على طاولتي؟'},
 ];
 EE.review=REVIEW;
 

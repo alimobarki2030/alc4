@@ -707,7 +707,10 @@ function ans(pfx,qi,oi,correct){
   fb.className='fb show '+(ok?'ok':'no');
   if(ok){XP+=5;document.getElementById('xp').textContent=XP;STK++;document.getElementById('streak').textContent=STK;save_progress();}
   else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}
-  say(q.o[correct]);
+  // Speak the FULL correct sentence (blank filled) so the student hears the
+  // right answer in natural context; falls back to the option word if the
+  // question has no blank.
+  say(/_/.test(q.q)?q.q.replace(/_+/g,q.o[correct]):q.o[correct]);
 
   const total=EE[CL].length;
   TANS[qi]=ok;

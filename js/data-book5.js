@@ -254,44 +254,44 @@ l4:[
 // ═══════════════════════════════════════
 const WO={
 l1:[
-  {words:["I","hurt","my","fingernail"],ans:"I hurt my fingernail.",tr:"آذيت ظفر إصبعي.",ar:"hurt فعل شاذ: hurt-hurt-hurt"},
+  {words:["I","hurt","my","fingernail"],ans:"I hurt my fingernail.",tr:"أوجعت ظفر إصبعي.",ar:"hurt فعل شاذ: hurt-hurt-hurt"},
   {words:["You","need","some","medicine"],ans:"You need some medicine.",tr:"تحتاج بعض الدواء.",ar:"medicine = الدواء"},
   {words:["She","has","a","sore","muscle"],ans:"She has a sore muscle.",tr:"عندها عضلة مؤلمة.",ar:"sore = مؤلم/ملتهب"},
-  {words:["Which","leg","did","you","hurt","?"],ans:"Which leg did you hurt ?",tr:"أي رجل آذيت؟",ar:"Which + noun للسؤال عن الاختيار"},
+  {words:["Which","leg","did","you","hurt","?"],ans:"Which leg did you hurt ?",tr:"أي رجل أوجعت؟",ar:"Which + noun للسؤال عن الاختيار"},
   {words:["He","wore","the","white","one"],ans:"He wore the white one.",tr:"لبس الأبيض.",ar:"one = بدل تكرار الاسم (uniform)"},
-  {words:["Do","you","like","soccer","or","basketball","?"],ans:"Do you like soccer or basketball ?",tr:"تحب كرة القدم ولا السلة؟",ar:"or بين خيارين — تختار واحد"},
+  {words:["Do","you","like","soccer","or","basketball","?"],ans:"Do you like soccer or basketball ?",tr:"تحب كرة القدم أم السلة؟",ar:"or بين خيارين — تختار واحد"},
   {words:["His","shoes","are","large"],ans:"His shoes are large.",tr:"حذاؤه كبير.",ar:"large = كبير الحجم"},
   {words:["First","was","Steve","Thomas"],ans:"First was Steve Thomas.",tr:"كان الأول ستيف توماس.",ar:"First تدل على الترتيب"},
 ],
 l2:[
   {words:["There","is","a","sink","in","the","bathroom"],ans:"There is a sink in the bathroom.",tr:"يوجد حوض في الحمام.",ar:"sink مفرد → There is"},
   {words:["Do","you","have","any","soap","?"],ans:"Do you have any soap ?",tr:"عندك صابون؟",ar:"سؤال → any"},
-  {words:["I","have","a","little","sugar"],ans:"I have a little sugar.",tr:"عندي شوي سكر.",ar:"sugar غير معدود → a little"},
-  {words:["I","want","to","buy","a","few","toothbrushes"],ans:"I want to buy a few toothbrushes.",tr:"أبي أشتري كم فرشاة أسنان.",ar:"toothbrushes معدود → a few"},
-  {words:["Can","I","get","shampoo","at","the","drugstore","?"],ans:"Can I get shampoo at the drugstore ?",tr:"أقدر أجيب شامبو من الصيدلية؟",ar:"can = سؤال عن خيار متاح"},
+  {words:["I","have","a","little","sugar"],ans:"I have a little sugar.",tr:"عندي قليل من السكر.",ar:"sugar غير معدود → a little"},
+  {words:["I","want","to","buy","a","few","toothbrushes"],ans:"I want to buy a few toothbrushes.",tr:"أريد أن أشتري بعض فرش الأسنان.",ar:"toothbrushes معدود → a few"},
+  {words:["Can","I","get","shampoo","at","the","drugstore","?"],ans:"Can I get shampoo at the drugstore ?",tr:"هل أستطيع أن أحضر شامبو من الصيدلية؟",ar:"can = سؤال عن خيار متاح"},
   {words:["Daniel","washes","his","face","with","soap"],ans:"Daniel washes his face with soap.",tr:"دانيال يغسل وجهه بالصابون.",ar:"washes = يغسل (مضارع، هو)"},
   {words:["He","combs","his","hair"],ans:"He combs his hair.",tr:"يمشط شعره.",ar:"combs = يُمشّط"},
   {words:["You","need","a","haircut"],ans:"You need a haircut.",tr:"تحتاج قصة شعر.",ar:"need = يحتاج"},
 ],
 l3:[
-  {words:["He","will","be","at","the","library","tonight"],ans:"He will be at the library tonight.",tr:"بيكون بالمكتبة الليلة.",ar:"will قبل الفعل = المستقبل"},
-  {words:["Will","he","be","at","the","library","tomorrow","?"],ans:"Will he be at the library tomorrow ?",tr:"بيكون بالمكتبة باكر؟",ar:"Will قبل الفاعل = سؤال نعم/لا"},
-  {words:["When","will","he","go","to","class","?"],ans:"When will he go to class ?",tr:"متى بيروح للصف؟",ar:"أداة سؤال + will + فاعل"},
-  {words:["The","taxi","picked","her","up","and","stopped","at","the","airport"],ans:"The taxi picked her up and stopped at the airport.",tr:"التاكسي وصّلها وتوقف عند المطار.",ar:"جملة من نص الكتاب"},
-  {words:["Diana","will","make","a","reservation","to","Chicago"],ans:"Diana will make a reservation to Chicago.",tr:"ديانا بتسوي حجز لشيكاغو.",ar:"will + make a reservation"},
-  {words:["I","will","meet","Jim","tomorrow","morning"],ans:"I will meet Jim tomorrow morning.",tr:"بقابل جيم باكر الصبح.",ar:"tomorrow + morning"},
-  {words:["The","plane","will","arrive","in","an","hour"],ans:"The plane will arrive in an hour.",tr:"الطيارة بتوصل خلال ساعة.",ar:"in + مدة زمنية"},
-  {words:["Push","the","small","button","on","your","right"],ans:"Push the small button on your right.",tr:"ادفع الزر الصغير يمينك.",ar:"جملة تعليمات من نص الكتاب"},
+  {words:["He","will","be","at","the","library","tonight"],ans:"He will be at the library tonight.",tr:"سيكون في المكتبة الليلة.",ar:"will قبل الفعل = المستقبل"},
+  {words:["Will","he","be","at","the","library","tomorrow","?"],ans:"Will he be at the library tomorrow ?",tr:"سيكون في المكتبة غداً؟",ar:"Will قبل الفاعل = سؤال نعم/لا"},
+  {words:["When","will","he","go","to","class","?"],ans:"When will he go to class ?",tr:"متى سيذهب للصف؟",ar:"أداة سؤال + will + فاعل"},
+  {words:["The","taxi","picked","her","up","and","stopped","at","the","airport"],ans:"The taxi picked her up and stopped at the airport.",tr:"التاكسي أقلّها وتوقف عند المطار.",ar:"جملة من نص الكتاب"},
+  {words:["Diana","will","make","a","reservation","to","Chicago"],ans:"Diana will make a reservation to Chicago.",tr:"ديانا ستحجز إلى شيكاغو.",ar:"will + make a reservation"},
+  {words:["I","will","meet","Jim","tomorrow","morning"],ans:"I will meet Jim tomorrow morning.",tr:"سأقابل جيم غداً صباحاً.",ar:"tomorrow + morning"},
+  {words:["The","plane","will","arrive","in","an","hour"],ans:"The plane will arrive in an hour.",tr:"الطائرة ستصل خلال ساعة.",ar:"in + مدة زمنية"},
+  {words:["Push","the","small","button","on","your","right"],ans:"Push the small button on your right.",tr:"ادفع الزر الصغير على يمينك.",ar:"جملة تعليمات من نص الكتاب"},
 ],
 l4:[
-  {words:["I","had","to","take","the","car","to","a","mechanic"],ans:"I had to take the car to a mechanic.",tr:"اضطريت أوديّ السيارة للميكانيكي.",ar:"had to = ماضي have to"},
-  {words:["We","don't","have","a","lot","of","friends","among","the","students"],ans:"We don't have a lot of friends among the students.",tr:"ما عندنا كثير صحاب وسط الطلاب.",ar:"among = وسط أكثر من شخصين"},
-  {words:["How","many","dishes","did","you","have","to","wash","?"],ans:"How many dishes did you have to wash ?",tr:"كم صحن اضطريت تغسل؟",ar:"dishes معدود → How many"},
+  {words:["I","had","to","take","the","car","to","a","mechanic"],ans:"I had to take the car to a mechanic.",tr:"اضطررت أن آخذ السيارة إلى الميكانيكي.",ar:"had to = ماضي have to"},
+  {words:["We","don't","have","a","lot","of","friends","among","the","students"],ans:"We don't have a lot of friends among the students.",tr:"ليس عندنا الكثير من الأصدقاء وسط الطلاب.",ar:"among = وسط أكثر من شخصين"},
+  {words:["How","many","dishes","did","you","have","to","wash","?"],ans:"How many dishes did you have to wash ?",tr:"كم صحناً اضطررت أن تغسل؟",ar:"dishes معدود → How many"},
   {words:["How","much","coffee","did","you","drink","?"],ans:"How much coffee did you drink ?",tr:"كم قهوة شربت؟",ar:"coffee غير معدود → How much"},
-  {words:["I","have","to","go","to","class"],ans:"I have to go to class.",tr:"لازم أروح الصف.",ar:"have to = التزام"},
-  {words:["We","don't","have","to","pay","any","money"],ans:"We don't have to pay any money.",tr:"مو لازم ندفع فلوس.",ar:"don't have to = مو ضروري"},
-  {words:["You","will","have","to","wear","a","uniform"],ans:"You will have to wear a uniform.",tr:"بيصير لازم تلبس زي موحد.",ar:"will have to = التزام مستقبلي"},
-  {words:["She","has","to","make","a","cake","for","the","party"],ans:"She has to make a cake for the party.",tr:"لازم تسوي كيك للحفلة.",ar:"has to مع she"},
+  {words:["I","have","to","go","to","class"],ans:"I have to go to class.",tr:"يجب أن أذهب إلى الصف.",ar:"have to = التزام"},
+  {words:["We","don't","have","to","pay","any","money"],ans:"We don't have to pay any money.",tr:"لسنا مضطرين لدفع أي نقود.",ar:"don't have to = مو ضروري"},
+  {words:["You","will","have","to","wear","a","uniform"],ans:"You will have to wear a uniform.",tr:"سيتوجب عليك أن تلبس زياً موحداً.",ar:"will have to = التزام مستقبلي"},
+  {words:["She","has","to","make","a","cake","for","the","party"],ans:"She has to make a cake for the party.",tr:"يجب أن تصنع كيكاً للحفلة.",ar:"has to مع she"},
 ]
 };
 
@@ -309,10 +309,10 @@ l1:[
       {c1:'Which suits do you like?',c2:'I like the blue ones.',ar:'ones = بدل suits (جمع)'},
     ],
     examples:[
-      {s:'Which leg did you hurt? — I hurt my right one.',tr:'أي رجل آذيت؟ — آذيت رجلي اليمنى.',ar:'one = بدل leg',ok:true},
+      {s:'Which leg did you hurt? — I hurt my right one.',tr:'أي رجل أوجعت؟ — أوجعت رجلي اليمنى.',ar:'one = بدل leg',ok:true},
       {s:'Which uniform did he wear? — He wore the white one.',tr:'أي زي لبس؟ — لبس الأبيض.',ar:'one = بدل uniform',ok:true},
       {s:'Which shoes do you like? — We like the black ones.',tr:'أيّ حذاء تحب؟ — نحب الأسود.',ar:'ones = بدل shoes (جمع، أكثر من واحد)',ok:true},
-      {s:'I want that tie.',wrong:'tie',right:'one',tr:'لا تكرر نفس الاسم اللي قبله بالسؤال — استبدله بـ one.',ok:false},
+      {s:'I want that tie.',wrong:'tie',right:'one',tr:'لا تكرر نفس الاسم الذي قبله في السؤال — استبدله بـ one.',ok:false},
     ]
   },
   {
@@ -323,8 +323,8 @@ l1:[
       {c1:'Do you like the red one or the blue one?',c2:'I like the blue one.',ar:'or يعرض خيارين — الجواب يحدّد واحد'},
     ],
     examples:[
-      {s:'Do you like to play soccer or basketball? — I like to play soccer.',tr:'تحب تلعب كرة قدم ولا سلة؟ — أحب كرة القدم.',ar:'or بين خيارين، الجواب حدّد واحد',ok:true},
-      {s:'Do you like soccer and basketball?',wrong:'and',right:'or',tr:'لما تعرض خيارين يختار منهم واحد، استخدم or مو and.',ok:false},
+      {s:'Do you like to play soccer or basketball? — I like to play soccer.',tr:'تحب أن تلعب كرة قدم أم سلة؟ — أحب كرة القدم.',ar:'or بين خيارين، الجواب حدّد واحد',ok:true},
+      {s:'Do you like soccer and basketball?',wrong:'and',right:'or',tr:'عندما تعرض خيارين يختار منهما واحداً، استخدم or لا and.',ok:false},
     ]
   },
   {
@@ -339,7 +339,7 @@ l1:[
     examples:[
       {s:'Steve was first, and Thomas was second.',tr:'ستيف كان الأول، وتوماس كان الثاني.',ar:'first/second = الترتيب مو الرقم العادي',ok:true},
       {s:"It's her twelfth birthday.",tr:'هذا عيد ميلادها الثاني عشر.',ar:'twelfth = العدد الترتيبي لـ 12',ok:true},
-      {s:"It's her twelve birthday.",wrong:'twelve',right:'twelfth',tr:'عيد الميلاد ياخذ العدد الترتيبي (twelfth) مو العدد العادي (twelve).',ok:false},
+      {s:"It's her twelve birthday.",wrong:'twelve',right:'twelfth',tr:'عيد الميلاد يأخذ العدد الترتيبي (twelfth) لا العدد العادي (twelve).',ok:false},
     ]
   },
   {
@@ -352,10 +352,10 @@ l1:[
       {c1:'take the medicine',c2:'ياخذ / يشرب الدواء',ar:'العبارة اللي نقولها للمريض عشان ياخذ دواه'},
     ],
     examples:[
-      {s:"What's wrong? — My throat is sore.",tr:'وش المشكلة؟ — حلقي ملتهب.',ar:"نسأل عن العرض بـ What's wrong؟",ok:true},
-      {s:"What's the matter? — My head hurts.",tr:'وش فيك؟ — راسي يألمني.',ar:'صيغة ثانية لنفس السؤال',ok:true},
-      {s:'You need to take the medicine.',tr:'لازم تاخذ الدواء.',ar:'take the medicine = ياخذ الدواء',ok:true},
-      {s:'What wrong with you?',wrong:'What wrong',right:"What's wrong",tr:"ناقص is — الصح What's wrong؟ مو What wrong؟",ok:false},
+      {s:"What's wrong? — My throat is sore.",tr:'ما المشكلة؟ — حلقي ملتهب.',ar:"نسأل عن العرض بـ What's wrong؟",ok:true},
+      {s:"What's the matter? — My head hurts.",tr:'ماذا بك؟ — رأسي يؤلمني.',ar:'صيغة ثانية لنفس السؤال',ok:true},
+      {s:'You need to take the medicine.',tr:'يجب أن تأخذ الدواء.',ar:'take the medicine = ياخذ الدواء',ok:true},
+      {s:'What wrong with you?',wrong:'What wrong',right:"What's wrong",tr:"ناقص is — الصحيح What's wrong؟ لا What wrong؟",ok:false},
     ]
   }
 ],
@@ -372,7 +372,7 @@ l2:[
     examples:[
       {s:'There is a sink in the bathroom.',tr:'يوجد حوض في الحمام.',ar:'sink مفرد → There is',ok:true},
       {s:'There are some towels on the wall.',tr:'توجد بعض المناشف على الحائط.',ar:'towels جمع → There are',ok:true},
-      {s:'There is towels in the bathroom.',wrong:'is',right:'are',tr:'towels جمع، فلازم نستخدم are مو is.',ok:false},
+      {s:'There is towels in the bathroom.',wrong:'is',right:'are',tr:'towels جمع، فيجب أن نستخدم are لا is.',ok:false},
     ]
   },
   {
@@ -385,9 +385,9 @@ l2:[
       {c1:'Do you have any milk?',c2:"No, I don't have any.",ar:'سؤال ونفي → any بالاثنين'},
     ],
     examples:[
-      {s:'I have some sugar at home.',tr:'عندي بعض السكر بالبيت.',ar:'جملة مثبتة → some',ok:true},
+      {s:'I have some sugar at home.',tr:'عندي بعض السكر في البيت.',ar:'جملة مثبتة → some',ok:true},
       {s:"We don't have any butter.",tr:'ما عندنا زبدة.',ar:'جملة منفية → any',ok:true},
-      {s:'I have any sugar.',wrong:'any',right:'some',tr:'الجملة مثبتة (مو نفي ولا سؤال) — لازم some.',ok:false},
+      {s:'I have any sugar.',wrong:'any',right:'some',tr:'الجملة مثبتة (ليست نفياً ولا سؤالاً) — نستخدم some.',ok:false},
     ]
   },
   {
@@ -404,9 +404,9 @@ l2:[
       {c1:'sugar — اسم غير معدود',c2:'a little sugar',ar:'اسم غير معدود → a little'},
     ],
     examples:[
-      {s:'I want to buy a few toothbrushes.',tr:'أبي أشتري كم فرشاة أسنان.',ar:'toothbrushes معدود → a few',ok:true},
-      {s:'We have a little butter.',tr:'عندنا شوي زبدة.',ar:'butter غير معدود → a little',ok:true},
-      {s:'I need a little eggs.',wrong:'a little',right:'a few',tr:'eggs معدود (يُجمع) — لازم a few مو a little.',ok:false},
+      {s:'I want to buy a few toothbrushes.',tr:'أريد أن أشتري بعض فرش الأسنان.',ar:'toothbrushes معدود → a few',ok:true},
+      {s:'We have a little butter.',tr:'عندنا قليل من الزبدة.',ar:'butter غير معدود → a little',ok:true},
+      {s:'I need a little eggs.',wrong:'a little',right:'a few',tr:'eggs معدود (يُجمع) — نستخدم a few لا a little.',ok:false},
     ]
   },
   {
@@ -417,8 +417,8 @@ l2:[
       {c1:'Can I drive to Dallas?',c2:'Yes, you can. You can also fly.',ar:'can = فيه أكثر من خيار ممكن'},
     ],
     examples:[
-      {s:'You can get shampoo at the drugstore.',tr:'تقدر تجيب شامبو من الصيدلية.',ar:'can = خيار متاح',ok:true},
-      {s:"You can't drive to Honolulu. You can only fly.",tr:'ما تقدر توصل هونولولو بالسيارة، بس بالطيارة.',ar:"can't = غير ممكن، can only = الخيار الوحيد",ok:true},
+      {s:'You can get shampoo at the drugstore.',tr:'تستطيع أن تُحضر شامبو من الصيدلية.',ar:'can = خيار متاح',ok:true},
+      {s:"You can't drive to Honolulu. You can only fly.",tr:'لا تستطيع الوصول إلى هونولولو بالسيارة، فقط بالطائرة.',ar:"can't = غير ممكن، can only = الخيار الوحيد",ok:true},
       {s:'Can I to drive to Dallas?',wrong:'to drive',right:'drive',tr:'بعد can نستخدم الفعل مجرد بدون to.',ok:false},
     ]
   }
@@ -433,10 +433,10 @@ l3:[
       {c1:'She will not go.',c2:"She won't go.",ar:'will not = won’t'},
     ],
     examples:[
-      {s:'I will call you tonight.',tr:'بكلمك الليلة.',ar:'will + الفعل الأصلي = المستقبل',ok:true},
-      {s:"I'll call you tonight.",tr:'بكلمك الليلة (اختصار).',ar:'I’ll = I will',ok:true},
-      {s:"She won't be at school tomorrow.",tr:'ما بتكون بالمدرسة باكر.',ar:'won’t = will not',ok:true},
-      {s:'She wills not go.',wrong:'wills',right:'will',tr:'will ثابت بكل الضمائر — ما تضيف s حتى مع he/she/it.',ok:false},
+      {s:'I will call you tonight.',tr:'سأتصل بك الليلة.',ar:'will + الفعل الأصلي = المستقبل',ok:true},
+      {s:"I'll call you tonight.",tr:'سأتصل بك الليلة (اختصار).',ar:'I’ll = I will',ok:true},
+      {s:"She won't be at school tomorrow.",tr:'لن تكون في المدرسة غداً.',ar:'won’t = will not',ok:true},
+      {s:'She wills not go.',wrong:'wills',right:'will',tr:'will ثابت مع كل الضمائر — لا تضيف s حتى مع he/she/it.',ok:false},
     ]
   },
   {
@@ -448,9 +448,9 @@ l3:[
       {c1:'Will he go to class?',c2:"Yes, he will. / No, he won't.",ar:'الجواب القصير: will أو won’t بس'},
     ],
     examples:[
-      {s:'Will you make a reservation?',tr:'بتسوي حجز؟',ar:'Will + فاعل + فعل = سؤال',ok:true},
-      {s:'Will they arrive tonight?',tr:'بيوصلون الليلة؟',ar:'Will قبل الفاعل they',ok:true},
-      {s:'Yes, they will.',tr:'إي، بيوصلون.',ar:'جواب قصير: will بس، بدون تكرار الفعل',ok:true},
+      {s:'Will you make a reservation?',tr:'ستحجز؟',ar:'Will + فاعل + فعل = سؤال',ok:true},
+      {s:'Will they arrive tonight?',tr:'سيصلون الليلة؟',ar:'Will قبل الفاعل they',ok:true},
+      {s:'Yes, they will.',tr:'نعم، سيصلون.',ar:'جواب قصير: will بس، بدون تكرار الفعل',ok:true},
       {s:'Do you will go?',wrong:'Do you will',right:'Will you',tr:'ما نستخدم Do مع will — will نفسها تتقدّم على الفاعل.',ok:false},
     ]
   },
@@ -463,9 +463,9 @@ l3:[
       {c1:'Who will arrive tomorrow?',c2:'Dorothy will arrive tomorrow.',ar:'Who يسأل عن الفاعل نفسه'},
     ],
     examples:[
-      {s:'Where will you fly?',tr:'وين بتطير (تسافر)؟',ar:'Where + will + فاعل + فعل',ok:true},
-      {s:'Who will meet Wanda for lunch?',tr:'مين بيقابل واندا على الغدا؟',ar:'Who = يسأل عن الفاعل',ok:true},
-      {s:'When she will arrive?',wrong:'she will',right:'will she',tr:'لازم will قبل الفاعل بالسؤال، مو بعده.',ok:false},
+      {s:'Where will you fly?',tr:'أين ستطير (تسافر)؟',ar:'Where + will + فاعل + فعل',ok:true},
+      {s:'Who will meet Wanda for lunch?',tr:'من سيقابل واندا على الغداء؟',ar:'Who = يسأل عن الفاعل',ok:true},
+      {s:'When she will arrive?',wrong:'she will',right:'will she',tr:'يجب will قبل الفاعل في السؤال، لا بعده.',ok:false},
     ]
   },
   {
@@ -479,10 +479,10 @@ l3:[
       {c1:'in',c2:'two minutes, an hour, four days, a week',ar:'in + مدة = بعد مرور هالمدة'},
     ],
     examples:[
-      {s:'We will meet Jim tomorrow morning.',tr:'بنقابل جيم باكر الصبح.',ar:'tomorrow + morning',ok:true},
-      {s:'Ben will graduate from school next month.',tr:'بن بيتخرّج من المدرسة الشهر الجاي.',ar:'next + month',ok:true},
-      {s:'The plane will arrive in an hour.',tr:'الطيارة بتوصل خلال ساعة.',ar:'in + مدة زمنية',ok:true},
-      {s:'I will see you in tomorrow.',wrong:'in tomorrow',right:'tomorrow',tr:'tomorrow ما تحتاج in قبلها.',ok:false},
+      {s:'We will meet Jim tomorrow morning.',tr:'سنقابل جيم غداً صباحاً.',ar:'tomorrow + morning',ok:true},
+      {s:'Ben will graduate from school next month.',tr:'بن سيتخرج من المدرسة الشهر القادم.',ar:'next + month',ok:true},
+      {s:'The plane will arrive in an hour.',tr:'الطائرة ستصل خلال ساعة.',ar:'in + مدة زمنية',ok:true},
+      {s:'I will see you in tomorrow.',wrong:'in tomorrow',right:'tomorrow',tr:'tomorrow لا تحتاج in قبلها.',ok:false},
     ]
   }
 ],
@@ -497,8 +497,8 @@ l4:[
     ],
     examples:[
       {s:'I bought a jacket and a shirt. The jacket is blue.',tr:'اشتريت جاكيت وقميص. الجاكيت أزرق.',ar:'a لأول ذكر، the للرجوع لنفس الشيء',ok:true},
-      {s:'I had a sandwich and a cup of coffee. The coffee was bad.',tr:'أكلت ساندويتش وشربت قهوة. القهوة كانت وحشة.',ar:'the coffee = نفس القهوة المذكورة قبل',ok:true},
-      {s:'I bought a car. I had to take a car to a mechanic.',wrong:'a car',right:'the car',tr:'ثاني مرة نذكر نفس السيارة، لازم the مو a.',ok:false},
+      {s:'I had a sandwich and a cup of coffee. The coffee was bad.',tr:'أكلت ساندويتش وشربت قهوة. القهوة كانت سيئة.',ar:'the coffee = نفس القهوة المذكورة قبل',ok:true},
+      {s:'I bought a car. I had to take a car to a mechanic.',wrong:'a car',right:'the car',tr:'ثاني مرة نذكر نفس السيارة، نستخدم the لا a.',ok:false},
     ]
   },
   {
@@ -510,9 +510,9 @@ l4:[
       {c1:'many friends — اسم معدود',c2:'much food — اسم غير معدود',ar:'friends تُجمع → many، food ما تُجمع → much'},
     ],
     examples:[
-      {s:'We don’t have a lot of friends among the students.',tr:'ما عندنا كثير صحاب وسط الطلاب.',ar:'friends معدود، a lot of تصلح مع الاثنين',ok:true},
+      {s:'We don’t have a lot of friends among the students.',tr:'ليس عندنا الكثير من الأصدقاء وسط الطلاب.',ar:'friends معدود، a lot of تصلح مع الاثنين',ok:true},
       {s:'Did Mark buy lots of things at the store?',tr:'مارك اشترى أشياء كثيرة من المحل؟',ar:'things معدود → many/lots of',ok:true},
-      {s:'Do you have much friends?',wrong:'much',right:'many',tr:'friends اسم معدود (يُجمع) — لازم many مو much.',ok:false},
+      {s:'Do you have much friends?',wrong:'much',right:'many',tr:'friends اسم معدود (يُجمع) — نستخدم many لا much.',ok:false},
     ]
   },
   {
@@ -526,8 +526,8 @@ l4:[
     ],
     examples:[
       {s:'How many cups of coffee did you drink?',tr:'كم فنجان قهوة شربت؟',ar:'cups معدودة → How many',ok:true},
-      {s:'How much sugar did he put in his tea?',tr:'كم سكر حط بشايه؟',ar:'sugar غير معدود → How much',ok:true},
-      {s:'How much children are in that room?',wrong:'How much',right:'How many',tr:'children اسم معدود (جمع) — لازم How many مو How much.',ok:false},
+      {s:'How much sugar did he put in his tea?',tr:'كم سكر وضع في شايه؟',ar:'sugar غير معدود → How much',ok:true},
+      {s:'How much children are in that room?',wrong:'How much',right:'How many',tr:'children اسم معدود (جمع) — نستخدم How many لا How much.',ok:false},
     ]
   },
   {
@@ -540,9 +540,9 @@ l4:[
       {c1:'I have to have an ID card.',c2:'I don’t have to live in the city.',ar:'don’t have to = مو ضروري، مو ممنوع'},
     ],
     examples:[
-      {s:'We have to pass the book quiz.',tr:'لازم نجتاز اختبار الكتاب.',ar:'have to = التزام',ok:true},
-      {s:'We don’t have to pay any money.',tr:'مو لازم ندفع فلوس.',ar:"don't have to = مو ضروري",ok:true},
-      {s:'She don’t have to wear a coat.',wrong:'don’t',right:'doesn’t',tr:'she تاخذ doesn’t مو don’t.',ok:false},
+      {s:'We have to pass the book quiz.',tr:'يجب أن نجتاز اختبار الكتاب.',ar:'have to = التزام',ok:true},
+      {s:'We don’t have to pay any money.',tr:'لسنا مضطرين لدفع أي نقود.',ar:"don't have to = مو ضروري",ok:true},
+      {s:'She don’t have to wear a coat.',wrong:'don’t',right:'doesn’t',tr:'she تأخذ doesn’t لا don’t.',ok:false},
     ]
   }
 ]
@@ -554,68 +554,68 @@ l4:[
 // ═══════════════════════════════════════
 const EE={
 l1:[
-  {q:'The _______ month of the year is December.',o:['large','long','last'],a:2,en:'December is the last month of the year',ar:'last = الأخير — ديسمبر آخر شهر بالسنة',tr:'آخر شهر بالسنة هو ديسمبر.'},
-  {q:'My brother has a big family. They have a _______ car.',o:['large','long','last'],a:0,en:'A big family needs a large car',ar:'large = كبير الحجم، يناسب عائلة كبيرة',tr:'أخوي عنده عائلة كبيرة. عندهم سيارة كبيرة.'},
-  {q:"Kim didn't hurt her right leg. She hurt her _______ leg.",o:['short','one','left'],a:2,en:'Not right → left (the opposite side)',ar:'عكس right = left',tr:'كيم ما آذت رجلها اليمنى. آذت رجلها اليسار.'},
+  {q:'The _______ month of the year is December.',o:['large','long','last'],a:2,en:'December is the last month of the year',ar:'last = الأخير — ديسمبر آخر شهر بالسنة',tr:'آخر شهر في السنة ديسمبر.'},
+  {q:'My brother has a big family. They have a _______ car.',o:['large','long','last'],a:0,en:'A big family needs a large car',ar:'large = كبير الحجم، يناسب عائلة كبيرة',tr:'أخي عنده عائلة كبيرة. عندهم سيارة كبيرة.'},
+  {q:"Kim didn't hurt her right leg. She hurt her _______ leg.",o:['short','one','left'],a:2,en:'Not right → left (the opposite side)',ar:'عكس right = left',tr:'كيم لم تُوجع رجلها اليمنى. أوجعت رجلها اليسرى.'},
   {q:'Your tongue is inside your _______.',o:['neck','mouth','ear'],a:1,en:'The tongue is inside the mouth',ar:'اللسان داخل الفم',tr:'لسانك داخل فمك.'},
   {q:'You wear your shoes on your _______.',o:['toes','foot','feet'],a:2,en:'Shoes (plural) go on feet (plural)',ar:'shoes جمع → feet جمع',tr:'تلبس حذاءك على قدميك.'},
-  {q:'My throat was _______ yesterday. I took medicine. My throat is okay today.',o:['sore','large','next'],a:0,en:'A sore throat needs medicine',ar:'sore = مؤلم/ملتهب، لذلك أخذ دواء',tr:'حلقي كان ملتهب أمس. أخذت دواء. حلقي تمام اليوم.'},
-  {q:"Lewis: _______ with Peter? Joan: He's sick.",o:["What's wrong","What hurts","Which is the matter"],a:0,en:"What's wrong? is the standard question for asking about someone's health",ar:"What's wrong? = وش المشكلة؟ (سؤال عن الصحة)",tr:'وش المشكلة مع بيتر؟ — هو مريض.'},
-  {q:'Did Jack hurt his arm _______ his leg?',o:['one','of','or'],a:2,en:'or connects two choices in a question',ar:'or يربط بين خيارين بالسؤال',tr:'جاك آذى ذراعه ولا رجله؟'},
-  {q:'_______ arm did he hurt?',o:['When','Which','Where'],a:1,en:'Which asks about a choice',ar:'Which للسؤال عن الاختيار',tr:'أي ذراع آذى؟'},
+  {q:'My throat was _______ yesterday. I took medicine. My throat is okay today.',o:['sore','large','next'],a:0,en:'A sore throat needs medicine',ar:'sore = مؤلم/ملتهب، لذلك أخذ دواء',tr:'حلقي كان ملتهباً أمس. أخذت دواء. حلقي بخير اليوم.'},
+  {q:"Lewis: _______ with Peter? Joan: He's sick.",o:["What's wrong","What hurts","Which is the matter"],a:0,en:"What's wrong? is the standard question for asking about someone's health",ar:"What's wrong? = وش المشكلة؟ (سؤال عن الصحة)",tr:'ما المشكلة مع بيتر؟ — هو مريض.'},
+  {q:'Did Jack hurt his arm _______ his leg?',o:['one','of','or'],a:2,en:'or connects two choices in a question',ar:'or يربط بين خيارين بالسؤال',tr:'جاك أوجع ذراعه أم رجله؟'},
+  {q:'_______ arm did he hurt?',o:['When','Which','Where'],a:1,en:'Which asks about a choice',ar:'Which للسؤال عن الاختيار',tr:'أي ذراع أوجع؟'},
   {q:'Anne: Which car do you like? Karen: I like the blue _______.',o:['one','of','or'],a:0,en:"one replaces the noun 'car'",ar:'one = بدل تكرار car',tr:'آن: أي سيارة تحبين؟ كارين: أحب السيارة الزرقاء.'},
   {q:'The paragraph is _______ the muscles of the body.',o:['about','of','one'],a:0,en:'about = on the topic of',ar:'about = بخصوص/عن',tr:'الفقرة عن عضلات الجسم.'},
-  {q:'That book has 1,345 pages. It is a _______ book.',o:['short','long','last'],a:1,en:'Many pages = a long book',ar:'صفحات كثيرة = كتاب طويل',tr:'هذا الكتاب فيه ١٣٤٥ صفحة. هو كتاب طويل.'},
+  {q:'That book has 1,345 pages. It is a _______ book.',o:['short','long','last'],a:1,en:'Many pages = a long book',ar:'صفحات كثيرة = كتاب طويل',tr:'هذا الكتاب فيه 1345 صفحة. هو كتاب طويل.'},
 ],
 l2:[
-  {q:'Is there a desk in the room? — Yes, _______.',o:['they is','there is','they are','it is'],a:1,en:'The answer matches the question form: Is there → there is',ar:'الجواب يطابق صيغة السؤال: Is there → there is',tr:'فيه مكتب بالغرفة؟ — إي، فيه.'},
+  {q:'Is there a desk in the room? — Yes, _______.',o:['they is','there is','they are','it is'],a:1,en:'The answer matches the question form: Is there → there is',ar:'الجواب يطابق صيغة السؤال: Is there → there is',tr:'هل يوجد مكتب في الغرفة؟ — نعم، يوجد.'},
   {q:"Do you have some coffee? — No, _______.",o:['I didn’t','I don’t have some','I have any',"I don't have any"],a:3,en:'any is used in negative statements',ar:'any تُستخدم في النفي',tr:'عندك قهوة؟ — لا، ما عندي.'},
-  {q:"_______ you walk home? — No, I can't.",o:['Can','May','Must','Did'],a:0,en:"The short answer “I can't” matches the question “Can”",ar:'الجواب I can\'t يطابق السؤال Can',tr:'تقدر تمشي للبيت؟ — لا، ما أقدر.'},
-  {q:'There are _______ combs.',o:['a little','any','a few','a lot'],a:2,en:'combs is a count noun (plural) → a few',ar:'combs اسم معدود جمع → a few',tr:'فيه شوي أمشاط.'},
-  {q:"You need a haircut. — I know, I'm going to the _______.",o:['commissary','barber shop','grocery store','drug store'],a:1,en:'You get a haircut at the barber shop',ar:'تحصل على قصة شعر في محل الحلاقة',tr:'تحتاج قصة شعر. — أعرف، رايح لمحل الحلاقة.'},
-  {q:'Monica needs _______ sugar.',o:['a few','any','a little','a lots of'],a:2,en:'sugar is a noncount noun → a little',ar:'sugar اسم غير معدود → a little',tr:'مونيكا تحتاج شوي سكر.'},
-  {q:"How old is Alicia? — It's her _______ birthday.",o:['sixteen','sixteenth','sixteen years','sixteen years old'],a:1,en:'Birthday takes the ordinal number: sixteenth',ar:'birthday تاخذ العدد الترتيبي: sixteenth',tr:'كم عمر أليشا؟ — عيد ميلادها السادس عشر.'},
-  {q:'_______ any dry towels? — Yes, there are.',o:['Was','Is there','Do you','Are there'],a:3,en:'towels is plural → Are there',ar:'towels جمع → Are there',tr:'فيه مناشف ناشفة؟ — إي، فيه.'},
-  {q:'Jean needed _______ a haircut.',o:['have','got','to do','to get'],a:3,en:'needed + to get (infinitive)',ar:'needed + to get (مصدر)',tr:'جين احتاجت تسوي قصة شعر.'},
-  {q:"What is Sue doing? — She's _______ her hair.",o:['drying','rinse','shampoo','is combing'],a:0,en:"She's + verb-ing",ar:"She's + فعل+ing",tr:'وش تسوي سو؟ — تجفف شعرها.'},
+  {q:"_______ you walk home? — No, I can't.",o:['Can','May','Must','Did'],a:0,en:"The short answer “I can't” matches the question “Can”",ar:'الجواب I can\'t يطابق السؤال Can',tr:'تستطيع أن تمشي إلى البيت؟ — لا، لا أستطيع.'},
+  {q:'There are _______ combs.',o:['a little','any','a few','a lot'],a:2,en:'combs is a count noun (plural) → a few',ar:'combs اسم معدود جمع → a few',tr:'يوجد بعض الأمشاط.'},
+  {q:"You need a haircut. — I know, I'm going to the _______.",o:['commissary','barber shop','grocery store','drug store'],a:1,en:'You get a haircut at the barber shop',ar:'تحصل على قصة شعر في محل الحلاقة',tr:'تحتاج قصة شعر. — أعرف، ذاهب إلى محل الحلاقة.'},
+  {q:'Monica needs _______ sugar.',o:['a few','any','a little','a lots of'],a:2,en:'sugar is a noncount noun → a little',ar:'sugar اسم غير معدود → a little',tr:'مونيكا تحتاج قليل من السكر.'},
+  {q:"How old is Alicia? — It's her _______ birthday.",o:['sixteen','sixteenth','sixteen years','sixteen years old'],a:1,en:'Birthday takes the ordinal number: sixteenth',ar:'birthday تاخذ العدد الترتيبي: sixteenth',tr:'كم عمر أليشا؟ — عمرها 16.'},
+  {q:'_______ any dry towels? — Yes, there are.',o:['Was','Is there','Do you','Are there'],a:3,en:'towels is plural → Are there',ar:'towels جمع → Are there',tr:'هل يوجد مناشف جافة؟ — نعم، يوجد.'},
+  {q:'Jean needed _______ a haircut.',o:['have','got','to do','to get'],a:3,en:'needed + to get (infinitive)',ar:'needed + to get (مصدر)',tr:'جين احتاجت أن تحصل على قصة شعر.'},
+  {q:"What is Sue doing? — She's _______ her hair.",o:['drying','rinse','shampoo','is combing'],a:0,en:"She's + verb-ing",ar:"She's + فعل+ing",tr:'ماذا تفعل سو؟ — تجفف شعرها.'},
   {q:'John washed his face with a _______.',o:['shampoo','washcloth','water','rinse'],a:1,en:'You wash your face with a washcloth',ar:'تغسل وجهك بقطعة قماش (washcloth)',tr:'جون غسل وجهه بقطعة قماش.'},
-  {q:"Mitch doesn't have _______ money.",o:['no','many','any','lots'],a:2,en:"doesn't have + any (negative)",ar:"doesn't have + any (نفي)",tr:'ميتش ما عنده أي فلوس.'},
+  {q:"Mitch doesn't have _______ money.",o:['no','many','any','lots'],a:2,en:"doesn't have + any (negative)",ar:"doesn't have + any (نفي)",tr:'ميتش ليس عنده أي نقود.'},
 ],
 l3:[
-  {q:"_______ your coat and put on your gloves. It's very cold outside.",o:['Lock','Button','Turn on','Sharpen'],a:1,en:'Button (verb) = fasten with buttons',ar:'Button (فعل) = يزرّر',tr:'زرّر معطفك ولبس قفازاتك. الجو بره بارد جدًا.'},
-  {q:'My classes end on Tuesday. My _______ will be on Friday.',o:['reservation','gate','graduation','ticket'],a:2,en:'graduation = the school finishing ceremony',ar:'graduation = حفل التخرّج',tr:'صفوفي تخلص يوم الثلاثاء. تخرّجي بيكون يوم الجمعة.'},
-  {q:"Jerry is 30 years old. He's _______ to school next year. He wants to learn about computers.",o:['graduating','going back','meeting','turning'],a:1,en:'going back = returning to school after time away',ar:'going back = يرجع لمكان كان فيه قبل',tr:'جيري عمره ٣٠ سنة. بيرجع للمدرسة السنة الجاية. يبي يتعلم عن الكمبيوتر.'},
-  {q:'A: Is the television on in your room? B: No, I _______.',o:['turned it on','turned it off','changed it','pulled it'],a:1,en:'No matches the opposite of on: turned it off',ar:'الجواب No يطابق: طفّاها (turned it off)',tr:'التلفزيون شغال بغرفتك؟ — لا، طفّيته.'},
+  {q:"_______ your coat and put on your gloves. It's very cold outside.",o:['Lock','Button','Turn on','Sharpen'],a:1,en:'Button (verb) = fasten with buttons',ar:'Button (فعل) = يزرّر',tr:'زرّر معطفك والبس قفازاتك. الجو بالخارج بارد جداً.'},
+  {q:'My classes end on Tuesday. My _______ will be on Friday.',o:['reservation','gate','graduation','ticket'],a:2,en:'graduation = the school finishing ceremony',ar:'graduation = حفل التخرّج',tr:'صفوفي تنتهي يوم الثلاثاء. تخرّجي سيكون يوم الجمعة.'},
+  {q:"Jerry is 30 years old. He's _______ to school next year. He wants to learn about computers.",o:['graduating','going back','meeting','turning'],a:1,en:'going back = returning to school after time away',ar:'going back = يرجع لمكان كان فيه قبل',tr:'جيري عمره 30 سنة. سيرجع إلى المدرسة السنة القادمة. يريد أن يتعلم عن الكمبيوتر.'},
+  {q:'A: Is the television on in your room? B: No, I _______.',o:['turned it on','turned it off','changed it','pulled it'],a:1,en:'No matches the opposite of on: turned it off',ar:'الجواب No يطابق: طفّاها (turned it off)',tr:'التلفزيون يعمل في غرفتك؟ — لا، أطفأته.'},
   {q:"It's too cold. I need a shirt with long _______.",o:['sleeves','legs','buttons','zippers'],a:0,en:'sleeves = the parts of a shirt covering the arms',ar:'sleeves = أكمام القميص',tr:'الجو بارد جدًا. أحتاج قميص بأكمام طويلة.'},
-  {q:'A: How much were the _______ for the game? B: They were $7 each.',o:['buttons','flights','tickets','customers'],a:2,en:'tickets = what you buy to attend a game',ar:'tickets = تذاكر للحضور',tr:'بكم كانت تذاكر المباراة؟ — كانت ٧ دولار للواحدة.'},
-  {q:'A: The music _______. B: Yes, Tom turned off the radio.',o:['returned','came back','moved','stopped'],a:3,en:'stopped matches turned off the radio',ar:'stopped = توقّفت (طفّى الراديو)',tr:'الموسيقى توقفت. — إي، توم طفى الراديو.'},
-  {q:'A: Can I turn off the TV? B: Yes, _______ the small button on your right.',o:['lock','push','call','pack'],a:1,en:'push = press a button',ar:'push = اضغط/ادفع الزر',tr:'أقدر أطفي التلفزيون؟ — إي، اضغط الزر الصغير يمينك.'},
-  {q:'A: When is your sister _______ from her trip? B: Next month.',o:['coming back','stopping','going back','packing'],a:0,en:'coming back = returning from a trip',ar:'coming back = ترجع من رحلة',tr:'متى راح ترجع أختك من رحلتها؟ — الشهر الجاي.'},
-  {q:'A: Which knob do I _______ to change the music on the radio? B: The one on the right.',o:['lock','sharpen','turn','stop'],a:2,en:'turn a knob = rotate it to adjust',ar:'turn = تلف/تدير المقبض',tr:'أي مقبض ألف عشان أغيّر الموسيقى بالراديو؟ — اللي على اليمين.'},
-  {q:'A: Which _______ are you flying? B: I’m flying Northwest.',o:['airplane','airport','airline','arrival'],a:2,en:'airline = the company you fly with',ar:'airline = شركة الطيران',tr:'أي شركة طيران بتسافر فيها؟ — بسافر مع Northwest.'},
-  {q:"I'll come back _______ one week.",o:['off','from','on','in'],a:3,en:'in + duration = after that time passes',ar:'in + مدة = بعد مرور هالمدة',tr:'بارجع خلال أسبوع.'},
+  {q:'A: How much were the _______ for the game? B: They were $7 each.',o:['buttons','flights','tickets','customers'],a:2,en:'tickets = what you buy to attend a game',ar:'tickets = تذاكر للحضور',tr:'بكم كانت تذاكر المباراة؟ — كانت 7 دولار للواحدة.'},
+  {q:'A: The music _______. B: Yes, Tom turned off the radio.',o:['returned','came back','moved','stopped'],a:3,en:'stopped matches turned off the radio',ar:'stopped = توقّفت (طفّى الراديو)',tr:'الموسيقى توقفت. — نعم، توم أطفأ الراديو.'},
+  {q:'A: Can I turn off the TV? B: Yes, _______ the small button on your right.',o:['lock','push','call','pack'],a:1,en:'push = press a button',ar:'push = اضغط/ادفع الزر',tr:'أستطيع أن أطفئ التلفزيون؟ — نعم، اضغط الزر الصغير على يمينك.'},
+  {q:'A: When is your sister _______ from her trip? B: Next month.',o:['coming back','stopping','going back','packing'],a:0,en:'coming back = returning from a trip',ar:'coming back = ترجع من رحلة',tr:'متى سترجع أختك من رحلتها؟ — الشهر القادم.'},
+  {q:'A: Which knob do I _______ to change the music on the radio? B: The one on the right.',o:['lock','sharpen','turn','stop'],a:2,en:'turn a knob = rotate it to adjust',ar:'turn = تلف/تدير المقبض',tr:'أي مقبض أدير لكي أغيّر الموسيقى في الراديو؟ — الذي على اليمين.'},
+  {q:'A: Which _______ are you flying? B: I’m flying Northwest.',o:['airplane','airport','airline','arrival'],a:2,en:'airline = the company you fly with',ar:'airline = شركة الطيران',tr:'أي شركة طيران ستسافر فيها؟ — سأسافر مع Northwest.'},
+  {q:"I'll come back _______ one week.",o:['off','from','on','in'],a:3,en:'in + duration = after that time passes',ar:'in + مدة = بعد مرور هالمدة',tr:'سأرجع خلال أسبوع.'},
 ],
 l4:[
-  {q:'Lt Gregg: Do you _______ study tonight? Lt Yates: Yes, I have a test tomorrow.',o:['must','have to','will','much'],a:1,en:'have to + verb expresses obligation, matches a Do-question',ar:'have to = التزام، تتماشى مع سؤال Do',tr:'لازم تذاكر الليلة؟ — إي، عندي اختبار باكر.'},
-  {q:'Who _______ the sandwich? It was good.',o:['dialed','had to','made','brushed'],a:2,en:'made = past tense of make',ar:'made = ماضي make',tr:'مين سوى الساندويتش؟ كان زين.'},
-  {q:'Is there a pencil _______ all those pens on the desk?',o:['among','many','between','much'],a:0,en:'among is used with three or more things',ar:'among = مع ثلاثة أشياء أو أكثر',tr:'فيه قلم رصاص وسط كل هالأقلام اللي على المكتب؟'},
-  {q:'Four quarts make a(n) _______.',o:['pound','ounce','gallon','bottle'],a:2,en:'4 quarts = 1 gallon',ar:'٤ كوارت = جالون واحد',tr:'أربع كوارت تسوي جالون.'},
-  {q:'2000 lbs. make a _______.',o:['tube','kg','half a pound','ton'],a:3,en:'2000 lbs = 1 ton',ar:'٢٠٠٠ رطل = طن واحد',tr:'٢٠٠٠ رطل تسوي طن.'},
-  {q:'Do you want cake or _______ for dessert?',o:['cheese','carrots','cookies','corn'],a:2,en:'cookies is a dessert food',ar:'cookies نوع من الحلى',tr:'تبي كيك ولا كوكيز للتحلية؟'},
+  {q:'Lt Gregg: Do you _______ study tonight? Lt Yates: Yes, I have a test tomorrow.',o:['must','have to','will','much'],a:1,en:'have to + verb expresses obligation, matches a Do-question',ar:'have to = التزام، تتماشى مع سؤال Do',tr:'هل يجب أن تذاكر الليلة؟ — نعم، عندي اختبار غداً.'},
+  {q:'Who _______ the sandwich? It was good.',o:['dialed','had to','made','brushed'],a:2,en:'made = past tense of make',ar:'made = ماضي make',tr:'من صنع الساندويتش؟ كان لذيذاً.'},
+  {q:'Is there a pencil _______ all those pens on the desk?',o:['among','many','between','much'],a:0,en:'among is used with three or more things',ar:'among = مع ثلاثة أشياء أو أكثر',tr:'هل يوجد قلم رصاص وسط كل هذه الأقلام التي على المكتب؟'},
+  {q:'Four quarts make a(n) _______.',o:['pound','ounce','gallon','bottle'],a:2,en:'4 quarts = 1 gallon',ar:'٤ كوارت = جالون واحد',tr:'أربع كوارت تساوي جالوناً.'},
+  {q:'2000 lbs. make a _______.',o:['tube','kg','half a pound','ton'],a:3,en:'2000 lbs = 1 ton',ar:'٢٠٠٠ رطل = طن واحد',tr:'2000 رطل تساوي طناً.'},
+  {q:'Do you want cake or _______ for dessert?',o:['cheese','carrots','cookies','corn'],a:2,en:'cookies is a dessert food',ar:'cookies نوع من الحلى',tr:'تريد كيك أم كوكيز للتحلية؟'},
   {q:'Did you have a _______ of pie?',o:['slice','glass','plate','fork'],a:0,en:'a slice of pie is the standard collocation',ar:'a slice of = تعبير ثابت مع pie',tr:'أكلت شريحة فطيرة؟'},
-  {q:'_______ you work in Canada next year?',o:['Make','Has to','Will','Have to'],a:2,en:'next year signals future tense with will',ar:'next year → المستقبل بـ will',tr:'بتشتغل بكندا السنة الجاية؟'},
+  {q:'_______ you work in Canada next year?',o:['Make','Has to','Will','Have to'],a:2,en:'next year signals future tense with will',ar:'next year → المستقبل بـ will',tr:'ستعمل في كندا السنة القادمة؟'},
   {q:'Squash and corn are _______.',o:['potatoes','sandwiches','cans','vegetables'],a:3,en:'squash and corn are vegetables',ar:'الكوسا والذرة من الخضار',tr:'الكوسا والذرة خضار.'},
-  {q:'This is an old telephone. You have to _______ the numbers.',o:['make','makes','dial','dials'],a:2,en:'have to + base verb, no s: dial',ar:'have to + فعل مجرد بدون s: dial',tr:'هذا تلفون قديم. لازم تطلب الأرقام.'},
-  {q:'A lot of children in this school are _______ 10 and 14 years old.',o:['many','much','between','among'],a:2,en:'between + two numbers (a range)',ar:'between + رقمين (مدى)',tr:'كثير من الأطفال بهالمدرسة أعمارهم بين ١٠ و١٤ سنة.'},
-  {q:"I can't find a _______ for the soup.",o:['bowl','fork','can','glass'],a:0,en:'soup is served in a bowl',ar:'الشوربة تُقدَّم بوعاء',tr:'ما لقيت وعاء للشوربة.'},
-  {q:"It's not necessary to have an ID card to see a movie. You _______ have an ID card.",o:['must','can','have to',"don't have to"],a:3,en:"not necessary means don't have to",ar:"مو ضروري = don't have to",tr:'مو ضروري تجيب بطاقة هوية عشان تشوف فيلم. مو لازم تجيب بطاقة هوية.'},
-  {q:'There isn’t _______ salt in the soup.',o:['a','many','much','the'],a:2,en:'salt is a noncount noun → much',ar:'salt اسم غير معدود → much',tr:'ما فيه ملح كثير بالشوربة.'},
-  {q:'Will you buy _______ milk, please?',o:['a gallon of','a tube of','half a pound of','a dozen'],a:0,en:'milk is measured in gallons',ar:'الحليب يُقاس بالجالون',tr:'بتشتري جالون حليب، من فضلك؟'},
+  {q:'This is an old telephone. You have to _______ the numbers.',o:['make','makes','dial','dials'],a:2,en:'have to + base verb, no s: dial',ar:'have to + فعل مجرد بدون s: dial',tr:'هذا تلفون قديم. يجب أن تطلب الأرقام.'},
+  {q:'A lot of children in this school are _______ 10 and 14 years old.',o:['many','much','between','among'],a:2,en:'between + two numbers (a range)',ar:'between + رقمين (مدى)',tr:'كثير من الأطفال في هذه المدرسة أعمارهم بين 10 و14 سنة.'},
+  {q:"I can't find a _______ for the soup.",o:['bowl','fork','can','glass'],a:0,en:'soup is served in a bowl',ar:'الشوربة تُقدَّم بوعاء',tr:'لم أجد وعاء للشوربة.'},
+  {q:"It's not necessary to have an ID card to see a movie. You _______ have an ID card.",o:['must','can','have to',"don't have to"],a:3,en:"not necessary means don't have to",ar:"مو ضروري = don't have to",tr:'ليس ضرورياً أن تُحضر بطاقة هوية لكي تشاهد فيلماً. لست مضطراً أن تُحضر بطاقة هوية.'},
+  {q:'There isn’t _______ salt in the soup.',o:['a','many','much','the'],a:2,en:'salt is a noncount noun → much',ar:'salt اسم غير معدود → much',tr:'لا يوجد ملح كثير في الشوربة.'},
+  {q:'Will you buy _______ milk, please?',o:['a gallon of','a tube of','half a pound of','a dozen'],a:0,en:'milk is measured in gallons',ar:'الحليب يُقاس بالجالون',tr:'هل ستشتري جالون حليب، من فضلك؟'},
   {q:'We need glasses, forks, knives, napkins, and _______.',o:['cans','receivers','bars','plates'],a:3,en:'plates complete the table setting',ar:'plates تكمل أدوات المائدة',tr:'نحتاج أكواب، شوك، سكاكين، مناديل، وصحون.'},
   {q:'Do you have a _______ of paper for me to write a telephone number?',o:['slice','dial','dish','piece'],a:3,en:'a piece of paper is the standard collocation',ar:'a piece of = تعبير ثابت مع paper',tr:'عندك ورقة أكتب فيها رقم هاتف؟'},
-  {q:'I needed _______ eggs to make these 2 cakes.',o:['half dozen','a half of dozen','half a dozen','half dozen of'],a:2,en:'half a dozen is the correct phrase',ar:'half a dozen هي الصيغة الصحيحة',tr:'احتجت نص دزينة بيض عشان أسوي هالكيكتين.'},
-  {q:"She'll buy a _______ of toothpaste.",o:['ton','bottle','bowl','tube'],a:3,en:'toothpaste comes in a tube',ar:'معجون الأسنان يجي بأنبوب',tr:'بتشتري أنبوب معجون أسنان.'},
-  {q:'They went to see _______ movie yesterday.',o:['first','it','a','two'],a:2,en:'a movie = an unspecified movie',ar:'a movie = فيلم غير محدد',tr:'راحوا يتفرجون فيلم أمس.'},
+  {q:'I needed _______ eggs to make these 2 cakes.',o:['half dozen','a half of dozen','half a dozen','half dozen of'],a:2,en:'half a dozen is the correct phrase',ar:'half a dozen هي الصيغة الصحيحة',tr:'احتجت نصف دزينة بيض لكي أصنع هاتين الكيكتين.'},
+  {q:"She'll buy a _______ of toothpaste.",o:['ton','bottle','bowl','tube'],a:3,en:'toothpaste comes in a tube',ar:'معجون الأسنان يجي بأنبوب',tr:'ستشتري أنبوب معجون أسنان.'},
+  {q:'They went to see _______ movie yesterday.',o:['first','it','a','two'],a:2,en:'a movie = an unspecified movie',ar:'a movie = فيلم غير محدد',tr:'ذهبوا ليشاهدوا فيلماً أمس.'},
 ]
 };
 
@@ -636,25 +636,25 @@ EE.final=FINAL;
 // ═══════════════════════════════════════
 const REVIEW=[
   {q:"Don't _______ that bowl of soup. It's very hot.",o:['point to','touch','turn off','comb'],a:1,en:'hot soup → warning not to touch',ar:'شوربة حارة → تحذير من اللمس',tr:'لا تلمس وعاء الشوربة ذاك. هو حار جدًا.'},
-  {q:'Thomas ate a dozen cookies before lunch. A dozen = _______.',o:['six','eight','twelve','twenty'],a:2,en:'a dozen = 12',ar:'دزينة = ١٢',tr:'توماس أكل دزينة كوكيز قبل الغدا. دزينة = اثنا عشر.'},
+  {q:'Thomas ate a dozen cookies before lunch. A dozen = _______.',o:['six','eight','twelve','twenty'],a:2,en:'a dozen = 12',ar:'دزينة = ١٢',tr:'توماس أكل دزينة كوكيز قبل الغداء. دزينة = اثنا عشر.'},
   {q:'The sandwich has one slice of cheese _______ two slices of bread.',o:['between','among','before','at'],a:0,en:'between = in the middle of two things',ar:'between = بين شيئين',tr:'الساندويتش فيه شريحة جبن بين شريحتين خبز.'},
-  {q:'I went to the doctor. I had a _______ arm.',o:['only','right','sore','long'],a:2,en:'sore = painful',ar:'sore = مؤلم',tr:'رحت للدكتور. كان عندي ذراع مؤلمة.'},
-  {q:'Where can I _______ these pencils?',o:['lock','turn','push','sharpen'],a:3,en:'pencils need sharpening',ar:'الأقلام تحتاج بري',tr:'وين أقدر أبري هالأقلام؟'},
-  {q:'First, you wash your clothes. Then, you _______ the clothes in cold water.',o:['rinse','pull','dry','soap'],a:0,en:'laundry sequence: wash then rinse',ar:'ترتيب الغسيل: تغسل ثم تشطف',tr:'أول تغسل ملابسك. بعدين تشطفها بماء بارد.'},
+  {q:'I went to the doctor. I had a _______ arm.',o:['only','right','sore','long'],a:2,en:'sore = painful',ar:'sore = مؤلم',tr:'ذهبت إلى الطبيب. كان عندي ذراع مؤلمة.'},
+  {q:'Where can I _______ these pencils?',o:['lock','turn','push','sharpen'],a:3,en:'pencils need sharpening',ar:'الأقلام تحتاج بري',tr:'أين أستطيع أن أبري هذه الأقلام؟'},
+  {q:'First, you wash your clothes. Then, you _______ the clothes in cold water.',o:['rinse','pull','dry','soap'],a:0,en:'laundry sequence: wash then rinse',ar:'ترتيب الغسيل: تغسل ثم تشطف',tr:'أولاً تغسل ملابسك. ثم تشطفها بماء بارد.'},
   {q:'I ate a big bowl of chocolate ice cream. Big = _______.',o:['long','short','large','ounce'],a:2,en:'big = large (size)',ar:'big = large (بمعنى الحجم)',tr:'أكلت وعاء كبير آيسكريم شوكولاتة. Big = large.'},
-  {q:'January the twentieth = _______.',o:['Jan 12th','Jan 20th','Jan 2nd','Jan 30th'],a:1,en:'twentieth = 20th',ar:'twentieth = العشرون (٢٠)',tr:'يناير العشرون = ٢٠ يناير.'},
-  {q:'There were lots of grammar questions on the test. Lots of = _______.',o:['a little','a few','many','some'],a:2,en:'lots of = many (with count nouns)',ar:'lots of = many (مع المعدود)',tr:'كان فيه أسئلة قواعد كثيرة بالاختبار. Lots of = many.'},
-  {q:'Your father can _______ a haircut for $6.00 at that barbershop.',o:['gets','got','getting','get'],a:3,en:'can + base verb: get',ar:'can + فعل مجرد: get',tr:'أبوك يقدر يسوي قصة شعر بـ٦ دولار بمحل الحلاقة ذاك.'},
-  {q:'I _______ for London next Tuesday.',o:['departing','departed','was depart','will depart'],a:3,en:'next Tuesday signals future tense with will',ar:'next Tuesday → المستقبل بـ will',tr:'بغادر لندن الثلاثاء الجاي.'},
-  {q:"There's _______ onion on the teacher's desk.",o:['a','any','an','many'],a:2,en:'onion starts with a vowel sound → an',ar:'onion يبدأ بصوت حرف علة → an',tr:'فيه بصلة على مكتب المعلم.'},
+  {q:'January the twentieth = _______.',o:['Jan 12th','Jan 20th','Jan 2nd','Jan 30th'],a:1,en:'twentieth = 20th',ar:'twentieth = العشرون (٢٠)',tr:'يناير العشرون = 20 يناير.'},
+  {q:'There were lots of grammar questions on the test. Lots of = _______.',o:['a little','a few','many','some'],a:2,en:'lots of = many (with count nouns)',ar:'lots of = many (مع المعدود)',tr:'كان هناك أسئلة قواعد كثيرة في الاختبار. Lots of = many.'},
+  {q:'Your father can _______ a haircut for $6.00 at that barbershop.',o:['gets','got','getting','get'],a:3,en:'can + base verb: get',ar:'can + فعل مجرد: get',tr:'أبوك يستطيع أن يحصل على قصة شعر بـ6 دولار في محل الحلاقة ذاك.'},
+  {q:'I _______ for London next Tuesday.',o:['departing','departed','was depart','will depart'],a:3,en:'next Tuesday signals future tense with will',ar:'next Tuesday → المستقبل بـ will',tr:'سأغادر إلى لندن الثلاثاء القادم.'},
+  {q:"There's _______ onion on the teacher's desk.",o:['a','any','an','many'],a:2,en:'onion starts with a vowel sound → an',ar:'onion يبدأ بصوت حرف علة → an',tr:'توجد بصلة على مكتب المعلم.'},
   {q:'Is your flight a one-way flight?',o:["No, it's an airline flight.","No, I will fly with my son.","No, it's round-trip.","Yes, it leaves from gate one."],a:2,en:'the opposite of one-way is round-trip',ar:'عكس one-way هو round-trip',tr:'رحلتك اتجاه واحد؟ — لا، هي ذهاب وعودة.'},
-  {q:'Two days ago, I _______ a reservation with the travel agent.',o:['make','made','am making','will make'],a:1,en:'two days ago signals past tense: made',ar:'two days ago → ماضي: made',tr:'قبل يومين، سويت حجز مع وكيل السفر.'},
-  {q:'Do we have to take a test this week?',o:["No, we don't have to.","No, we have to.","No, we don't has to.","No, we doesn't has to."],a:0,en:"short answer with we: don't have to",ar:"جواب قصير مع we: don't have to",tr:'لازم نسوي اختبار هالأسبوع؟ — لا، مو لازم.'},
-  {q:'Our bus leaves at 7:45. We will return around 2:30. Return = _______.',o:['come back','put on','arrive','depart'],a:0,en:'return = come back',ar:'return = يرجع (come back)',tr:'الباص يطلع الساعة ٧:٤٥. بنرجع حوالي ٢:٣٠. Return = come back.'},
-  {q:'How much coffee do you want?',o:["I don't want no coffee.","I don't want some coffee.","I don't want much coffee.","I don't want the coffee."],a:2,en:'coffee is a noncount noun → much',ar:'coffee غير معدود → much',tr:'كم قهوة تبي؟ — ما أبي قهوة كثير.'},
-  {q:'Is there milk on the table?',o:['Yes, they are.','Yes, there is.','Yes, it is.','Yes, there are.'],a:1,en:'milk is noncount → there is',ar:'milk غير معدود → there is',tr:'فيه حليب على الطاولة؟ — إي، فيه.'},
-  {q:'You have a lot of friends at school.',o:['Yes, I have many friends.','Yes, I have much friends.','Yes, I have a little friends.','Yes, I have few friends.'],a:0,en:'friends is countable → many',ar:'friends معدود → many',tr:'عندك أصحاب كثير بالمدرسة. — إي، عندي أصحاب كثير.'},
-  {q:'Will the tests be long tests every day?',o:["No, they aren't.","No, there weren't.","No, they will.","No, they won't."],a:3,en:'short answer to a will-question: won’t',ar:'جواب قصير لسؤال will: won’t',tr:'بتكون الاختبارات طويلة كل يوم؟ — لا، ما بتكون.'},
+  {q:'Two days ago, I _______ a reservation with the travel agent.',o:['make','made','am making','will make'],a:1,en:'two days ago signals past tense: made',ar:'two days ago → ماضي: made',tr:'قبل يومين، عملت حجزاً مع وكيل السفر.'},
+  {q:'Do we have to take a test this week?',o:["No, we don't have to.","No, we have to.","No, we don't has to.","No, we doesn't has to."],a:0,en:"short answer with we: don't have to",ar:"جواب قصير مع we: don't have to",tr:'هل يجب أن نؤدي اختباراً هذا الأسبوع؟ — لا، لسنا مضطرين.'},
+  {q:'Our bus leaves at 7:45. We will return around 2:30. Return = _______.',o:['come back','put on','arrive','depart'],a:0,en:'return = come back',ar:'return = يرجع (come back)',tr:'الباص يغادر الساعة 7:45. سنرجع حوالي 2:30. Return = come back.'},
+  {q:'How much coffee do you want?',o:["I don't want no coffee.","I don't want some coffee.","I don't want much coffee.","I don't want the coffee."],a:2,en:'coffee is a noncount noun → much',ar:'coffee غير معدود → much',tr:'كم قهوة تريد؟ — لا أريد قهوة كثيرة.'},
+  {q:'Is there milk on the table?',o:['Yes, they are.','Yes, there is.','Yes, it is.','Yes, there are.'],a:1,en:'milk is noncount → there is',ar:'milk غير معدود → there is',tr:'هل يوجد حليب على الطاولة؟ — نعم، يوجد.'},
+  {q:'You have a lot of friends at school.',o:['Yes, I have many friends.','Yes, I have much friends.','Yes, I have a little friends.','Yes, I have few friends.'],a:0,en:'friends is countable → many',ar:'friends معدود → many',tr:'عندك أصدقاء كثيرون في المدرسة. — نعم، عندي أصدقاء كثيرون.'},
+  {q:'Will the tests be long tests every day?',o:["No, they aren't.","No, there weren't.","No, they will.","No, they won't."],a:3,en:'short answer to a will-question: won’t',ar:'جواب قصير لسؤال will: won’t',tr:'ستكون الاختبارات طويلة كل يوم؟ — لا، لن تكون.'},
 ];
 EE.review=REVIEW;
 

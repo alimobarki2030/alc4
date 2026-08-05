@@ -8,7 +8,8 @@ const BOOK_ID='book8';
 const LESSON_META={
   l1:{ico:'🧭',title:'Lesson 1 — Getting directions',sub:'الاتجاهات والإرشاد · المستقبل بـ BE going to · المقارنة'},
   l2:{ico:'🏋️',title:"Lesson 2 — Let's get in shape!",sub:'اللياقة والتمارين · الفعل + to · ضمائر الملكية'},
-  l3:{ico:'📞',title:'Lesson 3 — Using the phone',sub:'استخدام الهاتف · المقارنة more/less · may/might · whom'}
+  l3:{ico:'📞',title:'Lesson 3 — Using the phone',sub:'استخدام الهاتف · المقارنة more/less · may/might · whom'},
+  l4:{ico:'📝',title:'Lesson 4 — Leave a message',sub:'ترك رسالة واستئجار شقة · فعل الأمر tell · قول الوقت (to/till/past) · until/from…to'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -142,6 +143,41 @@ l3:[
   {e:'most',a:'الأكثر',em:'🔼'},
   {e:'least',a:'الأقل',em:'🔽'},
   {e:'whom',a:'مَن (للمفعول)',em:'❓'},
+],
+l4:[
+  // — السكن والشقة —
+  {e:'apartment',a:'شقّة',em:'🏢'},
+  {e:'manager',a:'مدير (العقار)',em:'🧑‍💼'},
+  {e:'residence',a:'مسكن / سكن',em:'🏠'},
+  {e:'rent',a:'يستأجر / الإيجار',em:'🔑'},
+  {e:'for rent',a:'للإيجار',em:'🏷️'},
+  {e:'deposit',a:'عربون / تأمين',em:'💰'},
+  {e:'basement',a:'قبو (تحت البيت)',em:'🕳️'},
+  {e:'bedroom',a:'غرفة نوم',em:'🛏️'},
+  {e:'dining room',a:'غرفة الطعام',em:'🍽️'},
+  {e:'garden',a:'حديقة',em:'🌷'},
+  {e:'kind (of)',a:'نوع (من)',em:'🗂️'},
+  // — الهاتف والرسائل —
+  {e:'message',a:'رسالة',em:'💌'},
+  {e:'answering machine',a:'آلة الردّ الآلي',em:'📠'},
+  {e:'line',a:'الخط الهاتفي',em:'📈'},
+  {e:'moment',a:'لحظة',em:'⏱️'},
+  // — الأفعال —
+  {e:'hold',a:'يمسك / ينتظر',past:'held',pa:'أمسك',em:'✋'},
+  {e:'hold on',a:'ينتظر على الخط',past:'held on',pa:'انتظر على الخط',em:'📞'},
+  {e:'call back',a:'يعاود الاتصال',em:'🔁'},
+  {e:'be back',a:'يعود',em:'↩️'},
+  {e:'look for',a:'يبحث عن',em:'🔍'},
+  {e:'manage',a:'يُدير',em:'🗂️'},
+  {e:'tell',a:'يُخبر',past:'told',pa:'أخبر',em:'🗣️'},
+  {e:'wait (for)',a:'ينتظر',em:'⏳'},
+  // — قول الوقت —
+  {e:'a quarter',a:'رُبع (ساعة)',em:'🕒'},
+  {e:'half past',a:'والنصف',em:'🕜'},
+  {e:'after / past',a:'بعد (الساعة)',em:'➕'},
+  {e:'to / till',a:'إلا / قبل (الساعة)',em:'➖'},
+  {e:'until',a:'حتى',em:'⏰'},
+  {e:'from … to',a:'من … إلى',em:'↔️'},
 ]
 };
 
@@ -311,6 +347,68 @@ l3:[
       {s:'With who did you go?',wrong:'who',right:'whom',tr:'بعد حرف الجرّ نستخدم whom لا who.',ok:false},
     ]
   }
+],
+l4:[
+  {
+    title:'Using tell in imperative sentences', ar:'فعل الأمر tell (أخبِر)',
+    rule:'لنقل رسالة نستخدم الأمر: Tell + (مفعول: him/her/them/الاسم) + (that) + الجملة. وللنفي: Don\'t tell + مفعول…',
+    parts:[
+      {t:'Tell + مفعول + (that) + جملة',d:'مثال: Tell him that I\'ll call back. = أخبره أنني سأعاود الاتصال.'},
+      {t:"Don't tell + مفعول",d:'للنفي: Don\'t tell her I\'m here. = لا تُخبرها أنني هنا.'},
+      {t:'المفعول قبل الرسالة',d:'دائماً: Tell [him/her/them/Karen] … — الشخص أولاً ثم الرسالة.'},
+    ],
+    check:{q:'Captain Johnson is on line one. — _______ him that I\'ll call back.',o:['Tell','Say','Talk','Speak'],a:0,en:'imperative message → Tell him',ar:'نقل رسالة بالأمر → Tell him'},
+    formula:[{t:'Tell',c:'v'},{t:'+',c:'p'},{t:'him/her/them',c:'s'},{t:'+',c:'p'},{t:'(that) + message',c:'k'}],
+    compare:[
+      {c1:'Tell her that I called.',c2:"Don't tell her that I called.",ar:'إثبات ↔ نفي'},
+      {c1:'Say hello.',c2:'Tell him hello.',ar:'tell يحتاج مفعولاً (شخصاً)'},
+    ],
+    examples:[
+      {s:"Tell Karen that her husband called an hour ago.",tr:'أخبِر كارين أن زوجها اتّصل قبل ساعة.',ar:'Tell + الاسم + that',ok:true},
+      {s:"Don't tell him I have any money.",tr:'لا تُخبره أن معي أيّ مال.',ar:"Don't tell + مفعول",ok:true},
+      {s:'Tell that I called to her.',wrong:'that I called to her',right:'her that I called',tr:'المفعول (الشخص) يأتي أولاً: Tell her that I called.',ok:false},
+    ]
+  },
+  {
+    title:'Saying time before the hour: to / till / until', ar:'قول الوقت قبل الساعة (إلا)',
+    rule:'قبل الساعة (الدقائق الباقية) نستخدم to / till / until: It\'s [عدد الدقائق أو a quarter] to/till the hour.',
+    parts:[
+      {t:'It\'s ten to two',d:'الساعة الثانية إلا عشر دقائق (1:50).'},
+      {t:'It\'s a quarter till four',d:'الساعة الرابعة إلا رُبع (3:45). a quarter = 15 دقيقة.'},
+      {t:'to = till = until',d:'الثلاثة بمعنى «إلا / قبل». مثال: five to nine = five till nine.'},
+    ],
+    check:{q:"The clock shows 3:45. It's a quarter _______ four.",o:['to','after','past','from'],a:0,en:'before the hour → to/till',ar:'قبل الساعة → to / till'},
+    formula:[{t:"It's",c:'s'},{t:'+',c:'p'},{t:'minutes / a quarter',c:'v'},{t:'+',c:'p'},{t:'to / till + hour',c:'k'}],
+    compare:[
+      {c1:'1:50 → ten to two',c2:'1:45 → a quarter to two',ar:'الدقائق الباقية للساعة'},
+      {c1:'to (أمريكي)',c2:'till / until (مرادف)',ar:'كلها «إلا»'},
+    ],
+    examples:[
+      {s:"It's five till four.",tr:'الساعة الرابعة إلا خمس دقائق (3:55).',ar:'till = إلا',ok:true},
+      {s:"It's twenty to six.",tr:'الساعة السادسة إلا ثلث (5:40).',ar:'to = إلا',ok:true},
+      {s:"It's a quarter after four for 3:45.",wrong:'after',right:'to / till',tr:'الوقت قبل الساعة (3:45) → a quarter to four.',ok:false},
+    ]
+  },
+  {
+    title:'Saying time after the hour: after / past', ar:'قول الوقت بعد الساعة (و…)',
+    rule:'بعد الساعة (الدقائق الماضية) نستخدم after / past: It\'s [دقائق أو a quarter أو half] after/past the hour. ⚠ نقول half past لا «half after».',
+    parts:[
+      {t:'It\'s ten after two',d:'الساعة الثانية وعشر دقائق (2:10).'},
+      {t:'It\'s a quarter past nine',d:'التاسعة والرُبع (9:15).'},
+      {t:'It\'s half past nine',d:'التاسعة والنصف (9:30). أو نقول: nine thirty — لكن ليس «half after».'},
+    ],
+    check:{q:"The clock shows 9:30. It's _______ past nine.",o:['half','quarter','ten','a quarter to'],a:0,en:'9:30 → half past',ar:'والنصف → half past'},
+    formula:[{t:"It's",c:'s'},{t:'+',c:'p'},{t:'minutes / a quarter / half',c:'v'},{t:'+',c:'p'},{t:'after / past + hour',c:'k'}],
+    compare:[
+      {c1:'2:10 → ten after two',c2:'9:30 → half past nine',ar:'الدقائق الماضية بعد الساعة'},
+      {c1:'half past five ✔',c2:'half after five ✘',ar:'نقول half past فقط'},
+    ],
+    examples:[
+      {s:"It's a quarter after nine.",tr:'التاسعة والرُبع (9:15).',ar:'after = و…',ok:true},
+      {s:"It's half past five.",tr:'الخامسة والنصف (5:30).',ar:'half past = والنصف',ok:true},
+      {s:"It's half after five.",wrong:'half after',right:'half past',tr:'الصحيح half past five (أو five thirty).',ok:false},
+    ]
+  }
 ]
 };
 
@@ -344,6 +442,15 @@ l3:[
   {words:['I','may','go','to','bed','early','tonight'],ans:'I may go to bed early tonight.',tr:'قد أنام مبكراً الليلة.',ar:'may = احتمال'},
   {words:['With','whom','am','I','speaking'],ans:'With whom am I speaking?',tr:'مع مَن أتحدّث؟',ar:'preposition + whom'},
   {words:['Please','deposit','the','coins','in','the','slot'],ans:'Please deposit the coins in the slot.',tr:'من فضلك أدخل العملات في الفتحة.',ar:'deposit / slot'},
+],
+l4:[
+  {words:['Tell','him','that',"I'll",'call','back','later'],ans:"Tell him that I'll call back later.",tr:'أخبره أنني سأعاود الاتصال لاحقاً.',ar:'الأمر tell'},
+  {words:["Don't",'tell','her','that','I','called'],ans:"Don't tell her that I called.",tr:'لا تُخبرها أنني اتّصلت.',ar:"Don't tell"},
+  {words:['May','I','speak','with','the','manager'],ans:'May I speak with the manager?',tr:'هل يمكنني التحدّث مع المدير؟',ar:'طلب هاتفي'},
+  {words:['Can','you','hold','the','line'],ans:'Can you hold the line?',tr:'هل يمكنك الانتظار على الخط؟',ar:'hold the line'},
+  {words:["I'd",'like','to','rent','an','apartment'],ans:"I'd like to rent an apartment.",tr:'أودّ أن أستأجر شقّة.',ar:'rent'},
+  {words:["It's",'half','past','nine'],ans:"It's half past nine.",tr:'الساعة التاسعة والنصف.',ar:'half past'},
+  {words:['I','work','from','eight','to','five'],ans:'I work from eight to five.',tr:'أعمل من الثامنة إلى الخامسة.',ar:'from … to'},
 ]
 };
 
@@ -434,6 +541,34 @@ l3:[
   {q:"Jan has lots of money. She buys the _______ expensive clothes in the store.",o:["least","less","more","most"],a:3,en:"richest buys the most expensive",ar:'الأغلى → the most expensive',tr:'جان لديها مال كثير، تشتري أغلى الملابس في المتجر.'},
   {q:"Joe likes to keep his money. He buys the _______ expensive clothes.",o:["most","more","least","less"],a:2,en:"cheapest → the least expensive",ar:'الأرخص → the least expensive',tr:'جو يحبّ أن يوفّر ماله، يشتري أرخص الملابس.'},
   {q:"This problem is easy. It's _______ difficult than all of the others.",o:["more","less","most","the least"],a:1,en:"easier → less difficult",ar:'أسهل → أقل صعوبة (less difficult)',tr:'هذه المسألة سهلة، أقل صعوبة من كل البقية.'},
+],
+l4:[
+  // — Evaluation Exercise D (الرسمية · EE-20→23) —
+  {q:"Colonel Walker isn't here. He'll be back in 2 hours. Can you _______?",o:["hold the line","look for him","wait a minute","call back later"],a:3,en:"back in 2 hours → call back later",ar:'يعود بعد ساعتين → عاود الاتصال لاحقاً',tr:'العقيد ووكر ليس هنا، سيعود بعد ساعتين. هل يمكنك معاودة الاتصال لاحقاً؟'},
+  {q:"I'll be back at half past five. — That is _______.",o:["6:30","4:30","5:30","5:15"],a:2,en:"half past five = 5:30",ar:'الخامسة والنصف = 5:30',tr:'سأعود الخامسة والنصف. = 5:30.'},
+  {q:"I'm calling about the apartment you have for rent. How many _______ does it have?",o:["managers","bedrooms","bells","residences"],a:1,en:"rooms to sleep → bedrooms",ar:'كم غرفة نوم → bedrooms',tr:'أتّصل بخصوص الشقة المعروضة للإيجار. كم غرفة نوم فيها؟'},
+  {q:"Mrs. Larson, I'll be back after lunch. Can you take messages for me _______ now _______ 2 o'clock?",o:["until / to","till / from","from / until","to / till"],a:2,en:"from now until 2 → from / until",ar:'من الآن حتى الثانية → from / until',tr:'سيدة لارسن، سأعود بعد الغداء. هل تستقبلين رسائلي من الآن حتى الثانية؟'},
+  {q:"Did you hear? Jim got a new job! He's _______ a big Chinese restaurant in San Francisco.",o:["managing","renting","exercising in","sitting in"],a:0,en:"runs a restaurant → managing",ar:'يُدير مطعماً → managing',tr:'هل سمعت؟ حصل جيم على وظيفة جديدة! إنه يُدير مطعماً صينياً كبيراً في سان فرانسيسكو.'},
+  {q:"Bill: Is Ms. Clinton there? Tim: I'm sorry. She's not here now. Bill: Will you please _______?",o:["hold her call","wait for her call","give her a message","call me later"],a:2,en:"she's out → give her a message",ar:'غير موجودة → اترك لها رسالة',tr:'بيل: هل السيدة كلينتون موجودة؟ تِم: آسف، ليست هنا الآن. بيل: هل تعطيها رسالة من فضلك؟'},
+  {q:"Sam is always late for work. Work begins at eight, but he usually arrives at about _______.",o:["ten minutes till eight","a quarter to seven","a quarter after eight","seven-thirty"],a:2,en:"late after eight → a quarter after eight",ar:'متأخّر بعد الثامنة → الثامنة والرُبع',tr:'سام دائماً متأخّر عن العمل. يبدأ العمل الثامنة، لكنه يصل عادةً نحو الثامنة والرُبع.'},
+  {q:"What an interesting animal! What _______ animal is it?",o:["kind of","kind a","kinds of","a kind"],a:0,en:"what kind of + noun",ar:'أيّ نوع من → kind of',tr:'يا له من حيوان مثير! أيّ نوع من الحيوانات هو؟'},
+  {q:"Please have dinner without me. I'm going to _______ late tonight.",o:["look for","wait for","hold on","be back"],a:3,en:"return late → be back",ar:'سأعود متأخّراً → be back',tr:'تناولوا العشاء بدوني، سأعود متأخّراً الليلة.'},
+  {q:"Wait a minute. Don't go. I'll help you _______.",o:["the day after tomorrow","in just a moment","a quarter past three","until evening"],a:1,en:"very soon → in just a moment",ar:'بعد قليل → in just a moment',tr:'انتظر لحظة، لا تذهب. سأساعدك بعد لحظة.'},
+  {q:"Do I have to pay a _______ before I can rent the apartment?",o:["moment","message","deposit","dime"],a:2,en:"pay before renting → deposit",ar:'يُدفع قبل الإيجار → عربون (deposit)',tr:'هل عليّ دفع عربون قبل أن أستأجر الشقة؟'},
+  {q:"I work _______ five thirty every day.",o:["until","for","half past","minutes to"],a:0,en:"work up to 5:30 → until",ar:'أعمل حتى 5:30 → until',tr:'أعمل حتى الخامسة والنصف كل يوم.'},
+  {q:"Mr. Walker is the _______ of this factory.",o:["minute","manager","message","moment"],a:1,en:"runs a factory → manager",ar:'يُدير المصنع → manager',tr:'السيد ووكر هو مدير هذا المصنع.'},
+  {q:"I like this apartment. How much is the _______?",o:["manager","garden","rent","basement"],a:2,en:"cost to live → rent",ar:'كلفة السكن → الإيجار (rent)',tr:'تعجبني هذه الشقة. كم الإيجار؟'},
+  {q:"I'm going to be late because I can't find my car keys. This means:",o:["I'm calling about the apartment.","I'm holding the newspaper.","I'm looking for them now.","I'm waiting for lunch."],a:2,en:"can't find keys → looking for them",ar:'لا يجد مفاتيحه → يبحث عنها الآن',tr:'سأتأخّر لأني لا أجد مفاتيح سيارتي. → أبحث عنها الآن.'},
+  {q:"Mike: Would you like to leave a message? Bill: Yes. Please _______ Mr. Brown that I called.",o:["call","say","till","tell"],a:3,en:"pass a message → tell",ar:'نقل رسالة → tell',tr:'مايك: هل تودّ ترك رسالة؟ بيل: نعم، من فضلك أخبِر السيد براون أنني اتّصلت.'},
+  {q:"Sue: Where are the children? Sam: They're playing outside in the _______.",o:["bedroom","basement","dining room","garden"],a:3,en:"playing outside → garden",ar:'يلعبون بالخارج → الحديقة (garden)',tr:'سو: أين الأطفال؟ سام: يلعبون في الخارج في الحديقة.'},
+  {q:"Bob: Is Kathy there? Tina: No, she isn't here right now. Can I _______?",o:["take a message","wait a moment","tell her to go","call back later"],a:0,en:"she's out → take a message",ar:'غير موجودة → آخذ رسالة',tr:'بوب: هل كاثي موجودة؟ تينا: لا، ليست هنا الآن. هل آخذ رسالة؟'},
+  {q:"Bob: I'd like to speak with Lt West. Rick: Sir, she's taking a break. I'll go get her. Can you _______?",o:["call her back","hold the line","leave a message","look for her"],a:1,en:"I'll get her → hold the line",ar:'سأحضرها → انتظر على الخط',tr:'بوب: أودّ التحدّث مع الملازم وِست. ريك: سيدي، إنها في استراحة، سأحضرها. هل تنتظر على الخط؟'},
+  {q:"Major Bell called you. His number is 555-6248. This means:",o:["He wants you to wait for him.","He wants you to hold the line.","He wants you to tell him later.","He wants you to call him back."],a:3,en:"left his number → call him back",ar:'ترك رقمه → يريدك أن تعاود الاتصال',tr:'اتّصل بك الرائد بيل، ورقمه 555-6248. → يريدك أن تعاود الاتصال به.'},
+  {q:"Mike: Do you want to see a movie with us? Larry: I can't. I'm _______ an important phone call.",o:["waiting for","looking for","telling","waiting"],a:0,en:"expecting a call → waiting for",ar:'ينتظر مكالمة → waiting for',tr:'مايك: أتريد مشاهدة فيلم معنا؟ لاري: لا أستطيع، أنا في انتظار مكالمة مهمّة.'},
+  {q:"Nancy: Do you hear something? Laura: Yes, it's the _______.",o:["kind","line","bell","quarter"],a:2,en:"a sound → the bell",ar:'صوت يُسمع → الجرس (bell)',tr:'نانسي: هل تسمعين شيئاً؟ لورا: نعم، إنه الجرس.'},
+  {q:"Ray: Do you have to work tonight? Tim: I'll stay _______ the colonel goes home!",a:0,o:["until","from","to","then"],en:"stay up to a point → until",ar:'أبقى حتى → until',tr:'راي: هل عليك العمل الليلة؟ تِم: سأبقى حتى يذهب العقيد إلى بيته!'},
+  {q:"Stacy: Does this house have a family room below the first floor? Mark: No, it doesn't have a _______.",o:["basement","dining room","garden","roof"],a:0,en:"room below → basement",ar:'غرفة تحت الأرض → قبو (basement)',tr:'ستيسي: هل في هذا البيت غرفة عائلية تحت الدور الأول؟ مارك: لا، ليس فيه قبو.'},
+  {q:"Rich: Do you need any help? Nate: Yes, I need to open the car door. Will you _______ this box for me?",o:["look","hold","open","close"],a:1,en:"free his hands → hold the box",ar:'ليُفرغ يديه → أمسِك الصندوق (hold)',tr:'ريتش: هل تحتاج مساعدة؟ نيت: نعم، أريد فتح باب السيارة. هل تُمسك هذا الصندوق من أجلي؟'},
 ]
 };
 
@@ -459,6 +594,7 @@ const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
   ...EE.l3,
+  ...EE.l4,
 ]);
 EE.final=FINAL;
 
@@ -481,6 +617,11 @@ const SPELL_LESSONS=[
     {e:'operator',a:'المشغّل',em:'🧑‍💼'},{e:'coin',a:'عملة معدنية',em:'🪙'},{e:'expensive',a:'غالٍ',em:'💎'},
     {e:'busy',a:'مشغول',em:'🔴'},{e:'conversation',a:'محادثة',em:'💬'},{e:'factory',a:'مصنع',em:'🏭'},
     {e:'local',a:'محلي',em:'📍'},{e:'deposit',a:'يُدخل العملة',em:'💰'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 4 — الرسائل والسكن',w:[
+    {e:'apartment',a:'شقّة',em:'🏢'},{e:'manager',a:'مدير',em:'🧑‍💼'},{e:'deposit',a:'عربون',em:'💰'},
+    {e:'message',a:'رسالة',em:'💌'},{e:'basement',a:'قبو',em:'🕳️'},{e:'residence',a:'مسكن',em:'🏠'},
+    {e:'garden',a:'حديقة',em:'🌷'},{e:'quarter',a:'رُبع ساعة',em:'🕒'},
   ]},
 ];
 

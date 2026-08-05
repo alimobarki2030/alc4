@@ -638,7 +638,10 @@ function build_quiz(elId,qs,prefix){
       <span class="test-best ${(L&&L.done)?'done':''}">${bestTxt}</span>
       <button class="test-restart" onclick="restart_test()"><svg class="svgico" aria-hidden="true"><use href="#icon-refresh-cw"></use></svg> ابدأ من جديد</button>
     </div>`;
-    el.innerHTML=top+`<div class="qprog"><div class="qpbar"><div class="qpfill" id="${prefix}pf"></div></div>
+    // Real exam questions come written OR spoken, so nudge the student to train
+    // both skills — and point out the per-question speaker button.
+    const hint=`<div class="test-hint">💡 في قاعة الاختبار قد يأتي السؤال <b>مكتوباً</b> أو <b>مسموعاً</b> — درّب نفسك على <b>القراءة والسماع</b> معاً. اضغط <svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg> بجانب أي سؤال لسماعه.</div>`;
+    el.innerHTML=top+hint+`<div class="qprog"><div class="qpbar"><div class="qpfill" id="${prefix}pf"></div></div>
       <div class="qptxt" id="${prefix}pt">0 / ${qs.length}</div></div>`;
   }
 

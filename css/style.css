@@ -65,6 +65,11 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   border:2px solid var(--bdr);border-radius:10px;padding:9px 13px;margin-bottom:10px}
 .test-best{font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:700;color:var(--muted)}
 .test-best.done{color:var(--g)}
+.test-hint{background:#EFF6FF;border:1.5px solid #BFDBFE;color:#1E40AF;border-radius:12px;
+  padding:10px 14px;margin-bottom:12px;font-family:'Cairo',sans-serif;font-size:.82rem;
+  font-weight:600;line-height:1.75}
+.test-hint b{color:#1D4ED8;font-weight:800}
+.test-hint .svgico{color:#2563EB;vertical-align:-0.15em}
 .test-restart{background:var(--o);color:#fff;border:none;border-radius:8px;padding:7px 12px;
   font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:.15s}
 .test-restart:hover{filter:brightness(.93)}

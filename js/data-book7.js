@@ -555,7 +555,7 @@ l1:[
 l2:[
   // Book 7 · Lesson 2 · Evaluation Exercises (EE-10 → EE-12)
   // Exercise G — select the best answer
-  {q:"Mike is 30. David is 50. David is _______ Mike.",o:["more older","the oldest","older than","oldest than"],a:2,en:"comparative: old → older than",ar:'صيغة التفضيل: older than (أكبر سنًّا من)',tr:'مايك عمره ٣٠ وديفيد ٥٠. ديفيد أكبر سنًّا من مايك.'},
+  {q:"Mike is 30. David is 50. David is _______ Mike.",o:["more older","the oldest","older than","oldest than"],a:2,en:"comparative: old → older than",ar:'صيغة التفضيل: older than (أكبر سنًّا من)',tr:'مايك عمره 30 وديفيد 50. ديفيد أكبر سنًّا من مايك.'},
   {q:"Ten _______ two is five.   (10 ÷ 2 = 5)",o:["into","multiplied by","plus","divided by"],a:3,en:"10 ÷ 2 = 5 → divided by",ar:'القسمة ÷ → divided by (مقسوم على)',tr:'عشرة مقسومة على اثنين يساوي خمسة.'},
   {q:"Winter in Texas is _______ winter in New York.",o:["warmest","warm","warmer than","the warm"],a:2,en:"comparative: warm → warmer than",ar:'صيغة التفضيل: warmer than (أدفأ من)',tr:'الشتاء في تكساس أدفأ من الشتاء في نيويورك.'},
   {q:"Ten _______ two is twenty.   (10 × 2 = 20)",o:["into","multiplied by","plus","divided by"],a:1,en:"10 × 2 = 20 → multiplied by",ar:'الضرب × → multiplied by (مضروب في)',tr:'عشرة مضروبة في اثنين يساوي عشرين.'},
@@ -563,9 +563,9 @@ l2:[
   {q:"Give two cookies to _______ of the children.",o:["other","total","easy","each"],a:3,en:"to every one → each",ar:'لكل واحد على حِدة → each',tr:'أعطِ قطعتَي بسكويت لكل واحد من الأطفال.'},
   {q:"Six _______ three is three.   (6 − 3 = 3)",o:["plus","minus","subtract","divide"],a:1,en:"6 − 3 = 3 → minus",ar:'الطرح − → minus (ناقص)',tr:'ستة ناقص ثلاثة يساوي ثلاثة.'},
   {q:"Are all the students on the bus? — I don't know. I'll _______ them.",o:["add","explain","answer","count"],a:3,en:"count the students",ar:'يَعُدّ → count',tr:'هل كل الطلاب في الحافلة؟ — لا أعرف، سأعُدّهم.'},
-  {q:"How much does this book cost? — The _______ of the book is $20.00.",o:["circumference","price","description","problem"],a:1,en:"how much it costs → price",ar:'السِّعر → price',tr:'كم يكلّف هذا الكتاب؟ — سِعر الكتاب ٢٠ دولاراً.'},
+  {q:"How much does this book cost? — The _______ of the book is $20.00.",o:["circumference","price","description","problem"],a:1,en:"how much it costs → price",ar:'السِّعر → price',tr:'كم يكلّف هذا الكتاب؟ — سِعر الكتاب 20 دولاراً.'},
   {q:"Do you want cake or ice cream? — I want _______, please.",o:["other","any","both","some"],a:2,en:"cake AND ice cream → both",ar:'الاثنان معاً → both (كلاهما)',tr:'أتريد كعكاً أم آيس كريم؟ — أريد كليهما من فضلك.'},
-  {q:"What does 6 + 5 + 3 equal? — The _______ is 14.",o:["problem","total","plus","error"],a:1,en:"the sum → total",ar:'المجموع الكلّي → total',tr:'كم يساوي ٦ + ٥ + ٣؟ — المجموع ١٤.'},
+  {q:"What does 6 + 5 + 3 equal? — The _______ is 14.",o:["problem","total","plus","error"],a:1,en:"the sum → total",ar:'المجموع الكلّي → total',tr:'كم يساوي 6 + 5 + 3؟ — المجموع 14.'},
   {q:"Where do I put the flowers? — Put them in the _______ of the table.",o:["back","center","wide","tall"],a:1,en:"the middle → center",ar:'المنتصف → center (المركز)',tr:'أين أضع الزهور؟ — ضعها في منتصف الطاولة.'},
   // Exercise H — the word that means the same as the underlined word
   {q:'Jack has a test today and wants to make a good grade on it. The word "it" means _______.',o:["last night","test","TV","class"],a:1,en:'grade on it = grade on the test',ar:'الضمير it يعود على → test (الاختبار)',tr:'لدى جاك اختبار اليوم ويريد درجة جيدة فيه. كلمة it تعود على الاختبار.'},
@@ -595,13 +595,13 @@ l3:[
   {q:"The clock is _______ the door, near the top of the wall.",o:["below","above","between","behind"],a:1,en:"higher position → above",ar:'في الأعلى → above (فوق)',tr:'الساعة فوق الباب قرب أعلى الجدار.'},
   {q:"There is a fence _______ the backyard to keep the dogs inside.",o:["around","under","above","into"],a:0,en:"encloses the yard → around",ar:'يحيط بالفناء → around (حول)',tr:'يوجد سياج حول الفناء الخلفي ليبقي الكلاب بالداخل.'},
   // Grammar: superlative & how old
-  {q:"Peter is 3, Mary is 9, and Tom is 36. Peter is _______.",o:["the oldest","older","the youngest","younger"],a:2,en:"smallest age → the youngest",ar:'الأصغر سنًّا → the youngest',tr:'بيتر ٣، وماري ٩، وتوم ٣٦. بيتر هو الأصغر.'},
+  {q:"Peter is 3, Mary is 9, and Tom is 36. Peter is _______.",o:["the oldest","older","the youngest","younger"],a:2,en:"smallest age → the youngest",ar:'الأصغر سنًّا → the youngest',tr:'بيتر 3، وماري 9، وتوم 36. بيتر هو الأصغر.'},
   {q:"Of the three restaurants, The Hills has _______ prices.",o:["lower","the lowest","low","less"],a:1,en:"three items → the lowest",ar:'بين ثلاثة → the lowest (الأدنى)',tr:'من بين المطاعم الثلاثة، مطعم The Hills له أدنى الأسعار.'},
   {q:"_______ is your house? — It's ten years old.",o:["How much","How many","How old","How long"],a:2,en:"age of the house → How old",ar:'السؤال عن العمر → How old',tr:'كم عمر بيتك؟ — عمره عشر سنوات.'},
   // Exercise F — select the best answer
   {q:"On the weekends, we like to take our boat to the _______.",o:["moon","land","earth","river"],a:3,en:"a boat goes on the → river",ar:'القارب يسير في → river (النهر)',tr:'في عطلة نهاية الأسبوع نحبّ أن نأخذ قاربنا إلى النهر.'},
   {q:"The earth is made of _______ and water.",o:["land","sky","stars","sun"],a:0,en:"earth = land and water",ar:'الأرض مكوّنة من يابسة وماء → land',tr:'الأرض مكوّنة من اليابسة والماء.'},
-  {q:"Is 85 out of 100 a very _______ score on this test?",o:["low","high","wide","front"],a:1,en:"85/100 is a high score",ar:'٨٥ من ١٠٠ درجة مرتفعة → high',tr:'هل ٨٥ من ١٠٠ درجة مرتفعة جدًّا في هذا الاختبار؟'},
+  {q:"Is 85 out of 100 a very _______ score on this test?",o:["low","high","wide","front"],a:1,en:"85/100 is a high score",ar:'٨٥ من ١٠٠ درجة مرتفعة → high',tr:'هل 85 من 100 درجة مرتفعة جدًّا في هذا الاختبار؟'},
 ],
 l4:[
   // Book 7 · Lesson 4 · Evaluation Exercises (EE-19 → EE-24)

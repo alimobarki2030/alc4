@@ -7,7 +7,8 @@ const BOOK_ID='book8';
 
 const LESSON_META={
   l1:{ico:'🧭',title:'Lesson 1 — Getting directions',sub:'الاتجاهات والإرشاد · المستقبل بـ BE going to · المقارنة'},
-  l2:{ico:'🏋️',title:"Lesson 2 — Let's get in shape!",sub:'اللياقة والتمارين · الفعل + to · ضمائر الملكية'}
+  l2:{ico:'🏋️',title:"Lesson 2 — Let's get in shape!",sub:'اللياقة والتمارين · الفعل + to · ضمائر الملكية'},
+  l3:{ico:'📞',title:'Lesson 3 — Using the phone',sub:'استخدام الهاتف · المقارنة more/less · may/might · whom'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -100,6 +101,47 @@ l2:[
   {e:'its',a:'مِلكه (لغير العاقل)',em:'📦'},
   {e:'ours',a:'مِلكنا',em:'👥'},
   {e:'theirs',a:'مِلكهم',em:'👪'},
+],
+l3:[
+  // — الهاتف —
+  {e:'phone call',a:'مكالمة هاتفية',em:'📞'},
+  {e:'make a phone call',a:'يُجري مكالمة',past:'made a phone call',pa:'أجرى مكالمة',em:'📞'},
+  {e:'call (up)',a:'يتّصل',em:'📲'},
+  {e:'operator',a:'عامل الهاتف (المشغّل)',em:'🧑‍💼'},
+  {e:'pay phone',a:'هاتف عمومي بعملات',em:'☎️'},
+  {e:'public phone',a:'هاتف عمومي',em:'📞'},
+  {e:'coin',a:'عملة معدنية',em:'🪙'},
+  {e:'change',a:'فكّة (نقود صغيرة)',em:'🪙'},
+  {e:'slot',a:'فتحة العملة',em:'🎰'},
+  {e:'deposit',a:'يُدخل العملة',em:'💰'},
+  {e:'dial tone',a:'نغمة الاتصال',em:'🎵'},
+  {e:'area code',a:'رمز المنطقة',em:'🔢'},
+  {e:'phone book',a:'دليل الهاتف',em:'📓'},
+  {e:'line',a:'الخط الهاتفي',em:'📈'},
+  {e:'conversation',a:'محادثة',em:'💬'},
+  {e:'bell',a:'جرس',em:'🔔'},
+  {e:'ring',a:'يرنّ',past:'rang',pa:'رنّ',em:'🔔'},
+  {e:'hang up',a:'يُغلق السماعة',past:'hung up',pa:'أغلق السماعة',em:'📴'},
+  {e:'find',a:'يجد',past:'found',pa:'وجد',em:'🔍'},
+  {e:'pay',a:'يدفع',past:'paid',pa:'دفع',em:'💵'},
+  {e:'factory',a:'مصنع',em:'🏭'},
+  {e:'person',a:'شخص',em:'🧍'},
+  {e:'page',a:'صفحة',em:'📄'},
+  // — الأفعال الناقصة (احتمال) —
+  {e:'may',a:'قد / رُبّما',em:'🤔'},
+  {e:'might',a:'قد / رُبّما (احتمال أضعف)',em:'🤷'},
+  // — الصفات والمقارنة —
+  {e:'busy',a:'مشغول (الخط)',em:'🔴'},
+  {e:'cheap',a:'رخيص',em:'💸'},
+  {e:'expensive',a:'غالٍ',em:'💎'},
+  {e:'local',a:'محلي',em:'📍'},
+  {e:'long distance',a:'بعيد المسافة',em:'🌐'},
+  {e:'international',a:'دولي',em:'🌍'},
+  {e:'more',a:'أكثر',em:'➕'},
+  {e:'less',a:'أقل',em:'➖'},
+  {e:'most',a:'الأكثر',em:'🔼'},
+  {e:'least',a:'الأقل',em:'🔽'},
+  {e:'whom',a:'مَن (للمفعول)',em:'❓'},
 ]
 };
 
@@ -210,6 +252,65 @@ l2:[
       {s:'This book is my.',wrong:'my',right:'mine',tr:'في نهاية الجملة نستخدم ضمير الملكية → mine.',ok:false},
     ]
   }
+],
+l3:[
+  {
+    title:'Comparative & Superlative — more / less / most / least', ar:'المقارنة والتفضيل للصفات الطويلة',
+    rule:'الصفات الطويلة (مثل expensive · exciting · difficult) لا نضيف لها -er/-est، بل نستخدم more/less للمقارنة، و the most/the least للتفضيل.',
+    parts:[
+      {t:'more + adjective + than',d:'أكثر … مِن. مثال: A car is more expensive than a bike.'},
+      {t:'less + adjective + than',d:'أقل … مِن. مثال: A bike is less expensive than a car.'},
+      {t:'the most + adjective',d:'الأكثر. مثال: A plane is the most expensive vehicle.'},
+      {t:'the least + adjective',d:'الأقل. مثال: A bike is the least expensive vehicle.'},
+    ],
+    check:{q:'A long distance call is _______ expensive than a local call.',o:['more','most','less','the most'],a:0,en:'more + adj + than',ar:'أغلى من → more expensive than'},
+    formula:[{t:'more/less',c:'v'},{t:'+',c:'p'},{t:'adjective',c:'s'},{t:'+',c:'p'},{t:'than',c:'k'}],
+    compare:[
+      {c1:'A car is fast.',c2:'A car is more expensive than a bike.',ar:'صفة طويلة → more … than'},
+      {c1:'A bike is cheap.',c2:'A bike is the least expensive vehicle.',ar:'الأقل → the least'},
+    ],
+    examples:[
+      {s:'A big city is more exciting than a town.',tr:'المدينة الكبيرة أكثر إثارة من البلدة.',ar:'more exciting than',ok:true},
+      {s:'A local call is the least expensive.',tr:'المكالمة المحلية هي الأقل تكلفة.',ar:'the least expensive',ok:true},
+      {s:'This problem is expensiver than that one.',wrong:'expensiver',right:'more expensive',tr:'الصفة الطويلة لا تأخذ -er، بل more expensive.',ok:false},
+    ]
+  },
+  {
+    title:'Possibility — may / might', ar:'الاحتمال: may / might',
+    rule:'للتعبير عن احتمال (لسنا متأكّدين 100%) نستخدم may أو might + الفعل المجرّد. might غالباً احتمال أضعف قليلاً.',
+    parts:[
+      {t:'may / might + verb',d:'مثال: It may rain. = قد تُمطر. · He might not be home. = قد لا يكون بالبيت.'},
+      {t:'may not / might not',d:'للنفي: We may not have time. = قد لا يكون لدينا وقت.'},
+    ],
+    check:{q:'Look at the dark clouds. I think it _______ rain.',o:['might','must','is','has'],a:0,en:'possibility → might',ar:'احتمال المطر → might rain'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'may / might',c:'v'},{t:'+',c:'p'},{t:'base verb',c:'k'}],
+    compare:[
+      {c1:'It is raining now.',c2:'It might rain later.',ar:'حقيقة ↔ احتمال'},
+      {c1:'He is home.',c2:'He may not be home.',ar:'may not = احتمال النفي'},
+    ],
+    examples:[
+      {s:"I'm tired. I may go to bed early tonight.",tr:'أنا متعب. قد أنام مبكراً الليلة.',ar:'may = احتمال',ok:true},
+      {s:"He doesn't answer. He might not be home.",tr:'لا يردّ. قد لا يكون في البيت.',ar:'might not = احتمال النفي',ok:true},
+      {s:'I think it will maybe rain.',wrong:'will maybe',right:'might',tr:'للاحتمال نستخدم might لا "will maybe".',ok:false},
+    ]
+  },
+  {
+    title:'Questions with whom', ar:'السؤال بـ whom',
+    rule:'نستخدم whom للسؤال عن المفعول (الشخص الذي يقع عليه الفعل)، وغالباً بعد حرف جرّ: With whom…? / To whom…?',
+    parts:[
+      {t:'whom = مفعول',d:'who للفاعل، whom للمفعول. مثال: Whom did you call? = مَن اتّصلت به؟'},
+      {t:'preposition + whom',d:'مثال: With whom am I speaking? = مع مَن أتحدّث؟'},
+    ],
+    check:{q:'With _______ am I speaking?',o:['who','whom','whose','what'],a:1,en:'after preposition → whom',ar:'بعد حرف الجرّ with → whom'},
+    compare:[
+      {c1:'Who called you? (فاعل)',c2:'Whom did you call? (مفعول)',ar:'who فاعل · whom مفعول'},
+    ],
+    examples:[
+      {s:'With whom am I speaking?',tr:'مع مَن أتحدّث؟',ar:'preposition + whom',ok:true},
+      {s:'Whom did he see at the party?',tr:'مَن رأى في الحفلة؟',ar:'whom = المفعول',ok:true},
+      {s:'With who did you go?',wrong:'who',right:'whom',tr:'بعد حرف الجرّ نستخدم whom لا who.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -234,6 +335,15 @@ l2:[
   {words:["I'll",'try','to','do','my','homework','tonight'],ans:"I'll try to do my homework tonight.",tr:'سأحاول أن أُنجز واجبي الليلة.',ar:'try + to'},
   {words:['This','book','is','mine'],ans:'This book is mine.',tr:'هذا الكتاب مِلكي.',ar:'ضمير الملكية mine'},
   {words:['That','car','is','hers'],ans:'That car is hers.',tr:'تلك السيارة مِلكها.',ar:'ضمير الملكية hers'},
+],
+l3:[
+  {words:['A','long','distance','call','is','more','expensive','than','a','local','call'],ans:'A long distance call is more expensive than a local call.',tr:'المكالمة البعيدة أغلى من المكالمة المحلية.',ar:'more … than'},
+  {words:['Dallas','is','less','windy','than','Chicago'],ans:'Dallas is less windy than Chicago.',tr:'دالاس أقل رياحاً من شيكاغو.',ar:'less … than'},
+  {words:['He','buys','the','most','expensive','clothes'],ans:'He buys the most expensive clothes.',tr:'يشتري أغلى الملابس.',ar:'the most'},
+  {words:['I','think','it','might','rain','tonight'],ans:'I think it might rain tonight.',tr:'أظنّ أنها قد تُمطر الليلة.',ar:'might = احتمال'},
+  {words:['I','may','go','to','bed','early','tonight'],ans:'I may go to bed early tonight.',tr:'قد أنام مبكراً الليلة.',ar:'may = احتمال'},
+  {words:['With','whom','am','I','speaking'],ans:'With whom am I speaking?',tr:'مع مَن أتحدّث؟',ar:'preposition + whom'},
+  {words:['Please','deposit','the','coins','in','the','slot'],ans:'Please deposit the coins in the slot.',tr:'من فضلك أدخل العملات في الفتحة.',ar:'deposit / slot'},
 ]
 };
 
@@ -298,6 +408,32 @@ l2:[
   // — Adjectives (Exercise J الرسمية) —
   {q:"Yesterday's movie was very _______. We loved it!",o:["boring","exciting","difficult","awful"],a:1,en:"loved it → exciting",ar:'أحببناه → مثير (exciting)',tr:'كان فيلم الأمس مثيراً جداً. أحببناه!'},
   {q:"John eats good food _______ healthy.",o:["to stay","staying","stay","for stay"],a:0,en:"purpose → to stay",ar:'الغرض: ليبقى → to stay',tr:'يأكل جون طعاماً جيّداً ليبقى بصحّة جيّدة.'},
+],
+l3:[
+  // — Choose the best answer (Exercise E الرسمية · EE-16/17/18) —
+  {q:"Steven wanted to make a phone call. He looked for a _______.",o:["pay phone","factory","local call","person"],a:0,en:"to make a call → pay phone",ar:'ليُجري مكالمة → هاتف عمومي (pay phone)',tr:'أراد ستيفن إجراء مكالمة، فبحث عن هاتف عمومي.'},
+  {q:"Janice was in Dallas and needed to call her mother in Los Angeles. She made a _______.",o:["local call","long distance call","bell","nice person"],a:1,en:"another city → long distance",ar:'مدينة بعيدة → مكالمة بعيدة المسافة',tr:'كانت جانيس في دالاس واحتاجت الاتصال بأمها في لوس أنجلوس، فأجرت مكالمة بعيدة المسافة.'},
+  {q:"The man put a quarter in the _______ and dialed the number.",o:["change","coin","slot","page"],a:2,en:"where the coin goes → slot",ar:'مكان إدخال العملة → الفتحة (slot)',tr:'وضع الرجل ربع دولار في الفتحة وطلب الرقم.'},
+  {q:"Do you think it will rain? — I don't know. It _______.",o:["will","may","must","rang"],a:1,en:"uncertain → it may",ar:'غير متأكّد → قد (it may)',tr:'هل تظنّ أنها ستُمطر؟ — لا أعرف، قد تُمطر.'},
+  {q:"Ms. Owens didn't know the phone number. She had to ask the _______.",o:["operator","pay phone","phone book","area code"],a:0,en:"ask a person → operator",ar:'تسأل شخصاً → المشغّل (operator)',tr:'لم تعرف السيدة أوينز الرقم، فاضطرت لسؤال المشغّل.'},
+  {q:"A _______ call is the least expensive.",o:["international","long distance","local","phone"],a:2,en:"cheapest → local",ar:'الأرخص → المحلية (local)',tr:'المكالمة المحلية هي الأقل تكلفة.'},
+  {q:"You need _______ for a pay phone.",o:["bells","pages","coins","lines"],a:2,en:"a pay phone needs coins",ar:'الهاتف العمومي يحتاج عملات → coins',tr:'تحتاج عملات معدنية للهاتف العمومي.'},
+  {q:"Marvin finished his conversation and _______.",o:["found","called up","hung up","rang"],a:2,en:"end a call → hung up",ar:'إنهاء المكالمة → أغلق السماعة (hung up)',tr:'أنهى مارفن محادثته وأغلق السماعة.'},
+  {q:"I need to make a call, but I don't have any coins. Do you have _______ for this dollar?",o:["change","phone","operator","slot"],a:0,en:"coins for a dollar → change",ar:'فكّة للدولار → change',tr:'أريد إجراء مكالمة لكن ليس معي عملات. هل عندك فكّة لهذا الدولار؟'},
+  {q:"The sky is dark with clouds and the wind is blowing hard. I think _______.",o:["the stars are out","the night is long","winter is the best season","it might rain"],a:3,en:"dark clouds → it might rain",ar:'غيوم داكنة → قد تُمطر (it might rain)',tr:'السماء مظلمة بالغيوم والرياح قوية. أظنّ أنها قد تُمطر.'},
+  {q:"We talked for hours. _______",o:["We had a long conversation.","We ate a late dinner.","We don't have a phone.","We went dancing."],a:0,en:"talked for hours → long conversation",ar:'تحدّثنا ساعات → محادثة طويلة',tr:'تحدّثنا لساعات. أجرينا محادثة طويلة.'},
+  {q:"I can't buy that car. It costs a lot of money. The car is _______.",o:["cheap","expensive","busy","local"],a:1,en:"costs a lot → expensive",ar:'يكلّف كثيراً → غالٍ (expensive)',tr:'لا أستطيع شراء تلك السيارة، تكلّف كثيراً. السيارة غالية.'},
+  {q:"Ellen didn't take Bert's call because she _______.",o:["didn't know his number","needed a pay phone","was too busy","didn't have coins"],a:2,en:"didn't answer → too busy",ar:'لم تردّ → كانت مشغولة جداً',tr:'لم تردّ إلين على مكالمة بيرت لأنها كانت مشغولة جداً.'},
+  {q:"My son doesn't have much money. He has _______ five dollars.",o:["less","just","free","count"],a:1,en:"only → just",ar:'فقط → just',tr:'ابني لا يملك مالاً كثيراً. معه خمسة دولارات فقط.'},
+  {q:"Who is that _______ in the red sweater?",o:["page","person","phone","public"],a:1,en:"who → person",ar:'مَن ذلك الشخص → person',tr:'مَن ذلك الشخص ذو الكنزة الحمراء؟'},
+  {q:"With _______ do you usually eat dinner?",o:["who","her","him","whom"],a:3,en:"preposition + whom",ar:'بعد حرف الجرّ with → whom',tr:'مع مَن تتناول العشاء عادةً؟'},
+  {q:"Richard likes all his instructors, but he likes Mr. Miller _______.",o:["the most","more","more than","than"],a:0,en:"superlative → the most",ar:'الأعلى تفضيلاً → the most',tr:'ريتشارد يحبّ كل مدرّبيه، لكنه يحبّ السيد ميلر أكثرهم.'},
+  {q:"How much did you _______ for your new watch?",o:["make","may","pay","call"],a:2,en:"cost → pay",ar:'كم دفعت → pay',tr:'كم دفعت ثمناً لساعتك الجديدة؟'},
+  {q:"Hello. Is Mrs. Smith there? — _______",o:["Just a minute. I'll see.","This is the operator.","I need to make a call.","There's no public phone here."],a:0,en:"polite phone reply",ar:'ردّ هاتفي مهذّب → لحظة، سأرى',tr:'مرحباً، هل السيدة سميث موجودة؟ — لحظة من فضلك، سأرى.'},
+  // — Comparative more/less/most/least (Exercise C الرسمية · EE-14) —
+  {q:"Jan has lots of money. She buys the _______ expensive clothes in the store.",o:["least","less","more","most"],a:3,en:"richest buys the most expensive",ar:'الأغلى → the most expensive',tr:'جان لديها مال كثير، تشتري أغلى الملابس في المتجر.'},
+  {q:"Joe likes to keep his money. He buys the _______ expensive clothes.",o:["most","more","least","less"],a:2,en:"cheapest → the least expensive",ar:'الأرخص → the least expensive',tr:'جو يحبّ أن يوفّر ماله، يشتري أرخص الملابس.'},
+  {q:"This problem is easy. It's _______ difficult than all of the others.",o:["more","less","most","the least"],a:1,en:"easier → less difficult",ar:'أسهل → أقل صعوبة (less difficult)',tr:'هذه المسألة سهلة، أقل صعوبة من كل البقية.'},
 ]
 };
 
@@ -322,6 +458,7 @@ EE.review=REVIEW;
 const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
+  ...EE.l3,
 ]);
 EE.final=FINAL;
 
@@ -339,6 +476,11 @@ const SPELL_LESSONS=[
     {e:'exercise',a:'تمرين',em:'🏋️'},{e:'workout',a:'تمرين رياضي',em:'💪'},{e:'healthy',a:'صحّي',em:'🥗'},
     {e:'beautiful',a:'جميل',em:'😍'},{e:'important',a:'مهم',em:'❗'},{e:'remember',a:'يتذكّر',em:'🧠'},
     {e:'forget',a:'ينسى',em:'🤔'},{e:'exciting',a:'مثير',em:'🤩'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 3 — الهاتف',w:[
+    {e:'operator',a:'المشغّل',em:'🧑‍💼'},{e:'coin',a:'عملة معدنية',em:'🪙'},{e:'expensive',a:'غالٍ',em:'💎'},
+    {e:'busy',a:'مشغول',em:'🔴'},{e:'conversation',a:'محادثة',em:'💬'},{e:'factory',a:'مصنع',em:'🏭'},
+    {e:'local',a:'محلي',em:'📍'},{e:'deposit',a:'يُدخل العملة',em:'💰'},
   ]},
 ];
 

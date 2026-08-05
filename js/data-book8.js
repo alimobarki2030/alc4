@@ -6,7 +6,8 @@
 const BOOK_ID='book8';
 
 const LESSON_META={
-  l1:{ico:'🧭',title:'Lesson 1 — Getting directions',sub:'الاتجاهات والإرشاد · المستقبل بـ BE going to · المقارنة'}
+  l1:{ico:'🧭',title:'Lesson 1 — Getting directions',sub:'الاتجاهات والإرشاد · المستقبل بـ BE going to · المقارنة'},
+  l2:{ico:'🏋️',title:"Lesson 2 — Let's get in shape!",sub:'اللياقة والتمارين · الفعل + to · ضمائر الملكية'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -59,6 +60,46 @@ l1:[
   // — الكتابة / علامات الترقيم —
   {e:'exclamation mark',a:'علامة التعجّب ( ! )',em:'❗'},
   {e:'quotation marks',a:'علامتا الاقتباس',em:'💬',icon:'quote'},
+],
+l2:[
+  // — اللياقة والتمارين —
+  {e:'exercise',a:'تمرين / يتمرّن',em:'🏋️'},
+  {e:'workout',a:'تمرين رياضي',em:'💪'},
+  {e:'work out',a:'يتمرّن',em:'🏋️'},
+  {e:'gymnasium (gym)',a:'صالة رياضية',em:'🏟️'},
+  {e:'push-up',a:'تمرين ضغط',em:'🤸'},
+  {e:'sit-up',a:'تمرين بطن',em:'🧎'},
+  {e:'fun',a:'متعة',em:'🎉'},
+  {e:'free time',a:'وقت الفراغ',em:'🕹️'},
+  {e:'watch',a:'ساعة يد',em:'⌚'},
+  {e:'hit',a:'يصيب الهدف',past:'hit',pa:'أصاب',em:'🎯'},
+  {e:'miss',a:'يُخطئ الهدف',em:'❌'},
+  {e:'try (to)',a:'يحاول',past:'tried',pa:'حاول',em:'🔁'},
+  {e:'forget (to)',a:'ينسى',past:'forgot',pa:'نسي',em:'🤔'},
+  {e:'remember (to)',a:'يتذكّر',em:'🧠'},
+  {e:'shut',a:'يُغلق',past:'shut',pa:'أغلق',em:'🚪'},
+  {e:'have fun',a:'يستمتع',em:'😄'},
+  {e:'have a good time',a:'يقضي وقتاً ممتعاً',em:'🥳'},
+  {e:'get in shape',a:'يستعيد لياقته',em:'✅'},
+  {e:'out of shape',a:'غير لائق بدنياً',em:'🚫'},
+  {e:'in (good) shape',a:'بلياقة جيدة',em:'💯'},
+  {e:'healthy',a:'صحّي',em:'🥗'},
+  // — الصفات —
+  {e:'beautiful',a:'جميل',em:'😍'},
+  {e:'boring',a:'مُمِلّ',em:'😴'},
+  {e:'difficult',a:'صعب',em:'😓'},
+  {e:'exciting',a:'مثير / ممتع',em:'🤩'},
+  {e:'interesting',a:'مشوّق',em:'🤓'},
+  {e:'important',a:'مهم',em:'❗'},
+  {e:'terrific',a:'رائع',em:'👍'},
+  // — ضمائر الملكية —
+  {e:'mine',a:'مِلكي',em:'👆'},
+  {e:'yours',a:'مِلكك',em:'👉'},
+  {e:'his',a:'مِلكه (لمذكّر)',em:'👨'},
+  {e:'hers',a:'مِلكها',em:'👩'},
+  {e:'its',a:'مِلكه (لغير العاقل)',em:'📦'},
+  {e:'ours',a:'مِلكنا',em:'👥'},
+  {e:'theirs',a:'مِلكهم',em:'👪'},
 ]
 };
 
@@ -128,6 +169,47 @@ l1:[
       {s:"My score is more good than yours.",wrong:'more good',right:'better',tr:'good شاذّة: لا نقول more good بل better.',ok:false},
     ]
   }
+],
+l2:[
+  {
+    title:'Verb + to + base verb', ar:'الفعل + to + مصدر',
+    rule:'بعد أفعال مثل want · need · try · like · begin · learn · remember · forget نضع to ثم الفعل المجرّد.',
+    parts:[
+      {t:'want / need + to + verb',d:'مثال: I want to learn. = أريد أن أتعلّم. · She needs to rest. = تحتاج أن ترتاح.'},
+      {t:'try / like / begin + to + verb',d:'مثال: He tried to call. = حاول أن يتّصل. · I like to swim. = أحبّ أن أسبح.'},
+      {t:'remember / forget + to + verb',d:'مثال: Remember to lock the door. = تذكّر أن تُغلق الباب.'},
+    ],
+    check:{q:'Don\'t forget _______ the windows.',o:['shut','to shut','shutting','shuts'],a:1,en:'forget + to + verb',ar:'بعد forget نضع to + الفعل → to shut'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'verb (want/need…)',c:'v'},{t:'+',c:'p'},{t:'to + base verb',c:'k'}],
+    compare:[
+      {c1:'I want a new watch.',c2:'I want to buy a new watch.',ar:'أضفنا to + فعل'},
+      {c1:'She tried hard.',c2:'She tried to call you.',ar:'try + to + verb'},
+    ],
+    examples:[
+      {s:'I forgot to lock the door last night.',tr:'نسيت أن أُغلق الباب ليلة أمس.',ar:'forgot + to + lock',ok:true},
+      {s:'Mary wants to learn Chinese.',tr:'ماري تريد أن تتعلّم الصينية.',ar:'want + to + learn',ok:true},
+      {s:'He needs buy a new car.',wrong:'needs buy',right:'needs to buy',tr:'بعد need لا بدّ من to → needs to buy.',ok:false},
+    ]
+  },
+  {
+    title:'Possessive Pronouns', ar:'ضمائر الملكية',
+    rule:'ضمير الملكية يحلّ محلّ (صفة الملكية + الاسم) فلا نكرّر الاسم: mine · yours · his · hers · ours · theirs.',
+    parts:[
+      {t:'mine = my + noun',d:'This is my book → This book is mine. = هذا الكتاب مِلكي.'},
+      {t:'yours / his / hers',d:'How\'s your coffee? Mine\'s good. How\'s yours? · That car is hers.'},
+      {t:'ours / theirs',d:'This house is ours. = هذا البيت مِلكنا. · That one is theirs. = ذاك مِلكهم.'},
+    ],
+    check:{q:'My coffee is good. How is _______?',o:['your','yours','you','yes'],a:1,en:'possessive pronoun → yours',ar:'ضمير ملكية يحلّ محلّ (your + coffee) → yours'},
+    compare:[
+      {c1:'This is my pen.',c2:'This pen is mine.',ar:'my + pen → mine'},
+      {c1:'That is her bag.',c2:'That bag is hers.',ar:'her + bag → hers'},
+    ],
+    examples:[
+      {s:"Is this your car? — No, it's not. It's ours.",tr:'هل هذه سيارتك؟ — لا، إنها مِلكنا.',ar:'ours = our car',ok:true},
+      {s:'She does hers first, and I do mine later.',tr:'هي تؤدّي واجبها أولاً، وأنا أؤدّي واجبي لاحقاً.',ar:'hers / mine',ok:true},
+      {s:'This book is my.',wrong:'my',right:'mine',tr:'في نهاية الجملة نستخدم ضمير الملكية → mine.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -143,6 +225,15 @@ l1:[
   {words:['The','plane','is','going','to','land','now'],ans:'The plane is going to land now.',tr:'ستهبط الطائرة الآن.',ar:'is going to + land'},
   {words:["Kate's",'score','is','better','than',"Lee's"],ans:"Kate's score is better than Lee's.",tr:'درجة كيت أفضل من درجة لي.',ar:'better than'},
   {words:['Water','freezes','at','32','degrees','Fahrenheit'],ans:'Water freezes at 32 degrees Fahrenheit.',tr:'يتجمّد الماء عند 32 درجة فهرنهايت.',ar:'freeze / degrees'},
+],
+l2:[
+  {words:['I','forgot','to','lock','the','door','last','night'],ans:'I forgot to lock the door last night.',tr:'نسيت أن أُغلق الباب ليلة أمس.',ar:'forget + to + verb'},
+  {words:['I','want','to','visit','my','brother','next','week'],ans:'I want to visit my brother next week.',tr:'أريد أن أزور أخي الأسبوع القادم.',ar:'want + to'},
+  {words:['I','need','to','study','my','English','tonight'],ans:'I need to study my English tonight.',tr:'أحتاج أن أذاكر الإنجليزية الليلة.',ar:'need + to'},
+  {words:['I','learned','to','play','tennis','last','year'],ans:'I learned to play tennis last year.',tr:'تعلّمت أن ألعب التنس العام الماضي.',ar:'learn + to'},
+  {words:["I'll",'try','to','do','my','homework','tonight'],ans:"I'll try to do my homework tonight.",tr:'سأحاول أن أُنجز واجبي الليلة.',ar:'try + to'},
+  {words:['This','book','is','mine'],ans:'This book is mine.',tr:'هذا الكتاب مِلكي.',ar:'ضمير الملكية mine'},
+  {words:['That','car','is','hers'],ans:'That car is hers.',tr:'تلك السيارة مِلكها.',ar:'ضمير الملكية hers'},
 ]
 };
 
@@ -183,6 +274,30 @@ l1:[
   {q:"Tina got 62 and Scott got 83. Tina's score is _______ Scott's.",o:["better than","worse than","the best","good"],a:1,en:"62 < 83 → worse than",ar:'62 أقل من 83 → worse than',tr:'حصلت تينا على 62 وسكوت على 83. درجة تينا أسوأ من درجة سكوت.'},
   {q:"We're going to finish _______ time.",o:["in","at","on","for"],a:2,en:"on time = في الموعد",ar:'في الموعد → on time',tr:'سننهي العمل في الموعد.'},
   {q:"Highway 37 _______ its number to 281 when you follow it north.",o:["changes","lands","grows","falls"],a:0,en:"the number changes",ar:'يتغيّر الرقم → changes',tr:'يتغيّر رقم الطريق السريع 37 إلى 281 عندما تتبعه شمالاً.'},
+],
+l2:[
+  // — Verb + to + base verb (Exercise F الرسمية) —
+  {q:"The baseball game started late. They didn't _______ to play before 8:30 p.m.",o:["begin","remember","forget","rent"],a:0,en:"didn't begin to play",ar:'بدأ اللعب → begin (didn\'t begin to play)',tr:'بدأت مباراة البيسبول متأخّرة. لم يبدؤوا اللعب قبل 8:30 مساءً.'},
+  {q:"Sgt Johnson doesn't _______ buy a new car, but he wants that beautiful red one.",o:["need","to need","need to","to need to"],a:2,en:"doesn't need to + verb",ar:'لا يحتاج أن → need to (need + to + verb)',tr:'الرقيب جونسون لا يحتاج أن يشتري سيارة جديدة، لكنه يريد تلك الحمراء الجميلة.'},
+  {q:"Sam said, \"Please don't _______ to turn off the lights when you leave.\"",o:["try","forget","remember","want"],a:1,en:"don't forget to turn off",ar:'لا تنسَ أن → forget (don\'t forget to…)',tr:'قال سام: «من فضلك لا تنسَ أن تُطفئ الأنوار عند مغادرتك».'},
+  {q:"Do you know how to play tennis? — No, I _______ to learn.",o:["want","begin","forget","miss"],a:0,en:"want to learn",ar:'أريد أن أتعلّم → want to',tr:'هل تعرف أن تلعب التنس؟ — لا، أريد أن أتعلّم.'},
+  {q:"Your shirt is very dirty. — I know. I _______ to put on a clean one.",o:["try","need","forget","hit"],a:1,en:"need to put on",ar:'أحتاج أن ألبس → need to',tr:'قميصك متّسخ جداً. — أعرف، أحتاج أن ألبس واحداً نظيفاً.'},
+  {q:"When are you going to study? — I'll _______ to study after dinner tonight.",o:["begin","miss","shut","forget"],a:0,en:"begin to study",ar:'سأبدأ أن أذاكر → begin to',tr:'متى ستذاكر؟ — سأبدأ المذاكرة بعد العشاء الليلة.'},
+  {q:"Bob likes _______ swim in the summer.",o:["to","for","at","on"],a:0,en:"like + to + verb",ar:'بعد like نضع to → to swim',tr:'بوب يحبّ أن يسبح في الصيف.'},
+  // — Possessive pronouns (Exercise D الرسمية) —
+  {q:"How's your food? — Terrific! How's _______? — Mine's okay.",o:["your","yours","you","hers"],a:1,en:"possessive pronoun → yours",ar:'كيف حال طعامك؟ → yours (طعامك)',tr:'كيف طعامك؟ — رائع! وكيف طعامُك أنت؟ — طعامي جيّد.'},
+  {q:"Ken: Here's your car, but where's _______? Bob: There's yours, near the barracks.",o:["my","mine","me","its"],a:1,en:"where is my car → mine",ar:'أين سيارتي → mine',tr:'كين: هذه سيّارتك، لكن أين سيّارتي؟ بوب: ها هي سيّارتك قرب الثكنة.'},
+  {q:"Sam likes his new teacher, but Jan and I don't like _______.",o:["our","ours","us","theirs"],a:1,en:"our teacher → ours",ar:'معلّمنا نحن → ours',tr:'سام يحبّ معلّمه الجديد، لكنّ جان وأنا لا نحبّ معلّمنا.'},
+  {q:"Is John going in our car? — No, he's driving _______.",o:["his","him","he","hers"],a:0,en:"John's car → his",ar:'سيارته هو → his',tr:'هل سيذهب جون في سيّارتنا؟ — لا، إنه يقود سيّارته.'},
+  {q:"This house is ours. I thought _______ was the yellow one, said Ned about the Andersons.",o:["their","theirs","them","hers"],a:1,en:"the Andersons' house → theirs",ar:'بيت آل أندرسون → theirs',tr:'هذا البيت مِلكنا. قال نِد عن آل أندرسون: ظننت أن بيتهم هو الأصفر.'},
+  // — Inference (Exercise G الرسمية) —
+  {q:"Sally drank some water. This means:",o:["She was hungry.","She was thirsty.","She was angry.","She was tired."],a:1,en:"drank water → thirsty",ar:'شربت ماءً → كانت عطشى',tr:'شربت سالي بعض الماء. → كانت عطشى.'},
+  {q:"Greg eats an apple every day. This means:",o:["He needs a doctor.","He likes all fruit.","He buys a lot of apples.","He needs more money."],a:2,en:"apple every day → buys a lot",ar:'تفّاحة كل يوم → يشتري كثيراً من التفّاح',tr:'جريج يأكل تفّاحة كل يوم. → يشتري الكثير من التفّاح.'},
+  {q:"Terry lives in the barracks. This means:",o:["He bought a new house.","He's in the military.","He eats a lot of food.","He has a lot of money."],a:1,en:"barracks → military",ar:'يسكن الثكنة → في الجيش',tr:'تيري يسكن في الثكنة. → إنه في الجيش.'},
+  {q:"Mary called a travel agent and made a reservation. This means:",o:["She's going to a restaurant.","She can't pay for a trip.","She works for a travel agent.","She's going to take a trip."],a:3,en:"reservation → a trip",ar:'حجز عبر وكيل سفر → ستسافر',tr:'اتّصلت ماري بوكيل سفر وحجزت. → ستقوم برحلة.'},
+  // — Adjectives (Exercise J الرسمية) —
+  {q:"Yesterday's movie was very _______. We loved it!",o:["boring","exciting","difficult","awful"],a:1,en:"loved it → exciting",ar:'أحببناه → مثير (exciting)',tr:'كان فيلم الأمس مثيراً جداً. أحببناه!'},
+  {q:"John eats good food _______ healthy.",o:["to stay","staying","stay","for stay"],a:0,en:"purpose → to stay",ar:'الغرض: ليبقى → to stay',tr:'يأكل جون طعاماً جيّداً ليبقى بصحّة جيّدة.'},
 ]
 };
 
@@ -202,10 +317,11 @@ const REVIEW=[
 EE.review=REVIEW;
 
 // ═══════════════════════════════════════
-// FINAL EXAM (الاختبار النهائي) — الدرس 1 فقط حالياً
+// FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة
 // ═══════════════════════════════════════
 const FINAL=dedupe_by_q([
   ...EE.l1,
+  ...EE.l2,
 ]);
 EE.final=FINAL;
 
@@ -218,6 +334,11 @@ const SPELL_LESSONS=[
     {e:'west',a:'غرب',em:'⬅️'},{e:'highway',a:'طريق سريع',em:'🛣️'},{e:'corner',a:'الزاوية',em:'📐'},
     {e:'exit',a:'مَخرج',em:'🚪'},{e:'temperature',a:'درجة الحرارة',em:'🌡️'},
     {e:'degrees',a:'درجات',em:'🌡️'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 2 — اللياقة والتمارين',w:[
+    {e:'exercise',a:'تمرين',em:'🏋️'},{e:'workout',a:'تمرين رياضي',em:'💪'},{e:'healthy',a:'صحّي',em:'🥗'},
+    {e:'beautiful',a:'جميل',em:'😍'},{e:'important',a:'مهم',em:'❗'},{e:'remember',a:'يتذكّر',em:'🧠'},
+    {e:'forget',a:'ينسى',em:'🤔'},{e:'exciting',a:'مثير',em:'🤩'},
   ]},
 ];
 

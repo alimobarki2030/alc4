@@ -18,8 +18,8 @@ l1:[
   // — البنك والحسابات —
   {e:'account',a:'حساب بنكي',em:'🏦'},
   {e:'checking account',a:'الحساب الجاري',em:'🏦'},
-  {e:'savings account',a:'حساب التوفير',em:'🐖'},
-  {e:'deposit',a:'إيداع / يودع',em:'💰'},
+  {e:'savings account',a:'حساب التوفير',em:'💰'},
+  {e:'deposit',a:'إيداع / يودع',em:'📥'},
   {e:'withdrawal',a:'سحب (مبلغ)',em:'🏧'},
   {e:'withdraw',a:'يسحب',past:'withdrew',pa:'سحب',em:'🏧'},
   {e:'cash',a:'نقد / يصرف شيكاً',em:'💵'},
@@ -39,7 +39,7 @@ l1:[
   {e:'close an account',a:'يغلق حساباً',em:'❌'},
   {e:'fill out',a:'يعبّئ (نموذجاً)',em:'🖊️'},
   {e:'complete',a:'يكمل / يُتمّ',em:'✅'},
-  {e:'save',a:'يوفّر (المال)',em:'🐖'},
+  {e:'save',a:'يوفّر (المال)',em:'🪙'},
   {e:'spend',a:'ينفق',past:'spent',pa:'أنفق',em:'🛍️'},
   {e:'lose',a:'يفقد',past:'lost',pa:'فقد',em:'❓'},
   {e:'hide',a:'يخبّئ',past:'hid',pa:'خبّأ',em:'🙈'},
@@ -191,7 +191,7 @@ EE.final=FINAL;
 // ═══════════════════════════════════════
 const SPELL_LESSONS=[
   {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 1 — البنوك',w:[
-    {e:'account',a:'حساب',em:'🏦'},{e:'deposit',a:'إيداع',em:'💰'},{e:'withdraw',a:'يسحب',em:'🏧'},
+    {e:'account',a:'حساب',em:'🏦'},{e:'deposit',a:'إيداع',em:'📥'},{e:'withdraw',a:'يسحب',em:'🏧'},
     {e:'signature',a:'توقيع',em:'✍️'},{e:'passport',a:'جواز سفر',em:'🛂'},{e:'checkbook',a:'دفتر شيكات',em:'📗'},
     {e:'wallet',a:'محفظة',em:'👛'},{e:'bitter',a:'مرّ',em:'💊'},
   ]},

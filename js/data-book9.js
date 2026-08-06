@@ -7,7 +7,8 @@ const BOOK_ID='book9';
 
 const LESSON_META={
   l1:{ico:'🏦',title:"Lesson 1 — I'd like to open an account",sub:'البنوك · المضارع المستمر للمستقبل · because · أفعال الإحساس (linking)'},
-  l2:{ico:'🚗',title:'Lesson 2 — What happened?',sub:'الحوادث والمرور · الماضي المستمر · الأوامر بـ tell/ask · المقارنة والتباين'}
+  l2:{ico:'🚗',title:'Lesson 2 — What happened?',sub:'الحوادث والمرور · الماضي المستمر · الأوامر بـ tell/ask · المقارنة والتباين'},
+  l3:{ico:'💬',title:'Lesson 3 — A piece of advice',sub:'النصيحة والاقتراح · should / could · أحوال الطريقة (-ly) · How'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -103,6 +104,52 @@ l2:[
   {e:'behind',a:'خلف',em:'🔙'},
   {e:'across',a:'عبر / على الجانب الآخر',em:'↔️'},
   {e:'similar',a:'متشابه',em:'🟰'},
+],
+l3:[
+  // — النصيحة والعلاقات —
+  {e:'advice',a:'نصيحة',em:'💬'},
+  {e:'opinion',a:'رأي',em:'💭'},
+  {e:'truth',a:'الحقيقة',em:'✔️'},
+  {e:'lie',a:'كذبة / يكذب',em:'🤥'},
+  {e:'a little white lie',a:'كذبة بيضاء',em:'🕊️'},
+  {e:'secret',a:'سرّ',em:'🤫'},
+  {e:'story',a:'قصة',em:'📖'},
+  {e:'feelings',a:'مشاعر',em:'❤️'},
+  {e:'friendship',a:'صداقة',em:'🤝'},
+  {e:'roommate',a:'شريك السكن',em:'🧑‍🤝‍🧑'},
+  {e:'party',a:'حفلة',em:'🎉'},
+  // — الأشياء —
+  {e:'garage',a:'ورشة / مرآب',em:'🔧'},
+  {e:'tool',a:'أداة',em:'🛠️'},
+  // — الأفعال —
+  {e:'should',a:'ينبغي (نصيحة)',em:'✅'},
+  {e:'could',a:'يمكن (اقتراح)',em:'💡'},
+  {e:'borrow',a:'يستعير',em:'📥'},
+  {e:'lend',a:'يُعير',past:'lent',pa:'أعار',em:'📤'},
+  {e:'care about',a:'يهتمّ بـ',em:'🥰'},
+  {e:'care for',a:'يحبّ / يعتني بـ',em:'💗'},
+  {e:'not care for',a:'لا يستحسن / لا يحبّ',em:'🙁'},
+  {e:'enjoy',a:'يستمتع بـ',em:'😊'},
+  {e:'fix',a:'يُصلح',em:'🔩'},
+  {e:'repair',a:'يُصلح',em:'🔧'},
+  {e:'guess',a:'يظنّ / يخمّن',em:'🤔'},
+  {e:'hurt',a:'يؤذي / يجرح',past:'hurt',pa:'آذى',em:'🤕'},
+  {e:'go out',a:'يخرج (للترفيه)',past:'went out',pa:'خرج',em:'🚶'},
+  {e:'park',a:'يركن السيارة',em:'🅿️'},
+  // — أحوال الطريقة والصفات —
+  {e:'carefully',a:'بعناية',em:'🧐'},
+  {e:'carelessly',a:'بإهمال',em:'🙄'},
+  {e:'correctly',a:'بشكل صحيح',em:'✔️'},
+  {e:'easily',a:'بسهولة',em:'👌'},
+  {e:'slowly',a:'ببطء',em:'🐢'},
+  {e:'safely',a:'بأمان',em:'🛡️'},
+  {e:'badly',a:'بشكل سيّئ',em:'👎'},
+  {e:'fast',a:'بسرعة',em:'⚡'},
+  {e:'excited',a:'متحمّس',em:'🤩'},
+  {e:'maybe',a:'ربما',em:'❓'},
+  {e:'someone',a:'شخص ما',em:'🧍'},
+  {e:'anyone',a:'أيّ أحد',em:'🙋'},
+  {e:'in my opinion',a:'في رأيي',em:'💭'},
 ]
 };
 
@@ -233,6 +280,68 @@ l2:[
       {s:'My car is same as his car.',wrong:'same as',right:'the same as',tr:'الصحيح the same as (بأداة التعريف the).',ok:false},
     ]
   }
+],
+l3:[
+  {
+    title:'Using should to ask for and give advice', ar:'should لطلب النصيحة وإعطائها',
+    rule:'should (ينبغي) لطلب النصيحة أو إعطائها. مثل باقي الأفعال الناقصة: should + الفعل المجرّد. للنفي: shouldn\'t.',
+    parts:[
+      {t:'What should I do?',d:'لطلب النصيحة. مثال: I lost my wallet. What should I do?'},
+      {t:'You should + verb',d:'لإعطاء النصيحة. مثال: You should wait for your friend.'},
+      {t:"shouldn't = نصيحة بالنفي",d:'You shouldn\'t leave now. = لا ينبغي أن تغادر الآن.'},
+    ],
+    check:{q:"I didn't pass the test. What _______ I do?",o:['should','am','will','being'],a:0,en:'ask for advice → should',ar:'طلب النصيحة → should'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'should / shouldn\'t',c:'v'},{t:'+',c:'p'},{t:'base verb',c:'k'}],
+    compare:[
+      {c1:'You should study every day. (نصيحة)',c2:"You shouldn't buy the red one. (نصيحة بالنفي)",ar:'إثبات ↔ نفي'},
+      {c1:'What should I do?',c2:'Which tie should I buy?',ar:'السؤال بـ should'},
+    ],
+    examples:[
+      {s:'You should ask the teacher for help.',tr:'ينبغي أن تطلب مساعدة المعلّم.',ar:'نصيحة → should',ok:true},
+      {s:"You shouldn't leave now. It's raining.",tr:'لا ينبغي أن تغادر الآن، إنها تُمطر.',ar:"نصيحة بالنفي → shouldn't",ok:true},
+      {s:'What I should do?',wrong:'What I should do',right:'What should I do',tr:'في السؤال يسبق should الفاعل: What should I do?',ok:false},
+    ]
+  },
+  {
+    title:'Using could to give suggestions', ar:'could لتقديم الاقتراحات',
+    rule:'could (يمكن أن) لتقديم اقتراح لطيف. نستخدمها في الجمل المُثبتة فقط: You could + الفعل المجرّد.',
+    parts:[
+      {t:'You could + verb',d:'اقتراح لطيف. مثال: You could call a taxi. = يمكنك أن تطلب سيارة أجرة.'},
+      {t:'اقتراح لا أمر',d:'أخفّ من should: You could get a small dog. = ربما تأخذ كلباً صغيراً.'},
+      {t:'مُثبتة فقط',d:'نستخدم could للاقتراح في الإثبات لا النفي.'},
+    ],
+    check:{q:"You can't get to the airport. You _______ call a taxi.",o:['could','should not','must not',"don't"],a:0,en:'gentle suggestion → could',ar:'اقتراح لطيف → could'},
+    formula:[{t:'You',c:'s'},{t:'+',c:'p'},{t:'could',c:'v'},{t:'+',c:'p'},{t:'base verb',c:'k'}],
+    compare:[
+      {c1:'You should tell them. (نصيحة أقوى)',c2:'You could ask them. (اقتراح أخفّ)',ar:'should ↔ could'},
+      {c1:'You could call a taxi.',c2:'You could borrow a car.',ar:'اقتراحات بديلة'},
+    ],
+    examples:[
+      {s:'You could get some used furniture.',tr:'يمكنك أن تأخذ أثاثاً مستعملاً.',ar:'اقتراح → could',ok:true},
+      {s:'You could go out with your friends to a restaurant.',tr:'يمكنك الخروج مع أصدقائك إلى مطعم.',ar:'could + verb',ok:true},
+      {s:'You could to call a taxi.',wrong:'could to call',right:'could call',tr:'بعد could فعل مجرّد بلا to: could call.',ok:false},
+    ]
+  },
+  {
+    title:'Adverbs of manner (-ly) & How', ar:'أحوال الطريقة (-ly) والسؤال بـ How',
+    rule:'حال الطريقة يصف كيف يحدث الفعل، ويأتي غالباً بعد الفعل. نُكوّنه بإضافة -ly للصفة: safe→safely. وشاذّ: good→well، fast→fast. ونسأل عن الطريقة بـ How.',
+    parts:[
+      {t:'adjective + ly = adverb',d:'safe→safely · careful→carefully · easy→easily (y→ily).'},
+      {t:'شواذّ',d:'good→well · fast→fast · hard→hard.'},
+      {t:'How …?',d:'How does he drive? → He drives carefully.'},
+    ],
+    check:{q:'She is a careful driver. She drives _______.',o:['carefully','careful','care','carefuly'],a:0,en:'verb needs an adverb → carefully',ar:'الفعل يحتاج حالاً → carefully'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'verb',c:'v'},{t:'+',c:'p'},{t:'adverb (-ly)',c:'k'}],
+    compare:[
+      {c1:'She is a safe driver. (صفة)',c2:'She drives safely. (حال)',ar:'الصفة تصف الاسم · الحال يصف الفعل'},
+      {c1:'He is a good cook.',c2:'He cooks well.',ar:'good → well (شاذّ)'},
+    ],
+    examples:[
+      {s:'He read his book carelessly.',tr:'قرأ كتابه بإهمال.',ar:'careless → carelessly',ok:true},
+      {s:'They passed the test easily.',tr:'اجتازوا الاختبار بسهولة.',ar:'easy → easily',ok:true},
+      {s:'She drives careful.',wrong:'careful',right:'carefully',tr:'بعد الفعل نضع حالاً: drives carefully.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -257,6 +366,15 @@ l2:[
   {words:['Tell','him','to','pick','me','up','at','five'],ans:'Tell him to pick me up at five.',tr:'أخبره أن يقلّني الخامسة.',ar:'tell + to + فعل'},
   {words:['Ask','her','to','call','me','tomorrow'],ans:'Ask her to call me tomorrow.',tr:'اطلب منها أن تتّصل بي غداً.',ar:'ask + to + فعل'},
   {words:['Our','cars','are','different','from','each','other'],ans:'Our cars are different from each other.',tr:'سيّارتانا مختلفتان عن بعضهما.',ar:'different from'},
+],
+l3:[
+  {words:['What','should','I','do'],ans:'What should I do?',tr:'ماذا ينبغي أن أفعل؟',ar:'طلب النصيحة بـ should'},
+  {words:['You','should','wait','for','your','friend'],ans:'You should wait for your friend.',tr:'ينبغي أن تنتظر صديقك.',ar:'should + verb'},
+  {words:['You','could','call','a','taxi'],ans:'You could call a taxi.',tr:'يمكنك أن تطلب سيارة أجرة.',ar:'could = اقتراح'},
+  {words:['He','drives','very','carefully'],ans:'He drives very carefully.',tr:'يقود بحذر شديد.',ar:'حال الطريقة carefully'},
+  {words:['How','does','he','drive'],ans:'How does he drive?',tr:'كيف يقود؟',ar:'السؤال بـ How'},
+  {words:['Can','I','borrow','your','tools'],ans:'Can I borrow your tools?',tr:'هل يمكنني استعارة أدواتك؟',ar:'borrow'},
+  {words:['Please','tell','me','the','truth'],ans:'Please tell me the truth.',tr:'من فضلك قل لي الحقيقة.',ar:'tell + the truth'},
 ]
 };
 
@@ -313,6 +431,28 @@ l2:[
   {q:"In the US, you must buy _______ to pay for auto accidents.",o:["bicycle","place","insurance","ticket"],a:2,en:"pays for accidents → insurance",ar:'يدفع تكاليف الحوادث → تأمين (insurance)',tr:'في أمريكا يجب شراء تأمين لتغطية حوادث السيارات.'},
   {q:"A triangle is _______ a square.",o:["the same as","like","similar to","different from"],a:3,en:"not the same shape → different from",ar:'شكل مختلف → different from',tr:'المثلّث مختلف عن المربّع.'},
   {q:"John _______ soccer when he broke his leg.",o:["was playing","plays","play","playing"],a:0,en:"ongoing past → was playing",ar:'فعل مستمر في الماضي → was playing',tr:'كان جون يلعب كرة القدم حين كسر ساقه.'},
+],
+l3:[
+  // — Evaluation Exercise G (الرسمية · circle the best answer) —
+  {q:"The mechanic is going to _______ Mike's car at the garage.",o:["enjoy","lend","repair","hurt"],a:2,en:"fix a car → repair",ar:'يُصلح السيارة → repair',tr:'سيُصلح الميكانيكي سيارة مايك في الورشة.'},
+  {q:"Larry and Mike live together in the same apartment. They're _______.",o:["anyone","roommates","someone","friendship"],a:1,en:"share an apartment → roommates",ar:'يتشاركان الشقة → شريكا سكن (roommates)',tr:'يعيش لاري ومايك معاً في الشقة نفسها؛ هما شريكا سكن.'},
+  {q:"Jack, can I _______ a couple of dollars from you for lunch?",o:["borrow","guess","lie","lend"],a:0,en:"take temporarily → borrow",ar:'يأخذ مؤقتاً → يستعير (borrow)',tr:'جاك، هل يمكنني أن أستعير منك بضعة دولارات للغداء؟'},
+  {q:"I'd like to hear your _______ of this book. Is it interesting?",o:["advice","opinion","truth","story"],a:1,en:"what you think → opinion",ar:'ما رأيك → opinion',tr:'أودّ أن أسمع رأيك في هذا الكتاب، هل هو ممتع؟'},
+  {q:"Jim told his father he was studying, but he wasn't. He _______ to his father.",o:["enjoyed","parked","borrowed","lied"],a:3,en:"said something untrue → lied",ar:'قال ما ليس صحيحاً → كذب (lied)',tr:'قال جيم لأبيه إنه يذاكر ولم يكن كذلك؛ لقد كذب على أبيه.'},
+  {q:"Sam had a problem. He asked his father for _______.",o:["story","feelings","advice","tool"],a:2,en:"ask for help → advice",ar:'يطلب مساعدة/نصح → advice',tr:'كان لدى سام مشكلة، فطلب النصيحة من أبيه.'},
+  {q:"Ted, will you _______ me fifty cents? I want to buy a soda.",o:["fix","borrow","lend","care for"],a:2,en:"give temporarily → lend",ar:'يُعطي مؤقتاً → يُعير (lend)',tr:'تِد، هل تُعيرني خمسين سنتاً؟ أريد شراء مشروب غازي.'},
+  {q:"I can't find Ed. I _______ he left early today.",o:["guess","should","care about","lie"],a:0,en:"think/suppose → guess",ar:'أظنّ → guess',tr:'لا أجد إد. أظنّ أنه غادر مبكراً اليوم.'},
+  {q:"John said he needed a new _______ to fix my car.",o:["opinion","story","tool","advice"],a:2,en:"to fix → a tool",ar:'للإصلاح → أداة (tool)',tr:'قال جون إنه يحتاج أداة جديدة ليُصلح سيارتي.'},
+  {q:"Everyone should tell the _______.",o:["lie","garage","friendship","truth"],a:3,en:"be honest → the truth",ar:'الصدق → الحقيقة (the truth)',tr:'ينبغي على الجميع أن يقولوا الحقيقة.'},
+  {q:"Pam is a nice person and doesn't want to _______ people.",o:["hurt","borrow","park","lend"],a:0,en:"not harm → hurt",ar:'لا تؤذي → hurt',tr:'بام شخص لطيف ولا تريد أن تؤذي الناس.'},
+  {q:"Jack works on cars and _______ his job.",o:["guesses","could","lies","enjoys"],a:3,en:"likes his work → enjoys",ar:'يحبّ عمله → يستمتع (enjoys)',tr:'يعمل جاك على السيارات ويستمتع بعمله.'},
+  {q:"She doesn't know _______ in her new school.",o:["roommate","anyone","story","advice"],a:1,en:"negative → anyone",ar:'مع النفي → anyone',tr:'لا تعرف أحداً في مدرستها الجديدة.'},
+  {q:"Jack works in the biggest _______ in town.",o:["tool","garage","secret","opinion"],a:1,en:"repair place → garage",ar:'مكان إصلاح السيارات → ورشة (garage)',tr:'يعمل جاك في أكبر ورشة في المدينة.'},
+  // — should / could / adverbs (التقييم + القواعد) —
+  {q:"I lost my wallet. What _______ I do?",o:["should","am","being","was"],a:0,en:"ask for advice → should",ar:'طلب النصيحة → should',tr:'فقدت محفظتي. ماذا ينبغي أن أفعل؟'},
+  {q:"You can't get a taxi? You _______ borrow a friend's car.",o:["could","must not","shouldn't","don't"],a:0,en:"gentle suggestion → could",ar:'اقتراح لطيف → could',tr:'لا تجد سيارة أجرة؟ يمكنك أن تستعير سيارة صديق.'},
+  {q:"She is a careful driver. She drives _______.",o:["carefully","careful","care","carefuly"],a:0,en:"verb + adverb → carefully",ar:'الفعل يحتاج حالاً → carefully',tr:'هي سائقة حذِرة، تقود بحذر.'},
+  {q:"You must not drive _______ on the highway.",o:["safely","well","slowly","nicely"],a:2,en:"highway needs speed → not slowly",ar:'الطريق السريع → ألّا تقود ببطء (slowly)',tr:'يجب ألّا تقود ببطء على الطريق السريع.'},
 ]
 };
 
@@ -322,6 +462,7 @@ l2:[
 const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
+  ...EE.l3,
 ]);
 EE.final=FINAL;
 
@@ -338,6 +479,11 @@ const SPELL_LESSONS=[
     {e:'accident',a:'حادث',em:'💥'},{e:'automobile',a:'سيارة',em:'🚗'},{e:'traffic',a:'مرور',em:'🚦'},
     {e:'insurance',a:'تأمين',em:'🛡️'},{e:'careless',a:'مُهمِل',em:'🙄'},{e:'obey',a:'يلتزم',em:'✅'},
     {e:'curve',a:'منعطف',em:'↪️'},{e:'fasten',a:'يربط',em:'🔒'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 3 — النصيحة',w:[
+    {e:'advice',a:'نصيحة',em:'💬'},{e:'opinion',a:'رأي',em:'💭'},{e:'truth',a:'الحقيقة',em:'✔️'},
+    {e:'secret',a:'سرّ',em:'🤫'},{e:'borrow',a:'يستعير',em:'📥'},{e:'garage',a:'ورشة',em:'🔧'},
+    {e:'carefully',a:'بعناية',em:'🧐'},{e:'roommate',a:'شريك السكن',em:'🧑‍🤝‍🧑'},
   ]},
 ];
 

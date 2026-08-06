@@ -6,7 +6,8 @@
 const BOOK_ID='book9';
 
 const LESSON_META={
-  l1:{ico:'🏦',title:"Lesson 1 — I'd like to open an account",sub:'البنوك · المضارع المستمر للمستقبل · because · أفعال الإحساس (linking)'}
+  l1:{ico:'🏦',title:"Lesson 1 — I'd like to open an account",sub:'البنوك · المضارع المستمر للمستقبل · because · أفعال الإحساس (linking)'},
+  l2:{ico:'🚗',title:'Lesson 2 — What happened?',sub:'الحوادث والمرور · الماضي المستمر · الأوامر بـ tell/ask · المقارنة والتباين'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -59,6 +60,49 @@ l1:[
   {e:'immediately',a:'فوراً',em:'⏱️'},
   {e:'right away',a:'حالاً',em:'⚡'},
   {e:'soon',a:'قريباً',em:'🔜'},
+],
+l2:[
+  // — الحادث والمركبات —
+  {e:'accident',a:'حادث',em:'💥'},
+  {e:'automobile',a:'سيارة (آلية)',em:'🚗'},
+  {e:'auto',a:'سيارة',em:'🚙'},
+  {e:'bicycle',a:'درّاجة هوائية',em:'🚲'},
+  {e:'bike',a:'درّاجة',em:'🚲'},
+  {e:'traffic',a:'حركة المرور',em:'🚦'},
+  {e:'traffic jam',a:'ازدحام مروري',em:'🚗'},
+  {e:'pole',a:'عمود',em:'🗼'},
+  {e:'dent',a:'انبعاج',em:'🔨'},
+  {e:'curve',a:'منعطف',em:'↪️'},
+  // — الشرطة والقانون —
+  {e:'police officer',a:'ضابط شرطة',em:'👮'},
+  {e:'ticket',a:'مخالفة',em:'🎫'},
+  {e:'fine',a:'غرامة',em:'💵'},
+  {e:'fault',a:'خطأ / مسؤولية',em:'⚠️'},
+  {e:'at fault',a:'المخطئ / المتسبّب',em:'🙅'},
+  {e:'law',a:'قانون',em:'⚖️'},
+  {e:'insurance',a:'تأمين',em:'🛡️'},
+  {e:'seat belt',a:'حزام الأمان',em:'🔗'},
+  // — الأفعال —
+  {e:'break',a:'يكسر',past:'broke',pa:'كسر',em:'💔'},
+  {e:'cause',a:'يسبّب',em:'➡️'},
+  {e:'cross',a:'يعبر',em:'🚸'},
+  {e:'obey',a:'يطيع / يلتزم',em:'✅'},
+  {e:'bother',a:'يزعج',em:'😤'},
+  {e:'fasten',a:'يربط / يثبّت',em:'🔒'},
+  {e:'buckle up',a:'يربط الحزام',em:'🔗'},
+  {e:'keep on',a:'يستمرّ',past:'kept on',pa:'استمرّ',em:'🔁'},
+  {e:'ride',a:'يركب',past:'rode',pa:'ركب',em:'🚴'},
+  {e:'run',a:'يقطع (إشارة) / يركض',past:'ran',pa:'قطع',em:'🏃'},
+  {e:'face',a:'يواجه',em:'😐'},
+  // — الصفات وأخرى —
+  {e:'careful',a:'حَذِر',em:'🧐'},
+  {e:'careless',a:'مُهمِل',em:'🙄'},
+  {e:'heavy traffic',a:'ازدحام كثيف',em:'🚙'},
+  {e:'in front of',a:'أمام',em:'⬆️'},
+  {e:'in back of',a:'خلف',em:'⬇️'},
+  {e:'behind',a:'خلف',em:'🔙'},
+  {e:'across',a:'عبر / على الجانب الآخر',em:'↔️'},
+  {e:'similar',a:'متشابه',em:'🟰'},
 ]
 };
 
@@ -127,6 +171,68 @@ l1:[
       {s:'This lemon tastes sourly.',wrong:'sourly',right:'sour',tr:'بعد الفعل الرابط نضع صفة لا ظرفاً: tastes sour.',ok:false},
     ]
   }
+],
+l2:[
+  {
+    title:'Using the Past Progressive', ar:'الماضي المستمر',
+    rule:'للتعبير عن فعل كان مستمراً في الماضي: (was/were) + الفعل+ing. وغالباً يُقاطعه حدث بالماضي البسيط مع when.',
+    parts:[
+      {t:'was + verb-ing',d:'أنا/هو/هي/it. مثال: I was driving to work. = كنت أقود إلى العمل.'},
+      {t:'were + verb-ing',d:'you/we/they. مثال: They were crossing the street. = كانوا يعبرون الشارع.'},
+      {t:'مع when',d:'حدث مستمر يقاطعه حدث قصير: I was driving when the storm began.'},
+    ],
+    check:{q:'John _______ soccer when he broke his leg.',o:['was playing','plays','play','played'],a:0,en:'ongoing past action → was playing',ar:'فعل مستمر في الماضي → was playing'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'was/were',c:'v'},{t:'+',c:'p'},{t:'verb-ing',c:'k'}],
+    compare:[
+      {c1:'I drove to work. (انتهى)',c2:'I was driving to work. (كان مستمراً)',ar:'الماضي البسيط ↔ المستمر'},
+      {c1:'She was cooking',c2:'when you called.',ar:'مستمر + when + حدث قصير'},
+    ],
+    examples:[
+      {s:'They were eating lunch when I saw them.',tr:'كانوا يتناولون الغداء حين رأيتهم.',ar:'were + eating',ok:true},
+      {s:'I was driving when the storm began.',tr:'كنت أقود حين بدأت العاصفة.',ar:'was + driving',ok:true},
+      {s:'What you doing at 7 p.m.?',wrong:'you doing',right:'were you doing',tr:'لا بدّ من was/were: What were you doing?',ok:false},
+    ]
+  },
+  {
+    title:'Indirect commands & requests with tell / ask', ar:'الأوامر والطلبات غير المباشرة بـ tell / ask',
+    rule:'لنقل أمر أو طلب لشخص آخر: Tell/Ask + (مفعول) + to + الفعل. وللنفي: … not to + الفعل. tell للأمر، ask للطلب المهذّب.',
+    parts:[
+      {t:'Tell + مفعول + to + verb',d:'أمر: Tell him to pick me up at 5. = أخبره أن يقلّني الخامسة.'},
+      {t:'Ask + مفعول + to + verb',d:'طلب: Ask her to call me. = اطلب منها أن تتّصل بي.'},
+      {t:'النفي: not to',d:'Tell them not to be late. = أخبرهم ألّا يتأخّروا.'},
+    ],
+    check:{q:'The captain told Sgt Jones _______ bring the schedule.',o:['to','for','that','at'],a:0,en:'tell + object + to + verb',ar:'tell + مفعول + to + فعل',},
+    formula:[{t:'Tell/Ask',c:'v'},{t:'+',c:'p'},{t:'someone',c:'s'},{t:'+',c:'p'},{t:'(not) to + verb',c:'k'}],
+    compare:[
+      {c1:'"Close the door." (مباشر)',c2:'Tell him to close the door. (غير مباشر)',ar:'أمر مباشر ↔ غير مباشر'},
+      {c1:'Ask her to help. (طلب)',c2:'Tell her not to wait. (نفي)',ar:'ask طلب · not to نفي'},
+    ],
+    examples:[
+      {s:'She asked us to fill out these forms.',tr:'طلبت منّا تعبئة هذه النماذج.',ar:'ask + us + to fill out',ok:true},
+      {s:'The officer told me not to run red lights.',tr:'أخبرني الضابط ألّا أقطع الإشارات الحمراء.',ar:'told + me + not to run',ok:true},
+      {s:'Tell him close the door.',wrong:'him close',right:'him to close',tr:'لا بدّ من to قبل الفعل: Tell him to close.',ok:false},
+    ]
+  },
+  {
+    title:'Comparing and contrasting', ar:'المقارنة والتباين (التشابه والاختلاف)',
+    rule:'للمقارنة: A is like / the same as / similar to / different from B. وللجمع: They are alike / the same / similar / different.',
+    parts:[
+      {t:'the same as / like',d:'تطابق أو تشابه قوي: Bill\'s job is the same as Ken\'s.'},
+      {t:'similar to',d:'متشابه (لا متطابق): Jane\'s watch is similar to Amy\'s.'},
+      {t:'different from',d:'مختلف: This dog is different from that dog.'},
+    ],
+    check:{q:'A dime is _______ ten cents.',o:['the same as','different from','similar','like a'],a:0,en:'equal value → the same as',ar:'قيمة متساوية → the same as'},
+    formula:[{t:'A',c:'s'},{t:'is',c:'v'},{t:'like/same as/similar to/different from',c:'k'},{t:'+',c:'p'},{t:'B',c:'s'}],
+    compare:[
+      {c1:'Our cars are alike. (متشابهة)',c2:'Our cars are different. (مختلفة)',ar:'alike ↔ different'},
+      {c1:'is the same as + اسم',c2:'are the same (بلا اسم)',ar:'الصيغتان'},
+    ],
+    examples:[
+      {s:'Their jobs are the same.',tr:'وظيفتاهما متطابقتان.',ar:'are the same',ok:true},
+      {s:'A triangle is different from a square.',tr:'المثلّث مختلف عن المربّع.',ar:'different from',ok:true},
+      {s:'My car is same as his car.',wrong:'same as',right:'the same as',tr:'الصحيح the same as (بأداة التعريف the).',ok:false},
+    ]
+  }
 ]
 };
 
@@ -142,6 +248,15 @@ l1:[
   {words:["I'm",'working','late','because','I','want','more','money'],ans:"I'm working late because I want more money.",tr:'أعمل متأخراً لأنني أريد مالاً أكثر.',ar:'because = السبب'},
   {words:['This','soup','tastes','very','salty'],ans:'This soup tastes very salty.',tr:'هذا الحساء مذاقه مالح جداً.',ar:'فعل الإحساس + صفة'},
   {words:['He','wants','to','withdraw','fifty','dollars'],ans:'He wants to withdraw fifty dollars.',tr:'يريد أن يسحب خمسين دولاراً.',ar:'withdraw'},
+],
+l2:[
+  {words:['John','was','playing','soccer','when','he','broke','his','leg'],ans:'John was playing soccer when he broke his leg.',tr:'كان جون يلعب كرة القدم حين كسر ساقه.',ar:'الماضي المستمر + when'},
+  {words:['They','were','crossing','the','street'],ans:'They were crossing the street.',tr:'كانوا يعبرون الشارع.',ar:'were + crossing'},
+  {words:['The','careless','driver','ran','the','red','light'],ans:'The careless driver ran the red light.',tr:'قطع السائق المُهمل الإشارة الحمراء.',ar:'ran the red light'},
+  {words:['Please','fasten','your','seat','belt'],ans:'Please fasten your seat belt.',tr:'من فضلك اربط حزام الأمان.',ar:'fasten · seat belt'},
+  {words:['Tell','him','to','pick','me','up','at','five'],ans:'Tell him to pick me up at five.',tr:'أخبره أن يقلّني الخامسة.',ar:'tell + to + فعل'},
+  {words:['Ask','her','to','call','me','tomorrow'],ans:'Ask her to call me tomorrow.',tr:'اطلب منها أن تتّصل بي غداً.',ar:'ask + to + فعل'},
+  {words:['Our','cars','are','different','from','each','other'],ans:'Our cars are different from each other.',tr:'سيّارتانا مختلفتان عن بعضهما.',ar:'different from'},
 ]
 };
 
@@ -175,6 +290,29 @@ l1:[
   {q:"That jacket _______ very expensive. Is it?",o:["looks","sees","watches","reads"],a:0,en:"appearance → looks",ar:'المنظر → looks',tr:'تلك السترة تبدو غالية جداً، أهي كذلك؟'},
   // — because (التقييم) —
   {q:"He'll take the bus _______ his car isn't working.",o:["because","but","so","and"],a:0,en:"reason → because",ar:'السبب → because',tr:'سيركب الحافلة لأنّ سيّارته معطّلة.'},
+],
+l2:[
+  // — Evaluation Exercise G (الرسمية · circle the best answer) —
+  {q:"There was a(n) _______ accident on Spring Street.",o:["fault","ticket","police","automobile"],a:3,en:"car crash → automobile accident",ar:'حادث سيارات → automobile accident',tr:'وقع حادث سيّارات في شارع سبرينغ.'},
+  {q:"A small car _______ a red light and hit a bicycle.",o:["ran","caused","bothered","faced"],a:0,en:"went through red light → ran",ar:'قطع الإشارة الحمراء → ran',tr:'قطعت سيّارة صغيرة الإشارة الحمراء وصدمت درّاجة.'},
+  {q:"Tom was wearing a(n) _______ and wasn't hurt.",o:["insurance","seat belt","curve","light"],a:1,en:"protects in a crash → seat belt",ar:'يحمي عند الحادث → حزام الأمان',tr:'كان توم يرتدي حزام الأمان فلم يُصَب.'},
+  {q:"The other driver was fast and _______.",o:["behind","across","in front of","careless"],a:3,en:"fast + not careful → careless",ar:'سريع وغير حذر → مُهمِل (careless)',tr:'كان السائق الآخر سريعاً ومُهمِلاً.'},
+  {q:"The driver of the small car caused the accident; he was _______.",o:["left","at fault","dark","careful"],a:1,en:"caused it → at fault",ar:'هو المتسبّب → at fault',tr:'سائق السيّارة الصغيرة تسبّب في الحادث؛ هو المخطئ.'},
+  {q:"Frank got a(n) _______ for the accident.",o:["auto","law","ticket","cause"],a:2,en:"police citation → ticket",ar:'مخالفة من الشرطة → ticket',tr:'حصل فرانك على مخالفة بسبب الحادث.'},
+  {q:"The driver didn't stop at the light and didn't _______ the law.",o:["obey","face","run","happen"],a:0,en:"follow the law → obey",ar:'يلتزم بالقانون → obey',tr:'لم يتوقّف السائق عند الإشارة ولم يلتزم بالقانون.'},
+  {q:"The _______ arrived at the accident.",o:["police","stop","place","curve"],a:0,en:"who comes to an accident → police",ar:'مَن يصل للحادث → الشرطة',tr:'وصلت الشرطة إلى موقع الحادث.'},
+  {q:"John had to pay a(n) _______ for his ticket.",o:["fault","insurance","fine","law"],a:2,en:"money for a ticket → fine",ar:'مبلغ المخالفة → غرامة (fine)',tr:'اضطرّ جون لدفع غرامة على مخالفته.'},
+  {q:"Beth was late to work because of the _______ on the highway.",o:["light","curve","fault","traffic jam"],a:3,en:"cars not moving → traffic jam",ar:'ازدحام يوقف السير → traffic jam',tr:'تأخّرت بيث عن العمل بسبب الازدحام المروري على الطريق السريع.'},
+  {q:"The city library is _______ the street from the bank.",o:["similar","left","at fault","across"],a:3,en:"on the other side → across",ar:'على الجانب الآخر → across',tr:'مكتبة المدينة على الجانب الآخر من الشارع مقابل البنك.'},
+  {q:"Fred _______ driving on the highway until morning.",o:["rode","bothered","kept on","obeyed"],a:2,en:"continued → kept on",ar:'استمرّ → kept on',tr:'واصل فريد القيادة على الطريق السريع حتى الصباح.'},
+  {q:"He _______ his arm in a soccer game.",o:["happened","broke","faced","buckled"],a:1,en:"injured → broke",ar:'كسر ذراعه → broke',tr:'كسر ذراعه في مباراة كرة قدم.'},
+  {q:"What _______ the problem in the barracks?",o:["crossed","caused","ran","fastened"],a:1,en:"made it happen → caused",ar:'ما الذي سبّبه → caused',tr:'ما الذي سبّب المشكلة في الثكنة؟'},
+  // — Vocabulary review + comparing + past progressive —
+  {q:"You can turn on the TV. It doesn't _______ me.",o:["break","ride","bother","cause"],a:2,en:"doesn't annoy me → bother",ar:'لا يزعجني → bother',tr:'يمكنك تشغيل التلفاز، فهو لا يزعجني.'},
+  {q:"Be careful. There's a _______ in the road here.",o:["law","straight","curve","fine"],a:2,en:"bend in the road → curve",ar:'انحناء في الطريق → منعطف (curve)',tr:'انتبه، هناك منعطف في الطريق هنا.'},
+  {q:"In the US, you must buy _______ to pay for auto accidents.",o:["bicycle","place","insurance","ticket"],a:2,en:"pays for accidents → insurance",ar:'يدفع تكاليف الحوادث → تأمين (insurance)',tr:'في أمريكا يجب شراء تأمين لتغطية حوادث السيارات.'},
+  {q:"A triangle is _______ a square.",o:["the same as","like","similar to","different from"],a:3,en:"not the same shape → different from",ar:'شكل مختلف → different from',tr:'المثلّث مختلف عن المربّع.'},
+  {q:"John _______ soccer when he broke his leg.",o:["was playing","plays","play","playing"],a:0,en:"ongoing past → was playing",ar:'فعل مستمر في الماضي → was playing',tr:'كان جون يلعب كرة القدم حين كسر ساقه.'},
 ]
 };
 
@@ -183,6 +321,7 @@ l1:[
 // ═══════════════════════════════════════
 const FINAL=dedupe_by_q([
   ...EE.l1,
+  ...EE.l2,
 ]);
 EE.final=FINAL;
 
@@ -194,6 +333,11 @@ const SPELL_LESSONS=[
     {e:'account',a:'حساب',em:'🏦'},{e:'deposit',a:'إيداع',em:'📥'},{e:'withdraw',a:'يسحب',em:'🏧'},
     {e:'signature',a:'توقيع',em:'✍️'},{e:'passport',a:'جواز سفر',em:'🛂'},{e:'checkbook',a:'دفتر شيكات',em:'📗'},
     {e:'wallet',a:'محفظة',em:'👛'},{e:'bitter',a:'مرّ',em:'💊'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 2 — الحوادث والمرور',w:[
+    {e:'accident',a:'حادث',em:'💥'},{e:'automobile',a:'سيارة',em:'🚗'},{e:'traffic',a:'مرور',em:'🚦'},
+    {e:'insurance',a:'تأمين',em:'🛡️'},{e:'careless',a:'مُهمِل',em:'🙄'},{e:'obey',a:'يلتزم',em:'✅'},
+    {e:'curve',a:'منعطف',em:'↪️'},{e:'fasten',a:'يربط',em:'🔒'},
   ]},
 ];
 

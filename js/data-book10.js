@@ -6,7 +6,8 @@
 const BOOK_ID='book10';
 
 const LESSON_META={
-  l1:{ico:'🤖',title:'Lesson 1 — Vending machines',sub:'آلات البيع الذاتي · how to + فعل · ظروف الزمن (while/before/after) · be supposed to'}
+  l1:{ico:'🤖',title:'Lesson 1 — Vending machines',sub:'آلات البيع الذاتي · how to + فعل · ظروف الزمن (while/before/after) · be supposed to'},
+  l2:{ico:'🤝',title:'Lesson 2 — Have you met?',sub:'التحية والتعارف · المتاجر · المصدر (to + فعل) · الفعل + ing'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -63,6 +64,50 @@ l1:[
   {e:'lastly',a:'وأخيراً',em:'🔚'},
   {e:'while',a:'بينما',em:'⏳'},
   {e:'until',a:'حتى',em:'⏰'},
+],
+l2:[
+  // — المتاجر وأماكن التسوّق —
+  {e:'mall',a:'مركز تسوّق (مول)',em:'🏬'},
+  {e:'shopping center',a:'مركز تسوّق',em:'🏬'},
+  {e:'department store',a:'متجر أقسام كبير',em:'🏪'},
+  {e:'discount store',a:'متجر تخفيضات',em:'🏷️'},
+  {e:'clothing store',a:'متجر ملابس',em:'👕'},
+  {e:'supermarket',a:'سوبر ماركت',em:'🛒'},
+  {e:'shop',a:'متجر / يتسوّق',em:'🛍️'},
+  {e:'cafeteria',a:'كافتيريا',em:'🍽️'},
+  {e:'parking lot',a:'موقف سيارات',em:'🅿️'},
+  // — المبنى والطوابق —
+  {e:'floor',a:'طابق',em:'🏢'},
+  {e:'elevator',a:'مصعد',em:'🛗'},
+  {e:'escalator',a:'سلّم متحرّك',em:'📶'},
+  {e:'stairs',a:'دَرَج',em:'🪜'},
+  {e:'upstairs',a:'الطابق العلوي',em:'⬆️'},
+  {e:'downstairs',a:'الطابق السفلي',em:'⬇️'},
+  // — الناس والتعارف —
+  {e:'adult',a:'شخص بالغ',em:'🧑'},
+  {e:'neighbor',a:'جار',em:'🏘️'},
+  {e:'neighborhood',a:'الحي',em:'🏘️'},
+  {e:'introduction',a:'تقديم / تعريف',em:'🤝'},
+  {e:'everyone',a:'الجميع',em:'👥'},
+  {e:'everybody',a:'الجميع',em:'👥'},
+  {e:'rule',a:'قاعدة / نظام',em:'📏'},
+  {e:'variety',a:'تنوّع',em:'🎨'},
+  {e:'supper',a:'العشاء',em:'🍲'},
+  // — الأفعال —
+  {e:'introduce',a:'يُقدّم / يُعرّف',em:'🤝'},
+  {e:'meet',a:'يلتقي / يتعرّف',em:'👋'},
+  {e:'shake',a:'يصافح',past:'shook',pa:'صافح',em:'🤝'},
+  {e:'decide to',a:'يقرّر أن',em:'✅'},
+  {e:'mind',a:'يمانع',em:'🤔'},
+  {e:'receive',a:'يستلم',em:'📩'},
+  {e:'let',a:'يسمح / يدع',past:'let',pa:'سمح',em:'🙆'},
+  {e:'write down',a:'يدوّن',past:'wrote down',pa:'دوّن',em:'✍️'},
+  {e:'go shopping',a:'يذهب للتسوّق',em:'🛍️'},
+  // — كلمات أخرى —
+  {e:'afraid',a:'خائف',em:'😨'},
+  {e:'alone',a:'وحيد / بمفرده',em:'🧍'},
+  {e:'polite',a:'مؤدّب',em:'🙇'},
+  {e:'politely',a:'بأدب',em:'😊'},
 ]
 };
 
@@ -131,6 +176,68 @@ l1:[
       {s:'You supposed to wait here.',wrong:'You supposed',right:"You're supposed",tr:'لا بدّ من فعل الكينونة: You\'re supposed to.',ok:false},
     ]
   }
+],
+l2:[
+  {
+    title:'Infinitive: adjective/verb + to + verb', ar:'المصدر: صفة/فعل + to + الفعل',
+    rule:'بعد صفات المشاعر (happy/glad/ready/afraid/sorry) وبعض الأفعال (decide/want/be sure) نضع to + الفعل المجرّد.',
+    parts:[
+      {t:'adjective + to + verb',d:'مثال: We\'re ready to go. · Lt Mathews was happy to receive a letter.'},
+      {t:'verb + to + verb',d:'مثال: He decided to buy the brown coat. · Be sure to shake his hand.'},
+      {t:'to + فعل مجرّد',d:'دائماً فعل مجرّد بعد to: to go · to meet · to receive.'},
+    ],
+    check:{q:'Lt Mathews was happy _______ a letter from home.',o:['to receive','receive','did receive','receiving'],a:0,en:'adjective + to + verb',ar:'صفة + to + فعل → to receive'},
+    formula:[{t:'adjective/verb',c:'v'},{t:'+',c:'p'},{t:'to',c:'s'},{t:'+',c:'p'},{t:'base verb',c:'k'}],
+    compare:[
+      {c1:"We're ready to go.",c2:'Col Jackson was pleased to meet them.',ar:'صفة + to + فعل'},
+      {c1:'He decided to buy the brown one.',c2:'My sister was afraid to sleep alone.',ar:'decide / afraid + to'},
+    ],
+    examples:[
+      {s:"We're ready to go.",tr:'نحن مستعدّون للذهاب.',ar:'ready + to go',ok:true},
+      {s:'He decided to buy the brown coat.',tr:'قرّر أن يشتري المعطف البنّي.',ar:'decided + to buy',ok:true},
+      {s:'We are ready go.',wrong:'ready go',right:'ready to go',tr:'لا بدّ من to قبل الفعل: ready to go.',ok:false},
+    ]
+  },
+  {
+    title:'Verb + gerund (-ing)', ar:'الفعل + الاسم الفعلي (-ing)',
+    rule:'بعد أفعال مثل enjoy/finish/mind/begin/start نضع الفعل + ing (الاسم الفعلي).',
+    parts:[
+      {t:'enjoy/finish/mind + verb-ing',d:'مثال: She enjoys singing. · Do you mind driving?'},
+      {t:'begin/start + verb-ing',d:'مثال: Mary began studying Arabic. · Lt Roberts started flying planes.'},
+      {t:'verb + ing',d:'الاسم الفعلي: singing · doing · driving · studying.'},
+    ],
+    check:{q:'Do you mind _______ me to work tomorrow?',o:['driving','drive','to drive','drove'],a:0,en:'mind + verb-ing',ar:'بعد mind نضع ing → driving'},
+    formula:[{t:'enjoy/finish/mind',c:'v'},{t:'+',c:'p'},{t:'verb + ing',c:'k'}],
+    compare:[
+      {c1:'She enjoys singing.',c2:'When will you finish doing your homework?',ar:'enjoy / finish + ing'},
+      {c1:'Mary began studying Arabic.',c2:'Lt Roberts started flying planes.',ar:'begin / start + ing'},
+    ],
+    examples:[
+      {s:'She enjoys singing.',tr:'تستمتع بالغناء.',ar:'enjoy + singing',ok:true},
+      {s:'Mary began studying Arabic last summer.',tr:'بدأت ماري دراسة العربية الصيف الماضي.',ar:'began + studying',ok:true},
+      {s:'Do you mind to drive?',wrong:'to drive',right:'driving',tr:'بعد mind نضع الفعل+ing: mind driving.',ok:false},
+    ]
+  },
+  {
+    title:'Prepositions of location', ar:'حروف المكان (الموقع)',
+    rule:'نصف موقع الأشياء بحروف المكان: next to · above · below · in front of · behind · upstairs/downstairs.',
+    parts:[
+      {t:'next to = بجانب',d:'The parking lot is next to the building.'},
+      {t:'above / below',d:'فوق / تحت: The movie theater is below this floor.'},
+      {t:'upstairs / downstairs',d:'في الأعلى / في الأسفل (بين الطوابق).'},
+    ],
+    check:{q:'The parking lot is _______ the building.',o:['next to','ready to','afraid of','decide to'],a:0,en:'location → next to',ar:'الموقع → بجانب (next to)'},
+    formula:[{t:'A',c:'s'},{t:'is',c:'v'},{t:'next to / above / below',c:'k'},{t:'+',c:'p'},{t:'B',c:'s'}],
+    compare:[
+      {c1:'The parking lot is next to the building.',c2:'The cafeteria is on the first floor.',ar:'next to · on the … floor'},
+      {c1:'The shop is upstairs.',c2:'The theater is downstairs.',ar:'upstairs ↔ downstairs'},
+    ],
+    examples:[
+      {s:'The parking lot is next to the building.',tr:'موقف السيارات بجانب المبنى.',ar:'next to = بجانب',ok:true},
+      {s:'The clothing store is on the second floor.',tr:'متجر الملابس في الطابق الثاني.',ar:'on the … floor',ok:true},
+      {s:'The shop is next the elevator.',wrong:'next the',right:'next to the',tr:'الصحيح next to (بحرف to).',ok:false},
+    ]
+  }
 ]
 };
 
@@ -146,6 +253,15 @@ l1:[
   {words:['Keep','your','seat','belt','fastened','while',"you're",'in','the','air'],ans:"Keep your seat belt fastened while you're in the air.",tr:'اربط حزام الأمان بينما أنت في الجو.',ar:'while = بينما'},
   {words:["You're",'supposed','to','wear','your','seat','belt'],ans:"You're supposed to wear your seat belt.",tr:'يُفترض أن تلبس حزام الأمان.',ar:'be supposed to'},
   {words:['The','machine','is','out','of','order'],ans:'The machine is out of order.',tr:'الآلة معطّلة.',ar:'out of order'},
+],
+l2:[
+  {words:['Have','you','met','Lieutenant','Grant'],ans:'Have you met Lieutenant Grant?',tr:'هل التقيت بالملازم جرانت؟',ar:'التعارف'},
+  {words:['Let','me','introduce','you','to','John'],ans:'Let me introduce you to John.',tr:'دعني أُقدّمك إلى جون.',ar:'introduce'},
+  {words:["It's",'nice','to','meet','you'],ans:"It's nice to meet you.",tr:'سُررت بلقائك.',ar:'to + فعل'},
+  {words:['She','enjoys','singing','every','day'],ans:'She enjoys singing every day.',tr:'تستمتع بالغناء كل يوم.',ar:'enjoy + ing'},
+  {words:['We','are','ready','to','go','now'],ans:'We are ready to go now.',tr:'نحن مستعدّون للذهاب الآن.',ar:'ready to + فعل'},
+  {words:['The','parking','lot','is','next','to','the','building'],ans:'The parking lot is next to the building.',tr:'موقف السيارات بجانب المبنى.',ar:'next to'},
+  {words:['Take','the','elevator','to','the','second','floor'],ans:'Take the elevator to the second floor.',tr:'خذ المصعد إلى الطابق الثاني.',ar:'elevator · floor'},
 ]
 };
 
@@ -179,6 +295,31 @@ l1:[
   {q:"Push the _______ to choose something to eat.",o:["knob","tray","button","coin return"],a:2,en:"to select → button",ar:'للاختيار → الزرّ (button)',tr:'اضغط الزرّ لاختيار شيء تأكله.'},
   {q:"I bought some _______ to eat.",o:["chips","detergent","time","cream"],a:0,en:"snack food → chips",ar:'وجبة خفيفة → رقائق (chips)',tr:'اشتريت بعض الرقائق لآكلها.'},
   {q:"The blue and the black shoes cost _______ the same.",o:["no","lastly","exactly","another"],a:2,en:"precisely equal → exactly",ar:'بالضبط نفس السعر → exactly',tr:'الحذاء الأزرق والأسود يكلّفان تماماً نفس السعر.'},
+],
+l2:[
+  // — Evaluation Exercise H (الرسمية · choose the best answer) —
+  {q:"Lt Mathews was happy _______ a letter from home.",o:["to receive","receive","did receive","receiving"],a:0,en:"happy + to + verb",ar:'صفة + to + فعل → to receive',tr:'سُرّ الملازم ماثيوز باستلام رسالة من البيت.'},
+  {q:"Was anyone in the office with Mr. Williams? No. He was _______.",o:["afraid","ready","alone","polite"],a:2,en:"nobody with him → alone",ar:'لا أحد معه → وحده (alone)',tr:'هل كان أحد في المكتب مع السيد ويليامز؟ لا، كان وحده.'},
+  {q:"When will you finish _______ your homework?",o:["doing","to do","do","done"],a:0,en:"finish + verb-ing",ar:'بعد finish نضع ing → doing',tr:'متى ستنتهي من أداء واجبك؟'},
+  {q:"Do you have my phone number? No. I'll _______ now.",o:["receive it","write it down","decide to do it","shake it"],a:1,en:"note the number → write it down",ar:'يدوّن الرقم → write it down',tr:'هل لديك رقم هاتفي؟ لا، سأدوّنه الآن.'},
+  {q:"Col Jackson was pleased _______ them.",o:["to meet","will meet","meet","meeting"],a:0,en:"pleased + to + verb",ar:'صفة + to + فعل → to meet',tr:'سُرّ العقيد جاكسون بلقائهم.'},
+  {q:"When will we leave? When _______ is ready.",o:["anyone","everyone","another","alone"],a:1,en:"all people → everyone",ar:'الجميع → everyone',tr:'متى سنغادر؟ عندما يصبح الجميع جاهزين.'},
+  {q:"Do you mind _______ me to work tomorrow?",o:["drive","to drive","driving","drove"],a:2,en:"mind + verb-ing",ar:'بعد mind نضع ing → driving',tr:'هل تمانع أن تُوصّلني إلى العمل غداً؟'},
+  {q:"I don't know your friend. Will you _______ us?",o:["shake","write","introduce","receive"],a:2,en:"make them meet → introduce",ar:'يُعرّف بينهما → introduce',tr:'لا أعرف صديقك، هل تُعرّفنا ببعض؟'},
+  {q:"Which coat did John buy? He _______ to buy the brown one.",o:["decided","let","shopped","shook"],a:0,en:"made a choice → decided",ar:'اتّخذ قراراً → قرّر (decided)',tr:'أيّ معطف اشترى جون؟ قرّر أن يشتري البنّي.'},
+  {q:"My little sister was afraid _______ alone.",o:["to sleep","sleep","sleeping","slept"],a:0,en:"afraid + to + verb",ar:'صفة + to + فعل → to sleep',tr:'كانت أختي الصغيرة خائفة أن تنام وحدها.'},
+  {q:"What should I do when I meet your brother? Be sure to _______ his hand.",o:["let","shake","stick","write"],a:1,en:"greeting → shake his hand",ar:'التحية → يصافح (shake)',tr:'ماذا أفعل حين ألتقي أخاك؟ احرص أن تُصافح يده.'},
+  {q:"Lt Roberts started _______ planes five months ago.",o:["fly","flew","flying","to flew"],a:2,en:"start + verb-ing",ar:'بعد start نضع ing → flying',tr:'بدأ الملازم روبرتس قيادة الطائرات قبل خمسة أشهر.'},
+  {q:"Where do you _______ for food?",o:["park","shop","eat","let"],a:1,en:"buy food → shop",ar:'يشتري الطعام → يتسوّق (shop)',tr:'أين تتسوّق للطعام؟'},
+  {q:"When will you be ready _______?",o:["leaving","to leave","leave","left"],a:1,en:"ready + to + verb",ar:'صفة + to + فعل → to leave',tr:'متى ستكون مستعدّاً للمغادرة؟'},
+  {q:"Why can't we eat in class? Because the _______ say we can't.",o:["rules","malls","neighbors","adults"],a:0,en:"what forbids it → rules",ar:'ما يمنع ذلك → القواعد (rules)',tr:'لماذا لا نستطيع الأكل في الصف؟ لأنّ القواعد تمنع ذلك.'},
+  {q:"John was sorry _______ a dollar in the vending machine.",o:["to lose","lost","loose","losing"],a:0,en:"sorry + to + verb",ar:'صفة + to + فعل → to lose',tr:'أسِف جون لأنه خسر دولاراً في آلة البيع.'},
+  {q:"Mary began _______ Arabic last summer.",o:["study","studying","studied","to studied"],a:1,en:"begin + verb-ing",ar:'بعد begin نضع ing → studying',tr:'بدأت ماري دراسة العربية الصيف الماضي.'},
+  {q:"The students don't know each other. Will you make the _______?",o:["rule","adult","introductions","escalator"],a:2,en:"introduce them → introductions",ar:'يعرّف بينهم → التعريفات (introductions)',tr:'الطلاب لا يعرفون بعضهم، هل تُجري التعارف؟'},
+  {q:"I want to eat lunch in the school _______ today.",o:["cafeteria","escalator","supper","elevator"],a:0,en:"eat at school → cafeteria",ar:'مكان الأكل في المدرسة → كافتيريا',tr:'أريد أن أتغدّى في كافتيريا المدرسة اليوم.'},
+  {q:"Bill: How do I get to the second floor? Tim: Take the _______.",o:["stairs","mall","shop","rule"],a:0,en:"go up → stairs",ar:'للصعود → الدرَج (stairs)',tr:'كيف أصل إلى الطابق الثاني؟ اصعد الدَّرَج.'},
+  {q:"Her daughter is a good girl. She's always nice and _______.",o:["alone","afraid","polite","stuck"],a:2,en:"well-mannered → polite",ar:'حسنة الخُلق → مؤدّبة (polite)',tr:'ابنتها فتاة طيّبة، دائماً لطيفة ومؤدّبة.'},
+  {q:"Bill: Tim, let me introduce you to John. Tim: Hi, John. _______",o:["Have you met Tim?","It's nice to meet you.","You're sitting next to me.","Take the stairs."],a:1,en:"polite reply → nice to meet you",ar:'ردّ مهذّب → سُررت بلقائك',tr:'بيل: تِم، دعني أُقدّمك إلى جون. تِم: مرحباً جون، سُررت بلقائك.'},
 ]
 };
 
@@ -187,6 +328,7 @@ l1:[
 // ═══════════════════════════════════════
 const FINAL=dedupe_by_q([
   ...EE.l1,
+  ...EE.l2,
 ]);
 EE.final=FINAL;
 
@@ -198,6 +340,11 @@ const SPELL_LESSONS=[
     {e:'machine',a:'آلة',em:'⚙️'},{e:'button',a:'زرّ',em:'🔘'},{e:'selection',a:'اختيار',em:'🔢'},
     {e:'insert',a:'يُدخل',em:'📥'},{e:'detergent',a:'منظّف',em:'🧴'},{e:'popular',a:'رائج',em:'👍'},
     {e:'favorite',a:'المفضّل',em:'⭐'},{e:'everywhere',a:'في كل مكان',em:'🌐'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 2 — التعارف والمتاجر',w:[
+    {e:'introduce',a:'يُقدّم',em:'🤝'},{e:'neighbor',a:'جار',em:'🏘️'},{e:'cafeteria',a:'كافتيريا',em:'🍽️'},
+    {e:'elevator',a:'مصعد',em:'🛗'},{e:'escalator',a:'سلّم متحرّك',em:'📶'},{e:'polite',a:'مؤدّب',em:'🙇'},
+    {e:'supermarket',a:'سوبر ماركت',em:'🛒'},{e:'receive',a:'يستلم',em:'📩'},
   ]},
 ];
 

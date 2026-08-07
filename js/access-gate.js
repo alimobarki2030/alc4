@@ -11,6 +11,12 @@
 // that cap. Works fully offline after the first unlock.
 // ═══════════════════════════════════════
 (function(){
+  // ── مفتاح تفعيل البوابة ──────────────────────────────────────────────
+  // موقوفة مؤقتاً أثناء بناء الموقع (كانت تُطلب مع كل تحديث وتُزعج الطلاب).
+  // لإعادة تفعيلها لاحقاً: غيّر false إلى true فقط. لا شيء آخر يتغيّر.
+  const GATE_ENABLED = false;
+  if (!GATE_ENABLED) return;
+
   const SUPABASE_URL = 'https://rfkqfwijuulgdjzqrcpi.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJma3Fmd2lqdXVsZ2RqenFyY3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU3NjUzMzQsImV4cCI6MjEwMTM0MTMzNH0.4oTM9bqa_3orsn_ZxxndrnCwt-eMC45ayqFqOX_tzsA';
   const STORAGE_KEY = 'alc_access_ok';

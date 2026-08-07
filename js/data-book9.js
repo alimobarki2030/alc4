@@ -8,7 +8,8 @@ const BOOK_ID='book9';
 const LESSON_META={
   l1:{ico:'🏦',title:"Lesson 1 — I'd like to open an account",sub:'البنوك · المضارع المستمر للمستقبل · because · أفعال الإحساس (linking)'},
   l2:{ico:'🚗',title:'Lesson 2 — What happened?',sub:'الحوادث والمرور · الماضي المستمر · الأوامر بـ tell/ask · المقارنة والتباين'},
-  l3:{ico:'💬',title:'Lesson 3 — A piece of advice',sub:'النصيحة والاقتراح · should / could · أحوال الطريقة (-ly) · How'}
+  l3:{ico:'💬',title:'Lesson 3 — A piece of advice',sub:'النصيحة والاقتراح · should / could · أحوال الطريقة (-ly) · How'},
+  l4:{ico:'🏜️',title:'Lesson 4 — A trip to New Mexico',sub:'السفر والفنادق · الصفة + that · جُمل that الاسمية · الاعتذار apologize for + ing'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -150,6 +151,52 @@ l3:[
   {e:'someone',a:'شخص ما',em:'🧍'},
   {e:'anyone',a:'أيّ أحد',em:'🙋'},
   {e:'in my opinion',a:'في رأيي',em:'💭'},
+],
+l4:[
+  // — السفر والسيارة —
+  {e:'gas station',a:'محطة وقود',em:'⛽'},
+  {e:'gasoline',a:'بنزين / وقود',em:'⛽'},
+  {e:'tank',a:'خزّان الوقود',em:'🛢️'},
+  {e:'gauge',a:'مؤشّر (العدّاد)',em:'🎚️'},
+  {e:'baggage',a:'أمتعة',em:'🧳'},
+  {e:'alarm clock',a:'منبّه',em:'⏰'},
+  {e:'motel',a:'نُزُل / موتيل',em:'🏨'},
+  // — غرفة الفندق —
+  {e:'bill',a:'الفاتورة',em:'🧾'},
+  {e:'closet',a:'خزانة ملابس',em:'🚪'},
+  {e:'hanger',a:'علّاقة ملابس',em:'🧷'},
+  {e:'sheet',a:'ملاءة',em:'🛏️'},
+  {e:'pillow',a:'وسادة',em:'🛌'},
+  {e:'blanket',a:'بطّانية',em:'🧣'},
+  {e:'bathtub',a:'حوض استحمام',em:'🛁'},
+  {e:'restroom',a:'دورة مياه',em:'🚻'},
+  {e:'laundry',a:'غسيل',em:'🧺'},
+  {e:'lady',a:'سيدة',em:'👩'},
+  // — الأفعال —
+  {e:'apologize',a:'يعتذر',em:'🙇'},
+  {e:'forgive',a:'يسامح',past:'forgave',pa:'سامح',em:'🤝'},
+  {e:'hang up',a:'يعلّق (الملابس)',past:'hung up',pa:'علّق',em:'🧷'},
+  {e:'mean to',a:'ينوي',past:'meant to',pa:'نوى',em:'🎯'},
+  {e:'realize',a:'يُدرك',em:'💡'},
+  {e:'run out of',a:'ينفد منه',past:'ran out of',pa:'نفد',em:'🈳'},
+  {e:'fill up',a:'يملأ',em:'🔋'},
+  {e:'spill',a:'يسكب',em:'💧'},
+  {e:'step on',a:'يدوس على',em:'👣'},
+  {e:'bathe',a:'يستحمّ',em:'🛀'},
+  {e:'take a bath',a:'يأخذ حمّاماً',em:'🛁'},
+  {e:'hope to',a:'يأمل أن',em:'🌟'},
+  {e:'worry',a:'يقلق',em:'😟'},
+  // — الصفات —
+  {e:'empty',a:'فارغ',em:'⭕'},
+  {e:'full',a:'ممتلئ',em:'🔵'},
+  {e:'ready',a:'جاهز',em:'✅'},
+  {e:'pleased',a:'مسرور',em:'😌'},
+  {e:'sorry',a:'آسف',em:'🙁'},
+  {e:'worried about',a:'قلق بشأن',em:'😰'},
+  {e:'soft',a:'ناعم',em:'☁️'},
+  {e:'hard',a:'قاسٍ / صلب',em:'🧱'},
+  {e:'almost',a:'تقريباً',em:'≈'},
+  {e:'really',a:'حقّاً',em:'❗'},
 ]
 };
 
@@ -342,6 +389,68 @@ l3:[
       {s:'She drives careful.',wrong:'careful',right:'carefully',tr:'بعد الفعل نضع حالاً: drives carefully.',ok:false},
     ]
   }
+],
+l4:[
+  {
+    title:'Using adjective + that', ar:'الصفة + that (سبب الشعور)',
+    rule:'بعد صفات المشاعر (happy/pleased/glad/angry/sorry/upset/worried) نضع جملة تبدأ بـ that لتفسير السبب («لماذا؟»). كلمة that اختيارية.',
+    parts:[
+      {t:'I\'m happy that …',d:'مثال: I\'m happy that you came. = أنا سعيد لأنك أتيت.'},
+      {t:'that = السبب',d:'الجملة بعد that تجيب عن «لماذا يشعر بذلك؟».'},
+      {t:'that اختيارية',d:'I\'m sorry (that) I\'m late. = آسف لأنني تأخّرت.'},
+    ],
+    check:{q:"I'm pleased _______ you came to my party.",o:['that','to','for','because of'],a:0,en:'adjective of feeling + that',ar:'صفة شعور + that',},
+    formula:[{t:"I'm",c:'s'},{t:'+',c:'p'},{t:'happy/sorry/glad…',c:'v'},{t:'+',c:'p'},{t:'(that) + clause',c:'k'}],
+    compare:[
+      {c1:'I\'m glad. + I came.',c2:'I\'m glad that I came.',ar:'دمج بجملة that'},
+      {c1:'Is he angry that I didn\'t call?',c2:'No, he isn\'t upset that you didn\'t call.',ar:'السؤال والنفي'},
+    ],
+    examples:[
+      {s:'The students are happy that they didn\'t have a test.',tr:'الطلاب سعداء لأنه لم يكن لديهم اختبار.',ar:'happy + that',ok:true},
+      {s:'She isn\'t worried that her friend is late.',tr:'ليست قلقة لأنّ صديقها تأخّر.',ar:'worried + that',ok:true},
+      {s:'I\'m sorry for I\'m late.',wrong:'for I\'m late',right:'that I\'m late',tr:'مع صفة الشعور نستخدم that لا for + جملة.',ok:false},
+    ]
+  },
+  {
+    title:'That noun clauses', ar:'جُمَل that الاسمية',
+    rule:'بعد أفعال مثل think/know/hope/guess/hear/forget/remember/realize نضع جملة اسمية تبدأ بـ that. وكلمة that اختيارية.',
+    parts:[
+      {t:'think/know/hope + that',d:'مثال: I think that the weather\'s nice. = أظنّ أنّ الطقس جميل.'},
+      {t:'أفعال شائعة',d:'forget · guess · hear · realize · learn · remember · understand + جملة that.'},
+      {t:'that اختيارية',d:'I hope (that) it doesn\'t rain.'},
+    ],
+    check:{q:"Paul doesn't know _______ the test starts at 10:00.",o:['that','to','for','what'],a:0,en:'noun clause → that',ar:'جملة اسمية → that',},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'think/know/hope…',c:'v'},{t:'+',c:'p'},{t:'(that) + clause',c:'k'}],
+    compare:[
+      {c1:'The weather\'s nice today.',c2:'I think that the weather\'s nice today.',ar:'جملة → جملة اسمية بعد think'},
+      {c1:'I hope that it doesn\'t rain.',c2:'Did you forget that we have a test?',ar:'hope · forget + that'},
+    ],
+    examples:[
+      {s:'I guess that I\'ll have to study tomorrow.',tr:'أظنّ أنني سأضطرّ للمذاكرة غداً.',ar:'guess + that',ok:true},
+      {s:'Do you realize that the test will be difficult?',tr:'هل تُدرك أنّ الاختبار سيكون صعباً؟',ar:'realize + that',ok:true},
+      {s:'I think the weather nice today.',wrong:'the weather nice',right:'that the weather\'s nice',tr:'لا بدّ من جملة كاملة بعد think: that the weather\'s nice.',ok:false},
+    ]
+  },
+  {
+    title:'Using apologize for + ing', ar:'الاعتذار apologize for + الفعل+ing',
+    rule:'للاعتذار عن فعلٍ: apologize (to someone) for + الفعل+ing. وللنفي: for not + الفعل+ing.',
+    parts:[
+      {t:'apologize for + verb-ing',d:'مثال: I apologize for spilling your tea. = أعتذر عن سكب شايك.'},
+      {t:'apologize to + شخص',d:'The waitress apologized to John. = اعتذرت النادلة لجون.'},
+      {t:'النفي: for not + ing',d:'I apologize for not writing. = أعتذر لعدم مراسلتي.'},
+    ],
+    check:{q:"I want to apologize _______ spilling your iced tea.",o:['for','to','that','with'],a:0,en:'apologize + for + ing',ar:'apologize + for + الفعل+ing',},
+    formula:[{t:'apologize',c:'v'},{t:'+',c:'p'},{t:'(to someone)',c:'s'},{t:'+',c:'p'},{t:'for (not) verb-ing',c:'k'}],
+    compare:[
+      {c1:'apologize for being late',c2:'apologize for not calling',ar:'إثبات ↔ نفي'},
+      {c1:'I\'m sorry I\'m late.',c2:'I apologize for being late.',ar:'صيغتان للاعتذار'},
+    ],
+    examples:[
+      {s:'The waitress apologized to John for spilling the iced tea.',tr:'اعتذرت النادلة لجون عن سكب الشاي المثلّج.',ar:'apologized to … for + ing',ok:true},
+      {s:'We apologized to the lady for not returning the books.',tr:'اعتذرنا للسيدة لعدم إعادتنا الكتب.',ar:'for not + returning',ok:true},
+      {s:'I apologize for be late.',wrong:'for be late',right:'for being late',tr:'بعد for نضع الفعل+ing: for being late.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -375,6 +484,15 @@ l3:[
   {words:['How','does','he','drive'],ans:'How does he drive?',tr:'كيف يقود؟',ar:'السؤال بـ How'},
   {words:['Can','I','borrow','your','tools'],ans:'Can I borrow your tools?',tr:'هل يمكنني استعارة أدواتك؟',ar:'borrow'},
   {words:['Please','tell','me','the','truth'],ans:'Please tell me the truth.',tr:'من فضلك قل لي الحقيقة.',ar:'tell + the truth'},
+],
+l4:[
+  {words:["I'm",'happy','that','you','came'],ans:"I'm happy that you came.",tr:'أنا سعيد لأنك أتيت.',ar:'الصفة + that'},
+  {words:['I','think','that','the','weather','is','nice'],ans:'I think that the weather is nice.',tr:'أظنّ أنّ الطقس جميل.',ar:'جملة that الاسمية'},
+  {words:['I','apologize','for','being','late'],ans:'I apologize for being late.',tr:'أعتذر عن تأخّري.',ar:'apologize for + ing'},
+  {words:['Please','forgive','me'],ans:'Please forgive me.',tr:'من فضلك سامحني.',ar:'وظيفة الاعتذار'},
+  {words:['We','made','motel','reservations'],ans:'We made motel reservations.',tr:'حجزنا في النُّزُل.',ar:'motel'},
+  {words:['I','need','to','fill','up','the','tank'],ans:'I need to fill up the tank.',tr:'أحتاج أن أملأ الخزّان.',ar:'fill up · tank'},
+  {words:['We','can','hang','up','our','clothes','in','the','closet'],ans:'We can hang up our clothes in the closet.',tr:'يمكننا تعليق ملابسنا في الخزانة.',ar:'hang up · closet'},
 ]
 };
 
@@ -453,6 +571,28 @@ l3:[
   {q:"You can't get a taxi? You _______ borrow a friend's car.",o:["could","must not","shouldn't","don't"],a:0,en:"gentle suggestion → could",ar:'اقتراح لطيف → could',tr:'لا تجد سيارة أجرة؟ يمكنك أن تستعير سيارة صديق.'},
   {q:"She is a careful driver. She drives _______.",o:["carefully","careful","care","carefuly"],a:0,en:"verb + adverb → carefully",ar:'الفعل يحتاج حالاً → carefully',tr:'هي سائقة حذِرة، تقود بحذر.'},
   {q:"You must not drive _______ on the highway.",o:["safely","well","slowly","nicely"],a:2,en:"highway needs speed → not slowly",ar:'الطريق السريع → ألّا تقود ببطء (slowly)',tr:'يجب ألّا تقود ببطء على الطريق السريع.'},
+],
+l4:[
+  // — Evaluation Exercise G (الرسمية · circle the best answer) —
+  {q:"Did Bob _______ that he locked the door?",o:["sorry","really","realize","forgive"],a:2,en:"become aware → realize",ar:'ينتبه/يُدرك → realize',tr:'هل أدرك بوب أنه أقفل الباب؟'},
+  {q:"Do you have any more _______ to hang up my shirts?",o:["gauges","hangers","closet","baggage"],a:1,en:"to hang clothes → hangers",ar:'لتعليق الملابس → علّاقات (hangers)',tr:'هل لديك المزيد من العلّاقات لأعلّق قمصاني؟'},
+  {q:"Jim _______ for being late last night.",o:["apologized","pleased","hung up","hoped to"],a:0,en:"said sorry → apologized",ar:'قال آسف → اعتذر (apologized)',tr:'اعتذر جيم عن تأخّره الليلة الماضية.'},
+  {q:"The room is cold. Do you want another _______ on the bed?",o:["end","blanket","laundry","pillow"],a:1,en:"cold → blanket",ar:'الغرفة باردة → بطّانية (blanket)',tr:'الغرفة باردة، هل تريد بطّانية أخرى على السرير؟'},
+  {q:"Hang that new dress in the _______.",o:["motel","restroom","bathtub","closet"],a:3,en:"hang clothes in → closet",ar:'تُعلَّق الملابس في → الخزانة (closet)',tr:'علّق ذلك الفستان الجديد في الخزانة.'},
+  {q:"I _______ stay in California for ten days.",o:["fill up","realize","hope to","worry"],a:2,en:"wish/plan → hope to",ar:'يأمل/ينوي → hope to',tr:'آمل أن أبقى في كاليفورنيا عشرة أيام.'},
+  {q:"Here is a soft _______ to put under your head.",o:["closet","bill","pillow","gauge"],a:2,en:"under the head → pillow",ar:'تحت الرأس → وسادة (pillow)',tr:'هذه وسادة ناعمة تضعها تحت رأسك.'},
+  {q:"I _______ call Mike last night, but I got busy and didn't do it.",o:["meant to","apologized","ready","forgive"],a:0,en:"intended → meant to",ar:'نويت → meant to',tr:'نويت الاتصال بمايك الليلة الماضية لكنني انشغلت ولم أفعل.'},
+  {q:"Ed's _______ that he missed the show.",o:["hope to","step on","sorry","spill"],a:2,en:"regret → sorry",ar:'نادم/آسف → sorry',tr:'إد آسف لأنه فاته العرض.'},
+  {q:"I need to _______ the gas tank before we drive to New Mexico.",o:["hang up","run out of","almost","fill up"],a:3,en:"add gas → fill up",ar:'يملأ الوقود → fill up',tr:'أحتاج أن أملأ خزّان الوقود قبل أن نقود إلى نيومكسيكو.'},
+  {q:"Please don't _______ about the travel; it's safe.",o:["worry","mean to","apologize","sorry"],a:0,en:"don't be anxious → worry",ar:'لا تقلق → worry',tr:'من فضلك لا تقلق بشأن السفر؛ إنه آمن.'},
+  {q:"Peter always _______ her feet when he dances.",o:["pleases","runs out of","forgives","steps on"],a:3,en:"puts foot on → steps on",ar:'يدوس على → steps on',tr:'بيتر دائماً يدوس على قدميها حين يرقص.'},
+  {q:"Please _______ that dirty dog.",o:["spill","bathe","hang","fill up"],a:1,en:"wash → bathe",ar:'يغسل/يستحمّ → bathe',tr:'من فضلك استحمّ ذلك الكلب المتّسخ (اغسله).'},
+  {q:"We need to wait for Bill; he isn't _______.",o:["so","ready","almost","really"],a:1,en:"not prepared → ready",ar:'ليس مستعدّاً → ready',tr:'علينا انتظار بيل؛ فهو ليس جاهزاً.'},
+  // — القواعد: الصفة + that · جملة that · apologize for + ing —
+  {q:"I'm pleased _______ you came to my party.",o:["that","to","for","of"],a:0,en:"adjective of feeling + that",ar:'صفة شعور + that',tr:'يسرّني أنك أتيت إلى حفلتي.'},
+  {q:"I think _______ the weather is nice today.",o:["that","to","for","what"],a:0,en:"noun clause → that",ar:'جملة اسمية → that',tr:'أظنّ أنّ الطقس جميل اليوم.'},
+  {q:"The waitress apologized _______ spilling the tea.",o:["for","to","that","with"],a:0,en:"apologize for + ing",ar:'apologize for + الفعل+ing',tr:'اعتذرت النادلة عن سكب الشاي.'},
+  {q:"After 5 hours, the tank was almost _______.",o:["full","empty","ready","soft"],a:1,en:"needs gas → almost empty",ar:'يحتاج وقوداً → شبه فارغ (empty)',tr:'بعد خمس ساعات، كان الخزّان شبه فارغ.'},
 ]
 };
 
@@ -463,6 +603,7 @@ const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
   ...EE.l3,
+  ...EE.l4,
 ]);
 EE.final=FINAL;
 
@@ -484,6 +625,11 @@ const SPELL_LESSONS=[
     {e:'advice',a:'نصيحة',em:'💬'},{e:'opinion',a:'رأي',em:'💭'},{e:'truth',a:'الحقيقة',em:'✔️'},
     {e:'secret',a:'سرّ',em:'🤫'},{e:'borrow',a:'يستعير',em:'📥'},{e:'garage',a:'ورشة',em:'🔧'},
     {e:'carefully',a:'بعناية',em:'🧐'},{e:'roommate',a:'شريك السكن',em:'🧑‍🤝‍🧑'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 4 — السفر والفنادق',w:[
+    {e:'motel',a:'نُزُل',em:'🏨'},{e:'baggage',a:'أمتعة',em:'🧳'},{e:'blanket',a:'بطّانية',em:'🧣'},
+    {e:'pillow',a:'وسادة',em:'🛌'},{e:'closet',a:'خزانة',em:'🚪'},{e:'apologize',a:'يعتذر',em:'🙇'},
+    {e:'gasoline',a:'بنزين',em:'⛽'},{e:'realize',a:'يُدرك',em:'💡'},
   ]},
 ];
 

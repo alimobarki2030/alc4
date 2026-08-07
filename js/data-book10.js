@@ -7,7 +7,8 @@ const BOOK_ID='book10';
 
 const LESSON_META={
   l1:{ico:'🤖',title:'Lesson 1 — Vending machines',sub:'آلات البيع الذاتي · how to + فعل · ظروف الزمن (while/before/after) · be supposed to'},
-  l2:{ico:'🤝',title:'Lesson 2 — Have you met?',sub:'التحية والتعارف · المتاجر · المصدر (to + فعل) · الفعل + ing'}
+  l2:{ico:'🤝',title:'Lesson 2 — Have you met?',sub:'التحية والتعارف · المتاجر · المصدر (to + فعل) · الفعل + ing'},
+  l3:{ico:'🛞',title:'Lesson 3 — Changing a tire',sub:'تبديل الإطار · الطلبات المهذّبة would/could · الكلام المنقول say/ask · قراءة الوقت'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -108,6 +109,54 @@ l2:[
   {e:'alone',a:'وحيد / بمفرده',em:'🧍'},
   {e:'polite',a:'مؤدّب',em:'🙇'},
   {e:'politely',a:'بأدب',em:'😊'},
+],
+l3:[
+  // — الإطار والعجلة —
+  {e:'tire',a:'إطار (كفر)',em:'🛞'},
+  {e:'flat',a:'مثقوب / مُفرَّغ',em:'🫓'},
+  {e:'spare',a:'احتياطي',em:'🆘'},
+  {e:'wheel',a:'عجلة',em:'☸️'},
+  {e:'hubcap',a:'غطاء الصُّرّة',em:'⭕'},
+  {e:'air',a:'هواء',em:'💨'},
+  // — الأدوات —
+  {e:'jack',a:'رافعة (عفريتة)',em:'🛠️'},
+  {e:'wrench',a:'مفتاح ربط',em:'🔧'},
+  {e:'lug nut',a:'صامولة العجلة',em:'🔩'},
+  {e:'nut',a:'صامولة',em:'🔩'},
+  {e:'trunk',a:'صندوق السيارة',em:'🧳'},
+  {e:'cover',a:'غطاء',em:'🛡️'},
+  {e:'key',a:'مفتاح',em:'🔑'},
+  // — الأفعال —
+  {e:'inflate',a:'ينفخ (يملأ هواءً)',em:'🎈'},
+  {e:'jack up',a:'يرفع بالرافعة',em:'⬆️'},
+  {e:'loosen',a:'يفكّ / يُرخي',em:'🔄'},
+  {e:'tighten',a:'يُحكِم / يشدّ',em:'🔒'},
+  {e:'raise',a:'يرفع',em:'🔼'},
+  {e:'lower',a:'يخفض',em:'🔽'},
+  {e:'remove',a:'يزيل / ينزع',em:'➖'},
+  {e:'replace',a:'يستبدل',em:'♻️'},
+  {e:'hurry up',a:'يُسرع',em:'🏃'},
+  {e:'keep',a:'يُبقي / يحتفظ',past:'kept',pa:'أبقى',em:'🤲'},
+  {e:'hand out',a:'يوزّع (باليد)',em:'📤'},
+  {e:'pass out',a:'يوزّع',em:'🗂️'},
+  {e:'mind',a:'يمانع',em:'🤔'},
+  // — الأفعال الناقصة والطلب —
+  {e:'would',a:'(للطلب المهذّب) هل تـ…',em:'🙏'},
+  {e:'could',a:'(للطلب المهذّب) هل بإمكانك',em:'🙏'},
+  {e:'can',a:'يستطيع',em:'💪'},
+  // — كلمات أخرى —
+  {e:'certainly',a:'بالتأكيد',em:'✔️'},
+  {e:'of course',a:'بالطبع',em:'👌'},
+  {e:'common',a:'شائع / مألوف',em:'🔁'},
+  {e:'enough',a:'كافٍ',em:'✅'},
+  {e:'extra',a:'إضافي',em:'➕'},
+  {e:'quick',a:'سريع',em:'⚡'},
+  {e:'quickly',a:'بسرعة',em:'💨'},
+  {e:'in a hurry',a:'على عجل',em:'🏃'},
+  {e:'loose',a:'مُرتخٍ / سائب',em:'🔓'},
+  {e:'tight',a:'مُحكَم / مشدود',em:'🔒'},
+  {e:'the back of',a:'الجزء الخلفي من',em:'⬅️'},
+  {e:'the front of',a:'الجزء الأمامي من',em:'➡️'},
 ]
 };
 
@@ -238,6 +287,68 @@ l2:[
       {s:'The shop is next the elevator.',wrong:'next the',right:'next to the',tr:'الصحيح next to (بحرف to).',ok:false},
     ]
   }
+],
+l3:[
+  {
+    title:'Polite requests with would / could', ar:'الطلبات المهذّبة بـ would / could',
+    rule:'للطلب المهذّب نبدأ بـ Would you…? أو Could you…? + الفعل المجرّد. والإجابة: Yes, I will / Of course / Sure، أو الاعتذار Sorry, I can\'t.',
+    parts:[
+      {t:'Would you + verb?',d:'مثال: Would you open the door? = هل تفتح الباب من فضلك؟'},
+      {t:'Could you + verb?',d:'مثال: Could you close the window? = هل بإمكانك إغلاق النافذة؟'},
+      {t:'الإجابة',d:'Yes, I will. / Of course. / Sure, I\'d be happy to. · الاعتذار: Sorry, I can\'t.'},
+    ],
+    check:{q:'_______ you please close the window? — Sure, I\'d be happy to.',o:['Could','Do','Are','Will not'],a:0,en:'polite request → Could you',ar:'طلب مهذّب → Could you'},
+    formula:[{t:'Would/Could',c:'v'},{t:'+',c:'p'},{t:'you',c:'s'},{t:'+',c:'p'},{t:'base verb',c:'k'}],
+    compare:[
+      {c1:'Would you open the door?',c2:'Could you open the door?',ar:'would / could للطلب'},
+      {c1:'Yes, I will.',c2:"No, I can't. / Of course.",ar:'الإجابة إثباتاً أو اعتذاراً'},
+    ],
+    examples:[
+      {s:'Would you do me a favor?',tr:'هل تُسدي لي معروفاً؟',ar:'Would you + verb',ok:true},
+      {s:"Could you please close the window? Sure, I'd be happy to.",tr:'هل يمكنك إغلاق النافذة؟ بكل سرور.',ar:'Could you + verb',ok:true},
+      {s:'Would you to open the door?',wrong:'would you to open',right:'would you open',tr:'بعد would/could فعل مجرّد بلا to: would you open.',ok:false},
+    ]
+  },
+  {
+    title:'Reported speech: say to / ask to', ar:'الكلام المنقول (say to · ask to)',
+    rule:'لنقل أمرٍ أو طلب: (said to + الفعل) لنقل الأمر، و(asked + مفعول + to + الفعل) لنقل الطلب.',
+    parts:[
+      {t:'He said to + verb',d:'مثال: What did the officer say? He said to stop.'},
+      {t:'She asked + مفعول + to + verb',d:'مثال: What did she ask you? She asked me to help her.'},
+      {t:'النفي: not to',d:'He said not to move. = قال ألّا نتحرّك.'},
+    ],
+    check:{q:'What did she ask you? She asked me _______ help her.',o:['to','for','that','will'],a:0,en:'ask + object + to + verb',ar:'ask + مفعول + to + فعل',},
+    formula:[{t:'said/asked',c:'v'},{t:'+',c:'p'},{t:'(object)',c:'s'},{t:'+',c:'p'},{t:'to + verb',c:'k'}],
+    compare:[
+      {c1:'He said to stop.',c2:'She asked me to help her.',ar:'say to · ask + مفعول + to'},
+      {c1:'Please stop. → He said to stop.',c2:'Please help. → She asked me to help.',ar:'مباشر ↔ منقول'},
+    ],
+    examples:[
+      {s:'The officer said to stop.',tr:'قال الضابط أن نتوقّف.',ar:'said to + verb',ok:true},
+      {s:'She asked me to help her.',tr:'طلبت منّي أن أساعدها.',ar:'asked me to + verb',ok:true},
+      {s:'She asked me help her.',wrong:'me help',right:'me to help',tr:'لا بدّ من to قبل الفعل: asked me to help.',ok:false},
+    ]
+  },
+  {
+    title:'Telling time: 24-hour & 12-hour', ar:'قراءة الوقت (العسكري والعادي)',
+    rule:'الوقت العسكري (24 ساعة) يُقرأ بأربعة أرقام: 0630 = «صفر ستّة ثلاثين». والعادي (12 ساعة) بـ a.m./p.m.: 7:30 tonight.',
+    parts:[
+      {t:'0630 = 6:30 a.m.',d:'الوقت العسكري: Joe leaves tomorrow at 0630.'},
+      {t:'7:30 p.m.',d:'الوقت العادي: The game starts tonight at 7:30.'},
+      {t:'at + الوقت',d:'نستخدم at قبل الساعة: at 0630 · at 7:30.'},
+    ],
+    check:{q:'The game starts tonight _______ 7:30.',o:['at','on','in','to'],a:0,en:'clock time → at',ar:'قبل الساعة → at',},
+    formula:[{t:'event',c:'s'},{t:'+',c:'p'},{t:'at',c:'v'},{t:'+',c:'p'},{t:'time',c:'k'}],
+    compare:[
+      {c1:'0630 (عسكري)',c2:'6:30 a.m. (عادي)',ar:'نفس الوقت بصيغتين'},
+      {c1:'Joe leaves at 0630.',c2:'The game starts at 7:30.',ar:'at + الوقت'},
+    ],
+    examples:[
+      {s:'Joe leaves tomorrow at 0630.',tr:'يغادر جو غداً الساعة السادسة والنصف صباحاً.',ar:'0630 = وقت عسكري',ok:true},
+      {s:'The game starts tonight at 7:30.',tr:'تبدأ المباراة الليلة السابعة والنصف.',ar:'at + 7:30',ok:true},
+      {s:'The game starts in 7:30.',wrong:'in 7:30',right:'at 7:30',tr:'قبل الساعة نستخدم at لا in.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -262,6 +373,15 @@ l2:[
   {words:['We','are','ready','to','go','now'],ans:'We are ready to go now.',tr:'نحن مستعدّون للذهاب الآن.',ar:'ready to + فعل'},
   {words:['The','parking','lot','is','next','to','the','building'],ans:'The parking lot is next to the building.',tr:'موقف السيارات بجانب المبنى.',ar:'next to'},
   {words:['Take','the','elevator','to','the','second','floor'],ans:'Take the elevator to the second floor.',tr:'خذ المصعد إلى الطابق الثاني.',ar:'elevator · floor'},
+],
+l3:[
+  {words:['Would','you','do','me','a','favor'],ans:'Would you do me a favor?',tr:'هل تُسدي لي معروفاً؟',ar:'طلب مهذّب would'},
+  {words:['Could','you','please','close','the','window'],ans:'Could you please close the window?',tr:'هل يمكنك إغلاق النافذة من فضلك؟',ar:'طلب مهذّب could'},
+  {words:['She','asked','me','to','help','her'],ans:'She asked me to help her.',tr:'طلبت منّي أن أساعدها.',ar:'الكلام المنقول ask'},
+  {words:['The','spare','tire','is','in','the','trunk'],ans:'The spare tire is in the trunk.',tr:'الإطار الاحتياطي في صندوق السيارة.',ar:'spare · trunk'},
+  {words:['Remove','the','flat','tire','with','the','wrench'],ans:'Remove the flat tire with the wrench.',tr:'انزع الإطار المثقوب بمفتاح الربط.',ar:'remove · wrench'},
+  {words:['You','need','to','loosen','the','lug','nuts'],ans:'You need to loosen the lug nuts.',tr:'عليك أن تفكّ صواميل العجلة.',ar:'loosen · lug nuts'},
+  {words:['Joe','leaves','tomorrow','at','six','thirty'],ans:'Joe leaves tomorrow at six thirty.',tr:'يغادر جو غداً السادسة والنصف.',ar:'at + الوقت'},
 ]
 };
 
@@ -320,6 +440,29 @@ l2:[
   {q:"Bill: How do I get to the second floor? Tim: Take the _______.",o:["stairs","mall","shop","rule"],a:0,en:"go up → stairs",ar:'للصعود → الدرَج (stairs)',tr:'كيف أصل إلى الطابق الثاني؟ اصعد الدَّرَج.'},
   {q:"Her daughter is a good girl. She's always nice and _______.",o:["alone","afraid","polite","stuck"],a:2,en:"well-mannered → polite",ar:'حسنة الخُلق → مؤدّبة (polite)',tr:'ابنتها فتاة طيّبة، دائماً لطيفة ومؤدّبة.'},
   {q:"Bill: Tim, let me introduce you to John. Tim: Hi, John. _______",o:["Have you met Tim?","It's nice to meet you.","You're sitting next to me.","Take the stairs."],a:1,en:"polite reply → nice to meet you",ar:'ردّ مهذّب → سُررت بلقائك',tr:'بيل: تِم، دعني أُقدّمك إلى جون. تِم: مرحباً جون، سُررت بلقائك.'},
+],
+l3:[
+  // — Evaluation Exercise E (الرسمية · select the best answer) —
+  {q:"Tom, _______ the papers to the students, please.",o:["jack up","hand out","find out","loosen"],a:1,en:"give one to each → hand out",ar:'يوزّع باليد → hand out',tr:'يا توم، وزّع الأوراق على الطلاب من فضلك.'},
+  {q:"We need to _______ the temperature. It's very hot in this room.",o:["inflate","remove","lower","raise"],a:2,en:"reduce heat → lower",ar:'يخفض الحرارة → lower',tr:'نحتاج أن نخفض درجة الحرارة، الغرفة حارّة جداً.'},
+  {q:"Bill had only 5 minutes to get to class. He ate his breakfast _______.",o:["quickly","slowly","certainly","tightly"],a:0,en:"fast → quickly",ar:'بسرعة → quickly',tr:'كان أمام بيل خمس دقائق فقط للوصول للصف، فأكل فطوره بسرعة.'},
+  {q:"Jane uses a big coat to _______ warm in winter.",o:["keep","spare","raise","loosen"],a:0,en:"stay warm → keep warm",ar:'يبقى دافئاً → keep warm',tr:'تستخدم جين معطفاً كبيراً لتبقى دافئة في الشتاء.'},
+  {q:"Many people choose blue for a car color. It's _______.",o:["loose","enough","common","flat"],a:2,en:"used by many → common",ar:'شائع بين الناس → common',tr:'كثير من الناس يختارون الأزرق لون السيارة، إنه شائع.'},
+  {q:"Mary wants to _______ the floor with carpet.",o:["cover","remove","replace","inflate"],a:0,en:"put over → cover",ar:'يغطّي → cover',tr:'تريد ماري تغطية الأرضية بسجّاد.'},
+  {q:"This is _______ the car. Bob puts his spare tire there.",o:["the top of","the back of","the side of","the front of"],a:1,en:"spare tire location → the back of",ar:'مكان الإطار الاحتياطي → الجزء الخلفي',tr:'هذا هو الجزء الخلفي من السيارة، يضع بوب إطاره الاحتياطي هناك.'},
+  {q:"Tom's front _______ are new.",o:["tires","keys","trunks","covers"],a:0,en:"on the wheels → tires",ar:'على العجلات → إطارات (tires)',tr:'إطارا توم الأماميّان جديدان.'},
+  {q:"Bob: Can you help me fix the door? It sticks. Bill: _______",o:["Sorry, I will.","Of course I can.","Certainly. I'll pass out.","No, I will."],a:1,en:"agree to help → Of course I can",ar:'الموافقة على المساعدة → بالطبع أستطيع',tr:'بوب: هل تساعدني في إصلاح الباب؟ إنه عالق. بيل: بالطبع أستطيع.'},
+  {q:"I don't have a pencil. Do you have a(n) _______ one?",o:["extra","tight","flat","loose"],a:0,en:"additional → extra",ar:'إضافي → extra',tr:'ليس معي قلم رصاص، هل لديك واحد إضافي؟'},
+  {q:"Could you _______? Would you return this book to the library, please?",o:["be in a hurry","do me a favor","remove the key","hand out"],a:1,en:"polite request → do me a favor",ar:'طلب مهذّب → do me a favor',tr:'هل تُسدي لي معروفاً؟ هل تُعيد هذا الكتاب إلى المكتبة من فضلك؟'},
+  {q:"I lost Bob's pen. I need to _______ it.",o:["loosen","raise","replace","inflate"],a:2,en:"get a new one → replace",ar:'يُبدله بآخر → replace',tr:'أضعتُ قلم بوب، عليّ أن أستبدله.'},
+  {q:"It's cold tonight. We need more _______.",o:["covers","trunks","tires","jacks"],a:0,en:"to keep warm → covers",ar:'للدفء → أغطية (covers)',tr:'الجوّ بارد الليلة، نحتاج أغطية أكثر.'},
+  {q:"I can't get in my car. I forgot my _______.",o:["lug","key","nut","air"],a:1,en:"opens the car → key",ar:'يفتح السيارة → مفتاح (key)',tr:'لا أستطيع دخول سيارتي، نسيت مفتاحي.'},
+  {q:"I need to buy more gas. I don't have _______ to get to work.",o:["jacks","flats","enough","covers"],a:2,en:"not sufficient → enough",ar:'ليس كافياً → enough',tr:'أحتاج شراء المزيد من الوقود، ليس لديّ ما يكفي للوصول إلى العمل.'},
+  {q:"Would you _______ lending me your pen?",o:["mind","hand out","pass out","loosen"],a:0,en:"would you mind + ing",ar:'هل تمانع → mind',tr:'هل تمانع أن تُعيرني قلمك؟'},
+  // — الطلبات المهذّبة والكلام المنقول والوقت (القواعد) —
+  {q:"_______ you please close the window? — Sure, I'd be happy to.",o:["Could","Do","Are","Was"],a:0,en:"polite request → Could you",ar:'طلب مهذّب → Could you',tr:'هل يمكنك إغلاق النافذة من فضلك؟ — بكل سرور.'},
+  {q:"What did she ask you? She asked me _______ help her.",o:["to","for","that","will"],a:0,en:"ask + object + to + verb",ar:'ask + مفعول + to + فعل',tr:'ماذا طلبت منك؟ طلبت منّي أن أساعدها.'},
+  {q:"The game starts tonight _______ 7:30.",o:["at","on","in","to"],a:0,en:"clock time → at",ar:'قبل الساعة → at',tr:'تبدأ المباراة الليلة الساعة 7:30.'},
 ]
 };
 
@@ -329,6 +472,7 @@ l2:[
 const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
+  ...EE.l3,
 ]);
 EE.final=FINAL;
 
@@ -345,6 +489,11 @@ const SPELL_LESSONS=[
     {e:'introduce',a:'يُقدّم',em:'🤝'},{e:'neighbor',a:'جار',em:'🏘️'},{e:'cafeteria',a:'كافتيريا',em:'🍽️'},
     {e:'elevator',a:'مصعد',em:'🛗'},{e:'escalator',a:'سلّم متحرّك',em:'📶'},{e:'polite',a:'مؤدّب',em:'🙇'},
     {e:'supermarket',a:'سوبر ماركت',em:'🛒'},{e:'receive',a:'يستلم',em:'📩'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 3 — تبديل الإطار',w:[
+    {e:'tire',a:'إطار',em:'🛞'},{e:'spare',a:'احتياطي',em:'🆘'},{e:'wrench',a:'مفتاح ربط',em:'🔧'},
+    {e:'trunk',a:'صندوق السيارة',em:'🧳'},{e:'inflate',a:'ينفخ',em:'🎈'},{e:'replace',a:'يستبدل',em:'♻️'},
+    {e:'common',a:'شائع',em:'🔁'},{e:'certainly',a:'بالتأكيد',em:'✔️'},
   ]},
 ];
 

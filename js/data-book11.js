@@ -181,42 +181,6 @@ l1:[
   {q:"Has he _______ in the barracks?",o:["been study","had studying","been studying","have study"],a:2,en:"present perfect continuous → been studying",ar:'المضارع التام المستمر → been studying',tr:'هل ظلّ يذاكر في الثكنة؟'},
   {q:"Ten minutes after the plane took off, the pilot said he had _______ and returned to the airport.",o:["an appointment","an emergency","an ache","a symptom"],a:1,en:"urgent problem → an emergency",ar:'مشكلة عاجلة → حالة طارئة (emergency)',tr:'بعد عشر دقائق من إقلاع الطائرة، قال الطيّار إنّ لديه حالة طارئة وعاد إلى المطار.'},
   {q:"_______ you _______ to Chicago before?",o:["Have, had","Had, have","Have, been","Had, been"],a:2,en:"experience → Have you been",ar:'الخبرة → Have you been',tr:'هل سبق أن ذهبت إلى شيكاغو من قبل؟'},
-
-  // ── Exercise B (المتاهة/الكلمات المتقاطعة) — أكمل الفراغ ──
-  {q:"Turn off the faucet. Don't let the water _______.",o:["ache","run","sneeze","connect"],a:1,en:"keep flowing → run",ar:'يستمرّ بالجريان → run',tr:'أغلق الصنبور، لا تدع الماء يستمرّ بالجريان.'},
-  {q:"I don't know exactly when the Hills are coming. They'll arrive _______ today.",o:["sometime","anymore","since","then"],a:0,en:"at an unknown time → sometime",ar:'في وقتٍ ما → sometime',tr:'لا أعرف بالضبط متى سيأتي آل هيل، سيصلون في وقتٍ ما اليوم.'},
-  {q:"Because Tom drank a glass of water too fast, he had to _______.",o:["connect","see","cough","catch"],a:2,en:"choking → cough",ar:'يشرق فيسعل → cough',tr:'لأنّ توم شرب كوب الماء بسرعة كبيرة، اضطرّ إلى السعال.'},
-  {q:"John made an _______ with his dentist because his tooth hurt.",o:["emergency","appointment","examination","ache"],a:1,en:"book a visit → appointment",ar:'يحجز زيارة → موعد (appointment)',tr:'حجز جون موعداً مع طبيب أسنانه لأنّ سنّه كان يؤلمه.'},
-  {q:"While Al was sick, his nose was very red because he _______ so much.",o:["coughed","connected","sneezed","ached"],a:2,en:"achoo! → sneezed",ar:'عطس كثيراً → sneezed',tr:'بينما كان آل مريضاً، كان أنفه أحمر جداً لأنّه عطس كثيراً.'},
-  {q:"When you draw a line between two dots, you _______ them.",o:["catch","connect","ache","cough"],a:1,en:"join → connect",ar:'يصل بينهما → connect',tr:'عندما ترسم خطاً بين نقطتين، فأنت تصلهما.'},
-  {q:"The glass started to fall, but I _______ it before it hit the ground.",o:["coughed","ached","caught","connected"],a:2,en:"grabbed → caught",ar:'أمسكه بيده → caught',tr:'بدأ الكوب يسقط، لكنّني أمسكته قبل أن يرتطم بالأرض.'},
-  {q:"We go to the same restaurant each Friday. We're _______ customers.",o:["annual","runny","regular","vertical"],a:2,en:"usual → regular",ar:'دائمون/منتظمون → regular',tr:'نذهب إلى المطعم نفسه كلّ جمعة، نحن زبائن منتظمون.'},
-  {q:"When Sara spilled some pepper, she began _______.",o:["sneezing","coughing","aching","connecting"],a:0,en:"pepper → sneezing",ar:'الفلفل يجعلها → تعطس (sneezing)',tr:'عندما سكبت سارة بعض الفلفل، بدأت تعطس.'},
-  {q:"Captain Smith's not here. He went _______ for the day.",o:["in","out","since","then"],a:1,en:"left → out",ar:'خرج → out',tr:'الكابتن سميث ليس هنا، لقد خرج طوال اليوم.'},
-  {q:"Babies can't eat much because they have small _______.",o:["patients","symptoms","stomachs","fevers"],a:2,en:"where food goes → stomachs",ar:'حيث يذهب الطعام → معدة (stomachs)',tr:'لا يستطيع الرضّع أكل الكثير لأنّ معدتهم صغيرة.'},
-  {q:"Dr. Wilson is my doctor. I was the last _______ that he saw today.",o:["nurse","symptom","patient","checkup"],a:2,en:"sick person → patient",ar:'الشخص المريض → مريض (patient)',tr:'الدكتور ويلسون طبيبي، كنت آخر مريض رآه اليوم.'},
-  {q:"The restaurant cook didn't cook my eggs long enough. They were _______.",o:["regular","runny","annual","vertical"],a:1,en:"not solid → runny",ar:'غير ناضج/سائل → runny',tr:'لم يطبخ طاهي المطعم بيضي مدّةً كافية، كان غير ناضج (سائلاً).'},
-  {q:"John's sneezing, and he has a cough and a fever. I think he caught a _______.",o:["patient","checkup","cold","chest"],a:2,en:"cough+fever → cold",ar:'سعال وحُمّى → زكام (cold)',tr:'جون يعطس، ولديه سعال وحُمّى، أظنّه أُصيب بزكام.'},
-
-  // ── Exercise A — الكلمات التي تتلازم (collocations) ──
-  {q:"I need a tissue — I have a runny _______.",o:["cough","nose","pain","doctor"],a:1,en:"runny nose",ar:'أنف يسيل → runny nose',tr:'أحتاج منديلاً، أنفي يسيل.'},
-  {q:"He can't stop coughing. He has a bad _______.",o:["checkup","nurse","cough","dot"],a:2,en:"bad cough",ar:'سعال شديد → bad cough',tr:'لا يستطيع التوقّف عن السعال، لديه سعال شديد.'},
-  {q:"After the long march, the soldier felt aches and _______.",o:["pains","coughs","colds","dots"],a:0,en:"aches and pains",ar:'أوجاع وآلام → aches and pains',tr:'بعد المسير الطويل، شعر الجندي بأوجاع وآلام.'},
-  {q:"He feels hot and might run a _______.",o:["nose","temperature","cough","dot"],a:1,en:"run a temperature",ar:'تصيبه الحُمّى → run a temperature',tr:'يشعر بالحرّ وقد تصيبه الحُمّى.'},
-  {q:"Once a year, every soldier gets an annual _______.",o:["nose","cough","dot","physical"],a:3,en:"annual physical",ar:'فحص سنوي شامل → annual physical',tr:'مرّة كلّ عام، يخضع كلّ جندي لفحص طبّي سنوي شامل.'},
-  {q:"I keep sneezing and my nose is _______.",o:["catching","aching","running","connecting"],a:2,en:"nose is running",ar:'الأنف يسيل → running',tr:'أظلّ أعطس وأنفي يسيل.'},
-
-  // ── Vocabulary Review — الكلمة من معناها ──
-  {q:"'At that time' means the same as _______.",o:["since","then","still","out"],a:1,en:"at that time → then",ar:'في ذلك الوقت → then',tr:'«في ذلك الوقت» تعني then.'},
-  {q:"'From a past time until now' means _______.",o:["then","sometime","since","anymore"],a:2,en:"from past until now → since",ar:'من الماضي حتى الآن → since',tr:'«من وقتٍ ماضٍ حتى الآن» تعني since.'},
-  {q:"To stop something with your hands, or to become sick, is to _______.",o:["catch","connect","ache","cough"],a:0,en:"grab / get sick → catch",ar:'يُمسك أو يُصاب → catch',tr:'أن تُمسك شيئاً بيدك أو تُصاب بالمرض = catch.'},
-  {q:"To hurt means to _______.",o:["connect","catch","ache","see"],a:2,en:"hurt → ache",ar:'يؤلم → ache',tr:'«يؤلم» تعني ache.'},
-  {q:"The part inside your body where food goes is the _______.",o:["chest","back","stomach","symptom"],a:2,en:"where food goes → stomach",ar:'حيث يذهب الطعام → المعدة (stomach)',tr:'الجزء داخل جسمك حيث يذهب الطعام هو المعدة.'},
-  {q:"A cough, a fever, and sneezing together are a _______.",o:["fever","cold","symptom","checkup"],a:1,en:"cough+fever+sneezing → cold",ar:'سعال وحُمّى وعطاس → زكام (cold)',tr:'السعال والحُمّى والعطاس معاً = زكام (cold).'},
-  {q:"To arrive somewhere is to _______.",o:["get there","run","come in","sneeze"],a:0,en:"arrive → get there",ar:'يصل → get there',tr:'«يصل» تعني get there.'},
-  {q:"To bring two things together is to _______.",o:["catch","cough","connect","ache"],a:2,en:"bring together → connect",ar:'يجمع بينهما → connect',tr:'أن تجمع شيئين معاً = connect.'},
-  {q:"A very bad accident, for example, is an _______.",o:["symptom","emergency","checkup","examination"],a:1,en:"bad accident → emergency",ar:'حادث خطير → طارئ (emergency)',tr:'الحادث الخطير جداً مثلاً هو حالة طارئة (emergency).'},
-  {q:"Looking carefully at something is an _______.",o:["appointment","emergency","examination","symptom"],a:2,en:"looking carefully → examination",ar:'النظر بدقّة/الفحص → examination',tr:'النظر بدقّة إلى شيء = فحص (examination).'},
 ]
 };
 

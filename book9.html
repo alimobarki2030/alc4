@@ -180,9 +180,24 @@
     </div>
   </div>
 
-  <!-- المراجعة الشاملة · الاستماع · الإملاء · الاختبار النهائي تظهر عند اكتمال
-       دروس الكتاب. Book 9 قيد البناء درساً درساً، فنكتفي بالدروس نفسها
-       (وبداخل كلٍّ منها تبويب «اختبر»). -->
+  <!-- المراجعة (Lesson 5) قسم رسمي يجمع الدروس 1–4 · والاستماع فيديوهات
+       الكتاب. الإملاء والاختبار النهائي الشامل يُفعّلان عند طلبهما. -->
+  <div class="lbl" style="margin-top:20px">المراجعة</div>
+  <div class="final-card" style="background:linear-gradient(135deg,#0D9488,#0F766E);border-color:#5EEAD4" onclick="open_review()">
+    <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg></div>
+    <h3>Review — مراجعة شاملة</h3>
+    <p>٢١ سؤالاً من مراجعة الكتاب الرسمية — تجمع الدروس الأربعة</p>
+    <span class="fc-badge" id="review-badge">ابدأ المراجعة</span>
+  </div>
+
+  <div class="lbl" style="margin-top:20px">الاستماع</div>
+  <div class="yt-card" onclick="open_yt()">
+    <div class="ac-ic">🎧</div>
+    <div class="pc-txt">
+      <h3>استماع Book 9</h3>
+      <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B · C</p>
+    </div>
+  </div>
 </div>
 
 <!-- FINAL EXAM SCREEN -->
@@ -230,7 +245,7 @@
   <button class="back" onclick="go_home()">→ الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#0D9488,#0F766E)">
     <h2>Review — مراجعة شاملة <svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg></h2>
-    <p>٢٦ سؤالاً من مراجعة الكتاب الرسمية — تجمع الدروس الأربعة</p>
+    <p>٢١ سؤالاً من مراجعة الكتاب الرسمية — تجمع الدروس الأربعة</p>
   </div>
   <div id="ph-review"></div>
 </div>

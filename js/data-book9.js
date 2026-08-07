@@ -597,6 +597,35 @@ l4:[
 };
 
 // ═══════════════════════════════════════
+// REVIEW (مراجعة) — Lesson 5 Review · Exercise A «Select the best answer»
+// تجمع الدروس 1–4 (البنوك · الحوادث · النصيحة · السفر)
+// ═══════════════════════════════════════
+const REVIEW=[
+  {q:"Mike spends a lot of _______ when he goes downtown.",o:["fine","end","cash","pillow"],a:2,en:"spends money → cash",ar:'ينفق مالاً → نقد (cash)',tr:'يُنفق مايك مالاً كثيراً عندما يذهب إلى وسط المدينة.'},
+  {q:"Drive slowly because this road has a big _______.",o:["curve","bill","motel","ticket"],a:0,en:"bend in road → curve",ar:'انحناء في الطريق → منعطف (curve)',tr:'قُد ببطء لأنّ هذا الطريق فيه منعطف كبير.'},
+  {q:"Jack, what's your _______ about the game?",o:["hanger","opinion","cause","end"],a:1,en:"what you think → opinion",ar:'ما رأيك → opinion',tr:'جاك، ما رأيك في المباراة؟'},
+  {q:"The Smiths have a lot of _______ to take to the airport.",o:["light","tank","baggage","closet"],a:2,en:"luggage → baggage",ar:'أمتعة السفر → baggage',tr:'لدى آل سميث الكثير من الأمتعة لأخذها إلى المطار.'},
+  {q:"Did you _______ your homework?",o:["forgive","realize","cause","complete"],a:3,en:"finish → complete",ar:'يُنجز/يُكمل → complete',tr:'هل أكملت واجبك؟'},
+  {q:"The students need to _______ the street to go to school.",o:["cross","worry","fasten","spill"],a:0,en:"go across → cross",ar:'يعبر الشارع → cross',tr:'يحتاج الطلاب لعبور الشارع للذهاب إلى المدرسة.'},
+  {q:"Ted, will the mechanic _______ your car today?",o:["fix","hope","ride","run out of"],a:0,en:"repair → fix",ar:'يُصلح → fix',tr:'تِد، هل سيُصلح الميكانيكي سيارتك اليوم؟'},
+  {q:"At the _______ of class we take a break for ten minutes.",o:["light","end","form","tool"],a:1,en:"finish point → end",ar:'نهاية الحصّة → end',tr:'في نهاية الحصّة نأخذ استراحة عشر دقائق.'},
+  {q:"We're late for the flight. We need to leave _______.",o:["correctly","lose","across","immediately"],a:3,en:"right now → immediately",ar:'فوراً → immediately',tr:'تأخّرنا عن الرحلة، علينا المغادرة فوراً.'},
+  {q:"The new bank is _______ the post office.",o:["behind","maybe","immediately","left"],a:0,en:"in back of → behind",ar:'خلف → behind',tr:'البنك الجديد خلف مكتب البريد.'},
+  {q:"I didn't see Jim at lunch. _______ he went home early.",o:["Careless","Easily","Maybe","Safe"],a:2,en:"perhaps → maybe",ar:'ربما → Maybe',tr:'لم أرَ جيم في الغداء. ربما ذهب إلى البيت مبكراً.'},
+  {q:"The motel bed has a blanket, _______, and pillow.",o:["card","sheet","fault","story"],a:1,en:"bed linen → sheet",ar:'مفروشات السرير → ملاءة (sheet)',tr:'سرير النُّزُل فيه بطّانية وملاءة ووسادة.'},
+  {q:"Sam wants to _______ some money into his bank account.",o:["deposit","fill out","face","fix"],a:0,en:"put money in → deposit",ar:'يضع مالاً في الحساب → يودع (deposit)',tr:'يريد سام أن يودع بعض المال في حسابه البنكي.'},
+  {q:"Drivers need _______ to drive a car in Texas.",o:["place","park","signature","insurance"],a:3,en:"required to drive → insurance",ar:'مطلوب للقيادة → تأمين (insurance)',tr:'يحتاج السائقون إلى تأمين لقيادة سيارة في تكساس.'},
+  {q:"Mike told us a funny _______ about his graduation.",o:["auto","slip","story","advice"],a:2,en:"told a … → story",ar:'حكاية طريفة → قصة (story)',tr:'حكى لنا مايك قصة طريفة عن تخرّجه.'},
+  {q:"The small, red car _______ a red light at the intersection.",o:["buckled up","ran","cared for","spent"],a:1,en:"went through → ran (the light)",ar:'قطع الإشارة → ran',tr:'قطعت السيارة الحمراء الصغيرة إشارة حمراء عند التقاطع.'},
+  {q:"Jack wants to _______ five dollars for his lunch.",o:["withdraw","obey","hurt","sound"],a:0,en:"take from account → withdraw",ar:'يسحب من حسابه → withdraw',tr:'يريد جاك أن يسحب خمسة دولارات لغدائه.'},
+  {q:"What _______? Did you have an accident?",o:["bothered","happened","hid","repaired"],a:1,en:"what took place → happened",ar:'ماذا حدث → happened',tr:'ماذا حدث؟ هل تعرّضت لحادث؟'},
+  {q:"Jim's father doesn't _______ fish.",o:["care for","ride","guess","look"],a:0,en:"doesn't like → care for",ar:'لا يحبّ → care for',tr:'والد جيم لا يحبّ السمك.'},
+  {q:"The waitress _______ some juice on the floor.",o:["deposited","borrowed","fastened","spilled"],a:3,en:"dropped liquid → spilled",ar:'سكب سائلاً → spilled',tr:'سكبت النادلة بعض العصير على الأرض.'},
+  {q:"It's 11:50. It'll _______ be time for lunch.",o:["safe","soon","in front of","behind"],a:1,en:"in a short time → soon",ar:'بعد قليل → قريباً (soon)',tr:'الساعة 11:50، سيحين وقت الغداء قريباً.'},
+];
+EE.review=REVIEW;
+
+// ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة
 // ═══════════════════════════════════════
 const FINAL=dedupe_by_q([
@@ -636,7 +665,11 @@ const SPELL_LESSONS=[
 // ═══════════════════════════════════════
 // LISTENING — لا يوجد فيديوهات لهذا الكتاب بعد
 // ═══════════════════════════════════════
-const YT_VIDEOS=[];
+const YT_VIDEOS=[
+  {id:'IWQ67WV9kLM',t:'Quiz A',s:'استماع وقراءة مع الحل'},
+  {id:'B4oVLEctpSI',t:'Quiz B',s:'استماع وقراءة مع الحل'},
+  {id:'Y0-_44s-b_o',t:'Quiz C',s:'استماع وقراءة مع الحل'},
+];
 
 // ═══════════════════════════════════════
 // ROUTING MANIFEST

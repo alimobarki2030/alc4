@@ -8,7 +8,8 @@ const BOOK_ID='book10';
 const LESSON_META={
   l1:{ico:'🤖',title:'Lesson 1 — Vending machines',sub:'آلات البيع الذاتي · how to + فعل · ظروف الزمن (while/before/after) · be supposed to'},
   l2:{ico:'🤝',title:'Lesson 2 — Have you met?',sub:'التحية والتعارف · المتاجر · المصدر (to + فعل) · الفعل + ing'},
-  l3:{ico:'🛞',title:'Lesson 3 — Changing a tire',sub:'تبديل الإطار · الطلبات المهذّبة would/could · الكلام المنقول say/ask · قراءة الوقت'}
+  l3:{ico:'🛞',title:'Lesson 3 — Changing a tire',sub:'تبديل الإطار · الطلبات المهذّبة would/could · الكلام المنقول say/ask · قراءة الوقت'},
+  l4:{ico:'👨‍👩‍👧',title:"Lesson 4 — How's the family?",sub:'العائلة والوظائف والطقس · be able to · It للطقس/الوقت · How far/long'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -157,6 +158,56 @@ l3:[
   {e:'tight',a:'مُحكَم / مشدود',em:'🔒'},
   {e:'the back of',a:'الجزء الخلفي من',em:'⬅️'},
   {e:'the front of',a:'الجزء الأمامي من',em:'➡️'},
+],
+l4:[
+  // — العائلة —
+  {e:'aunt',a:'عمّة / خالة',em:'👩'},
+  {e:'uncle',a:'عمّ / خال',em:'👨'},
+  {e:'cousin',a:'ابن العمّ/الخال',em:'🧑'},
+  {e:'nephew',a:'ابن الأخ/الأخت',em:'👦'},
+  {e:'niece',a:'بنت الأخ/الأخت',em:'👧'},
+  {e:'parent',a:'أحد الوالدين',em:'👪'},
+  {e:'grandparent',a:'الجدّ/الجدّة',em:'👴'},
+  {e:'grandfather',a:'الجدّ',em:'👴'},
+  {e:'grandmother',a:'الجدّة',em:'👵'},
+  {e:'relative',a:'قريب (نسيب)',em:'👨‍👩‍👧'},
+  {e:'folks',a:'الأهل',em:'👨‍👩‍👦'},
+  {e:'baby',a:'رضيع',em:'👶'},
+  {e:'marriage',a:'زواج',em:'💍'},
+  // — الوظائف —
+  {e:'boss',a:'المدير / الرئيس',em:'🧑‍💼'},
+  {e:'business',a:'عمل تجاري',em:'🏢'},
+  {e:'businessman',a:'رجل أعمال',em:'👨‍💼'},
+  {e:'businesswoman',a:'سيدة أعمال',em:'👩‍💼'},
+  {e:'cashier',a:'أمين الصندوق',em:'💰'},
+  {e:'company',a:'شركة',em:'🏬'},
+  {e:'dentist',a:'طبيب أسنان',em:'🦷'},
+  {e:'driver',a:'سائق',em:'🚗'},
+  {e:'salesperson',a:'بائع',em:'🛍️'},
+  {e:'secretary',a:'سكرتير',em:'🗂️'},
+  {e:'writer',a:'كاتب',em:'✍️'},
+  {e:'occupation',a:'مهنة',em:'💼'},
+  // — القراءة والإعلام —
+  {e:'article',a:'مقال',em:'📰'},
+  {e:'magazine',a:'مجلّة',em:'📖'},
+  {e:'newspaper',a:'صحيفة',em:'🗞️'},
+  {e:'news',a:'أخبار',em:'📢'},
+  {e:'collection',a:'مجموعة',em:'📚'},
+  // — الأفعال —
+  {e:'be able to',a:'يقدر على / يستطيع',em:'💪'},
+  {e:'collect',a:'يجمع',em:'🧺'},
+  {e:'marry',a:'يتزوّج',em:'💍'},
+  {e:'get married',a:'يتزوّج',em:'💒'},
+  {e:'own',a:'يملك',em:'🔑'},
+  {e:'type',a:'يطبع (بلوحة المفاتيح)',em:'⌨️'},
+  {e:'work on',a:'يعمل على',em:'🔧'},
+  // — كلمات أخرى —
+  {e:'about',a:'حوالي / تقريباً',em:'≈'},
+  {e:'famous',a:'مشهور',em:'🌟'},
+  {e:'far',a:'بعيد',em:'📏'},
+  {e:'pleasant',a:'لطيف (طقس)',em:'😊'},
+  {e:'single',a:'أعزب / عازب',em:'🙋'},
+  {e:'married',a:'متزوّج',em:'💑'},
 ]
 };
 
@@ -349,6 +400,68 @@ l3:[
       {s:'The game starts in 7:30.',wrong:'in 7:30',right:'at 7:30',tr:'قبل الساعة نستخدم at لا in.',ok:false},
     ]
   }
+],
+l4:[
+  {
+    title:'Using be able to', ar:'be able to (القدرة على)',
+    rule:'للتعبير عن القدرة نستخدم (am/is/are) + able to + الفعل المجرّد. النفي: not able to. وفي الماضي: was/were able to.',
+    parts:[
+      {t:'am/is/are able to + verb',d:'مثال: Charles is able to run five miles.'},
+      {t:'النفي: not able to',d:'Lisa isn\'t able to run ten miles.'},
+      {t:'الماضي: was/were able to',d:'He was able to fix the car. (= استطاع)'},
+    ],
+    check:{q:'Charles _______ able to run five miles.',o:['is','do','has','being'],a:0,en:'be able to → is able to',ar:'القدرة → is able to'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'am/is/are',c:'v'},{t:'+',c:'p'},{t:'able to + verb',c:'k'}],
+    compare:[
+      {c1:'Charles is able to run five miles.',c2:"Lisa isn't able to run ten miles.",ar:'إثبات ↔ نفي'},
+      {c1:'is able to = can',c2:'was able to = could',ar:'مرادف can/could'},
+    ],
+    examples:[
+      {s:'Charles is able to run five miles.',tr:'يستطيع تشارلز الجري خمسة أميال.',ar:'is able to + run',ok:true},
+      {s:"I'm not able to go out tonight.",tr:'لا أستطيع الخروج الليلة.',ar:'not able to',ok:true},
+      {s:'He is able run five miles.',wrong:'able run',right:'able to run',tr:'لا بدّ من to: able to run.',ok:false},
+    ]
+  },
+  {
+    title:'It for weather, time & distance', ar:'It للطقس والوقت والمسافة',
+    rule:'نستخدم It فاعلاً وهميّاً للحديث عن الطقس والوقت والمسافة: It\'s cold. · It\'s time for lunch. · It\'s 80 miles from here.',
+    parts:[
+      {t:'الطقس',d:'Is it cold outside? Yes, it\'s 35 degrees.'},
+      {t:'الوقت',d:'What time is it? It\'s time for lunch.'},
+      {t:'المسافة',d:'Is it far to Austin? No, it\'s about 80 miles from here.'},
+    ],
+    check:{q:'How far is it to New York? _______ 60 miles.',o:["It's","There's","He's","That"],a:0,en:'distance → It\'s',ar:'المسافة → It\'s'},
+    formula:[{t:'It',c:'s'},{t:'is',c:'v'},{t:'cold / time / … miles',c:'k'},{t:'',c:'p'},{t:'',c:'p'}],
+    compare:[
+      {c1:"It's cold outside. (طقس)",c2:"It's time for lunch. (وقت)",ar:'It فاعل وهمي'},
+      {c1:'Is it far to Austin?',c2:"It's about 80 miles from here.",ar:'المسافة'},
+    ],
+    examples:[
+      {s:"It's very pleasant right now.",tr:'الطقس لطيف جداً الآن.',ar:'It للطقس',ok:true},
+      {s:"It's about 80 miles from here.",tr:'تبعد حوالي 80 ميلاً من هنا.',ar:'It للمسافة',ok:true},
+      {s:'Is cold outside?',wrong:'Is cold',right:'Is it cold',tr:'لا بدّ من It: Is it cold outside?',ok:false},
+    ]
+  },
+  {
+    title:'How far / How long', ar:'السؤال عن المسافة والمدّة (How far / How long)',
+    rule:'How far للسؤال عن المسافة (بالأميال)، و How long للسؤال عن المدّة (الوقت المستغرق). الجواب غالباً بـ It takes…',
+    parts:[
+      {t:'How far is it…?',d:'How far is it to NY? → It\'s 60 miles.'},
+      {t:'How long does it take…?',d:'How long does it take to drive there? → It takes one hour.'},
+      {t:'It takes + مدّة',d:'It takes an hour to get there by car.'},
+    ],
+    check:{q:'_______ does it take to drive to the airport? — About an hour.',o:['How long','How far','How much','How many'],a:0,en:'duration → How long',ar:'المدّة → How long'},
+    formula:[{t:'How far/long',c:'v'},{t:'+',c:'p'},{t:'is it / does it take',c:'s'},{t:'+',c:'p'},{t:'…?',c:'k'}],
+    compare:[
+      {c1:'How far is it? → 60 miles. (مسافة)',c2:'How long does it take? → one hour. (مدّة)',ar:'far مسافة · long مدّة'},
+      {c1:'It\'s 60 miles.',c2:'It takes one hour.',ar:'الجواب'},
+    ],
+    examples:[
+      {s:'How far is it to New York? It\'s 60 miles.',tr:'كم تبعد نيويورك؟ ستّون ميلاً.',ar:'How far = المسافة',ok:true},
+      {s:'It takes an hour to get there by car.',tr:'تستغرق ساعة للوصول بالسيارة.',ar:'It takes + مدّة',ok:true},
+      {s:'How far does it take to drive there?',wrong:'How far does it take',right:'How long does it take',tr:'للمدّة نستخدم How long لا How far.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -382,6 +495,15 @@ l3:[
   {words:['Remove','the','flat','tire','with','the','wrench'],ans:'Remove the flat tire with the wrench.',tr:'انزع الإطار المثقوب بمفتاح الربط.',ar:'remove · wrench'},
   {words:['You','need','to','loosen','the','lug','nuts'],ans:'You need to loosen the lug nuts.',tr:'عليك أن تفكّ صواميل العجلة.',ar:'loosen · lug nuts'},
   {words:['Joe','leaves','tomorrow','at','six','thirty'],ans:'Joe leaves tomorrow at six thirty.',tr:'يغادر جو غداً السادسة والنصف.',ar:'at + الوقت'},
+],
+l4:[
+  {words:['Charles','is','able','to','run','five','miles'],ans:'Charles is able to run five miles.',tr:'يستطيع تشارلز الجري خمسة أميال.',ar:'be able to'},
+  {words:['How','far','is','it','to','New','York'],ans:'How far is it to New York?',tr:'كم تبعد نيويورك؟',ar:'How far'},
+  {words:['It','takes','an','hour','to','get','there'],ans:'It takes an hour to get there.',tr:'تستغرق ساعة للوصول.',ar:'It takes + مدّة'},
+  {words:['What','kind','of','work','do','you','do'],ans:'What kind of work do you do?',tr:'ما نوع العمل الذي تعمله؟',ar:'السؤال عن الوظيفة'},
+  {words:['I','am','a','salesperson','I','sell','cars'],ans:'I am a salesperson. I sell cars.',tr:'أنا بائع، أبيع السيارات.',ar:'الوظيفة'},
+  {words:["How's",'the','family','these','days'],ans:"How's the family these days?",tr:'كيف حال العائلة هذه الأيام؟',ar:'وظيفة اللغة'},
+  {words:['My','uncle','owns','a','small','business'],ans:'My uncle owns a small business.',tr:'يملك عمّي عملاً تجارياً صغيراً.',ar:'own · business'},
 ]
 };
 
@@ -463,8 +585,61 @@ l3:[
   {q:"_______ you please close the window? — Sure, I'd be happy to.",o:["Could","Do","Are","Was"],a:0,en:"polite request → Could you",ar:'طلب مهذّب → Could you',tr:'هل يمكنك إغلاق النافذة من فضلك؟ — بكل سرور.'},
   {q:"What did she ask you? She asked me _______ help her.",o:["to","for","that","will"],a:0,en:"ask + object + to + verb",ar:'ask + مفعول + to + فعل',tr:'ماذا طلبت منك؟ طلبت منّي أن أساعدها.'},
   {q:"The game starts tonight _______ 7:30.",o:["at","on","in","to"],a:0,en:"clock time → at",ar:'قبل الساعة → at',tr:'تبدأ المباراة الليلة الساعة 7:30.'},
+],
+l4:[
+  // — Evaluation Exercise E (الرسمية · select the correct answer) —
+  {q:"How long does it _______ to drive to the airport?",o:["take","type","time","own"],a:0,en:"duration → take",ar:'المدّة → يستغرق (take)',tr:'كم تستغرق القيادة إلى المطار؟'},
+  {q:"Joe owns a grocery store. The store is _______.",o:["new","big","his","far"],a:2,en:"he owns it → his",ar:'يملكه → مِلكه (his)',tr:'يملك جو بقالة. المتجر مِلكه.'},
+  {q:"It's _______ a half mile to the bank from here.",o:["for","from","about","far"],a:2,en:"approximately → about",ar:'حوالي → about',tr:'يبعد البنك حوالي نصف ميل من هنا.'},
+  {q:"Pam's a secretary. She _______.",o:["takes care of sick people","works in an office","likes to teach","sells cars"],a:1,en:"secretary → works in an office",ar:'السكرتيرة → تعمل في مكتب',tr:'بام سكرتيرة، تعمل في مكتب.'},
+  {q:"Mary doesn't know the news. She doesn't have the _______.",o:["time","information","money","occupation"],a:1,en:"doesn't know → information",ar:'لا تعرف → المعلومات (information)',tr:'ماري لا تعرف الخبر، ليست لديها المعلومة.'},
+  {q:"There are many _______ to read at the library.",o:["folks","articles","cashiers","drivers"],a:1,en:"to read → articles",ar:'للقراءة → مقالات (articles)',tr:'هناك مقالات كثيرة للقراءة في المكتبة.'},
+  {q:"_______ is your family?",o:["About","Far","How","When"],a:2,en:"greeting → How is your family",ar:'كيف حال عائلتك → How',tr:'كيف حال عائلتك؟'},
+  {q:"Jack collects stamps from around the world. He _______.",o:["is writing a letter","speaks many languages","keeps them in a book","drives a taxi"],a:2,en:"collects → keeps them in a book",ar:'يجمع الطوابع → يحفظها في كتاب',tr:'يجمع جاك الطوابع من حول العالم، يحفظها في كتاب.'},
+  {q:"Can you go out tonight? No, _______.",o:["I'm not able to","I can't type","I'm not getting married","I own a store"],a:0,en:"cannot → I'm not able to",ar:'لا أستطيع → I\'m not able to',tr:'هل يمكنك الخروج الليلة؟ لا، لا أستطيع.'},
+  {q:"Tim's the boss. He _______.",o:["manages the office","studies English","exercises every day","sells cars"],a:0,en:"boss → manages the office",ar:'المدير → يُدير المكتب',tr:'تِم هو المدير، يُدير المكتب.'},
+  {q:"Greg has an interesting stamp _______.",o:["marriage","occupation","collection","article"],a:2,en:"stamps grouped → collection",ar:'مجموعة طوابع → collection',tr:'لدى جريج مجموعة طوابع مثيرة.'},
+  {q:"Dave's a dentist. He _______.",o:["works on teeth","is able to run 10 miles","types letters","sells cars"],a:0,en:"dentist → works on teeth",ar:'طبيب الأسنان → يعمل على الأسنان',tr:'ديف طبيب أسنان، يعمل على الأسنان.'},
+  {q:"Al's a taxi driver. He _______.",o:["visits his mother every weekend","takes people from one place to another","shops at the mall on Fridays","works on teeth"],a:1,en:"taxi driver → takes people around",ar:'سائق أجرة → ينقل الناس',tr:'آل سائق أجرة، ينقل الناس من مكان لآخر.'},
+  {q:"John has a cup of coffee and reads the _______ every morning.",o:["work","nephew","newspaper","cashier"],a:2,en:"read → newspaper",ar:'يقرأ → الصحيفة (newspaper)',tr:'يحتسي جون قهوة ويقرأ الصحيفة كل صباح.'},
+  {q:"Tony's a salesman. He _______.",o:["rides a bike","sells things","writes books","works on teeth"],a:1,en:"salesman → sells things",ar:'بائع → يبيع الأشياء',tr:'توني بائع، يبيع الأشياء.'},
+  {q:"Bob: What kind of work do you do? Bill: I _______.",o:["like apples","am happy today","repair cars","read newspapers"],a:2,en:"occupation answer → repair cars",ar:'إجابة عن المهنة → أُصلح السيارات',tr:'بوب: ما نوع عملك؟ بيل: أُصلح السيارات.'},
+  {q:"Tom: How's the weather? Tim: It's very _______ today.",o:["about","single","pleasant","far"],a:2,en:"nice weather → pleasant",ar:'طقس لطيف → pleasant',tr:'توم: كيف الطقس؟ تِم: لطيف جداً اليوم.'},
+  {q:"Jim is _______ his old car.",o:["working at","working on","working about","working of"],a:1,en:"repair → working on",ar:'يعمل على (يُصلح) → working on',tr:'جيم يعمل على سيارته القديمة (يُصلحها).'},
+  {q:"The family always travels _______ the city to the lake in the summer.",o:["it","far","from","about"],a:2,en:"from A to B → from",ar:'من … إلى → from',tr:'تسافر العائلة دائماً من المدينة إلى البحيرة في الصيف.'},
+  {q:"Mike doesn't have an occupation. He doesn't have a _______.",o:["job","dog","hat","car"],a:0,en:"occupation = job",ar:'المهنة = وظيفة (job)',tr:'مايك ليست لديه مهنة، ليست لديه وظيفة.'},
+  {q:"Tina's a cashier. She _______.",o:["has lots of clothes","takes money and gives change","likes to dance and sing","repairs cars"],a:1,en:"cashier → takes money, gives change",ar:'أمينة الصندوق → تأخذ المال وتعطي الباقي',tr:'تينا أمينة صندوق، تأخذ المال وتعطي الباقي.'},
+  {q:"Sarah and George bought a camera shop. They have a _______.",o:["collection","relative","business","marriage"],a:2,en:"own a shop → business",ar:'يملكان متجراً → عمل تجاري (business)',tr:'اشترى سارة وجورج محلّ كاميرات، لديهما عمل تجاري.'},
 ]
 };
+
+// ═══════════════════════════════════════
+// REVIEW (مراجعة) — Lesson 5 · تجمع الدروس 1–4
+// المصدر: Exercise L (الجملة الصحيحة) + مراجعة القواعد
+// ═══════════════════════════════════════
+const REVIEW=[
+  // — القواعد الصحيحة (Exercise L) —
+  {q:"I can't remember how _______ speak French.",o:["to","me to","for","that"],a:0,en:"how to + verb",ar:'how to + فعل',tr:'لا أتذكّر كيف أتحدّث الفرنسية.'},
+  {q:"Janet began _______ piano when she was 12.",o:["playing","play","to play played","plays"],a:0,en:"begin + verb-ing",ar:'بعد begin نضع ing → playing',tr:'بدأت جانيت العزف على البيانو حين كانت في الثانية عشرة.'},
+  {q:"Sally, could you tell _______ how to say this word?",o:["me","to me","for me","my"],a:0,en:"tell + object",ar:'tell + مفعول → me',tr:'سالي، هل تخبرينني كيف أنطق هذه الكلمة؟'},
+  {q:"Billy enjoys _______ to movies.",o:["going","go","to go","goes"],a:0,en:"enjoy + verb-ing",ar:'بعد enjoy نضع ing → going',tr:'يستمتع بيلي بالذهاب إلى السينما.'},
+  {q:"Candy bars are supposed _______ good.",o:["to taste","taste","tasting","tastes"],a:0,en:"be supposed to + verb",ar:'supposed to + فعل → to taste',tr:'يُفترض أن يكون مذاق ألواح الحلوى لذيذاً.'},
+  {q:"Does Brian like _______?",o:["singing","sing","to sings","sang"],a:0,en:"like + verb-ing",ar:'بعد like نضع ing → singing',tr:'هل يحبّ بريان الغناء؟'},
+  {q:"Does anyone here know how _______ call long distance?",o:["to","—","for","me to"],a:0,en:"how to + verb",ar:'how to + فعل → to call',tr:'هل يعرف أحد هنا كيف يُجري مكالمة بعيدة المسافة؟'},
+  {q:"Businesses are supposed to _______ money.",o:["make","making","makes","made"],a:0,en:"supposed to + base verb",ar:'supposed to + فعل مجرّد → make',tr:'يُفترض أن تحقّق الأعمال التجارية أرباحاً.'},
+  {q:"Where did _______ learn how to make tomato soup?",o:["you","learn you","you to","your"],a:0,en:"question order → did you learn",ar:'ترتيب السؤال → did you learn',tr:'أين تعلّمت كيف تُعدّ حساء الطماطم؟'},
+  {q:"When will the train start _______?",o:["moving","move","to moving","moves"],a:0,en:"start + verb-ing",ar:'بعد start نضع ing → moving',tr:'متى سيبدأ القطار في التحرّك؟'},
+  // — مراجعة المفردات عبر الدروس 1–4 —
+  {q:"First, insert money into the slot. Then, make your _______.",o:["selection","dryer","trunk","cousin"],a:0,en:"vending machine → selection",ar:'آلة البيع → اختيار (selection)',tr:'أولاً أدخل المال في الفتحة، ثم اختر ما تريد.'},
+  {q:"You're _______ to wear your seat belt in the car.",o:["supposed","able","famous","married"],a:0,en:"required → supposed to",ar:'من المفترض → supposed to',tr:'يُفترض أن تلبس حزام الأمان في السيارة.'},
+  {q:"Take the _______ to go up to the second floor.",o:["elevator","cashier","trunk","article"],a:0,en:"go up → elevator",ar:'للصعود → المصعد (elevator)',tr:'خذ المصعد لتصعد إلى الطابق الثاني.'},
+  {q:"Bill: Tim, let me introduce you to John. Tim: _______",o:["It's nice to meet you.","Take the stairs.","It's out of order.","How far is it?"],a:0,en:"introduction reply → nice to meet you",ar:'ردّ التعارف → سُررت بلقائك',tr:'بيل: تِم، دعني أُقدّمك إلى جون. تِم: سُررت بلقائك.'},
+  {q:"The spare _______ is in the trunk with the jack and wrench.",o:["tire","boss","niece","magazine"],a:0,en:"spare → tire",ar:'الاحتياطي → إطار (tire)',tr:'الإطار الاحتياطي في الصندوق مع الرافعة ومفتاح الربط.'},
+  {q:"Could you _______? Would you close the window, please?",o:["do me a favor","be able to","get married","own a shop"],a:0,en:"polite request → do me a favor",ar:'طلب مهذّب → do me a favor',tr:'هل تُسدي لي معروفاً؟ هل تُغلق النافذة من فضلك؟'},
+  {q:"Dave's a dentist. He works on _______.",o:["teeth","cars","cars and trucks","newspapers"],a:0,en:"dentist → teeth",ar:'طبيب أسنان → الأسنان (teeth)',tr:'ديف طبيب أسنان، يعمل على الأسنان.'},
+  {q:"How _______ is it to New York? It's 60 miles.",o:["far","long","many","old"],a:0,en:"distance → How far",ar:'المسافة → How far',tr:'كم تبعد نيويورك؟ ستّون ميلاً.'},
+];
+EE.review=REVIEW;
 
 // ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة
@@ -473,6 +648,7 @@ const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
   ...EE.l3,
+  ...EE.l4,
 ]);
 EE.final=FINAL;
 
@@ -494,6 +670,11 @@ const SPELL_LESSONS=[
     {e:'tire',a:'إطار',em:'🛞'},{e:'spare',a:'احتياطي',em:'🆘'},{e:'wrench',a:'مفتاح ربط',em:'🔧'},
     {e:'trunk',a:'صندوق السيارة',em:'🧳'},{e:'inflate',a:'ينفخ',em:'🎈'},{e:'replace',a:'يستبدل',em:'♻️'},
     {e:'common',a:'شائع',em:'🔁'},{e:'certainly',a:'بالتأكيد',em:'✔️'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 4 — العائلة والوظائف',w:[
+    {e:'uncle',a:'عمّ/خال',em:'👨'},{e:'cousin',a:'ابن العمّ',em:'🧑'},{e:'occupation',a:'مهنة',em:'💼'},
+    {e:'secretary',a:'سكرتير',em:'🗂️'},{e:'business',a:'عمل تجاري',em:'🏢'},{e:'newspaper',a:'صحيفة',em:'🗞️'},
+    {e:'famous',a:'مشهور',em:'🌟'},{e:'pleasant',a:'لطيف',em:'😊'},
   ]},
 ];
 

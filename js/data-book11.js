@@ -6,7 +6,8 @@
 const BOOK_ID='book11';
 
 const LESSON_META={
-  l1:{ico:'🩺',title:'Lesson 1 — Medical appointments',sub:'المواعيد الطبية والأعراض · المضارع التام (since/for) · How long · المضارع التام المستمر'}
+  l1:{ico:'🩺',title:'Lesson 1 — Medical appointments',sub:'المواعيد الطبية والأعراض · المضارع التام (since/for) · How long · المضارع التام المستمر'},
+  l2:{ico:'🚦',title:'Lesson 2 — Rules of the road',sub:'قيادة السيارة وقواعد الطريق · الأفعال الرابطة get/become · الضمائر المبهمة · الجمل الوصفية who/which/that'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -65,6 +66,58 @@ l1:[
   {e:'vertical',a:'رأسي',em:'↕️'},
   {e:'parallel',a:'متوازٍ',em:'🟰'},
   {e:'perpendicular',a:'عمودي',em:'📐'},
+],
+l2:[
+  // — لافتات وقواعد الطريق —
+  {e:'sign',a:'لافتة / إشارة',em:'🪧'},
+  {e:'stop sign',a:'لافتة قِف',em:'🛑'},
+  {e:'signal',a:'إشارة ضوئية / يُشير',em:'🚥'},
+  {e:'speed limit',a:'حدّ السرعة',em:'🚧'},
+  {e:'speed',a:'السرعة',em:'💨'},
+  {e:'one-way',a:'اتجاه واحد',em:'➡️'},
+  {e:'two-way',a:'اتجاهان',em:'↔️'},
+  {e:'yield',a:'أفسِح الطريق',em:'🔻'},
+  {e:'caution',a:'حذر / تنبيه',em:'⚠️'},
+  {e:'right-of-way',a:'أولوية المرور',em:'🚏'},
+  // — الطريق والأماكن —
+  {e:'intersection',a:'تقاطع',em:'🚦'},
+  {e:'crossing',a:'معبر',em:'🚸'},
+  {e:'railroad crossing',a:'معبر سكة الحديد',em:'🚂'},
+  {e:'lane',a:'حارة / مسار',em:'🛣️'},
+  {e:'sidewalk',a:'رصيف',em:'🚶‍♂️'},
+  {e:'pedestrian',a:'أحد المشاة',em:'🚶'},
+  {e:'turn',a:'منعطف / انعطاف',em:'↩️'},
+  {e:'way',a:'طريق',em:'🛤️'},
+  {e:'steering wheel',a:'عجلة القيادة',em:'🎡'},
+  {e:'instructor',a:'مدرّب',em:'🧑‍🏫'},
+  {e:'mind',a:'البال / العقل',em:'🧠'},
+  // — أفعال القيادة —
+  {e:'slow down',a:'يُبطئ',em:'🐢'},
+  {e:'speed up',a:'يُسرع',past:'sped up',pa:'أسرع',em:'🏎️'},
+  {e:'pull over',a:'يتوقّف جانباً',em:'🚙'},
+  {e:'pass',a:'يتجاوز',em:'🔄'},
+  {e:'follow',a:'يتّبع',em:'👉'},
+  {e:'flash',a:'يومض',em:'⚡'},
+  {e:'confuse',a:'يُربك',em:'😕'},
+  {e:'fail',a:'يُخفق / يفشل',em:'❌'},
+  {e:'mean',a:'يعني',past:'meant',pa:'قصد / عنى',em:'💬'},
+  // — الأفعال الرابطة —
+  {e:'become',a:'يُصبح',past:'became',pa:'أصبح',em:'⭐'},
+  {e:'get',a:'يُصبح / يحصل',past:'got',pa:'أصبح / حصل',em:'✅'},
+  // — صفات وكلمات أخرى —
+  {e:'ahead',a:'إلى الأمام',em:'⏩'},
+  {e:'ahead of',a:'أمام / متقدّم على',em:'🔜'},
+  {e:'lost',a:'تائه / ضائع',em:'🧭'},
+  {e:'nervous',a:'متوتّر / قلِق',em:'😰'},
+  {e:'relaxed',a:'مسترخٍ / هادئ',em:'😌'},
+  {e:'cautious',a:'حذِر',em:'🧐'},
+  {e:'cautiously',a:'بحذر',em:'🚸'},
+  {e:'in advance',a:'مسبقاً / سلفاً',em:'⏰'},
+  {e:'miles per hour',a:'ميل في الساعة (m.p.h.)',em:'🚗'},
+  // — الضمائر المبهمة —
+  {e:'somebody',a:'شخص ما',em:'🧑'},
+  {e:'anybody',a:'أيّ أحد',em:'❓'},
+  {e:'nobody',a:'لا أحد',em:'🚫'},
 ]
 };
 
@@ -133,6 +186,68 @@ l1:[
       {s:'Has he been study?',wrong:'been study',right:'been studying',tr:'بعد been نضع الفعل+ing: been studying.',ok:false},
     ]
   }
+],
+l2:[
+  {
+    title:'Linking verbs: get and become', ar:'الفعلان الرابطان get و become (يُصبح)',
+    rule:'للتعبير عن التحوّل من حالٍ إلى حال: get + صفة (يُصبح)، و become + اسم أو صفة (يُصبح). في الماضي: got · became.',
+    parts:[
+      {t:'get + صفة',d:'مثال: Jim got lost. · The children got tired. · Tina gets upset.'},
+      {t:'become + اسم/صفة',d:'مثال: Tom became a captain. · Our bedroom became the exercise room.'},
+      {t:'الماضي',d:'get → got · become → became.'},
+    ],
+    check:{q:'Captain Peters will _______ Major Peters next month.',o:['become','get','being','been'],a:0,en:'رتبة (اسم) → become',ar:'يصير رتبة (اسم) → become'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'get / become',c:'v'},{t:'+',c:'p'},{t:'صفة / اسم',c:'k'}],
+    compare:[
+      {c1:'Jim got lost. (get + صفة)',c2:'Tom became a captain. (become + اسم)',ar:'get ↔ become'},
+      {c1:'The children got tired.',c2:'Our bedroom became an office.',ar:'صفة ↔ اسم'},
+    ],
+    examples:[
+      {s:'Jim got lost on his way to the airport.',tr:'تاه جيم في طريقه إلى المطار.',ar:'got + lost',ok:true},
+      {s:'Tom became a captain last week.',tr:'أصبح توم نقيباً الأسبوع الماضي.',ar:'became + a captain',ok:true},
+      {s:'Tom got a captain last week.',wrong:'got a captain',right:'became a captain',tr:'مع الاسم نستخدم became: became a captain.',ok:false},
+    ]
+  },
+  {
+    title:'Indefinite pronouns', ar:'الضمائر المبهمة (somebody · anybody · nobody)',
+    rule:'ضمائر تشير إلى أشخاص غير محدّدين: somebody/someone (في الإثبات)، anybody/anyone (في الأسئلة والنفي)، nobody/no one (لا أحد — والفعل بعده مثبت).',
+    parts:[
+      {t:'somebody / someone',d:'في الجمل المثبتة: Could somebody help me?'},
+      {t:'anybody / anyone',d:'في الأسئلة والنفي: Did anyone go to the game?'},
+      {t:'nobody / no one',d:'لا أحد — والفعل مثبت: Nobody went. (وليس Nobody didn\'t go).'},
+    ],
+    check:{q:'When I called the library, _______ answered the phone.',o:['nobody','anybody','somebody','something'],a:0,en:'لم يُجب أحد → nobody',ar:'لا أحد → nobody'},
+    formula:[{t:'somebody / anybody / nobody',c:'s'},{t:'+',c:'p'},{t:'فعل',c:'v'},{t:'…',c:'k'}],
+    compare:[
+      {c1:'Did anyone go? (سؤال)',c2:'No, nobody went. (نفي)',ar:'anyone ↔ nobody'},
+      {c1:'Could somebody help me?',c2:'Nobody answered the phone.',ar:'somebody ↔ nobody'},
+    ],
+    examples:[
+      {s:'Did anyone go to the game?',tr:'هل ذهب أحدٌ إلى المباراة؟',ar:'سؤال → anyone',ok:true},
+      {s:'No, nobody went.',tr:'لا، لم يذهب أحد.',ar:'nobody + فعل مثبت',ok:true},
+      {s:"Nobody didn't answer.",wrong:"Nobody didn't",right:'Nobody answered',tr:'nobody يكفي عن النفي: Nobody answered.',ok:false},
+    ]
+  },
+  {
+    title:'Adjective clauses: who / which / that', ar:'الجمل الوصفية (who · which · that)',
+    rule:'جملة تصف اسماً وتأتي بعده مباشرة: who للأشخاص، which للأشياء، و that للأشخاص والأشياء معاً.',
+    parts:[
+      {t:'who — للأشخاص',d:'the driver who missed the turn · the one who wrote the letter.'},
+      {t:'which — للأشياء',d:'the car which had an accident · the store which sells watches.'},
+      {t:'that — للاثنين',d:'the person that signed it · the building that has 25 floors.'},
+    ],
+    check:{q:'Is this the building _______ has twenty-five floors?',o:['that','who','it','whom'],a:0,en:'شيء → that/which',ar:'للأشياء → that'},
+    formula:[{t:'الاسم',c:'s'},{t:'+',c:'p'},{t:'who / which / that',c:'v'},{t:'+',c:'p'},{t:'بقية الوصف',c:'k'}],
+    compare:[
+      {c1:'the man who lost his wallet (شخص)',c2:'the tree which fell down (شيء)',ar:'who ↔ which'},
+      {c1:"I'm the one who wrote it.",c2:"He's the person that signed it.",ar:'who ↔ that'},
+    ],
+    examples:[
+      {s:"I'm the one who wrote the letter.",tr:'أنا مَن كتب الرسالة.',ar:'person + who',ok:true},
+      {s:'This is the car which had an accident.',tr:'هذه هي السيارة التي تعرّضت لحادث.',ar:'thing + which',ok:true},
+      {s:'The man which lost his wallet is here.',wrong:'man which',right:'man who',tr:'للأشخاص نستخدم who: the man who lost his wallet.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -148,6 +263,15 @@ l1:[
   {words:['How','long','have','you','had','a','cold'],ans:'How long have you had a cold?',tr:'منذ متى وأنت مصاب بالزكام؟',ar:'How long + المضارع التام'},
   {words:['I','have','been','reviewing','new','vocabulary'],ans:'I have been reviewing new vocabulary.',tr:'كنت أُراجع مفردات جديدة.',ar:'المضارع التام المستمر'},
   {words:['She','ran','a','temperature','last','night'],ans:'She ran a temperature last night.',tr:'ارتفعت حرارتها الليلة الماضية.',ar:'run a temperature'},
+],
+l2:[
+  {words:['You','should','slow','down','at','the','intersection'],ans:'You should slow down at the intersection.',tr:'يجب أن تُبطئ عند التقاطع.',ar:'قيادة آمنة'},
+  {words:['He','is','the','driver','who','missed','the','turn'],ans:'He is the driver who missed the turn.',tr:'هو السائق الذي فوّت المنعطف.',ar:'جملة وصفية who'},
+  {words:['Tom','became','a','captain','last','week'],ans:'Tom became a captain last week.',tr:'أصبح توم نقيباً الأسبوع الماضي.',ar:'become + اسم'},
+  {words:['Jim','got','lost','on','his','way','home'],ans:'Jim got lost on his way home.',tr:'تاه جيم في طريقه إلى البيت.',ar:'get + صفة'},
+  {words:['You','must','obey','the','speed','limit'],ans:'You must obey the speed limit.',tr:'يجب أن تلتزم بحدّ السرعة.',ar:'قواعد الطريق'},
+  {words:['This','is','the','car','which','had','an','accident'],ans:'This is the car which had an accident.',tr:'هذه هي السيارة التي تعرّضت لحادث.',ar:'جملة وصفية which'},
+  {words:['Nobody','went','to','the','game'],ans:'Nobody went to the game.',tr:'لم يذهب أحد إلى المباراة.',ar:'الضمائر المبهمة'},
 ]
 };
 
@@ -181,6 +305,24 @@ l1:[
   {q:"Has he _______ in the barracks?",o:["been study","had studying","been studying","have study"],a:2,en:"present perfect continuous → been studying",ar:'المضارع التام المستمر → been studying',tr:'هل ظلّ يذاكر في الثكنة؟'},
   {q:"Ten minutes after the plane took off, the pilot said he had _______ and returned to the airport.",o:["an appointment","an emergency","an ache","a symptom"],a:1,en:"urgent problem → an emergency",ar:'مشكلة عاجلة → حالة طارئة (emergency)',tr:'بعد عشر دقائق من إقلاع الطائرة، قال الطيّار إنّ لديه حالة طارئة وعاد إلى المطار.'},
   {q:"_______ you _______ to Chicago before?",o:["Have, had","Had, have","Have, been","Had, been"],a:2,en:"experience → Have you been",ar:'الخبرة → Have you been',tr:'هل سبق أن ذهبت إلى شيكاغو من قبل؟'},
+],
+l2:[
+  {q:"You're not driving fast enough. You need to _______.",o:["pull over","speed up","slow down"],a:1,en:"go faster → speed up",ar:'يزيد السرعة → speed up',tr:'أنت لا تقود بسرعة كافية، تحتاج أن تُسرِع.'},
+  {q:"I never met a person _______ liked to wash dishes.",o:["who","which","whom"],a:0,en:"person → who",ar:'شخص → who',tr:'لم أُقابل قطّ شخصاً يحبّ غسل الصحون.'},
+  {q:"Tom's ahead of us. He's _______ us.",o:["next to","behind","in front of"],a:2,en:"ahead of → in front of",ar:'متقدّم علينا → أمامنا (in front of)',tr:'توم متقدّم علينا، إنه أمامنا.'},
+  {q:"Is this the building _______ has twenty-five floors?",o:["who","that","it"],a:1,en:"thing → that",ar:'للأشياء → that',tr:'هل هذا هو المبنى الذي فيه خمسة وعشرون طابقاً؟'},
+  {q:"He failed to pay his phone bill. He _______ it.",o:["paid","didn't pay","likes to pay"],a:1,en:"failed to pay → didn't pay",ar:'أخفق في الدفع → لم يدفع',tr:'أخفق في دفع فاتورة هاتفه، لم يدفعها.'},
+  {q:"Is it safe to pass here?",o:["No, you shouldn't go around another car on a hill.","Yes, you don't have to wear a thick coat.","No, you shouldn't swim in cold water."],a:0,en:"pass = go around a car",ar:'التجاوز = تخطّي سيّارة',tr:'هل التجاوز آمن هنا؟ لا، لا يجب تجاوز سيّارة على تلّة.'},
+  {q:"I'm afraid to fly. It makes me _______.",o:["relaxed","nervous","lost"],a:1,en:"afraid → nervous",ar:'خائف → متوتّر (nervous)',tr:'أخاف الطيران، إنه يجعلني متوتّراً.'},
+  {q:"Bill looked at a map before he left on his trip. He looked at the map _______.",o:["that","ahead","in advance"],a:2,en:"beforehand → in advance",ar:'مسبقاً → in advance',tr:'نظر بيل إلى الخريطة قبل رحلته، نظر إليها مسبقاً.'},
+  {q:"Captain Peters will _______ Major Peters next month.",o:["being","get","become"],a:2,en:"change rank → become",ar:'يصير رتبة → become',tr:'سيُصبح النقيب بيترز رائداً الشهر القادم.'},
+  {q:"When I called the library, _______ answered the phone.",o:["anybody","nobody","who"],a:1,en:"no answer → nobody",ar:'لم يُجب أحد → nobody',tr:'عندما اتّصلت بالمكتبة، لم يُجب أحد على الهاتف.'},
+  {q:"Joe got lost downtown. He _______.",o:["put his car in the garage","ate at the new cafeteria","didn't know where he was"],a:2,en:"got lost → didn't know where",ar:'تاه → لم يعرف مكانه',tr:'تاه جو في وسط المدينة، لم يعرف أين هو.'},
+  {q:"You must obey the rules. You must _______ them exactly.",o:["follow","flash","confuse"],a:0,en:"obey → follow",ar:'يطيع → يتّبع (follow)',tr:'يجب أن تطيع القواعد، يجب أن تتّبعها تماماً.'},
+  {q:"Tina _______ upset every time she makes a mistake.",o:["does","has","gets"],a:2,en:"becomes → gets",ar:'يُصبح منزعجاً → gets upset',tr:'تنزعج تينا في كلّ مرّة تُخطئ فيها.'},
+  {q:"Could _______ please help me for a minute?",o:["somebody","nobody","something"],a:0,en:"a person → somebody",ar:'شخص ما → somebody',tr:'هل يمكن لأحدٍ أن يساعدني دقيقة؟'},
+  {q:"Our extra bedroom _______ the exercise room.",o:["got","became","been"],a:1,en:"turned into → became",ar:'تحوّلت إلى → became',tr:'أصبحت غرفة النوم الإضافية غرفةَ الرياضة.'},
+  {q:"Did the children _______ tired on the trip?",o:["get","come","have"],a:0,en:"become tired → get",ar:'يُصبح متعباً → get tired',tr:'هل تعِب الأطفال في الرحلة؟'},
 ]
 };
 
@@ -189,6 +331,7 @@ l1:[
 // ═══════════════════════════════════════
 const FINAL=dedupe_by_q([
   ...EE.l1,
+  ...EE.l2,
 ]);
 EE.final=FINAL;
 
@@ -202,6 +345,11 @@ const SPELL_LESSONS=[
     {e:'annual',a:'سنوي',em:'📆'},{e:'stomach',a:'المعدة',em:'🫃'},
     {e:'cough',a:'سُعال',em:'😷'},{e:'cold',a:'زكام',em:'🤧'},
     {e:'nurse',a:'ممرّض/ة',em:'🧑‍⚕️'},{e:'runny',a:'سائل/يسيل',em:'💧'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 2 — قواعد الطريق',w:[
+    {e:'intersection',a:'تقاطع',em:'🚦'},{e:'pedestrian',a:'مشاة',em:'🚶'},{e:'sidewalk',a:'رصيف',em:'🚶‍♂️'},
+    {e:'signal',a:'إشارة',em:'🚥'},{e:'instructor',a:'مدرّب',em:'🧑‍🏫'},{e:'nervous',a:'متوتّر',em:'😰'},
+    {e:'yield',a:'أفسِح الطريق',em:'🔻'},{e:'caution',a:'حذر',em:'⚠️'},
   ]},
 ];
 

@@ -705,8 +705,11 @@ function ans(pfx,qi,oi,correct){
   document.getElementById(`${pfx}fi${qi}`).textContent=ok?'✅':'❌';
   document.getElementById(`${pfx}fa${qi}`).textContent=q.tr||'';
   fb.className='fb show '+(ok?'ok':'no');
-  if(ok){XP+=5;document.getElementById('xp').textContent=XP;STK++;document.getElementById('streak').textContent=STK;save_progress();}
-  else{STK=0;document.getElementById('streak').textContent=STK;save_progress();}
+  // XP rewards each correct answer; the header 🔥 streak is now a daily streak
+  // (see compute_daily_streak) and is no longer reset by a wrong answer. Always
+  // persist so the mistake-bank change above is saved either way.
+  if(ok){XP+=5;const xpEl=document.getElementById('xp');if(xpEl)xpEl.textContent=XP;}
+  save_progress();
   // No auto-play on answering — audio in the test only plays when the student
   // presses the speaker button next to a question.
 
@@ -758,7 +761,12 @@ function show_result(correct,total){
       document.getElementById('m-sub').textContent=`بقي ${remaining} سؤال في قائمة أخطائك`;
     }
   }
+  _modalReturn=document.activeElement;
   document.getElementById('modal').classList.add('show');
+  // Move focus into the dialog so keyboard/screen-reader users land on the
+  // result instead of the now-hidden quiz behind it.
+  const _mc=document.querySelector('#modal .mcrd');
+  if(_mc){_mc.setAttribute('tabindex','-1');try{_mc.focus();}catch(e){}}
   const prev=(LP[CL]&&LP[CL].pct)||0;
   const best=Math.max(prev,pct);
   LP[CL]={pct:best,done:best>=70};
@@ -769,7 +777,13 @@ function show_result(correct,total){
   if(pct>=90||clearedMistakes)confetti();
 }
 
-function hide_modal(){document.getElementById('modal').classList.remove('show');}
+let _modalReturn=null;
+function hide_modal(){
+  document.getElementById('modal').classList.remove('show');
+  // Restore focus to wherever it was when the dialog opened.
+  if(_modalReturn&&document.contains(_modalReturn)){try{_modalReturn.focus();}catch(e){}}
+  _modalReturn=null;
+}
 
 // "متابعة" (continue) always returns to the lessons page. The finished quiz
 // (lesson test, mistake bank, review, or final) has nothing more to do on its

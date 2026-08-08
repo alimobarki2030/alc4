@@ -81,12 +81,42 @@ function load_progress(){
   let data=null;
   try{data=JSON.parse(localStorage.getItem(PKEY));}catch(e){}
   if(data){
-    XP=data.xp||0;STK=data.streak||0;LP=data.lessons||{};RW=data.rw||{};MISTAKES=data.mistakes||{};
-    document.getElementById('xp').textContent=XP;
-    document.getElementById('streak').textContent=STK;
+    XP=data.xp||0;LP=data.lessons||{};RW=data.rw||{};MISTAKES=data.mistakes||{};
+    const xpEl=document.getElementById('xp');if(xpEl)xpEl.textContent=XP;
   }
   apply_lessons();
   upd_global();
+}
+
+// ─── DAILY STREAK (🔥) ───
+// Site-wide "days in a row you studied", not a per-answer combo. Computed once
+// per page load from the last-studied date: same day → unchanged, yesterday →
+// +1, any longer gap (or first ever) → resets to 1 (and flags a comeback).
+// This replaces the old behaviour where a single wrong quiz answer zeroed the
+// header streak. STREAK_COUNT_KEY is site-wide so all books share one streak.
+const STREAK_COUNT_KEY='alc_streak_count';
+let STREAK_BROKEN=false;
+function _dayString(d){return d.toDateString();}
+function compute_daily_streak(){
+  if(!STORAGE_OK){return;}
+  try{
+    const today=new Date();
+    const t=_dayString(today);
+    const last=localStorage.getItem(STREAK_DATE_KEY);
+    let count=parseInt(localStorage.getItem(STREAK_COUNT_KEY),10);
+    if(!Number.isFinite(count)||count<0)count=0;
+    if(last===t){
+      if(count<1)count=1;
+    }else{
+      const y=new Date(today);y.setDate(y.getDate()-1);
+      if(last===_dayString(y)){count=count+1;}
+      else{if(count>0)STREAK_BROKEN=true;count=1;}
+    }
+    localStorage.setItem(STREAK_COUNT_KEY,String(count));
+    localStorage.setItem(STREAK_DATE_KEY,t);
+    STK=count;
+  }catch(e){}
+  const sEl=document.getElementById('streak');if(sEl)sEl.textContent=STK;
 }
 if(!STORAGE_OK)show_storage_warning();
 
@@ -124,25 +154,21 @@ function dismiss_welcome_start(){
 // bundle. Without it (Book 5, currently) this stays a safe no-op, so no new
 // UI silently appears on a book that never had this feature.
 const STREAK_DATE_KEY='alc_last_streak_date';
+// Shows the comeback banner when compute_daily_streak() detected a broken
+// streak (a day was skipped) — no longer triggered by a wrong quiz answer.
 function check_streak_comeback(){
   if(!STORAGE_OK)return;
   if(!document.getElementById('welcome-banner'))return;
   const home=document.getElementById('home');
   if(!home)return;
-  try{
-    const last=localStorage.getItem(STREAK_DATE_KEY);
-    const today=new Date().toDateString();
-    if(last && last!==today && STK===0){
-      const banner=document.createElement('div');
-      banner.className='streak-comeback';
-      banner.innerHTML=`<span class="sc-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-dumbbell"></use></svg></span>
-        <div class="sc-txt"><h3>عودة مرحباً!</h3>
-        <p>انتهى الـ streak، لكن الأهم أنك رجعت — ابدأ streak جديداً اليوم.</p></div>
-        <button class="sc-close" onclick="this.parentElement.remove()">✕</button>`;
-      home.insertBefore(banner, home.firstChild);
-    }
-    localStorage.setItem(STREAK_DATE_KEY,today);
-  }catch(e){}
+  if(!STREAK_BROKEN)return;
+  const banner=document.createElement('div');
+  banner.className='streak-comeback';
+  banner.innerHTML=`<span class="sc-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-dumbbell"></use></svg></span>
+    <div class="sc-txt"><h3>عودة مرحباً!</h3>
+    <p>انتهى الـ streak، لكن الأهم أنك رجعت — ابدأ streak جديداً اليوم.</p></div>
+    <button class="sc-close" onclick="this.parentElement.remove()">✕</button>`;
+  home.insertBefore(banner, home.firstChild);
 }
 
 // ─── Deep link into a grammar/concept screen (e.g. book4.html?open=prep) ───
@@ -155,6 +181,7 @@ const GRAMMAR_OPEN_MAP={prep:'open_prep',art:'open_art',wh:'open_wh',pronouns:'o
 (function init_progress_and_routing(){
   show_welcome_if_new();
   load_progress();
+  compute_daily_streak();
   check_streak_comeback();
   const openParam=new URLSearchParams(location.search).get('open');
   const fnName=openParam&&GRAMMAR_OPEN_MAP[openParam];

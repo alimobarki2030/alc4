@@ -1,4 +1,8 @@
-const CACHE_NAME='alc-v67';
+const CACHE_NAME='alc-v68';
+// Audio lives in its own size-capped cache so 46 MB of mp3s can never pile
+// into (or get wiped alongside) the versioned app cache.
+const MEDIA_CACHE='alc-audio-v1';
+const MEDIA_MAX=250;
 // cleanUrls is enabled on Vercel, so navigations use extensionless paths
 // (/book4, not /book4.html). Precaching the extensionless URLs means the
 // install fetch hits the canonical page directly (200, not a 308 redirect),
@@ -40,21 +44,58 @@ self.addEventListener('install',e=>{
 self.addEventListener('activate',e=>{
   e.waitUntil(
     caches.keys()
-      .then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k))))
+      // Keep the current app cache AND the audio cache; drop old app versions.
+      .then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME&&k!==MEDIA_CACHE).map(k=>caches.delete(k))))
       .then(()=>self.clients.claim())
   );
 });
 
+// Evict oldest mp3s (FIFO by insertion order) once the audio cache exceeds the
+// cap, so it stays bounded on mobile storage.
+function _trimMedia(){
+  return caches.open(MEDIA_CACHE).then(c=>c.keys().then(keys=>{
+    if(keys.length<=MEDIA_MAX)return;
+    return Promise.all(keys.slice(0,keys.length-MEDIA_MAX).map(k=>c.delete(k)));
+  })).catch(()=>{});
+}
+
 self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET')return;
-  if(!e.request.url.startsWith(self.location.origin))return;
+  const req=e.request;
+  if(req.method!=='GET')return;
+  if(!req.url.startsWith(self.location.origin))return;
+
+  // Navigations → network-first: always try fresh HTML so a deploy shows up
+  // immediately (no more new-HTML-with-stale-data skew); fall back to the
+  // cached page, then the app shell, when offline.
+  if(req.mode==='navigate'){
+    e.respondWith(
+      fetch(req).then(res=>{
+        if(cacheable(res)){const clone=res.clone();caches.open(CACHE_NAME).then(c=>c.put(req,clone));}
+        return res;
+      }).catch(()=>caches.match(req).then(c=>c||caches.match('/')))
+    );
+    return;
+  }
+
+  // Audio → cache-first into the separate capped cache.
+  if(/\/audio\/.+\.mp3(\?|$)/.test(req.url)){
+    e.respondWith(
+      caches.open(MEDIA_CACHE).then(c=>c.match(req).then(hit=>{
+        if(hit)return hit;
+        return fetch(req).then(res=>{
+          if(cacheable(res)){c.put(req,res.clone()).then(_trimMedia);}
+          return res;
+        });
+      }))
+    );
+    return;
+  }
+
+  // Everything else (CSS/JS/images) → stale-while-revalidate.
   e.respondWith(
-    caches.match(e.request).then(cached=>{
-      const fetchPromise=fetch(e.request).then(res=>{
-        if(cacheable(res)){
-          const clone=res.clone();
-          caches.open(CACHE_NAME).then(cache=>cache.put(e.request,clone));
-        }
+    caches.match(req).then(cached=>{
+      const fetchPromise=fetch(req).then(res=>{
+        if(cacheable(res)){const clone=res.clone();caches.open(CACHE_NAME).then(c=>c.put(req,clone));}
         return res;
       }).catch(()=>cached);
       return cached||fetchPromise;

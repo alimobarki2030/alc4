@@ -7,7 +7,8 @@ const BOOK_ID='book11';
 
 const LESSON_META={
   l1:{ico:'🩺',title:'Lesson 1 — Medical appointments',sub:'المواعيد الطبية والأعراض · المضارع التام (since/for) · How long · المضارع التام المستمر'},
-  l2:{ico:'🚦',title:'Lesson 2 — Rules of the road',sub:'قيادة السيارة وقواعد الطريق · الأفعال الرابطة get/become · الضمائر المبهمة · الجمل الوصفية who/which/that'}
+  l2:{ico:'🚦',title:'Lesson 2 — Rules of the road',sub:'قيادة السيارة وقواعد الطريق · الأفعال الرابطة get/become · الضمائر المبهمة · الجمل الوصفية who/which/that'},
+  l3:{ico:'🧾',title:"Lesson 3 — I'd like a refund",sub:'مشاكل السيارة والاسترداد وعدم الرضا · too + صفة · تحويل الأسماء لصفات بـ y · to للغرض'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -118,6 +119,47 @@ l2:[
   {e:'somebody',a:'شخص ما',em:'🧑'},
   {e:'anybody',a:'أيّ أحد',em:'❓'},
   {e:'nobody',a:'لا أحد',em:'🚫'},
+],
+l3:[
+  // — أجزاء السيارة ومشاكلها —
+  {e:'engine',a:'محرّك',em:'⚙️'},
+  {e:'motor',a:'محرّك (كهربائي)',em:'🔩'},
+  {e:'brake',a:'فرامل',em:'🛑'},
+  {e:'hose',a:'خرطوم',em:'🚿'},
+  {e:'part',a:'قطعة غيار',em:'🔧'},
+  {e:'oil',a:'زيت / يزيّت',em:'🫗'},
+  {e:'grease',a:'شحم / يشحّم',em:'🛢️'},
+  {e:'leak',a:'تسرّب / يتسرّب',em:'💧'},
+  {e:'noise',a:'ضجيج',em:'🔊'},
+  {e:'bug',a:'خلل / عيب',em:'🐛'},
+  // — أفعال الأعطال والصيانة —
+  {e:'stall',a:'يتعطّل فجأة',em:'🚗'},
+  {e:'tune up',a:'يضبط / صيانة المحرّك',em:'🎚️'},
+  {e:'warm up',a:'يُسخّن / يُحمّي',em:'🔥'},
+  {e:'guarantee',a:'ضمان / يضمن',em:'📜'},
+  {e:'service',a:'خدمة / صيانة',em:'🛠️'},
+  // — الاسترداد والشراء —
+  {e:'refund',a:'استرداد المال / يُعيد المال',em:'💸'},
+  {e:'exchange',a:'يستبدل',em:'🔄'},
+  {e:'charge',a:'رسوم / يفرض رسوماً',em:'💵'},
+  {e:'credit',a:'رصيد / يضيف رصيداً',em:'💳'},
+  {e:'give back',a:'يُعيد',past:'gave back',pa:'أعاد',em:'↩️'},
+  {e:'sales slip',a:'إيصال الشراء',em:'🧾'},
+  {e:'on sale',a:'معروض بتخفيض',em:'🏷️'},
+  // — الرضا وعدمه —
+  {e:'satisfy',a:'يُرضي',em:'😊'},
+  {e:'satisfaction',a:'الرضا',em:'😌'},
+  {e:'satisfied',a:'راضٍ',em:'🙂'},
+  {e:'dissatisfied',a:'غير راضٍ',em:'😞'},
+  {e:'unhappy',a:'غير سعيد',em:'☹️'},
+  // — صفات بـ y —
+  {e:'greasy',a:'دهني / مشحّم',em:'🛢️'},
+  {e:'oily',a:'زيتي',em:'🫗'},
+  {e:'leaky',a:'يتسرّب / مثقوب',em:'💧'},
+  {e:'noisy',a:'صاخب',em:'🔊'},
+  // — أخرى —
+  {e:'fly',a:'ذبابة',em:'🪰'},
+  {e:'too',a:'أكثر من اللازم',em:'➕'},
 ]
 };
 
@@ -248,6 +290,68 @@ l2:[
       {s:'The man which lost his wallet is here.',wrong:'man which',right:'man who',tr:'للأشخاص نستخدم who: the man who lost his wallet.',ok:false},
     ]
   }
+],
+l3:[
+  {
+    title:'too + adjective', ar:'too + صفة (أكثر من اللازم)',
+    rule:'too قبل الصفة تعني «أكثر من اللازم» بمعنى سلبي، وكثيراً ما تأتي: too + صفة + to + فعل. مثال: too hot to drink.',
+    parts:[
+      {t:'too + صفة',d:'مثال: The coffee is too hot. · The box is too heavy.'},
+      {t:'too + صفة + to + فعل',d:'too hot to drink · too heavy to lift · too late to call.'},
+      {t:'too ≠ very',d:'very = جداً (محايدة) · too = أكثر من اللازم (سلبية).'},
+    ],
+    check:{q:'The coffee is still _______ hot to drink.',o:['too','also','much','lots'],a:0,en:'أكثر من اللازم → too',ar:'أكثر من اللازم → too'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'be',c:'v'},{t:'+',c:'p'},{t:'too + صفة (+ to + فعل)',c:'k'}],
+    compare:[
+      {c1:'The coffee is too hot to drink.',c2:'The box is too heavy to lift.',ar:'too + صفة + to'},
+      {c1:'very hot (جداً)',c2:'too hot (أكثر من اللازم)',ar:'very ↔ too'},
+    ],
+    examples:[
+      {s:'The coffee is too hot to drink.',tr:'القهوة ساخنة جداً بحيث لا يمكن شربها.',ar:'too hot to drink',ok:true},
+      {s:'He arrived too late to catch the flight.',tr:'وصل متأخّراً جداً بحيث فاتته الرحلة.',ar:'too late to',ok:true},
+      {s:'The coffee is also hot to drink.',wrong:'also hot',right:'too hot',tr:'للتعبير عن الزيادة نستخدم too: too hot to drink.',ok:false},
+    ]
+  },
+  {
+    title:'Nouns to adjectives with -y', ar:'تحويل الأسماء إلى صفات بإضافة y',
+    rule:'نُضيف حرف y إلى بعض الأسماء لتصبح صفات: noise→noisy · grease→greasy · oil→oily · leak→leaky · ice→icy · snow→snowy · rain→rainy.',
+    parts:[
+      {t:'اسم + y = صفة',d:'noise → noisy · grease → greasy · oil → oily.'},
+      {t:'مع الطقس والطرق',d:'ice → icy · snow → snowy · rain → rainy.'},
+      {t:'تصف الاسم',d:'a noisy engine · greasy clothes · icy roads.'},
+    ],
+    check:{q:"After working on his car, Tom's clothes were _______.",o:['greasy','noisy','leaky','icy'],a:0,en:'شحم → دهنية (greasy)',ar:'grease → greasy'},
+    formula:[{t:'اسم',c:'s'},{t:'+',c:'p'},{t:'y',c:'v'},{t:'=',c:'p'},{t:'صفة',c:'k'}],
+    compare:[
+      {c1:'noise → noisy (صاخب)',c2:'grease → greasy (دهني)',ar:'اسم ↔ صفة'},
+      {c1:'ice → icy (جليدي)',c2:'oil → oily (زيتي)',ar:'أمثلة أخرى'},
+    ],
+    examples:[
+      {s:'The old engine is very noisy.',tr:'المحرّك القديم صاخب جداً.',ar:'noise → noisy',ok:true},
+      {s:'Tom drove on the icy roads.',tr:'قاد توم على الطرق الجليدية.',ar:'ice → icy',ok:true},
+      {s:'His clothes were grease.',wrong:'were grease',right:'were greasy',tr:'الصفة بإضافة y: greasy.',ok:false},
+    ]
+  },
+  {
+    title:'to-infinitive of purpose', ar:'to + فعل للتعبير عن الغرض (لماذا؟)',
+    rule:'نستخدم to + الفعل للتعبير عن الغرض/السبب (لماذا فعلنا الشيء): He went to the store to buy something = ليشتري.',
+    parts:[
+      {t:'to + فعل = لِـ',d:'مثال: to buy · to fix · to change · to study.'},
+      {t:'يجيب عن «لماذا؟»',d:'Why did he go? — To buy something.'},
+      {t:'ليست for + فعل',d:'نقول to cut وليس for cut.'},
+    ],
+    check:{q:'We use a knife _______ things.',o:['to cut','cut','cutting','for cut'],a:0,en:'الغرض → to cut',ar:'الغرض → to + فعل'},
+    formula:[{t:'فعل رئيسي',c:'s'},{t:'+',c:'p'},{t:'to',c:'v'},{t:'+',c:'p'},{t:'فعل (الغرض)',c:'k'}],
+    compare:[
+      {c1:'He went to the BX to buy something.',c2:'I paid the mechanic to fix my car.',ar:'to + فعل'},
+      {c1:'to cut (صحيح)',c2:'for cut (خطأ)',ar:'to ↔ for'},
+    ],
+    examples:[
+      {s:'He went to the store to buy something.',tr:'ذهب إلى المتجر ليشتري شيئاً.',ar:'to buy',ok:true},
+      {s:'I paid the mechanic to fix my car.',tr:'دفعت للميكانيكي ليُصلح سيّارتي.',ar:'to fix',ok:true},
+      {s:'We use a knife for cut things.',wrong:'for cut',right:'to cut',tr:'للغرض نستخدم to + فعل: to cut.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -272,6 +376,15 @@ l2:[
   {words:['You','must','obey','the','speed','limit'],ans:'You must obey the speed limit.',tr:'يجب أن تلتزم بحدّ السرعة.',ar:'قواعد الطريق'},
   {words:['This','is','the','car','which','had','an','accident'],ans:'This is the car which had an accident.',tr:'هذه هي السيارة التي تعرّضت لحادث.',ar:'جملة وصفية which'},
   {words:['Nobody','went','to','the','game'],ans:'Nobody went to the game.',tr:'لم يذهب أحد إلى المباراة.',ar:'الضمائر المبهمة'},
+],
+l3:[
+  {words:["I'd",'like','to','return','this','shirt'],ans:"I'd like to return this shirt.",tr:'أودّ إعادة هذا القميص.',ar:'التعبير عن عدم الرضا'},
+  {words:['The','coffee','is','too','hot','to','drink'],ans:'The coffee is too hot to drink.',tr:'القهوة ساخنة جداً بحيث لا يمكن شربها.',ar:'too + صفة'},
+  {words:['He','went','to','the','store','to','buy','something'],ans:'He went to the store to buy something.',tr:'ذهب إلى المتجر ليشتري شيئاً.',ar:'to للغرض'},
+  {words:['My','car','stalled','on','the','highway'],ans:'My car stalled on the highway.',tr:'تعطّلت سيّارتي على الطريق السريع.',ar:'أفعال الأعطال'},
+  {words:['The','mechanic','tuned','up','my','engine'],ans:'The mechanic tuned up my engine.',tr:'ضبط الميكانيكي محرّك سيّارتي.',ar:'صيانة'},
+  {words:['Tom','drove','on','the','icy','roads'],ans:'Tom drove on the icy roads.',tr:'قاد توم على الطرق الجليدية.',ar:'صفة بـ y'},
+  {words:["I'm",'not','satisfied','with','this','service'],ans:"I'm not satisfied with this service.",tr:'لست راضياً عن هذه الخدمة.',ar:'عدم الرضا'},
 ]
 };
 
@@ -323,6 +436,27 @@ l2:[
   {q:"Could _______ please help me for a minute?",o:["somebody","nobody","something"],a:0,en:"a person → somebody",ar:'شخص ما → somebody',tr:'هل يمكن لأحدٍ أن يساعدني دقيقة؟'},
   {q:"Our extra bedroom _______ the exercise room.",o:["got","became","been"],a:1,en:"turned into → became",ar:'تحوّلت إلى → became',tr:'أصبحت غرفة النوم الإضافية غرفةَ الرياضة.'},
   {q:"Did the children _______ tired on the trip?",o:["get","come","have"],a:0,en:"become tired → get",ar:'يُصبح متعباً → get tired',tr:'هل تعِب الأطفال في الرحلة؟'},
+],
+l3:[
+  {q:"Bill missed his flight to New York because he arrived at the airport _______ late.",o:["also","lots","too","much"],a:2,en:"more than needed → too",ar:'أكثر من اللازم → too',tr:'فوّت بيل رحلته إلى نيويورك لأنه وصل المطار متأخّراً جداً.'},
+  {q:"A car that can't stop well needs _______.",o:["better brakes","less grease","new hoses","more oil"],a:0,en:"can't stop → brakes",ar:'لا يتوقّف → فرامل أفضل',tr:'السيّارة التي لا تتوقّف جيداً تحتاج فرامل أفضل.'},
+  {q:"My neighbor makes a lot of _______ when he works on his car's engine.",o:["truth","service","credit","noise"],a:3,en:"loud → noise",ar:'صوت مرتفع → ضجيج (noise)',tr:'يُحدث جاري ضجيجاً كثيراً عندما يعمل على محرّك سيّارته.'},
+  {q:"We use a knife _______ things.",o:["cut","cutting","for cut","to cut"],a:3,en:"purpose → to cut",ar:'الغرض → to cut',tr:'نستخدم السكّين لتقطيع الأشياء.'},
+  {q:"The dishwasher _______. There was water on the floor.",o:["leaked","stalled","guaranteed","charged"],a:0,en:"water out → leaked",ar:'تسرّب الماء → leaked',tr:'تسرّبت غسّالة الصحون، كان هناك ماء على الأرض.'},
+  {q:"Bill: How do you like your new job? Tim: I think my old job was better. I'm _______ with this one.",o:["cautious","dissatisfied","happy","satisfied"],a:1,en:"not happy → dissatisfied",ar:'غير راضٍ → dissatisfied',tr:'بيل: كيف تجد وظيفتك الجديدة؟ تيم: أظنّ القديمة أفضل، لست راضياً عن هذه.'},
+  {q:"Bill: What did you do with the radio that didn't work? Tim: I took it back to the store. The clerk gave me a _______.",o:["charge","service","refund","signal"],a:2,en:"money back → refund",ar:'إعادة المال → refund',tr:'بيل: ماذا فعلت بالراديو المعطّل؟ تيم: أعدته للمتجر فأعطاني البائع استرداداً للمال.'},
+  {q:"After working on his car, Tom's clothes were _______.",o:["greasy","noisy","leaky","runny"],a:0,en:"grease → greasy",ar:'شحم → دهنية (greasy)',tr:'بعد العمل على سيّارته، أصبحت ملابس توم مليئة بالشحم.'},
+  {q:"Bill: Is your car working okay now? Tim: Yes, I took it to the garage to have the mechanic _______.",o:["give it back","tune it up","write it down","warm it up"],a:1,en:"service engine → tune it up",ar:'صيانة المحرّك → tune it up',tr:'بيل: هل سيّارتك تعمل جيداً الآن؟ تيم: نعم، أخذتها للورشة ليضبطها الميكانيكي.'},
+  {q:"Bill: What happened when the Smiths couldn't go on their trip? Tim: The travel agent gave them _______ they could use for another trip.",o:["news","change","service","credit"],a:3,en:"future value → credit",ar:'رصيد للاستخدام لاحقاً → credit',tr:'بيل: ماذا حدث حين لم يستطع آل سميث السفر؟ تيم: أعطاهم وكيل السفر رصيداً يستخدمونه لرحلة أخرى.'},
+  {q:"Some large airplanes have six _______ for long flights.",o:["guarantees","engines","parts","brakes"],a:1,en:"power → engines",ar:'المحرّكات → engines',tr:'بعض الطائرات الكبيرة لديها ستّة محرّكات للرحلات الطويلة.'},
+  {q:"The students _______ papers to check their answers.",o:["greased","leaked","exchanged","stalled"],a:2,en:"traded → exchanged",ar:'تبادلوا → exchanged',tr:'تبادل الطلاب الأوراق للتحقّق من إجاباتهم.'},
+  {q:"The first _______ of the book was interesting, but I didn't like the end.",o:["satisfaction","noise","part","oil"],a:2,en:"section → part",ar:'جزء → part',tr:'كان الجزء الأول من الكتاب ممتعاً، لكنّني لم أحبّ النهاية.'},
+  {q:"What kind of _______ does your boat have?",o:["brake","charge","grease","motor"],a:3,en:"boat power → motor",ar:'محرّك القارب → motor',tr:'أيّ نوع من المحرّكات في قاربك؟'},
+  {q:"Tom drove cautiously on the _______ roads.",o:["ice","icy","icing","ices"],a:1,en:"ice → icy (صفة)",ar:'جليد → جليدية (icy)',tr:'قاد توم بحذر على الطرق الجليدية.'},
+  {q:"After walking in the snow, we sat by the fire to _______.",o:["get back","tune up","give back","warm up"],a:3,en:"get warm → warm up",ar:'يتدفّأ → warm up',tr:'بعد المشي في الثلج، جلسنا قرب النار لنتدفّأ.'},
+  {q:"Our television repair man _______ his work.",o:["exchanges","stalls","guarantees","greases"],a:2,en:"promises quality → guarantees",ar:'يضمن → guarantees',tr:'يضمن فنّي إصلاح التلفاز عمله.'},
+  {q:"Sara really likes her new computer. She's _______ with it.",o:["leaky","dissatisfied","unhappy","satisfied"],a:3,en:"likes it → satisfied",ar:'راضية → satisfied',tr:'تحبّ سارة حاسوبها الجديد كثيراً، إنها راضية عنه.'},
+  {q:"Ron used his garden _______ to wash his car.",o:["hose","part","brake","jack"],a:0,en:"water tube → hose",ar:'خرطوم الماء → hose',tr:'استخدم رون خرطوم حديقته لغسل سيّارته.'},
 ]
 };
 
@@ -332,6 +466,7 @@ l2:[
 const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
+  ...EE.l3,
 ]);
 EE.final=FINAL;
 
@@ -350,6 +485,11 @@ const SPELL_LESSONS=[
     {e:'intersection',a:'تقاطع',em:'🚦'},{e:'pedestrian',a:'مشاة',em:'🚶'},{e:'sidewalk',a:'رصيف',em:'🚶‍♂️'},
     {e:'signal',a:'إشارة',em:'🚥'},{e:'instructor',a:'مدرّب',em:'🧑‍🏫'},{e:'nervous',a:'متوتّر',em:'😰'},
     {e:'yield',a:'أفسِح الطريق',em:'🔻'},{e:'caution',a:'حذر',em:'⚠️'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 3 — I\'d like a refund',w:[
+    {e:'refund',a:'استرداد المال',em:'💸'},{e:'engine',a:'محرّك',em:'⚙️'},{e:'guarantee',a:'ضمان',em:'📜'},
+    {e:'exchange',a:'يستبدل',em:'🔄'},{e:'greasy',a:'دهني',em:'🛢️'},{e:'satisfied',a:'راضٍ',em:'🙂'},
+    {e:'noisy',a:'صاخب',em:'🔊'},{e:'brake',a:'فرامل',em:'🛑'},
   ]},
 ];
 

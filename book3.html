@@ -133,7 +133,7 @@
     <h1>مركز التدريب — Book 3 <svg class="svgico" aria-hidden="true"><use href="#icon-library"></use></svg></h1>
     <p>تعلّم القواعد · تدرّب · اختبر نفسك</p>
     <div class="gpbar"><div class="gpfill" id="gpfill"></div></div>
-    <div class="gptxt" id="gptxt">0 من 3 دروس مكتملة</div>
+    <div class="gptxt" id="gptxt">0 من 4 دروس مكتملة</div>
     <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
   </div>
 
@@ -173,17 +173,24 @@
       <div class="lcard-sub">الدول والشهور · How many · الماضي was/were</div>
       <div class="lpbar"><div class="lpfill" id="lp-l3"></div></div>
     </div>
+    <div class="lcard" id="hc-l4" onclick="open_lesson('l4')">
+      <span class="lcard-icon">🎖️</span>
+      <div class="lcard-num">Lesson 4</div>
+      <div class="lcard-name">I'm in the Army now</div>
+      <div class="lcard-name-ar">الجيش والصفات</div>
+      <div class="lcard-sub">الرُّتب · الصفات · want to · أسئلة الماضي WH</div>
+      <div class="lpbar"><div class="lpfill" id="lp-l4"></div></div>
+    </div>
   </div>
 
-  <!-- الأقسام الختامية (مراجعة شاملة · إملاء · اختبار نهائي) مخفيّة مؤقتاً
-       حتى تكتمل جميع دروس Book 3 — فهي أقسام تجميعية على مستوى الكتاب.
-       للإظهار لاحقاً: احذف style="display:none" من الحاوية أدناه. -->
-  <div id="book-closing" style="display:none">
+  <!-- الأقسام الختامية (مراجعة شاملة · إملاء · اختبار نهائي) — مفعّلة الآن
+       بعد اكتمال دروس Book 3 الأربعة. -->
+  <div id="book-closing">
     <div class="lbl" style="margin-top:20px">المراجعة</div>
     <div class="final-card" style="background:linear-gradient(135deg,#0D9488,#0F766E);border-color:#5EEAD4" onclick="open_review()">
       <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg></div>
       <h3>Review — مراجعة شاملة</h3>
-      <p>١٢ سؤالاً لمراجعة الدرس الأول — المضارع البسيط وأوقات اليوم</p>
+      <p>٢٠ سؤالاً من وحدة المراجعة الرسمية — تراجع الدروس ١–٤</p>
       <span class="fc-badge" id="review-badge">ابدأ المراجعة</span>
     </div>
 
@@ -200,7 +207,7 @@
     <div class="final-card" onclick="open_final()">
       <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
       <h3>الاختبار النهائي الشامل</h3>
-      <p>جميع أسئلة "اختبر" من الدرس الأول مجمّعة بمكان واحد</p>
+      <p>جميع أسئلة "اختبر" من الدروس ١–٤ مجمّعة بمكان واحد</p>
       <span class="fc-badge" id="final-badge">ابدأ الاختبار</span>
     </div>
   </div>

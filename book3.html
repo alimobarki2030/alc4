@@ -194,6 +194,15 @@
       <span class="fc-badge" id="review-badge">ابدأ المراجعة</span>
     </div>
 
+    <div class="lbl" style="margin-top:20px">الاستماع</div>
+    <div class="yt-card" onclick="open_yt()">
+      <div class="ac-ic">🎧</div>
+      <div class="pc-txt">
+        <h3>استماع Book 3</h3>
+        <p>فيديوهات استماع وقراءة — ٣ مقاطع</p>
+      </div>
+    </div>
+
     <div class="lbl" style="margin-top:20px">الكتابة</div>
     <div class="spell-card" onclick="open_spell()">
       <div class="ac-ic">✍️</div>
@@ -236,6 +245,21 @@
     <div class="sp-count" id="sp-count">0 / 0</div>
   </div>
   <div id="spell-body"></div>
+</div>
+
+<!-- LISTENING SCREEN -->
+<div id="ytscreen">
+  <button class="back" onclick="go_home()">→ الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#1F2937,#0B1220)">
+    <h2>استماع Book 3 🎧</h2>
+    <p>فيديوهات استماع وقراءة</p>
+  </div>
+  <div class="yt-tabs" id="yt-tabs"></div>
+  <div class="yt-embed">
+    <iframe id="yt-iframe" src="" title="ALC Book 3 Listening"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+      allowfullscreen webkitallowfullscreen mozallowfullscreen loading="lazy"></iframe>
+  </div>
 </div>
 
 <!-- REVIEW SCREEN -->

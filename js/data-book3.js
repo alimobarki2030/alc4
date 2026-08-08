@@ -769,12 +769,16 @@ const SPELL_LESSONS=[
 ];
 
 // ═══════════════════════════════════════
-// LISTENING — (تُضاف فيديوهات Book 3 لاحقاً)
+// LISTENING — فيديوهات استماع وقراءة
 // ═══════════════════════════════════════
-const YT_VIDEOS=[];
+const YT_VIDEOS=[
+  {id:'mLzdYfOvdUM',t:'استماع ١',s:'فيديو استماع وقراءة'},
+  {id:'j_kcZgplx6g',t:'استماع ٢',s:'فيديو استماع وقراءة'},
+  {id:'L6b-6RENbvU',t:'استماع ٣',s:'فيديو استماع وقراءة'},
+];
 
 // ═══════════════════════════════════════
 // ROUTING MANIFEST
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','rscreen','fscreen','spscreen','mkscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',fscreen:'الاختبار النهائي',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};
+const SCREENS=['home','lscreen','rscreen','ytscreen','fscreen','spscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};

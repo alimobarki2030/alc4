@@ -8,7 +8,8 @@ const BOOK_ID='book11';
 const LESSON_META={
   l1:{ico:'🩺',title:'Lesson 1 — Medical appointments',sub:'المواعيد الطبية والأعراض · المضارع التام (since/for) · How long · المضارع التام المستمر'},
   l2:{ico:'🚦',title:'Lesson 2 — Rules of the road',sub:'قيادة السيارة وقواعد الطريق · الأفعال الرابطة get/become · الضمائر المبهمة · الجمل الوصفية who/which/that'},
-  l3:{ico:'🧾',title:"Lesson 3 — I'd like a refund",sub:'مشاكل السيارة والاسترداد وعدم الرضا · too + صفة · تحويل الأسماء لصفات بـ y · to للغرض'}
+  l3:{ico:'🧾',title:"Lesson 3 — I'd like a refund",sub:'مشاكل السيارة والاسترداد وعدم الرضا · too + صفة · تحويل الأسماء لصفات بـ y · to للغرض'},
+  l4:{ico:'🎬',title:'Lesson 4 — How was the show?',sub:'التلفاز والأفلام والمطاعم وإبداء الرأي · النقل بـ told · حروف الزمن · القدرة الماضية could'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -160,6 +161,53 @@ l3:[
   // — أخرى —
   {e:'fly',a:'ذبابة',em:'🪰'},
   {e:'too',a:'أكثر من اللازم',em:'➕'},
+],
+l4:[
+  // — التلفاز والترفيه —
+  {e:'entertainment',a:'ترفيه / تسلية',em:'🎭'},
+  {e:'program',a:'برنامج',em:'📺'},
+  {e:'channel',a:'قناة',em:'📡'},
+  {e:'commercial',a:'إعلان تجاري',em:'📢'},
+  {e:'variety',a:'تنوّع / منوّعات',em:'🎪'},
+  {e:'dish',a:'طبق',em:'🍽️'},
+  {e:'cards',a:'ورق اللعب',em:'🃏'},
+  // — أفعال —
+  {e:'entertain',a:'يُسلّي',em:'🎉'},
+  {e:'serve',a:'يخدم / يقدّم',em:'🧑‍🍳'},
+  {e:'recommend',a:'يوصي بـ',em:'👍'},
+  {e:'intend',a:'ينوي',em:'🎯'},
+  {e:'frighten',a:'يُخيف',em:'😱'},
+  {e:'laugh',a:'يضحك',em:'😂'},
+  {e:'love',a:'حبّ / يحبّ',em:'❤️'},
+  {e:'plan',a:'خطة / يخطّط',em:'📋'},
+  {e:'feel',a:'يشعر',past:'felt',pa:'شعر',em:'🫤'},
+  {e:'spend',a:'يقضي / ينفق',past:'spent',pa:'قضى / أنفق',em:'⏳'},
+  {e:'could',a:'استطاع (ماضي can)',em:'✅'},
+  // — صفات الرأي —
+  {e:'entertaining',a:'مُسلٍّ',em:'😄'},
+  {e:'boring',a:'مُملّ',em:'😑'},
+  {e:'dull',a:'باهت / ممل',em:'😴'},
+  {e:'funny',a:'مضحك',em:'🤣'},
+  {e:'frightening',a:'مخيف',em:'😨'},
+  {e:'great',a:'رائع',em:'👍'},
+  {e:'wonderful',a:'رائع جداً',em:'🌟'},
+  {e:'terrible',a:'فظيع',em:'👎'},
+  {e:'reasonable',a:'معقول',em:'💲'},
+  {e:'rude',a:'وقِح',em:'😠'},
+  {e:'impolite',a:'غير مهذّب',em:'🙅'},
+  {e:'loud',a:'صاخب / عالٍ',em:'🔊'},
+  {e:'sharp',a:'حادّ',em:'🔪'},
+  {e:'busy',a:'مشغول',em:'🏃'},
+  // — ظروف —
+  {e:'promptly',a:'بسرعة / في موعده',em:'⏱️'},
+  {e:'rudely',a:'بوقاحة',em:'😤'},
+  {e:'loudly',a:'بصوت عالٍ',em:'📣'},
+  {e:'frequently',a:'بشكل متكرّر',em:'🔁'},
+  // — عبارات —
+  {e:'as a matter of fact',a:'في الواقع',em:'💬'},
+  {e:'if you ask me',a:'برأيي / إن سألتني',em:'🗣️'},
+  {e:'in fact',a:'في الحقيقة',em:'✔️'},
+  {e:'since',a:'منذ',em:'📅'},
 ]
 };
 
@@ -352,6 +400,68 @@ l3:[
       {s:'We use a knife for cut things.',wrong:'for cut',right:'to cut',tr:'للغرض نستخدم to + فعل: to cut.',ok:false},
     ]
   }
+],
+l4:[
+  {
+    title:'Reported speech with told', ar:'الكلام المنقول بـ told (أخبرَ)',
+    rule:'لنقل كلام شخص نستخدم: told + مفعول (me/him/us) + (that) + الجملة، مع إرجاع الفعل خطوة إلى الماضي. is→was · am→was.',
+    parts:[
+      {t:'told + مفعول + that',d:'مثال: He told me that he was busy.'},
+      {t:'إرجاع الفعل للماضي',d:'"I am busy" → He told me he was busy.'},
+      {t:'told ≠ said me',d:'نقول told me (وليس said me).'},
+    ],
+    check:{q:'Tom _______ me that he was too busy to come.',o:['told','said','say','tells'],a:0,en:'told + مفعول',ar:'أخبرني → told me'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'told',c:'v'},{t:'+',c:'p'},{t:'مفعول + (that) + جملة',c:'k'}],
+    compare:[
+      {c1:'"I am busy."',c2:'He told me that he was busy.',ar:'مباشر ↔ منقول'},
+      {c1:'told me (صحيح)',c2:'said me (خطأ)',ar:'told ↔ said'},
+    ],
+    examples:[
+      {s:'Tom told me that he was too busy.',tr:'أخبرني توم أنه مشغول جداً.',ar:'told me that',ok:true},
+      {s:'She told us that she felt sick.',tr:'أخبرتنا أنها تشعر بالمرض.',ar:'told us that',ok:true},
+      {s:'He said me that he was late.',wrong:'said me',right:'told me',tr:'مع المفعول نستخدم told: told me.',ok:false},
+    ]
+  },
+  {
+    title:'Prepositions of time', ar:'حروف الجرّ الزمنية (at · on · in · for · since)',
+    rule:'at للساعة (at 3:00) · on لليوم والتاريخ (on Sunday · on June 8th) · in للفترة/الشهر (in the morning) · for للمدّة (for a week) · since لنقطة البداية (since 1999).',
+    parts:[
+      {t:'at / on / in',d:'at 3:00 · on Monday · in June · in the morning.'},
+      {t:'for + مدّة',d:'for two hours · for a week.'},
+      {t:'since + نقطة',d:'since 1999 · since Monday.'},
+    ],
+    check:{q:'The Smiths have been living in New York _______ 1999.',o:['since','for','until','at'],a:0,en:'نقطة بداية → since',ar:'نقطة زمنية → since'},
+    formula:[{t:'حدث',c:'s'},{t:'+',c:'p'},{t:'at/on/in/for/since',c:'v'},{t:'+',c:'p'},{t:'الزمن',c:'k'}],
+    compare:[
+      {c1:'for two hours (مدّة)',c2:'since 1999 (نقطة)',ar:'for ↔ since'},
+      {c1:'on June 8th (تاريخ)',c2:'at 3:00 (ساعة)',ar:'on ↔ at'},
+    ],
+    examples:[
+      {s:"On June 8th, we'll fly to Japan.",tr:'في الثامن من يونيو سنسافر إلى اليابان.',ar:'on + تاريخ',ok:true},
+      {s:'It has been raining for two hours.',tr:'ما زالت تمطر منذ ساعتين.',ar:'for + مدّة',ok:true},
+      {s:'It has been raining since two hours.',wrong:'since two hours',right:'for two hours',tr:'مع المدّة نستخدم for: for two hours.',ok:false},
+    ]
+  },
+  {
+    title:'Past ability with could', ar:'القدرة في الماضي بـ could (استطاع)',
+    rule:'could هي الماضي من can وتعني «استطاع». النفي couldn\'t. بعدها الفعل مجرّد بلا to.',
+    parts:[
+      {t:'could + فعل مجرّد',d:'مثال: I could swim when I was five.'},
+      {t:'النفي couldn\'t',d:'He couldn\'t finish the test.'},
+      {t:'بلا to',d:'نقول could swim (وليس could to swim).'},
+    ],
+    check:{q:'When I was young, I _______ run very fast.',o:['could',"couldn't",'can','am able'],a:0,en:'قدرة ماضية → could',ar:'استطاع → could'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'could',c:'v'},{t:'+',c:'p'},{t:'فعل مجرّد',c:'k'}],
+    compare:[
+      {c1:'We could see Bob.',c2:"He couldn't see us.",ar:'could ↔ couldn\'t'},
+      {c1:'I could swim (صحيح)',c2:'I could to swim (خطأ)',ar:'بلا to'},
+    ],
+    examples:[
+      {s:'We could see Bob, but he couldn\'t see us.',tr:'استطعنا رؤية بوب، لكنه لم يستطع رؤيتنا.',ar:'could / couldn\'t',ok:true},
+      {s:'I could swim when I was five.',tr:'كنت أستطيع السباحة حين كنت في الخامسة.',ar:'could + فعل',ok:true},
+      {s:'I could to swim then.',wrong:'could to swim',right:'could swim',tr:'بعد could فعل مجرّد: could swim.',ok:false},
+    ]
+  }
 ]
 };
 
@@ -385,6 +495,15 @@ l3:[
   {words:['The','mechanic','tuned','up','my','engine'],ans:'The mechanic tuned up my engine.',tr:'ضبط الميكانيكي محرّك سيّارتي.',ar:'صيانة'},
   {words:['Tom','drove','on','the','icy','roads'],ans:'Tom drove on the icy roads.',tr:'قاد توم على الطرق الجليدية.',ar:'صفة بـ y'},
   {words:["I'm",'not','satisfied','with','this','service'],ans:"I'm not satisfied with this service.",tr:'لست راضياً عن هذه الخدمة.',ar:'عدم الرضا'},
+],
+l4:[
+  {words:['Tom','told','me','that','he','was','busy'],ans:'Tom told me that he was busy.',tr:'أخبرني توم أنه مشغول.',ar:'النقل بـ told'},
+  {words:['What','do','you','think','of','the','movie'],ans:'What do you think of the movie?',tr:'ما رأيك في الفيلم؟',ar:'إبداء الرأي'},
+  {words:['The','server','brought','our','food','promptly'],ans:'The server brought our food promptly.',tr:'أحضر النادل طعامنا بسرعة.',ar:'المطاعم والخدمة'},
+  {words:['We','could','see','Bob','last','night'],ans:'We could see Bob last night.',tr:'استطعنا رؤية بوب الليلة الماضية.',ar:'could للقدرة الماضية'},
+  {words:['They','have','been','here','since','1999'],ans:'They have been here since 1999.',tr:'هم هنا منذ 1999.',ar:'حروف الزمن (since)'},
+  {words:['Can','you','recommend','a','good','restaurant'],ans:'Can you recommend a good restaurant?',tr:'هل توصي بمطعم جيّد؟',ar:'التوصية'},
+  {words:['If','you','ask','me','it','is','boring'],ans:'If you ask me, it is boring.',tr:'برأيي، إنه مُملّ.',ar:'إبداء الرأي'},
 ]
 };
 
@@ -457,8 +576,54 @@ l3:[
   {q:"Our television repair man _______ his work.",o:["exchanges","stalls","guarantees","greases"],a:2,en:"promises quality → guarantees",ar:'يضمن → guarantees',tr:'يضمن فنّي إصلاح التلفاز عمله.'},
   {q:"Sara really likes her new computer. She's _______ with it.",o:["leaky","dissatisfied","unhappy","satisfied"],a:3,en:"likes it → satisfied",ar:'راضية → satisfied',tr:'تحبّ سارة حاسوبها الجديد كثيراً، إنها راضية عنه.'},
   {q:"Ron used his garden _______ to wash his car.",o:["hose","part","brake","jack"],a:0,en:"water tube → hose",ar:'خرطوم الماء → hose',tr:'استخدم رون خرطوم حديقته لغسل سيّارته.'},
+],
+l4:[
+  {q:"Can you change the TV _______? I don't want to watch this show.",o:["channel","entertainment","commercial","variety"],a:0,en:"TV station → channel",ar:'محطة التلفاز → قناة (channel)',tr:'هل يمكنك تغيير القناة؟ لا أريد مشاهدة هذا البرنامج.'},
+  {q:"The server at the restaurant brought our food _______.",o:["loudly","rudely","terribly","promptly"],a:3,en:"on time → promptly",ar:'بسرعة/في موعده → promptly',tr:'أحضر النادل طعامنا بسرعة.'},
+  {q:"Jan _______ Italian food. It's her favorite.",o:["entertains","loves","feels","spends"],a:1,en:"likes a lot → loves",ar:'تحبّ كثيراً → loves',tr:'تحبّ جان الطعام الإيطالي، إنه المفضّل لديها.'},
+  {q:"When you visit New York City, you can find a lot of _______.",o:["cards","entertainment","plans","commercial"],a:1,en:"fun things → entertainment",ar:'وسائل التسلية → entertainment',tr:'حين تزور مدينة نيويورك، تجد الكثير من وسائل الترفيه.'},
+  {q:"What are your _______ for this weekend? Are you going out of town?",o:["cards","opinions","loves","plans"],a:3,en:"intentions → plans",ar:'ما تنوي فعله → خطط (plans)',tr:'ما خططك لعطلة الأسبوع؟ هل ستسافر خارج المدينة؟'},
+  {q:"I like this restaurant. The menu has a large _______ of food.",o:["dish","plan","meal","variety"],a:3,en:"many kinds → variety",ar:'أصناف متنوّعة → variety',tr:'يعجبني هذا المطعم، قائمته تحوي تنوّعاً كبيراً من الطعام.'},
+  {q:"When the Wilsons came over, we played _______ until 10 p.m.",o:["cards","dishes","programs","letters"],a:0,en:"game → cards",ar:'لعبة الورق → cards',tr:'عندما زارنا آل ويلسون، لعبنا الورق حتى العاشرة مساءً.'},
+  {q:"Sir, would you like our beef or chicken _______? They are both very good.",o:["card","plan","dish","idea"],a:2,en:"food serving → dish",ar:'طبق الطعام → dish',tr:'سيّدي، أتريد طبق اللحم أم الدجاج؟ كلاهما لذيذ جداً.'},
+  {q:"While I was driving home, the icy road _______ me.",o:["spent","frightened","served","planned"],a:1,en:"scared → frightened",ar:'أخافني → frightened',tr:'بينما كنت أقود إلى البيت، أخافتني الطريق الجليدية.'},
+  {q:"Sports shows are my favorite TV _______.",o:["channels","programs","commercials","collections"],a:1,en:"shows → programs",ar:'البرامج → programs',tr:'برامج الرياضة هي برامجي التلفازية المفضّلة.'},
+  {q:"Can you _______ a good restaurant in this city?",o:["serve","entertain","intend","recommend"],a:3,en:"suggest → recommend",ar:'يقترح/يوصي → recommend',tr:'هل يمكنك التوصية بمطعم جيّد في هذه المدينة؟'},
+  {q:"How do you _______ your free time on the weekend?",o:["feel","love","spend","recommend"],a:2,en:"use time → spend",ar:'يقضي الوقت → spend',tr:'كيف تقضي وقت فراغك في عطلة الأسبوع؟'},
+  {q:"I'll get a snack from the kitchen when the _______ come on the TV.",o:["variety","channel","program","commercials"],a:3,en:"ad breaks → commercials",ar:'الإعلانات → commercials',tr:'سآخذ وجبة خفيفة من المطبخ عندما تبدأ الإعلانات على التلفاز.'},
+  {q:"The soldiers really liked the movie, and they _______ a lot.",o:["laughed","could","planned","frightened"],a:0,en:"found it funny → laughed",ar:'ضحكوا → laughed',tr:'أعجب الجنود الفيلم كثيراً، وضحكوا كثيراً.'},
 ]
 };
+
+// ═══════════════════════════════════════
+// REVIEW (مراجعة شاملة) — مختارات من قواعد ومفردات الدروس الأربعة
+// ═══════════════════════════════════════
+const REVIEW=[
+  // — الدرس 1: المضارع التام والطبّ —
+  {q:"I have had a cold _______ a week.",o:["ago","for","since","from"],a:1,en:"مدّة → for",ar:'مدّة → for',tr:'أُصبت بزكام منذ أسبوع (مدّة).'},
+  {q:"Mary hasn't been here _______ Monday.",o:["for","since","ago","in"],a:1,en:"نقطة → since",ar:'نقطة زمنية → since',tr:'لم تكن ماري هنا منذ يوم الاثنين.'},
+  {q:"Beth is using a thermometer. She has _______.",o:["a nurse","a temperature","an appointment","a channel"],a:1,en:"thermometer → temperature",ar:'ميزان الحرارة → حرارة',tr:'تستخدم بيث ميزان الحرارة، لديها ارتفاع في الحرارة.'},
+  {q:"Jim doesn't play soccer _______.",o:["still","anymore","since","annual"],a:1,en:"stopped → anymore",ar:'توقّف → anymore',tr:'لم يعد جيم يلعب كرة القدم.'},
+  {q:"How long _______ you had a headache?",o:["has","have","are","did"],a:1,en:"present perfect → have",ar:'المضارع التام → have',tr:'منذ متى ولديك صداع؟'},
+  // — الدرس 2: قواعد الطريق —
+  {q:"You're not driving fast enough. You need to _______.",o:["pull over","speed up","slow down","yield"],a:1,en:"go faster → speed up",ar:'يزيد السرعة → speed up',tr:'أنت لا تقود بسرعة كافية، تحتاج أن تُسرِع.'},
+  {q:"I never met a person _______ liked to wash dishes.",o:["which","who","whom","that"],a:1,en:"person → who",ar:'شخص → who',tr:'لم أُقابل قطّ شخصاً يحبّ غسل الصحون.'},
+  {q:"I'm afraid to fly. It makes me _______.",o:["relaxed","nervous","lost","great"],a:1,en:"afraid → nervous",ar:'خائف → متوتّر',tr:'أخاف الطيران، إنه يجعلني متوتّراً.'},
+  {q:"When I called the library, _______ answered the phone.",o:["anybody","nobody","somebody","who"],a:1,en:"no answer → nobody",ar:'لا أحد → nobody',tr:'عندما اتّصلت بالمكتبة، لم يُجب أحد.'},
+  {q:"Captain Peters will _______ a major next month.",o:["get","become","been","being"],a:1,en:"رتبة → become",ar:'يصير رتبة → become',tr:'سيُصبح النقيب بيترز رائداً الشهر القادم.'},
+  // — الدرس 3: الاسترداد ومشاكل السيارة —
+  {q:"A car that can't stop well needs _______.",o:["less grease","better brakes","more oil","new hoses"],a:1,en:"can't stop → brakes",ar:'لا يتوقّف → فرامل',tr:'السيّارة التي لا تتوقّف جيداً تحتاج فرامل أفضل.'},
+  {q:"The coffee is still _______ hot to drink.",o:["also","too","very","much"],a:1,en:"أكثر من اللازم → too",ar:'أكثر من اللازم → too',tr:'القهوة ما زالت ساخنة جداً بحيث لا يمكن شربها.'},
+  {q:"He went to the store _______ something.",o:["for buy","to buy","buying","buy"],a:1,en:"الغرض → to buy",ar:'الغرض → to + فعل',tr:'ذهب إلى المتجر ليشتري شيئاً.'},
+  {q:"After working on his car, Tom's clothes were _______.",o:["noisy","greasy","icy","leaky"],a:1,en:"grease → greasy",ar:'شحم → دهنية',tr:'بعد العمل على سيّارته، أصبحت ملابس توم مليئة بالشحم.'},
+  {q:"I'd like a _______, not an exchange.",o:["engine","refund","brake","part"],a:1,en:"money back → refund",ar:'إعادة المال → refund',tr:'أريد استرداد المال، لا استبدالاً.'},
+  // — الدرس 4: التلفاز والأفلام —
+  {q:"Tom _______ me that he was too busy.",o:["said","told","say","tells"],a:1,en:"مفعول → told",ar:'أخبرني → told me',tr:'أخبرني توم أنه مشغول جداً.'},
+  {q:"We _______ see Bob, but he couldn't see us.",o:["can","could","would","will"],a:1,en:"قدرة ماضية → could",ar:'استطعنا → could',tr:'استطعنا رؤية بوب، لكنه لم يستطع رؤيتنا.'},
+  {q:"The Smiths have been living in New York _______ 1999.",o:["for","since","until","at"],a:1,en:"نقطة → since",ar:'نقطة زمنية → since',tr:'يعيش آل سميث في نيويورك منذ عام 1999.'},
+  {q:"Can you _______ a good restaurant in this city?",o:["serve","recommend","intend","entertain"],a:1,en:"suggest → recommend",ar:'يوصي → recommend',tr:'هل يمكنك التوصية بمطعم جيّد في هذه المدينة؟'},
+  {q:"If you ask me, this movie is _______.",o:["busy","boring","sharp","prompt"],a:1,en:"not fun → boring",ar:'ممل → boring',tr:'برأيي، هذا الفيلم مُملّ.'},
+];
 
 // ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة
@@ -467,6 +632,7 @@ const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
   ...EE.l3,
+  ...EE.l4,
 ]);
 EE.final=FINAL;
 
@@ -491,12 +657,21 @@ const SPELL_LESSONS=[
     {e:'exchange',a:'يستبدل',em:'🔄'},{e:'greasy',a:'دهني',em:'🛢️'},{e:'satisfied',a:'راضٍ',em:'🙂'},
     {e:'noisy',a:'صاخب',em:'🔊'},{e:'brake',a:'فرامل',em:'🛑'},
   ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 4 — How was the show?',w:[
+    {e:'entertainment',a:'ترفيه',em:'🎭'},{e:'channel',a:'قناة',em:'📡'},{e:'commercial',a:'إعلان',em:'📢'},
+    {e:'variety',a:'تنوّع',em:'🎪'},{e:'recommend',a:'يوصي',em:'👍'},{e:'boring',a:'مُملّ',em:'😑'},
+    {e:'promptly',a:'بسرعة',em:'⏱️'},{e:'wonderful',a:'رائع',em:'🌟'},
+  ]},
 ];
 
 // ═══════════════════════════════════════
-// LISTENING — لا يوجد فيديوهات لهذا الكتاب بعد
+// LISTENING — فيديوهات الاستماع (Quiz A · B · C)
 // ═══════════════════════════════════════
-const YT_VIDEOS=[];
+const YT_VIDEOS=[
+  {id:'HtBvQIGIUis',t:'Quiz A',s:'استماع وقراءة مع الحل'},
+  {id:'eC4FBpVML00',t:'Quiz B',s:'استماع وقراءة مع الحل'},
+  {id:'QHsGyhQyr-Y',t:'Quiz C',s:'استماع وقراءة مع الحل'},
+];
 
 // ═══════════════════════════════════════
 // ROUTING MANIFEST

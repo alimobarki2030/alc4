@@ -7,7 +7,8 @@ const BOOK_ID='book3';
 
 const LESSON_META={
   l1:{ico:'⏰',title:'Lesson 1 — He gets up early',sub:'الحياة اليومية · المضارع البسيط · النفي · أسئلة نعم/لا · أوقات اليوم'},
-  l2:{ico:'🗣️',title:'Lesson 2 — They speak English',sub:'اللغات · أسئلة who و WH · الفعل have · ظروف التكرار (always/sometimes/never)'}
+  l2:{ico:'🗣️',title:'Lesson 2 — They speak English',sub:'اللغات · أسئلة who و WH · الفعل have · ظروف التكرار (always/sometimes/never)'},
+  l3:{ico:'🌍',title:'Lesson 3 — Where are you from?',sub:'الدول والجنسيات · شهور السنة · How many · الوقت والتواريخ · الماضي was/were'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -114,6 +115,60 @@ l2:[
   {e:'who',a:'مَن',em:'🙋'},
   {e:'where',a:'أين',em:'📍'},
   {e:'what',a:'ماذا',em:'❔'},
+],
+l3:[
+  // — الدول —
+  {e:'country',a:'دولة / بلد',em:'🌍'},
+  {e:'the United States',a:'الولايات المتّحدة',em:'🇺🇸'},
+  {e:'Canada',a:'كندا',em:'🇨🇦'},
+  {e:'England',a:'إنجلترا',em:'🏴'},
+  {e:'France',a:'فرنسا',em:'🇫🇷'},
+  {e:'Spain',a:'إسبانيا',em:'🇪🇸'},
+  {e:'China',a:'الصين',em:'🇨🇳'},
+  {e:'Japan',a:'اليابان',em:'🇯🇵'},
+  {e:'Russia',a:'روسيا',em:'🇷🇺'},
+  {e:'Egypt',a:'مصر',em:'🇪🇬'},
+  {e:'Saudi Arabia',a:'السعودية',em:'🇸🇦'},
+  {e:'Venezuela',a:'فنزويلا',em:'🇻🇪'},
+  // — شهور السنة —
+  {e:'January',a:'يناير',em:'📅'},
+  {e:'February',a:'فبراير',em:'📅'},
+  {e:'March',a:'مارس',em:'📅'},
+  {e:'April',a:'أبريل',em:'📅'},
+  {e:'May',a:'مايو',em:'📅'},
+  {e:'June',a:'يونيو',em:'📅'},
+  {e:'July',a:'يوليو',em:'📅'},
+  {e:'August',a:'أغسطس',em:'📅'},
+  {e:'September',a:'سبتمبر',em:'📅'},
+  {e:'October',a:'أكتوبر',em:'📅'},
+  {e:'November',a:'نوفمبر',em:'📅'},
+  {e:'December',a:'ديسمبر',em:'📅'},
+  {e:'month',a:'شهر',em:'🗓️'},
+  {e:'year',a:'سنة',em:'📆'},
+  // — الوقت —
+  {e:'second',a:'ثانية',em:'⏱️'},
+  {e:'minute',a:'دقيقة',em:'⏱️'},
+  {e:'hour',a:'ساعة',em:'🕐'},
+  {e:'week',a:'أسبوع',em:'🗓️'},
+  {e:'how many',a:'كم (عدد)',em:'🔢'},
+  {e:'yesterday',a:'أمس',em:'⬅️'},
+  {e:'ago',a:'مضى / قبل',em:'⏪'},
+  {e:'last',a:'الماضي / السابق',em:'◀️'},
+  {e:'next',a:'القادم / التالي',em:'▶️'},
+  {e:'was',a:'كان (للمفرد)',em:'🕰️'},
+  {e:'were',a:'كانوا (للجمع)',em:'🕰️'},
+  // — الدراسة والاختبار —
+  {e:'quiz',a:'اختبار قصير',em:'📝'},
+  {e:'test',a:'اختبار',em:'🧪'},
+  {e:'dictionary',a:'قاموس',em:'📔'},
+  {e:'answer sheet',a:'ورقة الإجابة',em:'📄'},
+  {e:'test booklet',a:'كرّاسة الأسئلة',em:'📕'},
+  {e:'look up',a:'يبحث عن (في القاموس)',em:'🔍'},
+  {e:'review',a:'يُراجع',em:'♻️'},
+  {e:'select',a:'يختار',em:'☑️'},
+  {e:'choose',a:'يختار',em:'👉'},
+  {e:'mark',a:'يُعلّم / يضع علامة',em:'✏️'},
+  {e:'memorize',a:'يحفظ عن ظهر قلب',em:'🧠'},
 ],
 };
 
@@ -287,6 +342,89 @@ l2:[
     ]
   }
 ],
+l3:[
+  {
+    title:'How many + noun + BE', ar:'كم …؟ مع فعل الكينونة',
+    rule:'للسؤال عن العدد مع فعل الكينونة: How many + اسم جمع + are/is. نستخدم اسماً جمعاً بعد how many.',
+    parts:[
+      {t:'How many + جمع + are …?',d:'مثال: How many students are in your class? = كم طالباً في صفّك؟'},
+      {t:'الاسم يكون جمعاً',d:'students · desks · days — دائماً بصيغة الجمع بعد how many.'},
+      {t:'الجواب',d:'Eight students are in my class. = ثمانية طلاب في صفّي.'},
+    ],
+    check:{q:'How many students _______ in your class?',o:['is','are','do','has'],a:1,en:'جمع students → are',ar:'مع الجمع نستخدم are'},
+    formula:[{t:'How many',c:'v'},{t:'+',c:'p'},{t:'plural noun',c:'s'},{t:'+',c:'p'},{t:'are …?',c:'k'}],
+    compare:[
+      {c1:'Eight students are here.',c2:'How many students are here?',ar:'السؤال عن العدد → How many'},
+      {c1:'Six desks are in the room.',c2:'How many desks are in the room?',ar:'اسم جمع + are'},
+    ],
+    examples:[
+      {s:'How many students are in your class?',tr:'كم طالباً في صفّك؟',ar:'How many + are',ok:true},
+      {s:'How many desks are in this room?',tr:'كم مكتباً في هذه الغرفة؟',ar:'جمع desks + are',ok:true},
+      {s:'How many student is here?',wrong:'student is',right:'students are',tr:'بعد how many اسم جمع + are.',ok:false},
+    ]
+  },
+  {
+    title:'How many + noun + do/does', ar:'كم …؟ مع الأفعال (do/does)',
+    rule:'للسؤال عن العدد مع فعل عادي: How many + اسم + do (I/you/we/they) أو does (he/she/it) + الفعل المجرّد.',
+    parts:[
+      {t:'How many … do you …?',d:'مثال: How many meals do you eat a day? = كم وجبة تأكل في اليوم؟'},
+      {t:'How many … does he/she/it …?',d:'مثال: How many days does May have? = كم يوماً في مايو؟'},
+      {t:'الفعل مجرّد بعد do/does',d:'How many days does May have (وليس has).'},
+    ],
+    check:{q:'How many days _______ May have?',o:['do','does','are','is'],a:1,en:'May (it) → does',ar:'مع المفرد May نستخدم does'},
+    formula:[{t:'How many',c:'v'},{t:'+',c:'p'},{t:'noun + do/does',c:'n'},{t:'+',c:'p'},{t:'verb?',c:'k'}],
+    compare:[
+      {c1:'May has 31 days.',c2:'How many days does May have?',ar:'مفرد → does + have'},
+      {c1:'You eat three meals.',c2:'How many meals do you eat?',ar:'you → do'},
+    ],
+    examples:[
+      {s:'How many days does May have?',tr:'كم يوماً في مايو؟',ar:'does + have',ok:true},
+      {s:'How many languages do you speak?',tr:'كم لغة تتحدّث؟',ar:'you → do + speak',ok:true},
+      {s:'How many days does May has?',wrong:'has',right:'have',tr:'بعد does يبقى الفعل مجرّداً → have.',ok:false},
+    ]
+  },
+  {
+    title:'Past Tense of BE — was / were', ar:'ماضي فعل الكينونة (was/were)',
+    rule:'الماضي من am/is هو was (مع I · he · she · it)، ومن are هو were (مع we · you · they). النفي: wasn\'t / weren\'t.',
+    parts:[
+      {t:'I / He / She / It → was',d:'مثال: I was in Spain last year. = كنت في إسبانيا العام الماضي.'},
+      {t:'We / You / They → were',d:'مثال: They were in France two days ago. = كانوا في فرنسا قبل يومين.'},
+      {t:'النفي wasn\'t / weren\'t',d:"I wasn't at the BX. · They weren't late."},
+      {t:'كلمات الماضي',d:'yesterday · last (week/year) · … ago تدلّ على الماضي.'},
+    ],
+    check:{q:'Last week Mrs. White _______ my teacher.',o:['is','are','was','were'],a:2,en:'Mrs. White (she) + last week → was',ar:'مفرد + الماضي → was'},
+    formula:[{t:'I/He/She/It',c:'s'},{t:'+',c:'p'},{t:'was',c:'v'},{t:'·',c:'p'},{t:'We/You/They + were',c:'k'}],
+    compare:[
+      {c1:'Bob is a student today.',c2:"Bob wasn't a student yesterday.",ar:'is → wasn\'t (ماضٍ منفي)'},
+      {c1:'They are in the US now.',c2:'They were in France two days ago.',ar:'are → were'},
+    ],
+    examples:[
+      {s:'I was in Spain last year.',tr:'كنت في إسبانيا العام الماضي.',ar:'I → was',ok:true},
+      {s:'They were in France two days ago.',tr:'كانوا في فرنسا قبل يومين.',ar:'they → were',ok:true},
+      {s:'They was in class yesterday.',wrong:'was',right:'were',tr:'مع they نستخدم were.',ok:false},
+    ]
+  },
+  {
+    title:'Past Yes/No Questions with BE', ar:'أسئلة نعم/لا في الماضي (was/were)',
+    rule:'لتكوين سؤال في الماضي مع BE نُقدّم was/were قبل الفاعل ونضع علامة استفهام. الجواب القصير: Yes, he was / No, he wasn\'t.',
+    parts:[
+      {t:'Was + I/he/she/it …?',d:'مثال: Was John in class yesterday? — Yes, he was.'},
+      {t:'Were + we/you/they …?',d:'مثال: Were you at home last night? — No, I wasn\'t.'},
+      {t:'الإجابة القصيرة',d:'Yes, they were. / No, they weren\'t.'},
+    ],
+    check:{q:'_______ you at home last night?',o:['Was','Were','Did','Do'],a:1,en:'you → Were',ar:'مع you نستخدم Were'},
+    formula:[{t:'Was / Were',c:'v'},{t:'+',c:'p'},{t:'subject',c:'s'},{t:'+',c:'p'},{t:'…?',c:'k'}],
+    compare:[
+      {c1:'He was in class yesterday.',c2:'Was he in class yesterday?',ar:'نُقدّم was'},
+      {c1:'They were happy.',c2:'Were they happy?',ar:'نُقدّم were'},
+    ],
+    examples:[
+      {s:'Was John in class yesterday? — Yes, he was.',tr:'هل كان جون في الصفّ أمس؟ — نعم.',ar:'Was + he was',ok:true},
+      {s:'Were you at home last night? — No, I wasn\'t.',tr:'هل كنت في البيت ليلة أمس؟ — لا.',ar:'Were + wasn\'t',ok:true},
+      {s:'Was they in the BX?',wrong:'Was they',right:'Were they',tr:'مع they نستخدم Were.',ok:false},
+    ]
+  }
+],
 };
 
 // ═══════════════════════════════════════
@@ -312,6 +450,16 @@ l2:[
   {words:['Does','John','have','your','book'],ans:'Does John have your book?',tr:'هل لدى جون كتابك؟',ar:'سؤال بـ Does … have'},
   {words:['They','always','speak','English','in','class'],ans:'They always speak English in class.',tr:'يتحدّثون الإنجليزية دائماً في الصفّ.',ar:'always قبل الفعل'},
   {words:['Mark','never','speaks','French'],ans:'Mark never speaks French.',tr:'مارك لا يتحدّث الفرنسية أبداً.',ar:'never = نفي'},
+],
+l3:[
+  {words:['How','many','students','are','in','your','class'],ans:'How many students are in your class?',tr:'كم طالباً في صفّك؟',ar:'How many + are'},
+  {words:['How','many','days','does','May','have'],ans:'How many days does May have?',tr:'كم يوماً في مايو؟',ar:'How many + does'},
+  {words:['I','was','in','Spain','last','year'],ans:'I was in Spain last year.',tr:'كنت في إسبانيا العام الماضي.',ar:'I → was'},
+  {words:['They','were','in','France','two','days','ago'],ans:'They were in France two days ago.',tr:'كانوا في فرنسا قبل يومين.',ar:'they → were'},
+  {words:['Was','John','in','class','yesterday'],ans:'Was John in class yesterday?',tr:'هل كان جون في الصفّ أمس؟',ar:'سؤال ماضٍ بـ Was'},
+  {words:['Were','you','at','home','last','night'],ans:'Were you at home last night?',tr:'هل كنت في البيت ليلة أمس؟',ar:'سؤال ماضٍ بـ Were'},
+  {words:['Where','are','you','from'],ans:'Where are you from?',tr:'من أين أنت؟',ar:'السؤال عن البلد'},
+  {words:['Today','is','Tuesday','.','Yesterday','was','Monday'],ans:'Today is Tuesday. Yesterday was Monday.',tr:'اليوم الثلاثاء. أمس كان الاثنين.',ar:'اليوم/أمس + was'},
 ],
 };
 
@@ -364,6 +512,32 @@ l2:[
   {q:"Ms. Scott is a DLI teacher. She _______ English, and her students _______ English.",o:["teaches, learn","teach, learns","teaches, teach","learns, teach"],a:0,en:"she teaches · students learn",ar:'she → teaches · students (جمع) → learn',tr:'الآنسة سكوت معلّمة: هي تُعلّم الإنجليزية وطلابها يتعلّمونها.'},
   {q:"When do you leave for class?",o:["Late at night.","Early in the morning.","I go to the library every day.","We always eat in the dining hall."],a:1,en:"When → a time (early in the morning)",ar:'سؤال عن الوقت → مبكّراً صباحاً',tr:'متى تغادر إلى الصفّ؟ — مبكّراً في الصباح.'},
 ],
+l3:[
+  {q:"_______ new words in your dictionary.",o:["Hear","Answer","Look up","Listen to"],a:2,en:"find in a dictionary → look up",ar:'تبحث في القاموس → look up',tr:'ابحث عن الكلمات الجديدة في قاموسك.'},
+  {q:"There are sixty minutes in a(n) _______.",o:["hour","week","month","second"],a:0,en:"60 minutes = an hour",ar:'٦٠ دقيقة = ساعة',tr:'في الساعة ستّون دقيقة.'},
+  {q:"When you study for the book quiz, _______ each lesson.",o:["close","select","write","review"],a:3,en:"study → review",ar:'للدراسة → راجِع review',tr:'حين تذاكر للاختبار، راجِع كل درس.'},
+  {q:"A book quiz is a _______.",o:["test","lesson","review","dictionary"],a:0,en:"quiz = test",ar:'الاختبار القصير = اختبار',tr:'الـ book quiz اختبار.'},
+  {q:"Choose and _______ are the same.",o:["write","select","look up","memorize"],a:1,en:"choose = select",ar:'choose = select (يختار)',tr:'choose و select بنفس المعنى.'},
+  {q:"Today is Tuesday. _______ was Monday.",o:["Tomorrow","Yesterday","Next week","Last month"],a:1,en:"day before today → yesterday",ar:'اليوم الثلاثاء، فأمس كان الاثنين',tr:'اليوم الثلاثاء. أمس كان الاثنين.'},
+  {q:"Do not _______ in your test booklet.",o:["put","mark","learn","memorize"],a:1,en:"don't mark the booklet",ar:'لا تضع علامات في الكرّاسة → mark',tr:'لا تضع علامات في كرّاسة الأسئلة.'},
+  {q:"_______ students are from Egypt?",o:["Do you","Where is","How many","Are sixteen"],a:2,en:"asking a number → How many",ar:'سؤال عن العدد → How many',tr:'كم طالباً من مصر؟'},
+  {q:"What country are you _______?",o:["to","from","living","working"],a:1,en:"origin → from",ar:'الأصل/البلد → from',tr:'من أيّ بلد أنت؟'},
+  {q:"The meaning of a word is in the _______.",o:["lab","calendar","dictionary","test booklet"],a:2,en:"word meanings → dictionary",ar:'معاني الكلمات → القاموس',tr:'معنى الكلمة موجود في القاموس.'},
+  {q:"Learn and speak English in class. Don't _______ vocabulary words.",o:["call","talk","listen","memorize"],a:3,en:"don't just memorize",ar:'لا تحفظ صمّاً → memorize',tr:'تعلّم وتحدّث الإنجليزية في الصفّ، ولا تحفظ الكلمات صمّاً.'},
+  {q:"You will have 50 _______ to finish the test this morning.",o:["hour","time","seconds","minutes"],a:3,en:"50 minutes",ar:'٥٠ دقيقة → minutes',tr:'لديك ٥٠ دقيقة لإنهاء الاختبار هذا الصباح.'},
+  {q:"Was John in class yesterday?",o:["Yes, he does.","No, he isn't.","Yes, he was.","No, he didn't."],a:2,en:"Was → was",ar:'السؤال بـ Was → Yes, he was',tr:'هل كان جون في الصفّ أمس؟ — نعم، كان.'},
+  {q:"Were you at home last night?",o:["No, I'm not.","No, I didn't.","No, I wasn't.","No, they weren't."],a:2,en:"Were you → I wasn't",ar:'Were you → No, I wasn\'t',tr:'هل كنت في البيت ليلة أمس؟ — لا، لم أكن.'},
+  {q:"Today is Wednesday.",o:["Monday was two days ago.","Yesterday was Monday.","Tomorrow is Tuesday.","Sunday is today."],a:0,en:"Wed − 2 = Monday",ar:'الأربعاء ناقص يومين = الاثنين',tr:'اليوم الأربعاء، فالاثنين كان قبل يومين.'},
+  {q:"Today is Thursday.",o:["Friday was yesterday.","Tomorrow is Tuesday.","Yesterday was Tuesday.","Yesterday was Wednesday."],a:3,en:"Thu − 1 = Wednesday",ar:'الخميس، فأمس كان الأربعاء',tr:'اليوم الخميس، فأمس كان الأربعاء.'},
+  {q:"When is the book quiz?",o:["It wasn't bad.","It's in the lab.","It was early.","It's today at ten o'clock."],a:3,en:"When → a time",ar:'When → وقت (اليوم الساعة العاشرة)',tr:'متى الاختبار؟ — اليوم الساعة العاشرة.'},
+  {q:"Your test is next hour.",o:["It was last hour.","It's in a minute.","It's in 60 minutes.","It was 60 minutes ago."],a:2,en:"next hour = in 60 minutes",ar:'الساعة القادمة = بعد ٦٠ دقيقة',tr:'اختبارك الساعة القادمة = بعد ٦٠ دقيقة.'},
+  {q:"How many _______ are in a month?",o:["week","time","days","hour"],a:2,en:"a month has days",ar:'الشهر فيه أيام → days',tr:'كم يوماً في الشهر؟'},
+  {q:"The instructor is giving us the test booklets.",o:["It's time to go home.","We're having a book quiz.","He's reviewing for the test.","We're looking up the answers."],a:1,en:"test booklets → a quiz",ar:'كرّاسات الأسئلة → اختبار الآن',tr:'المعلّم يوزّع كرّاسات الأسئلة → عندنا اختبار.'},
+  {q:"_______ your answers on the answer sheet.",o:["Learn","Draw","Mark","Leave"],a:2,en:"mark answers on the sheet",ar:'ضع علامة على الإجابات → Mark',tr:'ضع علامات إجاباتك على ورقة الإجابة.'},
+  {q:"This week Mr. Black is my teacher. Last week Mrs. White _______ my teacher.",o:["is","are","was","were"],a:2,en:"last week + she → was",ar:'الأسبوع الماضي + مفرد → was',tr:'هذا الأسبوع الأستاذ بلاك معلّمي، والأسبوع الماضي كانت السيدة وايت معلّمتي.'},
+  {q:"How was the movie?",o:["I am cold.","It was bad.","I was sick.","It was yesterday."],a:1,en:"How was → It was …",ar:'How was → It was (وصف)',tr:'كيف كان الفيلم؟ — كان سيّئاً.'},
+  {q:"I was in Japan last year.",o:["I'm there now.","I was there one year ago.","I'm going there this year.","I'm going there next year."],a:1,en:"last year = one year ago",ar:'العام الماضي = قبل سنة',tr:'كنت في اليابان العام الماضي = قبل سنة.'},
+],
 };
 
 // ═══════════════════════════════════════
@@ -391,6 +565,7 @@ EE.review=REVIEW;
 const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
+  ...EE.l3,
 ]);
 EE.final=FINAL;
 
@@ -407,6 +582,11 @@ const SPELL_LESSONS=[
     {e:'English',a:'الإنجليزية',em:'🇬🇧'},{e:'Arabic',a:'العربية',em:'🇸🇦'},{e:'Spanish',a:'الإسبانية',em:'🇪🇸'},
     {e:'language',a:'لغة',em:'🗣️'},{e:'always',a:'دائماً',em:'💯'},{e:'never',a:'أبداً',em:'🚫'},
     {e:'library',a:'المكتبة',em:'📚'},{e:'train',a:'قطار',em:'🚆'},{e:'truck',a:'شاحنة',em:'🚚'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 3 — الدول والوقت',w:[
+    {e:'country',a:'دولة',em:'🌍'},{e:'Egypt',a:'مصر',em:'🇪🇬'},{e:'France',a:'فرنسا',em:'🇫🇷'},
+    {e:'January',a:'يناير',em:'📅'},{e:'August',a:'أغسطس',em:'📅'},{e:'dictionary',a:'قاموس',em:'📔'},
+    {e:'minute',a:'دقيقة',em:'⏱️'},{e:'yesterday',a:'أمس',em:'⬅️'},{e:'review',a:'يُراجع',em:'♻️'},
   ]},
 ];
 

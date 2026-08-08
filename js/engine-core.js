@@ -168,12 +168,67 @@ function _labelSpeakerButtons(root){
     if(b.querySelector('use[href="#icon-volume-2"]'))b.setAttribute('aria-label','استماع');
   });
 }
+// Make div/span elements that carry an inline onclick keyboard-operable:
+// a screen reader announces them as buttons and Enter/Space activates them,
+// matching mouse/touch. Covers the lesson/final/listening/spelling cards that
+// ship as <div onclick> in every book page. Idempotent via data-kbd.
+function _upgradeClickables(root){
+  const scope=(root&&root.querySelectorAll)?root:document;
+  const list=Array.prototype.slice.call(scope.querySelectorAll('[onclick]'));
+  if(root&&root.nodeType===1&&root.hasAttribute&&root.hasAttribute('onclick'))list.push(root);
+  list.forEach(el=>{
+    const tag=el.tagName;
+    if(tag==='BUTTON'||tag==='A'||tag==='INPUT'||tag==='SELECT'||tag==='TEXTAREA')return;
+    if(el.dataset.kbd)return;
+    el.dataset.kbd='1';
+    if(!el.hasAttribute('role'))el.setAttribute('role','button');
+    if(!el.hasAttribute('tabindex'))el.setAttribute('tabindex','0');
+    el.addEventListener('keydown',ev=>{
+      if(ev.key==='Enter'||ev.key===' '||ev.key==='Spacebar'){ev.preventDefault();el.click();}
+    });
+  });
+}
+
+// Tag English-only fragments with lang="en" so a screen reader switches to an
+// English voice instead of reading Latin text through the page-level Arabic
+// engine. Only classes that are reliably English by the codebase's naming
+// convention (-en suffix, vocabulary/word tokens) are listed here.
+const _EN_SEL='.lcard-name,.vw,.dq-word,.wo-chip,.wo-bank-chip,.iv-base,.iv-base-big,'+
+  '.ex2-en,.ex-en,.fb-en,.pcard-en,.pr-forms,.pr-base,.qtxt,.pq-sent,.qa-txt,.chk-q,'+
+  '.wc-en,.pe-en,.trig-en,.sp-en';
+function _tagEnglish(root){
+  const scope=(root&&root.querySelectorAll)?root:document;
+  scope.querySelectorAll(_EN_SEL).forEach(el=>{if(!el.hasAttribute('lang'))el.setAttribute('lang','en');});
+  if(root&&root.nodeType===1&&root.matches&&root.matches(_EN_SEL)&&!root.hasAttribute('lang'))root.setAttribute('lang','en');
+}
+
+// Quiz-result popup: expose it as a real modal dialog and let Esc dismiss it.
+// Focus is moved into it (and restored) by show_result/hide_modal in
+// engine-lessons.js. Idempotent via data-a11y.
+function _setupModalA11y(){
+  const m=document.getElementById('modal');
+  if(!m||m.dataset.a11y)return;
+  m.dataset.a11y='1';
+  m.setAttribute('role','dialog');
+  m.setAttribute('aria-modal','true');
+  if(document.getElementById('m-grade'))m.setAttribute('aria-labelledby','m-grade');
+  if(document.getElementById('m-sub'))m.setAttribute('aria-describedby','m-sub');
+  document.addEventListener('keydown',ev=>{
+    if(ev.key==='Escape'&&m.classList.contains('show')&&typeof close_modal==='function')close_modal();
+  });
+}
+
 if(typeof document!=='undefined'){
   const _startA11y=()=>{
     _labelSpeakerButtons(document);
+    _upgradeClickables(document);
+    _tagEnglish(document);
+    _setupModalA11y();
     if(window.MutationObserver&&document.body){
       new MutationObserver(muts=>{
-        muts.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1)_labelSpeakerButtons(n);}));
+        muts.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1){
+          _labelSpeakerButtons(n);_upgradeClickables(n);_tagEnglish(n);
+        }}));
       }).observe(document.body,{childList:true,subtree:true});
     }
   };

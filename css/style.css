@@ -952,6 +952,20 @@ html.splash-seen #splash{display:none}
 #access-gate .ag-err{margin-top:12px;font-size:.78rem;color:var(--r);font-weight:600;min-height:1em}
 
 
+/* ─── مؤشّر تركيز واضح لمستخدمي لوحة المفاتيح (:focus-visible) ───
+   يظهر عند التنقّل بلوحة المفاتيح فقط (لا بالفأرة)، ويطبَّق في الوضعين
+   الفاتح والداكن لأن --b لون أزرق ساطع في كليهما. */
+.opt:focus-visible,.tab:focus-visible,.dq-opt:focus-visible,.chk-opt:focus-visible,
+.lcard:focus-visible,.final-card:focus-visible,.yt-card:focus-visible,.spell-card:focus-visible,
+.mbtn:focus-visible,.back:focus-visible,.wo-chip:focus-visible,.wo-bank-chip:focus-visible,
+.pq-opt:focus-visible,.art-chip:focus-visible,.wh-chip:focus-visible,.tm-chip:focus-visible,
+.vowel-chip:focus-visible,.match-item:focus-visible,.sp-btn:focus-visible,.mini-spk:focus-visible,
+.reset-btn:focus-visible,.nav-home-btn:focus-visible,.top-fab:focus-visible,
+.dq-input:focus-visible,.sp-input:focus-visible,.gcard-head:focus-visible,
+button:focus-visible,[role="button"]:focus-visible,a:focus-visible{
+  outline:3px solid var(--b);outline-offset:2px;
+}
+
 /* ═══════════════════════════════════════════════════════════
    الوضع الليلي (Dark Mode) — يُفعَّل تلقائياً حسب إعداد الجهاز.
    يعيد تعريف متغيّرات الألوان الأساسية (فيغطّي كل var(--…))،

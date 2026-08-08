@@ -624,7 +624,6 @@ const REVIEW=[
   {q:"Can you _______ a good restaurant in this city?",o:["serve","recommend","intend","entertain"],a:1,en:"suggest → recommend",ar:'يوصي → recommend',tr:'هل يمكنك التوصية بمطعم جيّد في هذه المدينة؟'},
   {q:"If you ask me, this movie is _______.",o:["busy","boring","sharp","prompt"],a:1,en:"not fun → boring",ar:'ممل → boring',tr:'برأيي، هذا الفيلم مُملّ.'},
 ];
-EE.review=REVIEW;
 
 // ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة

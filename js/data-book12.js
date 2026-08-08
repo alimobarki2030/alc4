@@ -584,7 +584,6 @@ const REVIEW=[
   {q:"Glen wanted to swim, _______ he went to the lake.",o:["but","so","or","if"],a:1,en:"result → so",ar:'النتيجة → so',tr:'أراد جلين السباحة، لذلك ذهب إلى البحيرة.'},
   {q:"Did you _______ fish often when you were young?",o:["would","use to","used","would to"],a:1,en:"question → use to",ar:'السؤال → use to',tr:'هل كنت تصطاد السمك كثيراً حين كنت صغيراً؟'},
 ];
-EE.review=REVIEW;
 
 // ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة

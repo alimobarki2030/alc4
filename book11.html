@@ -130,7 +130,7 @@
     <h1>مركز التدريب — Book 11 <svg class="svgico" aria-hidden="true"><use href="#icon-library"></use></svg></h1>
     <p>تعلّم القواعد · تدرّب · اختبر نفسك</p>
     <div class="gpbar"><div class="gpfill" id="gpfill"></div></div>
-    <div class="gptxt" id="gptxt">0 من 1 دروس مكتملة</div>
+    <div class="gptxt" id="gptxt">0 من 2 دروس مكتملة</div>
     <button class="reset-btn" onclick="reset_progress()">↺ إعادة ضبط التقدّم</button>
   </div>
 
@@ -154,10 +154,18 @@
       <div class="lcard-sub">المضارع التام (since/for) · How long · المضارع التام المستمر</div>
       <div class="lpbar"><div class="lpfill" id="lp-l1"></div></div>
     </div>
+    <div class="lcard" id="hc-l2" onclick="open_lesson('l2')">
+      <span class="lcard-icon">🚦</span>
+      <div class="lcard-num">Lesson 2</div>
+      <div class="lcard-name">Rules of the road</div>
+      <div class="lcard-name-ar">قيادة السيارة وقواعد الطريق</div>
+      <div class="lcard-sub">get / become · الضمائر المبهمة · الجمل الوصفية who/which/that</div>
+      <div class="lpbar"><div class="lpfill" id="lp-l2"></div></div>
+    </div>
   </div>
 
   <!-- الأقسام الختامية: مراجعة شاملة · فيديوهات الاستماع —
-       تُفعَّل بعد اكتمال بقية دروس الكتاب. الدرس الأول فقط متاح الآن. -->
+       تُفعَّل بعد اكتمال بقية دروس الكتاب. الدرسان ١ و٢ متاحان الآن. -->
 
   <div class="lbl" style="margin-top:20px">الكتابة</div>
   <div class="spell-card" onclick="open_spell()">
@@ -172,7 +180,7 @@
   <div class="final-card" onclick="open_final()">
     <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
     <h3>الاختبار النهائي الشامل</h3>
-    <p>جميع أسئلة "اختبر" في الدرس الأول مجمّعة بمكان واحد</p>
+    <p>جميع أسئلة "اختبر" من الدرسين مجمّعة بمكان واحد</p>
     <span class="fc-badge" id="final-badge">ابدأ الاختبار</span>
   </div>
 </div>
@@ -182,7 +190,7 @@
   <button class="back" onclick="go_home()">→ الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">
     <h2>الاختبار النهائي الشامل <svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></h2>
-    <p>جميع أسئلة "اختبر" في الدرس الأول مجمّعة بمكان واحد</p>
+    <p>جميع أسئلة "اختبر" من الدرسين مجمّعة بمكان واحد</p>
   </div>
   <div id="ph-final"></div>
 </div>

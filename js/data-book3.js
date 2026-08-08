@@ -8,7 +8,8 @@ const BOOK_ID='book3';
 const LESSON_META={
   l1:{ico:'⏰',title:'Lesson 1 — He gets up early',sub:'الحياة اليومية · المضارع البسيط · النفي · أسئلة نعم/لا · أوقات اليوم'},
   l2:{ico:'🗣️',title:'Lesson 2 — They speak English',sub:'اللغات · أسئلة who و WH · الفعل have · ظروف التكرار (always/sometimes/never)'},
-  l3:{ico:'🌍',title:'Lesson 3 — Where are you from?',sub:'الدول والجنسيات · شهور السنة · How many · الوقت والتواريخ · الماضي was/were'}
+  l3:{ico:'🌍',title:'Lesson 3 — Where are you from?',sub:'الدول والجنسيات · شهور السنة · How many · الوقت والتواريخ · الماضي was/were'},
+  l4:{ico:'🎖️',title:"Lesson 4 — I'm in the Army now",sub:'الرُّتب العسكرية · الصفات · want to + فعل · أسئلة الماضي (Who/What/Where/When + BE)'}
 };
 const LESSON_KEYS=Object.keys(LESSON_META);
 
@@ -169,6 +170,48 @@ l3:[
   {e:'choose',a:'يختار',em:'👉'},
   {e:'mark',a:'يُعلّم / يضع علامة',em:'✏️'},
   {e:'memorize',a:'يحفظ عن ظهر قلب',em:'🧠'},
+],
+l4:[
+  // — الجيش والرُّتب —
+  {e:'military',a:'الجيش / عسكري',em:'🎖️'},
+  {e:'Army',a:'الجيش (البرّي)',em:'🪖'},
+  {e:'Navy',a:'البحرية',em:'⚓'},
+  {e:'Air Force',a:'القوات الجوية',em:'✈️'},
+  {e:'Marine Corps',a:'مشاة البحرية',em:'🎯'},
+  {e:'officer',a:'ضابط',em:'🎖️'},
+  {e:'colonel',a:'عقيد',em:'🎖️'},
+  {e:'soldier',a:'جندي',em:'🪖'},
+  {e:'sailor',a:'بحّار',em:'⚓'},
+  {e:'airman',a:'جندي جوي',em:'✈️'},
+  {e:'Marine',a:'جندي بحرية',em:'🎯'},
+  {e:'civilian',a:'مدني',em:'👔'},
+  {e:'enlisted',a:'مُجنَّد (غير ضابط)',em:'🪖'},
+  {e:'pilot',a:'طيّار',em:'👨‍✈️'},
+  // — أفعال —
+  {e:'want to',a:'يريد أن',em:'🙏'},
+  {e:'drive',a:'يقود',em:'🚗'},
+  {e:'fly',a:'يطير / يُحلّق',em:'🛫'},
+  {e:'walk',a:'يمشي',em:'🚶'},
+  {e:'work',a:'يعمل / عمل',em:'💼'},
+  // — الصفات وأضدادها —
+  {e:'tall',a:'طويل',em:'🦒'},
+  {e:'short',a:'قصير',em:'🐕'},
+  {e:'new',a:'جديد',em:'✨'},
+  {e:'old',a:'قديم / كبير السن',em:'📿'},
+  {e:'good',a:'جيّد',em:'👍'},
+  {e:'bad',a:'سيّئ',em:'👎'},
+  {e:'young',a:'صغير السنّ',em:'🧒'},
+  {e:'happy',a:'سعيد',em:'😀'},
+  {e:'angry',a:'غاضب',em:'😠'},
+  {e:'tired',a:'متعب',em:'🥱'},
+  {e:'sick',a:'مريض',em:'🤒'},
+  {e:'right',a:'صحيح',em:'✅'},
+  {e:'wrong',a:'خطأ',em:'❌'},
+  // — تعابير —
+  {e:'Here it is',a:'ها هو ذا (للمفرد)',em:'👇'},
+  {e:'There they are',a:'ها هُم هناك (للجمع)',em:'👉'},
+  {e:'all right',a:'حسناً / لا بأس',em:'🆗'},
+  {e:'right now',a:'الآن حالاً',em:'⏰'},
 ],
 };
 
@@ -425,6 +468,89 @@ l3:[
     ]
   }
 ],
+l4:[
+  {
+    title:'Adjectives before Nouns', ar:'الصفة قبل الاسم',
+    rule:'الصفة التي تصف اسماً توضع قبله ولا تتغيّر: The man is tall. → He\'s a tall man.',
+    parts:[
+      {t:'a/an + صفة + اسم',d:'مثال: It\'s a new car. = إنها سيارة جديدة.'},
+      {t:'الصفة لا تتغيّر',d:'a tall man · two tall men — تبقى tall كما هي.'},
+      {t:'an قبل حرف متحرّك',d:'an old car · an angry man.'},
+    ],
+    check:{q:'The car is new. It\'s a _______ car.',o:['news','newer','new','newly'],a:2,en:'الصفة قبل الاسم بلا تغيير → new',ar:'الصفة تبقى كما هي → new'},
+    formula:[{t:'a / an',c:'s'},{t:'+',c:'p'},{t:'adjective',c:'v'},{t:'+',c:'p'},{t:'noun',c:'k'}],
+    compare:[
+      {c1:'The man is tall.',c2:"He's a tall man.",ar:'الصفة قبل الاسم'},
+      {c1:'The car is old.',c2:"It's an old car.",ar:'an قبل حرف متحرّك'},
+    ],
+    examples:[
+      {s:"My brother has a new car.",tr:'لدى أخي سيارة جديدة.',ar:'new + car',ok:true},
+      {s:"She's a young sailor.",tr:'إنها بحّارة شابّة.',ar:'young + sailor',ok:true},
+      {s:'He\'s a man tall.',wrong:'man tall',right:'tall man',tr:'الصفة تأتي قبل الاسم → tall man.',ok:false},
+    ]
+  },
+  {
+    title:'want to + verb', ar:'want to + فعل (يريد أن)',
+    rule:'نستخدم want to مع I·you·we·they، و wants to مع he·she·it، يليها الفعل المجرّد. النفي: don\'t/doesn\'t want to.',
+    parts:[
+      {t:'I/You/We/They + want to + verb',d:'مثال: I want to study. = أريد أن أذاكر.'},
+      {t:'He/She/It + wants to + verb',d:'مثال: He wants to read. = يريد أن يقرأ.'},
+      {t:'النفي',d:"I don't want to go. · She doesn't want to work."},
+    ],
+    check:{q:'She _______ work today.',o:["want to","wants to","doesn't want to","don't want to"],a:2,en:'she + النفي → doesn\'t want to',ar:'مع she في النفي → doesn\'t want to'},
+    formula:[{t:'Subject',c:'s'},{t:'+',c:'p'},{t:'want(s) to',c:'v'},{t:'+',c:'p'},{t:'verb',c:'k'}],
+    compare:[
+      {c1:'I want to eat.',c2:'He wants to eat.',ar:'he → wants to'},
+      {c1:'They want to study.',c2:"They don't want to study.",ar:'النفي don\'t want to'},
+    ],
+    examples:[
+      {s:'I want to read my new book.',tr:'أريد أن أقرأ كتابي الجديد.',ar:'want to + read',ok:true},
+      {s:"He doesn't want to get up early.",tr:'لا يريد أن يستيقظ مبكّراً.',ar:'doesn\'t want to',ok:true},
+      {s:'She wants to works here.',wrong:'wants to works',right:'wants to work',tr:'بعد to يبقى الفعل مجرّداً → work.',ok:false},
+    ]
+  },
+  {
+    title:'Yes/No Questions with want to', ar:'أسئلة نعم/لا مع want to',
+    rule:'نبدأ بـ Do مع I·you·we·they، و Does مع he·she·it، ثم الفاعل ثم want to + الفعل.',
+    parts:[
+      {t:'Do you want to …?',d:'مثال: Do you want to study now? — Yes, I do.'},
+      {t:'Does he/she want to …?',d:'مثال: Does she want to buy a car? — No, she doesn\'t.'},
+      {t:'الفعل بعد to مجرّد',d:'Does he want to go? (وليس goes).'},
+    ],
+    check:{q:'_______ he want to learn English?',o:['Do','Does','Is','Are'],a:1,en:'he → Does',ar:'مع المفرد he نستخدم Does'},
+    formula:[{t:'Do / Does',c:'v'},{t:'+',c:'p'},{t:'subject + want to',c:'s'},{t:'+',c:'p'},{t:'verb?',c:'k'}],
+    compare:[
+      {c1:'You want to study.',c2:'Do you want to study?',ar:'you → Do'},
+      {c1:'She wants to swim.',c2:'Does she want to swim?',ar:'she → Does + want to'},
+    ],
+    examples:[
+      {s:'Do you want to study at the library? — No, I don\'t.',tr:'هل تريد أن تذاكر في المكتبة؟ — لا.',ar:'Do you want to',ok:true},
+      {s:'Does he want to learn English? — Yes, he does.',tr:'هل يريد أن يتعلّم الإنجليزية؟ — نعم.',ar:'Does he want to',ok:true},
+      {s:'Does she wants to buy a car?',wrong:'wants',right:'want',tr:'بعد Does يبقى want مجرّداً.',ok:false},
+    ]
+  },
+  {
+    title:'Past WH Questions with BE', ar:'أسئلة الماضي (Who/What/Where/When + was/were)',
+    rule:'للسؤال في الماضي عن الفاعل/الشيء/المكان/الوقت نستخدم Who·What·Where·When + was/were. was مع I·he·she·it، و were مع we·you·they.',
+    parts:[
+      {t:'Who + was …?',d:'عن الفاعل. Frank was in England. → Who was in England?'},
+      {t:'What + was …?',d:'عن الشيء. The book was on the table. → What was on the table?'},
+      {t:'Where + was/were …?',d:'عن المكان. Where was John last night? · Where were they?'},
+      {t:'When + was/were …?',d:'عن الوقت. When was your father in Venezuela? — Last year.'},
+    ],
+    check:{q:'_______ was in England last year? — Frank.',o:['What','Where','Who','When'],a:2,en:'السؤال عن الفاعل → Who',ar:'الجواب شخص (Frank) → Who'},
+    formula:[{t:'WH',c:'v'},{t:'+',c:'p'},{t:'was / were',c:'n'},{t:'+',c:'p'},{t:'…?',c:'k'}],
+    compare:[
+      {c1:'Frank was in England.',c2:'Who was in England?',ar:'الفاعل → Who'},
+      {c1:'They were at the snack bar.',c2:'Where were they?',ar:'المكان + جمع → Where were'},
+    ],
+    examples:[
+      {s:'Where were you last night?',tr:'أين كنت ليلة أمس؟',ar:'Where + were',ok:true},
+      {s:'When was your father in Venezuela?',tr:'متى كان والدك في فنزويلا؟',ar:'When + was',ok:true},
+      {s:'Where were John last night?',wrong:'were',right:'was',tr:'مع المفرد John نستخدم was.',ok:false},
+    ]
+  }
+],
 };
 
 // ═══════════════════════════════════════
@@ -460,6 +586,16 @@ l3:[
   {words:['Were','you','at','home','last','night'],ans:'Were you at home last night?',tr:'هل كنت في البيت ليلة أمس؟',ar:'سؤال ماضٍ بـ Were'},
   {words:['Where','are','you','from'],ans:'Where are you from?',tr:'من أين أنت؟',ar:'السؤال عن البلد'},
   {words:['Today','is','Tuesday','.','Yesterday','was','Monday'],ans:'Today is Tuesday. Yesterday was Monday.',tr:'اليوم الثلاثاء. أمس كان الاثنين.',ar:'اليوم/أمس + was'},
+],
+l4:[
+  {words:['He\'s','a','tall','man'],ans:"He's a tall man.",tr:'إنه رجل طويل.',ar:'الصفة قبل الاسم'},
+  {words:['My','brother','has','a','new','car'],ans:'My brother has a new car.',tr:'لدى أخي سيارة جديدة.',ar:'new + car'},
+  {words:['I','want','to','read','my','new','book'],ans:'I want to read my new book.',tr:'أريد أن أقرأ كتابي الجديد.',ar:'want to + verb'},
+  {words:['She',"doesn't",'want','to','work','today'],ans:"She doesn't want to work today.",tr:'لا تريد أن تعمل اليوم.',ar:'doesn\'t want to'},
+  {words:['Do','you','want','to','study','now'],ans:'Do you want to study now?',tr:'هل تريد أن تذاكر الآن؟',ar:'سؤال بـ Do want to'},
+  {words:['Who','was','in','England','last','year'],ans:'Who was in England last year?',tr:'مَن كان في إنجلترا العام الماضي؟',ar:'سؤال ماضٍ Who + was'},
+  {words:['Where','were','you','last','night'],ans:'Where were you last night?',tr:'أين كنت ليلة أمس؟',ar:'Where + were'},
+  {words:['When','was','John','at','the','library'],ans:'When was John at the library?',tr:'متى كان جون في المكتبة؟',ar:'When + was'},
 ],
 };
 
@@ -538,24 +674,60 @@ l3:[
   {q:"How was the movie?",o:["I am cold.","It was bad.","I was sick.","It was yesterday."],a:1,en:"How was → It was …",ar:'How was → It was (وصف)',tr:'كيف كان الفيلم؟ — كان سيّئاً.'},
   {q:"I was in Japan last year.",o:["I'm there now.","I was there one year ago.","I'm going there this year.","I'm going there next year."],a:1,en:"last year = one year ago",ar:'العام الماضي = قبل سنة',tr:'كنت في اليابان العام الماضي = قبل سنة.'},
 ],
+l4:[
+  {q:"Who was in the classroom this morning?",o:["It was the teacher.","It's the teacher.","There she is.","Here he is."],a:0,en:"Who + past → It was …",ar:'سؤال ماضٍ عن الفاعل → It was the teacher',tr:'مَن كان في الصفّ هذا الصباح؟ — المعلّم.'},
+  {q:"How are you?",o:["And you?","Yes, I am.","No, I'm not.","Fine, thanks."],a:3,en:"greeting → Fine, thanks",ar:'تحية → بخير، شكراً',tr:'كيف حالك؟ — بخير، شكراً.'},
+  {q:"Where were the students?",o:["Here they are.","There they are.","They were here.","They are here."],a:2,en:"Where + past → They were here",ar:'أين (ماضٍ) → كانوا هنا',tr:'أين كان الطلاب؟ — كانوا هنا.'},
+  {q:"It's time for lunch.",o:["I want to eat.","I'm fine, thanks.","Are you going there?","Do you have the time?"],a:0,en:"lunch time → want to eat",ar:'وقت الغداء → أريد أن آكل',tr:'حان وقت الغداء. — أريد أن آكل.'},
+  {q:"I don't have my book today.",o:["Do you want my pencil?","Do you want to go to the BX?","Do you want to look at my book?","Do you want to learn English?"],a:2,en:"no book → share a book",ar:'لا كتاب معه → أشاركه كتابي',tr:'ليس معي كتابي اليوم. — هل تريد أن تنظر في كتابي؟'},
+  {q:"Are you a student here?",o:["Yes, I am. I'm studying English.","Yes, I am. I work in this office.","No, I want to buy a car.","No, I'm not. I'm happy."],a:0,en:"student → studying English",ar:'طالب → أدرس الإنجليزية',tr:'هل أنت طالب هنا؟ — نعم، أدرس الإنجليزية.'},
+  {q:"She's enlisted in the Army.",o:["She's a colonel.","She's in the Air Force.","She's a Marine.","She's a soldier."],a:3,en:"enlisted Army → soldier",ar:'مُجنَّدة في الجيش → جندية',tr:'إنها مُجنَّدة في الجيش. — إنها جندية.'},
+  {q:"Where was Paul three months ago?",o:["He wanted to go.","He is living in Japan.","He was living in France.","He wanted to learn English."],a:2,en:"Where + past → was living",ar:'أين (ماضٍ) → كان يعيش في فرنسا',tr:'أين كان بول قبل ثلاثة أشهر؟ — كان يعيش في فرنسا.'},
+  {q:"Is the car old?",o:["Yes, it's right now.","Yes, it's tall.","No, it's a taxi.","No, it's new."],a:3,en:"old ↔ new",ar:'قديمة ↔ جديدة',tr:'هل السيارة قديمة؟ — لا، إنها جديدة.'},
+  {q:"I don't want to study now.",o:["When is your next class?","When do you want to study?","Where do you study English?","Where do you want to study?"],a:1,en:"not now → When do you want to?",ar:'ليس الآن → متى تريد؟',tr:'لا أريد أن أذاكر الآن. — متى تريد أن تذاكر؟'},
+  {q:"Were you in Houston last week?",o:["Yes, I am.","Yes, I was.","No, I don't.","No, I'm not."],a:1,en:"Were you → I was",ar:'Were you → Yes, I was',tr:'هل كنت في هيوستن الأسبوع الماضي؟ — نعم، كنت.'},
+  {q:"_______ in the lab?",o:["Who's","What","When","Where's"],a:0,en:"asking who → Who's",ar:'سؤال عن شخص في المختبر → Who\'s',tr:'مَن في المختبر؟'},
+  {q:"Hi. My name's Sam. I'm new here.",o:["It's cold here.","Fine, thanks. And you?","Do you have a new name?","It's nice to meet you."],a:3,en:"introduction → nice to meet you",ar:'تعارف → سُررت بلقائك',tr:'مرحباً، اسمي سام، أنا جديد هنا. — سُررت بلقائك.'},
+  {q:"When were you in France?",o:["I'm taking the bus.","He was there last year.","I was there ten years ago.","I'm going to France tomorrow."],a:2,en:"When + past → ago",ar:'متى (ماضٍ) → قبل عشر سنوات',tr:'متى كنت في فرنسا؟ — قبل عشر سنوات.'},
+  {q:"She doesn't _______ work today.",o:["has","wants","want to","wants to"],a:2,en:"doesn't + want to",ar:'بعد doesn\'t نستخدم want to',tr:'لا تريد أن تعمل اليوم.'},
+  {q:"Mike doesn't eat hamburgers.",o:["He wants to eat chicken.","He is hungry.","He eats in the mess hall.","He walks to the snack bar."],a:0,en:"no hamburgers → wants chicken",ar:'لا يأكل الهمبرغر → يريد الدجاج',tr:'لا يأكل مايك الهمبرغر. — يريد أن يأكل الدجاج.'},
+  {q:"Where were you yesterday?",o:["It was at night.","I am going to the library.","I was at the library.","I am at the library now."],a:2,en:"Where + past → I was at …",ar:'أين (ماضٍ) → كنت في المكتبة',tr:'أين كنت أمس؟ — كنت في المكتبة.'},
+  {q:"What was the airman's name?",o:["It was Paul Jones.","I'm Paul Jones.","I was in the Air Force.","I'm in the Air Force."],a:0,en:"What was the name → It was …",ar:'ما كان الاسم → كان بول جونز',tr:'ما كان اسم الجندي الجوي؟ — كان بول جونز.'},
+  {q:"My sister is short. She wants to be _______.",o:["old","good","tall","here"],a:2,en:"short ↔ tall",ar:'قصيرة ↔ طويلة',tr:'أختي قصيرة، تريد أن تكون طويلة.'},
+  {q:"_______ you drive a car?",o:["Are","Does","Doesn't","Do"],a:3,en:"you → Do",ar:'مع you نستخدم Do',tr:'هل تقود سيارة؟'},
+  {q:"Mike is a colonel in the Air Force.",o:["He's a soldier.","He's an airman.","He's an officer.","He's enlisted."],a:2,en:"colonel → officer",ar:'العقيد ضابط → officer',tr:'مايك عقيد في القوات الجوية. — إنه ضابط.'},
+  {q:"_______ you in Canada this year?",o:["Was","Were","When","Where"],a:1,en:"you → Were",ar:'مع you نستخدم Were',tr:'هل كنت في كندا هذا العام؟'},
+  {q:"Where's my pen?",o:["Oh, there it is.","Oh, here they are.","Oh, where were they?","Oh, they were there."],a:0,en:"one pen → it",ar:'قلم واحد → it (there it is)',tr:'أين قلمي؟ — ها هو هناك.'},
+  {q:"Are you in the military?",o:["Yes, I'm a civilian.","No, I'm a civilian.","Yes, I'm going.","No, I'm a soldier."],a:1,en:"civilian = not military",ar:'مدني = ليس عسكرياً',tr:'هل أنت في الجيش؟ — لا، أنا مدني.'},
+  {q:"Do you know her?",o:["Yes, I know him.","Yes, I am.","No, I'm not.","No, I don't."],a:3,en:"Do you → I don't",ar:'Do you know → No, I don\'t',tr:'هل تعرفها؟ — لا، لا أعرفها.'},
+],
 };
 
 // ═══════════════════════════════════════
 // REVIEW — "المراجعة"
 // ═══════════════════════════════════════
+// المصدر: وحدة المراجعة الرسمية (Book 3 — Lesson 5 REVIEW · Exercise C) — تراجع الدروس ١–٤
 const REVIEW=[
-  {q:"He _______ breakfast in the dining hall every morning.",o:["eat","eats","eating","are eat"],a:1,en:"he → eats",ar:'مع he نضيف s → eats',tr:'يأكل الفطور في قاعة الطعام كل صباح.'},
-  {q:"They _______ to the mess hall at 6:45.",o:["goes","go","going","gone"],a:1,en:"they → go",ar:'مع they بلا s → go',tr:'يذهبون إلى المطعم الساعة ٦:٤٥.'},
-  {q:"Pvt Garcia _______ sleep late.",o:["don't","doesn't","not","isn't"],a:1,en:"he → doesn't",ar:'مع he نستخدم doesn\'t',tr:'لا ينام الجندي غارسيا متأخّراً.'},
-  {q:"_______ Hank and Stephen get up early?",o:["Does","Is","Do","Are"],a:2,en:"plural → Do",ar:'جمع → Do',tr:'هل يستيقظ هانك وستيفن مبكّراً؟'},
-  {q:"Does Betty drink coffee every afternoon? — Yes, she _______.",o:["do","does","is","doesn't"],a:1,en:"she → does",ar:'مع she → does',tr:'هل تشرب بيتي القهوة كل عصر؟ — نعم.'},
-  {q:"12 o'clock in the middle of the day is _______.",o:["midnight","night","noon","evening"],a:2,en:"midday → noon",ar:'منتصف النهار → الظُّهر',tr:'الساعة ١٢ في منتصف النهار هي الظُّهر.'},
-  {q:"12 o'clock at night is _______.",o:["noon","midnight","morning","afternoon"],a:1,en:"12 at night → midnight",ar:'منتصف الليل → midnight',tr:'الساعة ١٢ ليلاً هي منتصف الليل.'},
-  {q:"I take a _______ and shave in the morning.",o:["snack","shower","lesson","class"],a:1,en:"wash → shower",ar:'يغتسل → shower',tr:'أستحمّ وأحلق في الصباح.'},
-  {q:"He's very _______, so he wants to drink water.",o:["hungry","tired","thirsty","early"],a:2,en:"wants water → thirsty",ar:'يريد ماءً → عطشان',tr:'إنه عطشان جداً، لذا يريد شرب الماء.'},
-  {q:"I study my lesson in the _______ and go to bed at midnight.",o:["morning","evening","noon","a.m."],a:1,en:"study then sleep → evening",ar:'يذاكر ثم ينام → المساء',tr:'أذاكر درسي في المساء وأنام منتصف الليل.'},
-  {q:"Does Stephen study every night? — No, he _______.",o:["don't","isn't","doesn't","not"],a:2,en:"he → doesn't",ar:'مع he → doesn\'t',tr:'هل يذاكر ستيفن كل ليلة؟ — لا.'},
-  {q:"_______ eat fish for lunch. I want a salad.",o:["Let's","Do","Does","I'm"],a:0,en:"suggestion → Let's",ar:'اقتراح → Let\'s',tr:'لنأكل السمك على الغداء. أنا أريد سلطة.'},
+  {q:"Tim is in the Army. He's _______.",o:["a soldier","an airman","a civilian","a sailor"],a:0,en:"Army → soldier",ar:'في الجيش → جندي',tr:'تيم في الجيش، فهو جندي.'},
+  {q:"Sally's in the Navy. She's not an officer. She's _______.",o:["an airman","an enlisted person","a soldier","a civilian"],a:1,en:"not an officer → enlisted",ar:'ليست ضابطة → مُجنَّدة',tr:'سالي في البحرية وليست ضابطة، فهي مُجنَّدة.'},
+  {q:"Listen to the question. _______ the correct answer.",o:["Have","Leave","Select","Speak"],a:2,en:"choose → Select",ar:'اختر → Select',tr:'استمع للسؤال ثم اختر الإجابة الصحيحة.'},
+  {q:"I want to drink some water. I'm _______.",o:["late","hungry","thirsty","early"],a:2,en:"drink water → thirsty",ar:'يريد ماءً → عطشان',tr:'أريد أن أشرب ماءً، فأنا عطشان.'},
+  {q:"We go to lab _______ the afternoon.",o:["in","on","at","or"],a:0,en:"in the afternoon",ar:'in the afternoon',tr:'نذهب إلى المختبر بعد الظُّهر.'},
+  {q:"School children eat lunch _______ noon.",o:["on","in","at","or"],a:2,en:"at noon",ar:'at noon (مع الأوقات المحدّدة)',tr:'يأكل تلاميذ المدرسة الغداء عند الظُّهر.'},
+  {q:"Al wants to leave his country _______ March.",o:["in","for","at","on"],a:0,en:"in + month",ar:'مع الشهور نستخدم in → in March',tr:'يريد آل أن يغادر بلده في مارس.'},
+  {q:"Mike was in Canada _______ year.",o:["last","before","after","next"],a:0,en:"past → last year",ar:'ماضٍ → العام الماضي',tr:'كان مايك في كندا العام الماضي.'},
+  {q:"Today is Tuesday. _______ was Monday.",o:["Now","Yesterday","Tomorrow","There"],a:1,en:"day before → Yesterday",ar:'اليوم السابق → أمس',tr:'اليوم الثلاثاء، وأمس كان الاثنين.'},
+  {q:"My father eats dinner at 6:00 every _______.",o:["morning","evening","midnight","noon"],a:1,en:"dinner → evening",ar:'العشاء → المساء',tr:'يتناول أبي العشاء الساعة ٦:٠٠ كل مساء.'},
+  {q:"This month is March. Next month is _______.",o:["May","June","February","April"],a:3,en:"after March → April",ar:'بعد مارس → أبريل',tr:'هذا الشهر مارس، والشهر القادم أبريل.'},
+  {q:"Joe is always in our classroom before class. He comes to class _______.",o:["late","after","before","early"],a:3,en:"before class → early",ar:'قبل الحصّة → مبكّراً',tr:'جو دائماً في الصفّ قبل الحصّة، فهو يأتي مبكّراً.'},
+  {q:"_______ do your friends swim?",o:["Sometimes","How many","How often","Always"],a:2,en:"asking frequency → How often",ar:'سؤال عن التكرار → How often',tr:'كم مرّة يسبح أصدقاؤك؟'},
+  {q:"That man isn't short. He's a _______ man.",o:["new","small","young","tall"],a:3,en:"not short → tall",ar:'ليس قصيراً → طويل',tr:'ذلك الرجل ليس قصيراً، إنه رجل طويل.'},
+  {q:"I want a big dinner. I'm _______.",o:["angry","hungry","thirsty","tired"],a:1,en:"big dinner → hungry",ar:'عشاء كبير → جائع',tr:'أريد عشاءً كبيراً، فأنا جائع.'},
+  {q:"Circle a, b, c, or d on your answer _______.",o:["letter","test","number","sheet"],a:3,en:"answer sheet",ar:'ورقة الإجابة → answer sheet',tr:'ضع دائرة على a أو b أو c أو d في ورقة إجابتك.'},
+  {q:"The letter c is _______ the letter d in the alphabet.",o:["after","under","before","in"],a:2,en:"c before d",ar:'c قبل d',tr:'الحرف c قبل الحرف d في الأبجدية.'},
+  {q:"Let's go to the BX. _______, let's go now.",o:["All right","When","Always","Never"],a:0,en:"agreement → All right",ar:'موافقة → حسناً',tr:'لنذهب إلى الـ BX. — حسناً، لنذهب الآن.'},
+  {q:"Last month was November. This month is _______.",o:["October","December","September","January"],a:1,en:"after November → December",ar:'بعد نوفمبر → ديسمبر',tr:'الشهر الماضي كان نوفمبر، وهذا الشهر ديسمبر.'},
+  {q:"Do you eat breakfast every day? — Yes, I _______ eat breakfast.",o:["always","sometimes","right now","noon"],a:0,en:"every day → always",ar:'كل يوم → دائماً',tr:'هل تأكل الفطور كل يوم؟ — نعم، آكله دائماً.'},
 ];
 EE.review=REVIEW;
 
@@ -566,6 +738,7 @@ const FINAL=dedupe_by_q([
   ...EE.l1,
   ...EE.l2,
   ...EE.l3,
+  ...EE.l4,
 ]);
 EE.final=FINAL;
 
@@ -587,6 +760,11 @@ const SPELL_LESSONS=[
     {e:'country',a:'دولة',em:'🌍'},{e:'Egypt',a:'مصر',em:'🇪🇬'},{e:'France',a:'فرنسا',em:'🇫🇷'},
     {e:'January',a:'يناير',em:'📅'},{e:'August',a:'أغسطس',em:'📅'},{e:'dictionary',a:'قاموس',em:'📔'},
     {e:'minute',a:'دقيقة',em:'⏱️'},{e:'yesterday',a:'أمس',em:'⬅️'},{e:'review',a:'يُراجع',em:'♻️'},
+  ]},
+  {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 4 — الجيش والصفات',w:[
+    {e:'officer',a:'ضابط',em:'🎖️'},{e:'soldier',a:'جندي',em:'🪖'},{e:'civilian',a:'مدني',em:'👔'},
+    {e:'military',a:'الجيش',em:'🎖️'},{e:'tall',a:'طويل',em:'🦒'},{e:'young',a:'صغير السنّ',em:'🧒'},
+    {e:'colonel',a:'عقيد',em:'🎖️'},{e:'sailor',a:'بحّار',em:'⚓'},{e:'enlisted',a:'مُجنَّد',em:'🪖'},
   ]},
 ];
 

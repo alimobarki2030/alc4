@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap');
+/* الخطوط تُحمَّل الآن عبر <link> في رأس كل صفحة (مع preconnect) بدل @import
+   الذي كان يسبّب طلباً حاجباً متسلسلاً. لا تُعِد @import هنا. */
 :root{
   --g:#58CC02;--gd:#46A302;--b:#1CB0F6;--bd:#0A96DC;
   --r:#FF4B4B;--o:#FF9600;--y:#FFC800;--p:#CE82FF;--pur:#7C3AED;

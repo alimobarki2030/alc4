@@ -1,4 +1,4 @@
-const CACHE_NAME='alc-v68';
+const CACHE_NAME='alc-v69';
 // Audio lives in its own size-capped cache so 46 MB of mp3s can never pile
 // into (or get wiped alongside) the versioned app cache.
 const MEDIA_CACHE='alc-audio-v1';
@@ -19,7 +19,7 @@ const CORE_ASSETS=[
   '/js/concepts-pronouns.js','/js/concepts-modals.js','/js/concepts-time.js',
   '/js/concepts-irregular.js',
   '/js/data-book4.js','/js/data-book5.js','/js/data-book6.js','/js/data-book7.js','/js/data-book8.js','/js/data-book9.js','/js/data-book10.js','/js/data-book11.js','/js/data-book12.js',
-  '/alc.png','/icon-192.png','/icon-512.png','/hero-bg.jpg'
+  '/alc.png','/icon-192.png','/icon-512.png','/hero-bg.webp','/hero-bg.jpg'
 ];
 
 // A response is only safe to cache when it is a final same-origin 200 that

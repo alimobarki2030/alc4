@@ -1,4 +1,4 @@
-const CACHE_NAME='alc-v76';
+const CACHE_NAME='alc-v77';
 // Audio lives in its own size-capped cache so 46 MB of mp3s can never pile
 // into (or get wiped alongside) the versioned app cache.
 const MEDIA_CACHE='alc-audio-v1';

@@ -38,6 +38,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ALC">
+<link rel="preload" as="image" href="hero-bg.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -63,7 +66,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 
 .hero{padding:72px 20px 56px;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:-6px;
+  /* JPEG fallback via the shorthand; WebP where supported (image-set). */
   background:url('hero-bg.jpg') center 20%/cover no-repeat;
+  background-image:image-set(url('hero-bg.webp') type('image/webp'), url('hero-bg.jpg') type('image/jpeg'));
   filter:saturate(1.1);z-index:0}
 .hero::after{content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(10,16,32,.45) 0%,rgba(10,16,32,.6) 55%,rgba(10,16,32,.9) 100%);

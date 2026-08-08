@@ -134,7 +134,10 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .bc-title{font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;
   color:var(--navy);margin-bottom:4px;line-height:1}
 .bc-sub{font-size:.76rem;color:var(--muted);line-height:1.5}
-.bc-name{font-size:.98rem;font-weight:700;color:var(--txt);line-height:1.35}
+/* اسم الكتاب: الإنجليزي فوق (بارز) والعربي تحته (ثانوي) */
+.bc-name-en{font-family:'Inter',sans-serif;font-size:1.02rem;font-weight:800;
+  color:var(--txt);line-height:1.25;direction:ltr;text-align:right}
+.bc-name{font-size:.82rem;font-weight:600;color:var(--muted);line-height:1.4;margin-top:2px}
 
 .bc-topics{display:flex;flex-wrap:wrap;gap:5px;padding:0 16px 12px}
 .chip{font-size:.62rem;font-weight:700;padding:3px 8px;border-radius:20px}
@@ -172,7 +175,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .book-card.current .bc-num,
 .book-card.current .bc-title{color:#fff}
 .book-card.current .bc-sub,
-.book-card.current .bc-name{color:#fff}
+.book-card.current .bc-name-en{color:#fff}
+.book-card.current .bc-name{color:rgba(255,255,255,.9)}
 .book-card.current .chip{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.38)}
 .book-card.current .bc-footer{border-top-color:rgba(255,255,255,.28)}
 .book-card.current .prog-bar{background:rgba(255,255,255,.32)}
@@ -452,25 +456,25 @@ html.splash-seen #splash{display:none}
 const CURRENT_BOOK='book5';
 
 const BOOKS=[
-  {id:'book3',num:3,href:'book3',title:'3',name:'الحياة اليومية',sub:'الحياة اليومية · المضارع البسيط · أوقات اليوم',
+  {id:'book3',num:3,href:'book3',title:'3',name:'الحياة اليومية',nameEn:'Daily Life',sub:'الحياة اليومية · المضارع البسيط · أوقات اليوم',
     topics:['Present · Past BE','WH · How many','want to · الصفات'],cls:'b3',lessons:4,available:true},
-  {id:'book4',num:4,href:'book4',title:'4',name:'الماضي البسيط',sub:'الماضي البسيط · الملابس · الرياضة',
+  {id:'book4',num:4,href:'book4',title:'4',name:'الماضي البسيط',nameEn:'The Simple Past',sub:'الماضي البسيط · الملابس · الرياضة',
     topics:['Simple Past','can / must','in · on · at'],cls:'b4',lessons:4,available:true},
-  {id:'book5',num:5,href:'book5',title:'5',name:'الجسم والصحة',sub:'جسم الإنسان · الصحة · التسوّق',
+  {id:'book5',num:5,href:'book5',title:'5',name:'الجسم والصحة',nameEn:'Body & Health',sub:'جسم الإنسان · الصحة · التسوّق',
     topics:["What's Wrong?",'Body Parts'],cls:'b5',lessons:4,available:true},
-  {id:'book6',num:6,href:'book6',title:'6',name:'الطقس والسفر',sub:'الطقس · السفر · البريد · الإجازات',
+  {id:'book6',num:6,href:'book6',title:'6',name:'الطقس والسفر',nameEn:'Weather & Travel',sub:'الطقس · السفر · البريد · الإجازات',
     topics:["How's the Weather?",'Taking a Trip','Sending Mail',"Let's Take a Vacation"],cls:'b6',lessons:4,available:true},
-  {id:'book7',num:7,href:'book7',title:'7',name:'المقارنة والأشكال',sub:'الأشكال · الرياضيات · البيوت · الأثاث',
+  {id:'book7',num:7,href:'book7',title:'7',name:'المقارنة والأشكال',nameEn:'Comparison & Shapes',sub:'الأشكال · الرياضيات · البيوت · الأثاث',
     topics:['Comparative','Superlative','Purpose (to/for)'],cls:'b7',lessons:4,available:true},
-  {id:'book8',num:8,href:'book8',title:'8',name:'الاتجاهات والهاتف',sub:'الاتجاهات · اللياقة · الهاتف · الرسائل والسكن',
+  {id:'book8',num:8,href:'book8',title:'8',name:'الاتجاهات والهاتف',nameEn:'Directions & Phone',sub:'الاتجاهات · اللياقة · الهاتف · الرسائل والسكن',
     topics:['Directions','to + verb','may/might','tell · telling time'],cls:'b8',lessons:4,available:true},
-  {id:'book9',num:9,href:'book9',title:'9',name:'البنوك والنصيحة',sub:'البنوك · الحوادث · النصيحة · السفر',
+  {id:'book9',num:9,href:'book9',title:'9',name:'البنوك والنصيحة',nameEn:'Banking & Advice',sub:'البنوك · الحوادث · النصيحة · السفر',
     topics:['Banking','should / could','adjective + that','apologize'],cls:'b9',lessons:4,available:true},
-  {id:'book10',num:10,href:'book10',title:'10',name:'الآلات والعائلة',sub:'آلات البيع · التعارف · الإطار · العائلة',
+  {id:'book10',num:10,href:'book10',title:'10',name:'الآلات والعائلة',nameEn:'Machines & Family',sub:'آلات البيع · التعارف · الإطار · العائلة',
     topics:['Vending machines','would / could','be able to','family & jobs'],cls:'b10',lessons:4,available:true},
-  {id:'book11',num:11,href:'book11',title:'11',name:'الطبّ والطريق',sub:'الطبّ · الطريق · الاسترداد · التلفاز',
+  {id:'book11',num:11,href:'book11',title:'11',name:'الطبّ والطريق',nameEn:'Medicine & Road',sub:'الطبّ · الطريق · الاسترداد · التلفاز',
     topics:['Medical appointments','Rules of the road',"I'd like a refund",'How was the show?'],cls:'b11',lessons:4,available:true},
-  {id:'book12',num:12,href:'book12',title:'12',name:'السفر والتعليم',sub:'السفر · التعليم · البناء · الهوايات',
+  {id:'book12',num:12,href:'book12',title:'12',name:'السفر والتعليم',nameEn:'Travel & Education',sub:'السفر · التعليم · البناء · الهوايات',
     topics:['See the USA!','Education','Remodeling','used to / would'],cls:'b12',lessons:4,available:true},
 ];
 
@@ -488,6 +492,7 @@ function render_books(){
           <div class="bc-accent">${svgIco('book')}</div>
           <div class="bc-num">Book ${b.num}</div>
           <div class="bc-title">${b.title}</div>
+          <div class="bc-name-en" dir="ltr">${b.nameEn}</div>
           <div class="bc-name">${b.name}</div>
         </div>
       </a>`;
@@ -498,6 +503,7 @@ function render_books(){
         <div class="bc-accent">${svgIco('book')}</div>
         <div class="bc-num">Book ${b.num}</div>
         <div class="bc-title">${b.title}</div>
+        <div class="bc-name-en" dir="ltr">${b.nameEn}</div>
         <div class="bc-name">${b.name}</div>
       </div>
     </div>`;

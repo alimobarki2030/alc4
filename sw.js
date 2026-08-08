@@ -1,7 +1,9 @@
-const CACHE_NAME='alc-v78';
-// Audio lives in its own size-capped cache so 46 MB of mp3s can never pile
+const CACHE_NAME='alc-v79';
+// Audio lives in its own size-capped cache so the mp3s can never pile
 // into (or get wiped alongside) the versioned app cache.
-const MEDIA_CACHE='alc-audio-v1';
+// v2: audio re-generated at higher fidelity (48kHz/192kbps) — bumping the
+// name drops the old low-quality clips so clients re-fetch the upgrade.
+const MEDIA_CACHE='alc-audio-v2';
 const MEDIA_MAX=250;
 // cleanUrls is enabled on Vercel, so navigations use extensionless paths
 // (/book4, not /book4.html). Precaching the extensionless URLs means the

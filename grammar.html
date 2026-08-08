@@ -96,6 +96,17 @@ footer span{color:#FFC800;font-weight:700}
 #access-gate #ag-submit:hover{filter:brightness(1.15)}
 #access-gate #ag-submit:disabled{opacity:.6;cursor:default}
 #access-gate .ag-err{margin-top:12px;font-size:.78rem;color:#FF4B4B;font-weight:600;min-height:1em}
+
+/* ═══ الوضع الليلي (Dark Mode) — تلقائي حسب إعداد الجهاز ═══
+   بطاقات القواعد متدرّجة الألوان تبقى كما هي؛ تُضاء عناوين الصفحة الكحلية. */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0E1524;--card:#182138;--txt:#E6EBF5;--muted:#9AA6BF;--bdr:#2B3658;
+  }
+  body{background:var(--bg);color:var(--txt)}
+  .page-hero .ico,.page-hero h1,
+  #access-gate .ag-brand,#access-gate h2{color:var(--txt)}
+}
 </style>
 <script src="js/error-report.js"></script>
 </head>

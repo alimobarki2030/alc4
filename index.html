@@ -238,6 +238,36 @@ html.splash-seen #splash{display:none}
 .splash-bar{width:200px;height:4px;background:rgba(255,255,255,.15);border-radius:4px;margin-top:20px;overflow:hidden}
 .splash-fill{height:4px;background:var(--g);border-radius:4px;animation:load 2.5s ease forwards}
 @keyframes load{from{width:0%}to{width:100%}}
+
+/* ═══ الوضع الليلي (Dark Mode) — تلقائي حسب إعداد الجهاز ═══
+   يبقى --navy داكناً (خلفيات الفوتر/السبلاش/البادج)، وتُضاء النصوص الكحلية،
+   وتُغمَّق شارات الكتب حسب لونها (عدا الكتاب الحالي المميّز بالأخضر). */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0E1524;--card:#182138;--txt:#E6EBF5;--muted:#9AA6BF;--bdr:#2B3658;
+  }
+  body{background:var(--bg);color:var(--txt)}
+  .book-card:not(.current) .bc-title,.feat-t,
+  #access-gate .ag-brand,#access-gate h2{color:var(--txt)}
+  .b4:not(.current) .bc-accent{background:#13233C}
+  .b4:not(.current) .chip{background:#13233C;border-color:#284A72;color:#8EC5FF}
+  .b5:not(.current) .bc-accent{background:#211A38}
+  .b5:not(.current) .chip{background:#211A38;border-color:#3A2F68;color:#C4B0FF}
+  .b6:not(.current) .bc-accent{background:#0D2A30}
+  .b6:not(.current) .chip{background:#0D2A30;border-color:#1C4C55;color:#5FD8E8}
+  .b7:not(.current) .bc-accent{background:#2A2110}
+  .b7:not(.current) .chip{background:#2A2110;border-color:#5A4620;color:#F2C879}
+  .b8:not(.current) .bc-accent{background:#331521}
+  .b8:not(.current) .chip{background:#331521;border-color:#6B2A3E;color:#FF9DB6}
+  .b9:not(.current) .bc-accent{background:#1A1B3E}
+  .b9:not(.current) .chip{background:#1A1B3E;border-color:#33356C;color:#AAB4FF}
+  .b10:not(.current) .bc-accent{background:#2C1230}
+  .b10:not(.current) .chip{background:#2C1230;border-color:#54245B;color:#EAA0EE}
+  .b11:not(.current) .bc-accent{background:#0D2B26}
+  .b11:not(.current) .chip{background:#0D2B26;border-color:#1B5349;color:#5EE9CE}
+  .b12:not(.current) .bc-accent{background:#2C1C0D}
+  .b12:not(.current) .chip{background:#2C1C0D;border-color:#573719;color:#F5B37A}
+}
 </style>
 <script src="js/error-report.js"></script>
 </head>

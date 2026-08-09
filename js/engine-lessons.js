@@ -423,7 +423,30 @@ function drill_type(lk){
     st.wrong=true;inp.classList.remove('no');void inp.offsetWidth;inp.classList.add('no');
     fb.textContent='❌ حاول مرة أخرى';fb.style.color='var(--r)';
     inp.focus();setTimeout(()=>{inp.classList.remove('no');},600);
+    // شبكة أمان: العربية فيها مرادفات صحيحة كثيرة قد لا يلتقطها المطابِق.
+    // نعرض للطالب زرًّا لاعتماد إجابته إن كان واثقًا أنها صحيحة.
+    const dq=document.querySelector('#ph-practice .dq');
+    if(dq&&!document.getElementById('dq-self')){
+      const sb=document.createElement('button');
+      sb.id='dq-self';sb.className='sp-skip';sb.textContent='إجابتي صحيحة ✓';
+      sb.onclick=()=>drill_accept_self(lk);
+      const skip=dq.querySelector('.sp-skip');
+      if(skip)skip.insertAdjacentElement('beforebegin',sb);else dq.appendChild(sb);
+    }
   }
+}
+// الطالب أكّد أن إجابته المكتوبة صحيحة (مرادف لم يلتقطه المطابِق) —
+// نعتمدها، نُظهر الإجابة المرجعية للفائدة، ونمنحه النقاط.
+function drill_accept_self(lk){
+  const st=drill[lk],w=st.items[st.idx].w;
+  const inp=document.getElementById('dq-input'),fb=document.getElementById('dq-fb');
+  if(inp){inp.disabled=true;inp.classList.remove('no');inp.classList.add('ok');}
+  st.score++;
+  say(w.e.replace(/\(.*?\)/g,'').trim());
+  fb.innerHTML='✅ اعتُمدت إجابتك — <span dir="ltr">'+w.e.replace(/\(.*?\)/g,'').trim()+'</span> = '+coreAr(w.a);
+  fb.style.color='var(--g)';
+  XP+=3;document.getElementById('xp').textContent=XP;save_progress();
+  drill_next(lk);
 }
 function drill_reveal_type(lk){
   const st=drill[lk],dq=document.querySelector('#ph-practice .dq'),inp=document.getElementById('dq-input'),fb=document.getElementById('dq-fb'),w=st.items[st.idx].w;

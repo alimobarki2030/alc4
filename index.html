@@ -89,6 +89,14 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
 .stat-n{font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:900;color:#FFC800;line-height:1;text-shadow:0 1px 8px rgba(0,0,0,.4)}
 .stat-l{font-size:.72rem;color:rgba(255,255,255,.6);margin-top:3px;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.hero{cursor:pointer}
+.hero:focus-visible{outline:3px solid #58CC02;outline-offset:-4px;border-radius:14px}
+.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:26px;
+  color:rgba(255,255,255,.72);font-size:.72rem;font-weight:700;letter-spacing:.5px;
+  text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.scroll-cue svg{width:22px;height:22px;animation:cueBounce 1.8s ease-in-out infinite}
+@keyframes cueBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media(prefers-reduced-motion:reduce){.scroll-cue svg{animation:none}}
 
 .section{max-width:700px;margin:0 auto;padding:28px 16px 60px}
 .sec-label{font-size:.68rem;font-weight:700;color:var(--muted);letter-spacing:2px;
@@ -155,10 +163,6 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 
 .bc-footer{border-top:1px solid var(--bdr);padding:10px 14px;
   display:flex;align-items:center;gap:10px;margin-top:auto}
-.bc-progress{flex:1}
-.prog-bar{background:var(--bdr);border-radius:4px;height:4px;margin-bottom:4px}
-.prog-fill{height:4px;border-radius:4px;background:#58CC02;transition:width .6s}
-.prog-txt{font-size:.62rem;color:var(--muted);font-weight:600}
 .bc-cta{font-size:.75rem;font-weight:800;white-space:nowrap}
 .available .bc-cta{color:#1CB0F6}
 .coming .bc-cta{color:var(--muted)}
@@ -179,9 +183,6 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .book-card.current .bc-name{color:rgba(255,255,255,.9)}
 .book-card.current .chip{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.38)}
 .book-card.current .bc-footer{border-top-color:rgba(255,255,255,.28)}
-.book-card.current .prog-bar{background:rgba(255,255,255,.32)}
-.book-card.current .prog-fill{background:#fff}
-.book-card.current .prog-txt{color:rgba(255,255,255,.9)}
 .cur-badge{position:absolute;top:10px;right:10px;z-index:2;background:#fff;color:#3E9302;
   font-size:.6rem;font-weight:800;padding:3px 9px;border-radius:8px;letter-spacing:.3px;
   box-shadow:0 2px 6px rgba(0,0,0,.18)}
@@ -197,11 +198,19 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .ghc-txt p{color:rgba(255,255,255,.85);font-size:.72rem;line-height:1.5}
 .ghc-arrow{flex:none;color:#fff;font-size:1.3rem;font-weight:900}
 
-.features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
-.feat{background:var(--card);border-radius:14px;padding:14px;border:1.5px solid var(--bdr)}
-.feat-ico{font-size:1.3rem;margin-bottom:6px}
-.feat-t{font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:2px}
-.feat-s{font-size:.7rem;color:var(--muted);line-height:1.5}
+/* بطاقات تعريفية (معلومات فقط، ليست أزرارًا): تخطيط أفقي مسطّح بلا إطار
+   بطاقة ولا تأثير ضغط — يتميّز بصريًا عن بطاقات الكتب القابلة للنقر. */
+.features{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px;margin-bottom:28px;
+  cursor:default}
+.feat{display:flex;gap:11px;align-items:flex-start;padding:12px 2px}
+.feat+.feat{border-top:0}
+.feat-ico{flex:none;width:36px;height:36px;border-radius:10px;background:var(--bg);
+  border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:1.05rem}
+.feat-ico .svgico{width:19px;height:19px}
+.feat-txt{flex:1;min-width:0;padding-top:1px}
+.feat-t{font-size:.84rem;font-weight:800;color:var(--txt);margin-bottom:2px}
+.feat-s{font-size:.72rem;color:var(--muted);line-height:1.55}
 
 footer{background:var(--navy);padding:20px;text-align:center}
 footer p{color:rgba(255,255,255,.4);font-size:.75rem}
@@ -394,11 +403,18 @@ html.splash-seen #splash{display:none}
     <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
   </symbol>
+
+  <symbol id="icon-cloud-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m2 2 20 20" />
+    <path d="M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193" />
+    <path d="M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07" />
+  </symbol>
 </svg>
 <script src="js/access-gate.js"></script>
 
 
-<div class="hero">
+<div class="hero" role="button" tabindex="0" aria-label="اذهب إلى قائمة الكتب"
+     onclick="scrollToBooks()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToBooks();}">
   <nav>
     <div class="nav-logo">
       <div class="alc">ALC<span>.</span></div>
@@ -414,9 +430,13 @@ html.splash-seen #splash{display:none}
     <div><div class="stat-n">+200</div><div class="stat-l">سؤال</div></div>
     <div><div class="stat-n" id="stat-lessons">12</div><div class="stat-l">دروس</div></div>
   </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span>تصفّح الكتب</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+  </div>
 </div>
 
-<div class="section">
+<div class="section" id="books">
   <div class="sec-label">الكتب</div>
   <div class="books-grid" id="books-grid"></div>
 
@@ -432,12 +452,12 @@ html.splash-seen #splash{display:none}
 
   <div class="sec-label">ميزات الموقع</div>
   <div class="features">
-    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-library"></use></svg></div><div class="feat-t">تعلّم بالخطوات</div><div class="feat-s">قواعد مبسّطة بأمثلة من الحياة اليومية</div></div>
-    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-target"></use></svg></div><div class="feat-t">تمارين تفاعلية</div><div class="feat-s">ترتيب جمل، اختيار متعدد، وإملاء صوتي</div></div>
-    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></div><div class="feat-t">اختبارات رسمية</div><div class="feat-s">الأسئلة مأخوذة مباشرة من الكتاب</div></div>
-    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></div><div class="feat-t">استماع ونطق</div><div class="feat-s">كل كلمة وجملة يمكن سماعها بالصوت</div></div>
-    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-bar-chart-3"></use></svg></div><div class="feat-t">تتبّع التقدم</div><div class="feat-s">يحفظ درجاتك تلقائياً</div></div>
-    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-refresh-cw"></use></svg></div><div class="feat-t">مراجعة الأفعال الشاذة</div><div class="feat-s">بطاقات تفاعلية مرتّبة بالعائلات</div></div>
+    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-library"></use></svg></div><div class="feat-txt"><div class="feat-t">تعلّم بالخطوات</div><div class="feat-s">قواعد مبسّطة بأمثلة من الحياة اليومية</div></div></div>
+    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-target"></use></svg></div><div class="feat-txt"><div class="feat-t">تمارين تفاعلية</div><div class="feat-s">ترتيب جمل، اختيار متعدد، وإملاء صوتي</div></div></div>
+    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></div><div class="feat-txt"><div class="feat-t">اختبارات رسمية</div><div class="feat-s">الأسئلة مأخوذة مباشرة من الكتاب</div></div></div>
+    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></div><div class="feat-txt"><div class="feat-t">استماع ونطق</div><div class="feat-s">كل كلمة وجملة يمكن سماعها بالصوت</div></div></div>
+    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-cloud-off"></use></svg></div><div class="feat-txt"><div class="feat-t">يعمل بلا إنترنت</div><div class="feat-s">ثبّته كتطبيق واستخدمه في أي وقت بلا اتصال</div></div></div>
+    <div class="feat"><div class="feat-ico"><svg class="svgico" aria-hidden="true"><use href="#icon-refresh-cw"></use></svg></div><div class="feat-txt"><div class="feat-t">مراجعة الأفعال الشاذة</div><div class="feat-s">بطاقات تفاعلية مرتّبة بالعائلات</div></div></div>
   </div>
 </div>
 
@@ -478,6 +498,15 @@ const BOOKS=[
     topics:['See the USA!','Education','Remodeling','used to / would'],cls:'b12',lessons:4,available:true},
 ];
 
+// النقر على الهيرو (أو Enter/Space) ينزل بسلاسة إلى قائمة الكتب — يحترم
+// تفضيل تقليل الحركة فيقفز مباشرة بدل التمرير المتحرّك.
+function scrollToBooks(){
+  const el=document.getElementById('books');
+  if(!el)return;
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+}
+
 const svgIco=n=>`<svg class="svgico" aria-hidden="true"><use href="#icon-${n}"></use></svg>`;
 
 function render_books(){
@@ -515,20 +544,6 @@ function render_books(){
   if(lessonCount)lessonCount.textContent=avail.reduce((s,b)=>s+(b.lessons||0),0);
 }
 render_books();
-
-BOOKS.filter(b=>b.available).forEach(b=>{
-  try{
-    const data=JSON.parse(localStorage.getItem(`alc_${b.id}_progress`));
-    if(!data)return;
-    const done=Object.values(data.lessons||{}).filter(l=>l&&l.done).length;
-    const pct=Math.round(done/b.lessons*100);
-    const fill=document.getElementById('prog-'+b.id);
-    const txt=document.getElementById('prog-'+b.id+'-txt');
-    if(fill)fill.style.width=pct+'%';
-    if(txt)txt.textContent=
-      pct===0?'':pct===100?`مكتمل ✓ · ${data.xp||0} XP`:`${done} من ${b.lessons} دروس · ${data.xp||0} XP`;
-  }catch(e){}
-});
 </script>
 <script>
 if('serviceWorker' in navigator){

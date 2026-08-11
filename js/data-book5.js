@@ -70,7 +70,7 @@ l1:[
   {e:'ordinal',a:'ترتيبي (الأعداد الترتيبية)',em:'🔢',icon:'list-ordered'},
   {e:'right',a:'يمين / صحيح',em:'✅'},
   {e:'short',a:'قصير',em:'🤏'},
-  {e:'sore',a:'مؤلم / ملتهب',em:'🤒'},
+  {e:'sore',a:'ملتهب / مؤلم',em:'🤒'},
   {e:'then',a:'ثمّ / حينها',em:'⏭️'},
   {e:'which',a:'أيّ',em:'❓'},
 ],
@@ -673,7 +673,7 @@ const SPELL_LESSONS=[
   {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 1 — جسم الإنسان والصحة',w:[
     {e:'head',a:'الرأس',em:'🤕'},{e:'hand',a:'اليد',em:'✋'},{e:'leg',a:'الساق',em:'🦵'},
     {e:'nose',a:'الأنف',em:'👃'},{e:'ear',a:'الأذن',em:'👂'},{e:'hurt',a:'يؤلم',em:'🤕'},
-    {e:'sore',a:'مؤلم',em:'🤒'}]},
+    {e:'sore',a:'ملتهب / مؤلم',em:'🤒'}]},
   {t:'<svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg> Lesson 2 — أدوات الحمام والتسوّق',w:[
     {e:'soap',a:'الصابون',em:'🧼'},{e:'towel',a:'المنشفة',em:'🧺'},{e:'sink',a:'المغسلة',em:'🚰'},
     {e:'mirror',a:'المرآة',em:'🪞'},{e:'comb',a:'المشط',em:'🪮'},{e:'sugar',a:'السكر',em:'🧁'},

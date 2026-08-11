@@ -199,6 +199,11 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .ghc-txt p{color:rgba(255,255,255,.85);font-size:.72rem;line-height:1.5}
 .ghc-arrow{flex:none;color:#fff;font-size:1.3rem;font-weight:900}
 
+.listen-hub-card{display:flex;align-items:center;gap:16px;
+  background:linear-gradient(135deg,#FF5252,#C1121F);border-radius:20px;padding:20px;
+  text-decoration:none;margin-bottom:28px;transition:all .2s}
+.listen-hub-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(193,18,31,.3)}
+
 /* بطاقات تعريفية (معلومات فقط، ليست أزرارًا): تخطيط أفقي مسطّح بلا إطار
    بطاقة ولا تأثير ضغط — يتميّز بصريًا عن بطاقات الكتب القابلة للنقر. */
 .features{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px;margin-bottom:28px;
@@ -447,6 +452,16 @@ html.splash-seen #splash{display:none}
     <div class="ghc-txt">
       <h3>تعلم القواعد</h3>
       <p>شرح مبسّط للقواعد الأساسية بأمثلة وتمارين تفاعلية</p>
+    </div>
+    <div class="ghc-arrow">←</div>
+  </a>
+
+  <div class="sec-label">استماع A1</div>
+  <a class="listen-hub-card" href="listening">
+    <div class="ghc-icon"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></div>
+    <div class="ghc-txt">
+      <h3>تدريب الاستماع للمبتدئين</h3>
+      <p>قائمة استماع A1 بنطق أصلي وترجمة — استمع ودرّب أذنك على الإنجليزية اليومية</p>
     </div>
     <div class="ghc-arrow">←</div>
   </a>

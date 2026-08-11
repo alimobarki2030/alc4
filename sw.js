@@ -1,4 +1,4 @@
-const CACHE_NAME='alc-v88';
+const CACHE_NAME='alc-v89';
 // Audio lives in its own size-capped cache so the mp3s can never pile
 // into (or get wiped alongside) the versioned app cache.
 // v2: audio re-generated at higher fidelity (48kHz/192kbps) — bumping the
@@ -70,6 +70,17 @@ self.addEventListener('fetch',e=>{
   // immediately (no more new-HTML-with-stale-data skew); fall back to the
   // cached page, then the app shell, when offline.
   if(req.mode==='navigate'){
+    // Canonicalize any .html navigation to its clean URL (/index.html → /,
+    // /book5.html → /book5). This matches the server's cleanUrls redirect,
+    // but doing it in the SW means a stale cache keyed on the .html URL can
+    // never pin an old page, and we never return a *redirected* response for
+    // a navigation (which WebKit rejects → blank/old page).
+    const u=new URL(req.url);
+    if(u.pathname.endsWith('.html')){
+      const clean=u.pathname==='/index.html'?'/':u.pathname.slice(0,-5);
+      e.respondWith(Response.redirect(u.origin+clean,301));
+      return;
+    }
     e.respondWith(
       fetch(req).then(res=>{
         if(cacheable(res)){const clone=res.clone();caches.open(CACHE_NAME).then(c=>c.put(req,clone));}

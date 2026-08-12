@@ -238,6 +238,13 @@
       <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B</p>
     </div>
   </div>
+  <div class="yt-card" onclick="open_lc()" style="margin-top:12px;background:linear-gradient(135deg,#1CB0F6,#0A96DC)">
+    <div class="ac-ic">🔊</div>
+    <div class="pc-txt">
+      <h3 style="color:#fff">فهم المسموع</h3>
+      <p style="color:rgba(255,255,255,.9)">استمع لفقرة قصيرة وأجب — من محتوى الكتاب</p>
+    </div>
+  </div>
 
   <div class="lbl" style="margin-top:20px">الكتابة</div>
   <div class="spell-card" onclick="open_spell()">
@@ -255,6 +262,16 @@
     <p>جميع أسئلة التقييم</p>
     <span class="fc-badge" id="final-badge">ابدأ الاختبار</span>
   </div>
+</div>
+
+<!-- LISTENING COMPREHENSION SCREEN -->
+<div id="lcscreen">
+  <button class="back" onclick="go_home()">→ الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#1CB0F6,#0A96DC)">
+    <h2>فهم المسموع — Book 5 🔊</h2>
+    <p>استمع لفقرة قصيرة، ثم اختر الإجابة</p>
+  </div>
+  <div id="lc-stage"></div>
 </div>
 
 <!-- FINAL TEST SCREEN -->
@@ -385,5 +402,49 @@ if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
 }
 </script>
+<style>
+  #lc-stage .lc-play{display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:24px 18px;box-shadow:0 12px 30px rgba(26,39,68,.10);margin-top:16px}
+  #lc-stage .lc-btn{width:88px;height:88px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#1CB0F6,#0A96DC);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(28,176,246,.4);transition:transform .12s}
+  #lc-stage .lc-btn:active{transform:scale(.95)} #lc-stage .lc-btn svg{width:40px;height:40px}
+  #lc-stage .lc-hint{color:var(--muted);font-size:.85rem;font-weight:700}
+  #lc-stage .lc-prog{height:8px;background:var(--bdr);border-radius:100px;overflow:hidden;margin:14px 0}
+  #lc-stage .lc-fill{height:100%;background:var(--g);border-radius:100px;transition:width .3s}
+  #lc-stage .lc-opts{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+  #lc-stage .lc-opt{display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--bdr);border-radius:14px;padding:14px 16px;font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:1rem;font-weight:600;color:var(--txt);cursor:pointer}
+  #lc-stage .lc-opt:disabled{cursor:default} #lc-stage .lc-opt .b{flex:none;width:26px;height:26px;border-radius:7px;background:var(--bg);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;color:var(--muted)}
+  #lc-stage .lc-opt.ok{background:var(--ok-bg);border-color:var(--ok-txt);color:var(--ok-txt)} #lc-stage .lc-opt.ok .b{background:var(--ok-txt);color:#fff}
+  #lc-stage .lc-opt.no{background:var(--no-bg);border-color:var(--no-txt);color:var(--no-txt)}
+  #lc-stage .lc-next{width:100%;margin-top:16px;background:var(--g);color:#fff;border:none;border-radius:14px;padding:14px;font-family:'Cairo',sans-serif;font-weight:900;font-size:1rem;cursor:pointer;display:none}
+  #lc-stage .lc-done{text-align:center;background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:32px 20px;margin-top:16px}
+  #lc-stage .lc-done .e{font-size:2.6rem} #lc-stage .lc-done h3{color:var(--txt);margin:8px 0 4px} #lc-stage .lc-done p{color:var(--muted);font-weight:800;margin-bottom:16px}
+  #lc-stage .lc-again{background:var(--b);color:#fff;border:none;border-radius:12px;padding:12px 26px;font-family:'Cairo',sans-serif;font-weight:900;cursor:pointer}
+</style>
+<script>
+const LC_ITEMS=[{"id": "b5-1", "q": "What is wrong with Sami?", "o": ["a headache and a sore throat", "a broken leg", "a cold", "a stomachache"], "a": 0}, {"id": "b5-2", "q": "Where is Nora going?", "o": ["to the bank", "to the drugstore", "to the school", "to the hospital"], "a": 1}, {"id": "b5-3", "q": "How much is one bottle of shampoo?", "o": ["one dollar", "two dollars", "three dollars", "five dollars"], "a": 2}, {"id": "b5-4", "q": "How many towels are there?", "o": ["one", "two", "three", "four"], "a": 1}, {"id": "b5-5", "q": "What is sore?", "o": ["his knee", "his wrist", "his shoulder", "his ankle"], "a": 1}, {"id": "b5-6", "q": "How does Lina feel?", "o": ["happy", "hungry", "sick", "cold"], "a": 2}, {"id": "b5-7", "q": "How often should you take the medicine?", "o": ["once a day", "twice a day", "three times a day", "every hour"], "a": 1}, {"id": "b5-8", "q": "What color toothbrush does Sara like?", "o": ["red", "green", "blue", "white"], "a": 2}, {"id": "b5-9", "q": "What do we need to buy?", "o": ["milk", "eggs", "bread", "juice"], "a": 0}, {"id": "b5-10", "q": "When will Ali visit the dentist?", "o": ["today", "tomorrow", "next week", "on Sunday"], "a": 1}, {"id": "b5-11", "q": "How much are the shoes?", "o": ["ten dollars", "fifteen dollars", "twenty dollars", "twenty-five dollars"], "a": 2}, {"id": "b5-12", "q": "What can Maha buy?", "o": ["soap", "shampoo", "both of them", "nothing"], "a": 0}];
+const LC_ROUND=8;
+let lc_order=[],lc_idx=0,lc_correct=0,lc_ans=false,lc_cur=null,lc_a=null;
+function lc_shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function lc_play(id){if(lc_a){try{lc_a.pause();}catch(e){}}const x=new Audio('audio/listen/'+id+'.mp3');lc_a=x;x.play().catch(()=>{});}
+function open_lc(){show_screen('lcscreen');window.scrollTo({top:0,behavior:'smooth'});lc_start();}
+function lc_start(){lc_order=lc_shuffle(LC_ITEMS.slice()).slice(0,Math.min(LC_ROUND,LC_ITEMS.length));lc_idx=0;lc_correct=0;lc_render();}
+function lc_render(){
+  const s=document.getElementById('lc-stage');const N=lc_order.length;
+  if(lc_idx>=N){s.innerHTML='<div class="lc-done"><div class="e">'+(lc_correct>=Math.ceil(N*.8)?'🏆':(lc_correct>=Math.ceil(N*.5)?'👍':'📚'))+'</div><h3>انتهى</h3><p>نتيجتك: '+lc_correct+' / '+N+'</p><button class="lc-again" onclick="lc_start()">🔁 مرة أخرى</button></div>';return;}
+  lc_ans=false;const it=lc_order[lc_idx];lc_cur=it;const L=['A','B','C','D'];
+  s.innerHTML='<div class="lc-prog"><div class="lc-fill" style="width:'+(lc_idx/N*100)+'%"></div></div>'+
+    '<div class="lc-play"><button class="lc-btn" id="lcpb" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 5.6a9 9 0 0 1 0 12.7"/></svg></button><div class="lc-hint">🔊 استمع (الفقرة + السؤال)، ثم اختر</div></div>'+
+    '<div class="lc-opts">'+it.o.map((o,oi)=>'<button class="lc-opt" dir="ltr" onclick="lc_pick(this,'+oi+')"><span class="b">'+L[oi]+'</span><span>'+o+'</span></button>').join('')+'</div>'+
+    '<button class="lc-next" id="lcnext" onclick="lc_idx++;lc_render();">التالي ←</button>';
+  document.getElementById('lcpb').onclick=()=>lc_play(it.id);
+  setTimeout(()=>lc_play(it.id),400);
+}
+function lc_pick(btn,oi){
+  if(lc_ans)return;lc_ans=true;
+  const opts=document.querySelectorAll('#lc-stage .lc-opt');opts.forEach(b=>b.disabled=true);
+  if(oi===lc_cur.a){btn.classList.add('ok');lc_correct++;}else{btn.classList.add('no');opts[lc_cur.a].classList.add('ok');}
+  document.getElementById('lcnext').style.display='block';
+}
+</script>
+
 </body>
 </html>

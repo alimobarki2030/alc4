@@ -222,12 +222,26 @@
     </div>
   </div>
 
+  <div class="lbl" style="margin-top:20px">المراجعة</div>
+  <div class="final-card" style="background:linear-gradient(135deg,#0D9488,#0F766E);border-color:#5EEAD4" onclick="open_review()">
+    <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg></div>
+    <h3>Review — مراجعة</h3>
+    <span class="fc-badge" id="review-badge">ابدأ المراجعة</span>
+  </div>
+
   <div class="lbl">الاستماع</div>
   <div class="yt-card" onclick="open_yt()">
     <div class="ac-ic">🎧</div>
     <div class="pc-txt">
       <h3>استماع Book 4</h3>
       <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B · C</p>
+    </div>
+  </div>
+  <div class="yt-card" onclick="open_lc()" style="margin-top:12px;background:linear-gradient(135deg,#FCC419,#F59F00)">
+    <div class="ac-ic">🎧</div>
+    <div class="pc-txt">
+      <h3 style="color:#1A2744">مهارة الاستماع</h3>
+      <p style="color:rgba(26,39,68,.85)">استمع للجملة واختر الإجابة — نفس أسئلة المراجعة استماعًا</p>
     </div>
   </div>
 
@@ -285,6 +299,26 @@
     <p style="color:rgba(255,255,255,.75);font-size:.82rem;margin-top:4px">جميع أسئلة التقييم</p>
   </div>
   <div id="ph-final"></div>
+</div>
+
+<!-- REVIEW SCREEN -->
+<div id="rscreen">
+  <button class="back" onclick="go_home()">→ الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#0D9488,#0F766E)">
+    <h2>Review — مراجعة <svg class="svgico" aria-hidden="true"><use href="#icon-book"></use></svg></h2>
+    <p>مراجعة الواجب — F · O · M · E</p>
+  </div>
+  <div id="ph-review"></div>
+</div>
+
+<!-- LISTENING COMPREHENSION SCREEN -->
+<div id="lcscreen">
+  <button class="back" onclick="go_home()">→ الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#1CB0F6,#0A96DC)">
+    <h2>مهارة الاستماع — Book 4 🎧</h2>
+    <p>استمع للجملة، ثم اختر الإجابة</p>
+  </div>
+  <div id="lc-stage"></div>
 </div>
 
 <!-- PREPOSITIONS SCREEN -->
@@ -569,6 +603,50 @@
 <script>
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
+}
+</script>
+<style>
+  #lc-stage .lc-play{display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:24px 18px;box-shadow:0 12px 30px rgba(26,39,68,.10);margin-top:16px}
+  #lc-stage .lc-btn{width:88px;height:88px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#1CB0F6,#0A96DC);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(28,176,246,.4);transition:transform .12s}
+  #lc-stage .lc-btn:active{transform:scale(.95)} #lc-stage .lc-btn svg{width:40px;height:40px}
+  #lc-stage .lc-hint{color:var(--muted);font-size:.85rem;font-weight:700}
+  #lc-stage .lc-count{text-align:center;color:var(--muted);font-weight:900;font-size:.95rem;margin-bottom:4px}
+  #lc-stage .lc-prog{height:8px;background:var(--bdr);border-radius:100px;overflow:hidden;margin:14px 0}
+  #lc-stage .lc-fill{height:100%;background:var(--g);border-radius:100px;transition:width .3s}
+  #lc-stage .lc-opts{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+  #lc-stage .lc-opt{display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--bdr);border-radius:14px;padding:14px 16px;font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:1rem;font-weight:600;color:var(--txt);cursor:pointer}
+  #lc-stage .lc-opt:disabled{cursor:default} #lc-stage .lc-opt .b{flex:none;width:26px;height:26px;border-radius:7px;background:var(--bg);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;color:var(--muted)}
+  #lc-stage .lc-opt.ok{background:var(--ok-bg);border-color:var(--ok-txt);color:var(--ok-txt)} #lc-stage .lc-opt.ok .b{background:var(--ok-txt);color:#fff}
+  #lc-stage .lc-opt.no{background:var(--no-bg);border-color:var(--no-txt);color:var(--no-txt)}
+  #lc-stage .lc-next{width:100%;margin-top:16px;background:var(--g);color:#fff;border:none;border-radius:14px;padding:14px;font-family:'Cairo',sans-serif;font-weight:900;font-size:1rem;cursor:pointer;display:none}
+  #lc-stage .lc-done{text-align:center;background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:32px 20px;margin-top:16px}
+  #lc-stage .lc-done .e{font-size:2.6rem} #lc-stage .lc-done h3{color:var(--txt);margin:8px 0 4px} #lc-stage .lc-done p{color:var(--muted);font-weight:800;margin-bottom:16px}
+  #lc-stage .lc-again{background:var(--b);color:#fff;border:none;border-radius:12px;padding:12px 26px;font-family:'Cairo',sans-serif;font-weight:900;cursor:pointer}
+</style>
+<script>
+const LC_ITEMS=[{"id": "b4r-1", "q": "Mark: Do you write with your left hand? Bob: No, I write with my ______ hand.", "o": ["correct", "right", "wrong", "left"], "a": 1}, {"id": "b4r-2", "q": "Ron: My chair was here, not there. Who ______ my chair? Sam: The teacher did.", "o": ["sat in", "pointed to", "moved", "picked up"], "a": 2}, {"id": "b4r-3", "q": "The ______ doesn't have bones and is inside the mouth.", "o": ["tongue", "lip", "throat", "teeth"], "a": 0}, {"id": "b4r-4", "q": "We have two ______, one nose, and one mouth.", "o": ["necks", "teeth", "eyes", "ears"], "a": 2}, {"id": "b4r-5", "q": "Bill: When did you fly your last plane, Dad? Dad: September 4, 1980, was the last ______.", "o": ["date", "year", "month", "day"], "a": 0}, {"id": "b4r-6", "q": "Sam: My book is open. What do I do ______? Bob: Go to page 5.", "o": ["last", "one", "next", "first"], "a": 2}, {"id": "b4r-7", "q": "Tom fell asleep outside in the sun yesterday. Today his ______ is very red.", "o": ["skin", "bone", "muscle", "hair"], "a": 0}, {"id": "b4r-8", "q": "Lesson 1 of Book 5 is ______ the parts of the body.", "o": ["one", "of", "about", "with"], "a": 2}, {"id": "b4r-9", "q": "Linda: ______ with Peter? Jane: He has a sore throat.", "o": ["Take your medicine", "What's the matter", "Which one is sick", "Where is he"], "a": 1}, {"id": "b4r-10", "q": "Don't ______ the cup! It's very hot!", "o": ["hurt", "touch", "point to", "wash"], "a": 1}, {"id": "b4r-11", "q": "I can't see very well. The doctor is going to check my ______.", "o": ["bones", "fingers", "eyes", "ears"], "a": 2}, {"id": "b4r-12", "q": "First, I'm going to the BX. ______, I'm going to the commissary.", "o": ["Which", "Then", "Where", "Why"], "a": 1}, {"id": "b4r-13", "q": "Today is a beautiful day! It's the first day ______ spring.", "o": ["about", "then", "of", "in"], "a": 2}, {"id": "b4r-14", "q": "Greg needs to ______ his dirty clothes.", "o": ["dry", "soap", "rinse", "change"], "a": 3}, {"id": "b4r-15", "q": "The ______ of the book is planes.", "o": ["topic", "number", "thing", "letter"], "a": 0}, {"id": "b4r-16", "q": "Beth has ______ 3 dollars. She can't go to lunch.", "o": ["only", "a little", "a few", "doesn't"], "a": 0}, {"id": "b4r-17", "q": "There is ______ shampoo.", "o": ["a little", "any", "a few", "lots"], "a": 0}, {"id": "b4r-18", "q": "______ you buy toothpaste at a grocery store?", "o": ["Are", "What", "May", "Can"], "a": 3}, {"id": "b4r-19", "q": "Sherry needs to ______ her hair.", "o": ["washed", "washing", "will wash", "wash"], "a": 3}, {"id": "b4r-20", "q": "Dave washes his socks and then ______ them.", "o": ["changes", "brushes", "dries", "cleans"], "a": 2}, {"id": "b4r-21", "q": "There is ______ soap in the bathroom.", "o": ["any", "a lot of", "a few", "lots"], "a": 1}, {"id": "b4r-22", "q": "Chris ______ a haircut, tomorrow.", "o": ["to get", "got", "will get", "getting"], "a": 2}, {"id": "b4r-23", "q": "A: Which date is your birthday? B: The ______ of June.", "o": ["twenty five", "twenty five day", "twenty-fifth date", "twenty-fifth"], "a": 3}, {"id": "b4r-24", "q": "We cannot go inside the classroom. That man ______ the door.", "o": ["stopped", "turned", "locked", "pulled"], "a": 2}, {"id": "b4r-25", "q": "I hear music. Who ______ the radio?", "o": ["turned", "on", "turned on", "turned off"], "a": 2}, {"id": "b4r-26", "q": "The room was very hot. Tom ______ his chair next to the open window.", "o": ["pulled", "stopped", "picked up", "locked"], "a": 0}, {"id": "b4r-27", "q": "A: I want to turn off the TV. B: ______ the small button on the left.", "o": ["Sharpen", "Pack", "Turn off", "Push"], "a": 3}, {"id": "b4r-28", "q": "The students ______ their pencils early in the morning.", "o": ["sharpen", "come back", "stop", "turn on"], "a": 0}, {"id": "b4r-29", "q": "The two brothers will take a trip ______ in the summer.", "o": ["round-trip", "together", "off", "long"], "a": 1}, {"id": "b4r-30", "q": "Mark's plane departed at 3:00 p.m. It will arrive ______ at 10:30.", "o": ["together", "round-trip", "tonight", "long"], "a": 2}, {"id": "b4r-31", "q": "Does bus 3 ______ next to the hospital?", "o": ["stop", "turn off", "pick", "pack"], "a": 0}, {"id": "b4r-32", "q": "A: Do I lock the door? B: Yes, ______ the key to the right.", "o": ["stop", "turn on", "pull", "turn"], "a": 3}, {"id": "b4r-33", "q": "A: I want to buy a ______ ticket to Los Angeles. B: When do you want to return?", "o": ["round-trip", "reservation", "one-way", "graduate"], "a": 0}, {"id": "b4r-34", "q": "Anna has a ______ sister. They have the same birthday. They're 12 years old.", "o": ["twin", "together", "one-way", "first"], "a": 0}, {"id": "b4r-35", "q": "Jane is in her last year of school. She will ______ in the spring.", "o": ["meet", "graduate", "come back", "graduation"], "a": 1}, {"id": "b4r-36", "q": "There are ______ students in the classroom.", "o": ["many", "much", "how many", "how much"], "a": 0}, {"id": "b4r-37", "q": "Dan didn't eat ______ soup.", "o": ["many", "much", "how many", "how much"], "a": 1}, {"id": "b4r-38", "q": "Put the meat ______ two slices of bread to make a sandwich.", "o": ["half", "among", "between", "on"], "a": 2}, {"id": "b4r-39", "q": "I see a penny ______ all those quarters on the table.", "o": ["between", "among", "half", "on"], "a": 1}, {"id": "b4r-40", "q": "Who ______ the coffee? It's very good.", "o": ["made", "dialed", "had to", "took"], "a": 0}, {"id": "b4r-41", "q": "Yesterday, we had a ______ chairs in the classroom. Frank took two. Now there are only ten.", "o": ["ton", "half", "ounce", "dozen"], "a": 3}, {"id": "b4r-42", "q": "Do you want to have a ______ of cold milk with your chocolate pie?", "o": ["glass", "bowl", "dish", "piece"], "a": 0}, {"id": "b4r-43", "q": "I need to write a telephone number. Do you have a ______ of paper?", "o": ["slice", "tube", "half", "piece"], "a": 3}, {"id": "b4r-44", "q": "Jack doesn't like cake. His mother makes chocolate ______ for his birthday.", "o": ["cheese", "cookies", "dish", "fruit"], "a": 1}, {"id": "b4r-45", "q": "Potatoes, corn, and squash are ______.", "o": ["vegetables", "fruits", "sandwiches", "desserts"], "a": 0}];
+const LC_ROUND=45;
+let lc_order=[],lc_idx=0,lc_correct=0,lc_ans=false,lc_cur=null,lc_a=null;
+function lc_shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function lc_play(id){if(lc_a){try{lc_a.pause();}catch(e){}}const x=new Audio('audio/listen/'+id+'.mp3');lc_a=x;x.play().catch(()=>{});}
+function lc_stop(){if(lc_a){try{lc_a.pause();lc_a.currentTime=0;}catch(e){}lc_a=null;}}
+function open_lc(){show_screen('lcscreen');window.scrollTo({top:0,behavior:'smooth'});lc_start();}
+function lc_start(){lc_order=lc_shuffle(LC_ITEMS.slice()).slice(0,Math.min(LC_ROUND,LC_ITEMS.length));lc_idx=0;lc_correct=0;lc_render();}
+function lc_render(){
+  const s=document.getElementById('lc-stage');const N=lc_order.length;lc_stop();
+  if(lc_idx>=N){s.innerHTML='<div class="lc-done"><div class="e">'+(lc_correct>=Math.ceil(N*.8)?'🏆':(lc_correct>=Math.ceil(N*.5)?'👍':'📚'))+'</div><h3>انتهى</h3><p>نتيجتك: '+lc_correct+' / '+N+'</p><button class="lc-again" onclick="lc_start()">🔁 مرة أخرى</button></div>';return;}
+  lc_ans=false;const it=lc_order[lc_idx];lc_cur=it;const L=['A','B','C','D'];
+  s.innerHTML='<div class="lc-count">السؤال '+(lc_idx+1)+' / '+N+'</div><div class="lc-prog"><div class="lc-fill" style="width:'+(lc_idx/N*100)+'%"></div></div>'+
+    '<div class="lc-play"><button class="lc-btn" id="lcpb" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 5.6a9 9 0 0 1 0 12.7"/></svg></button><div class="lc-hint">اضغط للاستماع</div></div>'+
+    '<div class="lc-opts">'+it.o.map((o,oi)=>'<button class="lc-opt" dir="ltr" onclick="lc_pick(this,'+oi+')"><span class="b">'+L[oi]+'</span><span>'+o+'</span></button>').join('')+'</div>'+
+    '<button class="lc-next" id="lcnext" onclick="lc_idx++;lc_render();">التالي ←</button>';
+  document.getElementById('lcpb').onclick=()=>lc_play(it.id);
+}
+function lc_pick(btn,oi){
+  if(lc_ans)return;lc_ans=true;
+  const opts=document.querySelectorAll('#lc-stage .lc-opt');opts.forEach(b=>b.disabled=true);
+  if(oi===lc_cur.a){btn.classList.add('ok');lc_correct++;}else{btn.classList.add('no');opts[lc_cur.a].classList.add('ok');}
+  document.getElementById('lcnext').style.display='block';
 }
 </script>
 </body>

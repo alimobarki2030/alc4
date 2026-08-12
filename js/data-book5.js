@@ -690,5 +690,5 @@ const SPELL_LESSONS=[
 // ═══════════════════════════════════════
 // ROUTING MANIFEST
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','ytscreen','fscreen','rscreen','spscreen','mkscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',rscreen:'المراجعة',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};
+const SCREENS=['home','lscreen','ytscreen','lcscreen','fscreen','rscreen','spscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',lcscreen:'فهم المسموع',fscreen:'الاختبار النهائي',rscreen:'المراجعة',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};

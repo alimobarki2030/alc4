@@ -406,6 +406,7 @@ if('serviceWorker' in navigator){
   #lc-stage .lc-btn{width:88px;height:88px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#1CB0F6,#0A96DC);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(28,176,246,.4);transition:transform .12s}
   #lc-stage .lc-btn:active{transform:scale(.95)} #lc-stage .lc-btn svg{width:40px;height:40px}
   #lc-stage .lc-hint{color:var(--muted);font-size:.85rem;font-weight:700}
+  #lc-stage .lc-count{text-align:center;color:var(--muted);font-weight:900;font-size:.95rem;margin-bottom:4px}
   #lc-stage .lc-prog{height:8px;background:var(--bdr);border-radius:100px;overflow:hidden;margin:14px 0}
   #lc-stage .lc-fill{height:100%;background:var(--g);border-radius:100px;transition:width .3s}
   #lc-stage .lc-opts{display:flex;flex-direction:column;gap:10px;margin-top:16px}
@@ -424,13 +425,14 @@ const LC_ROUND=40;
 let lc_order=[],lc_idx=0,lc_correct=0,lc_ans=false,lc_cur=null,lc_a=null;
 function lc_shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function lc_play(id){if(lc_a){try{lc_a.pause();}catch(e){}}const x=new Audio('audio/listen/'+id+'.mp3');lc_a=x;x.play().catch(()=>{});}
+function lc_stop(){if(lc_a){try{lc_a.pause();lc_a.currentTime=0;}catch(e){}lc_a=null;}}
 function open_lc(){show_screen('lcscreen');window.scrollTo({top:0,behavior:'smooth'});lc_start();}
 function lc_start(){lc_order=lc_shuffle(LC_ITEMS.slice()).slice(0,Math.min(LC_ROUND,LC_ITEMS.length));lc_idx=0;lc_correct=0;lc_render();}
 function lc_render(){
-  const s=document.getElementById('lc-stage');const N=lc_order.length;
+  const s=document.getElementById('lc-stage');const N=lc_order.length;lc_stop();
   if(lc_idx>=N){s.innerHTML='<div class="lc-done"><div class="e">'+(lc_correct>=Math.ceil(N*.8)?'🏆':(lc_correct>=Math.ceil(N*.5)?'👍':'📚'))+'</div><h3>انتهى</h3><p>نتيجتك: '+lc_correct+' / '+N+'</p><button class="lc-again" onclick="lc_start()">🔁 مرة أخرى</button></div>';return;}
   lc_ans=false;const it=lc_order[lc_idx];lc_cur=it;const L=['A','B','C','D'];
-  s.innerHTML='<div class="lc-prog"><div class="lc-fill" style="width:'+(lc_idx/N*100)+'%"></div></div>'+
+  s.innerHTML='<div class="lc-count">السؤال '+(lc_idx+1)+' / '+N+'</div><div class="lc-prog"><div class="lc-fill" style="width:'+(lc_idx/N*100)+'%"></div></div>'+
     '<div class="lc-play"><button class="lc-btn" id="lcpb" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 5.6a9 9 0 0 1 0 12.7"/></svg></button><div class="lc-hint">اضغط للاستماع</div></div>'+
     '<div class="lc-opts">'+it.o.map((o,oi)=>'<button class="lc-opt" dir="ltr" onclick="lc_pick(this,'+oi+')"><span class="b">'+L[oi]+'</span><span>'+o+'</span></button>').join('')+'</div>'+
     '<button class="lc-next" id="lcnext" onclick="lc_idx++;lc_render();">التالي ←</button>';

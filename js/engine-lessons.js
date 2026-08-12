@@ -642,6 +642,13 @@ function open_mistakes(){
   build_quiz('ph-mistakes',deck,'mk');
 }
 
+// نصّ السؤال المنطوق: يُزيل رموز المتحدّثين (A: / Name:) فيُقرأ الحوار بشكل
+// طبيعي، ويحوّل الفراغ إلى «blank». مطابق لسكربت توليد الصوت.
+function _qSpoken(t){
+  return String(t)
+    .replace(/(^|[?.!]\s+)([A-Za-z][A-Za-z.' ]*?:\s*)/g,'$1')
+    .replace(/_+/g,'blank').replace(/\s+/g,' ').trim();
+}
 // يبدّل «وضع الاستماع»: يُخفي نصوص الأسئلة (تبقى الأرقام والصوت والخيارات).
 function toggle_listen(btn){
   const box=btn.closest('[id^="ph-"]')||btn.parentElement;
@@ -684,9 +691,11 @@ function build_quiz(elId,qs,prefix){
   qs.forEach((q,i)=>{
     const c=document.createElement('div');c.className='qcrd';c.id=`${prefix}c${i}`;
     const L=['A','B','C','D'];
+    // بوك 5 (تجربة): يُقرأ الصوت النصّ المنظّف بلا رموز المتحدّثين.
+    const spoken=(typeof BOOK_ID!=='undefined'&&BOOK_ID==='book5')?_qSpoken(q.q):q.q.replace(/_+/g,'blank');
     c.innerHTML=`<div class="qhdr">
       <div class="qtxt"><b class="qnum">${i+1}.</b> <span class="qbody">${q.q}</span></div>
-      <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
+      <button class="qspk" onclick="say('${spoken.replace(/'/g,"\\'")}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
     </div>
     <div class="opts" id="${prefix}o${i}">
       ${q.o.map((opt,oi)=>`<button class="opt" id="${prefix}op${i}${oi}"

@@ -216,17 +216,6 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
   font-family:'Inter',sans-serif;direction:ltr;text-align:left;line-height:1.6}
 .qspk{background:var(--b);border:none;border-radius:7px;width:30px;height:30px;color:#fff;
   display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.75rem;flex-shrink:0}
-/* وضع الاستماع للاختبار الشامل */
-.listen-toggle{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
-  background:var(--navy);color:#fff;border:none;border-radius:10px;padding:11px;margin-bottom:14px;
-  font-family:'Cairo',sans-serif;font-weight:800;font-size:.9rem;cursor:pointer;transition:filter .15s}
-.listen-toggle:hover{filter:brightness(1.12)}
-.listen-toggle.on{background:var(--b)}
-.listen-toggle .svgico{width:18px;height:18px}
-.listen-mode .qbody{display:none}
-.listen-mode .qhdr{align-items:center}
-.listen-mode .qspk{width:auto;height:34px;padding:0 14px;gap:7px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.82rem}
-.listen-mode .qspk::after{content:'استمع للسؤال'}
 .opts{display:flex;flex-direction:column;gap:6px}
 .opt{display:flex;align-items:center;gap:9px;padding:11px 13px;
   background:var(--card);border:2px solid var(--bdr);border-radius:9px;

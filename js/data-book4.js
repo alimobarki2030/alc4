@@ -505,7 +505,59 @@ const SPELL_LESSONS=[
 ];
 
 // ═══════════════════════════════════════
+// REVIEW 4 (قسم المراجعة) — Homework Review F·O·M·E
+// ═══════════════════════════════════════
+const REVIEW=[
+  {q:"Mark: Do you write with your left hand? Bob: No, I write with my _______ hand.",o:["correct", "right", "wrong", "left"],a:1,ar:"عكس left هو right (اليمنى).",tr:"مارك: هل تكتب بيدك اليسرى؟ بوب: لا، أكتب بيدي اليمنى."},
+  {q:"Ron: My chair was here, not there. Who _______ my chair? Sam: The teacher did.",o:["sat in", "pointed to", "moved", "picked up"],a:2,ar:"moved = نقل / حرّك.",tr:"رون: كرسيي كان هنا لا هناك. من نقل كرسيي؟ سام: المعلم فعل."},
+  {q:"The _______ doesn't have bones and is inside the mouth.",o:["tongue", "lip", "throat", "teeth"],a:0,ar:"tongue = اللسان.",tr:"اللسان ليس فيه عظام وهو داخل الفم."},
+  {q:"We have two _______, one nose, and one mouth.",o:["necks", "teeth", "eyes", "ears"],a:2,ar:"نملك عينين اثنتين = eyes.",tr:"لدينا عينان، وأنف واحد، وفم واحد."},
+  {q:"Bill: When did you fly your last plane, Dad? Dad: September 4, 1980, was the last _______.",o:["date", "year", "month", "day"],a:0,ar:"التاريخ الكامل (يوم/شهر/سنة) = date.",tr:"بِل: متى قدت آخر طائرة يا أبي؟ الأب: الرابع من سبتمبر 1980 كان آخر تاريخ."},
+  {q:"Sam: My book is open. What do I do _______? Bob: Go to page 5.",o:["last", "one", "next", "first"],a:2,ar:"next = التالي / بعد ذلك.",tr:"سام: كتابي مفتوح. ماذا أفعل بعد ذلك؟ بوب: اذهب إلى صفحة 5."},
+  {q:"Tom fell asleep outside in the sun yesterday. Today his _______ is very red.",o:["skin", "bone", "muscle", "hair"],a:0,ar:"الشمس تحرق الجلد = skin.",tr:"نام توم في الشمس بالخارج أمس. اليوم جلده أحمر جدًا."},
+  {q:"Lesson 1 of Book 5 is _______ the parts of the body.",o:["one", "of", "about", "with"],a:2,ar:"موضوع الدرس → about (عن).",tr:"الدرس الأول عن أجزاء الجسم."},
+  {q:"Linda: _______ with Peter? Jane: He has a sore throat.",o:["Take your medicine", "What's the matter", "Which one is sick", "Where is he"],a:1,ar:"السؤال عن المشكلة → What's the matter.",tr:"ليندا: ما خطب بيتر؟ جين: عنده التهاب في الحلق."},
+  {q:"Don't _______ the cup! It's very hot!",o:["hurt", "touch", "point to", "wash"],a:1,ar:"تحذير من اللمس → touch.",tr:"لا تلمس الكوب! إنه حار جدًا!"},
+  {q:"I can't see very well. The doctor is going to check my _______.",o:["bones", "fingers", "eyes", "ears"],a:2,ar:"لا أرى → الفحص للعيون eyes.",tr:"لا أرى جيدًا. الطبيب سيفحص عينيّ."},
+  {q:"First, I'm going to the BX. _______, I'm going to the commissary.",o:["Which", "Then", "Where", "Why"],a:1,ar:"First ... Then = أولًا ... ثم.",tr:"أولًا سأذهب إلى الـ BX. ثم سأذهب إلى الـ commissary."},
+  {q:"Today is a beautiful day! It's the first day _______ spring.",o:["about", "then", "of", "in"],a:2,ar:"the first day of spring = أول يوم من الربيع.",tr:"اليوم يوم جميل! إنه أول يوم في الربيع."},
+  {q:"Greg needs to _______ his dirty clothes.",o:["dry", "soap", "rinse", "change"],a:3,ar:"change = يبدّل الملابس.",tr:"جريج يحتاج أن يبدّل ملابسه المتسخة."},
+  {q:"The _______ of the book is planes.",o:["topic", "number", "thing", "letter"],a:0,ar:"topic = الموضوع.",tr:"موضوع الكتاب هو الطائرات."},
+  {q:"Beth has _______ 3 dollars. She can't go to lunch.",o:["only", "a little", "a few", "doesn't"],a:0,ar:"only = فقط (مبلغ قليل).",tr:"بيث معها 3 دولارات فقط. لا تستطيع الذهاب للغداء."},
+  {q:"There is _______ shampoo.",o:["a little", "any", "a few", "lots"],a:0,ar:"shampoo غير معدود → a little.",tr:"يوجد قليل من الشامبو."},
+  {q:"_______ you buy toothpaste at a grocery store?",o:["Are", "What", "May", "Can"],a:3,ar:"سؤال عن القدرة/الإمكان → Can.",tr:"هل تستطيع شراء معجون الأسنان من البقالة؟"},
+  {q:"Sherry needs to _______ her hair.",o:["washed", "washing", "will wash", "wash"],a:3,ar:"needs to + فعل مجرد → wash.",tr:"شيري تحتاج أن تغسل شعرها."},
+  {q:"Dave washes his socks and then _______ them.",o:["changes", "brushes", "dries", "cleans"],a:2,ar:"بعد الغسل يجفف → dries.",tr:"ديف يغسل جواربه ثم يجففها."},
+  {q:"There is _______ soap in the bathroom.",o:["any", "a lot of", "a few", "lots"],a:1,ar:"جملة مثبتة + غير معدود → a lot of.",tr:"يوجد الكثير من الصابون في الحمام."},
+  {q:"Chris _______ a haircut, tomorrow.",o:["to get", "got", "will get", "getting"],a:2,ar:"tomorrow → المستقبل will get.",tr:"كريس سيقص شعره غدًا."},
+  {q:"A: Which date is your birthday? B: The _______ of June.",o:["twenty five", "twenty five day", "twenty-fifth date", "twenty-fifth"],a:3,ar:"التاريخ يُقال بالترتيب → twenty-fifth.",tr:"أ: ما تاريخ عيد ميلادك؟ ب: الخامس والعشرون من يونيو."},
+  {q:"We cannot go inside the classroom. That man _______ the door.",o:["stopped", "turned", "locked", "pulled"],a:2,ar:"لا ندخل لأن الباب مقفل → locked.",tr:"لا نستطيع دخول الصف. ذلك الرجل أقفل الباب."},
+  {q:"I hear music. Who _______ the radio?",o:["turned", "on", "turned on", "turned off"],a:2,ar:"تشغيل الجهاز → turned on.",tr:"أسمع موسيقى. من شغّل الراديو؟"},
+  {q:"The room was very hot. Tom _______ his chair next to the open window.",o:["pulled", "stopped", "picked up", "locked"],a:0,ar:"سحب الكرسي → pulled.",tr:"كانت الغرفة حارة. سحب توم كرسيه بجانب النافذة المفتوحة."},
+  {q:"A: I want to turn off the TV. B: _______ the small button on the left.",o:["Sharpen", "Pack", "Turn off", "Push"],a:3,ar:"تضغط الزر → Push.",tr:"أ: أريد إطفاء التلفاز. ب: اضغط الزر الصغير على اليسار."},
+  {q:"The students _______ their pencils early in the morning.",o:["sharpen", "come back", "stop", "turn on"],a:0,ar:"بري الأقلام → sharpen.",tr:"الطلاب يبرون أقلامهم في الصباح الباكر."},
+  {q:"The two brothers will take a trip _______ in the summer.",o:["round-trip", "together", "off", "long"],a:1,ar:"together = معًا.",tr:"الأخوان سيقومان برحلة معًا في الصيف."},
+  {q:"Mark's plane departed at 3:00 p.m. It will arrive _______ at 10:30.",o:["together", "round-trip", "tonight", "long"],a:2,ar:"الوصول ليلاً → tonight.",tr:"طائرة مارك أقلعت 3 مساءً. ستصل الليلة عند 10:30."},
+  {q:"Does bus 3 _______ next to the hospital?",o:["stop", "turn off", "pick", "pack"],a:0,ar:"الباص يقف → stop.",tr:"هل يتوقف الباص رقم 3 بجانب المستشفى؟"},
+  {q:"A: Do I lock the door? B: Yes, _______ the key to the right.",o:["stop", "turn on", "pull", "turn"],a:3,ar:"تدير المفتاح → turn.",tr:"أ: هل أقفل الباب؟ ب: نعم، أدر المفتاح إلى اليمين."},
+  {q:"A: I want to buy a _______ ticket to Los Angeles. B: When do you want to return?",o:["round-trip", "reservation", "one-way", "graduate"],a:0,ar:"عودة → round-trip.",tr:"أ: أريد تذكرة ذهاب وعودة إلى لوس أنجلوس. ب: متى تريد العودة؟"},
+  {q:"Anna has a _______ sister. They have the same birthday. They're 12 years old.",o:["twin", "together", "one-way", "first"],a:0,ar:"نفس عيد الميلاد → twin (توأم).",tr:"آنا لديها أخت توأم. لهما نفس عيد الميلاد وعمرهما 12."},
+  {q:"Jane is in her last year of school. She will _______ in the spring.",o:["meet", "graduate", "come back", "graduation"],a:1,ar:"إنهاء الدراسة → graduate (يتخرّج).",tr:"جين في سنتها الأخيرة في المدرسة. ستتخرج في الربيع."},
+  {q:"There are _______ students in the classroom.",o:["many", "much", "how many", "how much"],a:0,ar:"students معدود → many.",tr:"يوجد طلاب كثيرون في الصف."},
+  {q:"Dan didn't eat _______ soup.",o:["many", "much", "how many", "how much"],a:1,ar:"soup غير معدود → much.",tr:"دان لم يأكل الكثير من الحساء."},
+  {q:"Put the meat _______ two slices of bread to make a sandwich.",o:["half", "among", "between", "on"],a:2,ar:"بين شيئين → between.",tr:"ضع اللحم بين شريحتي خبز لتصنع ساندويتش."},
+  {q:"I see a penny _______ all those quarters on the table.",o:["between", "among", "half", "on"],a:1,ar:"بين مجموعة (أكثر من اثنين) → among.",tr:"أرى قرشًا بين كل تلك الأرباع على الطاولة."},
+  {q:"Who _______ the coffee? It's very good.",o:["made", "dialed", "had to", "took"],a:0,ar:"إعداد القهوة → made.",tr:"من أعدّ القهوة؟ إنها جيدة جدًا."},
+  {q:"Yesterday, we had a _______ chairs in the classroom. Frank took two. Now there are only ten.",o:["ton", "half", "ounce", "dozen"],a:3,ar:"12 - 2 = 10 → dozen (دزينة = 12).",tr:"أمس كان لدينا دزينة كراسي. أخذ فرانك اثنين، فبقي عشرة."},
+  {q:"Do you want to have a _______ of cold milk with your chocolate pie?",o:["glass", "bowl", "dish", "piece"],a:0,ar:"حليب يُقدّم في كوب → glass.",tr:"هل تريد كوبًا من الحليب البارد مع فطيرة الشوكولاتة؟"},
+  {q:"I need to write a telephone number. Do you have a _______ of paper?",o:["slice", "tube", "half", "piece"],a:3,ar:"a piece of paper = قطعة ورق.",tr:"أحتاج أن أكتب رقم هاتف. هل معك قطعة ورق؟"},
+  {q:"Jack doesn't like cake. His mother makes chocolate _______ for his birthday.",o:["cheese", "cookies", "dish", "fruit"],a:1,ar:"بديل الكيك → cookies.",tr:"جاك لا يحب الكيك. أمه تصنع كوكيز الشوكولاتة لعيد ميلاده."},
+  {q:"Potatoes, corn, and squash are _______.",o:["vegetables", "fruits", "sandwiches", "desserts"],a:0,ar:"vegetables = خضروات.",tr:"البطاطس والذرة والقرع خضروات."},
+];
+EE.review=REVIEW;
+
+// ═══════════════════════════════════════
 // ROUTING MANIFEST
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','fscreen','pscreen','ascreen','wscreen','pnscreen','modscreen','spscreen','tmscreen','ivscreen','ytscreen','mkscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',pnscreen:'الضمائر وفعل الكينونة',modscreen:'الأفعال الناقصة',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع',mkscreen:'مراجعة الأخطاء'};
+const SCREENS=['home','lscreen','fscreen','rscreen','pscreen','ascreen','wscreen','pnscreen','modscreen','spscreen','tmscreen','ivscreen','ytscreen','lcscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',fscreen:'الاختبار النهائي',pscreen:'حروف الجر in·on·at',ascreen:'a·an·the',wscreen:'أدوات السؤال WH',pnscreen:'الضمائر وفعل الكينونة',modscreen:'الأفعال الناقصة',spscreen:'الإملاء',tmscreen:'الماضي وكلمات الزمن',ivscreen:'الأفعال الشاذة',ytscreen:'الاستماع',rscreen:'المراجعة',lcscreen:'مهارة الاستماع',mkscreen:'مراجعة الأخطاء'};

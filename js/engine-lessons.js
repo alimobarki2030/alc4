@@ -642,6 +642,14 @@ function open_mistakes(){
   build_quiz('ph-mistakes',deck,'mk');
 }
 
+// يبدّل «وضع الاستماع»: يُخفي نصوص الأسئلة (تبقى الأرقام والصوت والخيارات).
+function toggle_listen(btn){
+  const box=btn.closest('[id^="ph-"]')||btn.parentElement;
+  const on=box.classList.toggle('listen-mode');
+  btn.classList.toggle('on',on);
+  const lbl=btn.querySelector('span');
+  if(lbl)lbl.textContent=on?'إظهار نصّ السؤال':'وضع الاستماع — إخفاء نصّ السؤال';
+}
 function build_quiz(elId,qs,prefix){
   const el=document.getElementById(elId);
   el.innerHTML='';
@@ -662,6 +670,14 @@ function build_quiz(elId,qs,prefix){
     </div>`;
     el.innerHTML=top+`<div class="qprog"><div class="qpbar"><div class="qpfill" id="${prefix}pf"></div></div>
       <div class="qptxt" id="${prefix}pt">0 / ${qs.length}</div></div>`;
+    // نسخة استماع للاختبار الشامل — يُخفى نصّ السؤال ويُسمع صوتيًّا، والخيارات
+    // تبقى ظاهرة. مقيّدة حاليًّا ببوك 5 كتجربة قبل التعميم على باقي الكتب.
+    if(prefix==='fi' && typeof BOOK_ID!=='undefined' && BOOK_ID==='book5'){
+      el.insertAdjacentHTML('beforeend',
+        `<button class="listen-toggle" onclick="toggle_listen(this)">`+
+        `<svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg>`+
+        `<span>وضع الاستماع — إخفاء نصّ السؤال</span></button>`);
+    }
   }
 
   const wrap=document.createElement('div');
@@ -669,7 +685,7 @@ function build_quiz(elId,qs,prefix){
     const c=document.createElement('div');c.className='qcrd';c.id=`${prefix}c${i}`;
     const L=['A','B','C','D'];
     c.innerHTML=`<div class="qhdr">
-      <div class="qtxt">${i+1}. ${q.q}</div>
+      <div class="qtxt"><b class="qnum">${i+1}.</b> <span class="qbody">${q.q}</span></div>
       <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
     </div>
     <div class="opts" id="${prefix}o${i}">

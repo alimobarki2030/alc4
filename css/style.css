@@ -892,6 +892,7 @@ html.splash-seen #splash{display:none}
 #ytscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
 #fscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
 #rscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
+#lcscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
 #mkscreen{display:none;max-width:700px;margin:0 auto;padding:16px 14px 60px}
 .yt-tabs{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px}
 .yt-tab{flex:none;min-width:112px;padding:10px 14px;border:2px solid var(--bdr);border-radius:12px;background:var(--card);cursor:pointer;text-align:center;transition:.15s}

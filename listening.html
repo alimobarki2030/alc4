@@ -36,8 +36,8 @@
   .la-btn:hover{transform:scale(1.05)}.la-btn:active{transform:scale(.96)}
   .la-btn svg{width:42px;height:42px}
   .la-hint{color:var(--muted);font-size:.85rem;font-weight:700}
-  .la-q{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:1.08rem;font-weight:800;color:var(--txt);margin:20px 0 12px}
-  .la-opts{display:flex;flex-direction:column;gap:10px}
+  .la-num{color:var(--muted);font-weight:800;font-size:.85rem;margin:2px 2px 10px}
+  .la-opts{display:flex;flex-direction:column;gap:10px;margin-top:18px}
   .la-opt{display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--bdr);border-radius:14px;padding:14px 16px;font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:1rem;font-weight:600;color:var(--txt);cursor:pointer;transition:all .12s}
   .la-opt:hover:not(:disabled){border-color:var(--b);transform:translateY(-1px)}
   .la-opt:disabled{cursor:default}
@@ -84,8 +84,7 @@ function render(){
   const it=order[idx]; curItem=it;
   const L=['A','B','C','D'];
   s.innerHTML=
-    '<div class="la-play"><button class="la-btn" id="pb" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 5.6a9 9 0 0 1 0 12.7"/></svg></button><div class="la-hint">🔊 استمع للفقرة، ثم أجب</div></div>'+
-    '<div class="la-q" dir="ltr">'+(idx+1)+'. '+it.q+'</div>'+
+    '<div class="la-play"><button class="la-btn" id="pb" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 5.6a9 9 0 0 1 0 12.7"/></svg></button><div class="la-hint">🔊 استمع (الفقرة + السؤال)، ثم اختر الإجابة</div></div>'+
     '<div class="la-opts" id="opts">'+it.o.map((o,oi)=>'<button class="la-opt" dir="ltr" onclick="pick(this,'+oi+')"><span class="ltr-badge">'+L[oi]+'</span><span>'+o+'</span></button>').join('')+'</div>'+
     '<button class="la-next" id="next" onclick="idx++;render();">التالي ←</button>';
   document.getElementById('pb').onclick=()=>play(it.id);

@@ -337,10 +337,10 @@ function pickDistractors(pool,correct,keyFn,n){
 function build_vocab_drill(lk){
   const words=VOCAB[lk].slice();
   const deck=words.slice().sort(()=>Math.random()-.5);
-  // اختيار من متعدّد فقط (بلا كتابة حرّة): نناوب بين اختيار المعنى العربي
-  // واختيار الكلمة الإنجليزية.
+  // نناوب بين ثلاثة أنماط: اختيار المعنى العربي، اختيار الكلمة الإنجليزية،
+  // وكتابة المعنى بالعربية (كتابة حرّة — بطلب الطلاب).
   const items=deck.map((w,idx)=>{
-    const type=(idx%2===0)?'en2ar':'ar2en';
+    const type=['en2ar','ar2en','type'][idx%3];
     return {w,type};
   });
   drill[lk]={items,idx:0,score:0};

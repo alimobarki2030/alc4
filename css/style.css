@@ -744,6 +744,7 @@ html.splash-seen #splash{display:none}
 .sp-btn.hint{background:#FEF3C7;color:#92400E}.sp-btn.hint:hover{background:#FDE68A}
 .sp-btn.next{background:var(--b);color:#fff}.sp-btn.next:hover{background:var(--bd)}
 .sp-skip{display:block;margin:12px auto 0;background:none;border:none;color:var(--muted);font-family:'Cairo',sans-serif;font-size:.78rem;cursor:pointer;text-decoration:underline}
+.drill-back{display:block;margin:0 0 12px auto;background:none;border:1px solid var(--bdr);border-radius:20px;padding:5px 12px;color:var(--muted);font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer}
 .sp-done{text-align:center}
 .sp-donetxt{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin:8px 0}
 .sp-score{font-family:'Cairo',sans-serif;color:var(--muted);margin-bottom:14px}

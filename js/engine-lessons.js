@@ -349,9 +349,11 @@ function build_vocab_drill(lk){
     const type=['en2ar','ar2en','type'][idx%3];
     return {w,type};
   });
-  drill[lk]={items,idx:0,score:0};
+  drill[lk]={items,idx:0,score:0,done:new Set()};
   render_drill(lk);
 }
+// رجوع لمراجعة الكلمة السابقة داخل التدريب.
+function drill_prev(lk){const st=drill[lk];if(st&&st.idx>0){st.idx--;render_drill(lk);}}
 function render_drill(lk){
   const el=document.getElementById('ph-practice');
   const st=drill[lk],total=st.items.length;
@@ -367,6 +369,7 @@ function render_drill(lk){
   const eSafe=w.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
   let head=`<div class="qprog"><div class="qpbar"><div class="qpfill" style="width:${Math.round(st.idx/total*100)}%"></div></div>
     <div class="qptxt">${st.idx+1} / ${total}</div></div>`;
+  if(st.idx>0)head+=`<button class="drill-back" onclick="drill_prev('${lk}')">→ الكلمة السابقة</button>`;
   let body='';
   if(it.type==='en2ar'){
     const opts=[w,...pickDistractors(words,w,x=>x.a,3)].sort(()=>Math.random()-.5);
@@ -400,7 +403,8 @@ function drill_ans(lk,btn,ok,speak){
   if(ok){
     document.querySelectorAll('.dq-opt').forEach(b=>b.disabled=true);
     btn.classList.add('ok');
-    if(!st.wrong)st.score++;
+    if(!st.wrong&&!st.done.has(st.idx))st.score++;
+    st.done.add(st.idx);
     say(speak||w.e.replace(/\(.*?\)/g,'').trim());
     fb.innerHTML='✅ صحيح! <span dir="ltr">'+w.e.replace(/\(.*?\)/g,'').trim()+'</span> = '+coreAr(w.a);
     fb.style.color='var(--g)';
@@ -418,7 +422,8 @@ function drill_type(lk){
   const ok=drillTypeOk(inp.value,w);
   if(ok){
     inp.disabled=true;inp.classList.remove('no');inp.classList.add('ok');
-    if(!st.wrong)st.score++;
+    if(!st.wrong&&!st.done.has(st.idx))st.score++;
+    st.done.add(st.idx);
     say(w.e.replace(/\(.*?\)/g,'').trim());
     fb.innerHTML='✅ ممتاز! <span dir="ltr">'+w.e.replace(/\(.*?\)/g,'').trim()+'</span> = '+coreAr(w.a);
     fb.style.color='var(--g)';
@@ -446,7 +451,8 @@ function drill_accept_self(lk){
   const st=drill[lk],w=st.items[st.idx].w;
   const inp=document.getElementById('dq-input'),fb=document.getElementById('dq-fb');
   if(inp){inp.disabled=true;inp.classList.remove('no');inp.classList.add('ok');}
-  st.score++;
+  if(!st.done.has(st.idx))st.score++;
+  st.done.add(st.idx);
   say(w.e.replace(/\(.*?\)/g,'').trim());
   fb.innerHTML='✅ اعتُمدت إجابتك — <span dir="ltr">'+w.e.replace(/\(.*?\)/g,'').trim()+'</span> = '+coreAr(w.a);
   fb.style.color='var(--g)';

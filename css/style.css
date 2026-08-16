@@ -743,7 +743,7 @@ html.splash-seen #splash{display:none}
 .sp-btn.check{background:var(--g);color:#fff}.sp-btn.check:hover{background:var(--gd)}
 .sp-btn.hint{background:#FEF3C7;color:#92400E}.sp-btn.hint:hover{background:#FDE68A}
 .sp-btn.next{background:var(--b);color:#fff}.sp-btn.next:hover{background:var(--bd)}
-.sp-skip{margin-top:12px;background:none;border:none;color:var(--muted);font-family:'Cairo',sans-serif;font-size:.78rem;cursor:pointer;text-decoration:underline}
+.sp-skip{display:block;margin:12px auto 0;background:none;border:none;color:var(--muted);font-family:'Cairo',sans-serif;font-size:.78rem;cursor:pointer;text-decoration:underline}
 .sp-done{text-align:center}
 .sp-donetxt{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin:8px 0}
 .sp-score{font-family:'Cairo',sans-serif;color:var(--muted);margin-bottom:14px}

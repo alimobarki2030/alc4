@@ -316,7 +316,13 @@ function normAr(s){return (s||'').replace(/[ً-ْـ]/g,'').replace(/[إأآا]/g
 function coreAr(a){return a.split(/[—\/\(]/)[0].trim();}
 function acceptedAr(w){
   const out=[];
-  [w.a,...(w.alt||[])].forEach(x=>String(x).split(/[\/،,]| او | أو /).forEach(p=>{const t=p.replace(/\(.*?\)/g,'').trim();if(t)out.push(t);}));
+  [w.a,...(w.alt||[])].forEach(x=>String(x).split(/[\/،,]| او | أو /).forEach(p=>{
+    const t=p.replace(/\(.*?\)/g,'').trim();if(t)out.push(t);
+    // النص داخل القوسين غالبًا مرادف صحيح (مثل «بيت (منزل سكني)») —
+    // نقبله كإجابة، لا نحذفه فقط.
+    const m=p.match(/\(([^)]*)\)/g);
+    if(m)m.forEach(g=>{const inner=g.slice(1,-1).trim();if(inner)out.push(inner);});
+  }));
   return out;
 }
 function arSkel(s){return normAr(s).replace(/^ال/,'').replace(/ ال/g,' ').replace(/[اويهءئؤ]/g,'');}

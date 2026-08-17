@@ -1000,6 +1000,12 @@ button:focus-visible,[role="button"]:focus-visible,a:focus-visible{
   .story-line .en,.except-row,.iv-base,.iv-base-big,.iv-done .t,.yt-tab b,.lv-title,
   .wip-card .wip-t,.vocab-note,#access-gate .ag-brand,#access-gate h2{color:var(--txt)}
 
+  /* حقول الكتابة: كانت خلفيتها بيضاء والنص فاتح → غير واضح. نجعلها سطحًا داكنًا
+     بنصٍّ فاتح، ونُبقي نص الحقل المعطّل واضحًا (بعض المتصفحات تُبهته). */
+  .dq-input,.sp-input{background:var(--bg);border-color:var(--bdr)}
+  .dq-input::placeholder,.sp-input::placeholder{color:var(--muted)}
+  .dq-input:disabled,.sp-input:disabled{opacity:1;-webkit-text-fill-color:var(--txt)}
+
   /* — أسطح رمادية/سليت فاتحة — */
   .learn-tabs,.gcard-head.open,.qa-pair,.prep-ex,.iv-card,.tap-hint,
   .gcard-head:hover,.yt-tab.on{background:#1B2438;border-color:var(--bdr)}

@@ -465,7 +465,7 @@ function drill_reveal_type(lk){
   st.wrong=true;
   const eClean=w.e.replace(/\(.*?\)/g,'').trim();
   say(eClean);
-  fb.innerHTML='<svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg> <span dir="ltr">'+eClean+'</span> = <b>'+coreAr(w.a)+'</b> — احفظها 👍';fb.style.color='var(--navy)';
+  fb.innerHTML='<svg class="svgico" aria-hidden="true"><use href="#icon-book-open-text"></use></svg> <span dir="ltr">'+eClean+'</span> = <b>'+coreAr(w.a)+'</b> — احفظها 👍';fb.style.color='var(--txt)';
   if(dq)dq.querySelectorAll('.sp-btn.check, .sp-skip').forEach(b=>b.style.display='none');
   if(dq&&!document.getElementById('dq-cont')){
     const nb=document.createElement('button');nb.id='dq-cont';nb.className='sp-btn next';nb.style.marginTop='14px';nb.textContent='التالي ←';

@@ -123,7 +123,7 @@ l3:[
   {e:'send',a:'يرسل',past:'sent',pa:'أرسل',em:'📨'},
   {e:'show',a:'يري / يوضّح',em:'👀'},
   {e:'sign',a:'يوقّع',em:'✍️'},
-  {e:'also',a:'كمان / أيضًا',em:'➕'},
+  {e:'also',a:'أيضًا',alt:['كمان'],em:'➕'},
   {e:'crowded',a:'مزدحم',em:'👥'},
   {e:'near',a:'قريب من',em:'📍'},
 ],
@@ -309,8 +309,8 @@ l3:[
     ]
   },
   {
-    title:'Using Also', ar:'كمان / أيضًا — also',
-    rule:'also (بمعنى too) تدل إن فعل أو صفة تنطبق على شخص أو شي ثاني كمان — تجي بعد BE/can/does، أو قبل الفعل الأساسي.',
+    title:'Using Also', ar:'أيضًا — also',
+    rule:'also (بمعنى too) تدل أن فعلًا أو صفة تنطبق على شخص أو شيء آخر أيضًا — تأتي بعد BE/can/does، أو قبل الفعل الأساسي.',
     check:{q:'Bruce is in the Navy. Kelly _______ in the Navy.',o:['also is','is also','also','is'],a:1,en:'also comes right after BE',ar:'also تجي بعد BE مباشرة',tr:'بروس في البحرية. كيلي أيضاً في البحرية.'},
     compare:[
       {c1:'Sara chose a CD player for Bruce.',c2:'She also made him some cookies.',ar:'also قبل الفعل الأساسي'},
@@ -452,7 +452,7 @@ l3:[
   {q:"I don't have any money. I have to cash a _______.",o:['stamp','check','bank','package'],a:1,en:'cash a check',ar:'يصرف شيك',tr:'ما عندي نقود. لازم أصرف شيك.'},
   {q:'We bought our dinner in the restaurant with a _______.',o:['post office',"driver's license","traveler's check",'postcard'],a:2,en:'paid with a traveler\'s check',ar:'دفع بشيك سياحي',tr:'دفعنا عشانا بالمطعم بشيك سياحي.'},
   {q:'My sister likes to read. I want to _______ her this book.',o:['bank','mail','finish','sign'],a:1,en:'send by mail = mail',ar:'يبعثلها بالبريد = mail',tr:'أختي تحب تقرأ. أريد أن أرسل لها هذا الكتاب بالبريد.'},
-  {q:'Tom wants eggs for breakfast. Bob _______ wants eggs.',o:['sure','how','near','also'],a:3,en:'Bob also wants eggs = too',ar:'بوب كمان يبغى = also',tr:'توم يريد بيض للفطور. بوب أيضاً يريد بيض.'},
+  {q:'Tom wants eggs for breakfast. Bob _______ wants eggs.',o:['sure','how','near','also'],a:3,en:'Bob also wants eggs = too',ar:'بوب أيضًا يريد = also',tr:'توم يريد بيض للفطور. بوب أيضاً يريد بيض.'},
   {q:'_______ are not people.',o:['Tellers','Mail clerks','Money orders','Letter carriers'],a:2,en:'money orders are documents, not people',ar:'الحوالات المالية أوراق مو بشر',tr:'الحوالات المالية ليست بشراً.'},
   {q:'Canada is _______ the United States.',o:['near','at','on','also'],a:0,en:'Canada is near the US',ar:'كندا قريبة من أمريكا',tr:'كندا قريبة من الولايات المتحدة.'},
   {q:'Many families buy food on Saturday. They always have to _______ at the commissary then.',o:['mail a package','give a quiz','make a reservation','stand in line'],a:3,en:'busy Saturday at the commissary = stand in line',ar:'يوم مزدحم بالبقالة = يقفون بالطابور',tr:'عوائل كثيرة تشتري أكل يوم السبت. دائماً لازم يقفوا بالطابور بالبقالة العسكرية وقتها.'},

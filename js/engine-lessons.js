@@ -659,11 +659,12 @@ function build_quiz(elId,qs,prefix){
   el.innerHTML='';
   const isTest=prefix==='te'||prefix==='fi'||prefix==='rv'||prefix==='mk';
 
-  // Shuffle the comprehensive final exam on each open so answer positions
-  // aren't memorized. qs is the same array reference as EE[CL], so ans() /
-  // submit_test() / restart_test() index lookups stay aligned. Engine-level
-  // and keyed on the 'fi' prefix, so any book that defines FINAL gets it.
-  if(prefix==='fi')shuffle_arr(qs);
+  // Shuffle the question order on each build so students practise varied,
+  // not memorized, order — for the lesson assessment (te), the final exam
+  // (fi), and the review (rv), by student request. Each rendered card bakes
+  // in its own correct answer (q.a) and TANS is keyed by render index, so
+  // grading stays correct regardless of order. Restart/retry re-shuffle.
+  if(prefix==='fi'||prefix==='te'||prefix==='rv')shuffle_arr(qs);
 
   if(isTest){
     const L=LP[CL];

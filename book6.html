@@ -238,6 +238,13 @@
       <p>اختبارات استماع وقراءة بالفيديو — Quiz A · B · C</p>
     </div>
   </div>
+  <div class="yt-card" onclick="open_lc()" style="margin-top:12px;background:linear-gradient(135deg,#FCC419,#F59F00)">
+    <div class="ac-ic">🎧</div>
+    <div class="pc-txt">
+      <h3 style="color:#1A2744">مهارة الاستماع</h3>
+      <p style="color:rgba(26,39,68,.85)">استمع لفقرة قصيرة وأجب — من محتوى الكتاب</p>
+    </div>
+  </div>
 
   <div class="lbl" style="margin-top:20px">الكتابة</div>
   <div class="spell-card" onclick="open_spell()">
@@ -348,6 +355,16 @@
   <div id="ph-review"></div>
 </div>
 
+<!-- LISTENING COMPREHENSION SCREEN -->
+<div id="lcscreen">
+  <button class="back" onclick="go_home()">→ الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#1CB0F6,#0A96DC)">
+    <h2>مهارة الاستماع — Book 6 🎧</h2>
+    <p>استمع لفقرة قصيرة، ثم اختر الإجابة</p>
+  </div>
+  <div id="lc-stage"></div>
+</div>
+
 <!-- LISTENING SCREEN -->
 <div id="ytscreen">
   <button class="back" onclick="go_home()">→ الرئيسية</button>
@@ -383,6 +400,50 @@
 <script>
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
+}
+</script>
+<style>
+  #lc-stage .lc-play{display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:24px 18px;box-shadow:0 12px 30px rgba(26,39,68,.10);margin-top:16px}
+  #lc-stage .lc-btn{width:88px;height:88px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(135deg,#1CB0F6,#0A96DC);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(28,176,246,.4);transition:transform .12s}
+  #lc-stage .lc-btn:active{transform:scale(.95)} #lc-stage .lc-btn svg{width:40px;height:40px}
+  #lc-stage .lc-hint{color:var(--muted);font-size:.85rem;font-weight:700}
+  #lc-stage .lc-count{text-align:center;color:var(--muted);font-weight:900;font-size:.95rem;margin-bottom:4px}
+  #lc-stage .lc-prog{height:8px;background:var(--bdr);border-radius:100px;overflow:hidden;margin:14px 0}
+  #lc-stage .lc-fill{height:100%;background:var(--g);border-radius:100px;transition:width .3s}
+  #lc-stage .lc-opts{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+  #lc-stage .lc-opt{display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid var(--bdr);border-radius:14px;padding:14px 16px;font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:1rem;font-weight:600;color:var(--txt);cursor:pointer}
+  #lc-stage .lc-opt:disabled{cursor:default} #lc-stage .lc-opt .b{flex:none;width:26px;height:26px;border-radius:7px;background:var(--bg);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;color:var(--muted)}
+  #lc-stage .lc-opt.ok{background:var(--ok-bg);border-color:var(--ok-txt);color:var(--ok-txt)} #lc-stage .lc-opt.ok .b{background:var(--ok-txt);color:#fff}
+  #lc-stage .lc-opt.no{background:var(--no-bg);border-color:var(--no-txt);color:var(--no-txt)}
+  #lc-stage .lc-next{width:100%;margin-top:16px;background:var(--g);color:#fff;border:none;border-radius:14px;padding:14px;font-family:'Cairo',sans-serif;font-weight:900;font-size:1rem;cursor:pointer;display:none}
+  #lc-stage .lc-done{text-align:center;background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:32px 20px;margin-top:16px}
+  #lc-stage .lc-done .e{font-size:2.6rem} #lc-stage .lc-done h3{color:var(--txt);margin:8px 0 4px} #lc-stage .lc-done p{color:var(--muted);font-weight:800;margin-bottom:16px}
+  #lc-stage .lc-again{background:var(--b);color:#fff;border:none;border-radius:12px;padding:12px 26px;font-family:'Cairo',sans-serif;font-weight:900;cursor:pointer}
+</style>
+<script>
+const LC_ITEMS=[{"id": "b6-1", "q": "What should you take with you?", "o": ["a towel", "a fan", "sunglasses", "an umbrella"], "a": 3}, {"id": "b6-2", "q": "How is the weather today?", "o": ["clear and calm", "hot and sunny", "cold and windy", "warm and dry"], "a": 2}, {"id": "b6-3", "q": "How is the sky today?", "o": ["dark", "clear", "cloudy", "stormy"], "a": 1}, {"id": "b6-4", "q": "What happened all night?", "o": ["it snowed", "the wind stopped", "the sun shone", "it rained"], "a": 0}, {"id": "b6-5", "q": "Why is Sami wearing his raincoat?", "o": ["because it is hot", "because it is snowing", "because it is sunny", "because it is raining"], "a": 3}, {"id": "b6-6", "q": "How is the wind today?", "o": ["gone", "very light", "very strong", "warm"], "a": 2}, {"id": "b6-7", "q": "How is the weather now?", "o": ["snowy", "windy", "rainy", "sunny"], "a": 3}, {"id": "b6-8", "q": "How is the weather in Riyadh?", "o": ["cold and wet", "cloudy", "hot and dry", "snowy"], "a": 2}, {"id": "b6-9", "q": "What is there tonight?", "o": ["light snow", "warm sunshine", "a big storm", "a clear sky"], "a": 2}, {"id": "b6-10", "q": "How is today compared to yesterday?", "o": ["hotter", "colder", "the same", "windier"], "a": 0}, {"id": "b6-11", "q": "How is Ahmed traveling?", "o": ["by train", "by car", "by plane", "by boat"], "a": 0}, {"id": "b6-12", "q": "What does Sara want to eat?", "o": ["a sandwich", "fish", "chicken", "soup and rice"], "a": 3}, {"id": "b6-13", "q": "How long were they on the plane?", "o": ["three hours", "one hour", "two hours", "four hours"], "a": 2}, {"id": "b6-14", "q": "How was the food?", "o": ["expensive", "awful", "delicious", "cold"], "a": 2}, {"id": "b6-15", "q": "Where are they going?", "o": ["to the bank", "to the hotel", "to the beach", "to the airport"], "a": 3}, {"id": "b6-16", "q": "How did Nora travel to Egypt?", "o": ["by bus", "by plane", "by ship", "by train"], "a": 2}, {"id": "b6-17", "q": "What does Ali want?", "o": ["some water", "more soup", "nothing else", "the menu"], "a": 2}, {"id": "b6-18", "q": "When does the bus leave?", "o": ["at six", "at seven", "at nine", "at eight"], "a": 1}, {"id": "b6-19", "q": "What did Sami do?", "o": ["he got out of the car", "he got in the car", "he drove home", "he went to sleep"], "a": 0}, {"id": "b6-20", "q": "Which one is fast?", "o": ["the boat", "the train", "the bus", "the helicopter"], "a": 3}, {"id": "b6-21", "q": "What does Ali want to send?", "o": ["a postcard", "some money", "a letter", "a package"], "a": 3}, {"id": "b6-22", "q": "What do you need to send the letter?", "o": ["an envelope", "a check", "a package", "a stamp"], "a": 3}, {"id": "b6-23", "q": "What should you write on the envelope?", "o": ["a stamp", "your address", "your age", "nothing"], "a": 1}, {"id": "b6-24", "q": "How is the bank today?", "o": ["closed", "quiet", "empty", "crowded"], "a": 3}, {"id": "b6-25", "q": "What does the teller ask for?", "o": ["identification", "a package", "a letter", "a stamp"], "a": 0}, {"id": "b6-26", "q": "When does the letter carrier deliver the mail?", "o": ["at noon", "in the morning", "on Friday", "at night"], "a": 1}, {"id": "b6-27", "q": "What does Nora buy?", "o": ["an envelope", "a postcard", "a stamp", "a money order"], "a": 3}, {"id": "b6-28", "q": "What should you do?", "o": ["sign your name", "buy a stamp", "write a letter", "wait outside"], "a": 0}, {"id": "b6-29", "q": "What did Sami send?", "o": ["some money", "a package", "a postcard", "a check"], "a": 2}, {"id": "b6-30", "q": "Where is the post office?", "o": ["far from the city", "at the airport", "next to the school", "near the bank"], "a": 3}, {"id": "b6-31", "q": "Where will they stay?", "o": ["in a tent", "in a hotel", "in a house", "on a boat"], "a": 0}, {"id": "b6-32", "q": "Where is the hotel?", "o": ["on a mountain", "next to the ocean", "near a river", "in the desert"], "a": 1}, {"id": "b6-33", "q": "What is Sara doing today?", "o": ["taking pictures", "sleeping", "cooking", "swimming"], "a": 0}, {"id": "b6-34", "q": "How long will they stay at the lake?", "o": ["two days", "one night", "a week", "one day"], "a": 0}, {"id": "b6-35", "q": "What does Ali want to do?", "o": ["work", "relax", "drive", "study"], "a": 1}, {"id": "b6-36", "q": "What should you do before three?", "o": ["check out", "go home", "eat lunch", "check in at the hotel"], "a": 3}, {"id": "b6-37", "q": "How is the desert?", "o": ["cold and wet", "rainy", "green", "hot and dry"], "a": 3}, {"id": "b6-38", "q": "What did Nora take pictures of?", "o": ["the waterfall", "the hotel", "the city", "the desert"], "a": 0}, {"id": "b6-39", "q": "Why can't they go to the beach?", "o": ["because it is closed", "because they are tired", "because it is late", "because it is raining"], "a": 3}, {"id": "b6-40", "q": "What happens tomorrow?", "o": ["a long trip", "another vacation day", "a holiday", "they go back to work"], "a": 3}];
+const LC_ROUND=40;
+let lc_order=[],lc_idx=0,lc_correct=0,lc_ans=false,lc_cur=null,lc_a=null;
+function lc_shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function lc_play(id){if(lc_a){try{lc_a.pause();}catch(e){}}const x=new Audio('audio/listen/'+id+'.mp3');lc_a=x;x.play().catch(()=>{});}
+function lc_stop(){if(lc_a){try{lc_a.pause();lc_a.currentTime=0;}catch(e){}lc_a=null;}}
+function open_lc(){show_screen('lcscreen');window.scrollTo({top:0,behavior:'smooth'});lc_start();}
+function lc_start(){lc_order=lc_shuffle(LC_ITEMS.slice()).slice(0,Math.min(LC_ROUND,LC_ITEMS.length));lc_idx=0;lc_correct=0;lc_render();}
+function lc_render(){
+  const s=document.getElementById('lc-stage');const N=lc_order.length;lc_stop();
+  if(lc_idx>=N){s.innerHTML='<div class="lc-done"><div class="e">'+(lc_correct>=Math.ceil(N*.8)?'🏆':(lc_correct>=Math.ceil(N*.5)?'👍':'📚'))+'</div><h3>انتهى</h3><p>نتيجتك: '+lc_correct+' / '+N+'</p><button class="lc-again" onclick="lc_start()">🔁 مرة أخرى</button></div>';return;}
+  lc_ans=false;const it=lc_order[lc_idx];lc_cur=it;const L=['A','B','C','D'];
+  s.innerHTML='<div class="lc-count">السؤال '+(lc_idx+1)+' / '+N+'</div><div class="lc-prog"><div class="lc-fill" style="width:'+(lc_idx/N*100)+'%"></div></div>'+
+    '<div class="lc-play"><button class="lc-btn" id="lcpb" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 5.6a9 9 0 0 1 0 12.7"/></svg></button><div class="lc-hint">اضغط للاستماع</div></div>'+
+    '<div class="lc-opts">'+it.o.map((o,oi)=>'<button class="lc-opt" dir="ltr" onclick="lc_pick(this,'+oi+')"><span class="b">'+L[oi]+'</span><span>'+o+'</span></button>').join('')+'</div>'+
+    '<button class="lc-next" id="lcnext" onclick="lc_idx++;lc_render();">التالي ←</button>';
+  document.getElementById('lcpb').onclick=()=>lc_play(it.id);
+}
+function lc_pick(btn,oi){
+  if(lc_ans)return;lc_ans=true;
+  const opts=document.querySelectorAll('#lc-stage .lc-opt');opts.forEach(b=>b.disabled=true);
+  if(oi===lc_cur.a){btn.classList.add('ok');lc_correct++;}else{btn.classList.add('no');opts[lc_cur.a].classList.add('ok');}
+  document.getElementById('lcnext').style.display='block';
 }
 </script>
 </body>

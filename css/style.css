@@ -747,7 +747,7 @@ html.splash-seen #splash{display:none}
 .drill-back{display:block;margin:0 0 12px auto;background:none;border:1px solid var(--bdr);border-radius:20px;padding:5px 12px;color:var(--muted);font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer}
 .vt-modes{display:flex;gap:10px;margin-bottom:16px}
 .vt-modes button{flex:1;padding:14px 10px;border:2px solid var(--bdr);border-radius:14px;background:var(--card);font-family:'Cairo',sans-serif;font-weight:900;font-size:.9rem;color:var(--txt);cursor:pointer;transition:.15s}
-.vt-modes button:hover{border-color:#7C3AED}
+.vt-modes button:hover{border-color:#EA580C}
 .vt-modes button:active{transform:scale(.98)}
 .sp-done{text-align:center}
 .sp-donetxt{font-family:'Cairo',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin:8px 0}

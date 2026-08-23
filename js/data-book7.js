@@ -704,5 +704,5 @@ const YT_VIDEOS=[
 // ═══════════════════════════════════════
 // ROUTING MANIFEST — home + lesson + review + listening + mistake-review
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','rscreen','ytscreen','fscreen','spscreen','mkscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};
+const SCREENS=['home','lscreen','rscreen','ytscreen','fscreen','vtscreen','spscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',rscreen:'المراجعة',ytscreen:'الاستماع',fscreen:'الاختبار النهائي',vtscreen:'اختبار المفردات',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};

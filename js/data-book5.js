@@ -736,5 +736,5 @@ const SPELL_LESSONS=[
 // ═══════════════════════════════════════
 // ROUTING MANIFEST
 // ═══════════════════════════════════════
-const SCREENS=['home','lscreen','ytscreen','lcscreen','fscreen','rscreen','spscreen','mkscreen'];
-const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',lcscreen:'مهارة الاستماع',fscreen:'الاختبار النهائي',rscreen:'المراجعة',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};
+const SCREENS=['home','lscreen','ytscreen','lcscreen','fscreen','vtscreen','rscreen','spscreen','mkscreen'];
+const SCREEN_NAMES={home:'الرئيسية',lscreen:'درس',ytscreen:'الاستماع',lcscreen:'مهارة الاستماع',fscreen:'الاختبار النهائي',vtscreen:'اختبار المفردات',rscreen:'المراجعة',spscreen:'الإملاء',mkscreen:'مراجعة الأخطاء'};

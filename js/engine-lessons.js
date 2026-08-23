@@ -312,6 +312,7 @@ function build_gcard_body(g,lk,i){
 // VOCAB DRILL (تدرّب)
 // ═══════════════════════════════════════
 const drill={};
+let _drillEl='ph-practice'; // container the active drill renders into (lesson vs vocab exam)
 function normAr(s){return (s||'').replace(/[ً-ْـ]/g,'').replace(/[إأآا]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[()\/\.\-—،؟?]/g,' ').replace(/\s+/g,' ').trim();}
 function coreAr(a){return a.split(/[—\/\(]/)[0].trim();}
 function acceptedAr(w){
@@ -340,32 +341,50 @@ function pickDistractors(pool,correct,keyFn,n){
   for(const w of shuffled){const k=keyFn(w);if(!seen.has(k)){seen.add(k);out.push(w);}if(out.length>=n)break;}
   return out;
 }
-function build_vocab_drill(lk){
-  const words=VOCAB[lk].slice();
+function _drillItems(words){
   const deck=words.slice().sort(()=>Math.random()-.5);
   // نناوب بين ثلاثة أنماط: اختيار المعنى العربي، اختيار الكلمة الإنجليزية،
   // وكتابة المعنى بالعربية (كتابة حرّة — بطلب الطلاب).
-  const items=deck.map((w,idx)=>{
-    const type=['en2ar','ar2en','type'][idx%3];
-    return {w,type};
-  });
-  drill[lk]={items,idx:0,score:0,done:new Set()};
+  return deck.map((w,idx)=>({w,type:['en2ar','ar2en','type'][idx%3]}));
+}
+function build_vocab_drill(lk){
+  const words=VOCAB[lk].slice();
+  drill[lk]={items:_drillItems(words),idx:0,score:0,done:new Set(),pool:VOCAB[lk],el:'ph-practice'};
   render_drill(lk);
 }
+// اختبار مفردات شامل: يجمع مفردات كل الدروس (بلا تكرار) في مجموعة واحدة.
+// mode 'quick' = ٤٠ كلمة عشوائية، 'all' = كل الكلمات. المشتّتات من كامل الكتاب.
+function build_vocab_exam(mode){
+  const seen=new Set(),pool=[];
+  (typeof LESSON_KEYS!=='undefined'?LESSON_KEYS:[]).forEach(k=>(VOCAB[k]||[]).forEach(w=>{
+    if(!seen.has(w.e)){seen.add(w.e);pool.push(w);}
+  }));
+  const deck=pool.slice().sort(()=>Math.random()-.5);
+  const use=(mode==='quick')?deck.slice(0,Math.min(40,deck.length)):deck;
+  drill['exam']={items:use.map((w,idx)=>({w,type:['en2ar','ar2en','type'][idx%3]})),idx:0,score:0,done:new Set(),pool:pool,el:'ph-vtest',mode:mode};
+  render_drill('exam');
+}
+function open_vtest(){
+  show_screen('vtscreen');
+  document.getElementById('vtscreen').scrollIntoView({behavior:'smooth',block:'start'});
+  const ph=document.getElementById('ph-vtest');if(ph)ph.innerHTML='';
+}
+// إعادة بناء التدريب الحالي (درس عادي أو اختبار المفردات الشامل).
+function drill_restart(lk){const st=drill[lk];if(st&&st.mode)build_vocab_exam(st.mode);else build_vocab_drill(lk);}
 // رجوع لمراجعة الكلمة السابقة داخل التدريب.
 function drill_prev(lk){const st=drill[lk];if(st&&st.idx>0){st.idx--;render_drill(lk);}}
 function render_drill(lk){
-  const el=document.getElementById('ph-practice');
-  const st=drill[lk],total=st.items.length;
+  const st=drill[lk];_drillEl=st.el||'ph-practice';
+  const el=document.getElementById(_drillEl),total=st.items.length;
   if(st.idx>=total){
     el.innerHTML=`<div class="sp-card sp-done"><div class="sp-emoji">${st.score>=Math.ceil(total*.7)?'🏆':'📚'}</div>
       <div class="sp-donetxt">أحسنت! أكملت تدريب المفردات</div>
       <div class="sp-score">نتيجتك: ${st.score} / ${total}</div>
-      <button class="sp-btn check" onclick="build_vocab_drill('${lk}')">🔁 مرّة ثانية</button></div>`;
+      <button class="sp-btn check" onclick="drill_restart('${lk}')">🔁 مرّة ثانية</button></div>`;
     return;
   }
   st.wrong=false;
-  const it=st.items[st.idx],w=it.w,words=VOCAB[lk];
+  const it=st.items[st.idx],w=it.w,words=st.pool||VOCAB[lk];
   const eSafe=w.e.replace(/'/g,"\\'").replace(/\(.*?\)/g,'').trim();
   let head=`<div class="qprog"><div class="qpbar"><div class="qpfill" style="width:${Math.round(st.idx/total*100)}%"></div></div>
     <div class="qptxt">${st.idx+1} / ${total}</div></div>`;
@@ -435,7 +454,7 @@ function drill_type(lk){
     inp.focus();setTimeout(()=>{inp.classList.remove('no');},600);
     // شبكة أمان: العربية فيها مرادفات صحيحة كثيرة قد لا يلتقطها المطابِق.
     // نعرض للطالب زرًّا لاعتماد إجابته إن كان واثقًا أنها صحيحة.
-    const dq=document.querySelector('#ph-practice .dq');
+    const dq=document.querySelector('#'+_drillEl+' .dq');
     if(dq&&!document.getElementById('dq-self')){
       const sb=document.createElement('button');
       sb.id='dq-self';sb.className='sp-skip';sb.textContent='إجابتي صحيحة ✓';
@@ -460,7 +479,7 @@ function drill_accept_self(lk){
   drill_next(lk);
 }
 function drill_reveal_type(lk){
-  const st=drill[lk],dq=document.querySelector('#ph-practice .dq'),inp=document.getElementById('dq-input'),fb=document.getElementById('dq-fb'),w=st.items[st.idx].w;
+  const st=drill[lk],dq=document.querySelector('#'+_drillEl+' .dq'),inp=document.getElementById('dq-input'),fb=document.getElementById('dq-fb'),w=st.items[st.idx].w;
   if(inp)inp.disabled=true;
   st.wrong=true;
   const eClean=w.e.replace(/\(.*?\)/g,'').trim();

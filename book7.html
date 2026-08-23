@@ -209,7 +209,14 @@
     </div>
   </div>
 
-  <div class="lbl" style="margin-top:20px">الاختبار</div>
+    <div class="lbl" style="margin-top:20px">المفردات</div>
+  <div class="final-card" style="background:linear-gradient(135deg,#7C3AED,#5B21B6);border-color:#A78BFA" onclick="open_vtest()">
+    <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-library"></use></svg></div>
+    <h3>اختبار المفردات الشامل</h3>
+    <p>كل مفردات الكتاب — سريع أو شامل</p>
+  </div>
+
+<div class="lbl" style="margin-top:20px">الاختبار</div>
   <div class="final-card" onclick="open_final()">
     <div style="font-size:2.2rem;margin-bottom:8px;color:#fff"><svg class="svgico" aria-hidden="true"><use href="#icon-trophy"></use></svg></div>
     <h3>الاختبار النهائي الشامل</h3>
@@ -219,6 +226,20 @@
 </div>
 
 <!-- FINAL EXAM SCREEN -->
+<!-- VOCAB EXAM SCREEN -->
+<div id="vtscreen">
+  <button class="back" onclick="go_home()">→ الرئيسية</button>
+  <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">
+    <h2>اختبار المفردات الشامل 📚</h2>
+    <p>كل مفردات الكتاب في مكان واحد</p>
+  </div>
+  <div class="vt-modes" id="vt-modes">
+    <button onclick="build_vocab_exam('quick')">⚡ سريع — ٤٠ كلمة</button>
+    <button onclick="build_vocab_exam('all')">📚 شامل — كل الكلمات</button>
+  </div>
+  <div id="ph-vtest"></div>
+</div>
+
 <div id="fscreen">
   <button class="back" onclick="go_home()">→ الرئيسية</button>
   <div class="prep-hero" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">

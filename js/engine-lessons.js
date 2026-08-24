@@ -326,7 +326,10 @@ function acceptedAr(w){
   }));
   return out;
 }
-function arSkel(s){return normAr(s).replace(/^ال/,'').replace(/ ال/g,' ').replace(/[اويهءئؤ]/g,'');}
+// هيكل الكلمة العربية للمطابقة المرنة: نحذف "ال" والحركات وحروف العلة، ثم
+// نُسقط بادئة الفعل المضارع (ت/ن) في البداية حتى تتطابق صيغ مثل «يغيّر/تغيّر»
+// و«يوقّع/توقيع» (ي/أ/ا محذوفة أصلاً كحروف علة).
+function arSkel(s){return normAr(s).replace(/^ال/,'').replace(/ ال/g,' ').replace(/[اويهءئؤ]/g,'').replace(/^[تن]/,'');}
 function drillTypeOk(input,w){
   const ans=normAr(input);if(ans.length<2)return false;
   const alts=acceptedAr(w).map(normAr);

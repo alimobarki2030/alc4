@@ -688,17 +688,6 @@ function build_quiz(elId,qs,prefix){
   // grading stays correct regardless of order. Restart/retry re-shuffle.
   if(prefix==='fi'||prefix==='te'||prefix==='rv')shuffle_arr(qs);
 
-  // Shuffle each question's OPTIONS too, so the correct answer's slot
-  // (A/B/C/D) isn't memorized — the student must understand, not recall a
-  // position. Done in place and q.a re-derived, so ans()/mistake-bank stay
-  // aligned. Engine-level → every book's quizzes get it.
-  if(isTest)qs.forEach(q=>{
-    if(!q||!Array.isArray(q.o)||q.o.length<2)return;
-    const correct=q.o[q.a];
-    shuffle_arr(q.o);
-    q.a=q.o.indexOf(correct);
-  });
-
   if(isTest){
     const L=LP[CL];
     const bestTxt=(L&&typeof L.pct==='number')?`أفضل نتيجة سابقة: ${L.pct}%${L.done?' ✓':''}`:'لم تُنهِ هذا الاختبار بعد';
@@ -714,14 +703,21 @@ function build_quiz(elId,qs,prefix){
   qs.forEach((q,i)=>{
     const c=document.createElement('div');c.className='qcrd';c.id=`${prefix}c${i}`;
     const L=['A','B','C','D'];
+    // Shuffle a DISPLAY-ONLY copy of the options so the correct answer's slot
+    // (A/B/C/D) isn't memorized — the student must understand, not recall a
+    // position. q.o / q.a (the real data) are NEVER mutated; we just render a
+    // shuffled view and pass its correct index to ans().
+    const ord=q.o.map((o,oi)=>({o,oi}));
+    if(isTest)shuffle_arr(ord);
+    const rc=ord.findIndex(x=>x.oi===q.a);
     c.innerHTML=`<div class="qhdr">
       <div class="qtxt">${i+1}. ${q.q}</div>
       <button class="qspk" onclick="say('${q.q.replace(/_+/g,'blank').replace(/'/g,"\\'")}')"><svg class="svgico" aria-hidden="true"><use href="#icon-volume-2"></use></svg></button>
     </div>
     <div class="opts" id="${prefix}o${i}">
-      ${q.o.map((opt,oi)=>`<button class="opt" id="${prefix}op${i}${oi}"
-        onclick="ans('${prefix}',${i},${oi},${q.a})">
-        <span class="oltr">${L[oi]}</span>${opt}</button>`).join('')}
+      ${ord.map((it,oi)=>`<button class="opt" id="${prefix}op${i}${oi}"
+        onclick="ans('${prefix}',${i},${oi},${rc})">
+        <span class="oltr">${L[oi]}</span>${it.o}</button>`).join('')}
     </div>
     <div class="fb" id="${prefix}fb${i}">
       <span style="font-size:.9rem;flex-shrink:0" id="${prefix}fi${i}"></span>

@@ -514,6 +514,20 @@ const REVIEW=[
   {q:"I want to relax next Saturday.",o:["I want to work.","I want to study.","I want to smile.","I want to rest."],a:3,en:"relax = rest",ar:"relax = يرتاح (rest)",tr:"أريد أن أسترخي السبت القادم. (relax = rest)"},
 ];
 EE.review=REVIEW;
+// أسئلة واجب Lesson 3 (Exercise A) — تُضاف للاختبار الشامل والمراجعة
+const HW3=[
+  {q:"_______ are people.",o:["Boats", "Homes", "Students", "Menus"],a:2,ar:"الطلاب أشخاص (بشر).",tr:"الطلاب أشخاص."},
+  {q:"Mary bought a _______ at the bank.",o:["package", "money order", "postcard", "driver's license"],a:1,ar:"الحوالة المالية تُشترى من البنك.",tr:"اشترت ماري حوالة مالية من البنك."},
+  {q:"Don has a car. He _______ has a truck.",o:["how", "near", "also", "sure"],a:2,ar:"also = أيضًا (بالإضافة).",tr:"عند دون سيارة، وعنده أيضًا شاحنة."},
+  {q:"That letter needs two _______. It costs more to mail letters out of the country.",o:["envelopes", "stamps", "streets", "mail"],a:1,ar:"الرسالة تحتاج طوابع بريد.",tr:"تلك الرسالة تحتاج طابعين؛ إرسال الرسائل خارج البلد أغلى."},
+  {q:"Please _______ the clerk your ID card.",o:["show", "sign", "finish", "check"],a:0,ar:"show = تُري/تعرض بطاقتك للموظف.",tr:"من فضلك أرِ الموظف بطاقة هويتك."},
+  {q:"Mr. and Mrs. Wilson put their _______ in the bank.",o:["clothes", "books", "food", "money"],a:3,ar:"المال يُوضع في البنك.",tr:"وضع السيد والسيدة ويلسون أموالهما في البنك."},
+  {q:"There were many boys and girls in the small classroom. It was very _______.",o:["crowded", "clear", "delicious", "large"],a:0,ar:"مزدحم = ناس كثير في مكان صغير.",tr:"كان في الصف الصغير أولاد وبنات كثيرون؛ كان مزدحمًا جدًا."},
+  {q:"His _______ is 8641 F Street, Los Angeles, California.",o:["address", "country", "letter", "envelope"],a:0,ar:"العنوان = الشارع والمدينة.",tr:"عنوانه هو 8641 شارع F، لوس أنجلوس، كاليفورنيا."},
+  {q:"_______ your name on the check, please.",o:["Give", "Mail", "Sign", "Send"],a:2,ar:"وقّع اسمك على الشيك.",tr:"وقّع اسمك على الشيك من فضلك."},
+];
+REVIEW.push(...HW3);
+
 
 // ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي الشامل)
@@ -524,6 +538,7 @@ const FINAL=dedupe_by_q([
   ...EE.l2,
   ...EE.l3,
   ...EE.l4,
+  ...HW3,
 ]);
 EE.final=FINAL;
 

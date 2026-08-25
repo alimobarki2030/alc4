@@ -525,6 +525,7 @@ const HW3=[
   {q:"There were many boys and girls in the small classroom. It was very _______.",o:["crowded", "clear", "delicious", "large"],a:0,ar:"مزدحم = ناس كثير في مكان صغير.",tr:"كان في الصف الصغير أولاد وبنات كثيرون؛ كان مزدحمًا جدًا."},
   {q:"His _______ is 8641 F Street, Los Angeles, California.",o:["address", "country", "letter", "envelope"],a:0,ar:"العنوان = الشارع والمدينة.",tr:"عنوانه هو 8641 شارع F، لوس أنجلوس، كاليفورنيا."},
   {q:"_______ your name on the check, please.",o:["Give", "Mail", "Sign", "Send"],a:2,ar:"وقّع اسمك على الشيك.",tr:"وقّع اسمك على الشيك من فضلك."},
+  {q:"The BX is _______ the commissary.",o:["near", "at", "without", "from"],a:0,ar:"near = قريب من.",tr:"الـ BX قريب من الـ commissary."},
 ];
 REVIEW.push(...HW3);
 

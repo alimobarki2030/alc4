@@ -1017,6 +1017,12 @@ button:focus-visible,[role="button"]:focus-visible,a:focus-visible{
   .wo-hint-btn:disabled{background:#161d2e}
   .tl-dot{background:#3A465F}
 
+  /* صندوق القاعدة: خلفيته فاتحة ثابتة والنص أُضيء (var(--txt)) فصار غير واضح.
+     نعطيه سطحًا داكنًا ليتباين مع النص الفاتح، ونضبط الأجزاء الداخلية. */
+  .rule-box{background:linear-gradient(135deg,#12233C,#0F2A24);border-right-color:var(--b)}
+  .rule-box .rb-part{background:rgba(255,255,255,.05);border-color:var(--bdr)}
+  .rule-box .rb-pd{color:var(--muted)}
+
   /* — عائلة أخضر (صحيح/مفتاح/كشف) — */
   .fbox.key,.exrow.ok,.wo-reveal,.dd-reveal,.ex-row.ok,.ex2.ok,.b-when{
     background:#123024;border-color:#1F5A3A;color:#8FE9B0}

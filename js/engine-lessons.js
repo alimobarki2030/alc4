@@ -688,6 +688,17 @@ function build_quiz(elId,qs,prefix){
   // grading stays correct regardless of order. Restart/retry re-shuffle.
   if(prefix==='fi'||prefix==='te'||prefix==='rv')shuffle_arr(qs);
 
+  // Shuffle each question's OPTIONS too, so the correct answer's slot
+  // (A/B/C/D) isn't memorized — the student must understand, not recall a
+  // position. Done in place and q.a re-derived, so ans()/mistake-bank stay
+  // aligned. Engine-level → every book's quizzes get it.
+  if(isTest)qs.forEach(q=>{
+    if(!q||!Array.isArray(q.o)||q.o.length<2)return;
+    const correct=q.o[q.a];
+    shuffle_arr(q.o);
+    q.a=q.o.indexOf(correct);
+  });
+
   if(isTest){
     const L=LP[CL];
     const bestTxt=(L&&typeof L.pct==='number')?`أفضل نتيجة سابقة: ${L.pct}%${L.done?' ✓':''}`:'لم تُنهِ هذا الاختبار بعد';

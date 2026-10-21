@@ -603,6 +603,13 @@ l3:[
   {q:"_______ you please close the window? — Sure, I'd be happy to.",o:["Could","Do","Are","Was"],a:0,en:"polite request → Could you",ar:'طلب مهذّب → Could you',tr:'هل يمكنك إغلاق النافذة من فضلك؟ — بكل سرور.'},
   {q:"What did she ask you? She asked me _______ help her.",o:["to","for","that","will"],a:0,en:"ask + object + to + verb",ar:'ask + مفعول + to + فعل',tr:'ماذا طلبت منك؟ طلبت منّي أن أساعدها.'},
   {q:"The game starts tonight _______ 7:30.",o:["at","on","in","to"],a:0,en:"clock time → at",ar:'قبل الساعة → at',tr:'تبدأ المباراة الليلة الساعة 7:30.'},
+  // — Exercise G (ص68 · Choose the best answer to complete the sentences) —
+  {q:"The cook removed the _______ from the pot.",o:["wheel","cover","trunk","jack"],a:1,en:"pot lid → cover",ar:'غطاء القِدر → cover',tr:'رفع الطبّاخ الغطاء عن القِدر.'},
+  {q:"Can you _______ warm with just a sweater?",o:["replace","cover","keep","raise"],a:2,en:"stay warm → keep warm",ar:'يبقى دافئاً → keep warm',tr:'هل تستطيع أن تبقى دافئاً بكنزة فقط؟'},
+  {q:"I will need some help to _______ the couch to put the carpet under it.",o:["inflate","raise","loosen","lower"],a:1,en:"lift up → raise",ar:'يرفع → raise',tr:'سأحتاج مساعدة لرفع الأريكة ووضع السجّادة تحتها.'},
+  {q:"Please hurry up. We don't want to _______.",o:["be late","arrive on time","go there now","be early"],a:0,en:"hurry → don't be late",ar:'أسرِع → لا نريد أن نتأخّر (be late)',tr:'أسرِع من فضلك، لا نريد أن نتأخّر.'},
+  {q:"Mr. Smith will replace the old books with new _______.",o:["tickets","books","pages","keys"],a:1,en:"replace books with books",ar:'يستبدل الكتب بكتب جديدة → books',tr:'سيستبدل السيد سميث الكتب القديمة بكتب جديدة.'},
+  {q:"Some cars don't have a motor in the front. It's in the _______.",o:["back","side","key","trunk lid"],a:0,en:"not front → back",ar:'ليس في الأمام → في الخلف (back)',tr:'بعض السيارات ليس محرّكها في الأمام، بل في الخلف.'},
 ],
 l4:[
   // — Evaluation Exercise E (الرسمية · select the correct answer) —

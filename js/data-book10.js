@@ -569,6 +569,17 @@ l2:[
   {q:"Bill: How do I get to the second floor? Tim: Take the _______.",o:["stairs","mall","shop","rule"],a:0,en:"go up → stairs",ar:'للصعود → الدرَج (stairs)',tr:'كيف أصل إلى الطابق الثاني؟ اصعد الدَّرَج.'},
   {q:"Her daughter is a good girl. She's always nice and _______.",o:["alone","afraid","polite","stuck"],a:2,en:"well-mannered → polite",ar:'حسنة الخُلق → مؤدّبة (polite)',tr:'ابنتها فتاة طيّبة، دائماً لطيفة ومؤدّبة.'},
   {q:"Bill: Tim, let me introduce you to John. Tim: Hi, John. _______",o:["Have you met Tim?","It's nice to meet you.","You're sitting next to me.","Take the stairs."],a:1,en:"polite reply → nice to meet you",ar:'ردّ مهذّب → سُررت بلقائك',tr:'بيل: تِم، دعني أُقدّمك إلى جون. تِم: مرحباً جون، سُررت بلقائك.'},
+  // — Performance Check (ص60 · Using a to-infinitive or gerund) —
+  {q:"Are you ready _______ to the party now?",o:["to go","going","go","went"],a:0,en:"ready + to + verb",ar:'صفة + to + فعل → to go',tr:'هل أنت مستعدّ للذهاب إلى الحفلة الآن؟'},
+  {q:"I can't remember how _______ their house.",o:["to find","finding","find","found"],a:0,en:"how to + verb",ar:'how to + فعل → to find',tr:'لا أتذكّر كيف أجد بيتهم.'},
+  {q:"Do they mind _______ here?",o:["to stop","stopping","stop","stopped"],a:1,en:"mind + verb-ing",ar:'بعد mind نضع ing → stopping',tr:'هل يمانعون التوقّف هنا؟'},
+  {q:"Mike enjoys _______ soccer.",o:["to play","playing","play","played"],a:1,en:"enjoy + verb-ing",ar:'بعد enjoy نضع ing → playing',tr:'مايك يستمتع بلعب كرة القدم.'},
+  {q:"Does he know how _______ a flat tire?",o:["to change","changing","change","changed"],a:0,en:"how to + verb",ar:'how to + فعل → to change',tr:'هل يعرف كيف يبدّل إطاراً مثقوباً؟'},
+  {q:"Colonel Davis will be pleased _______ at graduation.",o:["to speak","speaking","speak","spoke"],a:0,en:"pleased + to + verb",ar:'صفة + to + فعل → to speak',tr:'سيسعد العقيد ديفيس بالتحدّث في حفل التخرّج.'},
+  {q:"Were they sorry _______ town?",o:["to leave","leaving","leave","left"],a:0,en:"sorry + to + verb",ar:'صفة + to + فعل → to leave',tr:'هل كانوا آسفين على مغادرة المدينة؟'},
+  {q:"Has she stopped _______ to you?",o:["to write","writing","write","wrote"],a:1,en:"stop + verb-ing",ar:'بعد stop نضع ing → writing',tr:'هل توقّفت عن الكتابة إليك؟'},
+  {q:"Frank was glad _______ Judy move.",o:["to help","helping","help","helped"],a:0,en:"glad + to + verb",ar:'صفة + to + فعل → to help',tr:'سُرّ فرانك بمساعدة جودي في الانتقال.'},
+  {q:"Janet finished _______ homework before she went to bed.",o:["to do","doing","do","did"],a:1,en:"finish + verb-ing",ar:'بعد finish نضع ing → doing',tr:'أنهت جانيت أداء الواجب قبل أن تنام.'},
 ],
 l3:[
   // — Evaluation Exercise E (الرسمية · select the best answer) —

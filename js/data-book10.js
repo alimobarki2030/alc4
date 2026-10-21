@@ -537,6 +537,13 @@ l1:[
   {q:"Push the _______ to choose something to eat.",o:["knob","tray","button","coin return"],a:2,en:"to select → button",ar:'للاختيار → الزرّ (button)',tr:'اضغط الزرّ لاختيار شيء تأكله.'},
   {q:"I bought some _______ to eat.",o:["chips","detergent","time","cream"],a:0,en:"snack food → chips",ar:'وجبة خفيفة → رقائق (chips)',tr:'اشتريت بعض الرقائق لآكلها.'},
   {q:"The blue and the black shoes cost _______ the same.",o:["no","lastly","exactly","another"],a:2,en:"precisely equal → exactly",ar:'بالضبط نفس السعر → exactly',tr:'الحذاء الأزرق والأسود يكلّفان تماماً نفس السعر.'},
+  // — Exercise F (EE-3 → EE-6) · أسئلة كانت ناقصة —
+  {q:"On my last trip, I took an evening flight. This _______, I'm taking a day flight.",o:["knob","tray","time","selection"],a:2,en:"this occasion → this time",ar:'هذه المرّة → this time',tr:'في رحلتي الأخيرة أخذت رحلة مسائية، هذه المرّة سآخذ رحلة نهارية.'},
+  {q:"Tim: Can you speak French? Tom: Yes, I _______ it in school.",o:["learned","taught","made","found out"],a:0,en:"studied it → learned",ar:'تعلّمتها → learned',tr:'تِم: هل تتحدّث الفرنسية؟ توم: نعم، تعلّمتها في المدرسة.'},
+  {q:"Peter: What did you do with the letter? Paul: I _______ it in the envelope.",o:["lifted","dispensed","inserted","dropped"],a:2,en:"put inside → inserted",ar:'أدخلته → inserted',tr:'بيتر: ماذا فعلت بالرسالة؟ بول: أدخلتها في الظرف.'},
+  {q:"I'm thirsty. I'm going to have _______ drink.",o:["no diet","another","an exact","favorite"],a:1,en:"one more → another",ar:'واحد آخر → another',tr:'أنا عطشان، سأشرب مشروباً آخر.'},
+  {q:"Did Jean teach you how to drive?",o:["No, John taught how to drive.","No, John taught me how to drive.","No, John me taught how to drive.","No, John taught to me how drive."],a:1,en:"teach + person + how to",ar:'teach + الشخص + how to → taught me how to drive',tr:'هل علّمتك جين القيادة؟ لا، جون علّمني القيادة.'},
+  {q:"I went to the bank and withdrew some money _______ groceries.",o:["no","for","in","to"],a:1,en:"purpose → for",ar:'لأجل → for',tr:'ذهبت إلى البنك وسحبت بعض المال للبقالة.'},
 ],
 l2:[
   // — Evaluation Exercise H (الرسمية · choose the best answer) —

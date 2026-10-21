@@ -537,6 +537,13 @@ l1:[
   {q:"Push the _______ to choose something to eat.",o:["knob","tray","button","coin return"],a:2,en:"to select → button",ar:'للاختيار → الزرّ (button)',tr:'اضغط الزرّ لاختيار شيء تأكله.'},
   {q:"I bought some _______ to eat.",o:["chips","detergent","time","cream"],a:0,en:"snack food → chips",ar:'وجبة خفيفة → رقائق (chips)',tr:'اشتريت بعض الرقائق لآكلها.'},
   {q:"The blue and the black shoes cost _______ the same.",o:["no","lastly","exactly","another"],a:2,en:"precisely equal → exactly",ar:'بالضبط نفس السعر → exactly',tr:'الحذاء الأزرق والأسود يكلّفان تماماً نفس السعر.'},
+  // — Exercise F (EE-3 → EE-6) · أسئلة كانت ناقصة —
+  {q:"On my last trip, I took an evening flight. This _______, I'm taking a day flight.",o:["knob","tray","time","selection"],a:2,en:"this occasion → this time",ar:'هذه المرّة → this time',tr:'في رحلتي الأخيرة أخذت رحلة مسائية، هذه المرّة سآخذ رحلة نهارية.'},
+  {q:"Tim: Can you speak French? Tom: Yes, I _______ it in school.",o:["learned","taught","made","found out"],a:0,en:"studied it → learned",ar:'تعلّمتها → learned',tr:'تِم: هل تتحدّث الفرنسية؟ توم: نعم، تعلّمتها في المدرسة.'},
+  {q:"Peter: What did you do with the letter? Paul: I _______ it in the envelope.",o:["lifted","dispensed","inserted","dropped"],a:2,en:"put inside → inserted",ar:'أدخلته → inserted',tr:'بيتر: ماذا فعلت بالرسالة؟ بول: أدخلتها في الظرف.'},
+  {q:"I'm thirsty. I'm going to have _______ drink.",o:["no diet","another","an exact","favorite"],a:1,en:"one more → another",ar:'واحد آخر → another',tr:'أنا عطشان، سأشرب مشروباً آخر.'},
+  {q:"Did Jean teach you how to drive?",o:["No, John taught how to drive.","No, John taught me how to drive.","No, John me taught how to drive.","No, John taught to me how drive."],a:1,en:"teach + person + how to",ar:'teach + الشخص + how to → taught me how to drive',tr:'هل علّمتك جين القيادة؟ لا، جون علّمني القيادة.'},
+  {q:"I went to the bank and withdrew some money _______ groceries.",o:["no","for","in","to"],a:1,en:"purpose → for",ar:'لأجل → for',tr:'ذهبت إلى البنك وسحبت بعض المال للبقالة.'},
 ],
 l2:[
   // — Evaluation Exercise H (الرسمية · choose the best answer) —
@@ -562,6 +569,17 @@ l2:[
   {q:"Bill: How do I get to the second floor? Tim: Take the _______.",o:["stairs","mall","shop","rule"],a:0,en:"go up → stairs",ar:'للصعود → الدرَج (stairs)',tr:'كيف أصل إلى الطابق الثاني؟ اصعد الدَّرَج.'},
   {q:"Her daughter is a good girl. She's always nice and _______.",o:["alone","afraid","polite","stuck"],a:2,en:"well-mannered → polite",ar:'حسنة الخُلق → مؤدّبة (polite)',tr:'ابنتها فتاة طيّبة، دائماً لطيفة ومؤدّبة.'},
   {q:"Bill: Tim, let me introduce you to John. Tim: Hi, John. _______",o:["Have you met Tim?","It's nice to meet you.","You're sitting next to me.","Take the stairs."],a:1,en:"polite reply → nice to meet you",ar:'ردّ مهذّب → سُررت بلقائك',tr:'بيل: تِم، دعني أُقدّمك إلى جون. تِم: مرحباً جون، سُررت بلقائك.'},
+  // — Performance Check (ص60 · Using a to-infinitive or gerund) —
+  {q:"Are you ready _______ to the party now?",o:["to go","going","go","went"],a:0,en:"ready + to + verb",ar:'صفة + to + فعل → to go',tr:'هل أنت مستعدّ للذهاب إلى الحفلة الآن؟'},
+  {q:"I can't remember how _______ their house.",o:["to find","finding","find","found"],a:0,en:"how to + verb",ar:'how to + فعل → to find',tr:'لا أتذكّر كيف أجد بيتهم.'},
+  {q:"Do they mind _______ here?",o:["to stop","stopping","stop","stopped"],a:1,en:"mind + verb-ing",ar:'بعد mind نضع ing → stopping',tr:'هل يمانعون التوقّف هنا؟'},
+  {q:"Mike enjoys _______ soccer.",o:["to play","playing","play","played"],a:1,en:"enjoy + verb-ing",ar:'بعد enjoy نضع ing → playing',tr:'مايك يستمتع بلعب كرة القدم.'},
+  {q:"Does he know how _______ a flat tire?",o:["to change","changing","change","changed"],a:0,en:"how to + verb",ar:'how to + فعل → to change',tr:'هل يعرف كيف يبدّل إطاراً مثقوباً؟'},
+  {q:"Colonel Davis will be pleased _______ at graduation.",o:["to speak","speaking","speak","spoke"],a:0,en:"pleased + to + verb",ar:'صفة + to + فعل → to speak',tr:'سيسعد العقيد ديفيس بالتحدّث في حفل التخرّج.'},
+  {q:"Were they sorry _______ town?",o:["to leave","leaving","leave","left"],a:0,en:"sorry + to + verb",ar:'صفة + to + فعل → to leave',tr:'هل كانوا آسفين على مغادرة المدينة؟'},
+  {q:"Has she stopped _______ to you?",o:["to write","writing","write","wrote"],a:1,en:"stop + verb-ing",ar:'بعد stop نضع ing → writing',tr:'هل توقّفت عن الكتابة إليك؟'},
+  {q:"Frank was glad _______ Judy move.",o:["to help","helping","help","helped"],a:0,en:"glad + to + verb",ar:'صفة + to + فعل → to help',tr:'سُرّ فرانك بمساعدة جودي في الانتقال.'},
+  {q:"Janet finished _______ homework before she went to bed.",o:["to do","doing","do","did"],a:1,en:"finish + verb-ing",ar:'بعد finish نضع ing → doing',tr:'أنهت جانيت أداء الواجب قبل أن تنام.'},
 ],
 l3:[
   // — Evaluation Exercise E (الرسمية · select the best answer) —
@@ -585,6 +603,13 @@ l3:[
   {q:"_______ you please close the window? — Sure, I'd be happy to.",o:["Could","Do","Are","Was"],a:0,en:"polite request → Could you",ar:'طلب مهذّب → Could you',tr:'هل يمكنك إغلاق النافذة من فضلك؟ — بكل سرور.'},
   {q:"What did she ask you? She asked me _______ help her.",o:["to","for","that","will"],a:0,en:"ask + object + to + verb",ar:'ask + مفعول + to + فعل',tr:'ماذا طلبت منك؟ طلبت منّي أن أساعدها.'},
   {q:"The game starts tonight _______ 7:30.",o:["at","on","in","to"],a:0,en:"clock time → at",ar:'قبل الساعة → at',tr:'تبدأ المباراة الليلة الساعة 7:30.'},
+  // — Exercise G (ص68 · Choose the best answer to complete the sentences) —
+  {q:"The cook removed the _______ from the pot.",o:["wheel","cover","trunk","jack"],a:1,en:"pot lid → cover",ar:'غطاء القِدر → cover',tr:'رفع الطبّاخ الغطاء عن القِدر.'},
+  {q:"Can you _______ warm with just a sweater?",o:["replace","cover","keep","raise"],a:2,en:"stay warm → keep warm",ar:'يبقى دافئاً → keep warm',tr:'هل تستطيع أن تبقى دافئاً بكنزة فقط؟'},
+  {q:"I will need some help to _______ the couch to put the carpet under it.",o:["inflate","raise","loosen","lower"],a:1,en:"lift up → raise",ar:'يرفع → raise',tr:'سأحتاج مساعدة لرفع الأريكة ووضع السجّادة تحتها.'},
+  {q:"Please hurry up. We don't want to _______.",o:["be late","arrive on time","go there now","be early"],a:0,en:"hurry → don't be late",ar:'أسرِع → لا نريد أن نتأخّر (be late)',tr:'أسرِع من فضلك، لا نريد أن نتأخّر.'},
+  {q:"Mr. Smith will replace the old books with new _______.",o:["tickets","books","pages","keys"],a:1,en:"replace books with books",ar:'يستبدل الكتب بكتب جديدة → books',tr:'سيستبدل السيد سميث الكتب القديمة بكتب جديدة.'},
+  {q:"Some cars don't have a motor in the front. It's in the _______.",o:["back","side","key","trunk lid"],a:0,en:"not front → back",ar:'ليس في الأمام → في الخلف (back)',tr:'بعض السيارات ليس محرّكها في الأمام، بل في الخلف.'},
 ],
 l4:[
   // — Evaluation Exercise E (الرسمية · select the correct answer) —
@@ -607,6 +632,8 @@ l4:[
   {q:"Tom: How's the weather? Tim: It's very _______ today.",o:["about","single","pleasant","far"],a:2,en:"nice weather → pleasant",ar:'طقس لطيف → pleasant',tr:'توم: كيف الطقس؟ تِم: لطيف جداً اليوم.'},
   {q:"Jim is _______ his old car.",o:["working at","working on","working about","working of"],a:1,en:"repair → working on",ar:'يعمل على (يُصلح) → working on',tr:'جيم يعمل على سيارته القديمة (يُصلحها).'},
   {q:"The family always travels _______ the city to the lake in the summer.",o:["it","far","from","about"],a:2,en:"from A to B → from",ar:'من … إلى → from',tr:'تسافر العائلة دائماً من المدينة إلى البحيرة في الصيف.'},
+  {q:"Henry Ford is famous for making one of the first cars in the US.",o:["Everyone knows him.","He has brown hair.","He drives very fast.","He owns a grocery store."],a:0,en:"famous → everyone knows him",ar:'مشهور → الجميع يعرفه',tr:'هنري فورد مشهور بصناعة إحدى أولى السيارات في أمريكا، الجميع يعرفه.'},
+  {q:"While I wait to see a doctor in the office, I read the latest _______.",o:["marriages","magazines","introductions","occupations"],a:1,en:"something to read → magazines",ar:'شيء يُقرأ → مجلّات (magazines)',tr:'بينما أنتظر الطبيب في العيادة، أقرأ آخر المجلّات.'},
   {q:"Mike doesn't have an occupation. He doesn't have a _______.",o:["job","dog","hat","car"],a:0,en:"occupation = job",ar:'المهنة = وظيفة (job)',tr:'مايك ليست لديه مهنة، ليست لديه وظيفة.'},
   {q:"Tina's a cashier. She _______.",o:["has lots of clothes","takes money and gives change","likes to dance and sing","repairs cars"],a:1,en:"cashier → takes money, gives change",ar:'أمينة الصندوق → تأخذ المال وتعطي الباقي',tr:'تينا أمينة صندوق، تأخذ المال وتعطي الباقي.'},
   {q:"Sarah and George bought a camera shop. They have a _______.",o:["collection","relative","business","marriage"],a:2,en:"own a shop → business",ar:'يملكان متجراً → عمل تجاري (business)',tr:'اشترى سارة وجورج محلّ كاميرات، لديهما عمل تجاري.'},
@@ -642,6 +669,72 @@ const REVIEW=[
 EE.review=REVIEW;
 
 // ═══════════════════════════════════════
+// REVIEW — Exercise R (Book 10 · Lesson 5 · ص123 · Select the best answer)
+// ═══════════════════════════════════════
+const REVIEW_R=[
+  {q:"Mr. Smith taught Hal how _______ Spanish.",o:["to speak","to speaking","speaking","spoke"],a:0,en:"how to + verb",ar:'how to + فعل → to speak',tr:'علّم السيد سميث هال كيف يتحدّث الإسبانية.'},
+  {q:"Mark is going to Italy. His flight is supposed _______ at noon today.",o:["can take off","taking off","to take off","took off"],a:2,en:"supposed to + verb",ar:'supposed to + فعل → to take off',tr:'مارك ذاهب إلى إيطاليا، يُفترض أن تُقلع رحلته ظهر اليوم.'},
+  {q:"Sally's brother doesn't mind _______ his nieces.",o:["to watch","watching","watched","can watch"],a:1,en:"mind + verb-ing",ar:'بعد mind نضع ing → watching',tr:'لا يمانع أخو سالي في رعاية بنات أخيه.'},
+  {q:"Janet is afraid _______ in an airplane.",o:["can fly","flying","to fly","flown"],a:2,en:"afraid + to + verb",ar:'صفة + to + فعل → to fly',tr:'جانيت تخاف من الطيران في الطائرة.'},
+  {q:"Could you _______ me, please?",o:["helping","helped","help","to help"],a:2,en:"could + base verb",ar:'بعد could فعل مجرّد → help',tr:'هل تستطيع مساعدتي من فضلك؟'},
+  {q:"When did Jack start _______ Chinese?",o:["learn","learned","can learn","learning"],a:3,en:"start + verb-ing",ar:'بعد start نضع ing → learning',tr:'متى بدأ جاك تعلّم الصينية؟'},
+  {q:"You are supposed _______ your seatbelt in your car.",o:["to buckle","buckling","how to buckle","can buckle"],a:0,en:"supposed to + verb",ar:'supposed to + فعل → to buckle',tr:'يُفترض أن تربط حزام الأمان في سيارتك.'},
+  {q:"Were the students happy _______ the class?",o:["finished","to finish","can finish","finishing"],a:1,en:"happy + to + verb",ar:'صفة + to + فعل → to finish',tr:'هل كان الطلاب سعداء بإنهاء الصف؟'},
+  {q:"Did your mother teach you how _______ this?",o:["doing","can do","do","to do"],a:3,en:"how to + verb",ar:'how to + فعل → to do',tr:'هل علّمتك أمّك كيف تفعل هذا؟'},
+  {q:"Fran didn't learn how _______ a car.",o:["to drive","driving","can drive","supposed to drive"],a:0,en:"how to + verb",ar:'how to + فعل → to drive',tr:'لم تتعلّم فران كيف تقود السيارة.'},
+  {q:"James does not enjoy _______ tests.",o:["take","took","taking","to take"],a:2,en:"enjoy + verb-ing",ar:'بعد enjoy نضع ing → taking',tr:'جيمس لا يستمتع بأداء الاختبارات.'},
+  {q:"The students were able _______ the test quickly.",o:["to finish","finishing","finished","finish"],a:0,en:"able to + verb",ar:'be able to + فعل → to finish',tr:'استطاع الطلاب إنهاء الاختبار بسرعة.'},
+];
+
+// ═══════════════════════════════════════
+// أسئلة واجب Lesson 1 (Exercise B · HW-2 → HW-4) — تُضاف للمراجعة والاختبار الشامل
+// ═══════════════════════════════════════
+const HW1=[
+  {q:"I'm looking for my pencil. I _______ it on the floor.",o:["dropped","inserted","lifted"],a:0,en:"fell from my hand → dropped",ar:'سقط منّي → أسقطته (dropped)',tr:'أبحث عن قلمي، أسقطته على الأرض.'},
+  {q:"Mary: Did you hear? John bought a new house. Ann: Yes, I _______ a short time ago.",o:["taught","dispensed","found out"],a:2,en:"learned the news → found out",ar:'عرفت الخبر → found out',tr:'ماري: هل سمعتِ؟ اشترى جون بيتاً جديداً. آن: نعم، عرفت قبل وقت قصير.'},
+  {q:"Dan: How do you _______ this machine? Tom: Insert the coins in that opening. Then push the selection buttons.",o:["operate","teach","drop"],a:0,en:"use a machine → operate",ar:'تشغيل الآلة → operate',tr:'دان: كيف تُشغّل هذه الآلة؟ توم: أدخل العملات في تلك الفتحة ثم اضغط أزرار الاختيار.'},
+  {q:"I bought a radio here last week, but it doesn't work. Can I _______ my money _______?",o:["find ... out","get ... back","get ... on"],a:1,en:"return of money → get back",ar:'استرداد المال → get ... back',tr:'اشتريت راديو من هنا الأسبوع الماضي لكنه لا يعمل. هل أستطيع استرداد مالي؟'},
+  {q:"Tim: I can't open the door. Mary: You have to push very hard. Sometimes it _______.",o:["operates","sticks","teaches"],a:1,en:"hard to open → sticks",ar:'يعلق ولا ينفتح → sticks',tr:'تِم: لا أستطيع فتح الباب. ماري: عليك أن تدفع بقوّة، أحياناً يعلق.'},
+  {q:"Jan: Bob drives the car very well. Ann: Yes, his father _______ him.",o:["learned","lifted","taught"],a:2,en:"gave lessons → taught",ar:'علّمه → taught',tr:'جان: بوب يقود السيارة جيّداً. آن: نعم، علّمه أبوه.'},
+  {q:"Everybody at work likes Jim. He's very _______.",o:["stuck","favorite","popular"],a:2,en:"liked by many → popular",ar:'يحبّه الجميع → محبوب (popular)',tr:'الجميع في العمل يحبّون جيم، هو محبوب جداً.'},
+  {q:"Mary: Where do you _______ the dollar bill in this machine? Anne: The slot is on the right side.",o:["insert","lift","work"],a:0,en:"put into a slot → insert",ar:'تُدخل في الفتحة → insert',tr:'ماري: أين تُدخل الدولار في هذه الآلة؟ آن: الفتحة على الجهة اليمنى.'},
+  {q:"Dan: I'll use this telephone to make a phone call. Tom: You can't. It's _______.",o:["supposed to be","out of order","not after that"],a:1,en:"not working → out of order",ar:'لا يعمل → معطّل (out of order)',tr:'دان: سأستخدم هذا الهاتف لإجراء مكالمة. توم: لا تستطيع، إنه معطّل.'},
+  {q:"Jan: How many _______ did you see the movie? Ted: Just four.",o:["openings","selections","times"],a:2,en:"how often → How many times",ar:'عدد المرّات → How many times',tr:'جان: كم مرّة شاهدت الفيلم؟ تيد: أربع مرّات فقط.'},
+  {q:"Tim: Do you want _______ soft drink? Mary: No, I'm not thirsty.",o:["another","favorite","last"],a:0,en:"one more → another",ar:'واحد إضافي → another',tr:'تِم: هل تريدين مشروباً غازياً آخر؟ ماري: لا، لست عطشانة.'},
+  {q:"Both sweaters are _______ the same size.",o:["lastly","exactly","before"],a:1,en:"precisely → exactly",ar:'تماماً → exactly',tr:'الكنزتان بالمقاس نفسه تماماً.'},
+  {q:"I like salty snacks. I like _______.",o:["chips","knobs","sodas"],a:0,en:"salty snack → chips",ar:'وجبة خفيفة مالحة → شيبس (chips)',tr:'أحبّ الوجبات الخفيفة المالحة، أحبّ الشيبس.'},
+  {q:"The plane was very late, but it _______ arrived at midnight.",o:["last","finally","after"],a:1,en:"after a long wait → finally",ar:'بعد انتظار طويل → أخيراً (finally)',tr:'تأخّرت الطائرة كثيراً، لكنها وصلت أخيراً عند منتصف الليل.'},
+  {q:"I'm _______ money. Can you lend me some?",o:["out of","get back","supposed to"],a:0,en:"have none left → out of",ar:'نفد منّي → out of',tr:'نفدت نقودي، هل تُقرضني بعضها؟'},
+  {q:"Tim: I ate in a good restaurant last evening. Tom: Yes, good restaurants are _______ in this city.",o:["everywhere","favorite","stuck"],a:0,en:"in all places → everywhere",ar:'في كل مكان → everywhere',tr:'تِم: أكلت في مطعم جيّد مساء أمس. توم: نعم، المطاعم الجيّدة في كل مكان في هذه المدينة.'},
+  {q:"When a vending machine runs out of change, a small light tells you to use the _______ change.",o:["lift","drink","exact"],a:2,en:"no change given → exact change",ar:'المبلغ المضبوط → exact change',tr:'حين تنفد الفكّة من آلة البيع، يُخبرك ضوء صغير أن تستخدم المبلغ المضبوط.'},
+  {q:"Bob: Are you going to study? Tom: Only _______ 9 o'clock.",o:["when","until","while"],a:1,en:"up to a time → until",ar:'حتى وقت معيّن → until',tr:'بوب: هل ستذاكر؟ توم: فقط حتى الساعة التاسعة.'},
+  {q:"I'm hungry. Where's a _______?",o:["coin return","washing machine","vending machine"],a:2,en:"buy food → vending machine",ar:'لشراء الأكل → آلة البيع',tr:'أنا جائع، أين توجد آلة بيع؟'},
+  {q:"I need some change _______ the vending machine.",o:["to","in","for"],a:2,en:"purpose → for",ar:'لأجل → for',tr:'أحتاج بعض الفكّة لآلة البيع.'},
+];
+
+// ═══════════════════════════════════════
+// أسئلة واجب Lesson 3 (Exercise E · HW-26 → HW-27) — تُضاف للمراجعة والاختبار الشامل
+// ═══════════════════════════════════════
+const HW3=[
+  {q:"It's important to _______ cool on hot days.",o:["keep","mind","replace"],a:0,en:"stay → keep cool",ar:'يبقى → keep cool',tr:'من المهمّ أن تبقى بارداً في الأيام الحارّة.'},
+  {q:"Put the _______ on the sugar bowl, please.",o:["air","wheel","cover"],a:2,en:"lid → cover",ar:'الغطاء → cover',tr:'ضع الغطاء على وعاء السكّر من فضلك.'},
+  {q:"I don't have a pen. Do you have _______ one for me to use?",o:["a flat","an extra","a quick"],a:1,en:"one more → an extra",ar:'إضافي → an extra',tr:'ليس معي قلم، هل عندك قلم إضافي أستخدمه؟'},
+  {q:"The book I want to buy costs $4.50. I only have $3.00. I don't have _______ money to buy it.",o:["loose","enough","common"],a:1,en:"not sufficient → enough",ar:'كافٍ → enough',tr:'الكتاب الذي أريده بـ4.50 دولار، ومعي 3 دولارات فقط. ليس معي مال كافٍ لشرائه.'},
+  {q:"Can you do _______? Would you take this package upstairs for me?",o:["me a favor","in a hurry","hurry up"],a:0,en:"polite request → do me a favor",ar:'طلب مهذّب → do me a favor',tr:'هل تُسدي لي معروفاً؟ هل تأخذ هذا الطرد للأعلى؟'},
+  {q:"Jan: You need to put air in your basketball before the game. Ann: Yes, I know. I'll _______ it this afternoon.",o:["tighten","remove","inflate"],a:2,en:"put air in → inflate",ar:'ينفخ → inflate',tr:'جان: تحتاجين نفخ كرة السلّة قبل المباراة. آن: نعم أعرف، سأنفخها هذا العصر.'},
+  {q:"Two of my tires are very old. I need to _______ them soon.",o:["raise","replace","keep"],a:1,en:"change for new → replace",ar:'يستبدل → replace',tr:'إطاران من إطاراتي قديمان جداً، أحتاج أن أستبدلهما قريباً.'},
+  {q:"You're late for school. You have to _______.",o:["hand out","pass out","hurry up"],a:2,en:"go fast → hurry up",ar:'أسرِع → hurry up',tr:'تأخّرت عن المدرسة، عليك أن تُسرع.'},
+  {q:"Do we have a _______ umbrella in the house?",o:["flat","spare","quick"],a:1,en:"extra one → spare",ar:'احتياطي → spare',tr:'هل عندنا مظلّة احتياطية في البيت؟'},
+  {q:"We had to _______ the car slowly after we changed the tire.",o:["cover","raise","lower"],a:2,en:"bring down from jack → lower",ar:'يُنزل → lower',tr:'كان علينا إنزال السيارة ببطء بعد تبديل الإطار.'},
+  {q:"I use my _______ to open the car door.",o:["wrench","key","jack"],a:1,en:"open a door → key",ar:'لفتح الباب → مفتاح (key)',tr:'أستخدم مفتاحي لفتح باب السيارة.'},
+  {q:"I ate two pieces of cake. My stomach is full and my belt is _______.",o:["extra","tight","enough"],a:1,en:"full stomach → tight belt",ar:'مشدود/ضيّق → tight',tr:'أكلت قطعتين من الكعك، معدتي ممتلئة وحزامي ضيّق.'},
+  {q:"_______ your hat before you enter the building.",o:["loosen","remove","hand out"],a:1,en:"take off → remove",ar:'اخلع → remove',tr:'اخلع قبّعتك قبل أن تدخل المبنى.'},
+  {q:"Bob's fast. He did his math problems _______.",o:["certainly","slowly","quickly"],a:2,en:"fast → quickly",ar:'سريع → بسرعة (quickly)',tr:'بوب سريع، حلّ مسائل الرياضيات بسرعة.'},
+  {q:"The wheel is _______. We need to fix it before it falls off.",o:["loose","enough","common"],a:0,en:"may fall off → loose",ar:'مرتخٍ → loose',tr:'العجلة مرتخية، نحتاج إصلاحها قبل أن تسقط.'},
+];
+REVIEW.push(...REVIEW_R,...HW1,...HW3);
+
+// ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة
 // ═══════════════════════════════════════
 const FINAL=dedupe_by_q([
@@ -649,6 +742,8 @@ const FINAL=dedupe_by_q([
   ...EE.l2,
   ...EE.l3,
   ...EE.l4,
+  ...HW1,
+  ...HW3,
 ]);
 EE.final=FINAL;
 

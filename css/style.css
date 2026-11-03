@@ -241,6 +241,8 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .fb-why{font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;margin-top:5px;padding-top:5px;border-top:1px dashed currentColor}
 .fb-why:empty{display:none}
 .fb-why bdi{font-family:'Inter',sans-serif}
+.fb-why bdi.nw{white-space:nowrap}
+.fb-why .why-opt{padding:1px 6px;border-radius:5px;background:rgba(0,0,0,.06)}
 
 /* WORD ORDER */
 .wo-card{background:var(--card);border:2px solid var(--bdr);border-radius:14px;

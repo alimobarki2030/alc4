@@ -627,6 +627,25 @@ const REVIEW=[
 EE.review=REVIEW;
 
 // ═══════════════════════════════════════
+// REVIEW — Exercise W (Book 11 · Lesson 5 · ص132 · Select the correct answer)
+// أزمنة: المضارع التام / التام المستمر مقابل الماضي البسيط والمستمر
+// ═══════════════════════════════════════
+REVIEW.push(
+  {q:"Jim _______ to school for two years.",o:["going","has going","has been going"],a:2,en:"for + duration, still continuing → has been going",ar:'for مدّة وما زال مستمرّاً → has been going',tr:'جيم يذهب إلى المدرسة منذ سنتين.'},
+  {q:"My brother _______ my car last week.",o:["used","is using","has been using"],a:0,en:"last week → simple past",ar:'last week وقت منتهٍ → الماضي used',tr:'استخدم أخي سيّارتي الأسبوع الماضي.'},
+  {q:"Joan _______ at work every day since Monday.",o:["is","has been","was"],a:1,en:"since Monday → has been",ar:'since نقطة بداية → has been',tr:'جوان في العمل كل يوم منذ يوم الاثنين.'},
+  {q:"Don _______ a headache since 6:00 a.m.",o:["has","had","has had"],a:2,en:"since 6:00 → has had",ar:'since + المضارع التام → has had',tr:'عند دون صداع منذ السادسة صباحاً.'},
+  {q:"The Millers _______ in Chicago since 1990.",o:["live","are living","have been living"],a:2,en:"since 1990, still → have been living",ar:'since 1990 وما زالوا → have been living',tr:'يعيش آل ميلر في شيكاغو منذ 1990.'},
+  {q:"No one _______ at the party last night.",o:["dances","danced","has been dancing"],a:1,en:"last night → simple past",ar:'last night وقت منتهٍ → الماضي danced',tr:'لم يرقص أحد في الحفلة الليلة الماضية.'},
+  {q:"Mr. Wells _______ students since 1995.",o:["is teaching","was teaching","has been teaching"],a:2,en:"since 1995, still → has been teaching",ar:'since 1995 وما زال → has been teaching',tr:'يُدرّس السيد ويلز الطلاب منذ 1995.'},
+  {q:"Pat _______ two years ago.",o:["graduated","graduates","was graduating"],a:0,en:"ago → simple past",ar:'ago وقت منتهٍ → الماضي graduated',tr:'تخرّج بات قبل سنتين.'},
+  {q:"Sara _______ to Canada three times since last year.",o:["is","was","has been"],a:2,en:"times + since → has been",ar:'عدد مرّات + since → has been (تجربة)',tr:'زارت سارة كندا ثلاث مرّات منذ العام الماضي.'},
+  {q:"It _______ hard when we left.",o:["is raining","was raining","has been raining"],a:1,en:"in progress at a past moment → was raining",ar:'كان مستمرّاً لحظة خروجنا → الماضي المستمر was raining',tr:'كانت تمطر بغزارة حين غادرنا.'},
+  {q:"Bob _______ for his brother for three hours yesterday.",o:["waited","waits","has been waiting"],a:0,en:"yesterday → simple past",ar:'yesterday وقت منتهٍ → الماضي waited',tr:'انتظر بوب أخاه ثلاث ساعات أمس.'},
+  {q:"We usually have a new teacher every week. But for the past two weeks, we _______ the same teacher.",o:["have","had","have had"],a:2,en:"for the past two weeks → have had",ar:'for the past two weeks حتى الآن → have had',tr:'عادةً يأتينا معلّم جديد كل أسبوع، لكن خلال الأسبوعين الماضيين بقي معنا المعلّم نفسه.'},
+);
+
+// ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة
 // ═══════════════════════════════════════
 const FINAL=dedupe_by_q([

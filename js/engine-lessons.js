@@ -754,7 +754,7 @@ function build_quiz(elId,qs,prefix){
     </div>
     <div class="fb" id="${prefix}fb${i}">
       <span style="font-size:.9rem;flex-shrink:0" id="${prefix}fi${i}"></span>
-      <div><div class="fb-ar" id="${prefix}fa${i}"></div></div>
+      <div><div class="fb-ar" id="${prefix}fa${i}"></div><div class="fb-why" id="${prefix}fw${i}"></div></div>
     </div>`;
     wrap.appendChild(c);
   });
@@ -801,6 +801,15 @@ function ans(pfx,qi,oi,correct){
   card.classList.add(ok?'qok':'qno');
   document.getElementById(`${pfx}fi${qi}`).textContent=ok?'✅':'❌';
   document.getElementById(`${pfx}fa${qi}`).textContent=q.tr||'';
+  // سبب الإجابة: يربط الخيار الصحيح بمعناه (مثل «لم يعودوا → بعد الآن (any longer)»)
+  // حتى يفهم الطالب لماذا اختير هذا الخيار، لا معنى الجملة فقط.
+  const fw=document.getElementById(`${pfx}fw${qi}`);
+  if(fw){
+    // أغلب الشروح تذكر الخيار الصحيح نفسه (… → any longer)؛ إن لم تذكره نُضيفه في أوّلها.
+    const opt=String(q.o[q.a]||''),ar=q.ar||'';
+    const has=opt&&ar.toLowerCase().includes(opt.toLowerCase());
+    fw.textContent=ar?('💡 '+(has?'':opt+' — ')+ar):'';
+  }
   fb.className='fb show '+(ok?'ok':'no');
   // XP rewards each correct answer; the header 🔥 streak is now a daily streak
   // (see compute_daily_streak) and is no longer reset by a wrong answer. Always

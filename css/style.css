@@ -238,6 +238,9 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .fb.no{background:var(--no-bg);color:var(--no-txt)}
 .fb-en{font-family:'Inter',sans-serif;direction:ltr;font-size:.76rem}
 .fb-ar{font-family:'Cairo',sans-serif;font-size:.73rem;opacity:.85;margin-top:2px}
+.fb-why{font-family:'Cairo',sans-serif;font-size:.78rem;font-weight:700;margin-top:5px;padding-top:5px;border-top:1px dashed currentColor}
+.fb-why:empty{display:none}
+.fb-why bdi{font-family:'Inter',sans-serif}
 
 /* WORD ORDER */
 .wo-card{background:var(--card);border:2px solid var(--bdr);border-radius:14px;

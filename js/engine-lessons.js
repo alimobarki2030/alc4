@@ -771,6 +771,19 @@ function build_quiz(elId,qs,prefix){
 // attribute (which required fragile manual quote-escaping) — ans() looks up
 // the full question object via EE[CL][qi] and reads q.tr for the feedback
 // line, same "translation, not English grammar explanation" feedback style.
+// سطر «سبب الإجابة» تحت الترجمة. الشرح يخلط عربي وإنجليزي، فنعزل كل مقطع
+// إنجليزي في <bdi dir=ltr> حتى لا تنقلب الكلمات، ونقلب السهم → إلى ← لأن
+// السطر يُقرأ من اليمين. إن لم يذكر الشرح الخيار الصحيح نضيفه في أوّله.
+function _esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function _ltrRuns(t){return _esc(t).replace(/[A-Za-z0-9][A-Za-z0-9 ,.'’?!:;\/+\-–…]*[A-Za-z0-9?!.…]|[A-Za-z]/g,m=>'<bdi dir="ltr"'+(m.length<=28?' class="nw"':'')+'>'+m+'</bdi>');}
+function whyHtml(q){
+  const ar=String(q.ar||'').trim();if(!ar)return '';
+  const opt=String(q.o[q.a]||'');
+  const has=opt&&ar.toLowerCase().includes(opt.toLowerCase());
+  const body=_ltrRuns(ar).replace(/→/g,'←');
+  const lead=has?'':'<span class="why-opt"><bdi dir="ltr" class="nw">'+_esc(opt)+'</bdi></span> · ';
+  return '💡 '+lead+body;
+}
 function ans(pfx,qi,oi,correct){
   const q=EE[CL][qi];
   const opts=document.querySelectorAll(`#${pfx}o${qi} .opt`);
@@ -804,12 +817,7 @@ function ans(pfx,qi,oi,correct){
   // سبب الإجابة: يربط الخيار الصحيح بمعناه (مثل «لم يعودوا → بعد الآن (any longer)»)
   // حتى يفهم الطالب لماذا اختير هذا الخيار، لا معنى الجملة فقط.
   const fw=document.getElementById(`${pfx}fw${qi}`);
-  if(fw){
-    // أغلب الشروح تذكر الخيار الصحيح نفسه (… → any longer)؛ إن لم تذكره نُضيفه في أوّلها.
-    const opt=String(q.o[q.a]||''),ar=q.ar||'';
-    const has=opt&&ar.toLowerCase().includes(opt.toLowerCase());
-    fw.textContent=ar?('💡 '+(has?'':opt+' — ')+ar):'';
-  }
+  if(fw)fw.innerHTML=whyHtml(q);
   fb.className='fb show '+(ok?'ok':'no');
   // XP rewards each correct answer; the header 🔥 streak is now a daily streak
   // (see compute_daily_streak) and is no longer reset by a wrong answer. Always

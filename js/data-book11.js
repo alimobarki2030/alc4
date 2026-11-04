@@ -536,7 +536,7 @@ l1:[
   {q:"Linda: _______ were you in Boston? Adam: We were there for two weeks.",o:["Any longer","Since","How long","Sometime"],a:2,en:"ask duration → How long",ar:'السؤال عن المدّة → How long',tr:'ليندا: كم بقيتم في بوسطن؟ آدم: كنّا هناك أسبوعين.'},
   {q:"Has he _______ in the barracks?",o:["been study","had studying","been studying","have study"],a:2,en:"present perfect continuous → been studying",ar:'المضارع التام المستمر → been studying',tr:'هل ظلّ يذاكر في الثكنة؟'},
   {q:"Ten minutes after the plane took off, the pilot said he had _______ and returned to the airport.",o:["an appointment","an emergency","an ache","a symptom"],a:1,en:"urgent problem → an emergency",ar:'مشكلة عاجلة → حالة طارئة (emergency)',tr:'بعد عشر دقائق من إقلاع الطائرة، قال الطيّار إنّ لديه حالة طارئة وعاد إلى المطار.'},
-  {q:"_______ you _______ to Chicago before?",o:["Have, had","Had, have","Have, been","Had, been"],a:2,en:"experience → Have you been",ar:'الخبرة → Have you been',tr:'هل سبق أن ذهبت إلى شيكاغو من قبل؟'},
+  {q:"_______ you _______ to Chicago before?",o:["Have, had","Had, have","Have, been","Had, been"],a:2,en:"experience → Have you been",ar:'هل سبق؟ (تجربة في حياتك) → Have you been',tr:'هل سبق أن ذهبت إلى شيكاغو من قبل؟'},
 ],
 l2:[
   {q:"You're not driving fast enough. You need to _______.",o:["pull over","speed up","slow down"],a:1,en:"go faster → speed up",ar:'يزيد السرعة → speed up',tr:'أنت لا تقود بسرعة كافية، تحتاج أن تُسرِع.'},
@@ -592,6 +592,21 @@ l4:[
   {q:"How do you _______ your free time on the weekend?",o:["feel","love","spend","recommend"],a:2,en:"use time → spend",ar:'يقضي الوقت → spend',tr:'كيف تقضي وقت فراغك في عطلة الأسبوع؟'},
   {q:"I'll get a snack from the kitchen when the _______ come on the TV.",o:["variety","channel","program","commercials"],a:3,en:"ad breaks → commercials",ar:'الإعلانات → commercials',tr:'سآخذ وجبة خفيفة من المطبخ عندما تبدأ الإعلانات على التلفاز.'},
   {q:"The soldiers really liked the movie, and they _______ a lot.",o:["laughed","could","planned","frightened"],a:0,en:"found it funny → laughed",ar:'ضحكوا → laughed',tr:'أعجب الجنود الفيلم كثيراً، وضحكوا كثيراً.'},
+  // — Exercise C (EE-20 → EE-21 · Select the best preposition) —
+  {q:"The Smiths have been living in New York _______ 1999.",o:["until","for","since","before"],a:2,en:"start point → since",ar:'نقطة بداية (1999) → since',tr:'يعيش آل سميث في نيويورك منذ 1999.'},
+  {q:"_______ the age of 18, Sam decided to go into the Air Force.",o:["At","Since","On","Until"],a:0,en:"at the age of",ar:'عند عُمر معيّن → At the age of',tr:'في سنّ الثامنة عشرة، قرّر سام الالتحاق بسلاح الجو.'},
+  {q:"It has been raining _______ 2 hours.",o:["from","till","after","for"],a:3,en:"duration → for",ar:'مدّة (ساعتين) → for',tr:'إنها تمطر منذ ساعتين.'},
+  {q:"_______ June 8th, we'll fly to Japan.",o:["In","At","To","On"],a:3,en:"date → on",ar:'تاريخ/يوم → On',tr:'في الثامن من يونيو سنسافر إلى اليابان.'},
+  {q:"Steve always takes a shower _______ he goes to work.",o:["before","from","until","after"],a:0,en:"shower first, then work → before",ar:'يستحمّ ثم يذهب للعمل → قبل (before)',tr:'ستيف دائماً يستحمّ قبل أن يذهب إلى العمل.'},
+  {q:"Our class has a 20-minute break _______ the morning.",o:["till","in","at","on"],a:1,en:"in the morning",ar:'فترات اليوم → in the morning',tr:'لدى صفّنا استراحة عشرين دقيقة في الصباح.'},
+  {q:"We're going to the gym _______ class.",o:["at","for","after","since"],a:2,en:"class first, then gym → after",ar:'بعد انتهاء الحصّة → after',tr:'سنذهب إلى النادي بعد الحصّة.'},
+  {q:"You can't go to the BX _______ you finish cleaning the barracks.",o:["until","from","since","for"],a:0,en:"not before that point → until",ar:'ليس قبل أن تنتهي → until (حتى)',tr:'لا تستطيع الذهاب إلى الـ BX حتى تنتهي من تنظيف الثكنة.'},
+  {q:"I have been studying English _______ January.",o:["on","until","since","to"],a:2,en:"start point → since",ar:'نقطة بداية (يناير) → since',tr:'أدرس الإنجليزية منذ يناير.'},
+  {q:"The Wilsons go on vacation every year _______ the summer.",o:["on","at","to","in"],a:3,en:"season → in",ar:'فصل/موسم → in the summer',tr:'يذهب آل ويلسون في إجازة كل عام في الصيف.'},
+  {q:"Can the doctor see me _______ Thursday?",o:["at","on","til","in"],a:1,en:"day → on",ar:'يوم من الأسبوع → on',tr:'هل يستطيع الطبيب رؤيتي يوم الخميس؟'},
+  {q:"The mall is open _______ 9:00 a.m. _______ 9:00 p.m. every day.",o:["before, after","from, to","until, till","since, for"],a:1,en:"range → from … to",ar:'من … إلى → from … to',tr:'المول مفتوح من التاسعة صباحاً إلى التاسعة مساءً كل يوم.'},
+  {q:"The general will depart _______ 1400 today.",o:["at","until","in","since"],a:0,en:"clock time → at",ar:'ساعة محدّدة → at',tr:'سيغادر الجنرال الساعة 1400 اليوم.'},
+  {q:"The movie will begin _______ 10 minutes.",o:["on","in","for","to"],a:1,en:"after a period from now → in",ar:'بعد مدّة من الآن → in (خلال)',tr:'سيبدأ الفيلم بعد عشر دقائق.'},
 ]
 };
 
@@ -625,6 +640,25 @@ const REVIEW=[
   {q:"If you ask me, this movie is _______.",o:["busy","boring","sharp","prompt"],a:1,en:"not fun → boring",ar:'ممل → boring',tr:'برأيي، هذا الفيلم مُملّ.'},
 ];
 EE.review=REVIEW;
+
+// ═══════════════════════════════════════
+// REVIEW — Exercise W (Book 11 · Lesson 5 · ص132 · Select the correct answer)
+// أزمنة: المضارع التام / التام المستمر مقابل الماضي البسيط والمستمر
+// ═══════════════════════════════════════
+REVIEW.push(
+  {q:"Jim _______ to school for two years.",o:["going","has going","has been going"],a:2,en:"for + duration, still continuing → has been going",ar:'for مدّة وما زال مستمرّاً → has been going',tr:'جيم يذهب إلى المدرسة منذ سنتين.'},
+  {q:"My brother _______ my car last week.",o:["used","is using","has been using"],a:0,en:"last week → simple past",ar:'last week وقت منتهٍ → الماضي used',tr:'استخدم أخي سيّارتي الأسبوع الماضي.'},
+  {q:"Joan _______ at work every day since Monday.",o:["is","has been","was"],a:1,en:"since Monday → has been",ar:'since نقطة بداية → has been',tr:'جوان في العمل كل يوم منذ يوم الاثنين.'},
+  {q:"Don _______ a headache since 6:00 a.m.",o:["has","had","has had"],a:2,en:"since 6:00 → has had",ar:'since + المضارع التام → has had',tr:'عند دون صداع منذ السادسة صباحاً.'},
+  {q:"The Millers _______ in Chicago since 1990.",o:["live","are living","have been living"],a:2,en:"since 1990, still → have been living",ar:'since 1990 وما زالوا → have been living',tr:'يعيش آل ميلر في شيكاغو منذ 1990.'},
+  {q:"No one _______ at the party last night.",o:["dances","danced","has been dancing"],a:1,en:"last night → simple past",ar:'last night وقت منتهٍ → الماضي danced',tr:'لم يرقص أحد في الحفلة الليلة الماضية.'},
+  {q:"Mr. Wells _______ students since 1995.",o:["is teaching","was teaching","has been teaching"],a:2,en:"since 1995, still → has been teaching",ar:'since 1995 وما زال → has been teaching',tr:'يُدرّس السيد ويلز الطلاب منذ 1995.'},
+  {q:"Pat _______ two years ago.",o:["graduated","graduates","was graduating"],a:0,en:"ago → simple past",ar:'ago وقت منتهٍ → الماضي graduated',tr:'تخرّج بات قبل سنتين.'},
+  {q:"Sara _______ to Canada three times since last year.",o:["is","was","has been"],a:2,en:"times + since → has been",ar:'عدد مرّات + since → has been (تجربة)',tr:'زارت سارة كندا ثلاث مرّات منذ العام الماضي.'},
+  {q:"It _______ hard when we left.",o:["is raining","was raining","has been raining"],a:1,en:"in progress at a past moment → was raining",ar:'كان مستمرّاً لحظة خروجنا → الماضي المستمر was raining',tr:'كانت تمطر بغزارة حين غادرنا.'},
+  {q:"Bob _______ for his brother for three hours yesterday.",o:["waited","waits","has been waiting"],a:0,en:"yesterday → simple past",ar:'yesterday وقت منتهٍ → الماضي waited',tr:'انتظر بوب أخاه ثلاث ساعات أمس.'},
+  {q:"We usually have a new teacher every week. But for the past two weeks, we _______ the same teacher.",o:["have","had","have had"],a:2,en:"for the past two weeks → have had",ar:'for the past two weeks حتى الآن → have had',tr:'عادةً يأتينا معلّم جديد كل أسبوع، لكن خلال الأسبوعين الماضيين بقي معنا المعلّم نفسه.'},
+);
 
 // ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة

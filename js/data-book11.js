@@ -592,6 +592,21 @@ l4:[
   {q:"How do you _______ your free time on the weekend?",o:["feel","love","spend","recommend"],a:2,en:"use time → spend",ar:'يقضي الوقت → spend',tr:'كيف تقضي وقت فراغك في عطلة الأسبوع؟'},
   {q:"I'll get a snack from the kitchen when the _______ come on the TV.",o:["variety","channel","program","commercials"],a:3,en:"ad breaks → commercials",ar:'الإعلانات → commercials',tr:'سآخذ وجبة خفيفة من المطبخ عندما تبدأ الإعلانات على التلفاز.'},
   {q:"The soldiers really liked the movie, and they _______ a lot.",o:["laughed","could","planned","frightened"],a:0,en:"found it funny → laughed",ar:'ضحكوا → laughed',tr:'أعجب الجنود الفيلم كثيراً، وضحكوا كثيراً.'},
+  // — Exercise C (EE-20 → EE-21 · Select the best preposition) —
+  {q:"The Smiths have been living in New York _______ 1999.",o:["until","for","since","before"],a:2,en:"start point → since",ar:'نقطة بداية (1999) → since',tr:'يعيش آل سميث في نيويورك منذ 1999.'},
+  {q:"_______ the age of 18, Sam decided to go into the Air Force.",o:["At","Since","On","Until"],a:0,en:"at the age of",ar:'عند عُمر معيّن → At the age of',tr:'في سنّ الثامنة عشرة، قرّر سام الالتحاق بسلاح الجو.'},
+  {q:"It has been raining _______ 2 hours.",o:["from","till","after","for"],a:3,en:"duration → for",ar:'مدّة (ساعتين) → for',tr:'إنها تمطر منذ ساعتين.'},
+  {q:"_______ June 8th, we'll fly to Japan.",o:["In","At","To","On"],a:3,en:"date → on",ar:'تاريخ/يوم → On',tr:'في الثامن من يونيو سنسافر إلى اليابان.'},
+  {q:"Steve always takes a shower _______ he goes to work.",o:["before","from","until","after"],a:0,en:"shower first, then work → before",ar:'يستحمّ ثم يذهب للعمل → قبل (before)',tr:'ستيف دائماً يستحمّ قبل أن يذهب إلى العمل.'},
+  {q:"Our class has a 20-minute break _______ the morning.",o:["till","in","at","on"],a:1,en:"in the morning",ar:'فترات اليوم → in the morning',tr:'لدى صفّنا استراحة عشرين دقيقة في الصباح.'},
+  {q:"We're going to the gym _______ class.",o:["at","for","after","since"],a:2,en:"class first, then gym → after",ar:'بعد انتهاء الحصّة → after',tr:'سنذهب إلى النادي بعد الحصّة.'},
+  {q:"You can't go to the BX _______ you finish cleaning the barracks.",o:["until","from","since","for"],a:0,en:"not before that point → until",ar:'ليس قبل أن تنتهي → until (حتى)',tr:'لا تستطيع الذهاب إلى الـ BX حتى تنتهي من تنظيف الثكنة.'},
+  {q:"I have been studying English _______ January.",o:["on","until","since","to"],a:2,en:"start point → since",ar:'نقطة بداية (يناير) → since',tr:'أدرس الإنجليزية منذ يناير.'},
+  {q:"The Wilsons go on vacation every year _______ the summer.",o:["on","at","to","in"],a:3,en:"season → in",ar:'فصل/موسم → in the summer',tr:'يذهب آل ويلسون في إجازة كل عام في الصيف.'},
+  {q:"Can the doctor see me _______ Thursday?",o:["at","on","til","in"],a:1,en:"day → on",ar:'يوم من الأسبوع → on',tr:'هل يستطيع الطبيب رؤيتي يوم الخميس؟'},
+  {q:"The mall is open _______ 9:00 a.m. _______ 9:00 p.m. every day.",o:["before, after","from, to","until, till","since, for"],a:1,en:"range → from … to",ar:'من … إلى → from … to',tr:'المول مفتوح من التاسعة صباحاً إلى التاسعة مساءً كل يوم.'},
+  {q:"The general will depart _______ 1400 today.",o:["at","until","in","since"],a:0,en:"clock time → at",ar:'ساعة محدّدة → at',tr:'سيغادر الجنرال الساعة 1400 اليوم.'},
+  {q:"The movie will begin _______ 10 minutes.",o:["on","in","for","to"],a:1,en:"after a period from now → in",ar:'بعد مدّة من الآن → in (خلال)',tr:'سيبدأ الفيلم بعد عشر دقائق.'},
 ]
 };
 

@@ -146,6 +146,29 @@ button{font-family:inherit;cursor:pointer}
 .rv .why bdi{font-family:'Inter',sans-serif}
 .rv .play{border:none;background:var(--soft);border-radius:8px;padding:4px 10px;font-size:.75rem;font-weight:700;color:var(--navy)}
 
+.rv-title{font-size:1.05rem;color:var(--navy);margin:22px 2px 4px;font-weight:900}
+.rv .trn{margin-top:8px;font-size:.84rem;line-height:1.75;color:var(--txt);background:var(--soft);border-radius:10px;padding:8px 10px}
+.rv .trn b{color:var(--muted);font-size:.74rem}
+.last{margin-top:14px;background:var(--card);border:1.5px solid var(--blue);border-radius:16px;padding:14px 16px;display:none}
+.last.on{display:block}
+.last .lt{font-weight:800;color:var(--navy);font-size:.9rem}
+.last .ls{color:var(--muted);font-size:.8rem;margin-top:2px}
+.last .btn{margin-top:10px;padding:12px;font-size:.92rem}
+.opt.right{border-color:var(--ok-bd);background:var(--ok-bg)}
+.opt.right .k{background:var(--ok-bd);border-color:var(--ok-bd);color:#fff}
+.opt.bad{border-color:var(--no-bd);background:var(--no-bg)}
+.opt.bad .k{background:var(--no-bd);border-color:var(--no-bd);color:#fff}
+.opt:disabled{cursor:default}
+.fb{margin-top:14px;border-radius:14px;padding:12px 14px;font-size:.86rem;line-height:1.8}
+.fb.ok{background:var(--ok-bg);color:#2F6A00}.fb.no{background:var(--no-bg);color:#A12020}
+.fb .fb-t{font-weight:900}
+.fb .tr,.tr{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.9rem;line-height:1.7;color:var(--navy)}
+.fb .tr .sp,.tr .sp{font-weight:800;color:var(--muted);font-size:.78rem}
+.fb .fb-tr{color:var(--txt);font-weight:600}
+.fb .fb-why{font-weight:800;border-top:1px dashed currentColor;margin-top:6px;padding-top:6px}
+.fb bdi,.rv .why bdi{font-family:'Inter',sans-serif}
+.replay{display:block;margin:0 auto;border:none;background:var(--soft);border-radius:10px;padding:8px 16px;font-weight:800;color:var(--navy);font-size:.85rem}
+
 /* modal */
 .modal{position:fixed;inset:0;background:rgba(10,16,30,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
 .modal.on{display:flex}
@@ -164,6 +187,9 @@ footer span{color:#FFC800;font-weight:700}
   .opt.sel{background:#16344A}
   .grid button.done{background:#16344A;color:#E6EBF5}
   .rv .a .ok{color:#7BE04A}.rv .a .no{color:#FF8A8A}
+  .rv-title,.last .lt,.replay{color:#E6EBF5}
+  .opt.right{background:#1F3A12}.opt.bad{background:#3A1A1A}
+  .fb.ok{background:#1F3A12;color:#A6E57A}.fb.no{background:#3A1A1A;color:#FF9C9C}
   .warn{background:#3A3010;color:#F5D77A;border-color:#7A6420}
 }
 </style>
@@ -203,6 +229,7 @@ footer span{color:#FFC800;font-weight:700}
     <div class="warn" id="no-voice">جهازك أو متصفحك ما يدعم القراءة الصوتية، فقسم الاستماع ما راح يشتغل. جرّب Chrome أو Safari.</div>
     <button class="btn" id="btn-start">ابدأ الاختبار</button>
     <p class="note">أسئلة أصلية مكتوبة على نمط الاختبار ومن مستويات ALC كلها، مو أسئلة الاختبار الرسمي (أسئلته سرّية). الدرجة تقريبية للتدريب فقط.</p>
+    <div class="last" id="last"></div>
     <div class="hist" id="hist"></div>
   </div>
 
@@ -245,27 +272,23 @@ footer span{color:#FFC800;font-weight:700}
     <button class="btn" id="r-submit">تسليم الاختبار</button>
   </div>
 
-  <!-- RESULTS -->
+  <!-- RESULTS + REVIEW (one screen, mistakes shown right away) -->
   <div class="screen" id="s-result">
     <div class="card center">
-      <div class="sub">نتيجتك</div>
+      <div class="sub" id="res-date">نتيجتك</div>
       <div class="big" id="res-total"></div>
       <div class="split">
         <div class="part"><div class="n" id="res-l"></div><div class="l">الاستماع</div></div>
         <div class="part"><div class="n" id="res-r"></div><div class="l">القراءة</div></div>
       </div>
     </div>
+    <button class="btn" id="btn-retry"></button>
     <div class="card lvl" style="margin-top:12px">
       <div style="font-weight:800;color:var(--navy);font-size:.92rem">حسب مستوى الصعوبة</div>
       <div id="res-lvls"></div>
       <div class="verdict" id="res-verdict"></div>
     </div>
-    <button class="btn blue" id="btn-review">مراجعة الإجابات</button>
-    <button class="btn sec" id="btn-again">اختبار جديد</button>
-  </div>
-
-  <!-- REVIEW -->
-  <div class="screen" id="s-review">
+    <h2 class="rv-title" id="rv-title"></h2>
     <div class="rv-tabs" id="rv-tabs">
       <button data-f="wrong" class="on">الأخطاء</button>
       <button data-f="all">الكل</button>
@@ -273,7 +296,29 @@ footer span{color:#FFC800;font-weight:700}
       <button data-f="R">القراءة</button>
     </div>
     <div id="rv-list"></div>
-    <button class="btn sec" id="btn-back-res">رجوع للنتيجة</button>
+    <button class="btn sec" id="btn-again">اختبار جديد</button>
+  </div>
+
+  <!-- RETRY MISTAKES (untimed, instant feedback) -->
+  <div class="screen" id="s-retry">
+    <div class="qhead"><div class="qnum" id="t-num"></div><div class="qtag" id="t-tag"></div></div>
+    <div class="prog"><i id="t-prog"></i></div>
+    <div class="card">
+      <div id="t-body"></div>
+      <div class="opts" id="t-opts"></div>
+      <div id="t-fb"></div>
+    </div>
+    <button class="btn blue" id="t-next" disabled>التالي</button>
+    <button class="btn sec" id="t-quit">رجوع للنتيجة</button>
+  </div>
+  <div class="screen" id="s-retry-end">
+    <div class="card center">
+      <div style="font-size:2.4rem" id="te-emoji"></div>
+      <div class="big" id="te-score" style="font-size:2.6rem;margin-top:6px"></div>
+      <p class="sub" id="te-sub" style="line-height:1.8"></p>
+      <button class="btn" id="te-again"></button>
+      <button class="btn sec" id="te-back">رجوع للنتيجة</button>
+    </div>
   </div>
 </div>
 
@@ -429,14 +474,32 @@ function startRead(){
 }
 
 // ── RESULTS ──
+const ITEM_BY_ID={};ALCPT_LISTEN.concat(ALCPT_READ).forEach(x=>ITEM_BY_ID[x.id]=x);
+const okx=x=>x.pick===x.a;
 function finish(){
   clearInterval(readTick);running=false;setTimer('');$('timer').classList.remove('low');
   const all=[...T.L.map(x=>({...x,sec:'L'})),...T.R.map(x=>({...x,sec:'R'}))];
-  const ok=x=>x.pick===x.a;
-  const lc=T.L.filter(ok).length,rc=T.R.filter(ok).length,tot=lc+rc;
-  $('res-total').innerHTML=tot+'<small> / 100</small>';
-  $('res-l').textContent=lc+' / '+L_N;$('res-r').textContent=rc+' / '+R_N;
-  const by={};for(const x of all){const k=x.it.lvl;by[k]=by[k]||{n:0,c:0};by[k].n++;if(ok(x))by[k].c++;}
+  const lc=T.L.filter(okx).length,rc=T.R.filter(okx).length,tot=lc+rc;
+  const d=new Date().toISOString().slice(0,10);
+  const h=store('alcpt_hist')||[];h.unshift({d,s:tot,l:lc,r:rc});store('alcpt_hist',h.slice(0,10));
+  // نحفظ المحاولة كاملة حتى يرجع لها الطالب ويراجع أخطاءه لاحقاً
+  store('alcpt_last',{d,items:all.map(x=>({id:x.it.id,sec:x.sec,o:x.o,a:x.a,pick:x.pick}))});
+  try{gtag('event','alcpt_finish',{score:tot,listening:lc,reading:rc});}catch(e){}
+  showResults(all,d);
+}
+function loadLast(){
+  const L=store('alcpt_last');if(!L||!L.items)return null;
+  const all=L.items.map(x=>ITEM_BY_ID[x.id]?{it:ITEM_BY_ID[x.id],sec:x.sec,o:x.o,a:x.a,pick:x.pick}:null).filter(Boolean);
+  return all.length?{all,d:L.d}:null;
+}
+function showResults(all,d){
+  T=T||{};T.all=all;
+  const Ls=all.filter(x=>x.sec==='L'),Rs=all.filter(x=>x.sec==='R');
+  const lc=Ls.filter(okx).length,rc=Rs.filter(okx).length,tot=lc+rc,wrong=all.length-tot;
+  $('res-date').innerHTML=d?('نتيجتك · <bdi dir="ltr">'+d+'</bdi>'):'نتيجتك';
+  $('res-total').innerHTML=tot+'<small> / '+all.length+'</small>';
+  $('res-l').textContent=lc+' / '+Ls.length;$('res-r').textContent=rc+' / '+Rs.length;
+  const by={};for(const x of all){const k=x.it.lvl;by[k]=by[k]||{n:0,c:0};by[k].n++;if(okx(x))by[k].c++;}
   $('res-lvls').innerHTML=[1,2,3].map(k=>{const p=by[k]?Math.round(by[k].c/by[k].n*100):0;
     return `<div class="row"><b>${LVL_NAME[k]}</b><div class="bar"><i style="width:${p}%;background:${LVL_CLR[k]}"></i></div><div class="pct">${p}%</div></div>`;}).join('');
   const p=k=>by[k]?by[k].c/by[k].n:0;
@@ -446,34 +509,78 @@ function finish(){
   else if(p(2)<0.6)v='<b>أساسك ثابت.</b> الخطوة الجاية أسئلة المستوى المتوسط: الأزمنة التامة، المبني للمجهول، والكلام المنقول.';
   else if(p(3)<0.6)v='<b>مستوى متوسط قوي.</b> اللي يرفع درجتك الحين أسئلة المستوى المتقدم: الشرط الثاني والثالث، المفردات الأكاديمية، وفهم النصوص.';
   else v='<b>مستوى متقدم.</b> تجاوزت أغلب أسئلة المستوى الأعلى. حافظ على الاستماع اليومي عشان تثبت الدرجة.';
-  const lp=lc/L_N,rp=rc/R_N;
+  const lp=Ls.length?lc/Ls.length:0,rp=Rs.length?rc/Rs.length:0;
   if(Math.abs(lp-rp)>=0.15)v+='<br>'+(lp<rp?'الاستماع أضعف من القراءة بوضوح، فخصّص له وقت يومي.':'القراءة أضعف من الاستماع بوضوح، فركّز على القواعد والمفردات.');
   $('res-verdict').innerHTML=v;
-  const h=store('alcpt_hist')||[];h.unshift({d:new Date().toISOString().slice(0,10),s:tot,l:lc,r:rc});store('alcpt_hist',h.slice(0,10));
-  try{gtag('event','alcpt_finish',{score:tot,listening:lc,reading:rc});}catch(e){}
-  T.all=all;show('s-result');
+  $('btn-retry').textContent=wrong?`🔁 أعد حل أخطائي (${wrong})`:'🎉 ما عندك أخطاء';
+  $('btn-retry').disabled=!wrong;
+  $('rv-title').textContent=wrong?`أخطاؤك (${wrong}) — راجعها هنا`:'مراجعة الإجابات';
+  rvFilter=wrong?'wrong':'all';
+  document.querySelectorAll('#rv-tabs button').forEach(b=>b.classList.toggle('on',b.dataset.f===rvFilter));
+  renderReview();show('s-result');
 }
 
-// ── REVIEW ──
+// ── REVIEW (inline under the score) ──
 let rvFilter='wrong';
+function transcript(it){
+  const sp={m:'Man',f:'Woman',n:''};
+  return `<div class="tr">${it.say.map(s=>(sp[s[0]]?`<span class="sp">${sp[s[0]]}:</span> `:'')+esc(s[1])).join('<br>')}${it.q?`<br><span class="sp">Question:</span> ${esc(it.q)}`:''}</div>`;
+}
+const trHtml=t=>ltrRuns(t).replace(/ — /g,'<br>').replace(/ · /g,'<br>');
+const stemHtml=it=>esc(it.q).replace(/&lt;u&gt;(.*?)&lt;\/u&gt;/g,'<u>$1</u>');
 function renderReview(){
-  const ok=x=>x.pick===x.a;
-  const list=T.all.map((x,i)=>({...x,n:i+1})).filter(x=>rvFilter==='all'||(rvFilter==='wrong'&&!ok(x))||x.sec===rvFilter);
+  const list=T.all.map((x,i)=>({...x,n:i+1})).filter(x=>rvFilter==='all'||(rvFilter==='wrong'&&!okx(x))||x.sec===rvFilter);
   if(!list.length){$('rv-list').innerHTML='<div class="card center" style="font-weight:700;color:var(--navy)">ما فيه أسئلة هنا 🎉</div>';return;}
   $('rv-list').innerHTML=list.map(x=>{
-    const it=x.it,good=ok(x);
-    let body='';
-    if(x.sec==='L'){
-      const sp={m:'Man',f:'Woman',n:''};
-      body=`<div class="tr">${it.say.map(s=>(sp[s[0]]?`<span class="sp">${sp[s[0]]}:</span> `:'')+esc(s[1])).join('<br>')}${it.q?`<br><span class="sp">Question:</span> ${esc(it.q)}`:''}</div>`;
-    }else{
-      body=(it.p?`<div class="tr" style="opacity:.75;font-size:.8rem;margin-bottom:6px">${esc(ALCPT_PASSAGES[it.p]).slice(0,140)}…</div>`:'')+`<div class="tr">${esc(it.q).replace(/&lt;u&gt;(.*?)&lt;\/u&gt;/g,'<u>$1</u>')}</div>`;
-    }
+    const it=x.it,good=okx(x);
+    const body=x.sec==='L'?transcript(it):(it.p?`<div class="tr" style="opacity:.75;font-size:.8rem;margin-bottom:6px">${esc(ALCPT_PASSAGES[it.p]).slice(0,140)}…</div>`:'')+`<div class="tr">${stemHtml(it)}</div>`;
     const mine=x.pick>=0?x.o[x.pick]:'(بدون إجابة)';
     const ans=good?`<span class="ok">✓ ${esc(x.o[x.a])}</span>`:`<span class="${x.pick>=0?'no':'na'}">${esc(mine)}</span> &nbsp;<span class="ok">✓ ${esc(x.o[x.a])}</span>`;
-    return `<div class="rv${good?'':' wrong'}"><div class="h"><span>سؤال ${x.n} · ${x.sec==='L'?'استماع':'قراءة'}</span>${x.sec==='L'?`<button class="play" data-n="${x.n-1}">🔊 اسمع</button>`:''}</div>${body}<div class="a">${ans}</div><div class="why">💡 ${ltrRuns(it.ar)}</div></div>`;
+    return `<div class="rv${good?'':' wrong'}"><div class="h"><span>سؤال ${x.n} · ${x.sec==='L'?'استماع':'قراءة'}</span>${x.sec==='L'?`<button class="play" data-n="${x.n-1}">🔊 اسمع</button>`:''}</div>${body}<div class="a">${ans}</div>${it.tr?`<div class="trn"><b>الترجمة:</b><br>${trHtml(it.tr)}</div>`:''}<div class="why">💡 ${ltrRuns(it.ar)}</div></div>`;
   }).join('');
   $('rv-list').querySelectorAll('.play').forEach(b=>b.onclick=()=>playItem(T.all[+b.dataset.n].it));
+}
+
+// ── RETRY MISTAKES ──
+let RT=[],rti=0,rtRight=0;
+function startRetry(items){
+  RT=shuffle(items).map(x=>{const ord=shuffle([0,1,2,3]);return {it:x.it,sec:x.sec,o:ord.map(i=>x.it.o[i]),a:ord.indexOf(0),pick:-1};});
+  rti=0;rtRight=0;show('s-retry');renderRetry();
+}
+function renderRetry(){
+  const x=RT[rti],it=x.it;
+  $('t-num').textContent='سؤال '+(rti+1)+' من '+RT.length;
+  $('t-tag').textContent=x.sec==='L'?'استماع':'قراءة';
+  $('t-prog').style.width=(rti/RT.length*100)+'%';
+  if(x.sec==='L'){
+    $('t-body').innerHTML='<div class="listen-box"><div class="wave" id="t-wave">🔊</div><button class="replay" id="t-replay">🔊 اسمع مرّة ثانية</button></div>';
+    const play=async()=>{const w=$('t-wave');if(w)w.classList.add('playing');await playItem(it);if($('t-wave'))$('t-wave').classList.remove('playing');};
+    $('t-replay').onclick=play;play();
+  }else{
+    $('t-body').innerHTML=(it.p?`<div class="passage">${esc(ALCPT_PASSAGES[it.p])}</div>`:'')+`<div class="stem">${stemHtml(it)}</div>`+(it.t==='vo'?'<div class="vo-hint">اختر الكلمة اللي معناها نفس الكلمة اللي تحتها خط</div>':'');
+  }
+  $('t-opts').innerHTML=x.o.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${KEYS[i]}</span><span>${esc(o)}</span></button>`).join('');
+  $('t-fb').innerHTML='';$('t-next').disabled=true;
+  $('t-opts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    if(x.pick>=0)return;
+    x.pick=+b.dataset.i;const good=x.pick===x.a;if(good)rtRight++;
+    $('t-opts').querySelectorAll('.opt').forEach((o,i)=>{o.disabled=true;if(i===x.a)o.classList.add('right');else if(i===x.pick)o.classList.add('bad');});
+    $('t-fb').innerHTML=`<div class="fb ${good?'ok':'no'}"><div class="fb-t">${good?'✅ صح':'❌ الإجابة الصحيحة: <bdi dir="ltr">'+esc(x.o[x.a])+'</bdi>'}</div>`
+      +(x.sec==='L'?`<div style="margin:6px 0">${transcript(it)}</div>`:'')
+      +(it.tr?`<div class="fb-tr">${trHtml(it.tr)}</div>`:'')+`<div class="fb-why">💡 ${ltrRuns(it.ar)}</div></div>`;
+    $('t-next').disabled=false;
+  });
+}
+function endRetry(){
+  if(SYN)SYN.cancel();
+  const left=RT.filter(x=>x.pick!==x.a);
+  $('te-emoji').textContent=left.length?'💪':'🎉';
+  $('te-score').innerHTML=rtRight+'<small> / '+RT.length+'</small>';
+  $('te-sub').textContent=left.length?`صحّحت ${rtRight} من أخطائك. باقي ${left.length} تحتاج مراجعة.`:'صحّحت كل أخطائك!';
+  $('te-again').style.display=left.length?'block':'none';
+  $('te-again').textContent=`🔁 أعد الباقي (${left.length})`;
+  $('te-again').onclick=()=>startRetry(left);
+  show('s-retry-end');
 }
 
 // ── confirm modal (no browser dialogs) ──
@@ -499,8 +606,10 @@ $('r-submit').onclick=()=>{
   const left=T.R.filter(x=>x.pick<0).length;
   confirmBox('تسليم الاختبار؟',left?`باقي ${left} سؤال بدون إجابة. بعد التسليم ما تقدر ترجع.`:'بعد التسليم ما تقدر تغيّر إجاباتك.',finish);
 };
-$('btn-review').onclick=()=>{rvFilter='wrong';document.querySelectorAll('#rv-tabs button').forEach(b=>b.classList.toggle('on',b.dataset.f==='wrong'));renderReview();show('s-review');};
-$('btn-back-res').onclick=()=>show('s-result');
+$('btn-retry').onclick=()=>{const w=T.all.filter(x=>!okx(x));if(w.length)startRetry(w);};
+$('t-next').onclick=()=>{if(SYN)SYN.cancel();if(rti<RT.length-1){rti++;renderRetry();window.scrollTo(0,0);}else endRetry();};
+$('t-quit').onclick=()=>{if(SYN)SYN.cancel();show('s-result');};
+$('te-back').onclick=()=>show('s-result');
 $('btn-again').onclick=()=>{show('s-intro');renderHist();};
 document.querySelectorAll('#rv-tabs button').forEach(b=>b.onclick=()=>{rvFilter=b.dataset.f;document.querySelectorAll('#rv-tabs button').forEach(x=>x.classList.toggle('on',x===b));renderReview();});
 $('back-link').onclick=e=>{
@@ -510,8 +619,15 @@ $('back-link').onclick=e=>{
   }
 };
 function renderHist(){
+  const last=loadLast();
+  if(last){
+    const c=last.all.filter(okx).length,w=last.all.length-c;
+    $('last').innerHTML=`<div class="lt">آخر محاولة: <bdi dir="ltr" class="en">${c} / ${last.all.length}</bdi></div><div class="ls"><bdi dir="ltr">${last.d}</bdi> · ${w} خطأ</div><button class="btn blue" id="btn-last">📋 راجع أخطاء آخر محاولة</button>`;
+    $('last').classList.add('on');
+    $('btn-last').onclick=()=>showResults(last.all,last.d);
+  }else $('last').classList.remove('on');
   const h=store('alcpt_hist')||[];
-  $('hist').innerHTML=h.length?('محاولاتك السابقة: '+h.slice(0,5).map(x=>`<span>${x.s}</span> <small>(${x.d})</small>`).join(' · ')):'';
+  $('hist').innerHTML=h.length?('محاولاتك السابقة: '+h.slice(0,5).map(x=>`<span>${x.s}</span> <small>(<bdi dir="ltr">${x.d}</bdi>)</small>`).join(' · ')):'';
 }
 if(!SYN&&!FAST)$('no-voice').style.display='block';
 renderHist();

@@ -502,6 +502,13 @@ l1:[
   {q:"Bill: Is the water in the lake still cold? Tim: Yes, it's _______ outside.",o:["deep","freezing","humid","raining"],a:1,en:"very cold → freezing",ar:'شديد البرودة → freezing',tr:'بيل: هل ما زال ماء البحيرة بارداً؟ تيم: نعم، الجوّ متجمّد في الخارج.'},
   {q:"After it snowed, the roads were _______.",o:["clear","hot","slippery","deep"],a:2,en:"icy → slippery",ar:'زلِقة → slippery',tr:'بعد أن أثلجت، أصبحت الطرق زلقة.'},
   {q:"An icy road can be _______ to drive on.",o:["easy","frightened","quiet","dangerous"],a:3,en:"unsafe → dangerous",ar:'غير آمنة → خطيرة (dangerous)',tr:'الطريق الجليدية قد تكون خطيرة للقيادة عليها.'},
+  // — Exercise (EE-5 · أسئلة 13–18) · كانت ناقصة —
+  {q:"Bill: How long have you lived here? Tim: I _______ here for 10 years.",o:["am living","will live","live","have lived"],a:3,en:"for 10 years → have lived",ar:'for + مدّة → المضارع التام have lived',tr:'بيل: منذ متى تعيش هنا؟ تِم: أعيش هنا منذ 10 سنوات.'},
+  {q:"Bill: Do you ever go to the movies? Tim: Yes, _______. I go only a few times a year.",o:["always","occasionally","often","no longer"],a:1,en:"a few times a year → occasionally",ar:'مرّات قليلة في السنة → أحياناً (occasionally)',tr:'بيل: هل تذهب إلى السينما؟ تِم: نعم، أحياناً. أذهب بضع مرّات فقط في السنة.'},
+  {q:"Bill: Was everyone in your class at school today? Tim: Yes, everyone _______ Kathy. She's sick, remember?",o:["except","ever","expect","if"],a:0,en:"all but Kathy → except",ar:'الجميع ما عدا كاثي → except (ما عدا)',tr:'بيل: هل حضر كل طلاب صفّك اليوم؟ تِم: نعم، الجميع ما عدا كاثي. إنها مريضة، تذكر؟'},
+  {q:"Bill: How long has it been since you _______ Ann? Tim: About five years.",o:["see","are seeing","will see","have seen"],a:3,en:"since + experience up to now → have seen",ar:'منذ آخر مرّة رأيتها حتى الآن → have seen',tr:'بيل: كم مضى منذ أن رأيت آن؟ تِم: حوالي خمس سنوات.'},
+  {q:"Sam has often _______ in the office after 5:00 p.m. to finish his work.",o:["cleared up","remained","lasted","slipped"],a:1,en:"stayed → remained",ar:'بقي → remained',tr:'كثيراً ما بقي سام في المكتب بعد الخامسة مساءً لينهي عمله.'},
+  {q:"Bill: How _______ is the river? Tim: About fifteen feet.",o:["quiet","deep","humid","calm"],a:1,en:"depth → How deep",ar:'السؤال عن العمق → How deep',tr:'بيل: ما عمق النهر؟ تِم: حوالي خمسة عشر قدماً.'},
 ],
 l2:[
   {q:"Bill: Were you in Hawaii last year? Tim: Yes, I had a _______ there for a year.",o:["tour of duty","right of way","sign of refusal","change of mind"],a:0,en:"military stay → tour of duty",ar:'فترة خدمة → tour of duty',tr:'بيل: هل كنت في هاواي العام الماضي؟ تيم: نعم، كانت لي فترة خدمة هناك لمدّة عام.'},

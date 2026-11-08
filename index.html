@@ -198,6 +198,37 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .ghc-txt h3{color:#fff;font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:900;margin-bottom:3px}
 .ghc-txt p{color:rgba(255,255,255,.85);font-size:.72rem;line-height:1.5}
 .ghc-arrow{flex:none;color:#fff;font-size:1.3rem;font-weight:900}
+.alcpt-card{position:relative;display:flex;align-items:center;gap:16px;overflow:hidden;
+  background:linear-gradient(135deg,#1A2744,#2E4A8C 55%,#1CB0F6);border-radius:20px;padding:20px;
+  text-decoration:none;margin-bottom:28px;box-shadow:0 10px 28px rgba(28,176,246,.28);transition:all .2s}
+.alcpt-card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(28,176,246,.38)}
+.alcpt-card .ac-new{position:absolute;top:10px;left:12px;background:#FFC800;color:#1A2744;font-size:.62rem;font-weight:900;
+  padding:3px 9px;border-radius:8px;letter-spacing:.3px;animation:acPulse 1.6s ease-in-out infinite}
+@keyframes acPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.alcpt-card .ac-ico{flex:none;width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.alcpt-card .ac-txt{flex:1}
+.alcpt-card h3{color:#fff;font-family:'Cairo',sans-serif;font-size:1.05rem;font-weight:900;margin-bottom:3px}
+.alcpt-card h3 b{font-family:'Inter',sans-serif;color:#FFC800}
+.alcpt-card p{color:rgba(255,255,255,.85);font-size:.74rem;line-height:1.55}
+.alcpt-card .ac-arrow{flex:none;color:#fff;font-size:1.3rem;font-weight:900}
+#alcpt-pop{position:fixed;inset:0;z-index:9000;background:rgba(10,16,30,.6);display:none;align-items:center;justify-content:center;padding:20px}
+#alcpt-pop.on{display:flex}
+#alcpt-pop .ap-box{background:#fff;border-radius:20px;max-width:340px;width:100%;overflow:hidden;text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.4);animation:apIn .35s ease}
+@keyframes apIn{from{transform:translateY(16px) scale(.97);opacity:0}to{transform:none;opacity:1}}
+#alcpt-pop .ap-top{background:linear-gradient(135deg,#1A2744,#2E4A8C 60%,#1CB0F6);padding:24px 20px 20px;color:#fff}
+#alcpt-pop .ap-top .ap-badge{display:inline-block;background:#FFC800;color:#1A2744;font-weight:900;font-size:.68rem;padding:3px 10px;border-radius:99px;margin-bottom:8px}
+#alcpt-pop .ap-top h3{font-family:'Inter',sans-serif;font-size:1.7rem;font-weight:900;letter-spacing:1px}
+#alcpt-pop .ap-top p{font-size:.85rem;opacity:.9;margin-top:4px}
+#alcpt-pop .ap-body{padding:18px 20px 20px}
+#alcpt-pop .ap-body ul{list-style:none;text-align:right;font-size:.84rem;line-height:2;color:#3C3C3C}
+#alcpt-pop .ap-go{display:block;margin-top:14px;padding:13px;border-radius:12px;background:linear-gradient(90deg,#58CC02,#46A302);
+  color:#fff;font-weight:800;text-decoration:none;box-shadow:0 4px 0 #3A8A02}
+#alcpt-pop .ap-later{margin-top:10px;background:none;border:none;color:#6B7280;font-family:'Cairo',sans-serif;font-weight:700;font-size:.85rem;cursor:pointer}
+@media (prefers-color-scheme: dark){
+  #alcpt-pop .ap-box{background:#182138}
+  #alcpt-pop .ap-body ul{color:#E6EBF5}
+}
 
 .listen-hub-card{display:flex;align-items:center;gap:16px;
   background:linear-gradient(135deg,#1CB0F6,#0A96DC);border-radius:20px;padding:20px;
@@ -443,6 +474,17 @@ html.splash-seen #splash{display:none}
 </div>
 
 <div class="section" id="books">
+  <div class="sec-label">اختبار تحديد المستوى</div>
+  <a class="alcpt-card" href="alcpt">
+    <span class="ac-new">جديد</span>
+    <div class="ac-ico">🎧</div>
+    <div class="ac-txt">
+      <h3>محاكاة اختبار <b>ALCPT</b></h3>
+      <p>100 سؤال بنفس الشكل والوقت · 50 استماع + 50 قراءة · نتيجتك من 100 مع شرح كل إجابة</p>
+    </div>
+    <div class="ac-arrow">←</div>
+  </a>
+
   <div class="sec-label">الكتب</div>
   <div class="books-grid" id="books-grid"></div>
 
@@ -555,6 +597,35 @@ render_books();
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
 }
+</script>
+<div id="alcpt-pop" role="dialog" aria-modal="true" aria-labelledby="ap-title">
+  <div class="ap-box">
+    <div class="ap-top"><span class="ap-badge">جديد في الموقع</span><h3 id="ap-title">ALCPT</h3><p>محاكاة كاملة لاختبار تحديد المستوى</p></div>
+    <div class="ap-body">
+      <ul>
+        <li>🎧 50 سؤال استماع تسمعها مرّة وحدة</li>
+        <li>📖 50 سؤال قراءة في 35 دقيقة</li>
+        <li>📊 نتيجتك من 100 ومراجعة كل إجابة بالشرح</li>
+      </ul>
+      <a class="ap-go" href="alcpt">جرّب الاختبار الآن</a>
+      <button class="ap-later" id="ap-later">لاحقاً</button>
+    </div>
+  </div>
+</div>
+<script>
+// إعلان محاكاة ALCPT — يظهر مرّة واحدة لكل جهاز، بعد شاشة الترحيب.
+(function(){
+  var KEY='alcpt_promo_v1';
+  try{ if(localStorage.getItem(KEY))return; }catch(e){ return; }
+  var pop=document.getElementById('alcpt-pop');
+  function seen(){ try{localStorage.setItem(KEY,'1');}catch(e){} }
+  function close(){ pop.classList.remove('on'); seen(); }
+  var delay=document.documentElement.classList.contains('splash-seen')?800:3400;
+  setTimeout(function(){ pop.classList.add('on'); seen(); try{gtag('event','alcpt_promo_shown');}catch(e){} },delay);
+  document.getElementById('ap-later').onclick=close;
+  pop.addEventListener('click',function(e){ if(e.target===pop)close(); });
+  pop.querySelector('.ap-go').addEventListener('click',function(){ seen(); try{gtag('event','alcpt_promo_click');}catch(e){} });
+})();
 </script>
 </body>
 </html>

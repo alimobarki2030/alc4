@@ -257,7 +257,6 @@ footer span{color:#FFC800;font-weight:700}
         <li>بعد الاختبار تشوف النتيجة ومراجعة كل سؤال مع الشرح.</li>
       </ul>
     </div>
-    <div class="warn" id="no-voice">جهازك أو متصفحك ما يدعم القراءة الصوتية، فقسم الاستماع ما راح يشتغل. جرّب Chrome أو Safari.</div>
     <button class="btn" id="btn-start">ابدأ الاختبار</button>
     <div class="last" id="last"></div>
     <div class="hist" id="hist"></div>
@@ -437,8 +436,32 @@ function speakLine(text,who){
   });
 }
 const wait=ms=>new Promise(r=>setTimeout(r,FAST?5:ms));
+// ── recorded clips (natural neural voices, one mp3 per listening item) ──
+// audio/alcpt/<id>.mp3 holds the whole item as heard: speakers + spoken
+// question. Device speech synthesis is only a fallback if a clip can't play.
+const AUD=new Audio();AUD.preload='auto';
+const clipUrl=id=>'/audio/alcpt/'+id+'.mp3';
+function stopAudio(){try{AUD.pause();}catch(e){}if(SYN)SYN.cancel();}
+function playClip(id){
+  return new Promise(res=>{
+    let done=false;
+    const fin=ok=>{if(done)return;done=true;clearTimeout(g);AUD.onended=AUD.onerror=null;res(ok);};
+    const g=setTimeout(()=>fin(true),40000);
+    AUD.onended=()=>fin(true);AUD.onerror=()=>fin(false);
+    AUD.src=clipUrl(id);
+    const p=AUD.play();if(p&&p.catch)p.catch(()=>fin(false));
+  });
+}
+function warm(id){try{fetch(clipUrl(id)).catch(()=>{});}catch(e){}}
+function unlockAudio(firstId){
+  // iOS يسمح بالتشغيل لاحقاً فقط إذا بدأ عنصر الصوت داخل نقرة المستخدم
+  try{AUD.muted=true;AUD.src=clipUrl(firstId);const p=AUD.play();if(p&&p.then)p.then(()=>{AUD.pause();AUD.muted=false;}).catch(()=>{AUD.muted=false;});else AUD.muted=false;}catch(e){AUD.muted=false;}
+}
 async function playItem(it){
-  if(SYN)SYN.cancel();
+  stopAudio();
+  if(FAST){await wait(5);return;}
+  if(it.id&&await playClip(it.id))return;
+  // fallback: device voices
   for(let i=0;i<it.say.length;i++){
     if(i)await wait(450);
     await speakLine(it.say[i][1],it.say[i][0]);
@@ -464,6 +487,7 @@ async function runListen(){
   for(li=0;li<L_N;li++){
     renderListen();
     const it=T.L[li].it;
+    if(!FAST&&T.L[li+1])warm(T.L[li+1].it.id);
     $('l-wave').classList.add('playing');$('l-st').textContent='استمع…';
     await wait(600);
     await playItem(it);
@@ -644,7 +668,7 @@ function renderRetry(){
   });
 }
 function endRetry(){
-  if(SYN)SYN.cancel();
+  stopAudio();
   const left=RT.filter(x=>x.pick!==x.a);
   $('te-emoji').textContent=left.length?'💪':'🎉';
   $('te-score').innerHTML=rtRight+'<small> / '+RT.length+'</small>';
@@ -667,6 +691,7 @@ function start(){
   // نطق كلمة فارغة داخل نقرة المستخدم يفتح الصوت على iOS
   if(SYN&&!FAST){try{const u=new SpeechSynthesisUtterance(' ');u.volume=0;SYN.speak(u);}catch(e){}}
   T=buildTest();show('s-listen');
+  if(!FAST){unlockAudio(T.L[0].it.id);T.L.slice(0,3).forEach(x=>warm(x.it.id));}
   try{gtag('event','alcpt_start');}catch(e){}
   runListen();
 }
@@ -680,15 +705,15 @@ $('r-submit').onclick=()=>{
 };
 $('btn-pdf').onclick=savePdf;
 $('btn-retry').onclick=()=>{const w=T.all.filter(x=>!okx(x));if(w.length)startRetry(w);};
-$('t-next').onclick=()=>{if(SYN)SYN.cancel();if(rti<RT.length-1){rti++;renderRetry();window.scrollTo(0,0);}else endRetry();};
-$('t-quit').onclick=()=>{if(SYN)SYN.cancel();show('s-result');};
+$('t-next').onclick=()=>{stopAudio();if(rti<RT.length-1){rti++;renderRetry();window.scrollTo(0,0);}else endRetry();};
+$('t-quit').onclick=()=>{stopAudio();show('s-result');};
 $('te-back').onclick=()=>show('s-result');
 $('btn-again').onclick=()=>{show('s-intro');renderHist();};
 document.querySelectorAll('#rv-tabs button').forEach(b=>b.onclick=()=>{rvFilter=b.dataset.f;document.querySelectorAll('#rv-tabs button').forEach(x=>x.classList.toggle('on',x===b));renderReview();});
 $('back-link').onclick=e=>{
   if(document.querySelector('#s-listen.on,#s-break.on,#s-read.on')){
     e.preventDefault();
-    confirmBox('تطلع من الاختبار؟','إجاباتك في هذي المحاولة بتضيع.',()=>{running=false;if(SYN)SYN.cancel();location.href='/';});
+    confirmBox('تطلع من الاختبار؟','إجاباتك في هذي المحاولة بتضيع.',()=>{running=false;stopAudio();location.href='/';});
   }
 };
 function renderHist(){
@@ -702,7 +727,6 @@ function renderHist(){
   const h=store('alcpt_hist')||[];
   $('hist').innerHTML=h.length?('محاولاتك السابقة: '+h.slice(0,5).map(x=>`<span>${x.s}</span> <small>(<bdi dir="ltr">${x.d}</bdi>)</small>`).join(' · ')):'';
 }
-if(!SYN&&!FAST)$('no-voice').style.display='block';
 renderHist();
 // للفحص الآلي
 window.__alcpt={get T(){return T;},finish,startRead,buildReport};

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1396QQS2S5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1396QQS2S5');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xqhawn6noe");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكاة ALCPT — ALC</title>
+<meta name="description" content="محاكاة كاملة لاختبار ALCPT: 50 سؤال استماع تُسمع مرّة واحدة و50 سؤال قراءة في 35 دقيقة، مع النتيجة من 100 ومراجعة كل إجابة">
+<meta property="og:title" content="محاكاة اختبار ALCPT — ALC">
+<meta property="og:description" content="100 سؤال بنفس شكل ووقت الاختبار: استماع وقراءة، ونتيجة من 100 مع شرح كل إجابة">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alc4.alimobarki.com/alcpt">
+<meta property="og:image" content="https://alc4.alimobarki.com/alc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://alc4.alimobarki.com/alc.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A2744">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ALC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2744;--navy2:#243560;--blue:#1CB0F6;--green:#58CC02;--red:#FF4B4B;--gold:#FFC800;
+  --bg:#F0F4FF;--card:#fff;--txt:#3C3C3C;--muted:#6B7280;--bdr:#E2E8F0;--soft:#F5F7FC;
+  --ok-bg:#E8F8D9;--ok-bd:#58CC02;--no-bg:#FFE4E4;--no-bd:#FF4B4B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;-webkit-tap-highlight-color:transparent}
+.en{font-family:'Inter',sans-serif;direction:ltr;unicode-bidi:isolate}
+button{font-family:inherit;cursor:pointer}
+.topbar{background:var(--navy);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;z-index:20}
+.back-link{color:#fff;text-decoration:none;font-weight:700;font-size:.85rem}
+.tb-mid{color:#fff;font-weight:800;font-size:.9rem}
+.timer{font-family:'Inter',sans-serif;font-weight:800;color:var(--gold);font-size:1rem;direction:ltr;min-width:56px;text-align:left}
+.timer.low{color:#FF8A8A}
+.wrap{max-width:680px;margin:0 auto;padding:18px 16px 60px}
+.screen{display:none}.screen.on{display:block}
+
+/* intro */
+.hero{background:linear-gradient(150deg,var(--navy),#2E4A8C);color:#fff;border-radius:20px;padding:26px 22px;text-align:center;box-shadow:0 14px 34px rgba(26,39,68,.25)}
+.hero .badge{display:inline-block;background:rgba(255,200,0,.18);color:var(--gold);font-weight:800;font-size:.72rem;padding:4px 12px;border-radius:99px;margin-bottom:10px}
+.hero h1{font-family:'Inter',sans-serif;font-size:2rem;font-weight:900;letter-spacing:1px}
+.hero p{opacity:.85;font-size:.9rem;margin-top:6px;line-height:1.7}
+.parts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.part{background:var(--card);border:1.5px solid var(--bdr);border-radius:16px;padding:14px;text-align:center}
+.part .n{font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:900;color:var(--navy)}
+.part .l{font-weight:800;color:var(--navy);font-size:.9rem}
+.part .s{color:var(--muted);font-size:.75rem;margin-top:2px}
+.rules{background:var(--card);border:1.5px solid var(--bdr);border-radius:16px;padding:16px 18px;margin-top:12px}
+.rules h3{font-size:.95rem;color:var(--navy);margin-bottom:8px}
+.rules li{font-size:.84rem;line-height:1.8;margin-inline-start:18px}
+.note{font-size:.76rem;color:var(--muted);margin-top:12px;line-height:1.7;text-align:center}
+.warn{background:#FFF6D6;border:1.5px solid #F5C542;color:#7A5A00;border-radius:12px;padding:10px 14px;font-size:.8rem;margin-top:12px;display:none}
+.btn{display:block;width:100%;border:none;border-radius:14px;padding:15px;font-weight:800;font-size:1rem;color:#fff;
+  background:linear-gradient(90deg,#58CC02,#46A302);box-shadow:0 4px 0 #3A8A02;margin-top:16px}
+.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #3A8A02}
+.btn.sec{background:var(--card);color:var(--navy);border:1.5px solid var(--bdr);box-shadow:none}
+.btn.blue{background:linear-gradient(90deg,#1CB0F6,#1593CC);box-shadow:0 4px 0 #0F78A8}
+.btn:disabled{opacity:.45;cursor:default}
+
+/* question */
+.qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.qnum{font-weight:800;color:var(--navy);font-size:.92rem}
+.qtag{font-size:.72rem;font-weight:700;color:var(--muted);background:var(--card);border:1px solid var(--bdr);border-radius:99px;padding:3px 10px}
+.prog{height:6px;background:var(--bdr);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.prog i{display:block;height:100%;background:var(--blue);width:0;transition:width .3s}
+.card{background:var(--card);border:1.5px solid var(--bdr);border-radius:18px;padding:18px}
+.listen-box{display:flex;flex-direction:column;align-items:center;gap:10px;padding:10px 0 16px}
+.wave{width:74px;height:74px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.9rem}
+.wave.playing{animation:pulse 1.1s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(28,176,246,.55)}100%{box-shadow:0 0 0 18px rgba(28,176,246,0)}}
+.listen-st{font-weight:700;font-size:.85rem;color:var(--muted)}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;direction:ltr;background:var(--card);border:2px solid var(--bdr);
+  border-radius:14px;padding:13px 14px;font-family:'Inter',sans-serif;font-size:.98rem;color:var(--txt);transition:.15s}
+.opt .k{flex:none;width:30px;height:30px;border-radius:8px;background:var(--soft);border:1.5px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--muted)}
+.opt.sel{border-color:var(--blue);background:#E7F6FE}
+.opt.sel .k{background:var(--blue);border-color:var(--blue);color:#fff}
+.ans-bar{height:5px;background:var(--bdr);border-radius:99px;overflow:hidden;margin-top:14px}
+.ans-bar i{display:block;height:100%;background:var(--gold);width:100%}
+.stem{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:1.06rem;font-weight:700;color:var(--navy);line-height:1.6;margin-bottom:14px}
+.stem u{text-decoration-thickness:2px;text-underline-offset:3px}
+.vo-hint{direction:rtl;text-align:right;font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin:-6px 0 12px}
+.passage{font-family:'Inter',sans-serif;direction:ltr;text-align:left;background:var(--soft);border:1.5px dashed var(--bdr);border-radius:14px;padding:14px;font-size:.92rem;line-height:1.75;margin-bottom:14px}
+.navrow{display:flex;gap:10px;margin-top:16px}
+.navrow .btn{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-top:16px;direction:ltr}
+.grid button{border:1.5px solid var(--bdr);background:var(--card);border-radius:7px;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;padding:6px 0;color:var(--muted)}
+.grid button.done{background:#E7F6FE;border-color:var(--blue);color:var(--navy)}
+.grid button.cur{outline:2px solid var(--navy);outline-offset:1px}
+
+/* break / results */
+.center{text-align:center}
+.big{font-family:'Inter',sans-serif;font-size:3.6rem;font-weight:900;color:var(--navy);line-height:1}
+.big small{font-size:1.2rem;color:var(--muted);font-weight:700}
+.big,.part .n,.hist span{direction:ltr;unicode-bidi:isolate}
+.sub{color:var(--muted);font-size:.85rem;margin-top:6px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.lvl{margin-top:14px}
+.lvl .row{display:flex;align-items:center;gap:10px;margin-top:9px;font-size:.82rem}
+.lvl .row b{min-width:118px;color:var(--navy)}
+.lvl .bar{flex:1;height:10px;background:var(--bdr);border-radius:99px;overflow:hidden}
+.lvl .bar i{display:block;height:100%;border-radius:99px}
+.lvl .pct{min-width:40px;text-align:left;font-family:'Inter',sans-serif;font-weight:800;direction:ltr}
+.verdict{margin-top:14px;background:var(--soft);border-radius:14px;padding:14px;font-size:.88rem;line-height:1.8}
+.verdict b{color:var(--navy)}
+.hist{margin-top:12px;font-size:.8rem;color:var(--muted)}
+.hist span{font-family:'Inter',sans-serif;font-weight:800;color:var(--navy)}
+
+/* review */
+.rv-tabs{display:flex;gap:8px;margin:6px 0 14px;flex-wrap:wrap}
+.rv-tabs button{border:1.5px solid var(--bdr);background:var(--card);border-radius:99px;padding:6px 14px;font-weight:700;font-size:.8rem;color:var(--muted)}
+.rv-tabs button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.rv{background:var(--card);border:1.5px solid var(--bdr);border-inline-start:6px solid var(--ok-bd);border-radius:14px;padding:14px;margin-bottom:10px}
+.rv.wrong{border-inline-start-color:var(--no-bd)}
+.rv .h{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--muted);font-weight:700;margin-bottom:8px}
+.rv .tr{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.9rem;line-height:1.7;color:var(--navy)}
+.rv .tr .sp{font-weight:800;color:var(--muted);font-size:.78rem}
+.rv .a{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.88rem;margin-top:8px;line-height:1.7}
+.rv .a .na{font-family:'Cairo',sans-serif;color:var(--muted);font-weight:700;font-size:.8rem}
+.rv .a .ok{color:#2F8A00;font-weight:800}.rv .a .no{color:#D12C2C;font-weight:700;text-decoration:line-through}
+.rv .why{margin-top:8px;font-size:.84rem;font-weight:700;color:var(--navy);line-height:1.7}
+.rv .why bdi{font-family:'Inter',sans-serif}
+.rv .play{border:none;background:var(--soft);border-radius:8px;padding:4px 10px;font-size:.75rem;font-weight:700;color:var(--navy)}
+
+.rv-title{font-size:1.05rem;color:var(--navy);margin:22px 2px 4px;font-weight:900}
+.rv .trn{margin-top:8px;font-size:.84rem;line-height:1.75;color:var(--txt);background:var(--soft);border-radius:10px;padding:8px 10px}
+.rv .trn b{color:var(--muted);font-size:.74rem}
+.last{margin-top:14px;background:var(--card);border:1.5px solid var(--blue);border-radius:16px;padding:14px 16px;display:none}
+.last.on{display:block}
+.last .lt{font-weight:800;color:var(--navy);font-size:.9rem}
+.last .ls{color:var(--muted);font-size:.8rem;margin-top:2px}
+.last .btn{margin-top:10px;padding:12px;font-size:.92rem}
+.opt.right{border-color:var(--ok-bd);background:var(--ok-bg)}
+.opt.right .k{background:var(--ok-bd);border-color:var(--ok-bd);color:#fff}
+.opt.bad{border-color:var(--no-bd);background:var(--no-bg)}
+.opt.bad .k{background:var(--no-bd);border-color:var(--no-bd);color:#fff}
+.opt:disabled{cursor:default}
+.fb{margin-top:14px;border-radius:14px;padding:12px 14px;font-size:.86rem;line-height:1.8}
+.fb.ok{background:var(--ok-bg);color:#2F6A00}.fb.no{background:var(--no-bg);color:#A12020}
+.fb .fb-t{font-weight:900}
+.fb .tr,.tr{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:.9rem;line-height:1.7;color:var(--navy)}
+.fb .tr .sp,.tr .sp{font-weight:800;color:var(--muted);font-size:.78rem}
+.fb .fb-tr{color:var(--txt);font-weight:600}
+.fb .fb-why{font-weight:800;border-top:1px dashed currentColor;margin-top:6px;padding-top:6px}
+.fb bdi,.rv .why bdi{font-family:'Inter',sans-serif}
+.replay{display:block;margin:0 auto;border:none;background:var(--soft);border-radius:10px;padding:8px 16px;font-weight:800;color:var(--navy);font-size:.85rem}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(10,16,30,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal.on{display:flex}
+.modal .box{background:var(--card);border-radius:18px;padding:22px;max-width:340px;width:100%;text-align:center}
+.modal h3{color:var(--navy);font-size:1.05rem;margin-bottom:8px}
+.modal p{font-size:.86rem;color:var(--muted);line-height:1.7}
+.modal .navrow .btn{padding:12px}
+
+#print-report{display:none}
+@media print{
+  @page{size:A4;margin:14mm 12mm}
+  body{background:#fff!important;color:#111!important}
+  body>*:not(#print-report){display:none!important}
+  #print-report{display:block!important;font-family:'Cairo',sans-serif;color:#111;font-size:11pt}
+  .pr-h{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #1A2744;padding-bottom:8px;margin-bottom:12px}
+  .pr-h h1{font-family:'Inter',sans-serif;font-size:20pt;color:#1A2744;margin:0}
+  .pr-h .pr-s{font-size:10pt;color:#555}
+  .pr-score{display:flex;gap:10px;margin-bottom:10px}
+  .pr-score div{flex:1;border:1.5px solid #ccd;border-radius:8px;padding:8px;text-align:center}
+  .pr-score b{display:block;font-family:'Inter',sans-serif;font-size:18pt;color:#1A2744;direction:ltr}
+  .pr-lv{font-size:10pt;margin:6px 0 12px}
+  .pr-verdict{background:#f3f5fa;border-radius:8px;padding:8px 10px;font-size:10pt;line-height:1.7;margin-bottom:14px}
+  .pr-sec{font-size:13pt;color:#1A2744;border-bottom:1px solid #ccd;margin:16px 0 8px;padding-bottom:4px}
+  .pr-q{border:1px solid #dde;border-inline-start:4px solid #E04848;border-radius:6px;padding:7px 9px;margin-bottom:7px;break-inside:avoid}
+  .pr-q .n{font-size:9pt;color:#666;font-weight:700}
+  .pr-q .en{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:10pt;line-height:1.55}
+  .pr-q .en .sp{color:#777;font-weight:700;font-size:8.5pt}
+  .pr-q .ans{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:10pt;margin-top:3px}
+  .pr-q .ans .no{color:#C02626;text-decoration:line-through}.pr-q .ans .ok{color:#237A00;font-weight:800}
+  .pr-q .ar{font-size:9.5pt;line-height:1.6;margin-top:3px;color:#333}
+  .pr-q .why{font-size:9.5pt;font-weight:700;color:#1A2744;margin-top:2px}
+  .pr-q bdi,.pr-key bdi{font-family:'Inter',sans-serif}
+  .pr-key{width:100%;border-collapse:collapse;font-size:8.5pt;direction:ltr}
+  .pr-key td,.pr-key th{border:1px solid #dde;padding:2px 4px;text-align:left;font-family:'Inter',sans-serif}
+  .pr-key th{background:#f3f5fa}
+  .pr-key .x{color:#C02626;font-weight:800}.pr-key .v{color:#237A00;font-weight:800}
+  .pr-foot{margin-top:12px;font-size:8.5pt;color:#777;text-align:center}
+}
+footer{background:var(--navy);padding:20px;text-align:center;margin-top:20px}
+footer p{color:rgba(255,255,255,.4);font-size:.75rem}
+footer span{color:#FFC800;font-weight:700}
+
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0E1524;--card:#182138;--txt:#E6EBF5;--muted:#9AA6BF;--bdr:#2B3658;--soft:#1F2A45;--navy:#1A2744}
+  .part .n,.part .l,.rules h3,.qnum,.stem,.big,.lvl .row b,.verdict b,.hist span,.rv .tr,.rv .why,.modal h3,.rv .play,.btn.sec{color:#E6EBF5}
+  .opt.sel{background:#16344A}
+  .grid button.done{background:#16344A;color:#E6EBF5}
+  .rv .a .ok{color:#7BE04A}.rv .a .no{color:#FF8A8A}
+  .rv-title,.last .lt,.replay{color:#E6EBF5}
+  .opt.right{background:#1F3A12}.opt.bad{background:#3A1A1A}
+  .fb.ok{background:#1F3A12;color:#A6E57A}.fb.no{background:#3A1A1A;color:#FF9C9C}
+  .warn{background:#3A3010;color:#F5D77A;border-color:#7A6420}
+}
+</style>
+<script src="js/error-report.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="back-link" href="/" id="back-link">→ الرئيسية</a>
+  <div class="tb-mid" id="tb-mid">محاكاة ALCPT</div>
+  <div class="timer" id="timer"></div>
+</div>
+
+<div class="wrap">
+
+  <!-- INTRO -->
+  <div class="screen on" id="s-intro">
+    <div class="hero">
+      <div class="badge">محاكاة</div>
+      <h1>ALCPT</h1>
+      <div style="font-weight:800;font-size:.95rem;margin-top:2px">محاكاة اختبار تحديد المستوى</div>
+      <p>100 سؤال · النتيجة من 100</p>
+    </div>
+    <div class="parts">
+      <div class="part"><div class="n">50</div><div class="l">الاستماع</div><div class="s">تسمع كل سؤال مرّة وحدة · ≈ 20 دقيقة</div></div>
+      <div class="part"><div class="n">50</div><div class="l">القراءة</div><div class="s">قواعد · مفردات · نصوص · 35 دقيقة</div></div>
+    </div>
+    <div class="rules">
+      <h3>قبل ما تبدأ</h3>
+      <ul>
+        <li>شغّل الصوت أو البس سماعة، وكن في مكان هادي.</li>
+        <li>في الاستماع ما تشوف السؤال مكتوب، وما تقدر تعيده. الخيارات تظهر وأنت تسمع.</li>
+        <li>بعد ما يخلص الصوت عندك ثواني تختار، وبعدها ينتقل تلقائياً.</li>
+        <li>في القراءة تتنقل بين الأسئلة بحرّية، وتقدر تغيّر إجابتك قبل التسليم.</li>
+        <li>بعد الاختبار تشوف النتيجة ومراجعة كل سؤال مع الشرح.</li>
+      </ul>
+    </div>
+    <button class="btn" id="btn-start">ابدأ الاختبار</button>
+    <div class="last" id="last"></div>
+    <div class="hist" id="hist"></div>
+  </div>
+
+  <!-- LISTENING -->
+  <div class="screen" id="s-listen">
+    <div class="qhead"><div class="qnum" id="l-num"></div><div class="qtag">الاستماع</div></div>
+    <div class="prog"><i id="l-prog"></i></div>
+    <div class="card">
+      <div class="listen-box"><div class="wave" id="l-wave">🔊</div><div class="listen-st" id="l-st"></div></div>
+      <div class="opts" id="l-opts"></div>
+      <div class="ans-bar" id="l-bar" style="visibility:hidden"><i id="l-bar-i"></i></div>
+    </div>
+    <button class="btn blue" id="l-next" disabled>التالي</button>
+  </div>
+
+  <!-- BREAK -->
+  <div class="screen" id="s-break">
+    <div class="card center">
+      <div style="font-size:2.4rem">✅</div>
+      <h2 style="color:var(--navy);margin-top:6px">انتهى قسم الاستماع</h2>
+      <p class="sub" style="line-height:1.8">الجزء الثاني: 50 سؤال قراءة في 35 دقيقة.<br>يبدأ المؤقت أول ما تضغط ابدأ.</p>
+      <button class="btn" id="btn-read">ابدأ القراءة</button>
+    </div>
+  </div>
+
+  <!-- READING -->
+  <div class="screen" id="s-read">
+    <div class="qhead"><div class="qnum" id="r-num"></div><div class="qtag">القراءة</div></div>
+    <div class="prog"><i id="r-prog"></i></div>
+    <div class="card">
+      <div id="r-passage"></div>
+      <div class="stem" id="r-stem"></div>
+      <div class="opts" id="r-opts"></div>
+    </div>
+    <div class="navrow">
+      <button class="btn sec" id="r-prev">السابق</button>
+      <button class="btn blue" id="r-next">التالي</button>
+    </div>
+    <div class="grid" id="r-grid"></div>
+    <button class="btn" id="r-submit">تسليم الاختبار</button>
+  </div>
+
+  <!-- RESULTS + REVIEW (one screen, mistakes shown right away) -->
+  <div class="screen" id="s-result">
+    <div class="card center">
+      <div class="sub" id="res-date">نتيجتك</div>
+      <div class="big" id="res-total"></div>
+      <div class="split">
+        <div class="part"><div class="n" id="res-l"></div><div class="l">الاستماع</div></div>
+        <div class="part"><div class="n" id="res-r"></div><div class="l">القراءة</div></div>
+      </div>
+    </div>
+    <button class="btn" id="btn-retry"></button>
+    <button class="btn sec" id="btn-pdf">📄 احفظ نتيجتي PDF</button>
+    <div class="card lvl" style="margin-top:12px">
+      <div style="font-weight:800;color:var(--navy);font-size:.92rem">حسب مستوى الصعوبة</div>
+      <div id="res-lvls"></div>
+      <div class="verdict" id="res-verdict"></div>
+    </div>
+    <h2 class="rv-title" id="rv-title"></h2>
+    <div class="rv-tabs" id="rv-tabs">
+      <button data-f="wrong" class="on">الأخطاء</button>
+      <button data-f="all">الكل</button>
+      <button data-f="L">الاستماع</button>
+      <button data-f="R">القراءة</button>
+    </div>
+    <div id="rv-list"></div>
+    <button class="btn sec" id="btn-again">اختبار جديد</button>
+  </div>
+
+  <!-- RETRY MISTAKES (untimed, instant feedback) -->
+  <div class="screen" id="s-retry">
+    <div class="qhead"><div class="qnum" id="t-num"></div><div class="qtag" id="t-tag"></div></div>
+    <div class="prog"><i id="t-prog"></i></div>
+    <div class="card">
+      <div id="t-body"></div>
+      <div class="opts" id="t-opts"></div>
+      <div id="t-fb"></div>
+    </div>
+    <button class="btn blue" id="t-next" disabled>التالي</button>
+    <button class="btn sec" id="t-quit">رجوع للنتيجة</button>
+  </div>
+  <div class="screen" id="s-retry-end">
+    <div class="card center">
+      <div style="font-size:2.4rem" id="te-emoji"></div>
+      <div class="big" id="te-score" style="font-size:2.6rem;margin-top:6px"></div>
+      <p class="sub" id="te-sub" style="line-height:1.8"></p>
+      <button class="btn" id="te-again"></button>
+      <button class="btn sec" id="te-back">رجوع للنتيجة</button>
+    </div>
+  </div>
+</div>
+
+<div id="print-report" aria-hidden="true"></div>
+
+<div class="modal" id="m-confirm"><div class="box">
+  <h3 id="m-title"></h3><p id="m-text"></p>
+  <div class="navrow"><button class="btn sec" id="m-no">رجوع</button><button class="btn" id="m-yes">تأكيد</button></div>
+</div></div>
+
+<footer>
+  <p>صُمِّم بواسطة <span dir="ltr">ALI MOBARKI 🎓</span></p>
+  <p style="margin-top:4px;font-size:.7rem;opacity:.5">American Language Course — Training Center</p>
+</footer>
+
+<script src="js/access-gate.js"></script>
+<script src="js/data-alcpt.js"></script>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const FAST=/[?&]fast=1/.test(location.search);           // للفحص الآلي فقط
+const L_N=50,R_N=50,READ_SECS=35*60;
+const ANSWER_SECS={qr:10,st:10,dl:12,an:15};
+const KEYS=['A','B','C','D'];
+const LVL_NAME={1:'أساسي (كتب 1–12)',2:'متوسط (كتب 13–24)',3:'متقدم (كتب 25–34)'};
+const LVL_CLR={1:'#58CC02',2:'#1CB0F6',3:'#8B5CF6'};
+
+// ── helpers ──
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ltrRuns=t=>esc(t).replace(/[A-Za-z0-9][A-Za-z0-9 ,.'’?!:;\/+\-–…"]*[A-Za-z0-9?!.…"]|[A-Za-z]/g,m=>'<bdi dir="ltr">'+m+'</bdi>').replace(/→/g,'←');
+function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));window.scrollTo(0,0);}
+function setTimer(t){$('timer').textContent=t||'';}
+const mmss=s=>{s=Math.max(0,Math.round(s));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');};
+
+// ── build a test: quotas per level, easy → hard, longer items last ──
+function pick(pool,quota){
+  const out=[];
+  for(const lvl of [1,2,3])out.push(...shuffle(pool.filter(x=>x.lvl===lvl)).slice(0,quota[lvl]||0));
+  return out;
+}
+function buildTest(){
+  const ann=ALCPT_LISTEN.filter(x=>x.t==='an');
+  const lRest=ALCPT_LISTEN.filter(x=>x.t!=='an');
+  const lq={1:15,2:16,3:L_N-15-16-ann.length};
+  const L=[...pick(lRest,lq),...ann.sort((a,b)=>a.lvl-b.lvl)].slice(0,L_N);
+  const rd=ALCPT_READ.filter(x=>x.t==='rd');
+  const rRest=ALCPT_READ.filter(x=>x.t!=='rd');
+  const rq={1:13,2:14,3:R_N-13-14-rd.length};
+  const R=[...pick(rRest,rq),...rd].slice(0,R_N);
+  const prep=it=>{const ord=shuffle([0,1,2,3]);return {it,o:ord.map(i=>it.o[i]),a:ord.indexOf(0),pick:-1};};
+  return {L:L.map(prep),R:R.map(prep)};
+}
+
+// ── speech: man / woman / narrator ──
+const SYN=window.speechSynthesis||null;
+let voices=[];
+function loadVoices(){if(SYN)voices=(SYN.getVoices()||[]).filter(v=>v.lang&&v.lang.toLowerCase().startsWith('en'));}
+if(SYN){loadVoices();SYN.addEventListener&&SYN.addEventListener('voiceschanged',loadVoices);}
+function voiceFor(who){
+  if(!voices.length)return null;
+  const us=voices.filter(v=>/en-us/i.test(v.lang));
+  const pool=(us.length?us:voices).slice();
+  const score=v=>{const n=v.name.toLowerCase();return (/natural|neural/.test(n)?5:0)+(/google/.test(n)?4:0)+(/enhanced|premium/.test(n)?3:0);};
+  pool.sort((a,b)=>score(b)-score(a));
+  const fem=pool.find(v=>/female|samantha|zira|aria|jenny|ava|allison|susan|karen|victoria|google us english/i.test(v.name));
+  const mal=pool.find(v=>/male|david|guy|alex|daniel|fred|tom|aaron|mark/i.test(v.name)&&!/female/i.test(v.name));
+  if(who==='f')return fem||pool[0];
+  if(who==='m')return mal||pool[1]||pool[0];
+  return pool[0];
+}
+function speakLine(text,who){
+  return new Promise(res=>{
+    if(FAST||!SYN){setTimeout(res,FAST?60:0);return;}
+    const u=new SpeechSynthesisUtterance(text);
+    const v=voiceFor(who);if(v){u.voice=v;u.lang=v.lang;}else u.lang='en-US';
+    u.rate=0.9;u.pitch=who==='f'?1.15:who==='m'?0.85:1;
+    let done=false;const fin=()=>{if(!done){done=true;clearTimeout(guard);res();}};
+    // بعض المتصفحات لا تُطلق onend — حدّ أقصى حسب طول النص
+    const guard=setTimeout(fin,1500+text.split(/\s+/).length*520);
+    u.onend=fin;u.onerror=fin;
+    SYN.speak(u);
+  });
+}
+const wait=ms=>new Promise(r=>setTimeout(r,FAST?5:ms));
+// ── recorded clips (natural neural voices, one mp3 per listening item) ──
+// audio/alcpt/<id>.mp3 holds the whole item as heard: speakers + spoken
+// question. Device speech synthesis is only a fallback if a clip can't play.
+const AUD=new Audio();AUD.preload='auto';
+const clipUrl=id=>'/audio/alcpt/'+id+'.mp3';
+function stopAudio(){try{AUD.pause();}catch(e){}if(SYN)SYN.cancel();}
+function playClip(id){
+  return new Promise(res=>{
+    let done=false;
+    const fin=ok=>{if(done)return;done=true;clearTimeout(g);AUD.onended=AUD.onerror=null;res(ok);};
+    const g=setTimeout(()=>fin(true),40000);
+    AUD.onended=()=>fin(true);AUD.onerror=()=>fin(false);
+    AUD.src=clipUrl(id);
+    const p=AUD.play();if(p&&p.catch)p.catch(()=>fin(false));
+  });
+}
+function warm(id){try{fetch(clipUrl(id)).catch(()=>{});}catch(e){}}
+function unlockAudio(firstId){
+  // iOS يسمح بالتشغيل لاحقاً فقط إذا بدأ عنصر الصوت داخل نقرة المستخدم
+  try{AUD.muted=true;AUD.src=clipUrl(firstId);const p=AUD.play();if(p&&p.then)p.then(()=>{AUD.pause();AUD.muted=false;}).catch(()=>{AUD.muted=false;});else AUD.muted=false;}catch(e){AUD.muted=false;}
+}
+async function playItem(it){
+  stopAudio();
+  if(FAST){await wait(5);return;}
+  if(it.id&&await playClip(it.id))return;
+  // fallback: device voices
+  for(let i=0;i<it.say.length;i++){
+    if(i)await wait(450);
+    await speakLine(it.say[i][1],it.say[i][0]);
+  }
+  if(it.q){await wait(700);await speakLine(it.q,'n');}
+}
+
+// ── state ──
+let T=null,li=0,ri=0,readLeft=READ_SECS,readTick=null,ansTick=null,running=false;
+
+// ── LISTENING ──
+function renderListen(){
+  const x=T.L[li];
+  $('l-num').textContent='سؤال '+(li+1)+' من '+L_N;
+  $('l-prog').style.width=((li)/L_N*100)+'%';
+  $('l-opts').innerHTML=x.o.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${KEYS[i]}</span><span>${esc(o)}</span></button>`).join('');
+  $('l-opts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{x.pick=+b.dataset.i;$('l-opts').querySelectorAll('.opt').forEach(o=>o.classList.toggle('sel',o===b));});
+  $('l-next').disabled=true;
+  $('l-bar').style.visibility='hidden';
+}
+async function runListen(){
+  running=true;
+  for(li=0;li<L_N;li++){
+    renderListen();
+    const it=T.L[li].it;
+    if(!FAST&&T.L[li+1])warm(T.L[li+1].it.id);
+    $('l-wave').classList.add('playing');$('l-st').textContent='استمع…';
+    await wait(600);
+    await playItem(it);
+    $('l-wave').classList.remove('playing');$('l-st').textContent='اختر إجابتك';
+    await answerWindow(FAST?0.05:ANSWER_SECS[it.t]||10);
+    if(!running)return;
+  }
+  $('l-prog').style.width='100%';
+  show('s-break');setTimer('');
+}
+function answerWindow(secs){
+  return new Promise(res=>{
+    const bar=$('l-bar-i');$('l-bar').style.visibility='visible';
+    const t0=Date.now(),ms=secs*1000;
+    $('l-next').disabled=false;
+    const end=()=>{clearInterval(ansTick);$('l-next').onclick=null;res();};
+    $('l-next').onclick=end;
+    ansTick=setInterval(()=>{const left=ms-(Date.now()-t0);bar.style.width=Math.max(0,left/ms*100)+'%';setTimer(mmss(left/1000));if(left<=0)end();},100);
+  });
+}
+
+// ── READING ──
+function renderRead(){
+  const x=T.R[ri],it=x.it;
+  $('r-num').textContent='سؤال '+(L_N+ri+1)+' من '+(L_N+R_N);
+  $('r-prog').style.width=(T.R.filter(y=>y.pick>=0).length/R_N*100)+'%';
+  $('r-passage').innerHTML=it.p?`<div class="passage">${esc(ALCPT_PASSAGES[it.p])}</div>`:'';
+  const stem=esc(it.q).replace(/&lt;u&gt;(.*?)&lt;\/u&gt;/g,'<u>$1</u>');
+  $('r-stem').innerHTML=stem+(it.t==='vo'?'<div class="vo-hint">اختر الكلمة اللي معناها نفس الكلمة اللي تحتها خط</div>':'');
+  $('r-opts').innerHTML=x.o.map((o,i)=>`<button class="opt${x.pick===i?' sel':''}" data-i="${i}"><span class="k">${KEYS[i]}</span><span>${esc(o)}</span></button>`).join('');
+  $('r-opts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{x.pick=+b.dataset.i;renderRead();});
+  $('r-prev').disabled=ri===0;
+  $('r-next').disabled=ri===R_N-1;
+  $('r-grid').innerHTML=T.R.map((y,i)=>`<button class="${y.pick>=0?'done':''}${i===ri?' cur':''}" data-i="${i}">${L_N+i+1}</button>`).join('');
+  $('r-grid').querySelectorAll('button').forEach(b=>b.onclick=()=>{ri=+b.dataset.i;renderRead();window.scrollTo(0,0);});
+}
+function startRead(){
+  show('s-read');ri=0;readLeft=FAST?3:READ_SECS;renderRead();
+  const t0=Date.now(),total=readLeft;
+  readTick=setInterval(()=>{readLeft=total-(Date.now()-t0)/1000;setTimer(mmss(readLeft));$('timer').classList.toggle('low',readLeft<300);if(readLeft<=0){clearInterval(readTick);finish();}},250);
+}
+
+// ── RESULTS ──
+const ITEM_BY_ID={};ALCPT_LISTEN.concat(ALCPT_READ).forEach(x=>ITEM_BY_ID[x.id]=x);
+const okx=x=>x.pick===x.a;
+function finish(){
+  clearInterval(readTick);running=false;setTimer('');$('timer').classList.remove('low');
+  const all=[...T.L.map(x=>({...x,sec:'L'})),...T.R.map(x=>({...x,sec:'R'}))];
+  const lc=T.L.filter(okx).length,rc=T.R.filter(okx).length,tot=lc+rc;
+  const d=new Date().toISOString().slice(0,10);
+  const h=store('alcpt_hist')||[];h.unshift({d,s:tot,l:lc,r:rc});store('alcpt_hist',h.slice(0,10));
+  // نحفظ المحاولة كاملة حتى يرجع لها الطالب ويراجع أخطاءه لاحقاً
+  store('alcpt_last',{d,items:all.map(x=>({id:x.it.id,sec:x.sec,o:x.o,a:x.a,pick:x.pick}))});
+  try{gtag('event','alcpt_finish',{score:tot,listening:lc,reading:rc});}catch(e){}
+  showResults(all,d);
+}
+function loadLast(){
+  const L=store('alcpt_last');if(!L||!L.items)return null;
+  const all=L.items.map(x=>ITEM_BY_ID[x.id]?{it:ITEM_BY_ID[x.id],sec:x.sec,o:x.o,a:x.a,pick:x.pick}:null).filter(Boolean);
+  return all.length?{all,d:L.d}:null;
+}
+function showResults(all,d){
+  T=T||{};T.all=all;resDate=d||'';
+  const Ls=all.filter(x=>x.sec==='L'),Rs=all.filter(x=>x.sec==='R');
+  const lc=Ls.filter(okx).length,rc=Rs.filter(okx).length,tot=lc+rc,wrong=all.length-tot;
+  $('res-date').innerHTML=d?('نتيجتك · <bdi dir="ltr">'+d+'</bdi>'):'نتيجتك';
+  $('res-total').innerHTML=tot+'<small> / '+all.length+'</small>';
+  $('res-l').textContent=lc+' / '+Ls.length;$('res-r').textContent=rc+' / '+Rs.length;
+  const by={};for(const x of all){const k=x.it.lvl;by[k]=by[k]||{n:0,c:0};by[k].n++;if(okx(x))by[k].c++;}
+  $('res-lvls').innerHTML=[1,2,3].map(k=>{const p=by[k]?Math.round(by[k].c/by[k].n*100):0;
+    return `<div class="row"><b>${LVL_NAME[k]}</b><div class="bar"><i style="width:${p}%;background:${LVL_CLR[k]}"></i></div><div class="pct">${p}%</div></div>`;}).join('');
+  const p=k=>by[k]?by[k].c/by[k].n:0;
+  resLv=[1,2,3].map(k=>LVL_NAME[k]+': <bdi dir="ltr">'+Math.round(p(k)*100)+'%</bdi>').join(' · ');
+  let v;
+  if(tot<=29)v='<b>الدرجة 29 أو أقل:</b> دليل الاختبار الرسمي يعتبر الدرجات بهذا المستوى غير معبّرة عن المستوى لأنها ممكن تجي من التخمين. ركّز على أسئلة المستوى الأساسي وأعد المحاولة.';
+  else if(p(1)<0.7)v='<b>ابدأ بالأساس:</b> نسبتك في أسئلة الكتب 1–12 أقل من 70%. راجع القواعد الأساسية والمفردات اليومية قبل أي شي ثاني.';
+  else if(p(2)<0.6)v='<b>أساسك ثابت.</b> الخطوة الجاية أسئلة المستوى المتوسط: الأزمنة التامة، المبني للمجهول، والكلام المنقول.';
+  else if(p(3)<0.6)v='<b>مستوى متوسط قوي.</b> اللي يرفع درجتك الحين أسئلة المستوى المتقدم: الشرط الثاني والثالث، المفردات الأكاديمية، وفهم النصوص.';
+  else v='<b>مستوى متقدم.</b> تجاوزت أغلب أسئلة المستوى الأعلى. حافظ على الاستماع اليومي عشان تثبت الدرجة.';
+  const lp=Ls.length?lc/Ls.length:0,rp=Rs.length?rc/Rs.length:0;
+  if(Math.abs(lp-rp)>=0.15)v+='<br>'+(lp<rp?'الاستماع أضعف من القراءة بوضوح، فخصّص له وقت يومي.':'القراءة أضعف من الاستماع بوضوح، فركّز على القواعد والمفردات.');
+  $('res-verdict').innerHTML=v;
+  $('btn-retry').textContent=wrong?`🔁 أعد حل أخطائي (${wrong})`:'🎉 ما عندك أخطاء';
+  $('btn-retry').disabled=!wrong;
+  $('rv-title').textContent=wrong?`أخطاؤك (${wrong}) — راجعها هنا`:'مراجعة الإجابات';
+  rvFilter=wrong?'wrong':'all';
+  document.querySelectorAll('#rv-tabs button').forEach(b=>b.classList.toggle('on',b.dataset.f===rvFilter));
+  renderReview();show('s-result');
+}
+
+// ── REVIEW (inline under the score) ──
+let rvFilter='wrong';
+function transcript(it){
+  const sp={m:'Man',f:'Woman',n:''};
+  return `<div class="tr">${it.say.map(s=>(sp[s[0]]?`<span class="sp">${sp[s[0]]}:</span> `:'')+esc(s[1])).join('<br>')}${it.q?`<br><span class="sp">Question:</span> ${esc(it.q)}`:''}</div>`;
+}
+const trHtml=t=>ltrRuns(t).replace(/ — /g,'<br>').replace(/ · /g,'<br>');
+const stemHtml=it=>esc(it.q).replace(/&lt;u&gt;(.*?)&lt;\/u&gt;/g,'<u>$1</u>');
+function renderReview(){
+  const list=T.all.map((x,i)=>({...x,n:i+1})).filter(x=>rvFilter==='all'||(rvFilter==='wrong'&&!okx(x))||x.sec===rvFilter);
+  if(!list.length){$('rv-list').innerHTML='<div class="card center" style="font-weight:700;color:var(--navy)">ما فيه أسئلة هنا 🎉</div>';return;}
+  $('rv-list').innerHTML=list.map(x=>{
+    const it=x.it,good=okx(x);
+    const body=x.sec==='L'?transcript(it):(it.p?`<div class="tr" style="opacity:.75;font-size:.8rem;margin-bottom:6px">${esc(ALCPT_PASSAGES[it.p]).slice(0,140)}…</div>`:'')+`<div class="tr">${stemHtml(it)}</div>`;
+    const mine=x.pick>=0?x.o[x.pick]:'(بدون إجابة)';
+    const ans=good?`<span class="ok">✓ ${esc(x.o[x.a])}</span>`:`<span class="${x.pick>=0?'no':'na'}">${esc(mine)}</span> &nbsp;<span class="ok">✓ ${esc(x.o[x.a])}</span>`;
+    return `<div class="rv${good?'':' wrong'}"><div class="h"><span>سؤال ${x.n} · ${x.sec==='L'?'استماع':'قراءة'}</span>${x.sec==='L'?`<button class="play" data-n="${x.n-1}">🔊 اسمع</button>`:''}</div>${body}<div class="a">${ans}</div>${it.tr?`<div class="trn"><b>الترجمة:</b><br>${trHtml(it.tr)}</div>`:''}<div class="why">💡 ${ltrRuns(it.ar)}</div></div>`;
+  }).join('');
+  $('rv-list').querySelectorAll('.play').forEach(b=>b.onclick=()=>playItem(T.all[+b.dataset.n].it));
+}
+
+// ── PDF (print-to-PDF; works on iPhone, Android and desktop with no library) ──
+let resDate='',resLv='';
+function buildReport(){
+  const all=T.all,Ls=all.filter(x=>x.sec==='L'),Rs=all.filter(x=>x.sec==='R');
+  const lc=Ls.filter(okx).length,rc=Rs.filter(okx).length,tot=lc+rc;
+  const wrong=all.map((x,i)=>({...x,n:i+1})).filter(x=>!okx(x));
+  const sp={m:'Man',f:'Woman',n:''};
+  const qHtml=x=>{
+    const it=x.it;
+    const en=x.sec==='L'
+      ?it.say.map(s=>(sp[s[0]]?`<span class="sp">${sp[s[0]]}:</span> `:'')+esc(s[1])).join('<br>')+(it.q?`<br><span class="sp">Question:</span> ${esc(it.q)}`:'')
+      :stemHtml(it);
+    const mine=x.pick>=0?`<span class="no">${esc(x.o[x.pick])}</span> &nbsp;`:'<span style="color:#888">(no answer)</span> &nbsp;';
+    return `<div class="pr-q"><div class="n">سؤال ${x.n} · ${x.sec==='L'?'استماع':'قراءة'}</div><div class="en">${en}</div><div class="ans">${mine}<span class="ok">✓ ${esc(x.o[x.a])}</span></div>${it.tr?`<div class="ar">${trHtml(it.tr)}</div>`:''}<div class="why">💡 ${ltrRuns(it.ar)}</div></div>`;
+  };
+  const rows=all.map((x,i)=>`<tr><td>${i+1}</td><td>${x.sec==='L'?'L':'R'}</td><td>${x.pick>=0?esc(x.o[x.pick]):'—'}</td><td>${esc(x.o[x.a])}</td><td class="${okx(x)?'v':'x'}">${okx(x)?'✓':'✗'}</td></tr>`).join('');
+  $('print-report').innerHTML=`
+    <div class="pr-h"><h1>ALCPT</h1><div class="pr-s">محاكاة اختبار تحديد المستوى · <bdi dir="ltr">${resDate||''}</bdi></div></div>
+    <div class="pr-score"><div>النتيجة<b>${tot} / ${all.length}</b></div><div>الاستماع<b>${lc} / ${Ls.length}</b></div><div>القراءة<b>${rc} / ${Rs.length}</b></div></div>
+    <div class="pr-lv">${resLv}</div>
+    <div class="pr-verdict">${$('res-verdict').innerHTML}</div>
+    <div class="pr-sec">أخطائي (${wrong.length})</div>
+    ${wrong.length?wrong.map(qHtml).join(''):'<p>ما فيه أخطاء 🎉</p>'}
+    <div class="pr-sec">مفتاح الإجابات الكامل</div>
+    <table class="pr-key"><tr><th>#</th><th></th><th>Your answer</th><th>Correct</th><th></th></tr>${rows}</table>
+    <div class="pr-foot">ALC — alc4.alimobarki.com</div>`;
+}
+function savePdf(){
+  buildReport();
+  const old=document.title;
+  const tot=T.all.filter(okx).length;
+  document.title=`ALCPT ${tot}-${T.all.length} ${resDate||''}`.trim();   // يصير اسم ملف الـ PDF
+  try{gtag('event','alcpt_pdf');}catch(e){}
+  const restore=()=>{document.title=old;window.removeEventListener('afterprint',restore);};
+  window.addEventListener('afterprint',restore);
+  setTimeout(()=>window.print(),50);
+}
+
+// ── RETRY MISTAKES ──
+let RT=[],rti=0,rtRight=0;
+function startRetry(items){
+  RT=shuffle(items).map(x=>{const ord=shuffle([0,1,2,3]);return {it:x.it,sec:x.sec,o:ord.map(i=>x.it.o[i]),a:ord.indexOf(0),pick:-1};});
+  rti=0;rtRight=0;show('s-retry');renderRetry();
+}
+function renderRetry(){
+  const x=RT[rti],it=x.it;
+  $('t-num').textContent='سؤال '+(rti+1)+' من '+RT.length;
+  $('t-tag').textContent=x.sec==='L'?'استماع':'قراءة';
+  $('t-prog').style.width=(rti/RT.length*100)+'%';
+  if(x.sec==='L'){
+    $('t-body').innerHTML='<div class="listen-box"><div class="wave" id="t-wave">🔊</div><button class="replay" id="t-replay">🔊 اسمع مرّة ثانية</button></div>';
+    const play=async()=>{const w=$('t-wave');if(w)w.classList.add('playing');await playItem(it);if($('t-wave'))$('t-wave').classList.remove('playing');};
+    $('t-replay').onclick=play;play();
+  }else{
+    $('t-body').innerHTML=(it.p?`<div class="passage">${esc(ALCPT_PASSAGES[it.p])}</div>`:'')+`<div class="stem">${stemHtml(it)}</div>`+(it.t==='vo'?'<div class="vo-hint">اختر الكلمة اللي معناها نفس الكلمة اللي تحتها خط</div>':'');
+  }
+  $('t-opts').innerHTML=x.o.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${KEYS[i]}</span><span>${esc(o)}</span></button>`).join('');
+  $('t-fb').innerHTML='';$('t-next').disabled=true;
+  $('t-opts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    if(x.pick>=0)return;
+    x.pick=+b.dataset.i;const good=x.pick===x.a;if(good)rtRight++;
+    $('t-opts').querySelectorAll('.opt').forEach((o,i)=>{o.disabled=true;if(i===x.a)o.classList.add('right');else if(i===x.pick)o.classList.add('bad');});
+    $('t-fb').innerHTML=`<div class="fb ${good?'ok':'no'}"><div class="fb-t">${good?'✅ صح':'❌ الإجابة الصحيحة: <bdi dir="ltr">'+esc(x.o[x.a])+'</bdi>'}</div>`
+      +(x.sec==='L'?`<div style="margin:6px 0">${transcript(it)}</div>`:'')
+      +(it.tr?`<div class="fb-tr">${trHtml(it.tr)}</div>`:'')+`<div class="fb-why">💡 ${ltrRuns(it.ar)}</div></div>`;
+    $('t-next').disabled=false;
+  });
+}
+function endRetry(){
+  stopAudio();
+  const left=RT.filter(x=>x.pick!==x.a);
+  $('te-emoji').textContent=left.length?'💪':'🎉';
+  $('te-score').innerHTML=rtRight+'<small> / '+RT.length+'</small>';
+  $('te-sub').textContent=left.length?`صحّحت ${rtRight} من أخطائك. باقي ${left.length} تحتاج مراجعة.`:'صحّحت كل أخطائك!';
+  $('te-again').style.display=left.length?'block':'none';
+  $('te-again').textContent=`🔁 أعد الباقي (${left.length})`;
+  $('te-again').onclick=()=>startRetry(left);
+  show('s-retry-end');
+}
+
+// ── confirm modal (no browser dialogs) ──
+function confirmBox(title,text,onYes){
+  $('m-title').textContent=title;$('m-text').textContent=text;$('m-confirm').classList.add('on');
+  $('m-yes').onclick=()=>{$('m-confirm').classList.remove('on');onYes();};
+  $('m-no').onclick=()=>$('m-confirm').classList.remove('on');
+}
+
+// ── wiring ──
+function start(){
+  // نطق كلمة فارغة داخل نقرة المستخدم يفتح الصوت على iOS
+  if(SYN&&!FAST){try{const u=new SpeechSynthesisUtterance(' ');u.volume=0;SYN.speak(u);}catch(e){}}
+  T=buildTest();show('s-listen');
+  if(!FAST){unlockAudio(T.L[0].it.id);T.L.slice(0,3).forEach(x=>warm(x.it.id));}
+  try{gtag('event','alcpt_start');}catch(e){}
+  runListen();
+}
+$('btn-start').onclick=start;
+$('btn-read').onclick=startRead;
+$('r-prev').onclick=()=>{if(ri>0){ri--;renderRead();}};
+$('r-next').onclick=()=>{if(ri<R_N-1){ri++;renderRead();}};
+$('r-submit').onclick=()=>{
+  const left=T.R.filter(x=>x.pick<0).length;
+  confirmBox('تسليم الاختبار؟',left?`باقي ${left} سؤال بدون إجابة. بعد التسليم ما تقدر ترجع.`:'بعد التسليم ما تقدر تغيّر إجاباتك.',finish);
+};
+$('btn-pdf').onclick=savePdf;
+$('btn-retry').onclick=()=>{const w=T.all.filter(x=>!okx(x));if(w.length)startRetry(w);};
+$('t-next').onclick=()=>{stopAudio();if(rti<RT.length-1){rti++;renderRetry();window.scrollTo(0,0);}else endRetry();};
+$('t-quit').onclick=()=>{stopAudio();show('s-result');};
+$('te-back').onclick=()=>show('s-result');
+$('btn-again').onclick=()=>{show('s-intro');renderHist();};
+document.querySelectorAll('#rv-tabs button').forEach(b=>b.onclick=()=>{rvFilter=b.dataset.f;document.querySelectorAll('#rv-tabs button').forEach(x=>x.classList.toggle('on',x===b));renderReview();});
+$('back-link').onclick=e=>{
+  if(document.querySelector('#s-listen.on,#s-break.on,#s-read.on')){
+    e.preventDefault();
+    confirmBox('تطلع من الاختبار؟','إجاباتك في هذي المحاولة بتضيع.',()=>{running=false;stopAudio();location.href='/';});
+  }
+};
+function renderHist(){
+  const last=loadLast();
+  if(last){
+    const c=last.all.filter(okx).length,w=last.all.length-c;
+    $('last').innerHTML=`<div class="lt">آخر محاولة: <bdi dir="ltr" class="en">${c} / ${last.all.length}</bdi></div><div class="ls"><bdi dir="ltr">${last.d}</bdi> · ${w} خطأ</div><button class="btn blue" id="btn-last">📋 راجع أخطاء آخر محاولة</button>`;
+    $('last').classList.add('on');
+    $('btn-last').onclick=()=>showResults(last.all,last.d);
+  }else $('last').classList.remove('on');
+  const h=store('alcpt_hist')||[];
+  $('hist').innerHTML=h.length?('محاولاتك السابقة: '+h.slice(0,5).map(x=>`<span>${x.s}</span> <small>(<bdi dir="ltr">${x.d}</bdi>)</small>`).join(' · ')):'';
+}
+renderHist();
+// للفحص الآلي
+window.__alcpt={get T(){return T;},finish,startRead,buildReport};
+})();
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
+}
+</script>
+</body>
+</html>

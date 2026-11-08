@@ -250,7 +250,7 @@ footer span{color:#FFC800;font-weight:700}
     <div class="rules">
       <h3>قبل ما تبدأ</h3>
       <ul>
-        <li>شغّل الصوت أو البس سماعة، وكن في مكان هادي.</li>
+        <li>شغّل الصوت أو البس سماعة، وكن في مكان هادي. الصوت أوضح من اللابتوب أو بالسماعة.</li>
         <li>في الاستماع ما تشوف السؤال مكتوب، وما تقدر تعيده. الخيارات تظهر وأنت تسمع.</li>
         <li>بعد ما يخلص الصوت عندك ثواني تختار، وبعدها ينتقل تلقائياً.</li>
         <li>في القراءة تتنقل بين الأسئلة بحرّية، وتقدر تغيّر إجابتك قبل التسليم.</li>
@@ -427,7 +427,7 @@ function speakLine(text,who){
     if(FAST||!SYN){setTimeout(res,FAST?60:0);return;}
     const u=new SpeechSynthesisUtterance(text);
     const v=voiceFor(who);if(v){u.voice=v;u.lang=v.lang;}else u.lang='en-US';
-    u.rate=0.9;u.pitch=who==='f'?1.15:who==='m'?0.85:1;
+    u.rate=0.9;
     let done=false;const fin=()=>{if(!done){done=true;clearTimeout(guard);res();}};
     // بعض المتصفحات لا تُطلق onend — حدّ أقصى حسب طول النص
     const guard=setTimeout(fin,1500+text.split(/\s+/).length*520);
@@ -439,29 +439,55 @@ const wait=ms=>new Promise(r=>setTimeout(r,FAST?5:ms));
 // ── recorded clips (natural neural voices, one mp3 per listening item) ──
 // audio/alcpt/<id>.mp3 holds the whole item as heard: speakers + spoken
 // question. Device speech synthesis is only a fallback if a clip can't play.
-const AUD=new Audio();AUD.preload='auto';
 const clipUrl=id=>'/audio/alcpt/'+id+'.mp3';
-function stopAudio(){try{AUD.pause();}catch(e){}if(SYN)SYN.cancel();}
-function playClip(id){
+// Web Audio: unlocked once inside the Start tap, then every clip plays with
+// no autoplay restrictions (iOS included) and fires a reliable 'ended'.
+const AC=window.AudioContext||window.webkitAudioContext;
+let actx=null,curSrc=null,curFin=null;const bufs={};
+function unlockAudio(){
+  if(!AC)return;
+  try{
+    if(!actx)actx=new AC();
+    const b=actx.createBuffer(1,1,22050),s=actx.createBufferSource();s.buffer=b;s.connect(actx.destination);s.start(0);
+    if(actx.resume)actx.resume();
+  }catch(e){actx=null;}
+}
+function loadBuf(id){
+  if(!bufs[id])bufs[id]=fetch(clipUrl(id)).then(r=>{if(!r.ok)throw new Error('http '+r.status);return r.arrayBuffer();})
+    .then(ab=>new Promise((res,rej)=>actx.decodeAudioData(ab,res,rej)))
+    .catch(e=>{delete bufs[id];throw e;});
+  return bufs[id];
+}
+function warm(id){if(actx)loadBuf(id).catch(()=>{});}
+const timeout=ms=>new Promise((_,rej)=>setTimeout(()=>rej(new Error('timeout')),ms));
+async function playClip(id){
+  if(!actx)return false;
+  let buf;
+  try{buf=await Promise.race([loadBuf(id),timeout(8000)]);}catch(e){return false;}
+  try{if(actx.state!=='running')await Promise.race([actx.resume(),timeout(1500)]);}catch(e){}
+  if(actx.state!=='running')return false;
   return new Promise(res=>{
+    const src=actx.createBufferSource();src.buffer=buf;src.connect(actx.destination);
     let done=false;
-    const fin=ok=>{if(done)return;done=true;clearTimeout(g);AUD.onended=AUD.onerror=null;res(ok);};
-    const g=setTimeout(()=>fin(true),40000);
-    AUD.onended=()=>fin(true);AUD.onerror=()=>fin(false);
-    AUD.src=clipUrl(id);
-    const p=AUD.play();if(p&&p.catch)p.catch(()=>fin(false));
+    const fin=()=>{if(done)return;done=true;clearTimeout(g);curSrc=null;curFin=null;res(true);};
+    const g=setTimeout(fin,buf.duration*1000+1500);   // ضمان: لا يعلق السؤال أبداً
+    src.onended=fin;curSrc=src;curFin=fin;
+    try{src.start(0);}catch(e){fin();}
   });
 }
-function warm(id){try{fetch(clipUrl(id)).catch(()=>{});}catch(e){}}
-function unlockAudio(firstId){
-  // iOS يسمح بالتشغيل لاحقاً فقط إذا بدأ عنصر الصوت داخل نقرة المستخدم
-  try{AUD.muted=true;AUD.src=clipUrl(firstId);const p=AUD.play();if(p&&p.then)p.then(()=>{AUD.pause();AUD.muted=false;}).catch(()=>{AUD.muted=false;});else AUD.muted=false;}catch(e){AUD.muted=false;}
+function stopAudio(){
+  if(curSrc){try{curSrc.stop();}catch(e){}}
+  if(curFin)curFin();
+  if(SYN)SYN.cancel();
 }
+let usedFallback=false;
 async function playItem(it){
+  if(!actx&&!FAST)unlockAudio();
   stopAudio();
   if(FAST){await wait(5);return;}
   if(it.id&&await playClip(it.id))return;
   // fallback: device voices
+  if(!usedFallback){usedFallback=true;try{gtag('event','alcpt_audio_fallback');}catch(e){}}
   for(let i=0;i<it.say.length;i++){
     if(i)await wait(450);
     await speakLine(it.say[i][1],it.say[i][0]);
@@ -473,26 +499,30 @@ async function playItem(it){
 let T=null,li=0,ri=0,readLeft=READ_SECS,readTick=null,ansTick=null,running=false;
 
 // ── LISTENING ──
+// «التالي» يعمل بمجرّد اختيار إجابة — حتى أثناء الصوت — فلا يعلق الطالب أبداً.
+let skip=false,endWin=null;
 function renderListen(){
   const x=T.L[li];
   $('l-num').textContent='سؤال '+(li+1)+' من '+L_N;
   $('l-prog').style.width=((li)/L_N*100)+'%';
   $('l-opts').innerHTML=x.o.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${KEYS[i]}</span><span>${esc(o)}</span></button>`).join('');
-  $('l-opts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{x.pick=+b.dataset.i;$('l-opts').querySelectorAll('.opt').forEach(o=>o.classList.toggle('sel',o===b));});
+  $('l-opts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{x.pick=+b.dataset.i;$('l-opts').querySelectorAll('.opt').forEach(o=>o.classList.toggle('sel',o===b));$('l-next').disabled=false;});
   $('l-next').disabled=true;
   $('l-bar').style.visibility='hidden';
 }
+$('l-next').onclick=()=>{skip=true;stopAudio();if(endWin)endWin();};
 async function runListen(){
   running=true;
   for(li=0;li<L_N;li++){
+    skip=false;
     renderListen();
     const it=T.L[li].it;
     if(!FAST&&T.L[li+1])warm(T.L[li+1].it.id);
     $('l-wave').classList.add('playing');$('l-st').textContent='استمع…';
-    await wait(600);
-    await playItem(it);
+    await wait(500);
+    if(!skip)await playItem(it);
     $('l-wave').classList.remove('playing');$('l-st').textContent='اختر إجابتك';
-    await answerWindow(FAST?0.05:ANSWER_SECS[it.t]||10);
+    if(!skip)await answerWindow(FAST?0.05:ANSWER_SECS[it.t]||10);
     if(!running)return;
   }
   $('l-prog').style.width='100%';
@@ -503,9 +533,8 @@ function answerWindow(secs){
     const bar=$('l-bar-i');$('l-bar').style.visibility='visible';
     const t0=Date.now(),ms=secs*1000;
     $('l-next').disabled=false;
-    const end=()=>{clearInterval(ansTick);$('l-next').onclick=null;res();};
-    $('l-next').onclick=end;
-    ansTick=setInterval(()=>{const left=ms-(Date.now()-t0);bar.style.width=Math.max(0,left/ms*100)+'%';setTimer(mmss(left/1000));if(left<=0)end();},100);
+    endWin=()=>{clearInterval(ansTick);endWin=null;res();};
+    ansTick=setInterval(()=>{const left=ms-(Date.now()-t0);bar.style.width=Math.max(0,left/ms*100)+'%';setTimer(mmss(left/1000));if(left<=0&&endWin)endWin();},100);
   });
 }
 
@@ -691,7 +720,7 @@ function start(){
   // نطق كلمة فارغة داخل نقرة المستخدم يفتح الصوت على iOS
   if(SYN&&!FAST){try{const u=new SpeechSynthesisUtterance(' ');u.volume=0;SYN.speak(u);}catch(e){}}
   T=buildTest();show('s-listen');
-  if(!FAST){unlockAudio(T.L[0].it.id);T.L.slice(0,3).forEach(x=>warm(x.it.id));}
+  if(!FAST){unlockAudio();T.L.slice(0,3).forEach(x=>warm(x.it.id));}
   try{gtag('event','alcpt_start');}catch(e){}
   runListen();
 }
@@ -729,7 +758,7 @@ function renderHist(){
 }
 renderHist();
 // للفحص الآلي
-window.__alcpt={get T(){return T;},finish,startRead,buildReport};
+window.__alcpt={get T(){return T;},get fb(){return usedFallback;},get ac(){return actx&&actx.state;},finish,startRead,buildReport};
 })();
 </script>
 <script>

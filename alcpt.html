@@ -177,6 +177,36 @@ button{font-family:inherit;cursor:pointer}
 .modal p{font-size:.86rem;color:var(--muted);line-height:1.7}
 .modal .navrow .btn{padding:12px}
 
+#print-report{display:none}
+@media print{
+  @page{size:A4;margin:14mm 12mm}
+  body{background:#fff!important;color:#111!important}
+  body>*:not(#print-report){display:none!important}
+  #print-report{display:block!important;font-family:'Cairo',sans-serif;color:#111;font-size:11pt}
+  .pr-h{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #1A2744;padding-bottom:8px;margin-bottom:12px}
+  .pr-h h1{font-family:'Inter',sans-serif;font-size:20pt;color:#1A2744;margin:0}
+  .pr-h .pr-s{font-size:10pt;color:#555}
+  .pr-score{display:flex;gap:10px;margin-bottom:10px}
+  .pr-score div{flex:1;border:1.5px solid #ccd;border-radius:8px;padding:8px;text-align:center}
+  .pr-score b{display:block;font-family:'Inter',sans-serif;font-size:18pt;color:#1A2744;direction:ltr}
+  .pr-lv{font-size:10pt;margin:6px 0 12px}
+  .pr-verdict{background:#f3f5fa;border-radius:8px;padding:8px 10px;font-size:10pt;line-height:1.7;margin-bottom:14px}
+  .pr-sec{font-size:13pt;color:#1A2744;border-bottom:1px solid #ccd;margin:16px 0 8px;padding-bottom:4px}
+  .pr-q{border:1px solid #dde;border-inline-start:4px solid #E04848;border-radius:6px;padding:7px 9px;margin-bottom:7px;break-inside:avoid}
+  .pr-q .n{font-size:9pt;color:#666;font-weight:700}
+  .pr-q .en{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:10pt;line-height:1.55}
+  .pr-q .en .sp{color:#777;font-weight:700;font-size:8.5pt}
+  .pr-q .ans{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:10pt;margin-top:3px}
+  .pr-q .ans .no{color:#C02626;text-decoration:line-through}.pr-q .ans .ok{color:#237A00;font-weight:800}
+  .pr-q .ar{font-size:9.5pt;line-height:1.6;margin-top:3px;color:#333}
+  .pr-q .why{font-size:9.5pt;font-weight:700;color:#1A2744;margin-top:2px}
+  .pr-q bdi,.pr-key bdi{font-family:'Inter',sans-serif}
+  .pr-key{width:100%;border-collapse:collapse;font-size:8.5pt;direction:ltr}
+  .pr-key td,.pr-key th{border:1px solid #dde;padding:2px 4px;text-align:left;font-family:'Inter',sans-serif}
+  .pr-key th{background:#f3f5fa}
+  .pr-key .x{color:#C02626;font-weight:800}.pr-key .v{color:#237A00;font-weight:800}
+  .pr-foot{margin-top:12px;font-size:8.5pt;color:#777;text-align:center}
+}
 footer{background:var(--navy);padding:20px;text-align:center;margin-top:20px}
 footer p{color:rgba(255,255,255,.4);font-size:.75rem}
 footer span{color:#FFC800;font-weight:700}
@@ -208,9 +238,10 @@ footer span{color:#FFC800;font-weight:700}
   <!-- INTRO -->
   <div class="screen on" id="s-intro">
     <div class="hero">
-      <div class="badge">محاكاة غير رسمية</div>
+      <div class="badge">محاكاة</div>
       <h1>ALCPT</h1>
-      <p>اختبار كامل بنفس شكل ووقت اختبار تحديد المستوى<br>100 سؤال · النتيجة من 100</p>
+      <div style="font-weight:800;font-size:.95rem;margin-top:2px">محاكاة اختبار تحديد المستوى</div>
+      <p>100 سؤال بنفس شكل الاختبار ووقته · النتيجة من 100</p>
     </div>
     <div class="parts">
       <div class="part"><div class="n">50</div><div class="l">الاستماع</div><div class="s">تسمع كل سؤال مرّة وحدة · ≈ 20 دقيقة</div></div>
@@ -282,6 +313,7 @@ footer span{color:#FFC800;font-weight:700}
       </div>
     </div>
     <button class="btn" id="btn-retry"></button>
+    <button class="btn sec" id="btn-pdf">📄 احفظ نتيجتي PDF</button>
     <div class="card lvl" style="margin-top:12px">
       <div style="font-weight:800;color:var(--navy);font-size:.92rem">حسب مستوى الصعوبة</div>
       <div id="res-lvls"></div>
@@ -320,6 +352,8 @@ footer span{color:#FFC800;font-weight:700}
     </div>
   </div>
 </div>
+
+<div id="print-report" aria-hidden="true"></div>
 
 <div class="modal" id="m-confirm"><div class="box">
   <h3 id="m-title"></h3><p id="m-text"></p>
@@ -492,7 +526,7 @@ function loadLast(){
   return all.length?{all,d:L.d}:null;
 }
 function showResults(all,d){
-  T=T||{};T.all=all;
+  T=T||{};T.all=all;resDate=d||'';
   const Ls=all.filter(x=>x.sec==='L'),Rs=all.filter(x=>x.sec==='R');
   const lc=Ls.filter(okx).length,rc=Rs.filter(okx).length,tot=lc+rc,wrong=all.length-tot;
   $('res-date').innerHTML=d?('نتيجتك · <bdi dir="ltr">'+d+'</bdi>'):'نتيجتك';
@@ -502,6 +536,7 @@ function showResults(all,d){
   $('res-lvls').innerHTML=[1,2,3].map(k=>{const p=by[k]?Math.round(by[k].c/by[k].n*100):0;
     return `<div class="row"><b>${LVL_NAME[k]}</b><div class="bar"><i style="width:${p}%;background:${LVL_CLR[k]}"></i></div><div class="pct">${p}%</div></div>`;}).join('');
   const p=k=>by[k]?by[k].c/by[k].n:0;
+  resLv=[1,2,3].map(k=>LVL_NAME[k]+': <bdi dir="ltr">'+Math.round(p(k)*100)+'%</bdi>').join(' · ');
   let v;
   if(tot<=29)v='<b>الدرجة 29 أو أقل:</b> دليل الاختبار الرسمي يعتبر الدرجات بهذا المستوى غير معبّرة عن المستوى لأنها ممكن تجي من التخمين. ركّز على أسئلة المستوى الأساسي وأعد المحاولة.';
   else if(p(1)<0.7)v='<b>ابدأ بالأساس:</b> نسبتك في أسئلة الكتب 1–12 أقل من 70%. راجع القواعد الأساسية والمفردات اليومية قبل أي شي ثاني.';
@@ -538,6 +573,44 @@ function renderReview(){
     return `<div class="rv${good?'':' wrong'}"><div class="h"><span>سؤال ${x.n} · ${x.sec==='L'?'استماع':'قراءة'}</span>${x.sec==='L'?`<button class="play" data-n="${x.n-1}">🔊 اسمع</button>`:''}</div>${body}<div class="a">${ans}</div>${it.tr?`<div class="trn"><b>الترجمة:</b><br>${trHtml(it.tr)}</div>`:''}<div class="why">💡 ${ltrRuns(it.ar)}</div></div>`;
   }).join('');
   $('rv-list').querySelectorAll('.play').forEach(b=>b.onclick=()=>playItem(T.all[+b.dataset.n].it));
+}
+
+// ── PDF (print-to-PDF; works on iPhone, Android and desktop with no library) ──
+let resDate='',resLv='';
+function buildReport(){
+  const all=T.all,Ls=all.filter(x=>x.sec==='L'),Rs=all.filter(x=>x.sec==='R');
+  const lc=Ls.filter(okx).length,rc=Rs.filter(okx).length,tot=lc+rc;
+  const wrong=all.map((x,i)=>({...x,n:i+1})).filter(x=>!okx(x));
+  const sp={m:'Man',f:'Woman',n:''};
+  const qHtml=x=>{
+    const it=x.it;
+    const en=x.sec==='L'
+      ?it.say.map(s=>(sp[s[0]]?`<span class="sp">${sp[s[0]]}:</span> `:'')+esc(s[1])).join('<br>')+(it.q?`<br><span class="sp">Question:</span> ${esc(it.q)}`:'')
+      :stemHtml(it);
+    const mine=x.pick>=0?`<span class="no">${esc(x.o[x.pick])}</span> &nbsp;`:'<span style="color:#888">(no answer)</span> &nbsp;';
+    return `<div class="pr-q"><div class="n">سؤال ${x.n} · ${x.sec==='L'?'استماع':'قراءة'}</div><div class="en">${en}</div><div class="ans">${mine}<span class="ok">✓ ${esc(x.o[x.a])}</span></div>${it.tr?`<div class="ar">${trHtml(it.tr)}</div>`:''}<div class="why">💡 ${ltrRuns(it.ar)}</div></div>`;
+  };
+  const rows=all.map((x,i)=>`<tr><td>${i+1}</td><td>${x.sec==='L'?'L':'R'}</td><td>${x.pick>=0?esc(x.o[x.pick]):'—'}</td><td>${esc(x.o[x.a])}</td><td class="${okx(x)?'v':'x'}">${okx(x)?'✓':'✗'}</td></tr>`).join('');
+  $('print-report').innerHTML=`
+    <div class="pr-h"><h1>ALCPT</h1><div class="pr-s">محاكاة اختبار تحديد المستوى · <bdi dir="ltr">${resDate||''}</bdi></div></div>
+    <div class="pr-score"><div>النتيجة<b>${tot} / ${all.length}</b></div><div>الاستماع<b>${lc} / ${Ls.length}</b></div><div>القراءة<b>${rc} / ${Rs.length}</b></div></div>
+    <div class="pr-lv">${resLv}</div>
+    <div class="pr-verdict">${$('res-verdict').innerHTML}</div>
+    <div class="pr-sec">أخطائي (${wrong.length})</div>
+    ${wrong.length?wrong.map(qHtml).join(''):'<p>ما فيه أخطاء 🎉</p>'}
+    <div class="pr-sec">مفتاح الإجابات الكامل</div>
+    <table class="pr-key"><tr><th>#</th><th></th><th>Your answer</th><th>Correct</th><th></th></tr>${rows}</table>
+    <div class="pr-foot">ALC — alc4.alimobarki.com</div>`;
+}
+function savePdf(){
+  buildReport();
+  const old=document.title;
+  const tot=T.all.filter(okx).length;
+  document.title=`ALCPT ${tot}-${T.all.length} ${resDate||''}`.trim();   // يصير اسم ملف الـ PDF
+  try{gtag('event','alcpt_pdf');}catch(e){}
+  const restore=()=>{document.title=old;window.removeEventListener('afterprint',restore);};
+  window.addEventListener('afterprint',restore);
+  setTimeout(()=>window.print(),50);
 }
 
 // ── RETRY MISTAKES ──
@@ -605,6 +678,7 @@ $('r-submit').onclick=()=>{
   const left=T.R.filter(x=>x.pick<0).length;
   confirmBox('تسليم الاختبار؟',left?`باقي ${left} سؤال بدون إجابة. بعد التسليم ما تقدر ترجع.`:'بعد التسليم ما تقدر تغيّر إجاباتك.',finish);
 };
+$('btn-pdf').onclick=savePdf;
 $('btn-retry').onclick=()=>{const w=T.all.filter(x=>!okx(x));if(w.length)startRetry(w);};
 $('t-next').onclick=()=>{if(SYN)SYN.cancel();if(rti<RT.length-1){rti++;renderRetry();window.scrollTo(0,0);}else endRetry();};
 $('t-quit').onclick=()=>{if(SYN)SYN.cancel();show('s-result');};
@@ -631,7 +705,7 @@ function renderHist(){
 if(!SYN&&!FAST)$('no-voice').style.display='block';
 renderHist();
 // للفحص الآلي
-window.__alcpt={get T(){return T;},finish,startRead};
+window.__alcpt={get T(){return T;},finish,startRead,buildReport};
 })();
 </script>
 <script>

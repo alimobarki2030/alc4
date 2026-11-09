@@ -103,7 +103,6 @@ button{font-family:inherit;cursor:pointer}
 .ans-bar i{display:block;height:100%;background:var(--gold);width:100%}
 .stem{font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-size:1.06rem;font-weight:700;color:var(--navy);line-height:1.6;margin-bottom:14px}
 .stem u{text-decoration-thickness:2px;text-underline-offset:3px}
-.vo-hint{direction:rtl;text-align:right;font-family:'Cairo',sans-serif;font-size:.78rem;color:var(--muted);margin:-6px 0 12px}
 .passage{font-family:'Inter',sans-serif;direction:ltr;text-align:left;background:var(--soft);border:1.5px dashed var(--bdr);border-radius:14px;padding:14px;font-size:.92rem;line-height:1.75;margin-bottom:14px}
 .navrow{display:flex;gap:10px;margin-top:16px}
 .navrow .btn{margin-top:0}
@@ -561,7 +560,7 @@ function renderRead(){
   $('r-prog').style.width=(T.R.filter(y=>y.pick>=0).length/R_N*100)+'%';
   $('r-passage').innerHTML=it.p?`<div class="passage">${esc(ALCPT_PASSAGES[it.p])}</div>`:'';
   const stem=esc(it.q).replace(/&lt;u&gt;(.*?)&lt;\/u&gt;/g,'<u>$1</u>');
-  $('r-stem').innerHTML=stem+(it.t==='vo'?'<div class="vo-hint">اختر الكلمة اللي معناها نفس الكلمة اللي تحتها خط</div>':'');
+  $('r-stem').innerHTML=stem;
   $('r-opts').innerHTML=x.o.map((o,i)=>`<button class="opt${x.pick===i?' sel':''}" data-i="${i}"><span class="k">${KEYS[i]}</span><span>${esc(o)}</span></button>`).join('');
   $('r-opts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{x.pick=+b.dataset.i;renderRead();});
   $('r-prev').disabled=ri===0;
@@ -698,7 +697,7 @@ function renderRetry(){
     const play=async()=>{const w=$('t-wave');if(w)w.classList.add('playing');await playItem(it);if($('t-wave'))$('t-wave').classList.remove('playing');};
     $('t-replay').onclick=play;play();
   }else{
-    $('t-body').innerHTML=(it.p?`<div class="passage">${esc(ALCPT_PASSAGES[it.p])}</div>`:'')+`<div class="stem">${stemHtml(it)}</div>`+(it.t==='vo'?'<div class="vo-hint">اختر الكلمة اللي معناها نفس الكلمة اللي تحتها خط</div>':'');
+    $('t-body').innerHTML=(it.p?`<div class="passage">${esc(ALCPT_PASSAGES[it.p])}</div>`:'')+`<div class="stem">${stemHtml(it)}</div>`;
   }
   $('t-opts').innerHTML=x.o.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${KEYS[i]}</span><span>${esc(o)}</span></button>`).join('');
   $('t-fb').innerHTML='';$('t-next').disabled=true;

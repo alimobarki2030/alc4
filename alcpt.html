@@ -262,6 +262,24 @@ footer span{color:#FFC800;font-weight:700}
     <div class="hist" id="hist"></div>
   </div>
 
+  <!-- LISTENING: get ready (audio starts only when the student taps) -->
+  <div class="screen" id="s-lready">
+    <div class="card center">
+      <div class="wave" style="margin:4px auto 10px">🎧</div>
+      <h2 style="color:var(--navy)">الجزء الأول: الاستماع</h2>
+      <p class="sub" style="line-height:1.9;margin-top:6px">50 سؤال · تسمع كل سؤال مرّة وحدة<br>بعد ما يخلص الصوت اختر إجابتك، أو اضغط «التالي» إذا جاهز</p>
+      <button class="btn sec" id="btn-check">🔊 اختبر الصوت</button>
+      <p class="sub" id="check-st" style="min-height:1.4em"></p>
+      <button class="btn" id="btn-listen">ابدأ الاستماع</button>
+    </div>
+  </div>
+  <div class="screen" id="s-count">
+    <div class="card center" style="padding:40px 18px">
+      <p class="sub">يبدأ أول سؤال بعد</p>
+      <div class="big" id="count-n" style="font-size:4.4rem;margin-top:8px">3</div>
+    </div>
+  </div>
+
   <!-- LISTENING -->
   <div class="screen" id="s-listen">
     <div class="qhead"><div class="qnum" id="l-num"></div><div class="qtag">الاستماع</div></div>
@@ -719,11 +737,22 @@ function confirmBox(title,text,onYes){
 function start(){
   // نطق كلمة فارغة داخل نقرة المستخدم يفتح الصوت على iOS
   if(SYN&&!FAST){try{const u=new SpeechSynthesisUtterance(' ');u.volume=0;SYN.speak(u);}catch(e){}}
-  T=buildTest();show('s-listen');
+  T=buildTest();show('s-lready');$('check-st').textContent='';
   if(!FAST){unlockAudio();T.L.slice(0,3).forEach(x=>warm(x.it.id));}
   try{gtag('event','alcpt_start');}catch(e){}
-  runListen();
 }
+// اختبار الصوت + بدء الاستماع بنقرة الطالب، ثم عدّ تنازلي 3-2-1 حتى لا يتفاجأ
+$('btn-check').onclick=async()=>{
+  unlockAudio();$('check-st').textContent='يشتغل…';
+  const ok=FAST||await playClip('check');
+  $('check-st').textContent=ok?'إذا سمعت الصوت بوضوح، اضغط «ابدأ الاستماع»':'ما اشتغل الصوت. ارفع الصوت وتأكد إن الجوال مو على الصامت، ثم جرّب مرّة ثانية';
+};
+$('btn-listen').onclick=async()=>{
+  unlockAudio();stopAudio();
+  show('s-count');
+  for(let n=3;n>=1;n--){$('count-n').textContent=n;await wait(1000);}
+  show('s-listen');runListen();
+};
 $('btn-start').onclick=start;
 $('btn-read').onclick=startRead;
 $('r-prev').onclick=()=>{if(ri>0){ri--;renderRead();}};

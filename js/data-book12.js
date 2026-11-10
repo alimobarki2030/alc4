@@ -509,6 +509,14 @@ l1:[
   {q:"Bill: How long has it been since you _______ Ann? Tim: About five years.",o:["see","are seeing","will see","have seen"],a:3,en:"since + experience up to now → have seen",ar:'منذ آخر مرّة رأيتها حتى الآن → have seen',tr:'بيل: كم مضى منذ أن رأيت آن؟ تِم: حوالي خمس سنوات.'},
   {q:"Sam has often _______ in the office after 5:00 p.m. to finish his work.",o:["cleared up","remained","lasted","slipped"],a:1,en:"stayed → remained",ar:'بقي → remained',tr:'كثيراً ما بقي سام في المكتب بعد الخامسة مساءً لينهي عمله.'},
   {q:"Bill: How _______ is the river? Tim: About fifteen feet.",o:["quiet","deep","humid","calm"],a:1,en:"depth → How deep",ar:'السؤال عن العمق → How deep',tr:'بيل: ما عمق النهر؟ تِم: حوالي خمسة عشر قدماً.'},
+  // — Exercise L (ص28 · Circle the correct answer) —
+  {q:"Bill lives in Mexico. He _______ there for seven years.",o:["lives","is living","lived","has lived"],a:3,en:"for seven years, still there → has lived",ar:'for + مدّة وما زال هناك → has lived',tr:'بيل يسكن في المكسيك، وهو يعيش هناك منذ سبع سنوات.'},
+  {q:"The Bells _______ two new cars since last winter.",o:["will buy","have bought","bought","are buying"],a:1,en:"since last winter → have bought",ar:'since + المضارع التام → have bought',tr:'اشترى آل بيل سيارتين جديدتين منذ الشتاء الماضي.'},
+  {q:"I _______ Pam yesterday in my math class.",o:["see","have seen","saw","will see"],a:2,en:"yesterday → simple past",ar:'yesterday وقت منتهٍ → الماضي saw',tr:'رأيت بام أمس في حصّة الرياضيات.'},
+  {q:"Ms. Quinn _______ at this bank since last year. She's a teller.",o:["has worked","worked","works","will work"],a:0,en:"since last year → has worked",ar:'since + المضارع التام → has worked',tr:'تعمل السيدة كوين في هذا البنك منذ العام الماضي، إنها صرّافة.'},
+  {q:"Paul's now going to college in Texas. He _______ from high school in June.",o:["has graduated","is graduating","graduates","graduated"],a:3,en:"in June (finished time) → graduated",ar:'in June وقت منتهٍ → الماضي graduated',tr:'بول يدرس الآن في كلية في تكساس، تخرّج من الثانوية في يونيو.'},
+  {q:"Last night, we _______ to a movie about the early days of Texas.",o:["are going to go","are going","went","have gone"],a:2,en:"last night → simple past",ar:'last night وقت منتهٍ → الماضي went',tr:'الليلة الماضية ذهبنا إلى فيلم عن الأيام الأولى لتكساس.'},
+  {q:"Peter _______ at this school since September. The students really like him.",o:["taught","has taught","will teach","teaches"],a:1,en:"since September → has taught",ar:'since + المضارع التام → has taught',tr:'يُدرّس بيتر في هذه المدرسة منذ سبتمبر، والطلاب يحبّونه كثيراً.'},
 ],
 l2:[
   {q:"Bill: Were you in Hawaii last year? Tim: Yes, I had a _______ there for a year.",o:["tour of duty","right of way","sign of refusal","change of mind"],a:0,en:"military stay → tour of duty",ar:'فترة خدمة → tour of duty',tr:'بيل: هل كنت في هاواي العام الماضي؟ تيم: نعم، كانت لي فترة خدمة هناك لمدّة عام.'},

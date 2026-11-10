@@ -538,6 +538,20 @@ l2:[
   {q:"When we make plans for the next five years, we make plans for the _______.",o:["field","time","degree","future"],a:3,en:"years ahead → future",ar:'المستقبل → future',tr:'حين نضع خططاً للسنوات الخمس القادمة، فإننا نخطّط للمستقبل.'},
   {q:"Jim went to college. After four years he got a(n) _______.",o:["master's diploma","associate degree","bachelor's degree","associate diploma"],a:2,en:"4-year college → bachelor's",ar:'أربع سنوات → بكالوريوس',tr:'ذهب جيم إلى الكلّية، وبعد أربع سنوات حصل على البكالوريوس.'},
   {q:"Bill: Do you want me to pick you up after the game? Tim: No, thanks. Paul has already _______ to let me ride in his car.",o:["offered","refused","retired","charged"],a:0,en:"volunteered → offered",ar:'عرض → offered',tr:'بيل: أتريدني أن أُقلّك بعد المباراة؟ تيم: لا شكراً، عرض بول بالفعل أن يُقلّني في سيّارته.'},
+  // — Exercise A (ص37 · questions about the text) —
+  {q:"Students receive a diploma _______.",o:["when they begin school","at the end of middle school","at the end of high school"],a:2,en:"diploma = finishing high school",ar:'الدبلوم (diploma) يُعطى في نهاية الثانوية → at the end of high school',tr:'يحصل الطلاب على الدبلوم في نهاية المرحلة الثانوية.'},
+  {q:"A _______ offers the most kinds of degrees.",o:["technical school","university","college"],a:1,en:"most kinds of degrees → university",ar:'أكثر أنواع الشهادات → الجامعة (university)',tr:'الجامعة تقدّم أكثر أنواع الشهادات.'},
+  {q:"_______ is a field you can study at a university.",o:["Associate","Grade","Education"],a:2,en:"a field of study → Education",ar:'تخصّص دراسي (field) → Education (التربية)',tr:'التربية تخصّص يمكنك دراسته في الجامعة.'},
+  {q:"To learn to be a mechanic, a person can go to a _______ school.",o:["technical","medical","professional"],a:0,en:"mechanic → technical school",ar:'الميكانيكا → مدرسة فنّية (technical school)',tr:'ليتعلّم الشخص أن يكون ميكانيكياً، يمكنه الالتحاق بمدرسة فنّية.'},
+  {q:"To become a doctor, a student has to go to a _______ school.",o:["career","medical","bachelor"],a:1,en:"doctor → medical school",ar:'الطب → كلية الطب (medical school)',tr:'ليصبح الطالب طبيباً، عليه أن يلتحق بكلية الطب.'},
+  // — Vocabulary Review (ص55) —
+  {q:"Doctors are _______ in the field of medicine.",o:["educators","professionals","instructors"],a:1,en:"trained experts → professionals",ar:'مختصّون مؤهّلون → professionals',tr:'الأطباء مختصّون في مجال الطب.'},
+  {q:"Jan graduated from college and received a _______ in business.",o:["degree","diploma","grade"],a:0,en:"college → degree",ar:'الكلية/الجامعة تعطي degree (الثانوية تعطي diploma)',tr:'تخرّجت جان من الكلية وحصلت على شهادة في إدارة الأعمال.'},
+  {q:"Doctors should _______ their patients about keeping fit.",o:["learn","accept","educate"],a:2,en:"teach/inform → educate",ar:'يُثقّف/يوعّي → educate',tr:'يجب على الأطباء توعية مرضاهم بالمحافظة على لياقتهم.'},
+  {q:"Paul didn't understand. He was _______.",o:["confused","confusing","confuse"],a:0,en:"how he felt → -ed: confused",ar:'شعور الشخص → صفة بـ ed: confused (مرتبك)',tr:'لم يفهم بول، كان مرتبكاً.'},
+  {q:"Al told me he was going to the party, but he stayed home. He _______ his mind.",o:["changed","made up","came to"],a:0,en:"decided differently → changed his mind",ar:'غيّر رأيه → changed his mind',tr:'قال لي آل إنه ذاهب إلى الحفلة، لكنه بقي في البيت. لقد غيّر رأيه.'},
+  {q:"Janis decided not to take the job. She _______.",o:["talked it over","cleared it up","turned it down"],a:2,en:"refused → turned it down",ar:'رفضه → turned it down',tr:'قرّرت جانيس ألّا تقبل الوظيفة، لقد رفضتها.'},
+  {q:"The instructions aren't clear to me. They're _______.",o:["confused","confusing","confuse"],a:1,en:"what causes the feeling → -ing: confusing",ar:'الشيء المسبّب للشعور → صفة بـ ing: confusing (مُربِك)',tr:'التعليمات ليست واضحة لي، إنها مُربِكة.'},
 ],
 l3:[
   {q:"Dan: I'm going to the beach. Ann: What did he say? Sam: He said he _______ to the beach.",o:["went","will go","goes","was going"],a:3,en:"reported → was going",ar:'كلام منقول → was going',tr:'دان: سأذهب إلى الشاطئ. آن: ماذا قال؟ سام: قال إنه ذاهب إلى الشاطئ.'},

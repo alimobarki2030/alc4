@@ -566,6 +566,18 @@ l3:[
   {q:"He's a builder. He _______.",o:["cooks good food","teaches many people","makes new houses","records new music"],a:2,en:"builder → makes houses",ar:'بنّاء → يبني بيوتاً',tr:'إنه بنّاء، يبني بيوتاً جديدة.'},
   {q:"A: Did you understand the directions? B: No, they were _______.",o:["confused","confusing","confuse","conduses"],a:1,en:"describes thing → confusing",ar:'يصف الشيء → confusing',tr:'أ: هل فهمت التعليمات؟ ب: لا، كانت مُربِكة.'},
   {q:"Do you like my new fireplace? It _______.",o:["keeps the house warm","looks like a sports car","freezes food very quickly","cleans my clothes well"],a:0,en:"fireplace → keeps warm",ar:'المدفأة → تُدفئ',tr:'هل تعجبك مدفأتي الجديدة؟ إنها تُبقي البيت دافئاً.'},
+  // — Exercise (ص80–81 · Circle the answer to complete the sentence) —
+  {q:"I have _______. Let's go see a movie.",o:["a fire","a room","an idea"],a:2,en:"suggestion → I have an idea",ar:'اقتراح → عندي فكرة (an idea)',tr:'عندي فكرة، لنذهب لمشاهدة فيلم.'},
+  {q:"Will the _______ take place at 3:00 p.m. in your office?",o:["meeting","solution","trouble"],a:0,en:"an event that takes place → meeting",ar:'حدث يُعقد في وقت ومكان → meeting (اجتماع)',tr:'هل سيُعقد الاجتماع الساعة الثالثة مساءً في مكتبك؟'},
+  {q:"We'll add on to our house because we need more _______.",o:["shed","room","get-together"],a:1,en:"more space → more room",ar:'مساحة أكثر → more room',tr:'سنوسّع بيتنا لأننا نحتاج مساحة أكبر.'},
+  {q:"John put the _______ into the tape player.",o:["CD","stereo","cassette"],a:2,en:"tape player → cassette",ar:'مشغّل الأشرطة → شريط كاسيت (cassette)',tr:'وضع جون شريط الكاسيت في المسجّل.'},
+  {q:"We'll add a fireplace to the den, but _______ the kitchen until next year.",o:["leave","heat","boil"],a:0,en:"not change it now → leave",ar:'نتركه كما هو → leave',tr:'سنضيف مدفأة إلى غرفة الجلوس، لكن سنترك المطبخ حتى العام القادم.'},
+  {q:"I don't know where he is. _______ he went home already.",o:["Then","Could","Perhaps"],a:2,en:"maybe → Perhaps",ar:'ربما → Perhaps',tr:'لا أعرف أين هو، ربما ذهب إلى البيت بالفعل.'},
+  {q:"I'm really not _______ sports.",o:["interested","interesting in","interested in"],a:2,en:"interested + in",ar:'interested in = مهتمّ بـ (الشخص ← ed + in)',tr:'لست مهتمّاً بالرياضة فعلاً.'},
+  {q:"You can _______ water very quickly in a microwave oven.",o:["boil","leave","play"],a:0,en:"heat until bubbling → boil",ar:'يغلي الماء → boil',tr:'يمكنك غلي الماء بسرعة كبيرة في فرن المايكرويف.'},
+  {q:"The _______ of our new house show where all the rooms are.",o:["meetings","plans","solutions"],a:1,en:"drawings of a house → plans",ar:'مخطّطات البيت → plans',tr:'مخطّطات بيتنا الجديد توضّح أماكن جميع الغرف.'},
+  {q:"The builder has a lot of _______ to solve.",o:["carpets","rooms","problems"],a:2,en:"things to solve → problems",ar:'أشياء تُحلّ → problems (مشاكل)',tr:'لدى المقاول مشاكل كثيرة يجب حلّها.'},
+  {q:"Dan: I'm having trouble with my stereo. Ann: _______ you'll have to take it to a repair shop.",o:["Then","Near","Could"],a:0,en:"result/consequence → Then",ar:'إذن (نتيجة) → Then',tr:'دان: عندي مشكلة في جهاز الستيريو. آن: إذن عليك أن تأخذه إلى محل تصليح.'},
 ],
 l4:[
   {q:"Brenda got up _______ Sue.",o:["early","early than","earlier","earlier than"],a:3,en:"comparison → earlier than",ar:'مقارنة → earlier than',tr:'استيقظت بريندا أبكر من سو.'},

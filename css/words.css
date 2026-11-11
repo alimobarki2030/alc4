@@ -1,0 +1,52 @@
+/* Shared styles for words.html (كلمات كل الكتب) and challenge.html (تحدّى نفسك) */
+:root{
+  --navy:#1A2744;--navy2:#243560;--blue:#1CB0F6;--green:#58CC02;--red:#FF4B4B;--gold:#FFC800;
+  --bg:#F0F4FF;--card:#fff;--txt:#3C3C3C;--muted:#6B7280;--bdr:#E2E8F0;--soft:#F5F7FC;
+  --ok-bg:#E8F8D9;--ok-bd:#58CC02;--no-bg:#FFE4E4;--no-bd:#FF4B4B;--head:#1A2744;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0E1524;--card:#182138;--txt:#E6EBF5;--muted:#9AA6BF;--bdr:#2B3658;--soft:#1F2A45;--head:#E6EBF5;
+    --ok-bg:#1F3A12;--no-bg:#3A1A1A}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;-webkit-tap-highlight-color:transparent}
+button,input{font-family:inherit}
+button{cursor:pointer}
+.en{font-family:'Inter',sans-serif;direction:ltr;unicode-bidi:isolate}
+.topbar{background:var(--navy);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;z-index:20}
+.back-link{color:#fff;text-decoration:none;font-weight:700;font-size:.85rem}
+.tb-mid{color:#fff;font-weight:800;font-size:.9rem}
+.tb-side{min-width:70px;text-align:left;color:var(--gold);font-weight:800;font-family:'Inter',sans-serif;direction:ltr}
+.wrap{max-width:680px;margin:0 auto;padding:18px 16px 60px}
+.hero{background:linear-gradient(150deg,var(--navy),#2E4A8C);color:#fff;border-radius:20px;padding:22px 20px;text-align:center;box-shadow:0 14px 34px rgba(26,39,68,.22)}
+.hero h1{font-size:1.45rem;font-weight:900}
+.hero p{opacity:.85;font-size:.86rem;margin-top:4px}
+.hero .num{font-family:'Inter',sans-serif;color:var(--gold);font-weight:900}
+.card{background:var(--card);border:1.5px solid var(--bdr);border-radius:18px;padding:16px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.chip{border:1.5px solid var(--bdr);background:var(--card);border-radius:99px;padding:6px 13px;font-weight:700;font-size:.8rem;color:var(--muted)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+@media (prefers-color-scheme: dark){.chip.on{background:var(--blue);border-color:var(--blue)}}
+.search{width:100%;margin-top:14px;border:2px solid var(--bdr);background:var(--card);color:var(--txt);border-radius:14px;padding:12px 14px;font-size:1rem;outline:none}
+.search:focus{border-color:var(--blue)}
+.count{font-size:.8rem;color:var(--muted);margin:12px 4px 6px}
+.grp{font-weight:900;color:var(--head);font-size:.9rem;margin:18px 4px 8px}
+.wl{display:flex;flex-direction:column;gap:6px}
+.w{display:flex;align-items:center;gap:10px;background:var(--card);border:1.5px solid var(--bdr);border-radius:12px;padding:9px 12px}
+.w .sp{flex:none;width:34px;height:34px;border:none;border-radius:9px;background:var(--soft);font-size:1rem}
+.w .we{flex:1;font-family:'Inter',sans-serif;direction:ltr;text-align:left;font-weight:700;color:var(--head);font-size:.95rem}
+.w .we small{display:block;font-weight:600;color:var(--muted);font-size:.74rem}
+.w .wa{flex:1;text-align:right;font-size:.88rem;line-height:1.5}
+.w .wa small{display:block;color:var(--muted);font-size:.74rem}
+.btn{display:block;width:100%;border:none;border-radius:14px;padding:14px;font-weight:800;font-size:1rem;color:#fff;
+  background:linear-gradient(90deg,#58CC02,#46A302);box-shadow:0 4px 0 #3A8A02;margin-top:14px;text-align:center;text-decoration:none}
+.btn:active{transform:translateY(2px);box-shadow:0 2px 0 #3A8A02}
+.btn.sec{background:var(--card);color:var(--head);border:1.5px solid var(--bdr);box-shadow:none}
+.btn.blue{background:linear-gradient(90deg,#1CB0F6,#1593CC);box-shadow:0 4px 0 #0F78A8}
+.btn:disabled{opacity:.45;cursor:default}
+.more{display:block;margin:14px auto 0;border:1.5px solid var(--bdr);background:var(--card);border-radius:12px;padding:10px 18px;font-weight:800;color:var(--head)}
+.empty{text-align:center;color:var(--muted);padding:30px 0;font-weight:700}
+.sec-t{font-weight:900;color:var(--head);font-size:.95rem;margin-top:16px}
+footer{background:var(--navy);padding:20px;text-align:center;margin-top:20px}
+footer p{color:rgba(255,255,255,.4);font-size:.75rem}
+footer span{color:#FFC800;font-weight:700}

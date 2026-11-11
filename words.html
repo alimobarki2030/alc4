@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1396QQS2S5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1396QQS2S5');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xqhawn6noe");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كلمات كل الكتب — ALC</title>
+<meta name="description" content="كل مفردات كتب ALC في مكان واحد: ابحث بالإنجليزي أو العربي، واسمع النطق">
+<meta property="og:title" content="كلمات كل الكتب — ALC">
+<meta property="og:description" content="كل مفردات الكتب مع المعنى والنطق، وبحث بالإنجليزي أو العربي">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alc4.alimobarki.com/words">
+<meta property="og:image" content="https://alc4.alimobarki.com/alc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://alc4.alimobarki.com/alc.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A2744">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ALC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/words.css">
+<script src="js/error-report.js"></script>
+</head>
+<body>
+<div class="topbar">
+  <a class="back-link" href="/">→ الرئيسية</a>
+  <div class="tb-mid">كلمات كل الكتب</div>
+  <div class="tb-side"></div>
+</div>
+<div class="wrap">
+  <div class="hero">
+    <h1>📚 كلمات كل الكتب</h1>
+    <p><span class="num" id="total"></span> كلمة من <span class="num" id="nbooks"></span> كتب، مع المعنى والنطق</p>
+  </div>
+  <a class="btn blue" href="challenge">🏆 تحدّى نفسك في هذي الكلمات</a>
+  <input class="search" id="q" type="search" placeholder="ابحث بالإنجليزي أو العربي…" autocomplete="off">
+  <div class="chips" id="books"></div>
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+  <button class="more" id="more" style="display:none">عرض المزيد</button>
+</div>
+<footer>
+  <p>صُمِّم بواسطة <span dir="ltr">ALI MOBARKI 🎓</span></p>
+  <p style="margin-top:4px;font-size:.7rem;opacity:.5">American Language Course — Training Center</p>
+</footer>
+<script src="js/access-gate.js"></script>
+<script src="js/audio-index.js"></script>
+<script src="js/words-audio.js"></script>
+<script src="js/ar-match.js"></script>
+<script src="js/data-words.js"></script>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const BOOKS=[...new Set(ALL_WORDS.map(w=>w.b))].sort((a,b)=>a-b);
+let book=0,q='',shown=200;
+try{book=+(localStorage.getItem('words_book')||0)||0;}catch(e){}
+if(book&&!BOOKS.includes(book))book=0;
+$('total').textContent=ALL_WORDS.length;$('nbooks').textContent=BOOKS.length;
+function chips(){
+  $('books').innerHTML=[0,...BOOKS].map(b=>`<button class="chip${b===book?' on':''}" data-b="${b}">${b?'كتاب '+b:'الكل'}</button>`).join('');
+  $('books').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{book=+c.dataset.b;shown=200;try{localStorage.setItem('words_book',book);}catch(e){}chips();render();});
+}
+const isAr=s=>/[\u0600-\u06FF]/.test(s);
+function match(w){
+  if(book&&w.b!==book)return false;
+  if(!q)return true;
+  if(isAr(q)){const n=normAr(q);return normAr(w.a).includes(n)||(w.alt||[]).some(x=>normAr(x).includes(n))||(w.pa&&normAr(w.pa).includes(n));}
+  const n=q.toLowerCase();return w.e.toLowerCase().includes(n)||(w.past&&w.past.toLowerCase().includes(n));
+}
+function render(){
+  const list=ALL_WORDS.filter(match);
+  $('count').textContent=list.length?(list.length+' كلمة'):'';
+  if(!list.length){$('list').innerHTML='<div class="empty">ما فيه كلمة تطابق البحث</div>';$('more').style.display='none';return;}
+  let html='',last='';
+  list.slice(0,shown).forEach((w,i)=>{
+    const g='كتاب '+w.b+' · الدرس '+w.l;
+    if(g!==last){if(last)html+='</div>';html+=`<div class="grp">${g}</div><div class="wl">`;last=g;}
+    html+=`<div class="w"><button class="sp" data-e="${esc(w.e)}" aria-label="نطق">🔊</button><div class="we">${esc(w.e)}${w.past?`<small>${esc(w.past)}</small>`:''}</div><div class="wa">${esc(w.a)}${w.pa?`<small>${esc(w.pa)}</small>`:''}</div></div>`;
+  });
+  html+='</div>';
+  $('list').innerHTML=html;
+  $('list').querySelectorAll('.sp').forEach(b=>b.onclick=()=>sayWord(b.dataset.e));
+  $('more').style.display=list.length>shown?'block':'none';
+  $('more').textContent='عرض المزيد ('+(list.length-shown)+')';
+}
+$('more').onclick=()=>{shown+=300;render();};
+let t;$('q').addEventListener('input',e=>{clearTimeout(t);t=setTimeout(()=>{q=e.target.value.trim();shown=200;render();},150);});
+chips();render();
+})();
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));}
+</script>
+</body>
+</html>

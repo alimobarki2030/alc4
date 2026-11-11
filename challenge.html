@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1396QQS2S5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1396QQS2S5');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xqhawn6noe");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحدّى نفسك — ALC</title>
+<meta name="description" content="تحدّى نفسك في مفردات كتب ALC: تظهر الكلمة بالإنجليزي وتكتب معناها بالعربي">
+<meta property="og:title" content="تحدّى نفسك — ALC">
+<meta property="og:description" content="الكلمة بالإنجليزي وأنت تكتب معناها بالعربي — من كل الكتب">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alc4.alimobarki.com/challenge">
+<meta property="og:image" content="https://alc4.alimobarki.com/alc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://alc4.alimobarki.com/alc.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A2744">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ALC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/words.css">
+<script src="js/error-report.js"></script>
+</head>
+<body>
+<div class="topbar">
+  <a class="back-link" href="/">→ الرئيسية</a>
+  <div class="tb-mid">تحدّى نفسك</div>
+  <div class="tb-side" id="tb-score" dir="ltr"></div>
+</div>
+<div class="wrap">
+
+  <!-- SETUP -->
+  <div id="s-setup">
+    <div class="hero">
+      <h1>🏆 تحدّى نفسك</h1>
+      <p>تظهر لك الكلمة بالإنجليزي، وتكتب معناها بالعربي (فصحى أو عامية)</p>
+    </div>
+    <div class="sec-t">من أي كتب؟</div>
+    <div class="chips" id="books"></div>
+    <div class="sec-t">كم كلمة؟</div>
+    <div class="chips" id="sizes"></div>
+    <button class="btn" id="go">ابدأ التحدي</button>
+    <a class="btn sec" href="words">📚 تصفّح كل الكلمات</a>
+    <div class="count" id="best" style="text-align:center;margin-top:14px"></div>
+  </div>
+
+  <!-- PLAY -->
+  <div id="s-play" style="display:none">
+    <div class="ch-top"><span id="pnum"></span><span id="streak"></span></div>
+    <div class="prog"><i id="prog"></i></div>
+    <div class="card ch-card">
+      <div class="ch-src" id="src"></div>
+      <div class="ch-word en" id="word" dir="ltr"></div>
+      <button class="ch-say" id="say">🔊 اسمع</button>
+      <input class="search ch-in" id="ans" type="text" dir="rtl" placeholder="اكتب المعنى بالعربي…" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <div id="fb"></div>
+    </div>
+    <div class="row2">
+      <button class="btn sec" id="skip">ما أعرف</button>
+      <button class="btn" id="check">تحقّق</button>
+    </div>
+    <button class="btn blue" id="next" style="display:none">التالي</button>
+  </div>
+
+  <!-- END -->
+  <div id="s-end" style="display:none">
+    <div class="card" style="text-align:center">
+      <div style="font-size:2.4rem" id="e-emo"></div>
+      <div class="ch-big en" id="e-score" dir="ltr"></div>
+      <p class="count" id="e-sub" style="text-align:center"></p>
+    </div>
+    <button class="btn" id="e-retry"></button>
+    <button class="btn blue" id="e-new">جولة جديدة</button>
+    <div class="sec-t" id="e-mt"></div>
+    <div class="wl" id="e-list" style="margin-top:8px"></div>
+  </div>
+</div>
+<style>
+.ch-top{display:flex;justify-content:space-between;font-weight:800;color:var(--head);font-size:.9rem;margin-bottom:8px}
+.prog{height:6px;background:var(--bdr);border-radius:99px;overflow:hidden;margin-bottom:14px}
+.prog i{display:block;height:100%;background:var(--blue);width:0;transition:width .3s}
+.ch-card{text-align:center;padding:22px 18px}
+.ch-src{font-size:.75rem;color:var(--muted);font-weight:700}
+.ch-word{font-size:2rem;font-weight:900;color:var(--head);margin:10px 0 6px;word-break:break-word}
+.ch-say{border:none;background:var(--soft);border-radius:10px;padding:7px 14px;font-weight:800;color:var(--head);font-size:.85rem}
+.ch-in{text-align:center;font-size:1.1rem;margin-top:16px}
+.ch-in.ok{border-color:var(--ok-bd);background:var(--ok-bg)}.ch-in.no{border-color:var(--no-bd);background:var(--no-bg)}
+.fb{margin-top:12px;border-radius:12px;padding:10px 12px;font-size:.9rem;line-height:1.7;text-align:right}
+.fb.ok{background:var(--ok-bg);color:#2F6A00}.fb.no{background:var(--no-bg);color:#A12020}
+@media (prefers-color-scheme: dark){.fb.ok{color:#A6E57A}.fb.no{color:#FF9C9C}}
+.fb b{font-weight:900}
+.row2{display:flex;gap:10px}.row2 .btn{flex:1}
+.ch-big{font-size:3rem;font-weight:900;color:var(--head);margin-top:6px}
+.ch-big small{font-size:1.1rem;color:var(--muted)}
+</style>
+<footer>
+  <p>صُمِّم بواسطة <span dir="ltr">ALI MOBARKI 🎓</span></p>
+  <p style="margin-top:4px;font-size:.7rem;opacity:.5">American Language Course — Training Center</p>
+</footer>
+<script src="js/access-gate.js"></script>
+<script src="js/audio-index.js"></script>
+<script src="js/words-audio.js"></script>
+<script src="js/ar-match.js"></script>
+<script src="js/data-words.js"></script>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const st=(k,v)=>{try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}};
+const BOOKS=[...new Set(ALL_WORDS.map(w=>w.b))].sort((a,b)=>a-b);
+const SIZES=[10,20,50];
+let sel=new Set(st('ch_books')||[]);sel.forEach(b=>{if(!BOOKS.includes(b))sel.delete(b);});
+let size=st('ch_size')||20;
+function chips(){
+  $('books').innerHTML=`<button class="chip${sel.size?'':' on'}" data-b="0">الكل</button>`+BOOKS.map(b=>`<button class="chip${sel.has(b)?' on':''}" data-b="${b}">كتاب ${b}</button>`).join('');
+  $('books').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{const b=+c.dataset.b;if(!b)sel.clear();else sel.has(b)?sel.delete(b):sel.add(b);st('ch_books',[...sel]);chips();});
+  $('sizes').innerHTML=SIZES.map(n=>`<button class="chip${n===size?' on':''}" data-n="${n}">${n} كلمة</button>`).join('');
+  $('sizes').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{size=+c.dataset.n;st('ch_size',size);chips();});
+  const best=st('ch_best');$('best').textContent=best?('أفضل نتيجة لك: '+best.s+' من '+best.n):'';
+}
+let R=[],i=0,right=0,streak=0,answered=false;
+function show(id){['s-setup','s-play','s-end'].forEach(s=>$(s).style.display=s===id?'block':'none');window.scrollTo(0,0);}
+function start(words){
+  R=words.map(w=>({w,ok:null,typed:''}));i=0;right=0;streak=0;show('s-play');ask();
+}
+function ask(){
+  const x=R[i];answered=false;
+  $('pnum').textContent='كلمة '+(i+1)+' من '+R.length;
+  $('streak').textContent=streak>=3?('🔥 '+streak):'';
+  $('prog').style.width=(i/R.length*100)+'%';
+  $('src').textContent='كتاب '+x.w.b+' · الدرس '+x.w.l;
+  $('word').textContent=x.w.e;
+  $('ans').value='';$('ans').className='search ch-in';$('ans').disabled=false;
+  $('fb').innerHTML='';
+  $('check').parentNode.style.display='flex';$('next').style.display='none';
+  $('tb-score').textContent=right+' / '+R.length;
+  setTimeout(()=>$('ans').focus(),50);
+}
+function meaning(w){return esc(w.a)+(w.past?`<br><span class="en">${esc(w.past)}</span> = ${esc(w.pa||'')}`:'');}
+function answer(skip){
+  if(answered)return;
+  const x=R[i],typed=$('ans').value.trim();
+  if(!skip&&!typed){$('ans').focus();return;}
+  answered=true;x.typed=typed;
+  x.ok=!skip&&drillTypeOk(typed,x.w);
+  if(x.ok){right++;streak++;}else streak=0;
+  $('ans').className='search ch-in '+(x.ok?'ok':'no');$('ans').disabled=true;
+  $('fb').innerHTML=`<div class="fb ${x.ok?'ok':'no'}">${x.ok?'✅ <b>صح!</b> ':'❌ <b>المعنى:</b> '}${meaning(x.w)}</div>`;
+  $('check').parentNode.style.display='none';$('next').style.display='block';
+  $('tb-score').textContent=right+' / '+R.length;
+  $('streak').textContent=streak>=3?('🔥 '+streak):'';
+  if(!x.ok)sayWord(x.w.e);
+  $('next').focus();
+}
+function next(){if(i<R.length-1){i++;ask();}else end();}
+function end(){
+  const n=R.length,wrong=R.filter(x=>!x.ok);
+  $('e-emo').textContent=right===n?'🏆':right>=n*0.7?'🎉':'💪';
+  $('e-score').innerHTML=right+'<small> / '+n+'</small>';
+  $('e-sub').textContent=right===n?'كل الكلمات صح!':`عرفت ${right} كلمة، و${wrong.length} تحتاج مراجعة`;
+  const best=st('ch_best');if(!best||right/n>best.s/best.n||(right/n===best.s/best.n&&n>best.n))st('ch_best',{s:right,n});
+  $('e-retry').style.display=wrong.length?'block':'none';
+  $('e-retry').textContent='🔁 أعد الكلمات اللي غلطت فيها ('+wrong.length+')';
+  $('e-retry').onclick=()=>start(shuffle(wrong.map(x=>x.w)));
+  $('e-mt').textContent=wrong.length?'الكلمات اللي تحتاج مراجعة':'';
+  $('e-list').innerHTML=wrong.map(x=>`<div class="w"><button class="sp" data-e="${esc(x.w.e)}">🔊</button><div class="we">${esc(x.w.e)}<small>${x.typed?'كتبت: '+esc(x.typed):'ما أعرف'}</small></div><div class="wa">${meaning(x.w)}</div></div>`).join('');
+  $('e-list').querySelectorAll('.sp').forEach(b=>b.onclick=()=>sayWord(b.dataset.e));
+  try{gtag('event','challenge_finish',{score:right,total:n});}catch(e){}
+  show('s-end');
+}
+$('go').onclick=()=>{
+  const pool=ALL_WORDS.filter(w=>!sel.size||sel.has(w.b));
+  start(shuffle(pool).slice(0,Math.min(size,pool.length)));
+  try{gtag('event','challenge_start',{size,books:sel.size?[...sel].join(','):'all'});}catch(e){}
+};
+$('check').onclick=()=>answer(false);
+$('skip').onclick=()=>answer(true);
+$('next').onclick=next;
+$('say').onclick=()=>sayWord(R[i].w.e);
+// Enter في الخانة = تحقّق. بعد الإجابة ينتقل التركيز لزر «التالي» فيعمل Enter عليه مباشرة.
+$('ans').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();e.stopPropagation();if(!answered)answer(false);}});
+$('e-new').onclick=()=>{chips();show('s-setup');};
+chips();
+window.__ch={get R(){return R;},answer,next};
+})();
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));}
+</script>
+</body>
+</html>

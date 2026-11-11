@@ -44,15 +44,27 @@
 <link rel="stylesheet" href="css/words.css">
 <script src="js/error-report.js"></script>
 <style>
-.cnt-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
+.hint{font-size:.75rem;color:var(--muted);text-align:center;margin-top:12px}
+.cnt-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
 .cnt-row .count{margin:0}
-.w{cursor:pointer;user-select:none}
-.w .wa-txt{display:none}
-.w .wa-hid{display:inline-block;color:var(--muted);font-size:.78rem;font-weight:700;background:var(--soft);border:1.5px dashed var(--bdr);border-radius:9px;padding:5px 10px}
-.w.open .wa-txt,body.show-all .w .wa-txt{display:inline;animation:wIn .2s ease}
-.w.open .wa-hid,body.show-all .w .wa-hid{display:none}
-.w.open{border-color:var(--blue)}
-@keyframes wIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+/* نفس بطاقات المفردات في الدروس (css/style.css · .vcard.flip) */
+.vcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:8px}
+.vcard{position:relative;cursor:pointer;perspective:800px;-webkit-user-select:none;user-select:none}
+.vcard .vflip-inner{position:relative;width:100%;min-height:108px;transition:transform .5s;transform-style:preserve-3d}
+.vcard.flipped .vflip-inner{transform:rotateY(180deg)}
+.vcard .vflip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border:2px solid var(--bdr);border-radius:14px;background:var(--card);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:14px 10px;text-align:center;transition:border-color .2s}
+.vcard:hover .vflip-face{border-color:var(--blue)}
+.vcard .vflip-face.back{transform:rotateY(180deg);border-color:var(--green);background:var(--ok-bg)}
+.vcard .ve{font-size:2rem;display:block;margin-bottom:6px;line-height:1}
+.vcard .vico{width:.9em;height:.9em;display:inline-block;vertical-align:middle;color:#2563EB}
+.vcard .vw{font-family:'Inter',sans-serif;font-size:.88rem;font-weight:700;color:var(--head);direction:ltr}
+.vcard .vp{font-family:'Inter',sans-serif;font-size:.7rem;color:var(--muted);margin-top:3px;direction:ltr}
+.vcard .back .vp{font-family:'Cairo',sans-serif;direction:rtl}
+.vcard .va{font-size:.86rem;font-weight:700;color:var(--head);line-height:1.5}
+.vcard .vs{position:absolute;top:7px;left:7px;background:var(--blue);border:none;border-radius:6px;color:#fff;
+  width:26px;height:26px;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5}
 </style>
 </head>
 <body>
@@ -67,10 +79,10 @@
     <p><span class="num" id="total"></span> كلمة من <span class="num" id="nbooks"></span> كتب، مع المعنى والنطق</p>
   </div>
   <a class="btn blue" href="challenge">🏆 تحدّى نفسك في هذي الكلمات</a>
-  <p class="count" style="text-align:center;margin-top:12px">المعنى مخفي مثل البطاقات: فكّر في المعنى أولاً، ثم اضغط على الكلمة لتشوفه</p>
-  <input class="search" id="q" type="search" placeholder="ابحث بالإنجليزي أو العربي…" autocomplete="off">
+    <input class="search" id="q" type="search" placeholder="ابحث بالإنجليزي أو العربي…" autocomplete="off">
   <div class="chips" id="books"></div>
-  <div class="cnt-row"><div class="count" id="count"></div><button class="chip" id="reveal">👁 إظهار كل المعاني</button></div>
+  <div class="hint">اضغط على البطاقة لتقلبها وتشوف المعنى · اضغط 🔊 لسماع النطق</div>
+  <div class="cnt-row"><div class="count" id="count"></div><button class="chip" id="reveal">🔄 اقلب الكل</button></div>
   <div id="list"></div>
   <button class="more" id="more" style="display:none">عرض المزيد</button>
 </div>
@@ -89,13 +101,13 @@
 const $=id=>document.getElementById(id);
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const BOOKS=[...new Set(ALL_WORDS.map(w=>w.b))].sort((a,b)=>a-b);
-let book=0,q='',shown=200;
+let book=0,q='',shown=120,allFlipped=false;
 try{book=+(localStorage.getItem('words_book')||0)||0;}catch(e){}
 if(book&&!BOOKS.includes(book))book=0;
 $('total').textContent=ALL_WORDS.length;$('nbooks').textContent=BOOKS.length;
 function chips(){
   $('books').innerHTML=[0,...BOOKS].map(b=>`<button class="chip${b===book?' on':''}" data-b="${b}">${b?'كتاب '+b:'الكل'}</button>`).join('');
-  $('books').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{book=+c.dataset.b;shown=200;try{localStorage.setItem('words_book',book);}catch(e){}chips();render();});
+  $('books').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{book=+c.dataset.b;shown=120;try{localStorage.setItem('words_book',book);}catch(e){}chips();render();});
 }
 const isAr=s=>/[\u0600-\u06FF]/.test(s);
 function match(w){
@@ -104,28 +116,33 @@ function match(w){
   if(isAr(q)){const n=normAr(q);return normAr(w.a).includes(n)||(w.alt||[]).some(x=>normAr(x).includes(n))||(w.pa&&normAr(w.pa).includes(n));}
   const n=q.toLowerCase();return w.e.toLowerCase().includes(n)||(w.past&&w.past.toLowerCase().includes(n));
 }
+function icon(w){return w.ic?'<svg class="vico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+w.ic+'</svg>':(w.em||'');}
 function render(){
   const list=ALL_WORDS.filter(match);
   $('count').textContent=list.length?(list.length+' كلمة'):'';
   if(!list.length){$('list').innerHTML='<div class="empty">ما فيه كلمة تطابق البحث</div>';$('more').style.display='none';return;}
   let html='',last='';
-  list.slice(0,shown).forEach((w,i)=>{
+  list.slice(0,shown).forEach(w=>{
     const g='كتاب '+w.b+' · الدرس '+w.l;
-    if(g!==last){if(last)html+='</div>';html+=`<div class="grp">${g}</div><div class="wl">`;last=g;}
-    html+=`<div class="w"><button class="sp" data-e="${esc(w.e)}" aria-label="نطق">🔊</button><div class="we">${esc(w.e)}${w.past?`<small>${esc(w.past)}</small>`:''}</div><div class="wa"><span class="wa-hid">اضغط لعرض المعنى</span><span class="wa-txt">${esc(w.a)}${w.pa?`<small>${esc(w.pa)}</small>`:''}</span></div></div>`;
+    if(g!==last){if(last)html+='</div>';html+=`<div class="grp">${g}</div><div class="vcards">`;last=g;}
+    html+=`<div class="vcard flip${allFlipped?' flipped':''}">
+      <button class="vs" data-e="${esc(w.e)}" aria-label="نطق">🔊</button>
+      <div class="vflip-inner">
+        <div class="vflip-face front"><span class="ve">${icon(w)}</span><div class="vw">${esc(w.e)}</div>${w.past?`<div class="vp">${esc(w.past)}</div>`:''}</div>
+        <div class="vflip-face back"><div class="va">${esc(w.a)}</div>${w.pa?`<div class="vp">${esc(w.past)}: ${esc(w.pa)}</div>`:''}</div>
+      </div>
+    </div>`;
   });
   html+='</div>';
   $('list').innerHTML=html;
-  $('list').querySelectorAll('.sp').forEach(b=>b.onclick=e=>{e.stopPropagation();sayWord(b.dataset.e);});
-  // اضغط على البطاقة لقلبها وإظهار المعنى، واضغط مرّة ثانية لإخفائه
-  $('list').querySelectorAll('.w').forEach(r=>r.onclick=()=>r.classList.toggle('open'));
+  $('list').querySelectorAll('.vs').forEach(b=>b.onclick=e=>{e.stopPropagation();sayWord(b.dataset.e);});
+  $('list').querySelectorAll('.vcard').forEach(c=>c.onclick=()=>c.classList.toggle('flipped'));
   $('more').style.display=list.length>shown?'block':'none';
   $('more').textContent='عرض المزيد ('+(list.length-shown)+')';
 }
-let all=false;
-$('reveal').onclick=()=>{all=!all;document.body.classList.toggle('show-all',all);$('reveal').classList.toggle('on',all);$('reveal').textContent=all?'🙈 إخفاء المعاني':'👁 إظهار كل المعاني';};
-$('more').onclick=()=>{shown+=300;render();};
-let t;$('q').addEventListener('input',e=>{clearTimeout(t);t=setTimeout(()=>{q=e.target.value.trim();shown=200;render();},150);});
+$('reveal').onclick=()=>{allFlipped=!allFlipped;document.querySelectorAll('.vcard').forEach(c=>c.classList.toggle('flipped',allFlipped));$('reveal').classList.toggle('on',allFlipped);};
+$('more').onclick=()=>{shown+=120;render();};
+let t;$('q').addEventListener('input',e=>{clearTimeout(t);t=setTimeout(()=>{q=e.target.value.trim();shown=120;render();},150);});
 chips();render();
 })();
 </script>

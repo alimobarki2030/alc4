@@ -43,6 +43,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/words.css">
 <script src="js/error-report.js"></script>
+<style>
+.cnt-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px}
+.cnt-row .count{margin:0}
+.w{cursor:pointer;user-select:none}
+.w .wa-txt{display:none}
+.w .wa-hid{display:inline-block;color:var(--muted);font-size:.78rem;font-weight:700;background:var(--soft);border:1.5px dashed var(--bdr);border-radius:9px;padding:5px 10px}
+.w.open .wa-txt,body.show-all .w .wa-txt{display:inline;animation:wIn .2s ease}
+.w.open .wa-hid,body.show-all .w .wa-hid{display:none}
+.w.open{border-color:var(--blue)}
+@keyframes wIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -56,9 +67,10 @@
     <p><span class="num" id="total"></span> كلمة من <span class="num" id="nbooks"></span> كتب، مع المعنى والنطق</p>
   </div>
   <a class="btn blue" href="challenge">🏆 تحدّى نفسك في هذي الكلمات</a>
+  <p class="count" style="text-align:center;margin-top:12px">المعنى مخفي مثل البطاقات: فكّر في المعنى أولاً، ثم اضغط على الكلمة لتشوفه</p>
   <input class="search" id="q" type="search" placeholder="ابحث بالإنجليزي أو العربي…" autocomplete="off">
   <div class="chips" id="books"></div>
-  <div class="count" id="count"></div>
+  <div class="cnt-row"><div class="count" id="count"></div><button class="chip" id="reveal">👁 إظهار كل المعاني</button></div>
   <div id="list"></div>
   <button class="more" id="more" style="display:none">عرض المزيد</button>
 </div>
@@ -100,14 +112,18 @@ function render(){
   list.slice(0,shown).forEach((w,i)=>{
     const g='كتاب '+w.b+' · الدرس '+w.l;
     if(g!==last){if(last)html+='</div>';html+=`<div class="grp">${g}</div><div class="wl">`;last=g;}
-    html+=`<div class="w"><button class="sp" data-e="${esc(w.e)}" aria-label="نطق">🔊</button><div class="we">${esc(w.e)}${w.past?`<small>${esc(w.past)}</small>`:''}</div><div class="wa">${esc(w.a)}${w.pa?`<small>${esc(w.pa)}</small>`:''}</div></div>`;
+    html+=`<div class="w"><button class="sp" data-e="${esc(w.e)}" aria-label="نطق">🔊</button><div class="we">${esc(w.e)}${w.past?`<small>${esc(w.past)}</small>`:''}</div><div class="wa"><span class="wa-hid">اضغط لعرض المعنى</span><span class="wa-txt">${esc(w.a)}${w.pa?`<small>${esc(w.pa)}</small>`:''}</span></div></div>`;
   });
   html+='</div>';
   $('list').innerHTML=html;
-  $('list').querySelectorAll('.sp').forEach(b=>b.onclick=()=>sayWord(b.dataset.e));
+  $('list').querySelectorAll('.sp').forEach(b=>b.onclick=e=>{e.stopPropagation();sayWord(b.dataset.e);});
+  // اضغط على البطاقة لقلبها وإظهار المعنى، واضغط مرّة ثانية لإخفائه
+  $('list').querySelectorAll('.w').forEach(r=>r.onclick=()=>r.classList.toggle('open'));
   $('more').style.display=list.length>shown?'block':'none';
   $('more').textContent='عرض المزيد ('+(list.length-shown)+')';
 }
+let all=false;
+$('reveal').onclick=()=>{all=!all;document.body.classList.toggle('show-all',all);$('reveal').classList.toggle('on',all);$('reveal').textContent=all?'🙈 إخفاء المعاني':'👁 إظهار كل المعاني';};
 $('more').onclick=()=>{shown+=300;render();};
 let t;$('q').addEventListener('input',e=>{clearTimeout(t);t=setTimeout(()=>{q=e.target.value.trim();shown=200;render();},150);});
 chips();render();

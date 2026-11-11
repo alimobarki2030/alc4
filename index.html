@@ -212,6 +212,15 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .alcpt-card h3 b{font-family:'Inter',sans-serif;color:#FFC800}
 .alcpt-card p{color:rgba(255,255,255,.85);font-size:.74rem;line-height:1.55}
 .alcpt-card .ac-arrow{flex:none;color:#fff;font-size:1.3rem;font-weight:900}
+.vw-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.vw-card{display:block;border-radius:18px;padding:16px 14px;text-decoration:none;color:#fff;transition:all .2s;box-shadow:0 8px 22px rgba(26,39,68,.18)}
+.vw-card:hover{transform:translateY(-3px)}
+.vw-words{background:linear-gradient(140deg,#0F8A5F,#1BB57E)}
+.vw-ch{background:linear-gradient(140deg,#7C3AED,#A061F5)}
+.vw-ico{font-size:1.6rem;margin-bottom:6px}
+.vw-card h3{font-family:'Cairo',sans-serif;font-size:1rem;font-weight:900;margin-bottom:3px}
+.vw-card p{font-size:.72rem;line-height:1.55;opacity:.92}
+.vw-card p b{font-family:'Inter',sans-serif}
 #alcpt-pop{position:fixed;inset:0;z-index:9000;background:rgba(10,16,30,.6);display:none;align-items:center;justify-content:center;padding:20px}
 #alcpt-pop.on{display:flex}
 #alcpt-pop .ap-box{background:#fff;border-radius:20px;max-width:340px;width:100%;overflow:hidden;text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.4);animation:apIn .35s ease}
@@ -484,6 +493,20 @@ html.splash-seen #splash{display:none}
     </div>
     <div class="ac-arrow">←</div>
   </a>
+
+  <div class="sec-label">المفردات</div>
+  <div class="vw-grid">
+    <a class="vw-card vw-words" href="words">
+      <div class="vw-ico">📚</div>
+      <h3>كلمات كل الكتب</h3>
+      <p><b id="vw-count">+1500</b> كلمة مع المعنى والنطق · بحث بالإنجليزي أو العربي</p>
+    </a>
+    <a class="vw-card vw-ch" href="challenge">
+      <div class="vw-ico">🏆</div>
+      <h3>تحدّى نفسك</h3>
+      <p>الكلمة بالإنجليزي وأنت تكتب معناها بالعربي</p>
+    </a>
+  </div>
 
   <div class="sec-label">الكتب</div>
   <div class="books-grid" id="books-grid"></div>

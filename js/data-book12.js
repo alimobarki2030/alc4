@@ -626,6 +626,23 @@ const REVIEW=[
   {q:"Did you _______ fish often when you were young?",o:["would","use to","used","would to"],a:1,en:"question → use to",ar:'السؤال → use to',tr:'هل كنت تصطاد السمك كثيراً حين كنت صغيراً؟'},
 ];
 EE.review=REVIEW;
+// — واجب الدرس 3 (Homework Exercise H، ص HW-21–22) —
+REVIEW.push(
+  {q:"Where will the get-together _______?",o:["add on","take place","clear up"],a:1,en:"happen → take place",ar:'يُقام/يحدث → take place',tr:'أين سيُقام اللقاء؟'},
+  {q:"Water freezes at 0° Celsius and it _______ at 100° C.",o:["boils","burns","builds"],a:0,en:"100° → boils",ar:'يغلي → boils',tr:'يتجمّد الماء عند صفر درجة مئوية ويغلي عند 100 درجة.'},
+  {q:"If we look at the _______ for this building, we can see all the rooms.",o:["wood","patio","plan"],a:2,en:"drawing of rooms → plan",ar:'مخطّط المبنى → plan',tr:'إذا نظرنا إلى مخطّط هذا المبنى، نستطيع رؤية كلّ الغرف.'},
+  {q:"Pvt Reed was late for another meeting. Now he's in _______.",o:["trouble","suburb","idea"],a:0,en:"in trouble",ar:'في ورطة → in trouble',tr:'تأخّر الجندي ريد عن اجتماع آخر، والآن هو في ورطة.'},
+  {q:"These pictures are too small. Can you _______ them?",o:["solve","enlarge","heat"],a:1,en:"make bigger → enlarge",ar:'تكبّرها → enlarge',tr:'هذه الصور صغيرة جداً. هل تستطيع تكبيرها؟'},
+  {q:"Jim: Do you want to read this book about music? Jan: No, thank you. I'm not _______ in music.",o:["interested","excited","tired"],a:0,en:"interested in",ar:'مهتمّ بـ → interested in',tr:'جيم: هل تريد قراءة هذا الكتاب عن الموسيقى؟ جان: لا شكراً، لست مهتمّاً بالموسيقى.'},
+  {q:"Jim: Whose books are on the teacher's desk? Jan: They're mine. I _______ them for the teacher to look at.",o:["played","burned","left"],a:2,en:"put and go → left",ar:'تركتُها → left',tr:'جيم: لمن الكتب التي على مكتب المعلّم؟ جان: إنّها لي، تركتُها ليطّلع عليها المعلّم.'},
+  {q:"Jim: Someone changed the furniture in the living room. Jan: Yes, Mary changed it. It was her _______.",o:["cassette","oven","idea"],a:2,en:"her idea",ar:'فكرتها → idea',tr:'جيم: أحدهم غيّر أثاث غرفة الجلوس. جان: نعم، ماري غيّرته، كانت فكرتها.'},
+  {q:"He hasn't decided about his vacation. _______ he'll go to Canada. He doesn't know yet.",o:["Perhaps","Near","Still"],a:0,en:"maybe → perhaps",ar:'ربّما → Perhaps',tr:'لم يقرّر بشأن إجازته بعد. ربّما يذهب إلى كندا، لا يعرف بعد.'},
+  {q:"The papers fell into the fire and _______.",o:["burned","heated","boiled"],a:0,en:"fire → burned",ar:'احترقت → burned',tr:'سقطت الأوراق في النار واحترقت.'},
+  {q:"We still have a big problem. We haven't found _______ to it yet.",o:["an addition","a solution","a suburb"],a:1,en:"answer to a problem → solution",ar:'حلّ للمشكلة → a solution',tr:'ما زالت لدينا مشكلة كبيرة، ولم نجد لها حلّاً بعد.'},
+  {q:"This soup is cold. I want to _______ it up.",o:["play","enlarge","heat"],a:2,en:"make warm → heat up",ar:'أسخّنها → heat up',tr:'هذا الحساء بارد، أريد تسخينه.'},
+  {q:"Jim: I'd like to record some music. Jan: Do you have a _______?",o:["cassette","shed","fireplace"],a:0,en:"record music → cassette",ar:'شريط تسجيل → cassette',tr:'جيم: أودّ تسجيل بعض الموسيقى. جان: هل لديك شريط كاسيت؟'},
+  {q:"Jim: This den looks different from the other rooms in the house. Jan: Yes, it's _______.",o:["a builder","a speaker","an addition"],a:2,en:"new part of a house → addition",ar:'غرفة مُضافة للبيت → an addition',tr:'جيم: غرفة المعيشة هذه تبدو مختلفة عن باقي غرف البيت. جان: نعم، إنّها إضافة جديدة.'}
+);
 // — مراجعة الدرس 5 (Exercise A، ص 118–119) —
 REVIEW.push(
   {q:"Bill: Where do you live now? Tim: In Chicago. _______ there for a year.",o:["I've lived","I live","I'm living","I lived"],a:0,en:"for a year → present perfect",ar:'for + مدّة حتى الآن → I\'ve lived',tr:'بيل: أين تسكن الآن؟ تِم: في شيكاغو. أسكن هناك منذ سنة.'},

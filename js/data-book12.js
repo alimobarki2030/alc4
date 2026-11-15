@@ -626,6 +626,22 @@ const REVIEW=[
   {q:"Did you _______ fish often when you were young?",o:["would","use to","used","would to"],a:1,en:"question → use to",ar:'السؤال → use to',tr:'هل كنت تصطاد السمك كثيراً حين كنت صغيراً؟'},
 ];
 EE.review=REVIEW;
+// — مراجعة الدرس 5 (Exercise A، ص 118–119) —
+REVIEW.push(
+  {q:"Bill: Where do you live now? Tim: In Chicago. _______ there for a year.",o:["I've lived","I live","I'm living","I lived"],a:0,en:"for a year → present perfect",ar:'for + مدّة حتى الآن → I\'ve lived',tr:'بيل: أين تسكن الآن؟ تِم: في شيكاغو. أسكن هناك منذ سنة.'},
+  {q:"Mel hasn't eaten in that restaurant _______.",o:["three weeks ago","for many years","yesterday","last night"],a:1,en:"present perfect → for + period",ar:'hasn\'t eaten (مضارع تام) → for many years',tr:'لم يأكل ميل في ذلك المطعم منذ سنوات عديدة.'},
+  {q:"The plane is flying _______ the helicopter because it's landing.",o:["low","lower","low than","lower than"],a:3,en:"comparison → lower than",ar:'مقارنة بين شيئين → lower than',tr:'الطائرة تطير أخفض من المروحية لأنها تهبط.'},
+  {q:"The Smiths arrived an hour ago. We didn't _______ them to arrive so early.",o:["educate","expect","blow","belong"],a:1,en:"think it will happen → expect",ar:'نتوقّع → expect',tr:'وصلت عائلة سميث قبل ساعة. لم نتوقّع وصولهم مبكّراً هكذا.'},
+  {q:"After four years, she got (a) _______ from high school.",o:["breeze","humidity","diploma","instructions"],a:2,en:"graduation certificate → diploma",ar:'شهادة الثانوية → diploma',tr:'بعد أربع سنوات، حصلت على شهادة الثانوية.'},
+  {q:"Let's _______ this weekend.",o:["go hunted","going hunt","go hunting","hunting"],a:2,en:"go + verb-ing",ar:'go + ing → go hunting',tr:'لنذهب للصيد في عطلة نهاية الأسبوع.'},
+  {q:"If _______ time to travel this summer, where will you go?",o:["have you","you have","you will have","will you have"],a:1,en:"if + present, will …",ar:'بعد if مضارع بسيط → you have',tr:'إذا كان لديك وقت للسفر هذا الصيف، إلى أين ستذهب؟'},
+  {q:"_______ the new movie yet?",o:["Are you seeing","Do you see","Will you see","Have you seen"],a:3,en:"yet → present perfect",ar:'yet في السؤال → Have you seen',tr:'هل شاهدت الفيلم الجديد بعد؟'},
+  {q:"They _______ me a job, but I had to say no.",o:["offered","retired","slipped","solved"],a:0,en:"give a chance → offered",ar:'عرضوا عليّ → offered',tr:'عرضوا عليّ وظيفة، لكنّي اضطررت للرفض.'},
+  {q:"I don't like the weather here. It's very _______.",o:["unpleasant","medical","professional","slippery"],a:0,en:"not nice → unpleasant",ar:'غير لطيف/مزعج → unpleasant',tr:'لا يعجبني الطقس هنا، إنّه مزعج جداً.'},
+  {q:"Do you know what you want? Did you _______ your mind?",o:["make up","clear up","think over","turn down"],a:0,en:"decide → make up your mind",ar:'تقرّر → make up your mind',tr:'هل تعرف ماذا تريد؟ هل اتّخذت قرارك؟'},
+  {q:"They haven't called my name _______.",o:["no longer","instead","yet","still"],a:2,en:"negative → yet",ar:'في النفي (haven\'t) → yet',tr:'لم ينادوا اسمي بعد.'},
+  {q:"Was the trip _______?",o:["interested","interesting","interested by","interesting by"],a:1,en:"thing → -ing",ar:'الشيء نفسه (الرحلة) → interesting',tr:'هل كانت الرحلة ممتعة؟'}
+);
 
 // ═══════════════════════════════════════
 // FINAL EXAM (الاختبار النهائي) — يجمع أسئلة الدروس المتاحة

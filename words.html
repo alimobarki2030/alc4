@@ -65,6 +65,39 @@
 .vcard .va{font-size:.86rem;font-weight:700;color:var(--head);line-height:1.5}
 .vcard .vs{position:absolute;top:7px;left:7px;background:var(--blue);border:none;border-radius:6px;color:#fff;
   width:26px;height:26px;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5}
+/* تبويبات ودريل «تدرّب» — نفس تصميم الدروس (css/style.css) */
+.tabs{display:flex;gap:5px;background:var(--card);border-radius:12px;padding:5px;border:2px solid var(--bdr);margin:14px 0 16px}
+.tab{flex:1;padding:9px 4px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;background:transparent;color:var(--muted);
+  transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:2px}
+.tab .ti{font-size:1.1rem}
+.tab.active{background:var(--navy);color:#fff}
+@media (prefers-color-scheme: dark){.tab.active{background:var(--blue)}}
+.phase{display:none}.phase.active{display:block}
+.qprog{background:var(--card);border-radius:10px;padding:10px 14px;margin-bottom:14px;border:2px solid var(--bdr);display:flex;align-items:center;gap:10px}
+.qpbar{flex:1;background:var(--bdr);border-radius:5px;height:7px}
+.qpfill{background:var(--green);height:7px;border-radius:5px;transition:width .3s;width:0%}
+.qptxt{font-size:.75rem;font-weight:700;color:var(--muted);white-space:nowrap;font-family:'Inter',sans-serif}
+.drill-back{display:block;margin:0 0 12px auto;background:none;border:1px solid var(--bdr);border-radius:20px;padding:5px 12px;color:var(--muted);font-size:.78rem;font-weight:700}
+.dq{background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:22px 16px;text-align:center}
+.dq-src{font-size:.72rem;color:var(--muted);font-weight:700;margin-bottom:6px}
+.dq-word{font-family:'Inter',sans-serif;font-weight:800;font-size:1.7rem;color:var(--head);display:flex;align-items:center;justify-content:center;gap:10px;direction:ltr}
+.dq-word-ar{font-weight:900;font-size:1.7rem;color:var(--head);line-height:1.5}
+.dq-spk{background:var(--blue);border:none;border-radius:8px;width:34px;height:34px;color:#fff;font-size:.85rem}
+.dq-ask{font-size:.86rem;color:var(--muted);margin:8px 0 14px}
+.dq-opts{display:flex;flex-direction:column;gap:8px}
+.dq-opt{padding:13px;border:2px solid var(--bdr);border-radius:12px;background:var(--card);font-weight:700;font-size:1rem;color:var(--head);transition:.15s;outline:none}
+.dq-opt.en{font-family:'Inter',sans-serif;font-weight:800;direction:ltr}
+@media(hover:hover){.dq-opt:hover:not(:disabled){border-color:var(--blue)}}
+.dq-opt.ok{border-color:var(--green);background:var(--ok-bg)}
+.dq-opt.no{border-color:var(--red);background:var(--no-bg)}
+.dq-opt:disabled{cursor:default}
+.dq-fb{margin-top:12px;font-weight:700;font-size:.92rem;min-height:1.3em}
+.sp-card{background:var(--card);border:2px solid var(--bdr);border-radius:16px;padding:22px 18px;text-align:center}
+.sp-emoji{font-size:3rem;margin:6px 0}
+.sp-donetxt{font-weight:800;font-size:1.1rem;color:var(--head);margin:8px 0}
+.sp-score{color:var(--muted);margin-bottom:14px}
+.sp-btn{padding:11px 22px;border:none;border-radius:10px;font-weight:700;font-size:.9rem;background:var(--green);color:#fff;margin:4px}
+.sp-btn.sec{background:var(--soft);color:var(--head)}
 </style>
 </head>
 <body>
@@ -79,12 +112,19 @@
     <p><span class="num" id="total"></span> كلمة من <span class="num" id="nbooks"></span> كتب، مع المعنى والنطق</p>
   </div>
   <a class="btn blue" href="challenge">🏆 تحدّى نفسك في هذي الكلمات</a>
-    <input class="search" id="q" type="search" placeholder="ابحث بالإنجليزي أو العربي…" autocomplete="off">
   <div class="chips" id="books"></div>
+  <div class="tabs">
+    <button class="tab active" id="tab-learn"><span class="ti">📚</span><span>تعلّم</span></button>
+    <button class="tab" id="tab-practice"><span class="ti">🎯</span><span>تدرّب</span></button>
+  </div>
+  <div class="phase" id="ph-practice"></div>
+  <div class="phase active" id="ph-learn">
+  <input class="search" id="q" type="search" placeholder="ابحث بالإنجليزي أو العربي…" autocomplete="off" style="margin-top:0">
   <div class="hint">اضغط على البطاقة لتقلبها وتشوف المعنى · اضغط 🔊 لسماع النطق</div>
   <div class="cnt-row"><div class="count" id="count"></div><button class="chip" id="reveal">🔄 اقلب الكل</button></div>
   <div id="list"></div>
   <button class="more" id="more" style="display:none">عرض المزيد</button>
+  </div>
 </div>
 <footer>
   <p>صُمِّم بواسطة <span dir="ltr">ALI MOBARKI 🎓</span></p>
@@ -107,7 +147,7 @@ if(book&&!BOOKS.includes(book))book=0;
 $('total').textContent=ALL_WORDS.length;$('nbooks').textContent=BOOKS.length;
 function chips(){
   $('books').innerHTML=[0,...BOOKS].map(b=>`<button class="chip${b===book?' on':''}" data-b="${b}">${b?'كتاب '+b:'الكل'}</button>`).join('');
-  $('books').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{book=+c.dataset.b;shown=120;try{localStorage.setItem('words_book',book);}catch(e){}chips();render();});
+  $('books').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{book=+c.dataset.b;shown=120;try{localStorage.setItem('words_book',book);}catch(e){}chips();render();if(tab==='practice')drillStart();});
 }
 const isAr=s=>/[\u0600-\u06FF]/.test(s);
 function match(w){
@@ -143,6 +183,92 @@ function render(){
 $('reveal').onclick=()=>{allFlipped=!allFlipped;document.querySelectorAll('.vcard').forEach(c=>c.classList.toggle('flipped',allFlipped));$('reveal').classList.toggle('on',allFlipped);};
 $('more').onclick=()=>{shown+=120;render();};
 let t;$('q').addEventListener('input',e=>{clearTimeout(t);t=setTimeout(()=>{q=e.target.value.trim();shown=120;render();},150);});
+// ═══ تدرّب: نفس «تدرّب» في الدروس لكن اختيارات فقط (بدون كتابة) ═══
+// نناوب بين: الكلمة بالإنجليزي ← اختر المعنى، والمعنى بالعربي ← اختر الكلمة.
+// الخطأ يتلوّن أحمر ويحاول مرة ثانية؛ النقطة تُحسب من أول محاولة فقط.
+let tab='learn';
+function setTab(t){
+  tab=t;
+  ['learn','practice'].forEach(x=>{$('tab-'+x).classList.toggle('active',x===t);$('ph-'+x).classList.toggle('active',x===t);});
+  if(t==='practice'&&!D)drillStart();
+}
+$('tab-learn').onclick=()=>setTab('learn');
+$('tab-practice').onclick=()=>setTab('practice');
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const clean=e=>String(e).replace(/\(.*?\)/g,'').trim();
+const arOf=w=>coreAr(w.a)||w.a;
+// المشتّتات: من نفس الدرس أولاً ثم نفس الكتاب ثم بقية الكتب، بدون أي خيار يصح هو أيضاً.
+function distractors(w,type){
+  const sameL=[],sameB=[],rest=[];
+  for(const o of ALL_WORDS){if(o===w)continue;(o.b===w.b&&o.l===w.l?sameL:o.b===w.b?sameB:rest).push(o);}
+  const key=o=>type==='en2ar'?normAr(arOf(o)):clean(o.e).toLowerCase();
+  const out=[],seen=new Set([key(w)]);
+  for(const o of [...shuffle(sameL),...shuffle(sameB),...shuffle(rest)]){
+    const k=key(o);if(seen.has(k))continue;
+    if(drillTypeOk(arOf(o),w)||drillTypeOk(arOf(w),o))continue;
+    seen.add(k);out.push(o);if(out.length>=3)break;
+  }
+  return out;
+}
+let D=null;
+function drillStart(words){
+  const deck=words||shuffle(ALL_WORDS.filter(w=>!book||w.b===book));
+  D={items:deck.map((w,k)=>({w,type:k%2?'ar2en':'en2ar',opts:null})),idx:0,score:0,done:new Set(),wrongSet:new Set()};
+  drillRender();
+}
+function drillRender(){
+  const el=$('ph-practice'),total=D.items.length;
+  if(D.idx>=total){
+    const miss=[...D.wrongSet].map(k=>D.items[k].w);
+    el.innerHTML=`<div class="sp-card"><div class="sp-emoji">${D.score>=Math.ceil(total*.7)?'🏆':'📚'}</div>
+      <div class="sp-donetxt">أحسنت! أكملت تدريب المفردات</div>
+      <div class="sp-score">نتيجتك: <span dir="ltr">${D.score} / ${total}</span></div>
+      ${miss.length?`<button class="sp-btn" id="d-miss">🔁 الكلمات اللي غلطت فيها (${miss.length})</button>`:''}
+      <button class="sp-btn sec" id="d-again">مرّة ثانية</button></div>`;
+    if(miss.length)$('d-miss').onclick=()=>{drillStart(shuffle(miss));el.scrollIntoView({block:'start'});};
+    $('d-again').onclick=()=>drillStart();
+    try{gtag('event','words_practice_finish',{score:D.score,total});}catch(e){}
+    return;
+  }
+  D.tried=false;
+  const it=D.items[D.idx],w=it.w;
+  if(!it.opts)it.opts=shuffle([w,...distractors(w,it.type)]);
+  let h=`<div class="qprog"><div class="qpbar"><div class="qpfill" style="width:${Math.round(D.idx/total*100)}%"></div></div>
+    <div class="qptxt" dir="ltr">${D.idx+1} / ${total}</div></div>`;
+  if(D.idx>0)h+=`<button class="drill-back" id="d-prev">→ الكلمة السابقة</button>`;
+  h+=`<div class="dq"><div class="dq-src">كتاب ${w.b} · الدرس ${w.l}</div>`;
+  if(it.type==='en2ar'){
+    h+=`<div class="dq-word">${esc(w.e)}<button class="dq-spk" id="d-say" aria-label="نطق">🔊</button></div>
+      <div class="dq-ask">اختر المعنى الصحيح</div>
+      <div class="dq-opts">${it.opts.map((o,k)=>`<button class="dq-opt" data-k="${k}">${esc(arOf(o))}</button>`).join('')}</div>`;
+  }else{
+    h+=`<div class="dq-word-ar">${esc(arOf(w))}</div>
+      <div class="dq-ask">اختر الكلمة الإنجليزية</div>
+      <div class="dq-opts">${it.opts.map((o,k)=>`<button class="dq-opt en" dir="ltr" data-k="${k}">${esc(o.e)}</button>`).join('')}</div>`;
+  }
+  h+=`<div class="dq-fb" id="d-fb"></div></div>`;
+  el.innerHTML=h;
+  if($('d-prev'))$('d-prev').onclick=()=>{D.idx--;drillRender();};
+  if($('d-say'))$('d-say').onclick=()=>sayWord(w.e);
+  el.querySelectorAll('.dq-opt').forEach(b=>b.onclick=()=>drillPick(b,it.opts[+b.dataset.k]===w));
+}
+function drillPick(b,ok){
+  const it=D.items[D.idx],w=it.w,fb=$('d-fb');
+  if(ok){
+    $('ph-practice').querySelectorAll('.dq-opt').forEach(x=>x.disabled=true);
+    b.classList.add('ok');
+    if(!D.tried&&!D.done.has(D.idx)){D.score++;D.wrongSet.delete(D.idx);}
+    D.done.add(D.idx);
+    sayWord(w.e);
+    fb.innerHTML='✅ صحيح! <span dir="ltr">'+esc(clean(w.e))+'</span> = '+esc(arOf(w));fb.style.color='var(--green)';
+    const at=D.idx;setTimeout(()=>{if(D&&D.idx===at){D.idx++;drillRender();}},900);
+  }else{
+    if(!D.done.has(D.idx))D.wrongSet.add(D.idx);
+    D.tried=true;b.classList.add('no');b.disabled=true;
+    fb.textContent='❌ حاول مرة أخرى';fb.style.color='var(--red)';
+  }
+}
+window.__wp={get D(){return D;},setTab,distractors};
 chips();render();
 })();
 </script>

@@ -57,6 +57,8 @@ function drillTypeOk(input,w){
   for(const k of alts){
     const kn=dialNorm(k);
     if(kn&&ans===kn)return true;
+    // «كيلو متر» = «كيلومتر»: نفس الكلمة بمسافة زائدة أو ناقصة
+    if(kn&&ans.replace(/\s+/g,'')===kn.replace(/\s+/g,''))return true;
     if(arSkel(input).length>=2&&arSkel(input)===arSkel(k))return true;
     if(ansToks.length&&_altOk(ansToks,k))return true;
   }

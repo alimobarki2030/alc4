@@ -1,4 +1,4 @@
-const CACHE_NAME='alc-v156';
+const CACHE_NAME='alc-v157';
 // Audio lives in its own size-capped cache so the mp3s can never pile
 // into (or get wiped alongside) the versioned app cache.
 // v2: audio re-generated at higher fidelity (48kHz/192kbps) — bumping the

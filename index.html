@@ -105,6 +105,16 @@ body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--txt);min-he
 .sec-label::after{content:'';flex:1;height:1px;background:var(--bdr)}
 
 .books-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
+.lvl-tabs{display:flex;gap:6px;background:var(--card);border:2px solid var(--bdr);border-radius:14px;padding:5px;margin-bottom:14px}
+.lvl-tab{flex:1;border:none;background:transparent;border-radius:10px;padding:9px 4px;font-family:'Cairo',sans-serif;font-weight:800;font-size:.8rem;color:var(--muted);cursor:pointer;line-height:1.3;transition:all .2s}
+.lvl-tab small{display:block;font-family:'Inter',sans-serif;font-size:.62rem;font-weight:700;opacity:.8}
+.lvl-tab.on{background:var(--navy);color:#fff}
+.b13 .bc-accent{background:#F0F9FF;color:#0369A1}
+.b1 .bc-accent{background:#FEF2F2;color:#DC2626}
+.b1 .bc-num{color:#DC2626}
+.b2 .bc-accent{background:#FFF7ED;color:#C2410C}
+.b2 .bc-num{color:#C2410C}
+.b13 .bc-num{color:#0369A1}
 
 .book-card{background:var(--card);border-radius:20px;border:2px solid var(--bdr);
   overflow:hidden;transition:all .22s;position:relative;text-decoration:none;
@@ -509,6 +519,7 @@ html.splash-seen #splash{display:none}
   </div>
 
   <div class="sec-label">الكتب</div>
+  <div class="lvl-tabs" id="lvl-tabs" role="tablist"></div>
   <div class="books-grid" id="books-grid"></div>
 
   <div class="sec-label">شرح تفاعلي</div>
@@ -547,6 +558,10 @@ html.splash-seen #splash{display:none}
 const CURRENT_BOOK='book12';
 
 const BOOKS=[
+  {id:'book1',num:1,href:'book1',title:'1',name:'الفصل والتحيّات',nameEn:'The Classroom',sub:'التحيّات · الفصل · المهن · النقود · الوقت',
+    topics:['The classroom',"Bob's a barber.",'Is she a teacher?','Today is Thursday.'],cls:'b1',lessons:4,available:true},
+  {id:'book2',num:2,href:'book2',title:'2',name:'العائلة والقاعدة',nameEn:'Family & Base',sub:'العائلة · القاعدة العسكرية · الأكل · الوقت والنقود',
+    topics:['My family is big.','Whose office is this?','Are you studying?',"It's time for lunch."],cls:'b2',lessons:4,available:true},
   {id:'book3',num:3,href:'book3',title:'3',name:'الحياة اليومية',nameEn:'Daily Life',sub:'الحياة اليومية · المضارع البسيط · أوقات اليوم',
     topics:['Present · Past BE','WH · How many','want to · الصفات'],cls:'b3',lessons:4,available:true},
   {id:'book4',num:4,href:'book4',title:'4',name:'الرياضة والألوان',nameEn:'Sports & Colors',sub:'الماضي البسيط · الملابس · الرياضة',
@@ -567,7 +582,14 @@ const BOOKS=[
     topics:['Medical appointments','Rules of the road',"I'd like a refund",'How was the show?'],cls:'b11',lessons:4,available:true},
   {id:'book12',num:12,href:'book12',title:'12',name:'السفر والتعليم',nameEn:'Travel & Education',sub:'السفر · التعليم · البناء · الهوايات',
     topics:['See the USA!','Education','Remodeling','used to / would'],cls:'b12',lessons:4,available:true},
+  {id:'book13',num:13,href:'book13',title:'13',name:'الرياضة والمقاسات',nameEn:'Sports & Sizes',sub:'الرياضة · المواد · المقاسات · القياسات',
+    topics:["We're sure we'll win.",'Materials people use',"What's your size?","Let's play ball!"],cls:'b13',lessons:4,available:true},
 ];
+// المستويات: كل مستوى ستة كتب (الأول 1–6، الثاني 7–12، الثالث 13–18 …)
+const LEVELS=[{n:1,name:'المستوى الأول',from:1,to:6},{n:2,name:'المستوى الثاني',from:7,to:12},{n:3,name:'المستوى الثالث',from:13,to:18}];
+const lvlOf=num=>LEVELS.find(l=>num>=l.from&&num<=l.to);
+let LEVEL=(lvlOf(+(CURRENT_BOOK||'').replace('book',''))||LEVELS[0]).n;
+try{const sv=+localStorage.getItem('home_level');if(LEVELS.some(l=>l.n===sv))LEVEL=sv;}catch(e){}
 
 // النقر على الهيرو (أو Enter/Space) ينزل بسلاسة إلى قائمة الكتب — يحترم
 // تفضيل تقليل الحركة فيقفز مباشرة بدل التمرير المتحرّك.
@@ -582,7 +604,11 @@ const svgIco=n=>`<svg class="svgico" aria-hidden="true"><use href="#icon-${n}"><
 
 function render_books(){
   const grid=document.getElementById('books-grid');
-  grid.innerHTML=BOOKS.map(b=>{
+  const lv=LEVELS.filter(l=>BOOKS.some(b=>b.num>=l.from&&b.num<=l.to));
+  document.getElementById('lvl-tabs').innerHTML=lv.map(l=>`<button class="lvl-tab${l.n===LEVEL?' on':''}" data-l="${l.n}" role="tab">${l.name}<small dir="ltr">${(()=>{const n=BOOKS.filter(b=>b.num>=l.from&&b.num<=l.to).map(b=>b.num);const lo=Math.min(...n),hi=Math.max(...n);return lo===hi?'Book '+lo:'Books '+lo+'–'+hi;})()}</small></button>`).join('');
+  document.querySelectorAll('.lvl-tab').forEach(t=>t.onclick=()=>{LEVEL=+t.dataset.l;try{localStorage.setItem('home_level',LEVEL);}catch(e){}render_books();});
+  const L=LEVELS.find(l=>l.n===LEVEL);
+  grid.innerHTML=BOOKS.filter(b=>b.num>=L.from&&b.num<=L.to).map(b=>{
     // بطاقة الكتاب = فهرس تنقّل أنيق: الاسم (عربي) + Book N (إنجليزي) + الرقم.
     if(b.available){
       const cur=b.id===CURRENT_BOOK;
@@ -608,7 +634,7 @@ function render_books(){
       </div>
     </div>`;
   }).join('');
-  const avail=BOOKS.filter(b=>b.available);
+  const avail=BOOKS.filter(b=>b.available);/*stats across all levels*/
   const availCount=document.getElementById('stat-available');
   if(availCount)availCount.textContent=avail.length;
   const lessonCount=document.getElementById('stat-lessons');

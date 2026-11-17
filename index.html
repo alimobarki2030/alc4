@@ -596,7 +596,7 @@ const svgIco=n=>`<svg class="svgico" aria-hidden="true"><use href="#icon-${n}"><
 function render_books(){
   const grid=document.getElementById('books-grid');
   const lv=LEVELS.filter(l=>BOOKS.some(b=>b.num>=l.from&&b.num<=l.to));
-  document.getElementById('lvl-tabs').innerHTML=lv.map(l=>`<button class="lvl-tab${l.n===LEVEL?' on':''}" data-l="${l.n}" role="tab">${l.name}<small dir="ltr">Books ${l.from}–${l.to}</small></button>`).join('');
+  document.getElementById('lvl-tabs').innerHTML=lv.map(l=>`<button class="lvl-tab${l.n===LEVEL?' on':''}" data-l="${l.n}" role="tab">${l.name}<small dir="ltr">${(()=>{const n=BOOKS.filter(b=>b.num>=l.from&&b.num<=l.to).map(b=>b.num);const lo=Math.min(...n),hi=Math.max(...n);return lo===hi?'Book '+lo:'Books '+lo+'–'+hi;})()}</small></button>`).join('');
   document.querySelectorAll('.lvl-tab').forEach(t=>t.onclick=()=>{LEVEL=+t.dataset.l;try{localStorage.setItem('home_level',LEVEL);}catch(e){}render_books();});
   const L=LEVELS.find(l=>l.n===LEVEL);
   grid.innerHTML=BOOKS.filter(b=>b.num>=L.from&&b.num<=L.to).map(b=>{

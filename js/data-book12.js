@@ -130,9 +130,9 @@ l3:[
   // — الأجهزة والاجتماعات —
   {e:'stereo',a:'مُجسّم الصوت',em:'📻'},
   {e:'speaker',a:'سمّاعة',em:'🔊'},
-  {e:'get-together',a:'لقاء / تجمّع',em:'🎉'},
+  {e:'get-together',a:'لقاء / تجمّع (اسم)',em:'🎉'},
   {e:'meeting',a:'اجتماع',em:'📅'},
-  {e:'get together',a:'يجتمعون',past:'got together',pa:'اجتمعوا',em:'🤝'},
+  {e:'get together',a:'يجتمعون (فعل)',past:'got together',pa:'اجتمعوا',em:'🤝'},
   // — أفعال —
   {e:'burn',a:'يحرق / يحترق',em:'🔥'},
   {e:'boil',a:'يغلي',em:'♨️'},

@@ -4,8 +4,28 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, noimageindex" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive, noimageindex"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/alcpt",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/words",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/challenge",
+      "destination": "/",
+      "permanent": false
     }
   ]
 }

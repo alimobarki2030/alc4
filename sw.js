@@ -1,4 +1,4 @@
-const CACHE_NAME='alc-v166';
+const CACHE_NAME='alc-v167';
 // Audio lives in its own size-capped cache so the mp3s can never pile
 // into (or get wiped alongside) the versioned app cache.
 // v2: audio re-generated at higher fidelity (48kHz/192kbps) — bumping the
@@ -13,6 +13,7 @@ const CORE_ASSETS=[
   '/','/book1','/book2','/book3','/book4','/book5','/book5-pronouns','/book6','/book7','/book8','/book9','/book10','/book11','/book12','/book13','/book14','/grammar',
   '/css/style.css',
   '/js/error-report.js',
+  '/js/wa-fab.js',
   '/js/access-gate.js',
   '/js/audio-index.js',
   '/js/engine-core.js','/js/engine-progress.js','/js/ar-match.js','/js/engine-lessons.js',
